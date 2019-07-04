@@ -1,0 +1,24 @@
+{
+    "title": "sqlite3的使用",
+    "date": "2015-08-07 23:38:47 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/system-sqlite3/index.json",
+    "summary" : "新建数据库
+sqlite3 databasefilename
+检查databasefilename是否存在，如果不存在就创建并进入数据库（如果直接退出，数据库文件不会创建）&nbsp;&nbsp;如果已经存在直接进入数据库 对数据库进行操作
+
+创建表：
+create table if not exists UserList(id integer primary key autoincrement,firstName[not null],lastName[not null],sex,birthday,remark[not null],resumeNum[not null])
+
+该表已经创建了主键，可以自增ID
+
+terminal命令行使用sqlite3
+打开或创建：进入到文件所在目录下，输入sqlite3 filename
+1、显示数据库中所有的表：.tables
+
+2、显示表头：.head on 然后执行 select * from tableName
+sqlite中命令: 以.开头,大小写敏感（数据库对象名称是大小写不敏感的） .exit .help 查看帮助 针对命令 .database 显示数据库信息；包含当前数据库的位置 .tables 或者 .table 显示表名称 &nbsp;没有表则不显示 .schema 命令可以查看创建数据对象时的SQL命令； .schema databaseobjectname查看创建该数据库对象时的SQL的命令；如果没有这个数据库对象就不显示内容，不会有错误提示
+.read FILENAME 执行指定文件中的SQL语句 .headers on/off &nbsp;显示表头 默认off
+.mode list|column|insert|line|tabs|tcl|csv &nbsp; 改变输出格式，具体如下
+sqlite&gt; .mode list sqlite&gt; select * from emp; 7369|SMITH|CLERK|7902|17-12-1980|800||20 7499|ALLEN|SALESMAN|7698|20-02-1981|1600|300|30 如果字段值为NULL 默认不显示 也就是显示空字符串"
+}

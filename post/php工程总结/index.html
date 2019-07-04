@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>PHP工程总结 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="fanjinlong" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PHP工程总结"/>
+<meta name="twitter:description" content="PHP工程总结
+ 使用session需要调用session_start()手动开启环境，session_start()调用之前页面不允许输出任何内容，包括空格 sql语句 执行exec(),查询使用query() order不能作为表名称，这是关键字 获取最后一条插入数据 id使用PHP内置的方法调用: $db-&gt;lastInsertRowID();插入一条数据后获取此条数据id。 $\sum_{i=1}^{n}\sqrt{i&#43;\sin(i)}$ include 和 require 除了处理错误的方式不同之外，在其他方面都是相同的：  require 生成一个致命错误（E_COMPILE_ERROR），在错误发生后脚本会停止执行。 include 生成一个警告（E_WARNING），在错误发生后脚本会继续执行。  增 删 改updateRow(tablename, id, key-values ) 查 ```mysql 单表查询: select * from A where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)  两表联查: select * from A inner join user on A.uid=B.uid where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)
+三表联查: select * from ((A left join B on A.orderId = B.id) left join C on B.uid=C.uid) where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)
+三生万物，只有推到3，才能找到规律，推及万物
+11. 遇到问题： unable to open database file ，  原因为:当前文件夹的文件权限，需要为可读可写."/>
+
+    <meta property="og:title" content="PHP工程总结" />
+<meta property="og:description" content="PHP工程总结
+ 使用session需要调用session_start()手动开启环境，session_start()调用之前页面不允许输出任何内容，包括空格 sql语句 执行exec(),查询使用query() order不能作为表名称，这是关键字 获取最后一条插入数据 id使用PHP内置的方法调用: $db-&gt;lastInsertRowID();插入一条数据后获取此条数据id。 $\sum_{i=1}^{n}\sqrt{i&#43;\sin(i)}$ include 和 require 除了处理错误的方式不同之外，在其他方面都是相同的：  require 生成一个致命错误（E_COMPILE_ERROR），在错误发生后脚本会停止执行。 include 生成一个警告（E_WARNING），在错误发生后脚本会继续执行。  增 删 改updateRow(tablename, id, key-values ) 查 ```mysql 单表查询: select * from A where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)  两表联查: select * from A inner join user on A.uid=B.uid where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)
+三表联查: select * from ((A left join B on A.orderId = B.id) left join C on B.uid=C.uid) where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)
+三生万物，只有推到3，才能找到规律，推及万物
+11. 遇到问题： unable to open database file ，  原因为:当前文件夹的文件权限，需要为可读可写." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/php%E5%B7%A5%E7%A8%8B%E6%80%BB%E7%BB%93/" />
+<meta property="article:published_time" content="2018-07-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-07-02T00:00:00&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="fanjinlong" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">PHP工程总结</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 2, 2018
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <p>PHP工程总结</p>
+
+<ol>
+<li>使用session需要调用session_start()手动开启环境，<code>session_start()调用之前页面不允许输出任何内容，包括空格</code></li>
+<li>sql语句 执行exec(),查询使用query()</li>
+<li>order不能作为表名称，这是关键字</li>
+<li>获取最后一条插入数据 id使用PHP内置的方法调用:  $db-&gt;lastInsertRowID();插入一条数据后获取此条数据id。</li>
+<li>$\sum_{i=1}^{n}\sqrt{i+\sin(i)}$</li>
+<li><strong>include 和 require 除了处理错误的方式不同之外，在其他方面都是相同的：</strong>
+
+<ul>
+<li>require 生成一个致命错误（E_COMPILE_ERROR），在错误发生后脚本会停止执行。</li>
+<li>include 生成一个警告（E_WARNING），在错误发生后脚本会继续执行。</li>
+</ul></li>
+<li>增</li>
+<li>删</li>
+<li>改updateRow(tablename, id, key-values )</li>
+<li>查
+```mysql
+单表查询:
+select * from A where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)</li>
+</ol>
+
+<p>两表联查:
+select * from A inner join user on A.uid=B.uid where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)</p>
+
+<p>三表联查:
+select * from ((A left join B on A.orderId = B.id) left join C  on B.uid=C.uid)  where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)</p>
+
+<p>三生万物，只有推到3，才能找到规律，推及万物</p>
+
+<pre><code>11. 遇到问题： unable to open database file ，
+</code></pre>
+
+<p>原因为:当前文件夹的文件权限，需要为可读可写.
+ 原理为：当sqlite进行写操作时，会先 生成缓存文件，然后对缓存文件进行操作，而缓存文件的默认权限为当前文件夹的权限。</p>
+
+<pre><code>
+12. sqlite 中 inner outer 的区别：inner是两个表的交集，outer是一个表+另一个表不够补null的并集
+13. array 插入
+</code></pre>
+
+<p>// 第一种方式
+        $childArr[$i][&lsquo;name&rsquo;] = $name;
+        $childArr[$i][&lsquo;number&rsquo;] = $number;
+        $childArr[$i][&lsquo;unit&rsquo;] = $unit;</p>
+
+<pre><code>    // 第二种方式
+</code></pre>
+
+<p>//        $childArr[] = $subArrItem;</p>
+
+<pre><code>    // 第三种方式，差评！
+    //竟然需要两个参数, 不直观
+</code></pre>
+
+<p>//        array_push($childArr,$subArrItem);</p>
+
+<pre><code>14. 空值判断
+</code></pre>
+
+<p>empty</p>
+
+<p>如果 变量 是非空或非零的值，则 empty() 返回 FALSE。
+换句话说，&rdquo;&ldquo;、0、&rdquo;0&rdquo;、NULL、FALSE、array()、var $var、未定义; 以及没有任何属性的对象都将被认为是空的，如果 var 为空，则返回 TRUE。</p>
+
+<p>isset</p>
+
+<p>如果 变量 存在(非NULL)则返回 TRUE，否则返回 FALSE(包括未定义）。
+变量值设置为：null，返回也是false;unset一个变量后，变量被取消了。注意，isset对于NULL值变量，特殊处理。</p>
+
+<p>is_null</p>
+
+<p>检测传入值【值，变量，表达式】是否是null,只有一个变量定义了，且它的值是null，它才返回TRUE . 其它都返回 FALSE 【未定义变量传入后会出错！】.</p>
+
+<p>参考: www.cnblogs.com/chengmo/archive/2010/10/18/1854258.html</p>
+
+<pre><code>15. 数据库
+</code></pre>
+
+<p>数据类型
+blob 二进制大数据块
+real 4字节浮点数-&gt;类float
+binary 指定字节长度的二进制数据
+timestamp 时间戳，MySQL自动添加当前时间
+参考<a href="http://dcx.sap.com/1201/zh/dbreference/dtnu.html">http://dcx.sap.com/1201/zh/dbreference/dtnu.html</a></p>
+
+<pre><code>16. MySQL中的timestamp数据类型不能直接用PHP时间和日期函数读取，先用strtotime函数将字符串转换成时间
+</code></pre>
+
+<p>	$birthday = $ROW[&lsquo;user_birthday&rsquo;];
+    $birthday = strtotime($birthday);
+    $birthday  = date(&lsquo;n月j日&rsquo;,$birthday);
+    echo $birthday/r/n;        //输出如“12月5日”的日期格式</p>
+
+<pre><code>date formate时间格式化： http://php.net/manual/zh/function.date.php
+</code></pre>
+
+<pre><code>17. phpstrom破解
+</code></pre>
+
+<p>目前遇到的最好的PHP开发IDE：集成数据库，编程规范检查警告（包括PHP，HTML，SQL，数据库配置）</p>
+
+<p>若资金允许，请点击<a href="https://www.jetbrains.com/idea/buy/购买正版，谢谢合作">https://www.jetbrains.com/idea/buy/购买正版，谢谢合作</a>
+学生凭学生证可免费申请正版授权 | 创业公司可5折购买正版授权
+若资金不足，请尽量给予工具作者捐赠，支持作者&amp;以后还可以获得帮助。
+使用工具来源：<a href="http://idea.lanyus.com/">http://idea.lanyus.com/</a>
+1. 下载工具
+2. 修改配置文件
+3. 移动破解工具到指定目录下
+4. 运行软件，弹出软件注册激活激活窗口，Enterkey-&gt;Activate license with-&gt;Activation code:随意输入激活码文本内容-&gt;OK</p>
+
+<p>2) phpstrom的配置文件为 /Application/PhpStorm.app/Contents/bin/phpstorm.vmoptions,
+修改这里添加破解包路径：
+-javaagent:/Applications/PhpStorm.app/Contents/bin/JetbrainsCrack.jar
+3) 下载的破解工具JetbrainsCrack添加到上面配置的路径下
+tips: 破解版本请不要轻易升级，以免升级使用后软件破解失效。</p>
+
+<pre><code>18. 集合数据不能使用数字作为key，会直接赋值到对应的数组下标中，不会作为字典处理。
+19. ajax使用标签button请求，不能使用a标签，会造成事件冲突。
+20. phpstrom使用
+    alt+enter 为拼写检查添加忽略单词，需要光标放在单词位置
+21. MySQL联合查询语法（内联、左联、右联、全联）
+```sql
+T1表结构（用户名,密码）   userid   username password
+                    1   jack   jackpwd   
+                    2   owen   owenpwd  
+T2表结构（积分,等级）   userid   jifen    dengji 
+                    1   20   3   
+                    3   50   6   
+1. 内联（inner  join）：取T1，T2的交集
+SQL语句：select * from T1 inner join T2 on T1.userid=T2.userid
+运行结果   T1.userid   username   password   T2.userid   jifen   dengji   
+        1   jack   jackpwd   1   20   3   
+2. 左联（left outer join）:以T1为参考表，取T1,T2的并集，T2数据不足补null
+SQL语句：select * from T1 left outer join T2 on T1.userid=T2.userid
+运行结果   T1.userid   username   password   T2.userid   jifen   dengji   
+        1   jack   jackpwd   1   20   3   
+        2   owen   owenpwd   NULL   NULL   NULL   
+3. 右联（right outer join）:以T2为参考表，取T1,T2的并集，T1数据不足补null
+SQL语句：select * from T1 right outer join T2 on T1.userid=T2.userid
+运行结果   T1.userid   username   password   T2.userid   jifen   dengji   
+        1   jack   jackpwd   1   20   3   
+        NULL   NULL   NULL   3   50   6   
+4. 全联（full outer join）：取T1,T2的并集，凡是数据不足的都补null
+SQL语句：select * from T1 full outer join T2 on T1.userid=T2.userid
+运行结果   T1.userid   username   password   T2.userid   jifen   dengji   
+        1   jack   jackpwd   1   20   3   
+        2   owen   owenpwd   NULL   NULL   NULL   
+        NULL   NULL   NULL   3   50   6   
+</code></pre>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

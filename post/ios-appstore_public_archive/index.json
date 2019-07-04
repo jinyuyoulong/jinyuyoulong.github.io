@@ -1,0 +1,16 @@
+{
+    "title": "app 上架前的打包准备",
+    "date": "2015-09-10 15:22:12 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/ios-appstore_public_archive/index.json",
+    "summary" : "app 上架前的打包准备
+1.检查是否是外网环境
+2.更新info.plist文件版本号
+3.product&mdash;&gt;scheme&mdash;-&gt;eidt scheme&mdash;&gt;
+&nbsp;&nbsp; build configuration 改为 release
+4.build setting&mdash;&gt;architectures &ndash;&gt;&nbsp;
+&nbsp;&nbsp; build active architecture only 设置为NO
+5.build setting&mdash;&gt; code signing &ndash;&gt;
+&nbsp;&nbsp; Provisioning&nbsp; Profile 设置发布证书
+6. product clean"
+}

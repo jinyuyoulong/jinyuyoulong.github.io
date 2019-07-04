@@ -1,0 +1,8 @@
+{
+    "title": "use sublime Text",
+    "date": "2016-08-10 00:00:00 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/sublime-setting/index.json",
+    "summary" : " 如何设置折行 &lsquo;将配置文件里 添加word_wrap:true 字段&rsquo;
+{ &quot;color_scheme&quot;: &quot;Packages/Color Scheme - Default/Monokai.tmTheme&quot;, &quot;font_size&quot;: 13, &quot;word_wrap&quot;: true, &quot;ignored_packages&quot;: [ &quot;Vintage&quot; ] }  痛点1：每次编写完Python文件后都要切到terminal下输入python fileName.py命令执行文件。 解决：mac版sublime text编辑器使用shift+command+b选择Python 直接执行文件  痛点2：sublime默认执行的Python版本是系统默认的，不能直接使用Python3来执行Python文件 解决：Tools--&gt;Build System--&gt;New Build System 写入： { &quot;shell_cmd&quot;: &quot;/usr/local/homebrew/bin/python3 ${file}&quot;, &quot;selector&quot; :&quot;source.python&quot;, &quot;file_regex&quot;:&quot;^(...*?):[0-9]:?([0-9]*)&quot;, &quot;working_dir&quot;:&quot;${file_path}&quot;, &quot;env&quot;: {&quot;PYTHONIOENCODING&quot;: &quot;utf8&quot;}, } 保存为/Packages/User/python3.sublime-build 然后选择环境为python3即可 ps: `env` //设置编码格式 `shell_cmd` 使用的路径，通过在terminal中执行which Python3 获得  "
+}

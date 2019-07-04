@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>mac下wireshark的使用方法 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="http://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="mac下wireshark的使用方法"/>
+<meta name="twitter:description" content="Wireshark是mac下一款非常好的抓包工具，安装我就不说了，下面我重点来说说如何使用。 1.打开终端 2.rvictl -s  // 创建一个虚拟接口 3.打开Wireshark，点击设置按钮，选择rvi0接口 4.开始调试
+通过 RVI 抓取 iPhone 数据包 （1）RVI 简介 使用 Mac 抓取 iPhone 数据包可通过共享和代理两种方式： 使用 Mac 的网络共享功能将 Mac 的网络通过 WiFi 共享给 iPhone 连接； 使用代理软件（例如 Charles）在Mac上建立HTTP代理服务器。 这两种方式都是将 iPhone 的网络流量导入到 Mac 电脑中，通过 Mac 连接互联网。这就要求 Mac 本身是联网的，对于网络共享的方式还要求 Mac 本身的网络不能使用 WiFi，而且在 iPhone 上只能使用 WiFi 连接，无法抓取到 xG（2G/3G/4G） 网络包。 苹果在 iOS 5 中新引入了“远程虚拟接口（Remote Virtual Interface,RVI）”的特性，可以在 Mac 中建立一个虚拟网络接口来作为 iOS 设备的网络栈，这样所有经过 iOS 设备的流量都会经过此虚拟接口。此虚拟接口只是监听 iOS 设备本身的协议栈（但并没有将网络流量中转到 Mac 本身的网络连接上），所有网络连接都是 iOS 设备本身的，与 Mac 电脑本身联不联网或者联网类型无关。iOS设备本身可以为任意网络类型（WiFi/xG），这样在 Mac 电脑上使用任意抓包工具（tcpdump、Wireshark、CPA）抓取 RVI 接口上的数据包就实现了对 iPhone 的抓包。"/>
+
+    <meta property="og:title" content="mac下wireshark的使用方法" />
+<meta property="og:description" content="Wireshark是mac下一款非常好的抓包工具，安装我就不说了，下面我重点来说说如何使用。 1.打开终端 2.rvictl -s  // 创建一个虚拟接口 3.打开Wireshark，点击设置按钮，选择rvi0接口 4.开始调试
+通过 RVI 抓取 iPhone 数据包 （1）RVI 简介 使用 Mac 抓取 iPhone 数据包可通过共享和代理两种方式： 使用 Mac 的网络共享功能将 Mac 的网络通过 WiFi 共享给 iPhone 连接； 使用代理软件（例如 Charles）在Mac上建立HTTP代理服务器。 这两种方式都是将 iPhone 的网络流量导入到 Mac 电脑中，通过 Mac 连接互联网。这就要求 Mac 本身是联网的，对于网络共享的方式还要求 Mac 本身的网络不能使用 WiFi，而且在 iPhone 上只能使用 WiFi 连接，无法抓取到 xG（2G/3G/4G） 网络包。 苹果在 iOS 5 中新引入了“远程虚拟接口（Remote Virtual Interface,RVI）”的特性，可以在 Mac 中建立一个虚拟网络接口来作为 iOS 设备的网络栈，这样所有经过 iOS 设备的流量都会经过此虚拟接口。此虚拟接口只是监听 iOS 设备本身的协议栈（但并没有将网络流量中转到 Mac 本身的网络连接上），所有网络连接都是 iOS 设备本身的，与 Mac 电脑本身联不联网或者联网类型无关。iOS设备本身可以为任意网络类型（WiFi/xG），这样在 Mac 电脑上使用任意抓包工具（tcpdump、Wireshark、CPA）抓取 RVI 接口上的数据包就实现了对 iPhone 的抓包。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.v5u.win/fanyiqing/_posts/mac-wireshark/" />
+<meta property="article:published_time" content="2016-05-18T18:47:09&#43;00:00"/>
+<meta property="article:modified_time" content="2016-05-18T18:47:09&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="http://blog.v5u.win/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>为吾优</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">mac下wireshark的使用方法</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 18, 2016
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="http://blog.v5u.win/tags/mac/">Mac</a><a class="tag" href="http://blog.v5u.win/tags/wireshark/">Wireshark</a></div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>Wireshark是mac下一款非常好的抓包工具，安装我就不说了，下面我重点来说说如何使用。
+1.打开终端
+2.rvictl -s <udid> // 创建一个虚拟接口
+3.打开Wireshark，点击设置按钮，选择rvi0接口
+4.开始调试</p>
+
+<h4 id="通过-rvi-抓取-iphone-数据包">通过 RVI 抓取 iPhone 数据包</h4>
+
+<p>（1）RVI 简介
+使用 Mac 抓取 iPhone 数据包可通过共享和代理两种方式：
+使用 Mac 的网络共享功能将 Mac 的网络通过 WiFi 共享给 iPhone 连接；
+使用代理软件（例如 Charles）在Mac上建立HTTP代理服务器。
+这两种方式都是将 iPhone 的网络流量导入到 Mac 电脑中，通过 Mac 连接互联网。这就要求 Mac 本身是联网的，对于网络共享的方式还要求 Mac 本身的网络不能使用 WiFi，而且在 iPhone 上只能使用 WiFi 连接，无法抓取到 xG（2G/3G/4G） 网络包。
+苹果在 iOS 5 中新引入了“远程虚拟接口（Remote Virtual Interface,RVI）”的特性，可以在 Mac 中建立一个虚拟网络接口来作为 iOS 设备的网络栈，这样所有经过 iOS 设备的流量都会经过此虚拟接口。此虚拟接口只是监听 iOS 设备本身的协议栈（但并没有将网络流量中转到 Mac 本身的网络连接上），所有网络连接都是 iOS 设备本身的，与 Mac 电脑本身联不联网或者联网类型无关。iOS设备本身可以为任意网络类型（WiFi/xG），这样在 Mac 电脑上使用任意抓包工具（tcpdump、Wireshark、CPA）抓取 RVI 接口上的数据包就实现了对 iPhone 的抓包。</p>
+
+<h1 id="mac-os-x-对-rvi-的支持是通过终端命令-rvictl-提供的-在终端-terminal-中输入-rvictl-命令可查看帮助">Mac OS X 对 RVI 的支持是通过终端命令 rvictl 提供的，在终端（Terminal）中输入“ rvictl  ? ”命令可查看帮助：</h1>
+
+<p>rvictl Options:
+           -l, -L                     List currently active devices
+           -s, -S                     Start a device or set of devices</p>
+
+<h1 id="x-x-stop-a-device-or-set-of-devices">-x, -X                    Stop a device or set of devices</h1>
+
+<p>（2）使用 “ rvictl  -s ”命令创建虚拟接口
+首先，通过 MFI USB 数据线将 iPhone 连接到安装了 Mac OS+Xcode 4.2(or later) 的 Mac 机上。iOS 7 以上需要搭配 Xcode 5.0（or later），抓包过程中必须保持连接。
+然后，通过 iTunes-&gt;Summary 或者 Xcode-&gt;Organizer-&gt;Devices 获取 iPhone 的 UDID（identifier）。</p>
+
+<h1 id="接着-使用-rvictl-s-命令创建-rvi-接口-使用-iphone-的-udid-作为参数">接着，使用“rvictl -s”命令创建 RVI 接口，使用 iPhone 的 UDID 作为参数。</h1>
+
+<h1 id="rvictl-s-udid">$rvictl -s <udid></h1>
+
+<p>创建成功后，在终端通过 ifconfig 命令可以看到多了一个 rvi0 接口。当有多个 iOS 设备连接 iMac 时，依次是 rvi1,rvi2…，使用“ rvictl  -l ”命令可以列出所有挂接的虚拟接口。
+在 Wireshark 首页选择 rvi0，使用默认的 Capture Options 即可开始对 iPhone 进行抓包。</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

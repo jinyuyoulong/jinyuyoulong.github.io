@@ -1,0 +1,9 @@
+{
+    "title": "chrome 调试",
+    "date": "2018-11-08 00:00:00 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/web-chrome-%E8%B0%83%E8%AF%95/index.json",
+    "summary" : "chrome 调试
+keyword: workspace,breakpoints
+ 将调试代码文件添加到Chrome 的Workspace中：Sources&ndash;&gt;filesystem&ndash;&gt;+Add folder to workspace&ndash;&gt;chrome 警告框，设置允许访问—&gt;在workspace中打开文件，直接编写，cmd+s保存&ndash;&gt;刷新网页查看效果. breakpoints: Sources&ndash;&gt;Event Listener Breakpoints&ndash;&gt;Mouse&ndash;&gt;click 选中——&gt;在调试代码出添加断点——&gt;执行代码（例：点击button，执行js）——&gt;使用断点调试器，R,➡️,⬇️，⬆️  "
+}

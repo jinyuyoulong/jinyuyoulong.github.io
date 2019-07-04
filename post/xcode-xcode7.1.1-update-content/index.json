@@ -1,0 +1,8 @@
+{
+    "title": "Xcode7.1.1更新内容",
+    "date": "2015-11-23 11:25:15 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/xcode-xcode7.1.1-update-content/index.json",
+    "summary" : "Xcode 7.1.1 improves stability and fixes critical issues in interface Builder,debugging,and UI testing. Xcode 7.1 includes Swift2.1 and SDKs for iOS 9.1,watchOS 2,tvOS,and OS X 10.11 EI Capitan.
+Now you can go beyond the simulator to test your app on an iPad, iPhone, Apple TV, or Apple Watch - for free. Simply enter your Apple ID into the Accounts preference pane,then attach a device to your Mac using a Lightning cable."
+}

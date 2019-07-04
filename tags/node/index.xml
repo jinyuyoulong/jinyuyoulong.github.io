@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Node on 我的Hugo静态站</title>
+    <link>http://blog.v5u.win/tags/node/</link>
+    <description>Recent content in Node on 我的Hugo静态站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Mar 2017 23:18:23 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.v5u.win/tags/node/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>sublime text3 配置nodejs build 环境</title>
+      <link>http://blog.v5u.win/post/sublime3-nodejs-build/</link>
+      <pubDate>Fri, 03 Mar 2017 23:18:23 +0000</pubDate>
+      
+      <guid>http://blog.v5u.win/post/sublime3-nodejs-build/</guid>
+      <description>可参考使用Sublime Text 3 进行Python3开发 Tools&amp;ndash;&amp;gt;Build System&amp;ndash;&amp;gt;New Build System 写入
+{ &amp;quot;shell_cmd&amp;quot;: &amp;quot;/usr/local/bin/node ${file}&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.javascript&amp;quot;, &amp;quot;file_regex&amp;quot;: &amp;quot;^(...*?):([0-9]*):?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;: &amp;quot;${file_path}&amp;quot;, }  保存为/Packages/User/node.sublime-build 然后选择环境为node即可</description>
+    </item>
+    
+  </channel>
+</rss>

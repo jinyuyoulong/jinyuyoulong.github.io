@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on 为吾优</title>
+    <link>https://blog.v5u.win/tags/vim/</link>
+    <description>Recent content in vim on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 18 Apr 2016 17:26:21 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>vim使用记录</title>
+      <link>https://blog.v5u.win/post/system-vim/</link>
+      <pubDate>Mon, 18 Apr 2016 17:26:21 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-vim/</guid>
+      <description>剪切复制粘贴 命令模式下（esc）剪切一行：dd ;三行：3dd y复制 d()剪切 p(paste)粘贴</description>
+    </item>
+    
+  </channel>
+</rss>

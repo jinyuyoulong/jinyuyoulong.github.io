@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>抓包 on 为吾优</title>
+    <link>https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/</link>
+    <description>Recent content in 抓包 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 27 Dec 2016 10:39:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>抓包调试工具mitmproxy</title>
+      <link>https://blog.v5u.win/post/system-%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</link>
+      <pubDate>Tue, 27 Dec 2016 10:39:15 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</guid>
+      <description>安装：brew install mitmproxy 其他安装方式: http://docs.mitmproxy.org/en/latest/install.html
+启动：mitmproxy -p 8080(监听端口号)
+设置代理，具体设置方法请自行查找
+抓取https：用 iPhone 打开 Safari 浏览器并输入 mitm.it，安装信任证书
+使用：键盘上下移动，Enter 键进入查看详情，按 Tab 键切换顶部导航栏
+拦截修改 request 和 response： 输入 i，然后输入 ~s 再按回车键，这时候就进入了 response 拦截模式。如果输入 ~q 则进入 request 的拦截模式，更多的命令可以输入 ？ 查看。 其中橘红色的表示请求正被拦截，这时 Enter 进入后 再按 e 就可以修改 request 或者 response。修改时是用 vim 进行编辑的，修改完成后按 a 将请求放行，如果要放行所有请求输入 A 即可</description>
+    </item>
+    
+  </channel>
+</rss>

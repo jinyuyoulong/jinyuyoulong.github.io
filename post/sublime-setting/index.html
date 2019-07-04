@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>use sublime Text // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="fanjinlong" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="use sublime Text"/>
+<meta name="twitter:description" content=" 如何设置折行 &lsquo;将配置文件里 添加word_wrap:true 字段&rsquo;
+{ &quot;color_scheme&quot;: &quot;Packages/Color Scheme - Default/Monokai.tmTheme&quot;, &quot;font_size&quot;: 13, &quot;word_wrap&quot;: true, &quot;ignored_packages&quot;: [ &quot;Vintage&quot; ] }  痛点1：每次编写完Python文件后都要切到terminal下输入python fileName.py命令执行文件。 解决：mac版sublime text编辑器使用shift&#43;command&#43;b选择Python 直接执行文件  痛点2：sublime默认执行的Python版本是系统默认的，不能直接使用Python3来执行Python文件 解决：Tools--&gt;Build System--&gt;New Build System 写入： { &quot;shell_cmd&quot;: &quot;/usr/local/homebrew/bin/python3 ${file}&quot;, &quot;selector&quot; :&quot;source.python&quot;, &quot;file_regex&quot;:&quot;^(...*?):[0-9]:?([0-9]*)&quot;, &quot;working_dir&quot;:&quot;${file_path}&quot;, &quot;env&quot;: {&quot;PYTHONIOENCODING&quot;: &quot;utf8&quot;}, } 保存为/Packages/User/python3.sublime-build 然后选择环境为python3即可 ps: `env` //设置编码格式 `shell_cmd` 使用的路径，通过在terminal中执行which Python3 获得  "/>
+
+    <meta property="og:title" content="use sublime Text" />
+<meta property="og:description" content=" 如何设置折行 &lsquo;将配置文件里 添加word_wrap:true 字段&rsquo;
+{ &quot;color_scheme&quot;: &quot;Packages/Color Scheme - Default/Monokai.tmTheme&quot;, &quot;font_size&quot;: 13, &quot;word_wrap&quot;: true, &quot;ignored_packages&quot;: [ &quot;Vintage&quot; ] }  痛点1：每次编写完Python文件后都要切到terminal下输入python fileName.py命令执行文件。 解决：mac版sublime text编辑器使用shift&#43;command&#43;b选择Python 直接执行文件  痛点2：sublime默认执行的Python版本是系统默认的，不能直接使用Python3来执行Python文件 解决：Tools--&gt;Build System--&gt;New Build System 写入： { &quot;shell_cmd&quot;: &quot;/usr/local/homebrew/bin/python3 ${file}&quot;, &quot;selector&quot; :&quot;source.python&quot;, &quot;file_regex&quot;:&quot;^(...*?):[0-9]:?([0-9]*)&quot;, &quot;working_dir&quot;:&quot;${file_path}&quot;, &quot;env&quot;: {&quot;PYTHONIOENCODING&quot;: &quot;utf8&quot;}, } 保存为/Packages/User/python3.sublime-build 然后选择环境为python3即可 ps: `env` //设置编码格式 `shell_cmd` 使用的路径，通过在terminal中执行which Python3 获得  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/sublime-setting/" />
+<meta property="article:published_time" content="2016-08-10T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2016-08-10T00:00:00&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="fanjinlong" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">use sublime Text</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Aug 10, 2016
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h3 id="如何设置折行">如何设置折行</h3>
+
+<p>&lsquo;将配置文件里 添加word_wrap:true 字段&rsquo;</p>
+
+<pre><code>{
+	&quot;color_scheme&quot;: &quot;Packages/Color Scheme - Default/Monokai.tmTheme&quot;,
+	&quot;font_size&quot;: 13,
+	&quot;word_wrap&quot;: true,
+	&quot;ignored_packages&quot;:
+	[
+		&quot;Vintage&quot;
+	]
+}
+</code></pre>
+
+<pre><code>痛点1：每次编写完Python文件后都要切到terminal下输入python fileName.py命令执行文件。
+解决：mac版sublime text编辑器使用shift+command+b选择Python 直接执行文件
+</code></pre>
+
+<pre><code>痛点2：sublime默认执行的Python版本是系统默认的，不能直接使用Python3来执行Python文件
+解决：Tools--&gt;Build System--&gt;New Build System 写入：
+{
+	&quot;shell_cmd&quot;: &quot;/usr/local/homebrew/bin/python3 ${file}&quot;,
+	&quot;selector&quot; :&quot;source.python&quot;,
+	&quot;file_regex&quot;:&quot;^(...*?):[0-9]:?([0-9]*)&quot;,
+	&quot;working_dir&quot;:&quot;${file_path}&quot;,
+	&quot;env&quot;: {&quot;PYTHONIOENCODING&quot;: &quot;utf8&quot;},
+}
+保存为/Packages/User/python3.sublime-build
+然后选择环境为python3即可
+
+ps: `env` //设置编码格式
+`shell_cmd` 使用的路径，通过在terminal中执行which Python3 获得
+</code></pre>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

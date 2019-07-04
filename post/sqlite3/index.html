@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>sqlite3的使用 | 我的Hugo静态站</title>
+    <meta property="og:title" content="sqlite3的使用 - 我的Hugo静态站">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2015-08-07T23:38:47&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2015-08-07T23:38:47&#43;08:00">
+        
+    <meta name="Keywords" content="">
+    <meta name="description" content="sqlite3的使用">
+        
+    <meta name="author" content="">
+    <meta property="og:url" content="http://blog.v5u.win/post/sqlite3/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="http://blog.v5u.win/">
+                        我的Hugo静态站
+                    </a>
+                
+                
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="http://blog.v5u.win/">首页</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">sqlite3的使用</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2015年8月7日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="http://blog.v5u.win/categories/ios">iOS</a></span>
+                            
+                                <span class="meta-category"><a href="http://blog.v5u.win/categories/other-technology%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF">other technology其他技术</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            <p><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;"></span><span style="font-family: Arial; background-color: rgb(255, 255, 255);">新建数据库</span></p>
+
+<p><span style="font-family: Arial; background-color: rgb(255, 255, 255);">sqlite3 databasefilename</span></p>
+
+<p><span style="font-family: Arial; background-color: rgb(255, 255, 255);">检查databasefilename是否存在，如果不存在就创建并进入数据库（如果直接退出，数据库文件不会创建）&nbsp;&nbsp;如果已经存在直接进入数据库 对数据库进行操作</span></p>
+
+<p><span style="font-family: Arial;"><span style="background-color: rgb(255, 255, 255);">
+</span></span></p>
+
+<p><span style="background-color: rgb(255, 250, 165);-evernote-highlight:true;">创建表</span>：</p>
+
+<p><span style="font-size: 12px; font-family: Menlo; color: rgb(195, 195, 0);">create table if not exists UserList(id integer primary key autoincrement,firstName[not null],lastName[not null],sex,birthday,remark[not null],resumeNum[not null])</span></p>
+
+<p><span style="font-family:&#39;Helvetica Neue&#39;;font-size:14px;"></span></p>
+
+<p>该表已经创建了主键，可以自增ID</p>
+
+<p><span style="font-family:&#39;Helvetica Neue&#39;;font-size:14px;"></span></p>
+
+<p>terminal命令行使用sqlite3</p>
+
+<p>打开或创建：进入到文件所在目录下，输入sqlite3 filename</p>
+
+<p>1、显示数据库中所有的表：.tables</p>
+
+<p><span style="font-family:&#39;Helvetica Neue&#39;;font-size:14px;"></span></p>
+
+<p>2、显示表头：.head on 然后执行 select * from tableName</p>
+
+<p>sqlite中命令:
+以.开头,大小写敏感（数据库对象名称是大小写不敏感的）
+.exit
+.help 查看帮助 针对命令
+.database 显示数据库信息；包含当前数据库的位置
+.tables 或者 .table 显示表名称 &nbsp;没有表则不显示
+.schema 命令可以查看创建数据对象时的SQL命令；
+.schema databaseobjectname查看创建该数据库对象时的SQL的命令；如果没有这个数据库对象就不显示内容，不会有错误提示</p>
+
+<p>.read FILENAME 执行指定文件中的SQL语句
+.headers on/off &nbsp;显示表头 默认off</p>
+
+<p>.mode list|column|insert|line|tabs|tcl|csv &nbsp; 改变输出格式，具体如下</p>
+
+<p>sqlite&gt; .mode list
+sqlite&gt; select * from emp;
+7369|SMITH|CLERK|7902|17-12-1980|800||20
+7499|ALLEN|SALESMAN|7698|20-02-1981|1600|300|30
+如果字段值为NULL 默认不显示 也就是显示空字符串</p>
+
+<p>sqlite&gt; .mode column
+sqlite&gt; select * from emp;
+7369 &nbsp; &nbsp; &nbsp; &nbsp;SMITH &nbsp; &nbsp; &nbsp; CLERK &nbsp; &nbsp; &nbsp; 7902 &nbsp; &nbsp; &nbsp; &nbsp;17-12-1980 &nbsp;800 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 20 &nbsp; &nbsp; &nbsp; &nbsp;
+7499 &nbsp; &nbsp; &nbsp; &nbsp;ALLEN &nbsp; &nbsp; &nbsp; SALESMAN &nbsp; &nbsp;7698 &nbsp; &nbsp; &nbsp; &nbsp;20-02-1981 &nbsp;1600 &nbsp; &nbsp; &nbsp; &nbsp;300 &nbsp; &nbsp; &nbsp; &nbsp; 30 &nbsp; &nbsp; &nbsp; &nbsp;
+7521 &nbsp; &nbsp; &nbsp; &nbsp;WARD &nbsp; &nbsp; &nbsp; &nbsp;SALESMAN &nbsp; &nbsp;7698 &nbsp; &nbsp; &nbsp; &nbsp;22-02-1981 &nbsp;1250 &nbsp; &nbsp; &nbsp; &nbsp;500 &nbsp; &nbsp; &nbsp; &nbsp; 30&nbsp;</p>
+
+<p>sqlite&gt; .mode insert
+sqlite&gt; select * from dept;
+INSERT INTO table VALUES(10,&#39;ACCOUNTING&#39;,&#39;NEW YORK&#39;);
+INSERT INTO table VALUES(20,&#39;RESEARCH&#39;,&#39;DALLAS&#39;);
+INSERT INTO table VALUES(30,&#39;SALES&#39;,&#39;CHICAGO&#39;);
+INSERT INTO table VALUES(40,&#39;OPERATIONS&#39;,&#39;BOSTON&#39;);</p>
+
+<p>sqlite&gt; .mode line
+sqlite&gt; select * from dept;
+DEPTNO = 10
+&nbsp;DNAME = ACCOUNTING
+&nbsp; &nbsp;LOC = NEW YORK</p>
+
+<p>DEPTNO = 20
+&nbsp;DNAME = RESEARCH
+&nbsp; &nbsp;LOC = DALLAS</p>
+
+<p>DEPTNO = 30
+&nbsp;DNAME = SALES
+&nbsp; &nbsp;LOC = CHICAGO</p>
+
+<p>DEPTNO = 40
+&nbsp;DNAME = OPERATIONS
+&nbsp; &nbsp;LOC = BOSTON</p>
+
+<p>sqlite&gt; .mode tabs
+sqlite&gt; select * from dept;
+10<span style="white-space: pre;"> </span>ACCOUNTING<span style="white-space: pre;"> </span>&nbsp;NEW YORK
+20<span style="white-space: pre;"> </span>RESEARCH<span style="white-space: pre;"> </span>&nbsp;DALLAS
+30<span style="white-space: pre;"> </span>SALES<span style="white-space: pre;"> </span>&nbsp;CHICAGO
+40<span style="white-space: pre;"> </span>OPERATIONS<span style="white-space: pre;"> </span>&nbsp;BOSTON</p>
+
+<p>sqlite&gt; .mode tcl
+sqlite&gt; select * from dept;
+&quot;10&quot;<span style="white-space: pre;"> </span>&quot;ACCOUNTING&quot;<span style="white-space: pre;"></span>&quot;NEW YORK&quot;<span style="white-space: pre;"></span>
+&quot;20&quot;<span style="white-space: pre;"> </span>&quot;RESEARCH&quot;<span style="white-space: pre;"></span>&quot;DALLAS&quot;<span style="white-space: pre;"></span>
+&quot;30&quot;<span style="white-space: pre;"> </span>&quot;SALES&quot;<span style="white-space: pre;"> </span>&nbsp;&quot;CHICAGO&quot;<span style="white-space: pre;"> </span>
+&quot;40&quot;<span style="white-space: pre;"> </span>&quot;OPERATIONS&quot;<span style="white-space: pre;"></span>&quot;BOSTON&quot;<span style="white-space: pre;"></span></p>
+
+<p>sqlite&gt; .mode csv
+sqlite&gt; select * from dept;
+10,ACCOUNTING,&quot;NEW YORK&quot;
+20,RESEARCH,DALLAS
+30,SALES,CHICAGO
+40,OPERATIONS,BOSTON</p>
+
+<p>.separator &quot;X&quot; 更改分界符号为X
+sqlite&gt; .separator &#39;<strong>&#39; &nbsp;
+sqlite&gt; select * from dept;
+10</strong>ACCOUNTING<strong>&quot;NEW YORK&quot;
+20</strong>RESEARCH<strong>DALLAS
+30</strong>SALES<strong>CHICAGO
+40</strong>OPERATIONS**BOSTON</p>
+
+<p>.dump ?TABLE? &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;生成形成数据库表的SQL脚本
+.dump 生成整个数据库的脚本在终端显示
+.output stdout &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 将输出打印到屏幕 &nbsp;默认
+.output filename &nbsp;将输出打印到文件（.dump &nbsp;.output 结合可将数据库以sql语句的形式导出到文件中）
+.nullvalue STRING &nbsp; &nbsp; &nbsp; &nbsp;查询时用指定的串代替输出的NULL串 默认为.nullvalue &#39;&#39;</p>
+
+<p>字段类型：</p>
+
+<p>数据库中存储的每个值都有一个类型,都属于下面所列类型中的一种,(被数据库引擎所控制)
+NULL: 这个值为空值
+INTEGER: 值被标识为整数,依据值的大小可以依次被存储为1,2,3,4,5,6,7,8个字节
+REAL: 所有值都是浮动的数值,被存储为8字节的IEEE浮动标记序号.
+TEXT: 文本. 值为文本字符串,使用数据库编码存储(TUTF-8, UTF-16BE or UTF-16-LE).
+BLOB: 值是BLOB数据,如何输入就如何存储,不改变格式.</p>
+
+<p>值被定义为什么类型只和值自身有关,和列没有关系,和变量也没有关系.所以sqlite被称作 弱类型 数据库
+数据库引擎将在执行时检查、解析类型，并进行数字存储类型(整数和实数)和文本类型之间的转换.
+SQL语句中部分的带双引号或单引号的文字被定义为文本,
+如果文字没带引号并没有小数点或指数则被定义为整数,
+如果文字没带引号但有小数点或指数则被定义为实数,&nbsp;
+如果值是空则被定义为空值.
+BLOB数据使用符号X&#39;ABCD&#39;来标识.</p>
+
+<p>但实际上，sqlite3也接受如下的数据类型：&nbsp;
+smallint 16位的整数。&nbsp;
+interger 32位的整数。&nbsp;
+decimal(p,s) 精确值p是指全部有几个十进制数,s是指小数点后可以有几位小数。如果没有特别指定，则系统会默认为p=5 s=0 。&nbsp;
+float &nbsp;32位元的实数。&nbsp;
+double &nbsp;64位元的实数。&nbsp;</p>
+
+<p>char(n) &nbsp;n 长度的字串，n不能超过 254。&nbsp;
+varchar(n) 长度不固定且其最大长度为 n 的字串，n不能超过 4000。&nbsp;
+graphic(n) 和 char(n) 一样，不过其单位是两个字节， n不能超过127。这个形态是为了支持两个字节长度的字体，如中文字。&nbsp;
+vargraphic(n) 可变长度且其最大长度为n的双字元字串，n不能超过2000&nbsp;
+date &nbsp;包含了 年份、月份、日期。&nbsp;
+time &nbsp;包含了 小时、分钟、秒。&nbsp;
+timestamp 包含了 年、月、日、时、分、秒、千分之一秒。</p>
+
+<p>SQLite包含了如下时间/日期函数：&nbsp;
+datetime() 产生日期和时间 &nbsp; &nbsp;无参数表示获得当前时间和日期
+sqlite&gt; select datetime();
+2012-01-07 12:01:32
+有字符串参数则把字符串转换成日期
+sqlite&gt; select datetime(&#39;2012-01-07 12:01:30&#39;);&nbsp;
+2012-01-07 12:01:30</p>
+
+<p>select date(&#39;2012-01-08&#39;,&#39;+1 day&#39;,&#39;+1 year&#39;);
+2013-01-09</p>
+
+<p>select datetime(&#39;2012-01-08 00:20:00&#39;,&#39;+1 hour&#39;,&#39;-12 minute&#39;);
+2012-01-08 01:08:00</p>
+
+<p>select datetime(&#39;now&#39;,&#39;start of year&#39;);
+2012-01-01 00:00:00</p>
+
+<p>select datetime(&#39;now&#39;,&#39;start of month&#39;);
+2012-01-01 00:00:00</p>
+
+<p>select datetime(&#39;now&#39;,&#39;start of day&#39;);
+2012-01-08 00:00:00</p>
+
+<p>select datetime(&#39;now&#39;,&#39;start of week&#39;);错误</p>
+
+<p>select datetime(&#39;now&#39;,&#39;localtime&#39;);
+结果：2006-10-17 21:21:47</p>
+
+<p>date()产生日期 &nbsp; &nbsp;
+sqlite&gt; select date(&#39;2012-01-07 12:01:30&#39;);&nbsp;
+2012-01-07
+同理 有参和无参
+select date(&#39;now&#39;,&#39;start of year&#39;);
+2012-01-01</p>
+
+<p>select date(&#39;2012-01-08&#39;,&#39;+1 month&#39;);
+2012-02-08</p>
+
+<p>time() 产生时间&nbsp;
+select time();
+03:14:30</p>
+
+<p>select time(&#39;23:18:59&#39;);
+23:18:59</p>
+
+<p>select time(&#39;23:18:59&#39;,&#39;start of day&#39;);
+00:00:00</p>
+
+<p>select time(&#39;23:18:59&#39;,&#39;end of day&#39;);错误</p>
+
+<p>在时间/日期函数里可以使用如下格式的字符串作为参数：&nbsp;
+YYYY-MM-DD&nbsp;
+YYYY-MM-DD HH:MM&nbsp;
+YYYY-MM-DD HH:MM:SS&nbsp;
+YYYY-MM-DD HH:MM:SS.SSS&nbsp;
+HH:MM&nbsp;
+HH:MM:SS&nbsp;
+HH:MM:SS.SSS&nbsp;
+now&nbsp;
+其中now是产生现在的时间。</p>
+
+<p>日期不能正确比较大小,会按字符串比较，日期默认格式 dd-mm-yyyy
+select hiredate from emp order by hiredate;</p>
+
+<p>17-11-1981
+17-12-1980
+19-04-1987
+20-02-1981
+22-02-1981</p>
+
+<p>strftime() 对以上三个函数产生的日期和时间进行格式化
+strftime()函数可以把YYYY-MM-DD HH:MM:SS格式的日期字符串转换成其它形式的字符串。 strftime(格式, 日期/时间, 修正符, 修正符, …) &nbsp;select strftime(&#39;%d&#39;,datetime());
+它可以用以下的符号对日期和时间进行格式化：&nbsp;
+%d 在该月中的第几天, 01-31&nbsp;
+%f 小数形式的秒，SS.SSS&nbsp;
+%H 小时, 00-23&nbsp;
+%j 算出某一天是该年的第几天，001-366&nbsp;
+%m 月份，00-12&nbsp;
+%M 分钟, 00-59&nbsp;
+%s 从1970年1月1日到现在的秒数&nbsp;
+%S 秒, 00-59&nbsp;
+%w 星期, 0-6 (0是星期天)&nbsp;
+%W 算出某一天属于该年的第几周, 01-53&nbsp;
+%Y 年, YYYY&nbsp;
+%% 百分号</p>
+
+<p>select strftime(&#39;%Y.%m.%d %H:%M:%S&#39;,&#39;now&#39;);&nbsp;
+select strftime(&#39;%Y.%m.%d %H:%M:%S&#39;,&#39;now&#39;,&#39;localtime&#39;);&nbsp;
+结果：2006.10.17 21:41:09</p>
+
+<p>select hiredate from emp&nbsp;
+order by strftime(&#39;%Y.%m.%d %H:%M:%S&#39;,hiredate); 正确</p>
+
+<p>select strftime(&#39;%Y.%m.%d %H:%M:%S&#39;,hiredate) from emp&nbsp;
+order by strftime(&#39;%Y.%m.%d %H:%M:%S&#39;,hiredate); 错误</p>
+
+<p>算术函数&nbsp;
+abs(X) 返回给定数字表达式的绝对值。&nbsp;
+max(X,Y[,&hellip;]) 返回表达式的最大值。 &nbsp;组函数 max(列名)
+sqlite&gt; select max(2,3,4,5,6,7,12);
+12</p>
+
+<p>min(X,Y[,&hellip;]) 返回表达式的最小值。&nbsp;
+random() 返回随机数。
+sqlite&gt; select random();
+3224224213599993831
+&nbsp;
+round(X[,Y]) 返回数字表达式并四舍五入为指定的长度或精度。&nbsp;</p>
+
+<p>字符处理函数&nbsp;
+length(X) 返回给定字符串表达式的字符个数。&nbsp;
+lower(X) 将大写字符数据转换为小写字符数据后返回字符表达式。&nbsp;
+upper(X) 返回将小写字符数据转换为大写的字符表达式。&nbsp;
+substr(X,Y,Z) 返回表达式的一部分。 &nbsp;从Y开始读Z个字符 &nbsp;Y最小值1
+sqlite&gt; select substr(&#39;abcdef&#39;,3,3); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+cde</p>
+
+<p>quote(A) 给字符串加引号
+&nbsp;sqlite&gt; select quote(&#39;aaa&#39;);
+&#39;aaa&#39;</p>
+
+<p>条件判断函数&nbsp;
+ifnull(X,Y) &nbsp;如果X为null 返回Y
+select ifnull(comm,0) from emp;
+0
+300
+500
+0
+1400</p>
+
+<p>集合函数&nbsp;
+avg(X) 返回组中值的平均值。&nbsp;
+count(X) 返回组中项目的数量。&nbsp;
+max(X) 返回组中值的最大值。&nbsp;
+min(X) 返回组中值的最小值。&nbsp;
+sum(X) 返回表达式中所有值的和。&nbsp;</p>
+
+<p>其他函数&nbsp;
+typeof(X) 返回数据的类型。&nbsp;
+sqlite&gt; select typeof(111);
+integer
+sqlite&gt; select typeof(&#39;233&#39;);
+text
+sqlite&gt; select typeof(&#39;2012-12-12&#39;);
+text
+sqlite&gt; select typeof(&#39;223.44&#39;);
+text
+sqlite&gt; select typeof(223.44);
+real</p>
+
+<p>last_insert_rowid() 返回最后插入的数据的ID。&nbsp;
+sqlite_version() 返回SQLite的版本。&nbsp;
+sqlite&gt; select sqlite_version();
+3.7.9</p>
+
+<p>change_count() 返回受上一语句影响的行数。&nbsp;
+last_statement_change_count()</p>
+
+<p>create table emp_bak select * from EMP;不能在sqlite中使用</p>
+
+<p>插入记录
+insert into table_name values (field1, field2, field3&hellip;);
+查询
+select * from table_name;查看table_name表中所有记录；
+select * from table_name where field1=&#39;xxxxx&#39;; 查询符合指定条件的记录；</p>
+
+<p>select &hellip;..&nbsp;<span style="white-space: pre;"></span>
+from table_name[,table_name2,&hellip;]
+where &hellip;..<span style="white-space: pre;"> </span>
+group by&hellip;.<span style="white-space: pre;"> </span>
+having &hellip;.<span style="white-space: pre;"> </span>
+order by &hellip;</p>
+
+<p>select &hellip;..&nbsp;<span style="white-space: pre;"></span>
+from table_name &nbsp;inner join | left outer join | right outer join table_name2
+on &hellip;
+where &hellip;..<span style="white-space: pre;"> </span>
+group by&hellip;.<span style="white-space: pre;"> </span>
+having &hellip;.<span style="white-space: pre;"> </span>
+order by &hellip;</p>
+
+<p>子查询：
+select *&nbsp;
+from EMP m
+where SAL&gt;
+(select avg(SAL) from EMP where DEPTNO=m.DEPTNO);<span style="white-space: pre;"> </span>&nbsp;</p>
+
+<p>支持case when then 语法
+update EMP
+set SAL=
+(
+case
+when DEPTNO=10 and JOB=&#39;MANAGER&#39; then SAL*1.1
+when DEPTNO=20 and JOB=&#39;CLERK&#39; then SAL*1.2
+when DEPTNO=30 &nbsp;then SAL*1.1
+when DEPTNO=40 &nbsp;then SAL*1.2
+else SAL
+END
+);</p>
+
+<p>select ENAME,&nbsp;
+case DEPTNO
+when 10 then &#39;后勤部&#39;
+when 20 then &#39;财务部&#39;
+when 30 then &#39;内务部门&#39;
+else &#39;其他部门&#39;
+end as dept
+from EMP;</p>
+
+<p>支持关联子查询 &nbsp;in后面的语法中可以有limit（mysql不可以）
+select *
+from emp e
+where e.EMPNO in&nbsp;
+(
+select empno &nbsp;
+from EMP
+where deptno=e.DEPTNO
+order by SAL desc
+limit 0,2
+);</p>
+
+<p>支持表和表之间的数据合并等操作
+union 去重复 &nbsp;union all 不去掉重复
+select deptno from emp
+union&nbsp;
+select deptno from dept;</p>
+
+<p>select deptno from emp
+union all
+select deptno from dept;</p>
+
+<p>在列名前加distinct也是去重复
+sqlite&gt; select distinct deptno from emp;</p>
+
+<p>删除
+delete from table_name where &hellip;</p>
+
+<p>删除表
+drop table_name; &nbsp; &nbsp; 删除表；
+drop index_name; &nbsp; &nbsp; 删除索引；</p>
+
+<p>修改
+update table_name
+set xxx=value[, xxx=value,&hellip;]
+where &hellip;</p>
+
+<p>建立索引</p>
+
+<p>如果资料表有相当多的资料，我们便会建立索引来加快速度。好比说：</p>
+
+<p>create index film_title_index on film(title);
+意思是针对film资料表的name字段，建立一个名叫film_name_index的索引。这个指令的语法为</p>
+
+<p>CREATE [ UNIQUE ] &nbsp;NONCLUSTERED &nbsp;INDEX index_name
+&nbsp; &nbsp; ON { table | view } ( column [ ASC | DESC ] [ ,&hellip;n ] )
+create index index_name on table_name(field_to_be_indexed);
+一旦建立了索引，sqlite3会在针对该字段作查询时，自动使用该索引。这一切的操作都是在幕后自动发生的，无须使用者特别指令。</p>
+
+<p>其他sqlite的特别用法</p>
+
+<p>sqlite可以在shell底下直接执行命令：
+sqlite3 film.db &quot;select * from emp;&quot;</p>
+
+<p>输出 HTML 表格：
+sqlite3 -html film.db &quot;select * from film;&quot;
+将数据库「倒出来」：</p>
+
+<p>sqlite3 film.db &quot;.dump&quot; &gt; output.sql
+利用输出的资料，建立一个一模一样的数据库（加上以上指令，就是标准的SQL数据库备份了）：</p>
+
+<p>sqlite3 film.db &lt; output.sql
+在大量插入资料时，你可能会需要先打这个指令：</p>
+
+<p>begin;
+插入完资料后要记得打这个指令，资料才会写进数据库中：
+commit;</p>
+
+<p>sqlite&gt; begin;
+sqlite&gt; insert into aaaa values(&#39;aaa&#39;,&#39;333&#39;);
+sqlite&gt; select * from aaaa;
+2|sdfds
+sdfsd|9
+2012-12-12|13:13:13
+aaa|333
+sqlite&gt; rollback;
+sqlite&gt; select * from aaaa;
+2|sdfds
+sdfsd|9
+2012-12-12|13:13:13</p>
+
+<p>创建和删除视图
+CREATE VIEW view_name AS
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+DROP VIEW view_name</p>
+
+<p>create view &nbsp;e as
+select avg(SAL) avgsal,DEPTNO
+from EMP
+group by DEPTNO;</p>
+
+<p>select ENAME,EMP.DEPTNO,SAL,avgsal
+from EMP inner join e
+on EMP.DEPTNO=e.DEPTNO
+where SAL&gt;avgsal;</p>
+
+<p>练习员工表：</p>
+
+<p>PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE DEPT
+(
+DEPTNO int(2) not null,
+DNAME varchar(14),
+LOC &nbsp; &nbsp;varchar(13)
+);
+INSERT INTO &quot;DEPT&quot; VALUES(10,&#39;ACCOUNTING&#39;,&#39;NEW YORK&#39;);
+INSERT INTO &quot;DEPT&quot; VALUES(20,&#39;RESEARCH&#39;,&#39;DALLAS&#39;);
+INSERT INTO &quot;DEPT&quot; VALUES(30,&#39;SALES&#39;,&#39;CHICAGO&#39;);
+INSERT INTO &quot;DEPT&quot; VALUES(40,&#39;OPERATIONS&#39;,&#39;BOSTON&#39;);
+CREATE TABLE EMP
+(
+EMPNO &nbsp; &nbsp;int(4) not null,
+ENAME &nbsp; &nbsp;varchar(10),
+JOB &nbsp; &nbsp; &nbsp;varchar(9),
+MGR &nbsp; &nbsp; &nbsp;int(4),
+HIREDATE date,
+SAL &nbsp; &nbsp; &nbsp;int(7 ),
+COMM &nbsp; &nbsp; int(7 ),
+DEPTNO &nbsp; int(2)
+);
+INSERT INTO &quot;EMP&quot; VALUES(7369,&#39;SMITH&#39;,&#39;CLERK&#39;,7902,&#39;17-12-1980&#39;,800,NULL,20);
+INSERT INTO &quot;EMP&quot; VALUES(7499,&#39;ALLEN&#39;,&#39;SALESMAN&#39;,7698,&#39;20-02-1981&#39;,1600,300,30);
+INSERT INTO &quot;EMP&quot; VALUES(7521,&#39;WARD&#39;,&#39;SALESMAN&#39;,7698,&#39;22-02-1981&#39;,1250,500,30);
+INSERT INTO &quot;EMP&quot; VALUES(7566,&#39;JONES&#39;,&#39;MANAGER&#39;,7839,&#39;02-04-1981&#39;,2975,NULL,20);
+INSERT INTO &quot;EMP&quot; VALUES(7654,&#39;MARTIN&#39;,&#39;SALESMAN&#39;,7698,&#39;28-09-1981&#39;,1250,1400,30);
+INSERT INTO &quot;EMP&quot; VALUES(7698,&#39;BLAKE&#39;,&#39;MANAGER&#39;,7839,&#39;01-05-1981&#39;,2850,NULL,30);
+INSERT INTO &quot;EMP&quot; VALUES(7782,&#39;CLARK&#39;,&#39;MANAGER&#39;,7839,&#39;09-06-1981&#39;,2450,NULL,10);
+INSERT INTO &quot;EMP&quot; VALUES(7788,&#39;SCOTT&#39;,&#39;ANALYST&#39;,7566,&#39;19-04-1987&#39;,3000,NULL,20);
+INSERT INTO &quot;EMP&quot; VALUES(7839,&#39;KING&#39;,&#39;PRESIDENT&#39;,NULL,&#39;17-11-1981&#39;,5000,NULL,10);
+INSERT INTO &quot;EMP&quot; VALUES(7844,&#39;TURNER&#39;,&#39;SALESMAN&#39;,7698,&#39;08-09-1981&#39;,1500,0,30);
+INSERT INTO &quot;EMP&quot; VALUES(7876,&#39;ADAMS&#39;,&#39;CLERK&#39;,7788,&#39;23-05-1987&#39;,1100,NULL,20);
+INSERT INTO &quot;EMP&quot; VALUES(7900,&#39;JAMES&#39;,&#39;CLERK&#39;,7698,&#39;03-12-1981&#39;,950,NULL,30);
+INSERT INTO &quot;EMP&quot; VALUES(7902,&#39;FORD&#39;,&#39;ANALYST&#39;,7566,&#39;03-12-1981&#39;,3000,NULL,20);
+INSERT INTO &quot;EMP&quot; VALUES(7934,&#39;MILLER&#39;,&#39;CLERK&#39;,7782,&#39;23-01-1982&#39;,1300,NULL,10);
+CREATE TABLE SALGRADE
+(
+GRADE int,
+LOSAL int,
+HISAL int
+);
+INSERT INTO &quot;SALGRADE&quot; VALUES(1,700,1200);
+INSERT INTO &quot;SALGRADE&quot; VALUES(2,1201,1400);
+INSERT INTO &quot;SALGRADE&quot; VALUES(3,1401,2000);
+INSERT INTO &quot;SALGRADE&quot; VALUES(4,2001,3000);
+INSERT INTO &quot;SALGRADE&quot; VALUES(5,3001,9999);
+COMMIT;</p>
+
+                        </div>
+
+                        
+
+
+                        
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="http://blog.v5u.win/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.v5u.win/post/go-authorization/" title="Go-Authorization">Go-Authorization</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/post/markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/" title="markdown 流程图">markdown 流程图</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/post/go-grpc%E7%A0%94%E7%A9%B6%E6%80%BB%E7%BB%93/" title="Go gRPC研究总结">Go gRPC研究总结</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/post/go-modules/" title="Go modules">Go modules</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/post/go-api-%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF%E6%96%87%E6%A1%A3/" title="Go-API 项目模板文档">Go-API 项目模板文档</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/post/mac%E4%B8%AD%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDpkg%E5%8C%85/" title="mac中如何卸载pkg包">mac中如何卸载pkg包</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/post/go-iris-template/" title="Go-iris-template">Go-iris-template</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/post/go-iris-%E8%B7%AF%E7%94%B1/" title="Go Iris 路由">Go Iris 路由</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/post/go-error-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" title="Go Error 错误处理">Go Error 错误处理</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/post/go-html-template/" title="Go HTML template">Go HTML template</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/blog/">blog(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/cocoapods/">cocoapods(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/ghostblog/">ghostblog(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/go/">go(3)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/ios/">ios(72)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/it%E9%BB%91%E8%AF%9D/">it黑话(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/java/">java(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/jekyll/">jekyll(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/mac/">mac(10)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/nodejs/">nodejs(7)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/other-technology%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">other-technology其他技术(19)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/php/">php(9)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/python/">python(6)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/swift/">swift(12)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/terminal/">terminal(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/xcode/">xcode(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/%E4%B8%AD%E5%8C%BB/">中医(2)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册(11)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">其他技术(7)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(16)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(16)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(1)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/%E9%81%93%E6%B3%95/">道法(4)</a>
+    </li>
+    
+    <li>
+        <a href="http://blog.v5u.win/categories/%E9%98%85%E8%AF%BB/">阅读(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="http://blog.v5u.win/tags/anybidirectionalcollection/">anybidirectionalcollection</a>
+    
+    <a href="http://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="http://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="http://blog.v5u.win/tags/as/">as</a>
+    
+    <a href="http://blog.v5u.win/tags/autoclosure/">autoclosure</a>
+    
+    <a href="http://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="http://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="http://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="http://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="http://blog.v5u.win/tags/composer/">composer</a>
+    
+    <a href="http://blog.v5u.win/tags/const/">const</a>
+    
+    <a href="http://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="http://blog.v5u.win/tags/define/">define</a>
+    
+    <a href="http://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="http://blog.v5u.win/tags/enum/">enum</a>
+    
+    <a href="http://blog.v5u.win/tags/error/">error</a>
+    
+    <a href="http://blog.v5u.win/tags/escaping/">escaping</a>
+    
+    <a href="http://blog.v5u.win/tags/express/">express</a>
+    
+    <a href="http://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="http://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="http://blog.v5u.win/tags/git/">git</a>
+    
+    <a href="http://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="http://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="http://blog.v5u.win/tags/hexo/">hexo</a>
+    
+    <a href="http://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="http://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="http://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="http://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="http://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="http://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="http://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="http://blog.v5u.win/tags/linux/">linux</a>
+    
+    <a href="http://blog.v5u.win/tags/lnmp/">lnmp</a>
+    
+    <a href="http://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="http://blog.v5u.win/tags/mongo/">mongo</a>
+    
+    <a href="http://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="http://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="http://blog.v5u.win/tags/node/">node</a>
+    
+    <a href="http://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="http://blog.v5u.win/tags/noescape/">noescape</a>
+    
+    <a href="http://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="http://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="http://blog.v5u.win/tags/nstimer/">nstimer</a>
+    
+    <a href="http://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="http://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="http://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="http://blog.v5u.win/tags/php7/">php7</a>
+    
+    <a href="http://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="http://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="http://blog.v5u.win/tags/ppspider/">ppspider</a>
+    
+    <a href="http://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="http://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="http://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="http://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="http://blog.v5u.win/tags/st3/">st3</a>
+    
+    <a href="http://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="http://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="http://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="http://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="http://blog.v5u.win/tags/ui/">ui</a>
+    
+    <a href="http://blog.v5u.win/tags/uicollectionview/">uicollectionview</a>
+    
+    <a href="http://blog.v5u.win/tags/uiimagepickerviewcontroller/">uiimagepickerviewcontroller</a>
+    
+    <a href="http://blog.v5u.win/tags/uiscrollview/">uiscrollview</a>
+    
+    <a href="http://blog.v5u.win/tags/uitableview/">uitableview</a>
+    
+    <a href="http://blog.v5u.win/tags/unowned/">unowned</a>
+    
+    <a href="http://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="http://blog.v5u.win/tags/vps-%E7%A9%BA%E9%97%B4/">vps-空间</a>
+    
+    <a href="http://blog.v5u.win/tags/weak/">weak</a>
+    
+    <a href="http://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="http://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="http://blog.v5u.win/tags/workspace/">workspace</a>
+    
+    <a href="http://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="http://blog.v5u.win/tags/xcode7/">xcode7</a>
+    
+    <a href="http://blog.v5u.win/tags/%E4%B8%89%E7%9C%81%E5%90%BE%E8%BA%AB/">三省吾身</a>
+    
+    <a href="http://blog.v5u.win/tags/%E4%B8%AD%E5%8C%BB/">中医</a>
+    
+    <a href="http://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册</a>
+    
+    <a href="http://blog.v5u.win/tags/%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4/">免费空间</a>
+    
+    <a href="http://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="http://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="http://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="http://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="http://blog.v5u.win/tags/%E5%BC%80%E5%8F%91/">开发</a>
+    
+    <a href="http://blog.v5u.win/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+    
+    <a href="http://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="http://blog.v5u.win/tags/%E6%8E%A7%E4%BB%B6/">控件</a>
+    
+    <a href="http://blog.v5u.win/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+    
+    <a href="http://blog.v5u.win/tags/%E6%94%B6%E8%97%8F/">收藏</a>
+    
+    <a href="http://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="http://blog.v5u.win/tags/%E6%96%87/">文</a>
+    
+    <a href="http://blog.v5u.win/tags/%E6%97%B6%E9%97%B4%E6%88%B3/">时间戳</a>
+    
+    <a href="http://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="http://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="http://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="http://blog.v5u.win/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    
+    <a href="http://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="http://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="http://blog.v5u.win/tags/%E8%AF%BB%E5%90%8E%E6%84%9F/">读后感</a>
+    
+    <a href="http://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="http://blog.v5u.win/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/">返回顶部</a>
+    
+    <a href="http://blog.v5u.win/tags/%E9%81%93/">道</a>
+    
+    <a href="http://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="http://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="http://blog.v5u.win/">我的Hugo静态站 By </a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+    
+    (function(){
+        $("pre code").parent().addClass("line-numbers")
+    }())
+
+    window.MathJax = {
+        tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            processEscapes: true
+        }
+    };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+</body>
+</html>

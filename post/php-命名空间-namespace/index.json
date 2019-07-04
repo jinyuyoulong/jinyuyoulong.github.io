@@ -1,0 +1,10 @@
+{
+    "title": "PHP 命名空间 namespace",
+    "date": "2018-11-12 00:00:00 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/php-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4-namespace/index.json",
+    "summary" : "PHP 命名空间 namespace
+ 声明： ```php &lt;?php // file1.php namespace MyProject; namespace MyProject\Sub\Level; //声明分层次的单个命名空间  	namespace MyProject { const CONNECT_OK = 1; class Connection { /* &hellip; / } function connect() { / &hellip; */ }
+namespace Foo\Bar\subnamespace; const FOO = 1;  	function foo() {} class foo { static function staticmethod() {} } } ?&gt;
+2. 使用 ```php &lt;?php //file2.php namespace Foo\Bar; include 'file1.php'; subnamespace\foo(); // 解析为函数 Foo\Bar\subnamespace\foo subnamespace\foo::staticmethod(); // 解析为类 Foo\Bar\subnamespace\foo, // 以及类的方法 staticmethod \Foo\Bar\foo(); // 解析为函数 Foo\Bar\foo \Foo\Bar\foo::staticmethod(); // 解析为类 Foo\Bar\foo, 以及类的方法 staticmethod ?"
+}

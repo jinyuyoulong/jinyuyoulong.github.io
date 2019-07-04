@@ -1,0 +1,8 @@
+{
+    "title": "NodeJS 文件系统",
+    "date": "2016-06-30 11:39:32 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/nodejs-filesystem/index.json",
+    "summary" : "文件加载顺序：
+st=&amp;gt;start: 开始require isfc=&amp;gt;condition: 是否在文件缓冲区 isnf=&amp;gt;condition: 是否是原生模块 ff=&amp;gt;operation: 查找文件模块 lfm=&amp;gt;operation: 根据扩展名载入模块 cfm=&amp;gt;operation: 缓存文件模块 isnc=&amp;gt;condition: 是否在原生模块缓存区中 lnf=&amp;gt;operation: 加载原生模块 cnf=&amp;gt;operation: 缓存原生模块 e=&amp;gt;end: 返回exports st-&amp;gt;isfc isfc(yes)-&amp;gt;e isfc(no)-&amp;gt;isnf(no)-&amp;gt;ff-&amp;gt;lfm-&amp;gt;cfm-&amp;gt;e isnf(yes)-&amp;gt;isnc(yes)-&amp;gt;lnf-&amp;gt;cnf-&amp;gt;e isnc(no)-&amp;gt;e  require方法接受以下几种参数的传递： http、fs、path等，原生模块。 ./mod或../mod，相对路径的文件模块。 /pathtomodule/mod，绝对路径的文件模块。 mod，非原生模块的文件模块。"
+}

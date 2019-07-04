@@ -1,0 +1,9 @@
+{
+    "title": "swift Enum",
+    "date": "2016-10-25 19:50:02 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/swift-enum/index.json",
+    "summary" : "普通创建
+enum SomeEnum: NSInteger { case A case B case C }  可以在Objective-C中使用的（添加@objc 关键字）
+@objc enum Bear: Int { case Black, Grizzly, Polar }  "
+}

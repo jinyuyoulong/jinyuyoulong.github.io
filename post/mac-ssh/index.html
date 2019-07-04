@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>SSH // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="fanjinlong" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SSH"/>
+<meta name="twitter:description" content="[TOC]
+解释 Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。 SSH通过在网络中创建安全隧道来实现SSH客户端与服务器之间的连接[2]。 虽然任何网络服务都可以通过SSH实现安全传输，SSH最常见的用途是远程登录系统，人们通常利用SSH来传输命令行界面和远程执行命令。 使用频率最高的场合类Unix系统，但是Windows操作系统也能有限度地使用SSH。2015年，微软宣布将在未来的操作系统中提供原生SSH协议支持(摘自wikipedia)  生成 下面是Mac生成方法：
+1 ：打开终端 输入 ssh-keygen
+然后系统提示输入文件保存位置等信息，连续敲三次回车即可，生成的SSH key文件保存在中～/.ssh/id_rsa.pub
+2 然后用文本编辑工具打开该文件，我用的是vim,所以命令是： vim ~/.ssh/id_rsa.pub`
+禁忌 同一个网站，多个账户之间 不能共用同一个ssh公钥，这会造成服务器无法判断提交者的身份，所以如果有多个账户在同一个网站的话，还是创建多个ssh证书分别管理比较好。
+多证书管理 生成 指定文件名
+`ssh-keygen -t rsa -f ~/.ssh/id_rsa.name -C &ldquo;ssh_name&rdquo;
+创建配置文件
+vi ~/.ssh/config
+Host aaa.github.com HostName git@github.com:aaa IdentityFile ~/.ssh/id_rsa.aaa User git HostName bbb@github.com IdentityFile ~/.ssh/id_rsa User git  检测是否配置成功
+//查看当前rsa list ssh-add -l //如果列表中没有新增的rsa， 添加identifile 把专用密钥添加到 ssh-agent 的高速缓存中： ssh-add ~/.ssh/test_id_rsa  注： ssh-add 命令是把专用密钥添加到ssh-agent的高速缓存中。是把指定的私钥添加到 ssh-agent 所管理的一个 session 当中。而 ssh-agent 是一个用于存储私钥的临时性的 session 服务，重启之后，ssh-agent 服务也就重置了，session 会话也就失效了。"/>
+
+    <meta property="og:title" content="SSH" />
+<meta property="og:description" content="[TOC]
+解释 Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。 SSH通过在网络中创建安全隧道来实现SSH客户端与服务器之间的连接[2]。 虽然任何网络服务都可以通过SSH实现安全传输，SSH最常见的用途是远程登录系统，人们通常利用SSH来传输命令行界面和远程执行命令。 使用频率最高的场合类Unix系统，但是Windows操作系统也能有限度地使用SSH。2015年，微软宣布将在未来的操作系统中提供原生SSH协议支持(摘自wikipedia)  生成 下面是Mac生成方法：
+1 ：打开终端 输入 ssh-keygen
+然后系统提示输入文件保存位置等信息，连续敲三次回车即可，生成的SSH key文件保存在中～/.ssh/id_rsa.pub
+2 然后用文本编辑工具打开该文件，我用的是vim,所以命令是： vim ~/.ssh/id_rsa.pub`
+禁忌 同一个网站，多个账户之间 不能共用同一个ssh公钥，这会造成服务器无法判断提交者的身份，所以如果有多个账户在同一个网站的话，还是创建多个ssh证书分别管理比较好。
+多证书管理 生成 指定文件名
+`ssh-keygen -t rsa -f ~/.ssh/id_rsa.name -C &ldquo;ssh_name&rdquo;
+创建配置文件
+vi ~/.ssh/config
+Host aaa.github.com HostName git@github.com:aaa IdentityFile ~/.ssh/id_rsa.aaa User git HostName bbb@github.com IdentityFile ~/.ssh/id_rsa User git  检测是否配置成功
+//查看当前rsa list ssh-add -l //如果列表中没有新增的rsa， 添加identifile 把专用密钥添加到 ssh-agent 的高速缓存中： ssh-add ~/.ssh/test_id_rsa  注： ssh-add 命令是把专用密钥添加到ssh-agent的高速缓存中。是把指定的私钥添加到 ssh-agent 所管理的一个 session 当中。而 ssh-agent 是一个用于存储私钥的临时性的 session 服务，重启之后，ssh-agent 服务也就重置了，session 会话也就失效了。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/mac-ssh/" />
+<meta property="article:published_time" content="2016-02-24T16:02:58&#43;00:00"/>
+<meta property="article:modified_time" content="2016-02-24T16:02:58&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="fanjinlong" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">SSH</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 24, 2016
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.v5u.win/tags/ssh/">SSH</a></div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>[TOC]</p>
+
+<h4 id="解释">解释</h4>
+
+<pre><code>Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。
+SSH通过在网络中创建安全隧道来实现SSH客户端与服务器之间的连接[2]。
+虽然任何网络服务都可以通过SSH实现安全传输，SSH最常见的用途是远程登录系统，人们通常利用SSH来传输命令行界面和远程执行命令。
+使用频率最高的场合类Unix系统，但是Windows操作系统也能有限度地使用SSH。2015年，微软宣布将在未来的操作系统中提供原生SSH协议支持(摘自wikipedia)
+</code></pre>
+
+<h4 id="生成">生成</h4>
+
+<p>下面是Mac生成方法：</p>
+
+<p>1 ：打开终端 输入    ssh-keygen</p>
+
+<p>然后系统提示输入文件保存位置等信息，连续敲三次回车即可，生成的SSH key文件保存在中～/.ssh/id_rsa.pub</p>
+
+<p>2 然后用文本编辑工具打开该文件，我用的是vim,所以命令是：
+vim ~/.ssh/id_rsa.pub`</p>
+
+<h4 id="禁忌">禁忌</h4>
+
+<p>同一个网站，多个账户之间 不能共用同一个ssh公钥，这会造成服务器无法判断提交者的身份，所以如果有多个账户在同一个网站的话，还是创建多个ssh证书分别管理比较好。</p>
+
+<h4 id="多证书管理">多证书管理</h4>
+
+<p>生成 指定文件名</p>
+
+<p>`ssh-keygen -t rsa -f ~/.ssh/id_rsa.name -C &ldquo;ssh_name&rdquo;</p>
+
+<p>创建配置文件</p>
+
+<p>vi ~/.ssh/config</p>
+
+<pre><code>Host aaa.github.com
+    HostName git@github.com:aaa
+    IdentityFile ~/.ssh/id_rsa.aaa
+    User git
+
+    HostName bbb@github.com
+    IdentityFile ~/.ssh/id_rsa
+    User git
+ 
+</code></pre>
+
+<p>检测是否配置成功</p>
+
+<pre><code>//查看当前rsa list
+ssh-add -l 
+
+//如果列表中没有新增的rsa， 添加identifile 把专用密钥添加到 ssh-agent 的高速缓存中：
+ssh-add ~/.ssh/test_id_rsa
+</code></pre>
+
+<p>注： ssh-add 命令是把专用密钥添加到ssh-agent的高速缓存中。是把指定的私钥添加到 ssh-agent 所管理的一个 session 当中。而 ssh-agent 是一个用于存储私钥的临时性的 session 服务，重启之后，ssh-agent 服务也就重置了，session 会话也就失效了。</p>
+
+<p>git 修改config</p>
+
+<table>
+<thead>
+<tr>
+<th>before</th>
+<th>after</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>url = git@github.com:fanyubing/xxx.git</td>
+<td>url = git@fanyubing.github.com:fanyubing/xxx.git</td>
+</tr>
+</tbody>
+</table>
+
+<p>参考：<a href="https://my.oschina.net/meilihao/blog/157716">https://my.oschina.net/meilihao/blog/157716</a></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

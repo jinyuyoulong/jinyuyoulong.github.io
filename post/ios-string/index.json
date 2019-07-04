@@ -1,0 +1,11 @@
+{
+    "title": "iOS NSString 字符串处理：截取字符串、匹配字符串、分隔字符串",
+    "date": "2015-06-04 17:33:36 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/ios-string/index.json",
+    "summary" : "1.截取字符串
+NSString*string =@&quot;sdfsfsfsAdfsdf&quot;; string = [string&nbsp;substringToIndex:7];//截取下标7之后的字符串 NSLog(@&quot;截取的值为：%@&quot;,string); [string&nbsp;substringFromIndex:2];//截取下标2之前的字符串 NSLog(@&quot;截取的值为：%@&quot;,string);
+2.匹配字符串 NSString*string =@&quot;sdfsfsfsAdfsdf&quot;; NSRangerange = [stringrangeOfString:@&quot;f&quot;];//匹配得到的下标 NSLog(@&quot;rang:%@&quot;,NSStringFromRange(range)); string = [string&nbsp;substringWithRange:range];//截取范围类的字符串 NSLog(@&quot;截取的值为：%@&quot;,string);
+3.分隔字符串 NSString*string =@&quot;sdfsfsfsAdfsdf&quot;;
+NSArray&nbsp;*array = [string&nbsp;componentsSeparatedByString:@&quot;A&quot;]; //从字符A中分隔成2个元素的数组 NSLog(@&quot;array:%@&quot;,array); //结果是adfsfsfs和dfsdf"
+}

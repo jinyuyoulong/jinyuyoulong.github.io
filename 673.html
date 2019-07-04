@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>appledoc使用说明 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="fanjinlong" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="appledoc使用说明"/>
+<meta name="twitter:description" content="appledoc使用说明 安装命令行：
+ git clone git://github.com/tomaz/appledoc.git cd ./appledoc sudo sh install-appledoc.sh appledoc —version //检查successed  使用 生成HTML 当需要html文档时，可以加上“&ndash;no-create-docset”——
+appledoc --no-create-docset --output ~/doc --project-name &quot;DrowRect&quot; --company-id &quot;com.jinyuyoulong&quot; --project-company &quot;jinyuyoulong&quot; ./  注: &ndash;output ./doc：设置输出目录为“./doc”。 &ndash;project-name objcdoc：设置项目名为“DrowRect”。 &ndash;project-company &ldquo;jinyuyoulong&rdquo;：设置公司名为“jinyuyoulong”。 &ndash;company-id &ldquo;com.jinyuyoulong&rdquo;：设置公司id为“com.jinyuyoulong”。 ./：当前目录。 生成docset 此路不通
+appledoc --output ./doc --project-name &quot;DrowRect&quot; --project-company &quot;jinyuyoulong&quot; --company-id &quot;com.jinyuyoulong&quot; ./  Xcode脚本生成文档 Xcode 配置
+ add new target —&gt;选择Other—Aggregate，命名为docText
+ Build Phases &#43; run script
+ 编辑run script的内容"/>
+
+    <meta property="og:title" content="appledoc使用说明" />
+<meta property="og:description" content="appledoc使用说明 安装命令行：
+ git clone git://github.com/tomaz/appledoc.git cd ./appledoc sudo sh install-appledoc.sh appledoc —version //检查successed  使用 生成HTML 当需要html文档时，可以加上“&ndash;no-create-docset”——
+appledoc --no-create-docset --output ~/doc --project-name &quot;DrowRect&quot; --company-id &quot;com.jinyuyoulong&quot; --project-company &quot;jinyuyoulong&quot; ./  注: &ndash;output ./doc：设置输出目录为“./doc”。 &ndash;project-name objcdoc：设置项目名为“DrowRect”。 &ndash;project-company &ldquo;jinyuyoulong&rdquo;：设置公司名为“jinyuyoulong”。 &ndash;company-id &ldquo;com.jinyuyoulong&rdquo;：设置公司id为“com.jinyuyoulong”。 ./：当前目录。 生成docset 此路不通
+appledoc --output ./doc --project-name &quot;DrowRect&quot; --project-company &quot;jinyuyoulong&quot; --company-id &quot;com.jinyuyoulong&quot; ./  Xcode脚本生成文档 Xcode 配置
+ add new target —&gt;选择Other—Aggregate，命名为docText
+ Build Phases &#43; run script
+ 编辑run script的内容" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/673.html" />
+<meta property="article:published_time" content="2018-04-04T07:00:34&#43;00:00"/>
+<meta property="article:modified_time" content="2018-04-04T07:00:34&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="fanjinlong" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">appledoc使用说明</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 4, 2018
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.v5u.win/tags/appledoc/">appledoc</a></div></div>
+    </header>
+    <div class="post-content">
+      <p>appledoc使用说明 安装命令行：</p>
+
+<ul>
+<li>git clone git://github.com/tomaz/appledoc.git</li>
+<li>cd ./appledoc</li>
+<li>sudo sh install-appledoc.sh</li>
+<li>appledoc —version //检查successed</li>
+</ul>
+
+<p>使用 生成HTML 当需要html文档时，可以加上“&ndash;no-create-docset”——</p>
+
+<pre><code>appledoc --no-create-docset --output ~/doc --project-name &quot;DrowRect&quot; --company-id &quot;com.jinyuyoulong&quot; --project-company &quot;jinyuyoulong&quot; ./
+</code></pre>
+
+<p>注: &ndash;output ./doc：设置输出目录为“./doc”。 &ndash;project-name objcdoc：设置项目名为“DrowRect”。 &ndash;project-company &ldquo;jinyuyoulong&rdquo;：设置公司名为“jinyuyoulong”。 &ndash;company-id &ldquo;com.jinyuyoulong&rdquo;：设置公司id为“com.jinyuyoulong”。 ./：当前目录。 生成docset 此路不通</p>
+
+<pre><code>appledoc --output ./doc --project-name &quot;DrowRect&quot; --project-company &quot;jinyuyoulong&quot; --company-id &quot;com.jinyuyoulong&quot; ./
+</code></pre>
+
+<hr />
+
+<p>Xcode脚本生成文档 Xcode 配置</p>
+
+<ol>
+<li><p>add new target —&gt;选择Other—Aggregate，命名为docText</p></li>
+
+<li><p>Build Phases + run script</p></li>
+
+<li><p>编辑run script的内容</p></li>
+
+<li><p>设置target为docText，运行Xcode</p></li>
+
+<li><p>在脚本中标明的导出目录下查看生成的文档</p></li>
+</ol>
+
+<p>script:</p>
+
+<pre><code>#appledoc Xcode script
+# Start constants
+company=&quot;abc&quot;;
+companyID=&quot;com.abc&quot;;
+companyURL=&quot;http://abc.com&quot;;
+target=&quot;iphoneos&quot;;
+#target=&quot;macosx&quot;;
+outputPath=&quot;~/doc&quot;;#输出地址
+# End constants
+/usr/local/bin/appledoc \
+--project-name &quot;${PROJECT_NAME}&quot; \
+--project-company &quot;${company}&quot; \
+--company-id &quot;${companyID}&quot; \
+--docset-atom-filename &quot;${company}.atom&quot; \
+--docset-feed-url &quot;${companyURL}/${company}/%DOCSETATOMFILENAME&quot; \
+--docset-package-url &quot;${companyURL}/${company}/%DOCSETPACKAGEFILENAME&quot; \
+--docset-fallback-url &quot;${companyURL}/${company}&quot; \
+--output &quot;${outputPath}&quot; \
+--publish-docset \
+--docset-platform-family &quot;${target}&quot; \
+--logformat xcode \
+--keep-intermediate-files \
+--no-repeat-first-par \
+--no-warn-invalid-crossref \
+--exit-threshold 2 \
+&quot;${PROJECT_DIR}&quot;
+</code></pre>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

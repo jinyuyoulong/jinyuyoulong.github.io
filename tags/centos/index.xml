@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>centos on 为吾优</title>
+    <link>https://blog.v5u.win/tags/centos/</link>
+    <description>Recent content in centos on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 30 Jun 2018 08:57:11 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mac虚拟机上的centos 7实现ssh连接</title>
+      <link>https://blog.v5u.win/763.html</link>
+      <pubDate>Sat, 30 Jun 2018 08:57:11 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/763.html</guid>
+      <description>mac虚拟机上的centos7实现ssh连接
+ 查看是否安装ssh rpm -qa | grep ssh（一般都内置了）
+ 配置sshd_config文件 /etc/ssh/sshd_config
+Port 22
+ListenAddress 0.0.0.0
+ListenAddress ::
+ 防火墙配置
+ 安装iptables: yum install iptables-service 配置防火墙文件：vim /etc/sysconfig/iptables 关闭防火墙：systemctl restart iptables.service systemctl enable iptables.service //设置防火墙开机启动   安装netstat：yum install net-tools （查看监听端口：netstat -ntpl | grep 22）
+ 关闭虚拟机，设置虚拟机网络为host-only方式，virtualbox需要设置全局设置
+ cmd+,-&amp;gt;网络-&amp;gt;仅主机(host-only)网络 添加网络   查看虚拟机ip地址，ip ip addr
+ 主机找到可以ping 通的ip
+ ssh登录 ssh root@192.168.xx.xx
+  </description>
+    </item>
+    
+    <item>
+      <title>centos7 更改系统启动模式</title>
+      <link>https://blog.v5u.win/753.html</link>
+      <pubDate>Tue, 26 Jun 2018 01:51:41 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/753.html</guid>
+      <description>centos7 更改系统启动模式
+ 查看当前启动模式 systemctl get-default 查看配置文件 cat /etc/inittab 设置启动模式为命令行模式 systemctl set-target multi-user.target 重启 shutdown -r now  </description>
+    </item>
+    
+    <item>
+      <title>centos7 PHP7环境配置</title>
+      <link>https://blog.v5u.win/751.html</link>
+      <pubDate>Tue, 26 Jun 2018 01:50:27 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/751.html</guid>
+      <description>centos7 PHP7环境配置 目录 1. 开启22端口2. 创建其他用户，使用其他用户ssh登录（root账户禁止登录）3. 关闭防火墙4. 关闭selinux5. 安装Apache6. 安装MySQL7. 安装PHP7.28. 配置 [TOC]
+ 开启22端口
+ 创建其他用户，使用其他用户ssh登录（root账户禁止登录）
+  ssh test@10.211.55.5 (使用eth0网卡IP)
+ 关闭防火墙
+centos7 默认使用firewalld，不在内置iptables //临时关闭 systemctl stop firewalld //禁止开机启动 systemctl disable firewalld
+ sudo yum -y install iptables-services
+ sudo vi /etc/sysconfig/iptables
+ systemctl restart iptables.service （重启）
+ systemctl enable iptables.service （开机自启动iptables）注：并不能开机自动关闭firewalld
+ 关闭selinux
+  gedit /etc/sysconfig/selinux
+ 安装Apache
+ sudo yum install httpd
+ sudo service httpd start</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>mac下安装composer // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="http://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="mac下安装composer"/>
+<meta name="twitter:description" content="composer是PHP的包管理器
+mac下如何安装呢？
+最简单的方法是通过brew工具
+brew install composer
+这时候可能会遇到这个问题：
+Searching for a previously deleted formula&hellip;
+所以我们检查一下brew/core 中是否有composer可供安装
+brew search composer
+得到这个结果：
+homebrew/php/composer
+homebrew/php/composer@1.2
+caskroom/versions/multimarkdown-composer-beta
+caskroom/cask/multimarkdown-composer-pro
+caskroom/cask/multimarkdown-composer
+所以其实是有的，只是没找到
+这时候我们通过brew 的 tap方法来设置一下
+brew tap homebrew/php
+完事之后，再运行brew install composer就可以了。
+当然，还有其他的方法安装，但是我都不推荐，因为太麻烦！"/>
+
+    <meta property="og:title" content="mac下安装composer" />
+<meta property="og:description" content="composer是PHP的包管理器
+mac下如何安装呢？
+最简单的方法是通过brew工具
+brew install composer
+这时候可能会遇到这个问题：
+Searching for a previously deleted formula&hellip;
+所以我们检查一下brew/core 中是否有composer可供安装
+brew search composer
+得到这个结果：
+homebrew/php/composer
+homebrew/php/composer@1.2
+caskroom/versions/multimarkdown-composer-beta
+caskroom/cask/multimarkdown-composer-pro
+caskroom/cask/multimarkdown-composer
+所以其实是有的，只是没找到
+这时候我们通过brew 的 tap方法来设置一下
+brew tap homebrew/php
+完事之后，再运行brew install composer就可以了。
+当然，还有其他的方法安装，但是我都不推荐，因为太麻烦！" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.v5u.win/fanyiqing/_posts/mac-composer/" />
+<meta property="article:published_time" content="2017-06-09T03:35:06&#43;00:00"/>
+<meta property="article:modified_time" content="2017-06-09T03:35:06&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="http://blog.v5u.win/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>为吾优</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">mac下安装composer</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jun 9, 2017
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="http://blog.v5u.win/tags/composer/">composer</a><a class="tag" href="http://blog.v5u.win/tags/php/">PHP</a></div></div>
+    </header>
+    <div class="post-content">
+      <p>composer是PHP的包管理器</p>
+
+<p>mac下如何安装呢？</p>
+
+<p>最简单的方法是通过brew工具</p>
+
+<p>brew install composer</p>
+
+<p>这时候可能会遇到这个问题：</p>
+
+<p><span class="s1">Searching for a previously deleted formula&hellip;</span></p>
+
+<p>所以我们检查一下brew/core 中是否有composer可供安装</p>
+
+<p>brew search composer</p>
+
+<p>得到这个结果：</p>
+
+<p><span class="s1">homebrew/php/composer</span></p>
+
+<p><span class="s1">homebrew/php/composer@1.2</span></p>
+
+<p><span class="s1">caskroom/versions/multimarkdown-composer-beta</span></p>
+
+<p><span class="s1">caskroom/cask/multimarkdown-composer-pro</span></p>
+
+<p><span class="s1">caskroom/cask/multimarkdown-composer</span></p>
+
+<p>所以其实是有的，只是没找到</p>
+
+<p>这时候我们通过brew 的 tap方法来设置一下</p>
+
+<p><span class="s1">brew tap homebrew/php</span></p>
+
+<p>完事之后，再运行brew install composer就可以了。</p>
+
+<p>当然，还有其他的方法安装，但是我都不推荐，因为太麻烦！</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{
+    "title": "如何进入ghostblog的管理面板",
+    "date": "2016-07-04 14:39:44 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/blog-ghost/index.json",
+    "summary" : "在域名后面加上/ghost 进入网站空间下的ghost路径下就行"
+}

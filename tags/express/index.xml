@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>express on 为吾优</title>
+    <link>https://blog.v5u.win/tags/express/</link>
+    <description>Recent content in express on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 17 Aug 2016 11:05:24 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/express/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Express</title>
+      <link>https://blog.v5u.win/post/nodejs-express/</link>
+      <pubDate>Wed, 17 Aug 2016 11:05:24 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/nodejs-express/</guid>
+      <description>nodejs + express 学习记录
+设置入口文件 app.use(express.static(__dirname + &#39;/public&#39;)); ###use方法 use是express注册中间件的方法，它返回一个函数。
+中间件（middleware）就是处理HTTP请求的函数。它最大的特点就是，一个中间件处理完，再传递给下一个中间件。App实例在运行过程中，会调用一系列的中间件。
+set方法用于指定变量的值。 app.set(&amp;ldquo;views&amp;rdquo;, __dirname + &amp;ldquo;/views&amp;rdquo;) 为系统变量views指定值 app.set(&amp;ldquo;view engine&amp;rdquo;, &amp;ldquo;jade&amp;rdquo;)</description>
+    </item>
+    
+  </channel>
+</rss>

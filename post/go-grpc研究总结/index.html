@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>Go gRPC研究总结 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="fanjinlong" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go gRPC研究总结"/>
+<meta name="twitter:description" content="什么是RPC RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。——百度百科
+支持环境配置(Mac)
+安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制protocol buffer
+brew info protobuf brew install protobuf  检验protobuf安装结果
+protoc --version libprotoc 3.5.1  安装第三方包
+go mod download github.com/golang/protobuf/proto go mod download github.com/golang/protobuf/protoc-gen-go go mod download google.golang.org/grpc go install github.com/golang/protobuf/protoc-gen-go //编译 protoc-gen-go 可执行文件  创建 protobuf 文件
+vi add.proto add some date  生成 gRPC 代码
+protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld 或 protoc -I . add.proto --go_out=plugins=grpc:.  这生成了 helloworld.pb.go ，包含了我们生成的客户端和服务端类，此外还有用于填充、序列化、提取 HelloRequest 和 HelloResponse 消息类型的类。"/>
+
+    <meta property="og:title" content="Go gRPC研究总结" />
+<meta property="og:description" content="什么是RPC RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。——百度百科
+支持环境配置(Mac)
+安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制protocol buffer
+brew info protobuf brew install protobuf  检验protobuf安装结果
+protoc --version libprotoc 3.5.1  安装第三方包
+go mod download github.com/golang/protobuf/proto go mod download github.com/golang/protobuf/protoc-gen-go go mod download google.golang.org/grpc go install github.com/golang/protobuf/protoc-gen-go //编译 protoc-gen-go 可执行文件  创建 protobuf 文件
+vi add.proto add some date  生成 gRPC 代码
+protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld 或 protoc -I . add.proto --go_out=plugins=grpc:.  这生成了 helloworld.pb.go ，包含了我们生成的客户端和服务端类，此外还有用于填充、序列化、提取 HelloRequest 和 HelloResponse 消息类型的类。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/go-grpc%E7%A0%94%E7%A9%B6%E6%80%BB%E7%BB%93/" />
+<meta property="article:published_time" content="2019-04-11T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-11T00:00:00&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="fanjinlong" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Go gRPC研究总结</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 11, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h3 id="什么是rpc">什么是RPC</h3>
+
+<p>RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。——百度百科</p>
+
+<p>支持环境配置(Mac)</p>
+
+<p>安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制<a href="https://juejin.im/post/5b852d476fb9a019e4505873">protocol buffer</a></p>
+
+<pre><code class="language-protobuf">brew info protobuf
+brew install protobuf
+</code></pre>
+
+<p>检验protobuf安装结果</p>
+
+<pre><code class="language-shell">protoc --version
+libprotoc 3.5.1
+</code></pre>
+
+<p>安装第三方包</p>
+
+<pre><code class="language-go">go mod download github.com/golang/protobuf/proto
+go mod download github.com/golang/protobuf/protoc-gen-go
+go mod download google.golang.org/grpc
+go install github.com/golang/protobuf/protoc-gen-go //编译 protoc-gen-go 可执行文件
+</code></pre>
+
+<p>创建 protobuf 文件</p>
+
+<pre><code class="language-shell">vi add.proto
+add some date
+</code></pre>
+
+<p>生成 gRPC 代码</p>
+
+<pre><code class="language-shell">protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld
+或
+protoc -I . add.proto --go_out=plugins=grpc:.
+</code></pre>
+
+<p>这生成了 <code>helloworld.pb.go</code> ，包含了我们生成的客户端和服务端类，此外还有用于填充、序列化、提取 <code>HelloRequest</code> 和 <code>HelloResponse</code> 消息类型的类。</p>
+
+<p>在server.go 实现AddServiceServer 的接口方法</p>
+
+<p>实现server &amp; client</p>
+
+<p>打开两个终端，分别启动 serve &amp; client</p>
+
+<p>浏览器访问输出返回结果。</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

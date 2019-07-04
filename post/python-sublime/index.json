@@ -1,0 +1,9 @@
+{
+    "title": "python-sublime",
+    "date": "2017-11-29 17:29:24 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/python-sublime/index.json",
+    "summary" : "sublime text 下的Python编译环境设置
+file name : python3.sublime-build
+{ &quot;shell_cmd&quot;: &quot;Python编译器的路径 ${file}&quot;, &quot;selector&quot; :&quot;source.python&quot;, &quot;file_regex&quot;:&quot;^(...*?):[0-9]:?([0-9]*)&quot;, &quot;working_dir&quot;:&quot;${file_path}&quot;, &quot;env&quot;: {&quot;PYTHONIOENCODING&quot;: &quot;utf8&quot;}, }  "
+}

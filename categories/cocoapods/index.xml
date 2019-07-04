@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cocoapods on 为吾优</title>
+    <link>https://blog.v5u.win/categories/cocoapods/</link>
+    <description>Recent content in Cocoapods on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 15 Aug 2018 14:48:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/categories/cocoapods/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>cocoapods-library-create</title>
+      <link>https://blog.v5u.win/post/mac-cocoapods-library-create/</link>
+      <pubDate>Wed, 15 Aug 2018 14:48:36 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/mac-cocoapods-library-create/</guid>
+      <description>readme文件如何添加 这种说明
+ 打开网站https://shields.io/#/examples/funding 选择flat Style 在Link和Image中输入http://img.shields.io/cocoapods/v/库名称.svg，网站会自动解析库的版本，生成img copy下面的Markdown，paste到要显示说明的地方  </description>
+    </item>
+    
+  </channel>
+</rss>

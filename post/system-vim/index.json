@@ -1,0 +1,7 @@
+{
+    "title": "vim使用记录",
+    "date": "2016-04-18 17:26:21 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/system-vim/index.json",
+    "summary" : "剪切复制粘贴 命令模式下（esc）剪切一行：dd ;三行：3dd y复制 d()剪切 p(paste)粘贴"
+}

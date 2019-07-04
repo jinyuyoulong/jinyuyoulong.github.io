@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>system on 为吾优</title>
+    <link>https://blog.v5u.win/categories/system/</link>
+    <description>Recent content in system on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 01 Jul 2019 15:05:09 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/categories/system/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nginx 动态生成缩略图</title>
+      <link>https://blog.v5u.win/post/system-nginx/</link>
+      <pubDate>Mon, 01 Jul 2019 15:05:09 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-nginx/</guid>
+      <description>[TOC]
+有的时候要生成大量尺寸的缩图，事先不知道有哪些尺寸，所以可以用php动态生成；
+1.在nginx中配置
+location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.)/(.*)(\d+)(\d+).(gif|jpg|jpeg|png|bmp) /ImageTransferController.php?s=1/2_3_4.5; } expires 30d; }   完善 ImageTransferController.php 文件  </description>
+    </item>
+    
+    <item>
+      <title>开源贡献者盟约</title>
+      <link>https://blog.v5u.win/post/system-%E8%B4%A1%E7%8C%AE%E8%80%85%E7%9B%9F%E7%BA%A6/</link>
+      <pubDate>Tue, 25 Jun 2019 15:38:20 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-%E8%B4%A1%E7%8C%AE%E8%80%85%E7%9B%9F%E7%BA%A6/</guid>
+      <description>[TOC]
+参与者公约 我们的保证 为了促进一个开放透明且友好的环境，我们作为贡献者和维护者保证：无论年龄、种族、民族、性别认同和表达（方式）、体型、身体健全与否、经验水平、国籍、个人表现、宗教或性别取向，参与者在我们项目和社区中都免于骚扰。
+我们的标准 有助于创造正面环境的行为包括但不限于：
+ 使用友好和包容性语言 尊重不同的观点和经历 耐心地接受建设性批评 关注对社区最有利的事情 友善对待其他社区成员  身为参与者不能接受的行为包括但不限于：
+ 使用与性有关的言语或是图像，以及不受欢迎的性骚扰 捣乱/煽动/造谣的行为或进行侮辱/贬损的评论，人身攻击及政治攻击 公开或私下的骚扰 未经许可地发布他人的个人资料，例如住址或是电子地址 其他可以被合理地认定为不恰当或者违反职业操守的行为  我们的责任 项目维护者有责任为「可接受的行为」标准做出诠释，以及对已发生的不被接受的行为采取恰当且公平的纠正措施。
+项目维护者有权利及责任去删除、编辑、拒绝与本行为标准有所违背的评论 (comments)、提交 (commits)、代码、wiki 编辑、问题 (issues) 和其他贡献，以及项目维护者可暂时或永久性的禁止任何他们认为有不适当、威胁、冒犯、有害行为的贡献者。
+使用范围 当一个人代表该项目或是其社区时，本行为标准适用于其项目平台和公共平台。
+代表项目或是社区的情况，举例来说包括使用官方项目的电子邮件地址、通过官方的社区媒体账号发布或线上或线下事件中担任指定代表。
+该项目的呈现方式可由其项目维护者进行进一步的定义及解释。
+强制执行 可以通过[在此放入EMAIL]，来联系项目团队来举报滥用、骚扰或其他不被接受的行为。
+任何维护团队认为有必要且适合的所有投诉都将进行审查及调查，并做出相对应的回应。项目小组有对事件回报者有保密的义务。具体执行的方针近一步细节可能会单独公布。
+没有切实地遵守或是执行本行为标准的项目维护人员，可能会因项目领导人或是其他成员的决定，暂时或是永久地取消其参与资格。
+来源 本行为标准改编自贡献者公约，版本 1.4 可在此观看https://www.contributor-covenant.org/zh-cn/version/1/4/code-of-conduct.html</description>
+    </item>
+    
+    <item>
+      <title>markdown 常用语法整理</title>
+      <link>https://blog.v5u.win/post/system-markdown%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-markdown%E5%8E%9F%E7%90%86/</guid>
+      <description>Text  1级标题 Text  2级标题 Text  3级标题 Text  4级标题 Text  5级标题 Text  6级标题 有序列表 ul&amp;gt;li  有 序
+无序列表 ol&amp;gt;li 无
+ 序
+任务列表 ul&amp;gt;li&amp;gt;input [ ] 任务
+ [x] 列表
+代码修饰 短代码 &amp;lt;code&amp;gt;
+  var name = 代码块 div&amp;gt;pre&amp;gt;span &amp;lt;div&amp;gt; &amp;lt;pre&amp;gt; &amp;lt;span&amp;gt;var&amp;lt;/span&amp;gt; name = 代码块 &amp;lt;/pre&amp;gt; &amp;lt;/div&amp;gt;   &amp;lt;blockquote&amp;gt;&amp;lt;p&amp;gt;块级引用&amp;lt;/p&amp;gt;&amp;lt;/blockquote&amp;gt;
+ 段落 中间没有空行的连续不断的几行文字被视为一个段落。空一行 作为段落间的分割符
+行内格式 删除线 del 标签 加粗 strong 标签 斜体 em 标签</description>
+    </item>
+    
+    <item>
+      <title>语言特性汇总</title>
+      <link>https://blog.v5u.win/post/system-%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B1%87%E6%80%BB/</guid>
+      <description>语言特性汇总：
+ 类型推导， 类型检查， 惰性求值 currying 闭包 OO lambda  </description>
+    </item>
+    
+    <item>
+      <title>函数式编程</title>
+      <link>https://blog.v5u.win/post/system-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Fri, 05 Aug 2016 10:46:42 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
+      <description> 函数式编程的三大特性： •immutable data 不可变数据：
+像Clojure一样，默认上变量是不可变的，如果你要改变变量，你需要把变量copy出去修改。这样一来，可以让你的程序少很多Bug。因为，程序中的状态不好维护，在并发的时候更不好维护。（你可以试想一下如果你的程序有个复杂的状态，当以后别人改你代码的时候，是很容易出bug的，在并行中这样的问题就更多了）
+•first class functions：
+这个技术可以让你的函数就像变量一样来使用。也就是说，你的函数可以像变量一样被创建，修改，并当成变量一样传递，返回或是在函数中嵌套函数。这个有点像Javascript的Prototype（参看Javascript的面向对象编程）
+•尾递归优化：
+我们知道递归的害处，那就是如果递归很深的话，stack受不了，并会导致性能大幅度下降。所以，我们使用尾递归优化技术——每次递归时都会重用stack，这样一来能够提升性能，当然，这需要语言或编译器的支持。Python就不支持。
+函数式编程的准则：不依赖于外部的数据，而且也不改变外部数据的值，而是返回一个新的值给你。
+函数式编程的理念：把函数当成变量来用，关注于描述问题而不是怎么实现，这样可以让代码更易读。
+把代码逻辑封装成了函数后，我们就相当于给每个相对独立的程序逻辑取了个名字，于是代码成了自解释的。
+但是这些函数间必需知道其它函数是怎么修改它们之间的共享变量的，所以，这些函数是有状态的。解决办法就是Functional Programming 的编程范式
+函数式编程有如下好处：
+1.代码更简单了。
+2.数据集，操作，返回值都放到了一起。
+3.你在读代码的时候，没有了循环体，于是就可以少了些临时变量，以及变量倒来倒去逻辑。
+4.你的代码变成了在描述你要干什么，而不是怎么去干。
+避免使用程序状态和可变对象,是降低程序复杂度的有效方式之一,而这也正是函数式编程的精髓。 函数式编程强调执行的结果,而非执行的过程。
+ 我们先构建一系列简单却具有一定功能的小函数,然后再将这些函数进行组装以实现完整的逻辑和复杂的运算,这是函数式编程的基本思想。
+ </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,9 @@
+{
+    "title": "获取tableviewCell在当前屏幕中的坐标值",
+    "date": "2015-08-07 13:28:36 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/ios-tableviewcell-frame/index.json",
+    "summary" : "获得当前cell对于当前屏幕的位置
+CGRect&nbsp;rectInTableView&nbsp;=&nbsp;[tableView&nbsp;rectForRowAtIndexPath:indexPath]; &nbsp;&nbsp;
+CGRect&nbsp;rect&nbsp;=&nbsp;[tableView&nbsp;convertRect:rectInTableView&nbsp;toView:[tableView&nbsp;superview]];"
+}
