@@ -1,0 +1,13 @@
+---
+title: pycharm如何添加 local venv
+tags:
+  - pycharm
+url: 666.html
+id: 666
+categories:
+  - Python
+  - 工具
+date: 2018-03-30 03:20:02
+---
+
+需求：pycharm为项目添加已经存在的venv虚拟环境 前几天学习Django，开始是terminal + sublime text。后来学的差不多了，想想做项目还是得上pycharm，所以开始折腾。 说明，pycharm create project是会询问是否创建新的venv的，换句话说，其实pycharm是建议设置基础引用Python版本，然后在他的基础上，每个项目都有自己的venv。这种策略很好，每个项目的环境互不干扰。奈何范子处于学习阶段，local项目已经有了本地的venv，不需要重新创建。这时候我就需要考虑如何添加一个local venv。 然而道路颇多波折，localvenv的path是确切知道的，但是在pycharm的configurations中Python interperter是一个选择栏，而没有添加栏。这就尴尬了！ ![pycharm_config](http://ocnjk5c7r.bkt.clouddn.com/python/pycharm_config.png) 万幸经过摸索，在设置中（Mac版 cmd+,）发现是可以添加的 ![pycharm_setting](http://ocnjk5c7r.bkt.clouddn.com/python/python_setting.png) 在这里添加好了之后，在返回configurations，出现了新的选项，选择就可以了。
