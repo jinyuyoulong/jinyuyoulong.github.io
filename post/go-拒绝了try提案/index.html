@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>go社区拒绝了try提案 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="fanjinlong" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="go社区拒绝了try提案"/>
+<meta name="twitter:description" content="提案：内置的Go错误检查功能， try 该提案已经结束。谢谢大家，感谢您的投入。
+在评论之前，请阅读详细的设计文档，并查看截至6月6日的摘要，截至6月10日的摘要，*最重要的是关于保持专注的建议*。您的问题或建议可能已经得到解答或提出。谢谢。
+我们提出了一个新的内置函数try，专门用于消除if通常与Go中的错误处理相关的样板语句。建议不要更改其他语言。我们提倡使用现有defer语句和标准库函数来帮助扩充或包装错误。这种最小化的方法可以解决大多数常见情况，同时为语言增加很少的复 该try内置很容易解释，直接实现的，垂直的其它语言结构，并完全向后兼容。如果我们希望将来这样做，它还为扩展机制留下了开辟的道路。
+[以下文字已经过编辑，可以更准确地反映设计文档。]
+的try内置函数采用一个单一表达式作为参数。表达式必须求值为n &#43; 1个值（其中n可能为零），其中最后一个值必须是type error。如果（final）error参数为nil，则返回前n个值（如果有），否则返回带有该错误的封闭函数。例如，代码如
+f，错误 ：= os。打开（文件名） if err！= nil { return ...，err //其他结果的零值，如果有的话 }  可以简化为
+f ：= try（os。打开（文件名））  try只能在自身返回error结果的函数中使用，并且该结果必须是封闭函数的最后一个结果参数。
+该提案将去年GopherCon中提出的原始设计草案简化为其本质。如果需要错误扩充或包装，有两种方法：坚持使用久经考验的if语句，或者，使用语句“声明”错误处理程序defer：
+defer func（）{ if err！= nil {	//可能没有发生错误 - 检查 错误= ...	// wrap / augment error } }（）  这里 err是封闭函数的错误结果的名称。在实践中，合适的辅助函数将减少错误处理程序对单行程序的声明。例如
+延迟 fmt。HandleErrorf（＆err，“ copy ％s ％s ”，src，dst）  （fmt.HandleErrorf装饰*err）读得很好，可以在不需要新语言功能的情况下实现。
+这种方法的主要缺点是需要命名错误结果参数，可能导致不太漂亮的API。最终这是一个风格问题，我们相信我们会适应期待新风格，就像我们适应没有分号一样。
+总而言之，一开始try可能看起来很不寻常，但它只是针对一个特定任务量身定制的语法糖，错误处理用较少的样板，并且足够好地处理该任务。因此，它非常符合Go的哲学。try不是为解决*所有*错误处理情况而设计的; 它旨在很好地处理*最常见的*情况，以保持设计简单明了。
+积分 该提议受到我们迄今收到的反馈的强烈影响。具体来说，它借鉴了以下方面的想法
+ 错误处理的关键部分， 问题＃31442 和，相关的，问题＃32219。  VojtechVitek** 评论道 我觉得try()已经表达了反对该提案的所有重要反馈意见。但让我试着总结一下："/>
+
+    <meta property="og:title" content="go社区拒绝了try提案" />
+<meta property="og:description" content="提案：内置的Go错误检查功能， try 该提案已经结束。谢谢大家，感谢您的投入。
+在评论之前，请阅读详细的设计文档，并查看截至6月6日的摘要，截至6月10日的摘要，*最重要的是关于保持专注的建议*。您的问题或建议可能已经得到解答或提出。谢谢。
+我们提出了一个新的内置函数try，专门用于消除if通常与Go中的错误处理相关的样板语句。建议不要更改其他语言。我们提倡使用现有defer语句和标准库函数来帮助扩充或包装错误。这种最小化的方法可以解决大多数常见情况，同时为语言增加很少的复 该try内置很容易解释，直接实现的，垂直的其它语言结构，并完全向后兼容。如果我们希望将来这样做，它还为扩展机制留下了开辟的道路。
+[以下文字已经过编辑，可以更准确地反映设计文档。]
+的try内置函数采用一个单一表达式作为参数。表达式必须求值为n &#43; 1个值（其中n可能为零），其中最后一个值必须是type error。如果（final）error参数为nil，则返回前n个值（如果有），否则返回带有该错误的封闭函数。例如，代码如
+f，错误 ：= os。打开（文件名） if err！= nil { return ...，err //其他结果的零值，如果有的话 }  可以简化为
+f ：= try（os。打开（文件名））  try只能在自身返回error结果的函数中使用，并且该结果必须是封闭函数的最后一个结果参数。
+该提案将去年GopherCon中提出的原始设计草案简化为其本质。如果需要错误扩充或包装，有两种方法：坚持使用久经考验的if语句，或者，使用语句“声明”错误处理程序defer：
+defer func（）{ if err！= nil {	//可能没有发生错误 - 检查 错误= ...	// wrap / augment error } }（）  这里 err是封闭函数的错误结果的名称。在实践中，合适的辅助函数将减少错误处理程序对单行程序的声明。例如
+延迟 fmt。HandleErrorf（＆err，“ copy ％s ％s ”，src，dst）  （fmt.HandleErrorf装饰*err）读得很好，可以在不需要新语言功能的情况下实现。
+这种方法的主要缺点是需要命名错误结果参数，可能导致不太漂亮的API。最终这是一个风格问题，我们相信我们会适应期待新风格，就像我们适应没有分号一样。
+总而言之，一开始try可能看起来很不寻常，但它只是针对一个特定任务量身定制的语法糖，错误处理用较少的样板，并且足够好地处理该任务。因此，它非常符合Go的哲学。try不是为解决*所有*错误处理情况而设计的; 它旨在很好地处理*最常见的*情况，以保持设计简单明了。
+积分 该提议受到我们迄今收到的反馈的强烈影响。具体来说，它借鉴了以下方面的想法
+ 错误处理的关键部分， 问题＃31442 和，相关的，问题＃32219。  VojtechVitek** 评论道 我觉得try()已经表达了反对该提案的所有重要反馈意见。但让我试着总结一下：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/go-%E6%8B%92%E7%BB%9D%E4%BA%86try%E6%8F%90%E6%A1%88/" />
+<meta property="article:published_time" content="2019-07-17T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-07-17T00:00:00&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="fanjinlong" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">go社区拒绝了try提案</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 17, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h2 id="提案-内置的go错误检查功能-try">提案：内置的Go错误检查功能， <code>try</code></h2>
+
+<p><strong>该提案已经结束。谢谢大家，感谢您的投入。</strong></p>
+
+<p>在评论之前，请阅读详细的<a href="https://github.com/golang/proposal/blob/master/design/32437-try-builtin.md">设计文档，</a>并查看<a href="https://github.com/golang/go/issues/32437#issuecomment-499261947">截至6月6</a>日的<a href="https://github.com/golang/go/issues/32437#issuecomment-500613160">摘要，截至6月10</a>日的<a href="https://github.com/golang/go/issues/32437#issuecomment-500613160">摘要</a>，*最重要的是关于保持专注<strong>的</strong>建议*。您的问题或建议可能已经得到解答或提出。谢谢。</p>
+
+<p>我们提出了一个新的内置函数<code>try</code>，专门用于消除<code>if</code>通常与Go中的错误处理相关的样板语句。建议不要更改其他语言。我们提倡使用现有<code>defer</code>语句和标准库函数来帮助扩充或包装错误。这种最小化的方法可以解决大多数常见情况，同时为语言增加很少的复 该<code>try</code>内置很容易解释，直接实现的，垂直的其它语言结构，并完全向后兼容。如果我们希望将来这样做，它还为扩展机制留下了开辟的道路。</p>
+
+<p>[以下文字已经过编辑，可以更准确地反映设计文档。]</p>
+
+<p>的<code>try</code>内置函数采用一个单一表达式作为参数。表达式必须求值为n + 1个值（其中n可能为零），其中最后一个值必须是type <code>error</code>。如果（final）error参数为nil，则返回前n个值（如果有），否则返回带有该错误的封闭函数。例如，代码如</p>
+
+<pre><code>f，错误 ：= os。打开（文件名）
+ if err！= nil {
+	 return ...，err   //其他结果的零值，如果有的话 
+}
+</code></pre>
+
+<p>可以简化为</p>
+
+<pre><code>f  ：=  try（os。打开（文件名））
+</code></pre>
+
+<p><code>try</code>只能在自身返回<code>error</code>结果的函数中使用，并且该结果必须是封闭函数的最后一个结果参数。</p>
+
+<p>该提案将去年GopherCon中提出的原始<a href="https://go.googlesource.com/proposal/+/master/design/go2draft-error-handling.md">设计草案</a>简化为其本质。如果需要错误扩充或包装，有两种方法：坚持使用久经考验的<code>if</code>语句，或者，使用语句“声明”错误处理程序<code>defer</code>：</p>
+
+<pre><code>defer  func（）{
+	 if err！= nil {	 //可能没有发生错误 - 检查 
+		错误= ...	 // wrap / augment error 
+	} 
+}（）
+</code></pre>
+
+<p>这里 <code>err</code>是封闭函数的错误结果的名称。在实践中，合适的辅助函数将减少错误处理程序对单行程序的声明。例如</p>
+
+<pre><code>延迟 fmt。HandleErrorf（＆err，“ copy ％s  ％s ”，src，dst）
+</code></pre>
+
+<p>（<code>fmt.HandleErrorf</code>装饰<code>*err</code>）读得很好，可以在不需要新语言功能的情况下实现。</p>
+
+<p>这种方法的主要缺点是需要命名错误结果参数，可能导致不太漂亮的API。最终这是一个风格问题，我们相信我们会适应期待新风格，就像我们适应没有分号一样。</p>
+
+<p>总而言之，一开始<code>try</code>可能看起来很不寻常，但它只是针对一个特定任务量身定制的语法糖，错误处理用较少的样板，并且足够好地处理该任务。因此，它非常符合Go的哲学。<code>try</code>不是为解决*所有*错误处理情况而设计的; 它旨在很好地处理*最常见的*情况，以保持设计简单明了。</p>
+
+<h3 id="积分">积分</h3>
+
+<p>该提议受到我们迄今收到的反馈的强烈影响。具体来说，它借鉴了以下方面的想法</p>
+
+<ul>
+<li><a href="https://gist.github.com/PeterRK/4f59579c1162cdbc28086f6b5f7b4fa2">错误处理的关键部分</a>，</li>
+<li>问题<a href="https://golang.org/issue/31442">＃31442</a></li>
+<li>和，相关的，问题<a href="https://golang.org/issue/32219">＃32219</a>。</li>
+</ul>
+
+<h3 id="vojtechvitek-评论道">VojtechVitek** 评论道</h3>
+
+<p>我觉得<code>try()</code>已经表达了反对该提案的所有重要反馈意见。但让我试着总结一下：</p>
+
+<ol>
+<li>try（）将垂直代码复杂度移动到水平</li>
+<li>嵌套的try（）调用与<a href="https://golang.org/doc/faq#Does_Go_have_a_ternary_form">三元运算符</a>一样难以阅读</li>
+<li>引入不可视的“返回”控制流，这种控制流在视觉上并不明显（与以<code>return</code>关键字开头的缩进块相比）</li>
+<li>使错误包装实践更糟糕（函数的上下文而不是特定的操作）</li>
+<li>拆分#golang社区和代码风格（反gofmt）</li>
+<li>将使devs重写try（）到if-err-nil，反之亦然（tryhard与添加清理逻辑/附加日志/更好的错误上下文）</li>
+</ol>
+
+<h3 id="iand"><strong>iand</strong></h3>
+
+<p>@VojtechVitek 我认为你提出的观点是主观的，只有在人们开始认真对待它时才能评估。</p>
+
+<p>但是我认为有一个技术问题没有得到太多讨论。使用的模式<code>defer</code>错误包装/装饰已经超越简单的性能价格比的影响<code>defer</code>，因为使用功能本身<code>defer</code>不能被内联。</p>
+
+<p>这意味着<code>try</code>与<code>err != nil</code>检查后直接返回包装错误相比，采用错误包装会产生两个潜在成本：</p>
+
+<ol>
+<li>通过函数的所有路径的延迟，甚至是成功的路径</li>
+<li>丢失内联</li>
+</ol>
+
+<p>即使有一些令人印象深刻的即将到来的性能改进，<code>defer</code>成本仍然不为零。</p>
+
+<p><code>try</code>具有很大的潜力所以如果Go团队可以重新考虑设计以允许在故障点进行某种包装而不是先发制人通过，这将是很好的<code>defer</code>。</p>
+
+<h3 id="格里塞默"><strong>格里塞默</strong></h3>
+
+<p>嗨，大家好，</p>
+
+<p>我们与此类提案的目标是在社群范围内讨论影响，权衡和如何继续，然后使用该讨论来帮助确定前进的道路。</p>
+
+<p>基于压倒性的社区反应和广泛的讨论，我们正在<a href="https://blog.golang.org/go2-next-steps">提前</a>宣布该提案被拒绝。</p>
+
+<p>就技术反馈而言，本次讨论有助于确定我们错过的一些重要注意事项，尤其是添加调试打印和分析代码覆盖率的影响。</p>
+
+<p>更重要的是，我们清楚地听到许多人认为这个提案不是针对一个有价值的问题。我们仍然认为Go中的错误处理并不完美，可以进行有意义的改进，但很明显，作为一个社区，我们需要更多地讨论错误处理的具体方面是我们应该解决的问题。</p>
+
+<p>至于讨论要解决的问题，我们试图在去年8月的“ <a href="https://go.googlesource.com/proposal/+/master/design/go2draft-error-handling-overview.md">Go 2错误处理问题概述</a> ”中阐述我们对问题的看法，但回想起来，我们没有引起足够的注意力，并且没有足够的鼓励讨论具体问题是否正确。该<code>try</code>提案可能是解决该问题的一个很好的解决方案，但对于你们中的许多人来说，这根本不是一个需要解决的问题。在未来，我们需要更好地吸引对这些早期问题陈述的关注，并确保对需要解决的问题达成广泛共识。</p>
+
+<p>（通过在同一天发布泛型设计草案，错误处理问题陈述也可能完全被提升。）</p>
+
+<p>关于Go错误处理有哪些改进的更广泛的主题，我们非常高兴看到有关Go中错误处理的哪些方面在您自己的代码库和工作环境中对您来说最有问题的经验报告以及一个好的解决方案会产生多大影响有你自己的发展。如果你确实写了这样的报告，请在<a href="https://golang.org/wiki/Go2ErrorHandlingFeedback">Go2ErrorHandlingFeedback页面</a>上发布一个链接。</p>
+
+<p>感谢参与此次讨论的所有人，无论是在这里还是其他地方。正如Russ Cox之前所指出的那样，<a href="https://twitter.com/_rsc/status/1146129906323132416">像这样的社区范围内的讨论是最好的开源</a>。我们非常感谢大家帮助我们检查这个特定的提案，更普遍的是讨论改善Go中错误处理状态的最佳方法。</p>
+
+<p>罗伯特格里塞默，提案审查委员会。</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

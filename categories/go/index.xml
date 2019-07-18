@@ -6,10 +6,53 @@
     <description>Recent content in Go on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 11 Jun 2019 10:15:20 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>go社区拒绝了try提案</title>
+      <link>https://blog.v5u.win/post/go-%E6%8B%92%E7%BB%9D%E4%BA%86try%E6%8F%90%E6%A1%88/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-%E6%8B%92%E7%BB%9D%E4%BA%86try%E6%8F%90%E6%A1%88/</guid>
+      <description>提案：内置的Go错误检查功能， try 该提案已经结束。谢谢大家，感谢您的投入。
+在评论之前，请阅读详细的设计文档，并查看截至6月6日的摘要，截至6月10日的摘要，*最重要的是关于保持专注的建议*。您的问题或建议可能已经得到解答或提出。谢谢。
+我们提出了一个新的内置函数try，专门用于消除if通常与Go中的错误处理相关的样板语句。建议不要更改其他语言。我们提倡使用现有defer语句和标准库函数来帮助扩充或包装错误。这种最小化的方法可以解决大多数常见情况，同时为语言增加很少的复 该try内置很容易解释，直接实现的，垂直的其它语言结构，并完全向后兼容。如果我们希望将来这样做，它还为扩展机制留下了开辟的道路。
+[以下文字已经过编辑，可以更准确地反映设计文档。]
+的try内置函数采用一个单一表达式作为参数。表达式必须求值为n + 1个值（其中n可能为零），其中最后一个值必须是type error。如果（final）error参数为nil，则返回前n个值（如果有），否则返回带有该错误的封闭函数。例如，代码如
+f，错误 ：= os。打开（文件名） if err！= nil { return ...，err //其他结果的零值，如果有的话 }  可以简化为
+f ：= try（os。打开（文件名））  try只能在自身返回error结果的函数中使用，并且该结果必须是封闭函数的最后一个结果参数。
+该提案将去年GopherCon中提出的原始设计草案简化为其本质。如果需要错误扩充或包装，有两种方法：坚持使用久经考验的if语句，或者，使用语句“声明”错误处理程序defer：
+defer func（）{ if err！= nil {	//可能没有发生错误 - 检查 错误= ...	// wrap / augment error } }（）  这里 err是封闭函数的错误结果的名称。在实践中，合适的辅助函数将减少错误处理程序对单行程序的声明。例如
+延迟 fmt。HandleErrorf（＆err，“ copy ％s ％s ”，src，dst）  （fmt.HandleErrorf装饰*err）读得很好，可以在不需要新语言功能的情况下实现。
+这种方法的主要缺点是需要命名错误结果参数，可能导致不太漂亮的API。最终这是一个风格问题，我们相信我们会适应期待新风格，就像我们适应没有分号一样。
+总而言之，一开始try可能看起来很不寻常，但它只是针对一个特定任务量身定制的语法糖，错误处理用较少的样板，并且足够好地处理该任务。因此，它非常符合Go的哲学。try不是为解决*所有*错误处理情况而设计的; 它旨在很好地处理*最常见的*情况，以保持设计简单明了。
+积分 该提议受到我们迄今收到的反馈的强烈影响。具体来说，它借鉴了以下方面的想法
+ 错误处理的关键部分， 问题＃31442 和，相关的，问题＃32219。  VojtechVitek** 评论道 我觉得try()已经表达了反对该提案的所有重要反馈意见。但让我试着总结一下：</description>
+    </item>
+    
+    <item>
+      <title>Goland 使用</title>
+      <link>https://blog.v5u.win/post/go-goland/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-goland/</guid>
+      <description>做 Go 开发，一般使用的IDE是 Goland
+安装略，自己解决。下面说安装后的事情。
+ 配置文件，配置开发环境  goland 会自动读取 GOROOT 和 GOPATH，所以不用自己填写。我们要做的就是配置配置文件
+创建go build配置文件：Templates&amp;ndash;&amp;gt; Go Build Run kind 选Directory Directory 选你的main包所在文件夹 Output directory设置与go build -o 不相容，所以不用设置，我们使用-o参数来控制可执行文件的路径以及名字 Working directory保持默认就好 Go tool arguments 就是go build 的参数</description>
+    </item>
+    
+    <item>
+      <title>Go orm 对比选择</title>
+      <link>https://blog.v5u.win/post/go-orm/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-orm/</guid>
+      <description>   name xorm gorm     github-stars 5,053 14,262   github-fork 650 1,606         </description>
+    </item>
     
     <item>
       <title>Go Iris Redis</title>

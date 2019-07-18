@@ -6,10 +6,103 @@
     <description>Recent content on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 01 Jul 2019 15:05:09 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>go社区拒绝了try提案</title>
+      <link>https://blog.v5u.win/post/go-%E6%8B%92%E7%BB%9D%E4%BA%86try%E6%8F%90%E6%A1%88/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-%E6%8B%92%E7%BB%9D%E4%BA%86try%E6%8F%90%E6%A1%88/</guid>
+      <description>提案：内置的Go错误检查功能， try 该提案已经结束。谢谢大家，感谢您的投入。
+在评论之前，请阅读详细的设计文档，并查看截至6月6日的摘要，截至6月10日的摘要，*最重要的是关于保持专注的建议*。您的问题或建议可能已经得到解答或提出。谢谢。
+我们提出了一个新的内置函数try，专门用于消除if通常与Go中的错误处理相关的样板语句。建议不要更改其他语言。我们提倡使用现有defer语句和标准库函数来帮助扩充或包装错误。这种最小化的方法可以解决大多数常见情况，同时为语言增加很少的复 该try内置很容易解释，直接实现的，垂直的其它语言结构，并完全向后兼容。如果我们希望将来这样做，它还为扩展机制留下了开辟的道路。
+[以下文字已经过编辑，可以更准确地反映设计文档。]
+的try内置函数采用一个单一表达式作为参数。表达式必须求值为n + 1个值（其中n可能为零），其中最后一个值必须是type error。如果（final）error参数为nil，则返回前n个值（如果有），否则返回带有该错误的封闭函数。例如，代码如
+f，错误 ：= os。打开（文件名） if err！= nil { return ...，err //其他结果的零值，如果有的话 }  可以简化为
+f ：= try（os。打开（文件名））  try只能在自身返回error结果的函数中使用，并且该结果必须是封闭函数的最后一个结果参数。
+该提案将去年GopherCon中提出的原始设计草案简化为其本质。如果需要错误扩充或包装，有两种方法：坚持使用久经考验的if语句，或者，使用语句“声明”错误处理程序defer：
+defer func（）{ if err！= nil {	//可能没有发生错误 - 检查 错误= ...	// wrap / augment error } }（）  这里 err是封闭函数的错误结果的名称。在实践中，合适的辅助函数将减少错误处理程序对单行程序的声明。例如
+延迟 fmt。HandleErrorf（＆err，“ copy ％s ％s ”，src，dst）  （fmt.HandleErrorf装饰*err）读得很好，可以在不需要新语言功能的情况下实现。
+这种方法的主要缺点是需要命名错误结果参数，可能导致不太漂亮的API。最终这是一个风格问题，我们相信我们会适应期待新风格，就像我们适应没有分号一样。
+总而言之，一开始try可能看起来很不寻常，但它只是针对一个特定任务量身定制的语法糖，错误处理用较少的样板，并且足够好地处理该任务。因此，它非常符合Go的哲学。try不是为解决*所有*错误处理情况而设计的; 它旨在很好地处理*最常见的*情况，以保持设计简单明了。
+积分 该提议受到我们迄今收到的反馈的强烈影响。具体来说，它借鉴了以下方面的想法
+ 错误处理的关键部分， 问题＃31442 和，相关的，问题＃32219。  VojtechVitek** 评论道 我觉得try()已经表达了反对该提案的所有重要反馈意见。但让我试着总结一下：</description>
+    </item>
+    
+    <item>
+      <title>Goland 使用</title>
+      <link>https://blog.v5u.win/post/go-goland/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-goland/</guid>
+      <description>做 Go 开发，一般使用的IDE是 Goland
+安装略，自己解决。下面说安装后的事情。
+ 配置文件，配置开发环境  goland 会自动读取 GOROOT 和 GOPATH，所以不用自己填写。我们要做的就是配置配置文件
+创建go build配置文件：Templates&amp;ndash;&amp;gt; Go Build Run kind 选Directory Directory 选你的main包所在文件夹 Output directory设置与go build -o 不相容，所以不用设置，我们使用-o参数来控制可执行文件的路径以及名字 Working directory保持默认就好 Go tool arguments 就是go build 的参数</description>
+    </item>
+    
+    <item>
+      <title>Go orm 对比选择</title>
+      <link>https://blog.v5u.win/post/go-orm/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-orm/</guid>
+      <description>   name xorm gorm     github-stars 5,053 14,262   github-fork 650 1,606         </description>
+    </item>
+    
+    <item>
+      <title>提问的智慧</title>
+      <link>https://blog.v5u.win/post/system-getquestion/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-getquestion/</guid>
+      <description>我不怕我&amp;rdquo;走&amp;rdquo;的很慢，因为我一直在移动。
+说明 本文摘自learnku社区：https://learnku.com/docs/guide/smart-questions/2032
+对 原文：How To Ask Questions The Smart Way 有所修改，使其更加适用于本社区。
+恨不能早日遇到这篇文章，步入开源的世界。
+引言 在黑客的世界里，你技术提问的解答情况，很大程度上取决于你提问的方式与解决此问题的难度，本文将教你如何提问才更有可能得到满意的答复。
+开源程序的应用已经很广，你通常可以从其他更有经验的用户而不是黑客那里得到解答。这是好事，他们一般更能容忍新手常有的那些毛病。然而，使用我们推荐的方法，像对待黑客那样对待这些有经验的用户，通常能最有效地得到问题的解答。
+ 注：可以将黑客理解为社区名人，开源作者等注意力有限但是有所专长的开发者。
+ 第一件需要明白的事是黑客喜欢难题和激发思考的好问题。如果不是这样，我们也不会写这篇文章了。如果你能提出一个有趣的问题来让我们咀嚼玩味，我们会感激你的。好问题是种激励与礼物，帮助我们发展认知，揭示我们没有注意或想到的问题。在黑客中，“好问题！” 是非常热烈而真挚的赞许。
+此外，黑客还有遇到简单问题就表现出敌视或傲慢的态度。有时，我们看起来还对新手和愚蠢的家伙有条件反射式性的无礼，但事情并不真是这样。
+失败者（loser） 我们只是毫无歉意地敌视那些提问前 不愿思考、不做好准备 的人。这种人就像时间无底洞一样 ── 只知道索取，不愿意付出，他们浪费了时间，这些时间本可用于其它更有趣的问题或更值得回答的人。我们将这种人叫做 『失败者（loser）』。
+我们意识到许多人只是想使用我们写的软件，他们对学习技术细节没有兴趣。对大多数人而言，计算机只是种工具，是种达到目的的手段而已。他们有自己的生活并且更要紧的事要做，我们承认这点，也从不指望每个人都对这些让我们着迷的技术问题感兴趣。不过，我们回答问题的风格是为了适应那些真正对此有兴趣并愿意主动参与与解决问题的人，这一点不会变，也不该变。如果连这都变了，我们就会在自己能做得到的最好的事情上不再那么犀利。
+我们（大多数人）是自愿者， 从自己繁忙的生活中抽时间来回答问题，有时会力不从心。因此，我们会毫不留情地滤除问题，特别是那些看起来像是失败者提的，以便更有效地把回答问题的时间留给那些胜利者。
+如果你认为这种态度令人反感、以施惠者自居或傲慢自大，那么请审视下你的假设，我们并未要求你屈服──事实上，假如你做了该做的努力，我们中的大多数将非常乐意平等地与你交流，并欢迎你接纳我们的文化。试图去帮助那些不愿自救的人对我们简直没有效率。不懂没有关系，但愚蠢地做事不行。
+所以，你不需要在技术上很在行才能吸引我们的注意，但你必须表现出能引导你在行的姿态 ── 机敏、有想法、善于观察、乐于主动参与问题的解决。如果你做不到这些使你与众不同的事情，我们建议你付钱跟别人签商业服务合同，而不是要求黑客无偿帮助。
+如果你决定向我们求助，你不会想成为一名失败者，你也不想被看成一个失败者。得到快速有效回答的最好方法是使提问者看起来像个聪明、自信和有想法的人，并且暗示只是碰巧在某一特别问题上需要帮助。
+提问前 在通过论坛提技术问题以前，做以下事情：
+ 尝试在你准备提问论坛的历史文档中搜索答案； 尝试搜索互联网以找到答案； 尝试阅读官方文档以找到答案； 尝试阅读“常见问题文档”（FAQ）以找到答案； 尝试自己检查或试验以找到答案； 尝试请教懂行的朋友以找到答案； 尝试阅读源代码以找到答案。  提问时，请先表明你已做了上述事情，这将有助于建立你不是寄生虫与浪费别人时间的印像。最好再表述你从中学到的东西 ，我们喜欢回答那些表现出能从答案中学习的人。
+运用某些策略，比如用谷歌（Google）搜索你遇到的各种错误提示， 这样很可能直接就找到了解决问题的文档或线索。 即使没有结果，在寻求帮助时提一句“我在谷歌中搜过下列句子但没有找到什么有用的东西” 也是件好事，至少它表明了搜索引擎不能提供哪些帮助。将搜索关键词与你的问题及可能的解决方案联系起来，还有助于引导其他有类似问题的人。
+别着急，不要指望几秒钟的谷歌搜索就能解决一个复杂的问题。读一下常见问题文档。在向专家提问之前，先向后靠靠放松一下，再思考一下问题。相信我们，他们能从你的提问看出你做了多少阅读与思考，如果你是有备而来，将更有可能得到解答。不要将所有问题一股脑抛出，只因你的第一次搜索没有结果（或者结果太多）。
+认真地思考，准备好你的问题。轻率的提问只能得到轻率的回答，或者压根没有。在提问时，你越是表现出在此前做过思考与努力去解决自己的问题，你越有可能得到真正的帮助。
+注意别提错问题。如果提问基于错误的假设，某黑客多半会一边想 “愚蠢的问题……”，一边按将错就错的答案回复你，并且希望这种只是得到你自己“问的问题”而非真正所需的解答以给你一个教训。
+永远不要假设你有资格得到解答。你没有这种资格，毕竟你没有为此服务付费。如果你能够提出有内容、有趣和激励思考的问题 ── 那种毫无疑问能够向社区贡献经验，而不仅仅是消极地要求从别人那获取知识的问题，那么你将“挣到”答案。
+另一方面，表明你有能力也乐意参与问题的解决是个很好的开端。“有没有人能指个方向？”，我这还差点什么？”，“我应该查哪个网站？”，通常要比 “请给出我可以用的完整步骤”更容易得到回复，因为你表明了只要有人能指个方向，你就会很乐意完成剩下的过程。
+提问时 仔细挑选论坛 要对在哪提问留心，如果你做了下述事情，多半会被一笔勾销或被看成“失败者”：
+ 张贴与论坛主题无关的问题 在面向高级技术问题的论坛上张贴肤浅的问题，或者反之。 在太多不同的新闻组同时张贴 给既非熟人也没有义务解决你问题的人发送你私人的电邮  为保护通信的渠道不被无关的东西淹没，黑客会除掉那些没有找对地方的问题，你不会想让这种事落到自己头上的。</description>
+    </item>
+    
+    <item>
+      <title>k8s在Mac上的安装和使用</title>
+      <link>https://blog.v5u.win/post/docker-k8s/</link>
+      <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/docker-k8s/</guid>
+      <description> 安装 在Mac下安装前提条件，已经安装好了docker desktop，并修改了代理源 https://registry.docker-cn.com。
+直接在docker桌面端开启k8s是没用的，一直提示 kubernetes is starting… :cry: 我竟然不知道，这样子持续了n天。​
+自己手动安装 k8s
+ git clone https://github.com/maguowei/k8s-docker-for-mac.git
+ cd k8s-docker-for-mac/
+ ./load_images.sh
+  安装minikube
+# install minikube $ brew cask install minikube $ brew install docker-machine-driver-xhyve # docker-machine-driver-xhyve need root owner and uid $ sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve $ sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve  最后启动minikube
+# start minikube. # http proxy is required in China $ minikube start --docker-env HTTP_PROXY=http://proxy-ip:port --docker-env HTTPS_PROXY=http://proxy-ip:port --vm-driver=xhyve  </description>
+    </item>
     
     <item>
       <title>Nginx 动态生成缩略图</title>
@@ -538,11 +631,11 @@ bin目录  当环境变量GOBIN已有效设置时，该目录会变得无意义 
     </item>
     
     <item>
-      <title>tp5</title>
-      <link>https://blog.v5u.win/post/php-tp5/</link>
+      <title>tp5 db</title>
+      <link>https://blog.v5u.win/post/php-tp5-db/</link>
       <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/php-tp5/</guid>
+      <guid>https://blog.v5u.win/post/php-tp5-db/</guid>
       <description># 表达式 不区分大小写， # EQ = # NEQ &amp;lt;&amp;gt;	不等于 # LT &amp;lt; # ELT &amp;lt;= # RT &amp;gt; # ELT &amp;gt;= # BETWEEN BETWEEN * AND * # NOTBETWEEN NOTBETWEEN * AND * # IN IN (*,*) # NOTIN NOT IN (*,*)  $sql = $db-&amp;gt;where(&#39;id&#39;,&#39;between&#39;,&amp;quot;1,5&amp;quot;)-&amp;gt;buildSql();</description>
     </item>
     
@@ -1000,7 +1093,8 @@ centos7 默认使用firewalld，不在内置iptables //临时关闭 systemctl st
       <pubDate>Fri, 20 Apr 2018 05:00:32 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</guid>
-      <description>Mac上的包管理器 常用的有：brew gem npm cocoapods pip3 * brew 用来管理Unix相关工具软件，就像centos之于yum，Ubuntu之于apt-get * gem 即RubyGems,管理ruby社区的软件包。 * npm 是nodejs的包管理器，用来管理nodejs社区的软件包。 * pip 是Python的包管理器，用来管理Python社区的软件包 * cocoapods 是iOS开发的包管理器，用来管理iOS代码包</description>
+      <description>Mac上的包管理器 常用的有：brew gem npm cocoapods pip3
+ brew 用来管理Unix相关工具软件，就像centos之于yum，Ubuntu之于apt-get gem 即RubyGems,管理ruby社区的软件包。 npm 是nodejs的包管理器，用来管理nodejs社区的软件包。 pip 是Python的包管理器，用来管理Python社区的软件包 cocoapods 是iOS开发的包管理器，用来管理iOS代码包  </description>
     </item>
     
     <item>
@@ -1795,8 +1889,8 @@ UILable 没有扩展 then的协议 fix： extension UIView: Then{}</description>
       <pubDate>Mon, 25 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/businuss-vps/</guid>
-      <description>搬瓦工(2.99$起≈20￥/月)
-https://bandwagonhost.com/aff.php?aff=7288 选Los Angeles机房 参考：http://www.panxw.com/posts/good-vps-list.html</description>
+      <description>在哪里购买合适的VPS 虚拟服务器 作为新手推荐入门最便宜的vps，即便被墙了，也不会损失太多。那么下面我推荐一下各家的产品。
+ 搬瓦工(2.99$起≈20￥/月)https://bandwagonhost.com  优先推荐搬瓦工，这个是目前国内用的最多的服务商，支持微信/支付宝付款，机房稳定，提供一键装机，翻墙，宽带加速等工具，是老牌的优秀提供商了，以前还有免费n次/年更换IP的贴心服务，免去IP被墙的后顾之忧，从2019年不再免费提供，付费更换IP依然可用，不用担心。之前最便宜的2.99$/月，现在最便宜的成了49.99$/年，推荐选择Los Angeles机房。</description>
     </item>
     
     <item>
@@ -2429,15 +2523,21 @@ Now you can go beyond the simulator to test your app on an iPad, iPhone, Apple T
     </item>
     
     <item>
-      <title>2015年，mac OS 10.11上cocoapods 加载失败</title>
-      <link>https://blog.v5u.win/post/ios-2cocoapods_load_error/</link>
+      <title>gem 包管理器</title>
+      <link>https://blog.v5u.win/post/system-gem%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
       <pubDate>Thu, 12 Nov 2015 15:33:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-2cocoapods_load_error/</guid>
-      <description>原来http淘宝源已经弃用更换成https了：
-https://ruby.taobao.org/
-修改gem的链接地址
-mac OS 10.11 cocoapods安装请使用此命令sudo gem install -n /usr/local/bin cocoapods</description>
+      <guid>https://blog.v5u.win/post/system-gem%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
+      <description>gem 常用命令
+查看软件源 gem source -l,不能翻墙的，建议改成国内的源 https://gems.ruby-china.com
+移除某个源 gem sources --remove https://ruby.taobao.org/
+添加新的源 gem sources -a https://gems.ruby-china.com/
+安装 gem install [name] gem install cocoapods
+卸载指定版本 sudo gem uninstall cocoapods --version=1.5.3
+查看 gem list cocoapods (1.7.4, 1.7.1, 1.5.3) 代表当前安装有三个版本，版本号是()里面的。
+sudo 安装的包是安装在系统目录下 /Library/Ruby/Gems/2.3.0/gems
+推荐不使用sudo命令,此时 gem的安装目录为 ~/.gem/
+教程学习来这里 https://guides.rubygems.org/</description>
     </item>
     
     <item>
@@ -3255,10 +3355,10 @@ type Movie struct { Title string Year int `json:&amp;quot;released&amp;quot;` Co
     
     <item>
       <title>docker 使用规则</title>
-      <link>https://blog.v5u.win/post/system-docker/</link>
+      <link>https://blog.v5u.win/post/docker-%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-docker/</guid>
+      <guid>https://blog.v5u.win/post/docker-%E7%AE%80%E4%BB%8B/</guid>
       <description>硬件/操作系统 要求 Docker支持以下的CentOS版本：
  CentOS 7 (64-bit) CentOS 6.5 (64-bit) 或更高的版本  前提条件 目前，CentOS 仅发行版本中的内核支持 Docker。
 Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。
@@ -3277,16 +3377,17 @@ To have launchd start docker-machine now and restart at login: brew services sta
     
     <item>
       <title>docker 安装并使用Redis</title>
-      <link>https://blog.v5u.win/post/docker-%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8redis/</link>
+      <link>https://blog.v5u.win/post/docker-redis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/docker-%E5%AE%89%E8%A3%85%E5%B9%B6%E4%BD%BF%E7%94%A8redis/</guid>
+      <guid>https://blog.v5u.win/post/docker-redis/</guid>
       <description>docker 安装并使用Redis
  docker search redis
  docker pull redis #获得的是lasted版本 redis:3.2
  配置redis
-  mkdir -p ./docker/redis/data mkdir -p ./docker/redis/conf vi redis.conf   # redis.conf bind 127.0.0.1 protected-mode yes appendonly no//持久化 # requirepass foobared  ps protected-mode 是在没有显示定义 bind 地址（即监听全网断），又没有设置密码 requirepass 时，只允许本地回环 127.0.0.1 访问。 也就是说当开启了 protected-mode 时，如果你既没有显示的定义了 bind 监听的地址，同时又没有设置 auth 密码。那你只能通过 127.0.0.1 来访问 redis 服务
-  </description>
+  mkdir -p /root/redis/data mkdir -p /root/redis/conf vi redis.conf  # redis.conf bind 127.0.0.1 protected-mode yes appendonly no//持久化 # requirepass foobared  p.s. protected-mode 是在没有显示定义 bind 地址（即监听全网断），又没有设置密码 requirepass 时，只允许本地回环 127.0.0.1 访问。 也就是说当开启了 protected-mode 时，如果你既没有显示的定义了 bind 监听的地址，同时又没有设置 auth 密码。那你只能通过 127.0.0.1 来访问 redis 服务
+ 启动redis  命令行启动 docker run -p 6379:6379 --name myredis -d redis
+ 测试或debug  # 查看活跃的容器 docker ps # 如果没有 myredis 说明启动失败 查看错误日志 docker logs myredis # 查看 myredis 的 ip 挂载 端口映射等信息 docker inspect myredis # 查看 myredis 的端口映射 docker port myredis	 redis 简单使用 进入后台操作系统：redis-cli</description>
     </item>
     
     <item>
