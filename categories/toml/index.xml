@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>toml on 为吾优</title>
+    <link>https://blog.v5u.win/categories/toml/</link>
+    <description>Recent content in toml on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 26 Jun 2019 15:33:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/categories/toml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go Toml</title>
+      <link>https://blog.v5u.win/post/go-toml/</link>
+      <pubDate>Wed, 26 Jun 2019 15:33:44 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-toml/</guid>
+      <description>[TOC]
+常用的配置文件有：ini, ymal, json, toml
+说一下为什么要选择 toml。toml 格式是最新公布的配置文件格式，由GitHub创始人 Tom Preston-Werner 发明。TOML 的目标是成为一个极简的配置文件格式。TOML 被设计成可以无歧义地被映射为哈希表，从而被多种语言解析。
+TOML的优势  可以添加注释 没有缩进要求 表达简洁，丰富。 大小写敏感  写法 config.toml [app] #app名称 name = &amp;quot;project-web&amp;quot; url = &amp;quot;http://localhost&amp;quot; port = &amp;quot;:8080&amp;quot; debug = false [database] dirver = &amp;quot;mysql&amp;quot; [mysql] dbname = &amp;quot;@tcp(127.0.0.1:3306)/superstar?charset=utf8&amp;quot; username = &amp;quot;root&amp;quot; password = &amp;quot;333&amp;quot; [website] static_uri = &amp;quot;/static&amp;quot; site_title = &amp;quot;后台管理&amp;quot; copy_right = &amp;quot;&amp;lt;small&amp;gt;&amp;amp;copy;2019&amp;lt;/small&amp;gt;&amp;quot; [image] image_lib = &amp;quot;Imagick&amp;quot; # GD || Imagick image_path = &amp;quot;.</description>
+    </item>
+    
+  </channel>
+</rss>

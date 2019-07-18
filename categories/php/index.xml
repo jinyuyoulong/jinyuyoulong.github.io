@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP on 为吾优</title>
+    <link>https://blog.v5u.win/categories/php/</link>
+    <description>Recent content in PHP on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 25 Dec 2018 10:04:25 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>mac-nginx-php-mysql</title>
+      <link>https://blog.v5u.win/post/mac-nginx-php-mysql/</link>
+      <pubDate>Tue, 25 Dec 2018 10:04:25 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/mac-nginx-php-mysql/</guid>
+      <description>[TOC]
+安装环境  brew install nginx brew install php brew install mysql  配置环境  /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf  启动环境  brew services start nginx php-fpm（启动php-fpm）  nginx.conf server { location / { root /rootDocument/; index index.html index.htm index.php; autoindex on; # //开启目录浏览功能； autoindex_exact_size off; #//关闭详细文件大小统计，让文件大小显示MB，GB单位，默认为b autoindex_localtime on; #//开启以服务器本地时区显示文件修改日期！ } location ~ \.php$ { root html; fastcgi_pass 127.0.0.1:9000; fastcgi_index index.php; fastcgi_param SCRIPT_FILENAME /rootDocument$fastcgi_script_name; include fastcgi_params; }  php-fpm.conf error_log = /usr/local/homebrew/var/log/php-fpm.</description>
+    </item>
+    
+    <item>
+      <title>Apache不能访问directory 目录</title>
+      <link>https://blog.v5u.win/740.html</link>
+      <pubDate>Mon, 28 May 2018 06:14:25 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/740.html</guid>
+      <description>Mac升级了系统，发现启动了Apache，可以访问index.php文件。 当目录下找不到文件的时候，应该显示Indexes目录， 此时报错Forbidden 403 You don&#39;t have permission to access /www on this server 原因是Apache2.2版config默认设置是：
+&amp;lt;Directory /&amp;gt; AllowOverride none Allow from all &amp;lt;/Directory&amp;gt;  Apache2.4 config默认设置是：
+&amp;lt;Directory /&amp;gt; AllowOverride none Require all denied &amp;lt;/Directory&amp;gt;  最佳方案，目标&amp;lt;Directory&amp;gt;下设置文件访问权限为: Allow from all 参考：https://www.zyxware.com/articles/4550/solved-forbidden-you-dont-have-permission-to-access-on-this-server</description>
+    </item>
+    
+    <item>
+      <title>mac下安装composer</title>
+      <link>https://blog.v5u.win/post/mac-composer/</link>
+      <pubDate>Fri, 09 Jun 2017 03:35:06 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/mac-composer/</guid>
+      <description>composer是PHP的包管理器
+mac下如何安装呢？
+最简单的方法是通过brew工具
+brew install composer
+这时候可能会遇到这个问题：
+Searching for a previously deleted formula&amp;hellip;
+所以我们检查一下brew/core 中是否有composer可供安装
+brew search composer
+得到这个结果：
+homebrew/php/composer
+homebrew/php/composer@1.2
+caskroom/versions/multimarkdown-composer-beta
+caskroom/cask/multimarkdown-composer-pro
+caskroom/cask/multimarkdown-composer
+所以其实是有的，只是没找到
+这时候我们通过brew 的 tap方法来设置一下
+brew tap homebrew/php
+完事之后，再运行brew install composer就可以了。
+当然，还有其他的方法安装，但是我都不推荐，因为太麻烦！</description>
+    </item>
+    
+    <item>
+      <title>MySQL 数据库迁移</title>
+      <link>https://blog.v5u.win/post/system-mysql-change/</link>
+      <pubDate>Thu, 15 Dec 2016 14:21:18 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-mysql-change/</guid>
+      <description> mac 下迁移数据库的结构和内容 迁移准备：数据库文件（可用工具导出Mysql文件）
+注意：由于文件权限的问题 可能不能进入Mysql的data文件内  进入文件 /usr/local/mysql/data 如果打不开，修改文件访问权限，（右击，显示简介，修改文件读写权限） 将相应的文件(如：MYD,MYI,frm) copy进合适的数据库内（文件夹） 打开数据库，查看迁移情况  </description>
+    </item>
+    
+    <item>
+      <title>mac 下配置PHP环境</title>
+      <link>https://blog.v5u.win/post/mac-php/</link>
+      <pubDate>Thu, 20 Oct 2016 17:11:54 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/mac-php/</guid>
+      <description>set http.conf # ...http_vhost.conf 取消注释# # ServerName www.example.com 打开
+set http.vhost.conf For OSX 10.10 Apache 2.4
+设置虚拟机
+&amp;amp;lt;Directory &amp;quot;/Users/username/Sites/&amp;quot;&amp;amp;gt; AllowOverride All Options Indexes MultiViews FollowSymLinks Require all granted &amp;amp;lt;/Directory&amp;amp;gt;  set php LoadModule php5_module libexec/apache2/libphp5.so 修改文件权限 chmod 777 MetInfo5.3</description>
+    </item>
+    
+    <item>
+      <title>HTML&amp;CSS</title>
+      <link>https://blog.v5u.win/post/web-html-css/</link>
+      <pubDate>Sun, 25 Oct 2015 17:48:49 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/web-html-css/</guid>
+      <description>&amp;lt;p&amp;gt; paragragh 段落
+&amp;lt;em&amp;gt; emphasize 强调(显示为斜体)
+&amp;lt;span&amp;gt; 样式
+&amp;lt;q&amp;gt; quote [kwot] 引用，引号(显示默认添加双引号，故不用再次添加“ ”)
+&amp;lt;blockquote&amp;gt; 引用块 ，长文本引用(显示默认为缩进，左右都缩进)
+&amp;lt;br /&amp;gt; break 换行 &amp;amp;nbsp; 空格占位符
+&amp;lt;hr /&amp;gt; horizontal rule 水平分割线
+&amp;lt;address&amp;gt; 地址标签(默认显示为斜体)
+&amp;lt;code&amp;gt; 一行代码
+&amp;lt;pre&amp;gt; predefined 预定义，多行代码,预格式化的文本。被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体.
+&amp;lt;ul&amp;gt; unordered list 定义无序列表 (前方显示一个小圆点)
+&amp;lt;li&amp;gt; list 列表
+&amp;lt;ol&amp;gt; orderly list 定义有序列表 (前方显示123等数字)
+创建表格的四个元素：table、tbody、tr、th、td
+&amp;lt;tbody&amp;gt; table body 表格体
+&amp;lt;tr&amp;gt; table row 表格，行
+&amp;lt;td&amp;gt; table data 表格数据
+&amp;lt;th&amp;gt; table head 表格头
+&amp;lt;caption&amp;gt; 表格标题
+&amp;lt;table summary=&amp;quot;表格简介文本&amp;quot;&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>mac系统使用内置的 PHP</title>
+      <link>https://blog.v5u.win/post/mac-php-local/</link>
+      <pubDate>Tue, 18 Aug 2015 11:19:22 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/mac-php-local/</guid>
+      <description>从 OS X 10.0.0 版本开始，PHP 作为 Mac 机的标准配置被提供。在默认的 web 服务器中启用 PHP，只需将 Apache 配置文件 httpd.conf 中的几行配置指令最前面的注释符号去掉，而 CGI 或 CLI 默认都可使用（可以很容易的被终端程序使用）。
+按照以下的使用说明，可以快速的建立一个本地 PHP 开发环境。_强烈建议_将 PHP 升级到最新的版本。在大多数活跃的软件中， 新的版本会修复错误和添加新的功能，PHP 也是如此。请参见相应的 Mac OS X 安装文档，以进一步了解详细的信息。以下的说明以初学者的角度来详细描述如何操作来得到一个缺省的运行环境。建议所有的用户都编译或者安装一个新的打包版本。
+标准的安装类型为 mod_php，在 Mac OS X 的 Apache web 服务器（默认 web 服务器，可以从系统设置中访问）中启用 PHP 包含以下的步骤：
+&amp;nbsp;
+ 找到并打开Apache的配置文件。默认情况下，这个配置文件的位置是： _/private/etc/apache2/httpd.conf_。 使用 Finder 或者 Spotlight 来找到这个文件可能不是很容易的事情，因为在默认情况下它一般是 root 用户拥有所有权的私有文件。 Note: 要打开这个文件，可以在命令行下面使用基于 Unix 的文本编辑器，例如 _nano_，因为他的属主是 _root_，所以我们需要使用 sudo 来打开（以 root 用户权限）。例如我们在 Terminal 程序中敲入下面的指令（操作后，会提示输入密码）：sudo nano /private/etc/apache2/httpd.conf 注意 nano 中的命令：_^w（搜索），^o_（保存），以及 _^x（退出）。^_ 表示 Ctrl 键。 Note: 在Mac OS X 10.</description>
+    </item>
+    
+    <item>
+      <title>Wordpress中各个全局函数的含义和应用</title>
+      <link>https://blog.v5u.win/post/blog-wordpress-global-funtion/</link>
+      <pubDate>Tue, 18 Aug 2015 10:10:38 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/blog-wordpress-global-funtion/</guid>
+      <description>在wordpress插件和主题开发中经常需要获取各种URL路径，wordpress提供了以下集中方法获得URL路径：
+plugins_url() — 插件目录的 URL (例如：http://www.hujuntao.com/wp-content/plugins)
+includes_url() — includes 目录的 URL (例如：http://www.hujuntao.com/wp-includes)
+content_url() — content 目录的 URL (例如：http://www.hujuntao.com/wp-content)
+admin_url() — admin 目录的 URL (例如：http://www.hujuntao.com/wp-admin/)
+site_url() — 当前网站的 URL (例如：http://www.hujuntao.com)
+home_url() — 当前网站首页的 URL (例如：http://www.hujuntao.com)) 
+总结就是：
+获得首页地址 ==&amp;gt; home_url()、bloginfo(‘url’)、get_bloginfo(‘url’)、get_home_url()。home_url() 3.0加入的函数，为了兼容老版本推荐使用bloginfo();
+获得安装路径 ==&amp;gt; site_url()、bloginfo(‘wpurl’)、get_bloginfo(‘wpurl’)、get_site_url()。
+如果你需要返回值 ==&amp;gt; get_bloginfo(‘url’)、get_home_url()/get_bloginfo(‘wpurl’)、get_site_url() 如果你想直接输出值 ==&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>php session 不能跨页面传递</title>
+      <link>https://blog.v5u.win/post/php-session-error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/php-session-error/</guid>
+      <description>session错误
+ 确认当前页面session有没有添加成功 debug可不可以讲session值跨页面传递 设置php.ini文件session.auto_start=1,此时use_cookies=0，use_only_cookies=0  验证：
+php -i 查看PHP配置
+php.ini phpinfo()对比配置文件和实际环境配置</description>
+    </item>
+    
+  </channel>
+</rss>

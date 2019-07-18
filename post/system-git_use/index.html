@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>FF的Git使用整理 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="fanjinlong" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="FF的Git使用整理"/>
+<meta name="twitter:description" content="创建 Git仓库命令：(进入将要管理的Git文件夹地址下) git init 查看当前Git管理状态 git status 添加Git文件 git add * 提交文件到仓库 git commit -m &ldquo;加入注释&rdquo; 推送文件到远程仓库 git push origin master 参考文章：Git简易使用指南 http://www.bootcss.com/p/git-guide/
+git 命令行常用命令    git 作用 命令     检查更新状态 git status   将文件添加进更新列表 git add *   commit 提交 git commit * -m &ldquo;add some(not null非空)&rdquo;   发布到服务器 use &ldquo;git push&rdquo; to publish your local commits   发布到主线 git push origin master   发布tag release版本 git tag   add tag git tag -m &ldquo;first release&rdquo; 0."/>
+
+    <meta property="og:title" content="FF的Git使用整理" />
+<meta property="og:description" content="创建 Git仓库命令：(进入将要管理的Git文件夹地址下) git init 查看当前Git管理状态 git status 添加Git文件 git add * 提交文件到仓库 git commit -m &ldquo;加入注释&rdquo; 推送文件到远程仓库 git push origin master 参考文章：Git简易使用指南 http://www.bootcss.com/p/git-guide/
+git 命令行常用命令    git 作用 命令     检查更新状态 git status   将文件添加进更新列表 git add *   commit 提交 git commit * -m &ldquo;add some(not null非空)&rdquo;   发布到服务器 use &ldquo;git push&rdquo; to publish your local commits   发布到主线 git push origin master   发布tag release版本 git tag   add tag git tag -m &ldquo;first release&rdquo; 0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/system-git_use/" />
+<meta property="article:published_time" content="2016-07-05T14:47:35&#43;00:00"/>
+<meta property="article:modified_time" content="2016-07-05T14:47:35&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="fanjinlong" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">FF的Git使用整理</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 5, 2016
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.v5u.win/tags/git/">Git</a></div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>创建 Git仓库命令：(进入将要管理的Git文件夹地址下) git init
+查看当前Git管理状态 git status
+添加Git文件    git add *
+提交文件到仓库 git commit  -m &ldquo;加入注释&rdquo;
+推送文件到远程仓库     git push origin master
+参考文章：<a href="http://www.bootcss.com/p/git-guide/" target="_blank" title="Git简易使用指南">Git简易使用指南</a> <a href="http://www.bootcss.com/p/git-guide/">http://www.bootcss.com/p/git-guide/</a></p>
+
+<h3 id="git-命令行常用命令">git 命令行常用命令</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left">git 作用</th>
+<th align="center">命令</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">检查更新状态</td>
+<td align="center">git status</td>
+</tr>
+
+<tr>
+<td align="left">将文件添加进更新列表</td>
+<td align="center">git add *</td>
+</tr>
+
+<tr>
+<td align="left">commit 提交</td>
+<td align="center">git commit * -m &ldquo;add some(not null非空)&rdquo;</td>
+</tr>
+
+<tr>
+<td align="left">发布到服务器</td>
+<td align="center">use &ldquo;git push&rdquo; to publish your local commits</td>
+</tr>
+
+<tr>
+<td align="left">发布到主线</td>
+<td align="center">git push origin master</td>
+</tr>
+
+<tr>
+<td align="left">发布tag release版本</td>
+<td align="center">git tag</td>
+</tr>
+
+<tr>
+<td align="left">add tag</td>
+<td align="center">git tag -m &ldquo;first release&rdquo; 0.1.0</td>
+</tr>
+
+<tr>
+<td align="left">git push</td>
+<td align="center">git push &ndash;tags</td>
+</tr>
+
+<tr>
+<td align="left">delete 远程tag</td>
+<td align="center">git push origin &ndash;delete tag</td>
+</tr>
+
+<tr>
+<td align="left">检出分支文件</td>
+<td align="center">git checkout dev</td>
+</tr>
+
+<tr>
+<td align="left">公钥加入本地ssh</td>
+<td align="center">ssh-add ~/.ssh/id_rse</td>
+</tr>
+
+<tr>
+<td align="left">查看某域是否有ssh公钥，私钥</td>
+<td align="center">ssh -T git@git.oschina.net</td>
+</tr>
+</tbody>
+</table>
+
+<p>level 2</p>
+
+<table>
+<thead>
+<tr>
+<th>git 作用</th>
+<th>命令</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>指定分支克隆</td>
+<td>git clone -b dev <a href="https://github.com/jinyuyoulong/Go-learn.git">https://github.com/jinyuyoulong/Go-learn.git</a></td>
+</tr>
+
+<tr>
+<td>查询所有分支</td>
+<td>git branch -a</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

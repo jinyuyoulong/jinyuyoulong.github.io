@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on 为吾优</title>
+    <link>https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 04 Sep 2016 00:07:07 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sublime Texts使用tips</title>
+      <link>https://blog.v5u.win/post/sublime-tips/</link>
+      <pubDate>Sun, 04 Sep 2016 00:07:07 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/sublime-tips/</guid>
+      <description> 多行编辑：control + 点击各行编辑位置 全局修改所有单词：双击单词，comment+control+G 选中一个单词：Command + D 选中一个单词及下一个同样的单词 包管理工具：control package ,快捷键：shift+commend+P  </description>
+    </item>
+    
+  </channel>
+</rss>

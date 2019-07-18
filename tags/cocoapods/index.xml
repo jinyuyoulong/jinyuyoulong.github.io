@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cocoapods on 为吾优</title>
+    <link>https://blog.v5u.win/tags/cocoapods/</link>
+    <description>Recent content in Cocoapods on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 15 Aug 2018 14:48:36 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/cocoapods/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>cocoapods-library-create</title>
+      <link>https://blog.v5u.win/post/mac-cocoapods-library-create/</link>
+      <pubDate>Wed, 15 Aug 2018 14:48:36 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/mac-cocoapods-library-create/</guid>
+      <description>readme文件如何添加 这种说明
+ 打开网站https://shields.io/#/examples/funding 选择flat Style 在Link和Image中输入http://img.shields.io/cocoapods/v/库名称.svg，网站会自动解析库的版本，生成img copy下面的Markdown，paste到要显示说明的地方  </description>
+    </item>
+    
+    <item>
+      <title>brew gem npm cocoapods</title>
+      <link>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</link>
+      <pubDate>Fri, 20 Apr 2018 05:00:32 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</guid>
+      <description>Mac上的包管理器 常用的有：brew gem npm cocoapods pip3
+ brew 用来管理Unix相关工具软件，就像centos之于yum，Ubuntu之于apt-get gem 即RubyGems,管理ruby社区的软件包。 npm 是nodejs的包管理器，用来管理nodejs社区的软件包。 pip 是Python的包管理器，用来管理Python社区的软件包 cocoapods 是iOS开发的包管理器，用来管理iOS代码包  </description>
+    </item>
+    
+    <item>
+      <title>CocoaPods</title>
+      <link>https://blog.v5u.win/post/mac-cocoapods/</link>
+      <pubDate>Wed, 26 Oct 2016 10:37:38 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/mac-cocoapods/</guid>
+      <description>.podspec文件是做什么的
+.podspec文件描述了一个库将怎样被添加进工程中。.podspec文件可以标识该第三方库所需要的源码文件、依赖库、编译选项，以及其他第三方库需要的配置。  Podfile 文件的自述
+Podfile是用于配置项目所需要的第三方库的地方，使用格式如下： platform :ios, &#39;7.0&#39; target &#39;xxx&#39; do pod &#39;AFNetworking&#39;, &#39;~&amp;gt; 3.1.0&#39; ## react-native (引用本地文件) pod &#39;React&#39;, :path =&amp;gt; &#39;./node_modules/react-native&#39;, :subspecs =&amp;gt; [ &#39;Core&#39;, ] end   ​</description>
+    </item>
+    
+  </channel>
+</rss>

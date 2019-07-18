@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>appledoc on 为吾优</title>
+    <link>https://blog.v5u.win/tags/appledoc/</link>
+    <description>Recent content in appledoc on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 04 Apr 2018 08:24:46 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/appledoc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>xcode文档注释规则简要汇总</title>
+      <link>https://blog.v5u.win/676.html</link>
+      <pubDate>Wed, 04 Apr 2018 08:24:46 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/676.html</guid>
+      <description>xcode文档注释规则简要汇总 参考源 类与协议
+/** 文档B. * * 文档B的详细描述. */ @interface DocB : NSObject /// 文档A. @interface DocA : NSObject  文本链接
+/** * - [文档B](DocB) : 类的链接文本.（仅appledoc） */  单行注释
+///# 标题1 ///## 标题2 ///hello oc，下面的空行是为了换行 /// ///hello swift /// - 这里使用了无序列表 /// - 使用加粗 **this**， 使用斜体 _this_ /// - 添加一个链接: [百度](http://www.baidu.com) /// - 添加一个图片:![swift picture](http://img0.imgtn.bdimg.com/it/u=14209024,814391630&amp;amp;fm=21&amp;amp;gp=0.jpg )  多行注释文档
+/** 多行注释文档相比于普通多行注释多了一个星号。 在这里可以使用markDown语法，书写各种提示信息 如：显示一个有序列表 1. 有序列表 2. 有序列表 3. 有序列表 */  方法/函数的注释 方法的注释包括传入参数、返回值、和异常等说明</description>
+    </item>
+    
+    <item>
+      <title>appledoc使用说明</title>
+      <link>https://blog.v5u.win/673.html</link>
+      <pubDate>Wed, 04 Apr 2018 07:00:34 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/673.html</guid>
+      <description>appledoc使用说明 安装命令行：
+ git clone git://github.com/tomaz/appledoc.git cd ./appledoc sudo sh install-appledoc.sh appledoc —version //检查successed  使用 生成HTML 当需要html文档时，可以加上“&amp;ndash;no-create-docset”——
+appledoc --no-create-docset --output ~/doc --project-name &amp;quot;DrowRect&amp;quot; --company-id &amp;quot;com.jinyuyoulong&amp;quot; --project-company &amp;quot;jinyuyoulong&amp;quot; ./  注: &amp;ndash;output ./doc：设置输出目录为“./doc”。 &amp;ndash;project-name objcdoc：设置项目名为“DrowRect”。 &amp;ndash;project-company &amp;ldquo;jinyuyoulong&amp;rdquo;：设置公司名为“jinyuyoulong”。 &amp;ndash;company-id &amp;ldquo;com.jinyuyoulong&amp;rdquo;：设置公司id为“com.jinyuyoulong”。 ./：当前目录。 生成docset 此路不通
+appledoc --output ./doc --project-name &amp;quot;DrowRect&amp;quot; --project-company &amp;quot;jinyuyoulong&amp;quot; --company-id &amp;quot;com.jinyuyoulong&amp;quot; ./  Xcode脚本生成文档 Xcode 配置
+ add new target —&amp;gt;选择Other—Aggregate，命名为docText
+ Build Phases + run script
+ 编辑run script的内容</description>
+    </item>
+    
+  </channel>
+</rss>

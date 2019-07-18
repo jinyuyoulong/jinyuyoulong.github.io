@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>Xcode如何添加pch文件 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="fanjinlong" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Xcode如何添加pch文件"/>
+<meta name="twitter:description" content="Xcode6.0之后去掉了Precompile Prefix Header 文件，主要原因可能在于Prefix Header大大的增加了Build的时间。没有了Prefix Header之后就要通过手动@import来手动导入头文件了，在失去了编程便利性的同时也降低了Build的时间。具体原因
+StackOverFlow上讨论的已经比较清晰了
+StackOverFlow:为什么xcode6没有自动创建pch文件呢？
+那么如何在Xcode6中添加pch（Precompile Prefix Header）？ 1，Command&#43;N，打开新建文件窗口：ios-&gt;other-&gt;PCH file，创建一个pch文件：“工程名-Prefix.pch”
+2，将building setting中的precompile header选项的路径添加“$(SRCROOT)/项目名称/pch文件名”（例如：$(SRCROOT)/LotteryFive/LotteryFive-Prefix.pch）,编译一下程序，如果有错误检查一下添加的路径是否正确。
+&lt;
+p style=&ldquo;margin-top: 0px; margin-bottom: 0.75em; line-height: 27.200000762939453px; text-indent: 1em; color: rgb(51, 51, 51); font-family: &lsquo;Helvetica Neue&rsquo;, Helvetica, Tahoma, Arial, STXihei, &lsquo;Microsoft YaHei&rsquo;, 微软雅黑, sans-serif; white-space: normal;&rdquo;&gt;3，将Precompile Prefix Header为YES，预编译后的pch文件会被缓存起来，可以提高编译速度
+&nbsp;
+[caption id=&ldquo;attachment_403&rdquo; align=&ldquo;alignleft&rdquo; width=&ldquo;600&rdquo;] pch文件build settings[/caption]"/>
+
+    <meta property="og:title" content="Xcode如何添加pch文件" />
+<meta property="og:description" content="Xcode6.0之后去掉了Precompile Prefix Header 文件，主要原因可能在于Prefix Header大大的增加了Build的时间。没有了Prefix Header之后就要通过手动@import来手动导入头文件了，在失去了编程便利性的同时也降低了Build的时间。具体原因
+StackOverFlow上讨论的已经比较清晰了
+StackOverFlow:为什么xcode6没有自动创建pch文件呢？
+那么如何在Xcode6中添加pch（Precompile Prefix Header）？ 1，Command&#43;N，打开新建文件窗口：ios-&gt;other-&gt;PCH file，创建一个pch文件：“工程名-Prefix.pch”
+2，将building setting中的precompile header选项的路径添加“$(SRCROOT)/项目名称/pch文件名”（例如：$(SRCROOT)/LotteryFive/LotteryFive-Prefix.pch）,编译一下程序，如果有错误检查一下添加的路径是否正确。
+&lt;
+p style=&ldquo;margin-top: 0px; margin-bottom: 0.75em; line-height: 27.200000762939453px; text-indent: 1em; color: rgb(51, 51, 51); font-family: &lsquo;Helvetica Neue&rsquo;, Helvetica, Tahoma, Arial, STXihei, &lsquo;Microsoft YaHei&rsquo;, 微软雅黑, sans-serif; white-space: normal;&rdquo;&gt;3，将Precompile Prefix Header为YES，预编译后的pch文件会被缓存起来，可以提高编译速度
+&nbsp;
+[caption id=&ldquo;attachment_403&rdquo; align=&ldquo;alignleft&rdquo; width=&ldquo;600&rdquo;] pch文件build settings[/caption]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/xcode-pch/" />
+<meta property="article:published_time" content="2015-07-14T11:31:06&#43;00:00"/>
+<meta property="article:modified_time" content="2015-07-14T11:31:06&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="fanjinlong" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Xcode如何添加pch文件</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 14, 2015
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>Xcode6.0之后去掉了Precompile Prefix Header 文件，<span style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Tahoma, Arial, STXihei, 'Microsoft YaHei', 微软雅黑, sans-serif; line-height: 27.200000762939453px; text-indent: 1em;">主要原因可能在于Prefix Header大大的增加了Build的时间。没有了Prefix Header之后就要通过手动@import来手动导入头文件了，在失去了编程便利性的同时也降低了Build的时间。具体原因</span></p>
+
+<p>StackOverFlow上讨论的已经比较清晰了</p>
+
+<p><a href="http://stackoverflow.com/questions/24158648/why-isnt-projectname-prefix-pch-created-automatically-in-xcode-6">StackOverFlow:为什么xcode6没有自动创建pch文件呢？</a></p>
+
+<h3 id="那么如何在xcode6中添加pch-precompile-prefix-header">那么如何在Xcode6中添加pch（Precompile Prefix Header）？</h3>
+
+<p>1，Command+N，打开新建文件窗口：ios-&gt;other-&gt;PCH file，创建一个pch文件：“工程名-Prefix.pch”</p>
+
+<p><span style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Tahoma, Arial, STXihei, 'Microsoft YaHei', 微软雅黑, sans-serif; line-height: 27.200000762939453px; text-indent: 16px; background-color: #fefefe;">    2，将building setting中的precompile header选项的路径添加“$(SRCROOT)/项目名称/pch文件名”（例如：$(SRCROOT)/LotteryFive/LotteryFive-Prefix.pch）,</span><span style="color: #333333; font-family: 'Helvetica Neue', Helvetica, Tahoma, Arial, STXihei, 'Microsoft YaHei', 微软雅黑, sans-serif; line-height: 27.200000762939453px; text-indent: 1em;">编译一下程序，如果有错误检查一下添加的路径是否正确。</span></p>
+
+<p>&lt;</p>
+
+<p>p style=&ldquo;margin-top: 0px; margin-bottom: 0.75em; line-height: 27.200000762939453px; text-indent: 1em; color: rgb(51, 51, 51); font-family: &lsquo;Helvetica Neue&rsquo;, Helvetica, Tahoma, Arial, STXihei, &lsquo;Microsoft YaHei&rsquo;, 微软雅黑, sans-serif; white-space: normal;&rdquo;&gt;3，将Precompile Prefix Header为YES，预编译后的pch文件会被缓存起来，可以提高编译速度</p>
+
+<p>&nbsp;</p>
+
+<p>[caption id=&ldquo;attachment_403&rdquo; align=&ldquo;alignleft&rdquo; width=&ldquo;600&rdquo;]<a href="http://blog-fansrss.rhcloud.com/wp-content/uploads/2015/07/PCH文件.png"><img src="http://fanjinlong.xyz/wp-content/uploads/2016/04/PCH文件-1024x475.png" alt="pch文件build settings" /></a> pch文件build settings[/caption]</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

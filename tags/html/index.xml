@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>html on 为吾优</title>
+    <link>https://blog.v5u.win/tags/html/</link>
+    <description>Recent content in html on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 25 Oct 2015 17:48:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTML&amp;CSS</title>
+      <link>https://blog.v5u.win/post/web-html-css/</link>
+      <pubDate>Sun, 25 Oct 2015 17:48:49 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/web-html-css/</guid>
+      <description>&amp;lt;p&amp;gt; paragragh 段落
+&amp;lt;em&amp;gt; emphasize 强调(显示为斜体)
+&amp;lt;span&amp;gt; 样式
+&amp;lt;q&amp;gt; quote [kwot] 引用，引号(显示默认添加双引号，故不用再次添加“ ”)
+&amp;lt;blockquote&amp;gt; 引用块 ，长文本引用(显示默认为缩进，左右都缩进)
+&amp;lt;br /&amp;gt; break 换行 &amp;amp;nbsp; 空格占位符
+&amp;lt;hr /&amp;gt; horizontal rule 水平分割线
+&amp;lt;address&amp;gt; 地址标签(默认显示为斜体)
+&amp;lt;code&amp;gt; 一行代码
+&amp;lt;pre&amp;gt; predefined 预定义，多行代码,预格式化的文本。被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体.
+&amp;lt;ul&amp;gt; unordered list 定义无序列表 (前方显示一个小圆点)
+&amp;lt;li&amp;gt; list 列表
+&amp;lt;ol&amp;gt; orderly list 定义有序列表 (前方显示123等数字)
+创建表格的四个元素：table、tbody、tr、th、td
+&amp;lt;tbody&amp;gt; table body 表格体
+&amp;lt;tr&amp;gt; table row 表格，行
+&amp;lt;td&amp;gt; table data 表格数据
+&amp;lt;th&amp;gt; table head 表格头
+&amp;lt;caption&amp;gt; 表格标题
+&amp;lt;table summary=&amp;quot;表格简介文本&amp;quot;&amp;gt;</description>
+    </item>
+    
+  </channel>
+</rss>

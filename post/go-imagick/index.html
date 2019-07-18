@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>imagick // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="fanjinlong" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="imagick"/>
+<meta name="twitter:description" content="Go语言imagick 使用总结 imagick 是一个开源的 c语言图片处理库，所以需要本地安装，并且配置 CGO
+Mac 安装imagic
+brew install imagemagick
+CGO配置
+export CGO_CFLAGS_ALLOW=&#39;-Xpreprocessor&#39; #cgo	 Initialize() 和 Terminate 根据ImageMagick C API，Initialize()应该只调用一次来设置使用ImageMagick的资源。这通常在您main()或init()整个应用程序或库中完成。应用程序可以推迟调用以Terminate()拆除ImageMagick资源。
+多次调用特殊方法，导致常见的问题，这是一个错误对于Initialize，和Terminate来说，如死机或丢失代理。除了在程序中对ImageMagick的绝对需求外，不要使用Terminate。
+内存管理 由于这是一个CGO绑定，并且Go GC不管理由C API分配的内存，因此必须使用Terminate（）和Destroy（）方法。
+通过New*构造函数（MagickWand，DrawingWand，PixelIterator，PixelWand，&hellip;）创建的类型由Go GC通过使用终结器进行管理。
+如果使用struct literals，则应手动释放资源：
+package main import &quot;github.com/gographics/imagick/imagick&quot; func main() { imagick.Initialize() // Schedule cleanup defer imagick.Terminate() var err error mw := imagick.NewMagickWand() defer mw.Destroy() err = mw.ReadImage(&quot;header.png&quot;) if err != nil { panic(err) } // Get original logo size width := mw."/>
+
+    <meta property="og:title" content="imagick" />
+<meta property="og:description" content="Go语言imagick 使用总结 imagick 是一个开源的 c语言图片处理库，所以需要本地安装，并且配置 CGO
+Mac 安装imagic
+brew install imagemagick
+CGO配置
+export CGO_CFLAGS_ALLOW=&#39;-Xpreprocessor&#39; #cgo	 Initialize() 和 Terminate 根据ImageMagick C API，Initialize()应该只调用一次来设置使用ImageMagick的资源。这通常在您main()或init()整个应用程序或库中完成。应用程序可以推迟调用以Terminate()拆除ImageMagick资源。
+多次调用特殊方法，导致常见的问题，这是一个错误对于Initialize，和Terminate来说，如死机或丢失代理。除了在程序中对ImageMagick的绝对需求外，不要使用Terminate。
+内存管理 由于这是一个CGO绑定，并且Go GC不管理由C API分配的内存，因此必须使用Terminate（）和Destroy（）方法。
+通过New*构造函数（MagickWand，DrawingWand，PixelIterator，PixelWand，&hellip;）创建的类型由Go GC通过使用终结器进行管理。
+如果使用struct literals，则应手动释放资源：
+package main import &quot;github.com/gographics/imagick/imagick&quot; func main() { imagick.Initialize() // Schedule cleanup defer imagick.Terminate() var err error mw := imagick.NewMagickWand() defer mw.Destroy() err = mw.ReadImage(&quot;header.png&quot;) if err != nil { panic(err) } // Get original logo size width := mw." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/go-imagick/" />
+<meta property="article:published_time" content="2019-05-17T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-05-17T00:00:00&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="fanjinlong" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">imagick</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 17, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h1 id="go语言imagick-使用总结">Go语言imagick 使用总结</h1>
+
+<p>imagick 是一个开源的 c语言图片处理库，所以需要本地安装，并且配置 CGO</p>
+
+<p>Mac 安装imagic</p>
+
+<p><code>brew install imagemagick</code></p>
+
+<p>CGO配置</p>
+
+<pre><code class="language-shell">export CGO_CFLAGS_ALLOW='-Xpreprocessor' #cgo	
+</code></pre>
+
+<h2 id="initialize-和-terminate"><code>Initialize()</code> 和 <code>Terminate</code></h2>
+
+<p>根据ImageMagick C API，<code>Initialize()</code>应该只调用一次来设置使用ImageMagick的资源。这通常在您<code>main()</code>或<code>init()</code>整个应用程序或库中完成。应用程序可以推迟调用以<code>Terminate()</code>拆除ImageMagick资源。</p>
+
+<p>多次调用特殊方法，导致常见的问题，这是一个错误对于<code>Initialize</code>，和<code>Terminate</code>来说，如死机或丢失代理。除了在程序中对ImageMagick的绝对需求外，不要使用Terminate。</p>
+
+<h2 id="内存管理">内存管理</h2>
+
+<p>由于这是一个CGO绑定，并且Go GC不管理由C API分配的内存，因此必须使用Terminate（）和Destroy（）方法。</p>
+
+<p>通过<code>New*</code>构造函数（MagickWand，DrawingWand，PixelIterator，PixelWand，&hellip;）创建的类型由Go GC通过使用终结器进行管理。</p>
+
+<p>如果使用struct literals，则应手动释放资源：</p>
+
+<pre><code class="language-go">package main
+
+import &quot;github.com/gographics/imagick/imagick&quot;
+
+func main() {
+    imagick.Initialize()
+	// Schedule cleanup
+	defer imagick.Terminate()
+	var err error
+
+	mw := imagick.NewMagickWand()
+	defer mw.Destroy()
+
+	err = mw.ReadImage(&quot;header.png&quot;)
+	if err != nil {
+		panic(err)
+	}
+
+	// Get original logo size
+	width := mw.GetImageWidth()
+	height := mw.GetImageHeight()
+	println(&quot;width:&quot;, width, &quot; &quot;, height)
+}	
+</code></pre>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
