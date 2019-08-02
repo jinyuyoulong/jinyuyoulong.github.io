@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>使用Xcode8创建Python项目 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="http://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Xcode8创建Python项目"/>
+<meta name="twitter:description" content=" 今天想使用一个IDE来开发Python，省的每次写完后都要在terminal上敲命令。选来选去，既然已经安装了Xcode就先用他吧。
+那么怎么才能使用Xcode创建并运行Python文件呢？ 必要准备：mac &amp; Xcode 开发环境整理： 1.1 创建 1.2 选择mac跨平台应用 1.3 添加项目名称 2.1 添加文件 2.2 Other &gt; Empty Empty&rdquo; /&gt;
+2.3 给文件命名 3.1 Product &gt; Scheme &gt; Edit Scheme 3.2 Run &gt; info &gt; Executable &gt; Other 3.3 Command&#43;Shift&#43;G 定位文件路径Go to the folder:填写/usr/bin/python 3.4 确认选中的可执行文件 3.5 确认Executable 选中python Debug executable 不用选中 3.6 Arguments &gt; &#43; &gt;新建的文件名 3.7 Options &gt; Working Directory &gt;项目路径 选择文件 3.8 确认设置 4 运行 print &quot;hello world&quot; "/>
+
+    <meta property="og:title" content="使用Xcode8创建Python项目" />
+<meta property="og:description" content=" 今天想使用一个IDE来开发Python，省的每次写完后都要在terminal上敲命令。选来选去，既然已经安装了Xcode就先用他吧。
+那么怎么才能使用Xcode创建并运行Python文件呢？ 必要准备：mac &amp; Xcode 开发环境整理： 1.1 创建 1.2 选择mac跨平台应用 1.3 添加项目名称 2.1 添加文件 2.2 Other &gt; Empty Empty&rdquo; /&gt;
+2.3 给文件命名 3.1 Product &gt; Scheme &gt; Edit Scheme 3.2 Run &gt; info &gt; Executable &gt; Other 3.3 Command&#43;Shift&#43;G 定位文件路径Go to the folder:填写/usr/bin/python 3.4 确认选中的可执行文件 3.5 确认Executable 选中python Debug executable 不用选中 3.6 Arguments &gt; &#43; &gt;新建的文件名 3.7 Options &gt; Working Directory &gt;项目路径 选择文件 3.8 确认设置 4 运行 print &quot;hello world&quot; " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.v5u.win/fanyiqing/_posts/xcode8python/" />
+<meta property="article:published_time" content="2016-12-06T10:44:31&#43;00:00"/>
+<meta property="article:modified_time" content="2016-12-06T10:44:31&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="http://blog.v5u.win/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>为吾优</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">使用Xcode8创建Python项目</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Dec 6, 2016
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="http://blog.v5u.win/tags/python/">Python</a><a class="tag" href="http://blog.v5u.win/tags/xcode/">xcode</a></div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>今天想使用一个IDE来开发Python，省的每次写完后都要在terminal上敲命令。选来选去，既然已经安装了Xcode就先用他吧。</p>
+
+<h3 id="那么怎么才能使用xcode创建并运行python文件呢">那么怎么才能使用Xcode创建并运行Python文件呢？</h3>
+
+<h4 id="必要准备-mac-amp-xcode">必要准备：mac &amp; Xcode</h4>
+
+<hr />
+
+<h4 id="开发环境整理">开发环境整理：</h4>
+
+<hr />
+
+<h5 id="1-1-创建">1.1 创建</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python1.1.png" alt="creat" /></p>
+
+<h5 id="1-2-选择mac跨平台应用">1.2 选择mac跨平台应用</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python1.2.png" alt="select product" /></p>
+
+<h5 id="1-3-添加项目名称">1.3 添加项目名称</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python1.3.png" alt="add productName" /></p>
+
+<h5 id="2-1-添加文件">2.1 添加文件</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python2.1.png" alt="add file" /></p>
+
+<h5 id="2-2-other-empty">2.2 Other &gt; Empty</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python2.2.png" alt="Other " /> Empty&rdquo; /&gt;</p>
+
+<h5 id="2-3-给文件命名">2.3 给文件命名</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python2.3.png" alt="给文件命名" />
+<img src="http://ocnjk5c7r.bkt.clouddn.com/python/python2.3.1.png" alt="named" /></p>
+
+<h5 id="3-1-product-scheme-edit-scheme">3.1 Product &gt; Scheme &gt; Edit Scheme</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python3.1.png" alt="Edit Scheme" /></p>
+
+<h5 id="3-2-run-info-executable-other">3.2 Run &gt; info &gt; Executable &gt; Other</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python3.2.png" alt="Executable" /></p>
+
+<h5 id="3-3-command-shift-g-定位文件路径go-to-the-folder-填写-usr-bin-python">3.3 Command+Shift+G 定位文件路径Go to the folder:填写/usr/bin/python</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python3.3.png" alt="path" /></p>
+
+<h5 id="3-4-确认选中的可执行文件">3.4 确认选中的可执行文件</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python3.4.png" alt="comfirm" /></p>
+
+<h5 id="3-5-确认executable-选中python-debug-executable-不用选中">3.5 确认Executable 选中python Debug executable 不用选中</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python3.5.png" alt="Executable" /></p>
+
+<h5 id="3-6-arguments-新建的文件名">3.6 Arguments &gt; + &gt;新建的文件名</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python3.6.png" alt="Arguments" /></p>
+
+<h5 id="3-7-options-working-directory-项目路径">3.7 Options &gt; Working Directory &gt;项目路径</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python3.7.png" alt="Working Directory" />
+选择文件
+<img src="http://ocnjk5c7r.bkt.clouddn.com/python/python3.7.1.png" alt="select path" /></p>
+
+<h5 id="3-8-确认设置">3.8 确认设置</h5>
+
+<p><img src="http://ocnjk5c7r.bkt.clouddn.com/python/python3.8.png" alt="comfirm" /></p>
+
+<h5 id="4-运行">4 运行</h5>
+
+<p><code>print &quot;hello world&quot;</code>
+<img src="http://ocnjk5c7r.bkt.clouddn.com/python/python4.0.png" alt="run" /></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

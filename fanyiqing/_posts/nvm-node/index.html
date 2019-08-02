@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>nvm管理不同的node版本 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="http://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="nvm管理不同的node版本"/>
+<meta name="twitter:description" content="前任栽树后人乘凉 ：http://www.cnblogs.com/kongxianghai/p/5660101.html
+安装多版本node  安装nvm 通过下面的命令可进行一步到位的安装，下面两种方式可二选一。 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash 或者: wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash  安装  在命令行中运行命令，安装当前最新的稳定版。 nvm install stable 运行命令，指明版本，安装早期的版本0.12.4。 nvm install 0.12.4 安装后，当前使用的node版本默认为最后一次安装的版本，在命令行中运行命令可查看当前版本。 nvm current 切换node版本 nvm use 6 显示所有安装的版本 nvm ls 设置默认使用的版本 nvm alias default &amp;lt;version&amp;gt;  卸载  删除引用 nvm deactivate 卸载 nvm uninstall 7  安装全局组件
+非nvm管理的情况下，全局组件是安装到/usr/local/lib/node_modules下，然后通过软连接的方式把包中bin目录下的可执行文件链接到/usr/local/bin。不管用什么版本都装到这些目录下，多版本就没法玩了。
+在nvm管理下，以沙箱的方式，全局组件会装到.nvm目录的当前版本node下，也就是装在nvm这个沙箱里，跟在指定版本的node下，当前有什么版本的node，就有对应的全局组件。这是nvm强大的地方，在多运行环境的管理和切换极为好用。
+使用.nvmrc文件运行
+在服务器上很多时候会运行多个应用系统，每个应用系统使用的node版本是不一样的，老系统用0.12.x甚至0.10.x，新系统用了新特新所以用最新的node版本，都很实际很正常。
+为了让不同的应用系统使用各自所需的node版本运行，我们只需在各应用系统内的根目录里生成一个.nvmrc文件，在其内写一个版本号，利用nvm run &lt;系统启动文件&gt;的方式运行系统，即可完成要求。详情请看文章开头链接。"/>
+
+    <meta property="og:title" content="nvm管理不同的node版本" />
+<meta property="og:description" content="前任栽树后人乘凉 ：http://www.cnblogs.com/kongxianghai/p/5660101.html
+安装多版本node  安装nvm 通过下面的命令可进行一步到位的安装，下面两种方式可二选一。 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash 或者: wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash  安装  在命令行中运行命令，安装当前最新的稳定版。 nvm install stable 运行命令，指明版本，安装早期的版本0.12.4。 nvm install 0.12.4 安装后，当前使用的node版本默认为最后一次安装的版本，在命令行中运行命令可查看当前版本。 nvm current 切换node版本 nvm use 6 显示所有安装的版本 nvm ls 设置默认使用的版本 nvm alias default &amp;lt;version&amp;gt;  卸载  删除引用 nvm deactivate 卸载 nvm uninstall 7  安装全局组件
+非nvm管理的情况下，全局组件是安装到/usr/local/lib/node_modules下，然后通过软连接的方式把包中bin目录下的可执行文件链接到/usr/local/bin。不管用什么版本都装到这些目录下，多版本就没法玩了。
+在nvm管理下，以沙箱的方式，全局组件会装到.nvm目录的当前版本node下，也就是装在nvm这个沙箱里，跟在指定版本的node下，当前有什么版本的node，就有对应的全局组件。这是nvm强大的地方，在多运行环境的管理和切换极为好用。
+使用.nvmrc文件运行
+在服务器上很多时候会运行多个应用系统，每个应用系统使用的node版本是不一样的，老系统用0.12.x甚至0.10.x，新系统用了新特新所以用最新的node版本，都很实际很正常。
+为了让不同的应用系统使用各自所需的node版本运行，我们只需在各应用系统内的根目录里生成一个.nvmrc文件，在其内写一个版本号，利用nvm run &lt;系统启动文件&gt;的方式运行系统，即可完成要求。详情请看文章开头链接。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.v5u.win/fanyiqing/_posts/nvm-node/" />
+<meta property="article:published_time" content="2017-02-24T09:59:52&#43;00:00"/>
+<meta property="article:modified_time" content="2017-02-24T09:59:52&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="http://blog.v5u.win/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>为吾优</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">nvm管理不同的node版本</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 24, 2017
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="http://blog.v5u.win/tags/nodejs/">nodejs</a><a class="tag" href="http://blog.v5u.win/tags/nvm/">nvm</a></div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>前任栽树后人乘凉 ：<a href="http://www.cnblogs.com/kongxianghai/p/5660101.html">http://www.cnblogs.com/kongxianghai/p/5660101.html</a></p>
+
+<h3 id="安装多版本node">安装多版本node</h3>
+
+<ul>
+<li>安装nvm
+通过下面的命令可进行一步到位的安装，下面两种方式可二选一。
+curl -o- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh">https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh</a> | bash
+或者:
+wget -qO- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh">https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh</a> | bash</li>
+</ul>
+
+<h4 id="安装">安装</h4>
+
+<ul>
+<li>在命令行中运行命令，安装当前最新的稳定版。
+<code>nvm install stable</code></li>
+<li>运行命令，指明版本，安装早期的版本0.12.4。
+<code>nvm install 0.12.4</code></li>
+<li>安装后，当前使用的node版本默认为最后一次安装的版本，在命令行中运行命令可查看当前版本。
+<code>nvm current</code></li>
+<li>切换node版本
+<code>nvm use 6</code></li>
+<li>显示所有安装的版本
+<code>nvm ls</code></li>
+<li>设置默认使用的版本
+<code>nvm alias default &amp;lt;version&amp;gt;</code></li>
+</ul>
+
+<h4 id="卸载">卸载</h4>
+
+<ul>
+<li>删除引用
+<code>nvm deactivate</code></li>
+<li>卸载
+<code>nvm uninstall 7</code></li>
+</ul>
+
+<hr />
+
+<p>安装全局组件</p>
+
+<p>非nvm管理的情况下，全局组件是安装到/usr/local/lib/node_modules下，然后通过软连接的方式把包中bin目录下的可执行文件链接到/usr/local/bin。不管用什么版本都装到这些目录下，多版本就没法玩了。</p>
+
+<p>在nvm管理下，以沙箱的方式，全局组件会装到.nvm目录的当前版本node下，也就是装在nvm这个沙箱里，跟在指定版本的node下，当前有什么版本的node，就有对应的全局组件。这是nvm强大的地方，在多运行环境的管理和切换极为好用。</p>
+
+<p>使用.nvmrc文件运行</p>
+
+<p>在服务器上很多时候会运行多个应用系统，每个应用系统使用的node版本是不一样的，老系统用0.12.x甚至0.10.x，新系统用了新特新所以用最新的node版本，都很实际很正常。</p>
+
+<p>为了让不同的应用系统使用各自所需的node版本运行，我们只需在各应用系统内的根目录里生成一个.nvmrc文件，在其内写一个版本号，利用nvm run &lt;系统启动文件&gt;的方式运行系统，即可完成要求。<strong>详情请看文章开头链接。</strong></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

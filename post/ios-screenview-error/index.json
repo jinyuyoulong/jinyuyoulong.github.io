@@ -1,0 +1,7 @@
+{
+    "title": "iOS老应用显示不完全",
+    "date": "2016-04-03 13:55:06 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/ios-screenview-error/index.json",
+    "summary" : "解决 ： * 新建launchScreen文件 * 设置plist文件，添加Launch screen interface file base name字段 并将value值设为刚刚新建文件的文件名 * 删除模拟器或真机上的app重新编译运行"
+}

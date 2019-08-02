@@ -1,0 +1,8 @@
+{
+    "title": "主动退出iOS程序",
+    "date": "2015-08-10 12:05:51 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/ios-force-exit/index.json",
+    "summary" : "exit(0);
+只有这个API可以通过AppStore。"
+}

@@ -1,0 +1,17 @@
+{
+    "title": "Wordpress中各个全局函数的含义和应用",
+    "date": "2015-08-18 10:10:38 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/blog-wordpress-global-funtion/index.json",
+    "summary" : "在wordpress插件和主题开发中经常需要获取各种URL路径，wordpress提供了以下集中方法获得URL路径：
+plugins_url() — 插件目录的 URL (例如：http://www.hujuntao.com/wp-content/plugins)
+includes_url() — includes 目录的 URL (例如：http://www.hujuntao.com/wp-includes)
+content_url() — content 目录的 URL (例如：http://www.hujuntao.com/wp-content)
+admin_url() — admin 目录的 URL (例如：http://www.hujuntao.com/wp-admin/)
+site_url() — 当前网站的 URL (例如：http://www.hujuntao.com)
+home_url() — 当前网站首页的 URL (例如：http://www.hujuntao.com)) 
+总结就是：
+获得首页地址 ==&gt; home_url()、bloginfo(‘url’)、get_bloginfo(‘url’)、get_home_url()。home_url() 3.0加入的函数，为了兼容老版本推荐使用bloginfo();
+获得安装路径 ==&gt; site_url()、bloginfo(‘wpurl’)、get_bloginfo(‘wpurl’)、get_site_url()。
+如果你需要返回值 ==&gt; get_bloginfo(‘url’)、get_home_url()/get_bloginfo(‘wpurl’)、get_site_url() 如果你想直接输出值 ==&gt;"
+}

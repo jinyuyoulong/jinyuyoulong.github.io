@@ -1,0 +1,12 @@
+{
+    "title": "Unknown Class **** in Interface Builder file",
+    "date": "2015-08-24 10:44:12 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/ios-unknown-class-in-interface-builder-file/index.json",
+    "summary" : "I added a UIView xib file using the root class of&nbsp;MyView.
+I created it in the wrong place and so moved it in the project. Same project just a different folder/group.
+I then had a problem when running saying&hellip;
+Unknown Class MyView in Interface Builder file
+I couldn&#39;t work out what was wrong so I have now deleted the files both from the project and from the directory.
+I&#39;ve done a search using SublimeText2 for the string &quot;MyView&quot; and it doesn&#39;t exist anywhere in the project."
+}

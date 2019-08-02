@@ -1,0 +1,30 @@
+{
+    "title": "thinkphp5开发规范",
+    "date": "2018-11-09 00:00:00 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/php-thinkphp5%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/index.json",
+    "summary" : "目录结构 ./application
+​ ./index
+​ ./controller 控制层
+​ ./model 模型
+​ ./view
+​ ./admin 后台模块
+​ command.php 控制台配置，命令行执行，读取该模块
+​ common.php 项目的公共文件，通用函数，全局调用
+​ config.php 应用的配置文件
+​ database.php 数据库配置文件
+​ router.php 路由配置文件，对URL进行美化
+​ tags.php 应用行为配置文件，默认提供很多钩子，对框架进行扩展，达到无需修改框架源码，注册函数/行为——&gt;改变执行流程
+./extend 非composer的第三方库存放地址
+./public 网站根目录
+​ favicon.ico 网站标签页图标
+​ index.php 整个网站入口文件
+​ robots.txt 搜索引擎配置文件
+​ router.php 快速启动配置文件，无Apache时，通过thinkPHP内置的work server读取该文件，启动框架。例:php -S localhost:8888 router.php
+​ ./static 静态资源存放处，例: css、js、image
+./runtime 网站运行中缓存文件，日志、缓存、编译文件
+./thinkphp 框架文件
+​ base.php 定义一些常量
+​ composer.json composer的配置文件
+​ console.php 控制台入口文件"
+}

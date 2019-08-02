@@ -4,6 +4,7 @@
   
   <url>
     <loc>https://blog.v5u.win/categories/</loc>
+<<<<<<< HEAD
     <lastmod>2019-07-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -22,16 +23,25 @@
   <url>
     <loc>https://blog.v5u.win/categories/system/</loc>
     <lastmod>2019-07-26T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+>>>>>>> master
     <priority>0</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>https://blog.v5u.win/</loc>
     <lastmod>2019-07-26T00:00:00+00:00</lastmod>
+=======
+    <loc>https://blog.v5u.win/categories/go/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+>>>>>>> master
     <priority>0</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>https://blog.v5u.win/post/go-crontab/</loc>
     <lastmod>2019-07-19T16:51:27+08:00</lastmod>
   </url>
@@ -39,10 +49,15 @@
   <url>
     <loc>https://blog.v5u.win/categories/go-crontab/</loc>
     <lastmod>2019-07-19T16:51:27+08:00</lastmod>
+=======
+    <loc>https://blog.v5u.win/post/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+>>>>>>> master
     <priority>0</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>https://blog.v5u.win/categories/go/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -51,6 +66,16 @@
   <url>
     <loc>https://blog.v5u.win/post/go-%E6%8B%92%E7%BB%9D%E4%BA%86try%E6%8F%90%E6%A1%88/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+=======
+    <loc>https://blog.v5u.win/post/go-%E6%8B%92%E7%BB%9D%E4%BA%86try%E6%8F%90%E6%A1%88/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.v5u.win/</loc>
+    <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+>>>>>>> master
   </url>
   
   <url>
@@ -127,6 +152,15 @@
   </url>
   
   <url>
+<<<<<<< HEAD
+=======
+    <loc>https://blog.v5u.win/categories/system/</loc>
+    <lastmod>2019-07-01T15:05:09+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+>>>>>>> master
     <loc>https://blog.v5u.win/post/read-%E5%85%8D%E8%B4%B9-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2019-06-28T00:00:00+00:00</lastmod>
   </url>

@@ -1,0 +1,10 @@
+{
+    "title": "Go-流程控制",
+    "date": "2019-02-18 11:38:16 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/go-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/index.json",
+    "summary" : "[TOC]
+if if 100 &gt; number { number += 3 } else if 100 &lt; number { number -= 2 } else { fmt.Println(&quot;OK!&quot;) }  //变量赋值 if number := 4; 100 &gt; number { number += 3 }  // 标识符的重声明和标识符的遮蔽 var number int if number := 4; 100 &gt; number { number += 3 }  标识符的重声明和标识符的遮蔽 上述代码被执行完毕之后，第二次声明的number变量的值会是7，而第一次声明的number变量的值仍会是0。
+switch
+names := []string{&quot;Golang&quot;, &quot;Java&quot;, &quot;Rust&quot;, &quot;C&quot;} switch name := names[0]; name { case &quot;Golang&quot;: fmt."
+}

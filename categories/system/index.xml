@@ -6,12 +6,17 @@
     <description>Recent content in system on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
+<<<<<<< HEAD
     <lastBuildDate>Fri, 26 Jul 2019 00:00:00 +0000</lastBuildDate>
+=======
+    <lastBuildDate>Mon, 01 Jul 2019 15:05:09 +0800</lastBuildDate>
+>>>>>>> master
     
 	<atom:link href="https://blog.v5u.win/categories/system/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+<<<<<<< HEAD
       <title>flutter安装</title>
       <link>https://blog.v5u.win/post/system-flutter%E5%AE%89%E8%A3%85/</link>
       <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
@@ -22,6 +27,8 @@
     </item>
     
     <item>
+=======
+>>>>>>> master
       <title>Nginx 动态生成缩略图</title>
       <link>https://blog.v5u.win/post/system-nginx/</link>
       <pubDate>Mon, 01 Jul 2019 15:05:09 +0800</pubDate>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anybidirectionalcollection on 为吾优 Hugo静态站</title>
+    <link>http://blog.v5u.win/tags/anybidirectionalcollection/</link>
+    <description>Recent content in Anybidirectionalcollection on 为吾优 Hugo静态站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 27 Oct 2016 20:01:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.v5u.win/tags/anybidirectionalcollection/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AnyBidirectionalCollection</title>
+      <link>http://blog.v5u.win/post/swift-anybidirectionalcollection/</link>
+      <pubDate>Thu, 27 Oct 2016 20:01:25 +0000</pubDate>
+      
+      <guid>http://blog.v5u.win/post/swift-anybidirectionalcollection/</guid>
+      <description>A type-erased wrapper over any collection with indices that support bidirectional traversal.
+一种类型擦除的集合(索引支持双向遍历)</description>
+    </item>
+    
+  </channel>
+</rss>

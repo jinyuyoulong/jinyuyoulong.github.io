@@ -1,0 +1,12 @@
+{
+    "title": "工作区和GOPATH",
+    "date": "2019-02-14 15:34:03 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/go-workspace-gopath/index.json",
+    "summary" : " 工作区和GOPATH 工作区是放置Go源码文件的目录，一般情况下，Go源码文件都需要放在工作区，但是对于命令源码文件来说，这不是必须的。
+工作区目录结构：
+/ src/ pkg/ bin/  src/ #放源码的 pkg/ #存放归档文件(.a文件)所有归档文件都会存放到该目录下的平台相关目录中，同样以代码包为组织形式 bin/ #存放当前工作区中的Go程序的可执行文件
+平台相关目录 用两个隐含的Go语言环境变量：GOOS和GOARCH
+以$GOOS_$GOARCH为命名方式，例：linux_amd64和darwin_amd64
+bin目录  当环境变量GOBIN已有效设置时，该目录会变得无意义 当GOPATH的值中包含多个工作区的路径时，必须设置GOBIN，否则无法成功安装Go程序的可执行文件  "
+}

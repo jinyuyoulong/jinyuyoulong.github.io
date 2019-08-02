@@ -1,0 +1,8 @@
+{
+    "title": "swiftError",
+    "date": "2016-07-29 11:46:10 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/swift-swifterror/index.json",
+    "summary" : "value of type &lsquo;UILable&rsquo; has no member &lsquo;then&rsquo;
+UILable 没有扩展 then的协议 fix： extension UIView: Then{}"
+}

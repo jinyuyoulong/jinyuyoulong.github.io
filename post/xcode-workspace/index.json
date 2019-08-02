@@ -1,0 +1,7 @@
+{
+    "title": "Workspace的使用方法",
+    "date": "2016-07-21 16:39:53 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/xcode-workspace/index.json",
+    "summary" : " 更改 xcode-&gt; Preference -&gt; Location -&gt; Advanced -&gt; Custom -&gt; Relative to Workspace 新建Workspace 新建项目或静态库，选择 add workspace name 引入路径依赖，User Header Search Paths 设为 $(BUILT_PRODUCTS_DIR) 选择递归搜索 recursive 检查 scheme manage 中的项目依赖  "
+}

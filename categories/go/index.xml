@@ -51,10 +51,14 @@ defer func（）{ if err！= nil {	//可能没有发生错误 - 检查 错误= .
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/go-orm/</guid>
+<<<<<<< HEAD
       <description>   name xorm gorm     github-stars 5,053 14,262   github-fork 650 1,606         xorm 自动生成代码
 xorm help reverse
 格式：xorm reverse dirver dbname 导出模板
 xorm reverse mysql &amp;quot;username:pwd@tcp(127.0.0.1:3306)/dbname?charset=utf8&amp;quot; $GOPATH/src/github.com/go-xorm/cmd/xorm/templates/goxorm  </description>
+=======
+      <description>   name xorm gorm     github-stars 5,053 14,262   github-fork 650 1,606         </description>
+>>>>>>> master
     </item>
     
     <item>
@@ -143,12 +147,20 @@ AES加密里面有两个关键，一个是key（必须为16,24,32位），一个
       <guid>https://blog.v5u.win/post/go-grpc%E7%A0%94%E7%A9%B6%E6%80%BB%E7%BB%93/</guid>
       <description>什么是RPC RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。——百度百科
 支持环境配置(Mac)
+<<<<<<< HEAD
 安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制Protocol Buffers 3 简明教程
+=======
+安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制protocol buffer
+>>>>>>> master
 brew info protobuf brew install protobuf  检验protobuf安装结果
 protoc --version libprotoc 3.5.1  安装第三方包
 go mod download github.com/golang/protobuf/proto go mod download github.com/golang/protobuf/protoc-gen-go go mod download google.golang.org/grpc go install github.com/golang/protobuf/protoc-gen-go //编译 protoc-gen-go 可执行文件  创建 protobuf 文件
 vi add.proto add some date  生成 gRPC 代码
+<<<<<<< HEAD
 protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld 或 protoc -I . add.proto --go_out=plugins=grpc:.  这生成了 helloworld.</description>
+=======
+protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld 或 protoc -I . add.proto --go_out=plugins=grpc:.  这生成了 helloworld.pb.go ，包含了我们生成的客户端和服务端类，此外还有用于填充、序列化、提取 HelloRequest 和 HelloResponse 消息类型的类。</description>
+>>>>>>> master
     </item>
     
     <item>
@@ -164,7 +176,11 @@ protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld �
 添加依赖 go mod tidy
 生成 go.sum 自动添加依赖关系到 go.mod go run main.go
 下载依赖包 go mod download github.com/pelletier/go-toml
+<<<<<<< HEAD
 Tips:  不能在 golib/src 下创建项目 在 Go1.11 版本下，GOPATH 目录中的项目默认是禁用 Go Module 的，需要手动开启 export GOPROXY=&amp;ldquo;https://athens.azurefd.net&amp;quot; // 微软提供的公共代理,也可以以此技术建立自己的公共库 export export GO111MODULE=on // 必须使用module依赖，在src/ 目录下可以使用module  常用命令 go mod tidy //拉取缺少的模块，移除不用的模块。 go mod download //下载依赖包 go mod graph //打印模块依赖图 go mod vendor //将依赖复制到 vendor 下 go mod verify //校验依赖 go mod why //解释为什么需要依赖 go list -m -json all //依赖详情  </description>
+=======
+Tips:  不能在 golib/src 下创建项目 在 Go1.11 版本下，GOPATH 目录中的项目默认是禁用 Go Module 的，需要手动开启 export GOPROXY=&amp;ldquo;https://athens.azurefd.net&amp;quot; // 微软提供的公共代理,也可以以此技术建立自己的公共库 export export GO111MODULE=on // 必须使用module依赖，在src/ 目录下可以使用module  常用命令 go mod tidy //拉取缺少的模块，移除不用的模块。 go mod download //下载依赖包 go mod graph //打印模块依赖图 go mod vendor //将依赖复制到vendor下 go mod verify //校验依赖 go mod why //解释为什么需要依赖 go list -m -json all //依赖详情  </description>
+>>>>>>> master
     </item>
     
     <item>
@@ -201,7 +217,11 @@ Amber, 它的模板解析器 github.com/eknkc/amber
       <description> 路由配置规则 直接通过 function 绑定 controller，function name 映射到 路由的地址
 function named rule：
 func(*Controller) GetLoginBy(id int64) 绑定的controller HTTP-method+routePath map to - GET:/user/login/{param:long}  通过控制器方法的输入参数访问动态路径参数，不需要绑定。当您使用Iris的默认语法来解析来自控制器的处理程序时，您需要使用By字来为方法添加后缀，大写是一个新的子路径。例： 如这种形式 mvc.New(app.Party(&amp;ldquo;/user&amp;rdquo;)).Handle(new(user.Controller)) 则:
+<<<<<<< HEAD
  func(*Controller) Get() - GET:/user func(*Controller) Post() - POST:/user func(*Controller) GetLogin() - GET:/user/login func(*Controller) PostLogin() - POST:/user/login func(*Controller) GetProfileFollowers() - GET:/user/profile/followers func(*Controller) PostProfileFollowers() - POST:/user/profile/followers func(*Controller) GetBy(id int64) - GET:/user/{param:long} func(*Controller) PostBy(id int64) - POST:/user/{param:long}  </description>
+=======
+ func(*Controller) Get() - GET:/user. func(*Controller) Post() - POST:/user. func(*Controller) GetLogin() - GET:/user/login func(*Controller) PostLogin() - POST:/user/login func(*Controller) GetProfileFollowers() - GET:/user/profile/followers func(*Controller) PostProfileFollowers() - POST:/user/profile/followers func(*Controller) GetBy(id int64) - GET:/user/{param:long} func(*Controller) PostBy(id int64) - POST:/user/{param:long}  </description>
+>>>>>>> master
     </item>
     
     <item>

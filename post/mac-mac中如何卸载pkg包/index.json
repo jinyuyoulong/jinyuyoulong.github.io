@@ -1,0 +1,10 @@
+{
+    "title": "mac中如何卸载pkg包",
+    "date": "2019-03-19 00:00:00 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/mac-mac%E4%B8%AD%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDpkg%E5%8C%85/index.json",
+    "summary" : "mac中如何卸载pkg包 pkgutil &ndash;pkgs
+cd /private/var/db/receipts
+ls
+lsbom com.apple.pkg.JavaForMacOSX107.bom //查看所有关联文件。"
+}

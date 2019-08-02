@@ -1,0 +1,20 @@
+{
+    "title": "go-代码组织方式",
+    "date": "2019-02-14 15:48:05 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/go-%E4%BB%A3%E7%A0%81%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F/index.json",
+    "summary" : "[TOC]
+Go源码文件以 .go 为后缀。
+Go语言的代码通过包（package）组织，包类似于其它语言里的库（libraries）或者模块（modules）。一个包由位于单个目录下的一个或多个.go源代码文件组成, 目录定义包的作用。每个源文件都以一条package声明语句开始，这个例子里就是package main, 表示该文件属于哪个包，紧跟着一系列导入（import）的包，之后是存储在这个文件里的程序语句。
+main包比较特殊。它定义了一个独立可执行的程序，而不是一个库。在main里的main 函数 也很特殊，它是整个程序执行时的入口
+多个源码文件需要用源码包组织起来。
+同一 package 下多文件代码管理 实现：在同一目录下，创建多个 go 文件， 文件的 package 都设置为同一个 package 名。但是同一个目录下只能声明一个package name。
+例：package main
+无需导入文件，直接调用其他文件里的方法。
+举例：
+在 mutifiles-package/ 目录下创建两个文件：main.go util.go
+package main func main(){ foo() } // main.go  package main import &quot;fmt&quot; func foo(){ fmt.Println(&quot;foo()&quot;) } // util.go	 命令行执行 go build,生成一个 mutifiles-package 可执行文件。
+./mutifiles-package 打印 foo() 。
+注意：直接运行 go run main.go util.go 也可以打印 foo()，必须将两个文件都引入。
+代码包的导入 import用法 import( &quot;fmt&quot; )  上面这个fmt是Go语言的标准库，他其实是去GOROOT下去加载该模块（先找GOROOT，如果GOROOT找不到在去GOPATH找），当然Go的import还支持如下两种方式来加载自己写的模块："
+}

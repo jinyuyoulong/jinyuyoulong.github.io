@@ -1,0 +1,7 @@
+{
+    "title": "vagrant&homestead的使用",
+    "date": "2018-12-04 00:00:00 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/system-vagranthomestead%E7%9A%84%E4%BD%BF%E7%94%A8/index.json",
+    "summary" : "~/Homestead 目录下执行下面的命令 - 初始化虚拟机vagrant up - 登录vagrant ssh - 退出虚拟机exit - 关闭 Homesteadvagrant halt"
+}

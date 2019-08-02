@@ -1,0 +1,9 @@
+{
+    "title": "Go的函数 结构体",
+    "date": "2019-02-17 21:15:19 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/go-function/index.json",
+    "summary" : "func(input1 string ,input2 string) string type MyFunc func(input1 string ,input2 string) string// 函数声明  函数实现
+func myFunc(part1 string, part2 string) (result string) { result = part1 + part2 return } //如果结果声明是带名称的，那么它就相当于一个已被声明但未被显式赋值的变量。 //我们可以为它赋值且在return语句中省略掉需要返回的结果值。  或
+func myFunc(part1 string, part2 string) string { return part1 + part2 }  var splice func(string, string) string // 等价于 var splice MyFunc //只要一个函数的参数声明列表和结果声明列表中的数据类型的顺序和名称与某一个函数类型完全一致，前者就是后者的一个实现。  var result = func(part1 string, part2 string) string { return part1 + part2 }(&quot;1&quot;, &quot;2&quot;)  结构体"
+}

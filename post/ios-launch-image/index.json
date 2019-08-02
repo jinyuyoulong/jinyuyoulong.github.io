@@ -1,0 +1,12 @@
+{
+    "title": "iOS端App的icon和Launch Image规格实时更新",
+    "date": "2015-07-14 17:45:49 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/ios-launch-image/index.json",
+    "summary" : "启动影像 ：&nbsp;iPhone&nbsp;：320 x 480&nbsp;640 x 960 640*1136&nbsp;750*1334 1242*2208&nbsp;&nbsp;iPad&nbsp;：768 x 1004&nbsp;1536 x 2008
+ APP图标：&nbsp;iPhone：120 x 120&nbsp;180 x 180iPad：76 x 76&nbsp;152 x 152
+ App Store商店：1024 x 1024
+ Spotlight搜索小图标：&nbsp;iPhone：80 x 80&nbsp;120 x 120iPad：50 x 50、29 x 29 &nbsp;100 x 100、58 x 58
+ 文档图标：&nbsp;iPhone：22 x 29&nbsp;44 x 58&nbsp;iPad：64 x 64、320 x 320 &nbsp;128 x 128、640 x 640
+ Web Clip图标 ：iPhone：&nbsp;57 x 57&nbsp;114 x 114&nbsp;iPad：72 x 72&nbsp;144 x 144"
+}

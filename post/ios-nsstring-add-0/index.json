@@ -1,0 +1,11 @@
+{
+    "title": "NSString 位数不足补0",
+    "date": "2016-01-15 16:22:44 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/ios-nsstring-add-0/index.json",
+    "summary" : "%0nd ，n是多少位。0表示补0
+如果是%nd，就是不满n位，自动补充空格。 NSString* testStr;
+intf = 12;
+testStr = [NSString stringWithFormat:@&ldquo;%03d&rdquo;,f];
+NSLog(@&ldquo;%@&rdquo;,testStr);"
+}

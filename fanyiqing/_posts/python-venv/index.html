@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>python venv 虚拟环境使用 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="http://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python venv 虚拟环境使用"/>
+<meta name="twitter:description" content="virtualenv就是用来为一个应用创建一套“隔离”的Python运行环境。
+Python3.3以上的版本通过venv模块原生支持虚拟环境，可以代替Python之前的virtualenv。
+该venv模块提供了创建轻量级“虚拟环境”，提供与系统python的隔离支持。每一个虚拟环境都有其自己的Python二进制（允许有不同的Python版本创作环境），并且可以拥有自己独立的一套Python包。
+需要注意的是，在Python3.3中使用”venv”命令创建的环境不包含”pip”，你需要进行手动安装。在Python3.4中改进了这一个缺陷。
+安装 python -m venv .
+启动 source venv/bin/activate
+退出 deactivate
+&nbsp;
+&nbsp;
+virtualenv是如何创建“独立”的Python运行环境的呢？原理很简单，就是把系统Python复制一份到virtualenv的环境，用命令source venv/bin/activate进入一个virtualenv环境时，virtualenv会修改相关环境变量，让命令python和pip均指向当前的virtualenv环境。"/>
+
+    <meta property="og:title" content="python venv 虚拟环境使用" />
+<meta property="og:description" content="virtualenv就是用来为一个应用创建一套“隔离”的Python运行环境。
+Python3.3以上的版本通过venv模块原生支持虚拟环境，可以代替Python之前的virtualenv。
+该venv模块提供了创建轻量级“虚拟环境”，提供与系统python的隔离支持。每一个虚拟环境都有其自己的Python二进制（允许有不同的Python版本创作环境），并且可以拥有自己独立的一套Python包。
+需要注意的是，在Python3.3中使用”venv”命令创建的环境不包含”pip”，你需要进行手动安装。在Python3.4中改进了这一个缺陷。
+安装 python -m venv .
+启动 source venv/bin/activate
+退出 deactivate
+&nbsp;
+&nbsp;
+virtualenv是如何创建“独立”的Python运行环境的呢？原理很简单，就是把系统Python复制一份到virtualenv的环境，用命令source venv/bin/activate进入一个virtualenv环境时，virtualenv会修改相关环境变量，让命令python和pip均指向当前的virtualenv环境。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.v5u.win/fanyiqing/_posts/python-venv/" />
+<meta property="article:published_time" content="2017-07-04T09:53:23&#43;00:00"/>
+<meta property="article:modified_time" content="2017-07-04T09:53:23&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="http://blog.v5u.win/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <h1>为吾优</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+      <div class="app-header-social">
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">python venv 虚拟环境使用</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 4, 2017
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="http://blog.v5u.win/tags/python/">Python</a></div></div>
+    </header>
+    <div class="post-content">
+      <p>virtualenv就是用来为一个应用创建一套“隔离”的Python运行环境。</p>
+
+<p>Python3.3以上的版本通过venv模块原生支持虚拟环境，可以代替<a href="http://lib.csdn.net/base/python" title="Python知识库">Python</a>之前的virtualenv。</p>
+
+<p>该venv模块提供了创建轻量级“虚拟环境”，提供与系统<a href="http://lib.csdn.net/base/python" title="Python知识库">python</a>的隔离支持。每一个虚拟环境都有其自己的Python二进制（允许有不同的Python版本创作环境），并且可以拥有自己独立的一套Python包。</p>
+
+<p>需要注意的是，在Python3.3中使用”venv”命令创建的环境不包含”pip”，你需要进行手动安装。在Python3.4中改进了这一个缺陷。</p>
+
+<p>安装 <strong>python -m venv .</strong></p>
+
+<p>启动 <strong>source venv/bin/activate</strong></p>
+
+<p>退出 <strong>deactivate</strong></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>virtualenv是如何创建“独立”的Python运行环境的呢？原理很简单，就是把系统Python复制一份到virtualenv的环境，用命令<code>source venv/bin/activate</code>进入一个virtualenv环境时，virtualenv会修改相关环境变量，让命令<code>python</code>和<code>pip</code>均指向当前的virtualenv环境。</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "title": "iOS如何判断应用是否开启摄像头权限",
+    "date": "2015-06-19 11:25:28 +0000 UTC",
+    "type": "post",
+    "permalink" : "http://blog.v5u.win/post/ios-camera-right/index.json",
+    "summary" : "NSString * mediaType = AVMediaTypeVideo;
+&nbsp; &nbsp; AVAuthorizationStatus&nbsp; authorizationStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+&nbsp; &nbsp; if (authorizationStatus == AVAuthorizationStatusRestricted || authorizationStatus == AVAuthorizationStatusDenied) {
+&nbsp; &nbsp; &nbsp; &nbsp; UIAlertController* alertC = [UIAlertControlleralertControllerWithTitle:@&quot;摄像头访问受限&quot;message:nilpreferredStyle:UIAlertControllerStyleAlert];
+&nbsp; &nbsp; &nbsp; &nbsp; [selfpresentViewController:alertC animated:YEScompletion:nil];
+&nbsp; &nbsp; &nbsp; &nbsp; UIAlertAction* action = [UIAlertActionactionWithTitle:@&quot;取消&quot;style:UIAlertActionStyleCancelhandler:^(UIAlertAction*action) {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [selfdismissViewControllerAnimated:YEScompletion:nil];
+&nbsp; &nbsp; &nbsp; &nbsp; }];
+&nbsp; &nbsp; &nbsp; &nbsp; [alertC addAction:action];
+&nbsp; &nbsp; }else{
+}"
+}
