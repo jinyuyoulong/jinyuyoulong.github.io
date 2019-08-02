@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go-crontab on 为吾优</title>
+    <link>https://blog.v5u.win/categories/go-crontab/</link>
+    <description>Recent content in Go-crontab on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 19 Jul 2019 16:51:27 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/categories/go-crontab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go Crontab</title>
+      <link>https://blog.v5u.win/post/go-crontab/</link>
+      <pubDate>Fri, 19 Jul 2019 16:51:27 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-crontab/</guid>
+      <description>[TOC]
+计划任务 from Godoc
+包cron实现了cron规范解析器和作业运行器。
+安装 要下载特定的标记版本，请运行:
+go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中:
+import “github.com/robfig/cron/v3” 由于Go Modules的使用，它需要Go 1.11或更高版本。
+用法 呼叫者可以在给定的时间表上注册要调用的Func。Cron将在他们自己的goroutines中运行它们。
+c := cron.New() c.AddFunc(&amp;quot;30 * * * *&amp;quot;, func() { fmt.Println(&amp;quot;Every hour on the half hour&amp;quot;) }) c.AddFunc(&amp;quot;30 3-6,20-23 * * *&amp;quot;, func() { fmt.Println(&amp;quot;.. in the range 3-6am, 8-11pm&amp;quot;) }) c.AddFunc(&amp;quot;CRON_TZ=Asia/Tokyo 30 04 * * * *&amp;quot;, func() { fmt.Println(&amp;quot;Runs at 04:30 Tokyo time every day&amp;quot;) }) c.AddFunc(&amp;quot;@hourly&amp;quot;, func() { fmt.</description>
+    </item>
+    
+  </channel>
+</rss>
