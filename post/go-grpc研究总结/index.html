@@ -14,38 +14,22 @@
 <meta name="twitter:title" content="Go gRPC研究总结"/>
 <meta name="twitter:description" content="什么是RPC RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。——百度百科
 支持环境配置(Mac)
-<<<<<<< HEAD
 安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制Protocol Buffers 3 简明教程
-=======
-安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制protocol buffer
->>>>>>> master
 brew info protobuf brew install protobuf  检验protobuf安装结果
 protoc --version libprotoc 3.5.1  安装第三方包
 go mod download github.com/golang/protobuf/proto go mod download github.com/golang/protobuf/protoc-gen-go go mod download google.golang.org/grpc go install github.com/golang/protobuf/protoc-gen-go //编译 protoc-gen-go 可执行文件  创建 protobuf 文件
 vi add.proto add some date  生成 gRPC 代码
-<<<<<<< HEAD
 protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld 或 protoc -I . add.proto --go_out=plugins=grpc:.  这生成了 helloworld."/>
-=======
-protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld 或 protoc -I . add.proto --go_out=plugins=grpc:.  这生成了 helloworld.pb.go ，包含了我们生成的客户端和服务端类，此外还有用于填充、序列化、提取 HelloRequest 和 HelloResponse 消息类型的类。"/>
->>>>>>> master
 
     <meta property="og:title" content="Go gRPC研究总结" />
 <meta property="og:description" content="什么是RPC RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。——百度百科
 支持环境配置(Mac)
-<<<<<<< HEAD
 安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制Protocol Buffers 3 简明教程
-=======
-安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制protocol buffer
->>>>>>> master
 brew info protobuf brew install protobuf  检验protobuf安装结果
 protoc --version libprotoc 3.5.1  安装第三方包
 go mod download github.com/golang/protobuf/proto go mod download github.com/golang/protobuf/protoc-gen-go go mod download google.golang.org/grpc go install github.com/golang/protobuf/protoc-gen-go //编译 protoc-gen-go 可执行文件  创建 protobuf 文件
 vi add.proto add some date  生成 gRPC 代码
-<<<<<<< HEAD
 protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld 或 protoc -I . add.proto --go_out=plugins=grpc:.  这生成了 helloworld." />
-=======
-protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld 或 protoc -I . add.proto --go_out=plugins=grpc:.  这生成了 helloworld.pb.go ，包含了我们生成的客户端和服务端类，此外还有用于填充、序列化、提取 HelloRequest 和 HelloResponse 消息类型的类。" />
->>>>>>> master
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.v5u.win/post/go-grpc%E7%A0%94%E7%A9%B6%E6%80%BB%E7%BB%93/" />
 <meta property="article:published_time" content="2019-04-11T00:00:00&#43;00:00"/>
@@ -97,11 +81,7 @@ protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld �
 
 <p>支持环境配置(Mac)</p>
 
-<<<<<<< HEAD
 <p>安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制<a href="https://juejin.im/post/5b852d476fb9a019e4505873">Protocol Buffers 3 简明教程</a></p>
-=======
-<p>安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制<a href="https://juejin.im/post/5b852d476fb9a019e4505873">protocol buffer</a></p>
->>>>>>> master
 
 <pre><code class="language-protobuf">brew info protobuf
 brew install protobuf
@@ -138,7 +118,6 @@ protoc -I . add.proto --go_out=plugins=grpc:.
 
 <p>在server.go 实现AddServiceServer 的接口方法</p>
 
-<<<<<<< HEAD
 <pre><code class="language-go">type HelloServer struct {
 }
 
@@ -147,8 +126,6 @@ func (h HelloServer) SayHello(c context.Context, in *pb.HelloRequest) (*pb.Hello
 }	
 </code></pre>
 
-=======
->>>>>>> master
 <p>实现server &amp; client</p>
 
 <p>打开两个终端，分别启动 serve &amp; client</p>

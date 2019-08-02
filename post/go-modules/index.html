@@ -19,11 +19,7 @@
 添加依赖 go mod tidy
 生成 go.sum 自动添加依赖关系到 go.mod go run main.go
 下载依赖包 go mod download github.com/pelletier/go-toml
-<<<<<<< HEAD
 Tips:  不能在 golib/src 下创建项目 在 Go1.11 版本下，GOPATH 目录中的项目默认是禁用 Go Module 的，需要手动开启 export GOPROXY=&ldquo;https://athens.azurefd.net&quot; // 微软提供的公共代理,也可以以此技术建立自己的公共库 export export GO111MODULE=on // 必须使用module依赖，在src/ 目录下可以使用module  常用命令 go mod tidy //拉取缺少的模块，移除不用的模块。 go mod download //下载依赖包 go mod graph //打印模块依赖图 go mod vendor //将依赖复制到 vendor 下 go mod verify //校验依赖 go mod why //解释为什么需要依赖 go list -m -json all //依赖详情  "/>
-=======
-Tips:  不能在 golib/src 下创建项目 在 Go1.11 版本下，GOPATH 目录中的项目默认是禁用 Go Module 的，需要手动开启 export GOPROXY=&ldquo;https://athens.azurefd.net&quot; // 微软提供的公共代理,也可以以此技术建立自己的公共库 export export GO111MODULE=on // 必须使用module依赖，在src/ 目录下可以使用module  常用命令 go mod tidy //拉取缺少的模块，移除不用的模块。 go mod download //下载依赖包 go mod graph //打印模块依赖图 go mod vendor //将依赖复制到vendor下 go mod verify //校验依赖 go mod why //解释为什么需要依赖 go list -m -json all //依赖详情  "/>
->>>>>>> master
 
     <meta property="og:title" content="Go modules" />
 <meta property="og:description" content=" go modules [TOC]
@@ -33,11 +29,7 @@ Tips:  不能在 golib/src 下创建项目 在 Go1.11 版本下，GOPATH 目录�
 添加依赖 go mod tidy
 生成 go.sum 自动添加依赖关系到 go.mod go run main.go
 下载依赖包 go mod download github.com/pelletier/go-toml
-<<<<<<< HEAD
 Tips:  不能在 golib/src 下创建项目 在 Go1.11 版本下，GOPATH 目录中的项目默认是禁用 Go Module 的，需要手动开启 export GOPROXY=&ldquo;https://athens.azurefd.net&quot; // 微软提供的公共代理,也可以以此技术建立自己的公共库 export export GO111MODULE=on // 必须使用module依赖，在src/ 目录下可以使用module  常用命令 go mod tidy //拉取缺少的模块，移除不用的模块。 go mod download //下载依赖包 go mod graph //打印模块依赖图 go mod vendor //将依赖复制到 vendor 下 go mod verify //校验依赖 go mod why //解释为什么需要依赖 go list -m -json all //依赖详情  " />
-=======
-Tips:  不能在 golib/src 下创建项目 在 Go1.11 版本下，GOPATH 目录中的项目默认是禁用 Go Module 的，需要手动开启 export GOPROXY=&ldquo;https://athens.azurefd.net&quot; // 微软提供的公共代理,也可以以此技术建立自己的公共库 export export GO111MODULE=on // 必须使用module依赖，在src/ 目录下可以使用module  常用命令 go mod tidy //拉取缺少的模块，移除不用的模块。 go mod download //下载依赖包 go mod graph //打印模块依赖图 go mod vendor //将依赖复制到vendor下 go mod verify //校验依赖 go mod why //解释为什么需要依赖 go list -m -json all //依赖详情  " />
->>>>>>> master
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.v5u.win/post/go-modules/" />
 <meta property="article:published_time" content="2019-04-03T00:00:00&#43;00:00"/>
@@ -124,17 +116,10 @@ Tips:  不能在 golib/src 下创建项目 在 Go1.11 版本下，GOPATH 目录�
 
 <h4 id="常用命令">常用命令</h4>
 
-<<<<<<< HEAD
 <pre><code class="language-sh">go mod tidy //拉取缺少的模块，移除不用的模块。
 go mod download //下载依赖包
 go mod graph //打印模块依赖图
 go mod vendor //将依赖复制到 vendor 下
-=======
-<pre><code>go mod tidy //拉取缺少的模块，移除不用的模块。
-go mod download //下载依赖包
-go mod graph //打印模块依赖图
-go mod vendor //将依赖复制到vendor下
->>>>>>> master
 go mod verify //校验依赖
 go mod why //解释为什么需要依赖
 go list -m -json all //依赖详情
