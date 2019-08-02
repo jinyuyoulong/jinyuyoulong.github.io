@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NSDate on 为吾优</title>
-    <link>https://blog.v5u.win/tags/nsdate/</link>
+    <link>https://jinyuyoulong.github.io/tags/nsdate/</link>
     <description>Recent content in NSDate on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 28 Aug 2015 16:53:17 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/nsdate/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/nsdate/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>NSDate和时间戳互转</title>
-      <link>https://blog.v5u.win/post/ios-nsdate2timenumber/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-nsdate2timenumber/</link>
       <pubDate>Fri, 28 Aug 2015 16:53:17 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-nsdate2timenumber/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-nsdate2timenumber/</guid>
       <description>iOS 将时间NSDate转化为毫秒时间戳 对于将NSDate类型转换为时间戳，相信大家肯定都会，这样的示例代码，在百度等搜索引擎上面一搜索就是一大篇的东西，但是，大家有没有注意到的是 通过那些方法转换得到的时间戳是 10位的数值，这个数值在转化为 NSDate类型的时候，就会出点儿错，你会发现，每一个时间的 毫秒都是为000的；&amp;nbsp;
 而正确的应该是下面这样的输出：&amp;nbsp;
 &amp;nbsp;&amp;nbsp;&amp;nbsp; 好了，接下来就是问题所在了：其实呢，并不是我们代码出错了，而是因为 [[NSDate date] timeIntervalSince1970] 虽然可以获取到后面的毫秒、微秒 ，但是在保存的时候省略掉了。如一个时间戳不省略的情况下为 1395399556.862046 ，省略掉后为一般所见 1395399556 。所以想取得毫秒时用获取到的时间戳 *1000 ，想取得微秒时 用取到的时间戳 * 1000 * 1000 。这样就解释了上面的10位数值的问题，当你取毫秒的时候，就会变成13位数值了。我想这样大家应该明白了吧！&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; 当然，说了 这么多理论性的东西，为的就是我们接下来会附上的代码的：&amp;nbsp; 将这段代码写在 你需要获取时间戳和转换的地方，而我因为是简单示范，就放在-viewDidload里面的。&amp;nbsp;

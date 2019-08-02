@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>设计 on 为吾优</title>
-    <link>https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/</link>
+    <link>https://jinyuyoulong.github.io/categories/%E8%AE%BE%E8%AE%A1/</link>
     <description>Recent content in 设计 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 05 Aug 2016 10:46:42 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/categories/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>函数式编程</title>
-      <link>https://blog.v5u.win/post/system-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</link>
+      <link>https://jinyuyoulong.github.io/post/system-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Fri, 05 Aug 2016 10:46:42 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://jinyuyoulong.github.io/post/system-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
       <description> 函数式编程的三大特性： •immutable data 不可变数据：
 像Clojure一样，默认上变量是不可变的，如果你要改变变量，你需要把变量copy出去修改。这样一来，可以让你的程序少很多Bug。因为，程序中的状态不好维护，在并发的时候更不好维护。（你可以试想一下如果你的程序有个复杂的状态，当以后别人改你代码的时候，是很容易出bug的，在并行中这样的问题就更多了）
 •first class functions：

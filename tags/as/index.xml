@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>as on 为吾优</title>
-    <link>https://blog.v5u.win/tags/as/</link>
+    <link>https://jinyuyoulong.github.io/tags/as/</link>
     <description>Recent content in as on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 26 Oct 2016 13:52:46 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/as/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/as/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>as as! as?</title>
-      <link>https://blog.v5u.win/post/swift-as/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-as/</link>
       <pubDate>Wed, 26 Oct 2016 13:52:46 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-as/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-as/</guid>
       <description>Swift开发之 is、 as、as!、as?三种类型转换操作符
 1，as使用场合
 （1）从派生类转换为基类，向上转型（upcasts）

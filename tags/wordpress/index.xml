@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WordPress on 为吾优</title>
-    <link>https://blog.v5u.win/tags/wordpress/</link>
+    <link>https://jinyuyoulong.github.io/tags/wordpress/</link>
     <description>Recent content in WordPress on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 10 Apr 2018 05:33:11 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>WordPress4.4之后原生支持REST API</title>
-      <link>https://blog.v5u.win/703.html</link>
+      <link>https://jinyuyoulong.github.io/703.html</link>
       <pubDate>Tue, 10 Apr 2018 05:33:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/703.html</guid>
+      <guid>https://jinyuyoulong.github.io/703.html</guid>
       <description>WordPress4.4之后REST API 格式:www.网址/wp-json/wp/v2,例：www.v5u.win/wp-json/wp/v2 路由参数有五个，posts,pages,categories,tags,comments。 例：www.v5u.win/wp-json/wp/v2/posts url参数有： per_page(每页记录数)， page(页码), orderby(排序规则), order(排序方式) 例：?per_page=8&amp;amp;page=1&amp;amp;orderby=date&amp;amp;order=desc每页显示8条，第一页，以时间排序，降序展示。 官方文档REST API在这里查看： https://developer.wordpress.org/rest-api/</description>
     </item>
     
     <item>
       <title>WordPress4 如何添加友情链接</title>
-      <link>https://blog.v5u.win/700.html</link>
+      <link>https://jinyuyoulong.github.io/700.html</link>
       <pubDate>Tue, 10 Apr 2018 03:11:38 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/700.html</guid>
+      <guid>https://jinyuyoulong.github.io/700.html</guid>
       <description>链接—&amp;gt;创建链接分类目录 —&amp;gt;添加链接 外观—&amp;gt;小工具—&amp;gt;链接—&amp;gt;选择链接分类目录 以前有用友链插件或者自定义菜单目录（Google第一条），发现这些教程有过时了。特意总结后写到这里</description>
     </item>
     

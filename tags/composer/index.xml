@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>composer on 为吾优</title>
-    <link>https://blog.v5u.win/tags/composer/</link>
+    <link>https://jinyuyoulong.github.io/tags/composer/</link>
     <description>Recent content in composer on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 09 Jun 2017 03:35:06 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/composer/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/composer/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mac下安装composer</title>
-      <link>https://blog.v5u.win/post/mac-composer/</link>
+      <link>https://jinyuyoulong.github.io/post/mac-composer/</link>
       <pubDate>Fri, 09 Jun 2017 03:35:06 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-composer/</guid>
+      <guid>https://jinyuyoulong.github.io/post/mac-composer/</guid>
       <description>composer是PHP的包管理器
 mac下如何安装呢？
 最简单的方法是通过brew工具

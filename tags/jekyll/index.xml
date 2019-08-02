@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jekyll on 为吾优</title>
-    <link>https://blog.v5u.win/tags/jekyll/</link>
+    <link>https://jinyuyoulong.github.io/tags/jekyll/</link>
     <description>Recent content in jekyll on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     
-	<atom:link href="https://blog.v5u.win/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>jekyll using standards 使用规范</title>
-      <link>https://blog.v5u.win/post/blog-jekyll/</link>
+      <link>https://jinyuyoulong.github.io/post/blog-jekyll/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/blog-jekyll/</guid>
+      <guid>https://jinyuyoulong.github.io/post/blog-jekyll/</guid>
       <description>jekyll using standards 使用规范  文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必须为&amp;rdquo;年-月-日-文章标题.后缀名&amp;rdquo;的格式。如果网页代码采用html格式，后缀名为html；如果采用markdown格式，后缀名为md。）
  在该文件中，填入以下内容：（注意，行首不能有空格）
 --- layout: default title: 你好，世界 --- &amp;lt;h2&amp;gt;{{ page.title }}&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;我的第一篇文章&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;{{ page.date | date_to_string }}&amp;lt;/p&amp;gt;  每篇文章的头部，必须有一个yaml文件头，用来设置一些元数据。 它用三根短划线&amp;rdquo;&amp;mdash;&amp;ldquo;，标记开始和结束，里面每一行设置一种元数据。&amp;rdquo;layout:default&amp;rdquo;，表示该文章的模板使用_layouts目录下的default.html文件；&amp;rdquo;title: 你好，世界&amp;rdquo;，表示该文章的标题是&amp;rdquo;你好，世界&amp;rdquo;， 如果不设置这个值，默认使用嵌入文件名的标题，即&amp;rdquo;hello world&amp;rdquo;。

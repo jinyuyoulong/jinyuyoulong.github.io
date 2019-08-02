@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OpenShift on 为吾优</title>
-    <link>https://blog.v5u.win/tags/openshift/</link>
+    <link>https://jinyuyoulong.github.io/tags/openshift/</link>
     <description>Recent content in OpenShift on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 14 Dec 2016 17:56:33 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/openshift/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/openshift/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>OpenShift的使用</title>
-      <link>https://blog.v5u.win/post/system-openshift/</link>
+      <link>https://jinyuyoulong.github.io/post/system-openshift/</link>
       <pubDate>Wed, 14 Dec 2016 17:56:33 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-openshift/</guid>
+      <guid>https://jinyuyoulong.github.io/post/system-openshift/</guid>
       <description> 注册完成后如何使用命令行连接服务器
 登录OpenShift网站，进入app的详情页，找到隐藏的ssh连接，不是下载地址的ssh连接，拷贝后直接在终端打开就行，无需密码
   </description>

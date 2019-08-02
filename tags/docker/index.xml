@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on 为吾优</title>
-    <link>https://blog.v5u.win/tags/docker/</link>
+    <link>https://jinyuyoulong.github.io/tags/docker/</link>
     <description>Recent content in Docker on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 08 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>k8s在Mac上的安装和使用</title>
-      <link>https://blog.v5u.win/post/docker-k8s/</link>
+      <link>https://jinyuyoulong.github.io/post/docker-k8s/</link>
       <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/docker-k8s/</guid>
+      <guid>https://jinyuyoulong.github.io/post/docker-k8s/</guid>
       <description> 安装 在Mac下安装前提条件，已经安装好了docker desktop，并修改了代理源 https://registry.docker-cn.com。
 直接在docker桌面端开启k8s是没用的，一直提示 kubernetes is starting… :cry: 我竟然不知道，这样子持续了n天。​
 自己手动安装 k8s
@@ -30,10 +30,10 @@
     
     <item>
       <title>docker 使用规则</title>
-      <link>https://blog.v5u.win/post/docker-%E7%AE%80%E4%BB%8B/</link>
+      <link>https://jinyuyoulong.github.io/post/docker-%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/docker-%E7%AE%80%E4%BB%8B/</guid>
+      <guid>https://jinyuyoulong.github.io/post/docker-%E7%AE%80%E4%BB%8B/</guid>
       <description>硬件/操作系统 要求 Docker支持以下的CentOS版本：
  CentOS 7 (64-bit) CentOS 6.5 (64-bit) 或更高的版本  前提条件 目前，CentOS 仅发行版本中的内核支持 Docker。
 Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。

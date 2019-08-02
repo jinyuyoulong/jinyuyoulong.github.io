@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Swift on 为吾优</title>
-    <link>https://blog.v5u.win/categories/swift/</link>
+    <link>https://jinyuyoulong.github.io/categories/swift/</link>
     <description>Recent content in Swift on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 05 Jun 2019 10:37:16 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/categories/swift/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/categories/swift/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>iOS SwiftUI</title>
-      <link>https://blog.v5u.win/post/ios-swiftui/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-swiftui/</link>
       <pubDate>Wed, 05 Jun 2019 10:37:16 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-swiftui/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-swiftui/</guid>
       <description>[TOC]
 什么是swiftUI？ Apple的解释：
  更好的应用。更少的代码。
@@ -33,19 +33,19 @@ import SwiftUI struct Content : View { @State var model = Themes.ListModel var b
     
     <item>
       <title>swift中weak和unowned的区别</title>
-      <link>https://blog.v5u.win/post/swift-weakunowned/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-weakunowned/</link>
       <pubDate>Tue, 13 Dec 2016 16:34:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-weakunowned/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-weakunowned/</guid>
       <description>weak和unowned都是解决循环引用的关键字 区别： 如果您是一直写 Objective-C 过来的，那么从表面的行为上来说 unowned 更像以前的 unsafe_unretained，而 weak 就是以前的 weak。 用通俗的话说，就是 unowned 设置以后即使它原来引用的内容已经被释放了，它仍然会保持对被已经释放了的对象的一个 &amp;ldquo;无效的&amp;rdquo; 引用，它不能是 Optional 值，也不会被指向 nil。如果你尝试调用这个引用的方法或者访问成员属性的话，程序就会崩溃。 而 weak 则友好一些，在引用的内容被释放后，标记为 weak 的成员将会自动地变成 nil (因此被标记为 @weak 的变量一定需要是 Optional 值)。 关于两者使用的选择，Apple 给我们的建议是如果能够确定在访问时不会已被释放的话，尽量使用 unowned，如果存在被释放的可能，那就选择用 weak。</description>
     </item>
     
     <item>
       <title>swift 关键字篇</title>
-      <link>https://blog.v5u.win/post/swift-%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-%E5%85%B3%E9%94%AE%E5%AD%97/</link>
       <pubDate>Tue, 13 Dec 2016 15:45:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
       <description>@noescape：no escape(没有逃脱) 用来修饰闭包，含义为非逃逸闭包。 当闭包作为参数传递进函数时，如果这个闭包只在函数中被使用，则开发者可以将这个闭包声明成非逃逸的，即告诉系统当此函数结束后，这个闭包的生命周期也将结束，这样做的好处是可以提高代码性能，将闭包声明成非逃逸的类型使用@noescape关键字。 (1) 默认，swift 3.0 弃用，函数结束后，这个闭包的生命周期也将结束。 (2) 在其内部如果需要使用self这个关键字，self可以被省略。
 @escaping 逃逸闭包 逃逸的闭包常用于异步的操作，这类函数会在异步操作开始之后立刻返回，但是闭包直到异步操作结束后才会被调用。例如这个闭包是异步处理一个网络请求，只有当请求结束后，闭包的生命周期才结束。当闭包作为函数的参数传入时，很有可能这个闭包在函数返回之后才会被执行。
 @autoclosure 自动闭包 (1)默认非逃逸 (2)闭包也可以被自动的生成，这种闭包被称为自动闭包，自动闭包自动将表达式封装成闭包。 (3)自动闭包不接收任何参数，被调用时会返回被包装在其中的表达式的值。 (4)当闭包作为函数参数时，可以将参数标记 @autoclosure 来接收自动闭包。 (5)自动闭包能够延迟求值,因为代码段不会被执行直到你调用这个闭包。 (6)自动闭包默认是非逃逸的，如果要使用逃逸的闭包，需要手动声明: @autoclosure @escaping 旧版本：@autoclosure(escaping)
@@ -59,20 +59,20 @@ func func2(auto: @autoclosure ()-&amp;gt;Void) -&amp;gt; Void { //执行自动�
     
     <item>
       <title>AnyBidirectionalCollection</title>
-      <link>https://blog.v5u.win/post/swift-anybidirectionalcollection/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-anybidirectionalcollection/</link>
       <pubDate>Thu, 27 Oct 2016 20:01:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-anybidirectionalcollection/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-anybidirectionalcollection/</guid>
       <description>A type-erased wrapper over any collection with indices that support bidirectional traversal.
 一种类型擦除的集合(索引支持双向遍历)</description>
     </item>
     
     <item>
       <title>as as! as?</title>
-      <link>https://blog.v5u.win/post/swift-as/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-as/</link>
       <pubDate>Wed, 26 Oct 2016 13:52:46 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-as/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-as/</guid>
       <description>Swift开发之 is、 as、as!、as?三种类型转换操作符
 1，as使用场合
 （1）从派生类转换为基类，向上转型（upcasts）
@@ -86,10 +86,10 @@ switch animal { case let cat as Cat: print(&amp;ldquo;如果是Cat类型对象�
     
     <item>
       <title>swift Enum</title>
-      <link>https://blog.v5u.win/post/swift-enum/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-enum/</link>
       <pubDate>Tue, 25 Oct 2016 19:50:02 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-enum/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-enum/</guid>
       <description>普通创建
 enum SomeEnum: NSInteger { case A case B case C }  可以在Objective-C中使用的（添加@objc 关键字）
 @objc enum Bear: Int { case Black, Grizzly, Polar }  </description>
@@ -97,19 +97,19 @@ enum SomeEnum: NSInteger { case A case B case C }  可以在Objective-C中使用
     
     <item>
       <title>Xcode8添加iOS7真机调试</title>
-      <link>https://blog.v5u.win/post/xcode-xcode8-ios7-device/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-xcode8-ios7-device/</link>
       <pubDate>Mon, 19 Sep 2016 11:58:47 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode8-ios7-device/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-xcode8-ios7-device/</guid>
       <description>打开Xcode8和Xcode7的app包内容 Contants/Developer/Platforms/iPhoneOS.platform/DeviceSupport 将Xcode7的iOS7的框架copy到Xcode8内</description>
     </item>
     
     <item>
       <title>struct 和class的区别</title>
-      <link>https://blog.v5u.win/post/struct-class/</link>
+      <link>https://jinyuyoulong.github.io/post/struct-class/</link>
       <pubDate>Mon, 15 Aug 2016 15:58:34 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/struct-class/</guid>
+      <guid>https://jinyuyoulong.github.io/post/struct-class/</guid>
       <description>struct是值类型，值类型在传递和赋值时将进行复制。 class是引用类型，引用类型只会使用引用对象的一个『指向』
  class有这几个功能struct没有的：
 class可以继承，这样子类可以使用父类的特性和方法 类型转换可以在runtime的时候检查和解释一个实例的类型 可以用deinit来释放资源 一个类可以被多次引用 `
@@ -120,10 +120,10 @@ struct也有这样几个优势：
     
     <item>
       <title>Swift与Objective-C的兼容方法:@objc和Dynamic</title>
-      <link>https://blog.v5u.win/post/swift-objcdynamic/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-objcdynamic/</link>
       <pubDate>Tue, 07 Jun 2016 10:02:09 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-objcdynamic/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-objcdynamic/</guid>
       <description>Swift必须考虑与Objective-C的兼容。
 首先通过添加{product-module-name}-Bridging-Header.h文件，并在其中填写想要使用的头文件名称，我们就可以很容易地在Swift中使用Objective-C代码了。Xcode为了简化这个设定，甚至在Swift项目中第一次导入Objective-C文件时会主动弹框进行询问是否要自动创建这个文件，可以说是非常方便。
 但是如果想要在Objective-C中使用Swift的类型的时候，事情就复杂一些。如果是来自外部的框架，那么这个框架与Objective-C项目肯定不是处在同一个target中的，我们需要对外部的Swift module进行导入。这个其实和使用Objective-C的原来的Framework是一样的，对于一个项目来说，外界框架是由Swift写的还是Objective-C写的，两者并没有太大区别。我们通过使用2013年新引入的@import来引入module：
@@ -147,29 +147,29 @@ class 我的类 {
     
     <item>
       <title>swift 中初始化ViewController</title>
-      <link>https://blog.v5u.win/post/swift-init-viewcontroller/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-init-viewcontroller/</link>
       <pubDate>Mon, 06 Jun 2016 18:25:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-init-viewcontroller/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-init-viewcontroller/</guid>
       <description>let vc = NameVC()
 init(title: String){ super.init(nibName: nil, bundle: nil) self.title = title } required init?(coder aDecoder: NSCoder) { fatalError(&amp;quot;init(coder:) has not been implemented&amp;quot;) }  </description>
     </item>
     
     <item>
       <title>class xxx has no initializers</title>
-      <link>https://blog.v5u.win/post/swift-class-xxx-has-no-initializers/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-class-xxx-has-no-initializers/</link>
       <pubDate>Mon, 25 Apr 2016 17:09:01 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-class-xxx-has-no-initializers/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-class-xxx-has-no-initializers/</guid>
       <description>error: class xxx has no initializers 这是说变量没有初始化，比如 var label:UILabel 应该写成 var label:UILabel?</description>
     </item>
     
     <item>
       <title>braced block of statements is an unused closure</title>
-      <link>https://blog.v5u.win/post/swift-braced-block-of-statements-is-an-unused-closure/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-braced-block-of-statements-is-an-unused-closure/</link>
       <pubDate>Tue, 01 Mar 2016 15:31:45 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-braced-block-of-statements-is-an-unused-closure/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-braced-block-of-statements-is-an-unused-closure/</guid>
       <description>使用swift写dome时xcode报一下错误： braced block of statements is an unused closure
 原因及收获： for循环的条件语句不能有空格，如：for i=0; i&amp;lt;3; i++ {} 其他控制语句也一样不能有空格</description>
     </item>

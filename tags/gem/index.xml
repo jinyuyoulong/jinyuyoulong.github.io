@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gem on 为吾优</title>
-    <link>https://blog.v5u.win/tags/gem/</link>
+    <link>https://jinyuyoulong.github.io/tags/gem/</link>
     <description>Recent content in gem on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 20 Apr 2018 05:00:32 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/gem/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/gem/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>brew gem npm cocoapods</title>
-      <link>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</link>
+      <link>https://jinyuyoulong.github.io/post/mac-brew-gem-npm-cocoapods/</link>
       <pubDate>Fri, 20 Apr 2018 05:00:32 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</guid>
+      <guid>https://jinyuyoulong.github.io/post/mac-brew-gem-npm-cocoapods/</guid>
       <description>Mac上的包管理器 常用的有：brew gem npm cocoapods pip3
  brew 用来管理Unix相关工具软件，就像centos之于yum，Ubuntu之于apt-get gem 即RubyGems,管理ruby社区的软件包。 npm 是nodejs的包管理器，用来管理nodejs社区的软件包。 pip 是Python的包管理器，用来管理Python社区的软件包 cocoapods 是iOS开发的包管理器，用来管理iOS代码包  </description>
     </item>

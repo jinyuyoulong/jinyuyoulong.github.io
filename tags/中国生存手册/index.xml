@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>中国生存手册 on 为吾优</title>
-    <link>https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/</link>
+    <link>https://jinyuyoulong.github.io/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/</link>
     <description>Recent content in 中国生存手册 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 14 Aug 2018 16:38:59 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>不完备定理</title>
-      <link>https://blog.v5u.win/post/life-%E4%B8%8D%E5%AE%8C%E5%A4%87%E5%AE%9A%E7%90%86/</link>
+      <link>https://jinyuyoulong.github.io/post/life-%E4%B8%8D%E5%AE%8C%E5%A4%87%E5%AE%9A%E7%90%86/</link>
       <pubDate>Tue, 14 Aug 2018 16:38:59 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/life-%E4%B8%8D%E5%AE%8C%E5%A4%87%E5%AE%9A%E7%90%86/</guid>
+      <guid>https://jinyuyoulong.github.io/post/life-%E4%B8%8D%E5%AE%8C%E5%A4%87%E5%AE%9A%E7%90%86/</guid>
       <description>转一段清华大学赵昊彤博士的解读，我认为算是简单清晰准确。 ““哥德尔不完备定理”到底说了些什么？——（一）
 【中文网上深入介绍哥德尔不完备定理的文章很少，我这篇文章写得很长，花了不少时间打磨它，希望能帮助到爱好数学与逻辑的人。文章把理解哥德尔不完备定理分为了五重，建议只是想初步了解的读者，可以重点看第一重；希望了解一些背景的读者，可以修炼到第二重；希望较深入理解哥德尔证明思路的读者，建议修炼到第三重；如果确实感兴趣，希望详细了解哥德尔证明过程以及其严谨性的读者，可以修炼到第四重；如果还想多知道一些知识的读者，可以练到第五重。
 ——— 作者】
@@ -39,10 +39,10 @@ TheoremVI: For every ω-consistent primitive recursive class κ of formulae, the
     
     <item>
       <title>论商业名字的重要性</title>
-      <link>https://blog.v5u.win/post/life-%E8%AE%BA%E5%95%86%E4%B8%9A%E5%90%8D%E5%AD%97%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</link>
+      <link>https://jinyuyoulong.github.io/post/life-%E8%AE%BA%E5%95%86%E4%B8%9A%E5%90%8D%E5%AD%97%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</link>
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/life-%E8%AE%BA%E5%95%86%E4%B8%9A%E5%90%8D%E5%AD%97%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</guid>
+      <guid>https://jinyuyoulong.github.io/post/life-%E8%AE%BA%E5%95%86%E4%B8%9A%E5%90%8D%E5%AD%97%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</guid>
       <description>论商业名字的重要性
 源起：同一篇文章，我在两个最知名的汽车论坛上同时投稿：汽车之家，易车。3个小时后查看评论量。
 汽车之家 ：4，易车：0.
