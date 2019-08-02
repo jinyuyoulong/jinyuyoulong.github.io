@@ -6,10 +6,36 @@
     <description>Recent content on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>flutter安装</title>
+      <link>https://blog.v5u.win/post/system-flutter%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-flutter%E5%AE%89%E8%A3%85/</guid>
+      <description>flutter安装
+ git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc  export PATH=/Users/fanjinlong/dev/flutter/flutter/bin:$PATH export ANDROID_HOME=/Users/fanjinlong/Library/Android/sdk export PATH=${PATH}:${ANDROID_HOME}/tools export PATH=${PATH}:${ANDROID_HOME}/platform-tools export PUB_HOSTED_URL=https://pub.flutter-io.cn export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn	# 记得配置完了，执行下 source ~/.zshrc 更新环境变量   命令行执行 flutter doctor 检查环境配置情况。 在 Android studio 中添加插件 flutter + dart 根据flutter doctor 解决所有必要的问题 运行 flutter run 如果不能运行，查看报错，比如 flutter emulators——&amp;gt;flutter emulators --launch Pixel_2_API_29——&amp;gt; flutter run  Running &amp;quot;flutter pub get&amp;quot; in flutter_app... 3.4s Using hardware rendering with device Android SDK built for x86.</description>
+    </item>
+    
+    <item>
+      <title>Go Crontab</title>
+      <link>https://blog.v5u.win/post/go-crontab/</link>
+      <pubDate>Fri, 19 Jul 2019 16:51:27 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-crontab/</guid>
+      <description>[TOC]
+计划任务 from Godoc
+包cron实现了cron规范解析器和作业运行器。
+安装 要下载特定的标记版本，请运行:
+go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中:
+import “github.com/robfig/cron/v3” 由于Go Modules的使用，它需要Go 1.11或更高版本。
+用法 呼叫者可以在给定的时间表上注册要调用的Func。Cron将在他们自己的goroutines中运行它们。
+c := cron.New() c.AddFunc(&amp;quot;30 * * * *&amp;quot;, func() { fmt.Println(&amp;quot;Every hour on the half hour&amp;quot;) }) c.AddFunc(&amp;quot;30 3-6,20-23 * * *&amp;quot;, func() { fmt.Println(&amp;quot;.. in the range 3-6am, 8-11pm&amp;quot;) }) c.AddFunc(&amp;quot;CRON_TZ=Asia/Tokyo 30 04 * * * *&amp;quot;, func() { fmt.Println(&amp;quot;Runs at 04:30 Tokyo time every day&amp;quot;) }) c.AddFunc(&amp;quot;@hourly&amp;quot;, func() { fmt.</description>
+    </item>
     
     <item>
       <title>go社区拒绝了try提案</title>
@@ -51,7 +77,10 @@ defer func（）{ if err！= nil {	//可能没有发生错误 - 检查 错误= .
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/go-orm/</guid>
-      <description>   name xorm gorm     github-stars 5,053 14,262   github-fork 650 1,606         </description>
+      <description>   name xorm gorm     github-stars 5,053 14,262   github-fork 650 1,606         xorm 自动生成代码
+xorm help reverse
+格式：xorm reverse dirver dbname 导出模板
+xorm reverse mysql &amp;quot;username:pwd@tcp(127.0.0.1:3306)/dbname?charset=utf8&amp;quot; $GOPATH/src/github.com/go-xorm/cmd/xorm/templates/goxorm  </description>
     </item>
     
     <item>
@@ -317,12 +346,12 @@ AES加密里面有两个关键，一个是key（必须为16,24,32位），一个
       <guid>https://blog.v5u.win/post/go-grpc%E7%A0%94%E7%A9%B6%E6%80%BB%E7%BB%93/</guid>
       <description>什么是RPC RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。——百度百科
 支持环境配置(Mac)
-安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制protocol buffer
+安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制Protocol Buffers 3 简明教程
 brew info protobuf brew install protobuf  检验protobuf安装结果
 protoc --version libprotoc 3.5.1  安装第三方包
 go mod download github.com/golang/protobuf/proto go mod download github.com/golang/protobuf/protoc-gen-go go mod download google.golang.org/grpc go install github.com/golang/protobuf/protoc-gen-go //编译 protoc-gen-go 可执行文件  创建 protobuf 文件
 vi add.proto add some date  生成 gRPC 代码
-protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld 或 protoc -I . add.proto --go_out=plugins=grpc:.  这生成了 helloworld.pb.go ，包含了我们生成的客户端和服务端类，此外还有用于填充、序列化、提取 HelloRequest 和 HelloResponse 消息类型的类。</description>
+protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld 或 protoc -I . add.proto --go_out=plugins=grpc:.  这生成了 helloworld.</description>
     </item>
     
     <item>
@@ -338,7 +367,7 @@ protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld �
 添加依赖 go mod tidy
 生成 go.sum 自动添加依赖关系到 go.mod go run main.go
 下载依赖包 go mod download github.com/pelletier/go-toml
-Tips:  不能在 golib/src 下创建项目 在 Go1.11 版本下，GOPATH 目录中的项目默认是禁用 Go Module 的，需要手动开启 export GOPROXY=&amp;ldquo;https://athens.azurefd.net&amp;quot; // 微软提供的公共代理,也可以以此技术建立自己的公共库 export export GO111MODULE=on // 必须使用module依赖，在src/ 目录下可以使用module  常用命令 go mod tidy //拉取缺少的模块，移除不用的模块。 go mod download //下载依赖包 go mod graph //打印模块依赖图 go mod vendor //将依赖复制到vendor下 go mod verify //校验依赖 go mod why //解释为什么需要依赖 go list -m -json all //依赖详情  </description>
+Tips:  不能在 golib/src 下创建项目 在 Go1.11 版本下，GOPATH 目录中的项目默认是禁用 Go Module 的，需要手动开启 export GOPROXY=&amp;ldquo;https://athens.azurefd.net&amp;quot; // 微软提供的公共代理,也可以以此技术建立自己的公共库 export export GO111MODULE=on // 必须使用module依赖，在src/ 目录下可以使用module  常用命令 go mod tidy //拉取缺少的模块，移除不用的模块。 go mod download //下载依赖包 go mod graph //打印模块依赖图 go mod vendor //将依赖复制到 vendor 下 go mod verify //校验依赖 go mod why //解释为什么需要依赖 go list -m -json all //依赖详情  </description>
     </item>
     
     <item>
@@ -387,7 +416,7 @@ Amber, 它的模板解析器 github.com/eknkc/amber
       <description> 路由配置规则 直接通过 function 绑定 controller，function name 映射到 路由的地址
 function named rule：
 func(*Controller) GetLoginBy(id int64) 绑定的controller HTTP-method+routePath map to - GET:/user/login/{param:long}  通过控制器方法的输入参数访问动态路径参数，不需要绑定。当您使用Iris的默认语法来解析来自控制器的处理程序时，您需要使用By字来为方法添加后缀，大写是一个新的子路径。例： 如这种形式 mvc.New(app.Party(&amp;ldquo;/user&amp;rdquo;)).Handle(new(user.Controller)) 则:
- func(*Controller) Get() - GET:/user. func(*Controller) Post() - POST:/user. func(*Controller) GetLogin() - GET:/user/login func(*Controller) PostLogin() - POST:/user/login func(*Controller) GetProfileFollowers() - GET:/user/profile/followers func(*Controller) PostProfileFollowers() - POST:/user/profile/followers func(*Controller) GetBy(id int64) - GET:/user/{param:long} func(*Controller) PostBy(id int64) - POST:/user/{param:long}  </description>
+ func(*Controller) Get() - GET:/user func(*Controller) Post() - POST:/user func(*Controller) GetLogin() - GET:/user/login func(*Controller) PostLogin() - POST:/user/login func(*Controller) GetProfileFollowers() - GET:/user/profile/followers func(*Controller) PostProfileFollowers() - POST:/user/profile/followers func(*Controller) GetBy(id int64) - GET:/user/{param:long} func(*Controller) PostBy(id int64) - POST:/user/{param:long}  </description>
     </item>
     
     <item>
@@ -1047,7 +1076,8 @@ centos7 默认使用firewalld，不在内置iptables //临时关闭 systemctl st
       <pubDate>Wed, 23 May 2018 15:44:43 +0000</pubDate>
       
       <guid>https://blog.v5u.win/736.html</guid>
-      <description>全局安装gitbook ：npm install -g gitbook 下载calibre安装应用 将calibre中的执行文件ebook-convert链接到shall环境：$ sudo ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin 验证ebook-convert可用，terminal下输入ebook-convert 后回车 如果可用，导出epub文件 gitbook epub ./ ./mbook.epub  node: gitbook项目需要先npm install,在生成epub</description>
+      <description>全局安装gitbook ：npm install -g gitbook 下载calibre安装应用 将calibre中的执行文件ebook-convert链接到shall环境：$ sudo ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin 验证ebook-convert可用，terminal下输入ebook-convert 后回车 如果可用，导出epub文件 gitbook epub ./ ./mbook.epub  node: gitbook 项目需要先 npm install 配置好依赖库,再生成 epub 书籍
+Gitbook使用方法 http://www.chengweiyang.cn/gitbook/basic-usage/README.html</description>
     </item>
     
     <item>
