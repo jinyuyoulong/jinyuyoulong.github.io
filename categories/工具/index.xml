@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>工具 on 为吾优</title>
-    <link>https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/</link>
+    <link>https://jinyuyoulong.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
     <description>Recent content in 工具 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 12 Jul 2018 02:38:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>iterm比terminal好在哪里？</title>
-      <link>https://blog.v5u.win/779.html</link>
+      <link>https://jinyuyoulong.github.io/779.html</link>
       <pubDate>Thu, 12 Jul 2018 02:38:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/779.html</guid>
+      <guid>https://jinyuyoulong.github.io/779.html</guid>
       <description>iterm比terminal好在哪里？ 为什么要用iterm  多窗口切换 command + T 同个窗口横向分屏 command + d 同个窗口，竖向分屏 command + shift + d 自动补齐命令 comm + ; 直接打开文件 按住command键并点击文件名 (ps: terminal用open命令也可以) 自动复制 直接双击需要复制的文字，即可自动复制 设置主题配色 在偏好设置里进行一些基本的颜色设置，在GitHub上下载做好的主题，导入。 (ps: 成品自由度高👍，合心意的需要手动配置-&amp;gt;terminal也可以手动配置)  这么好的东西我还是用terminal好了。</description>
     </item>
     
     <item>
       <title>mac虚拟机上的centos 7实现ssh连接</title>
-      <link>https://blog.v5u.win/763.html</link>
+      <link>https://jinyuyoulong.github.io/763.html</link>
       <pubDate>Sat, 30 Jun 2018 08:57:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/763.html</guid>
+      <guid>https://jinyuyoulong.github.io/763.html</guid>
       <description>mac虚拟机上的centos7实现ssh连接
  查看是否安装ssh rpm -qa | grep ssh（一般都内置了）
  配置sshd_config文件 /etc/ssh/sshd_config
@@ -43,20 +43,20 @@ ListenAddress ::
     
     <item>
       <title>gitbook如何生成epub</title>
-      <link>https://blog.v5u.win/736.html</link>
+      <link>https://jinyuyoulong.github.io/736.html</link>
       <pubDate>Wed, 23 May 2018 15:44:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/736.html</guid>
+      <guid>https://jinyuyoulong.github.io/736.html</guid>
       <description>全局安装gitbook ：npm install -g gitbook 下载calibre安装应用 将calibre中的执行文件ebook-convert链接到shall环境：$ sudo ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin 验证ebook-convert可用，terminal下输入ebook-convert 后回车 如果可用，导出epub文件 gitbook epub ./ ./mbook.epub  node: gitbook 项目需要先 npm install 配置好依赖库,再生成 epub 书籍
 Gitbook使用方法 http://www.chengweiyang.cn/gitbook/basic-usage/README.html</description>
     </item>
     
     <item>
       <title>ternimal</title>
-      <link>https://blog.v5u.win/734.html</link>
+      <link>https://jinyuyoulong.github.io/734.html</link>
       <pubDate>Fri, 18 May 2018 08:53:16 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/734.html</guid>
+      <guid>https://jinyuyoulong.github.io/734.html</guid>
       <description>暴力删除文件：输入 sudo rm -rf .Trash 再输入密码后 Enter 。 mac 设置软件安装安全级别 sudo spctl &amp;ndash;master-disable 文件权限修改
  文字设定法 chmod [who] [+ | - | =] [mode] 文件名?
  mkdir code
@@ -65,20 +65,20 @@ Gitbook使用方法 http://www.chengweiyang.cn/gitbook/basic-usage/README.html</
     
     <item>
       <title>brew gem npm cocoapods</title>
-      <link>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</link>
+      <link>https://jinyuyoulong.github.io/post/mac-brew-gem-npm-cocoapods/</link>
       <pubDate>Fri, 20 Apr 2018 05:00:32 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</guid>
+      <guid>https://jinyuyoulong.github.io/post/mac-brew-gem-npm-cocoapods/</guid>
       <description>Mac上的包管理器 常用的有：brew gem npm cocoapods pip3
  brew 用来管理Unix相关工具软件，就像centos之于yum，Ubuntu之于apt-get gem 即RubyGems,管理ruby社区的软件包。 npm 是nodejs的包管理器，用来管理nodejs社区的软件包。 pip 是Python的包管理器，用来管理Python社区的软件包 cocoapods 是iOS开发的包管理器，用来管理iOS代码包  </description>
     </item>
     
     <item>
       <title>appledoc使用说明</title>
-      <link>https://blog.v5u.win/673.html</link>
+      <link>https://jinyuyoulong.github.io/673.html</link>
       <pubDate>Wed, 04 Apr 2018 07:00:34 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/673.html</guid>
+      <guid>https://jinyuyoulong.github.io/673.html</guid>
       <description>appledoc使用说明 安装命令行：
  git clone git://github.com/tomaz/appledoc.git cd ./appledoc sudo sh install-appledoc.sh appledoc —version //检查successed  使用 生成HTML 当需要html文档时，可以加上“&amp;ndash;no-create-docset”——
 appledoc --no-create-docset --output ~/doc --project-name &amp;quot;DrowRect&amp;quot; --company-id &amp;quot;com.jinyuyoulong&amp;quot; --project-company &amp;quot;jinyuyoulong&amp;quot; ./  注: &amp;ndash;output ./doc：设置输出目录为“./doc”。 &amp;ndash;project-name objcdoc：设置项目名为“DrowRect”。 &amp;ndash;project-company &amp;ldquo;jinyuyoulong&amp;rdquo;：设置公司名为“jinyuyoulong”。 &amp;ndash;company-id &amp;ldquo;com.jinyuyoulong&amp;rdquo;：设置公司id为“com.jinyuyoulong”。 ./：当前目录。 生成docset 此路不通
@@ -90,19 +90,19 @@ appledoc --output ./doc --project-name &amp;quot;DrowRect&amp;quot; --project-co
     
     <item>
       <title>pycharm如何添加 local venv</title>
-      <link>https://blog.v5u.win/666.html</link>
+      <link>https://jinyuyoulong.github.io/666.html</link>
       <pubDate>Fri, 30 Mar 2018 03:20:02 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/666.html</guid>
+      <guid>https://jinyuyoulong.github.io/666.html</guid>
       <description>需求：pycharm为项目添加已经存在的venv虚拟环境 前几天学习Django，开始是terminal + sublime text。后来学的差不多了，想想做项目还是得上pycharm，所以开始折腾。 说明，pycharm create project是会询问是否创建新的venv的，换句话说，其实pycharm是建议设置基础引用Python版本，然后在他的基础上，每个项目都有自己的venv。这种策略很好，每个项目的环境互不干扰。奈何范子处于学习阶段，local项目已经有了本地的venv，不需要重新创建。这时候我就需要考虑如何添加一个local venv。 然而道路颇多波折，localvenv的path是确切知道的，但是在pycharm的configurations中Python interperter是一个选择栏，而没有添加栏。这就尴尬了！ 万幸经过摸索，在设置中（Mac版 cmd+,）发现是可以添加的 在这里添加好了之后，在返回configurations，出现了新的选项，选择就可以了。</description>
     </item>
     
     <item>
       <title>mac文件权限修改</title>
-      <link>https://blog.v5u.win/post/mac-file-right-change/</link>
+      <link>https://jinyuyoulong.github.io/post/mac-file-right-change/</link>
       <pubDate>Mon, 13 Mar 2017 17:20:42 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-file-right-change/</guid>
+      <guid>https://jinyuyoulong.github.io/post/mac-file-right-change/</guid>
       <description>文件或目录的访问权限分为只读，只写和可执行三种。 文件被创建时，文件所有者自动拥有对该文件的读、写和可执行权限，以便于对文件的阅读和修改。 有三种不同类型的用户可对文件或目录进行访问：文件所有者，同组用户、其他用户。
 用ls -l命令显示文件或目录的详细信息，最左边的一列为文件的访问权限
 例:
@@ -122,19 +122,19 @@ chmod u+x script.swift
     
     <item>
       <title>brew 安装</title>
-      <link>https://blog.v5u.win/post/mac-brew-install/</link>
+      <link>https://jinyuyoulong.github.io/post/mac-brew-install/</link>
       <pubDate>Sat, 25 Feb 2017 22:54:49 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-brew-install/</guid>
+      <guid>https://jinyuyoulong.github.io/post/mac-brew-install/</guid>
       <description>Mac自带ruby 安装brew ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&amp;quot; 已经安装了可以输入这个命令 ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot; 如何使用brew 举个栗子: wget 这个工具 输入命令: brew install wget 输入命令 brew uninstall wget</description>
     </item>
     
     <item>
       <title>使用sublime text 3 进行Python3开发</title>
-      <link>https://blog.v5u.win/post/sublime-python3/</link>
+      <link>https://jinyuyoulong.github.io/post/sublime-python3/</link>
       <pubDate>Mon, 23 Jan 2017 15:22:20 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/sublime-python3/</guid>
+      <guid>https://jinyuyoulong.github.io/post/sublime-python3/</guid>
       <description>痛点1：每次编写完Python文件后都要切到terminal下输入python fileName.py命令执行文件。 解决：mac版sublime text编辑器使用shift+command+b选择Python 直接执行文件
 痛点2：sublime默认执行的Python版本是系统默认的，不能直接使用Python3来执行Python文件 解决：Tools&amp;ndash;&amp;gt;Build System&amp;ndash;&amp;gt;New Build System 写入：
 { &amp;quot;shell_cmd&amp;quot;: &amp;quot;/usr/bin/env python3 ${file}&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.python&amp;quot;, &amp;quot;file_regex&amp;quot;: &amp;quot;^(...*?):([0-9]*):?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;: &amp;quot;${file_path}&amp;quot;, }  ​ 保存为/Packages/User/python3.sublime-build ​ 然后选择环境为python3即可</description>
@@ -142,19 +142,19 @@ chmod u+x script.swift
     
     <item>
       <title>mac 如何使用wget</title>
-      <link>https://blog.v5u.win/post/mac-wget/</link>
+      <link>https://jinyuyoulong.github.io/post/mac-wget/</link>
       <pubDate>Sat, 21 Jan 2017 23:38:52 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-wget/</guid>
+      <guid>https://jinyuyoulong.github.io/post/mac-wget/</guid>
       <description>下载单个文件， 为什么不用mac原生自带的工具：curl &amp;ldquo;网址链接&amp;rdquo; -o &amp;ldquo;输出文件名&amp;rdquo; 解释一下，wget是Linux下自带的文件下载工具非常好用，mac下还是推荐使用原生。 呵呵哒，也许我是一片假的教程文章。</description>
     </item>
     
     <item>
       <title>抓包调试工具mitmproxy</title>
-      <link>https://blog.v5u.win/post/system-%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</link>
+      <link>https://jinyuyoulong.github.io/post/system-%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</link>
       <pubDate>Tue, 27 Dec 2016 10:39:15 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</guid>
+      <guid>https://jinyuyoulong.github.io/post/system-%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</guid>
       <description>安装：brew install mitmproxy 其他安装方式: http://docs.mitmproxy.org/en/latest/install.html
 启动：mitmproxy -p 8080(监听端口号)
 设置代理，具体设置方法请自行查找
@@ -165,10 +165,10 @@ chmod u+x script.swift
     
     <item>
       <title>使用Xcode8创建Python项目</title>
-      <link>https://blog.v5u.win/post/xcode-xcode8python/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-xcode8python/</link>
       <pubDate>Tue, 06 Dec 2016 10:44:31 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode8python/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-xcode8python/</guid>
       <description> 今天想使用一个IDE来开发Python，省的每次写完后都要在terminal上敲命令。选来选去，既然已经安装了Xcode就先用他吧。
 那么怎么才能使用Xcode创建并运行Python文件呢？ 必要准备：mac &amp;amp; Xcode 开发环境整理： 1.1 创建 1.2 选择mac跨平台应用 1.3 添加项目名称 2.1 添加文件 2.2 Other &amp;gt; Empty Empty&amp;rdquo; /&amp;gt;
 2.3 给文件命名 3.1 Product &amp;gt; Scheme &amp;gt; Edit Scheme 3.2 Run &amp;gt; info &amp;gt; Executable &amp;gt; Other 3.3 Command+Shift+G 定位文件路径Go to the folder:填写/usr/bin/python 3.4 确认选中的可执行文件 3.5 确认Executable 选中python Debug executable 不用选中 3.6 Arguments &amp;gt; + &amp;gt;新建的文件名 3.7 Options &amp;gt; Working Directory &amp;gt;项目路径 选择文件 3.8 确认设置 4 运行 print &amp;quot;hello world&amp;quot; </description>
@@ -176,19 +176,19 @@ chmod u+x script.swift
     
     <item>
       <title>Xcode8添加iOS7真机调试</title>
-      <link>https://blog.v5u.win/post/xcode-xcode8-ios7-device/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-xcode8-ios7-device/</link>
       <pubDate>Mon, 19 Sep 2016 11:58:47 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode8-ios7-device/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-xcode8-ios7-device/</guid>
       <description>打开Xcode8和Xcode7的app包内容 Contants/Developer/Platforms/iPhoneOS.platform/DeviceSupport 将Xcode7的iOS7的框架copy到Xcode8内</description>
     </item>
     
     <item>
       <title>Sublime Text3 使用心得</title>
-      <link>https://blog.v5u.win/post/sublime-nodejs/</link>
+      <link>https://jinyuyoulong.github.io/post/sublime-nodejs/</link>
       <pubDate>Fri, 09 Sep 2016 14:45:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/sublime-nodejs/</guid>
+      <guid>https://jinyuyoulong.github.io/post/sublime-nodejs/</guid>
       <description>build nodejs项目 sublime text 3自带build的系统，只需要在tools-&amp;gt;build system-&amp;gt; new build system&amp;hellip;
 { &amp;quot;shell_cmd&amp;quot;: &amp;quot;node $file&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.js&amp;quot; }   保存为 node.sublime-build，就可以使用cmd+shift+b调出窗口选择node编译.
 在keymap绑定按键：

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nginx on 为吾优</title>
-    <link>https://blog.v5u.win/tags/nginx/</link>
+    <link>https://jinyuyoulong.github.io/tags/nginx/</link>
     <description>Recent content in nginx on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 01 Jul 2019 15:05:09 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Nginx 动态生成缩略图</title>
-      <link>https://blog.v5u.win/post/system-nginx/</link>
+      <link>https://jinyuyoulong.github.io/post/system-nginx/</link>
       <pubDate>Mon, 01 Jul 2019 15:05:09 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-nginx/</guid>
+      <guid>https://jinyuyoulong.github.io/post/system-nginx/</guid>
       <description>[TOC]
 有的时候要生成大量尺寸的缩图，事先不知道有哪些尺寸，所以可以用php动态生成；
 1.在nginx中配置
@@ -25,20 +25,20 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
     
     <item>
       <title>mac-nginx-php-mysql</title>
-      <link>https://blog.v5u.win/post/mac-nginx-php-mysql/</link>
+      <link>https://jinyuyoulong.github.io/post/mac-nginx-php-mysql/</link>
       <pubDate>Tue, 25 Dec 2018 10:04:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-nginx-php-mysql/</guid>
+      <guid>https://jinyuyoulong.github.io/post/mac-nginx-php-mysql/</guid>
       <description>[TOC]
 安装环境  brew install nginx brew install php brew install mysql  配置环境  /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf  启动环境  brew services start nginx php-fpm（启动php-fpm）  nginx.conf server { location / { root /rootDocument/; index index.html index.htm index.php; autoindex on; # //开启目录浏览功能； autoindex_exact_size off; #//关闭详细文件大小统计，让文件大小显示MB，GB单位，默认为b autoindex_localtime on; #//开启以服务器本地时区显示文件修改日期！ } location ~ \.php$ { root html; fastcgi_pass 127.0.0.1:9000; fastcgi_index index.php; fastcgi_param SCRIPT_FILENAME /rootDocument$fastcgi_script_name; include fastcgi_params; }  php-fpm.conf error_log = /usr/local/homebrew/var/log/php-fpm.</description>
     </item>
     
     <item>
       <title>mac 安装nginx</title>
-      <link>https://blog.v5u.win/post/mac-nginx/</link>
+      <link>https://jinyuyoulong.github.io/post/mac-nginx/</link>
       <pubDate>Sun, 26 Feb 2017 00:12:18 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-nginx/</guid>
+      <guid>https://jinyuyoulong.github.io/post/mac-nginx/</guid>
       <description>安装 brew install nginx
 启动 sudo nginx
 重新启动 sudo nginx -s reload

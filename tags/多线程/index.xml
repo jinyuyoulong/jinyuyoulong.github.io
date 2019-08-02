@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>多线程 on 为吾优</title>
-    <link>https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+    <link>https://jinyuyoulong.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
     <description>Recent content in 多线程 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 15 Apr 2016 10:15:25 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>iOS GCD dispatch barrier</title>
-      <link>https://blog.v5u.win/post/ios-gcd-dispatch-barrier/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-gcd-dispatch-barrier/</link>
       <pubDate>Fri, 15 Apr 2016 10:15:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-gcd-dispatch-barrier/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-gcd-dispatch-barrier/</guid>
       <description>需求： 两个线程并行执行，当两线程都执行完后，在执行另一个线程，然后在执行并行多线程
 thread1 thread4 --&amp;amp;gt; thread3 --&amp;amp;gt; thread2 thread5  一个dispatch barrier 允许在一个并发队列中创建一个同步点。当在并发队列中遇到一个barrier, 他会延迟执行barrier的block,等待所有在barrier之前提交的blocks执行结束。 这时，barrier block自己开始执行。 之后， 队列继续正常的执行操作。
 调用这个函数总是在barrier block被提交之后立即返回，不会等到block被执行。当barrier block到并发队列的最前端，他不会立即执行。相反，队列会等到所有当前正在执行的blocks结束执行。到这时，barrier才开始自己执行。所有在barrier block之后提交的blocks会等到barrier block结束之后才执行。

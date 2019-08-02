@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>unowned on 为吾优</title>
-    <link>https://blog.v5u.win/tags/unowned/</link>
+    <link>https://jinyuyoulong.github.io/tags/unowned/</link>
     <description>Recent content in unowned on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 13 Dec 2016 16:34:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/unowned/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/unowned/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>swift中weak和unowned的区别</title>
-      <link>https://blog.v5u.win/post/swift-weakunowned/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-weakunowned/</link>
       <pubDate>Tue, 13 Dec 2016 16:34:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-weakunowned/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-weakunowned/</guid>
       <description>weak和unowned都是解决循环引用的关键字 区别： 如果您是一直写 Objective-C 过来的，那么从表面的行为上来说 unowned 更像以前的 unsafe_unretained，而 weak 就是以前的 weak。 用通俗的话说，就是 unowned 设置以后即使它原来引用的内容已经被释放了，它仍然会保持对被已经释放了的对象的一个 &amp;ldquo;无效的&amp;rdquo; 引用，它不能是 Optional 值，也不会被指向 nil。如果你尝试调用这个引用的方法或者访问成员属性的话，程序就会崩溃。 而 weak 则友好一些，在引用的内容被释放后，标记为 weak 的成员将会自动地变成 nil (因此被标记为 @weak 的变量一定需要是 Optional 值)。 关于两者使用的选择，Apple 给我们的建议是如果能够确定在访问时不会已被释放的话，尽量使用 unowned，如果存在被释放的可能，那就选择用 weak。</description>
     </item>
     

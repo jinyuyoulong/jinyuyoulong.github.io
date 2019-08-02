@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程语言 on 为吾优</title>
-    <link>https://blog.v5u.win/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
+    <link>https://jinyuyoulong.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
     <description>Recent content in 编程语言 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 03 Jul 2018 10:23:27 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>编程语言特性汇总</title>
-      <link>https://blog.v5u.win/768.html</link>
+      <link>https://jinyuyoulong.github.io/768.html</link>
       <pubDate>Tue, 03 Jul 2018 10:23:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/768.html</guid>
+      <guid>https://jinyuyoulong.github.io/768.html</guid>
       <description>语言特性汇总：
  类型推导， 类型检查， 惰性求值 currying 闭包 OO lambda  </description>
     </item>

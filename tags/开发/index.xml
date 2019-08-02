@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>开发 on 为吾优</title>
-    <link>https://blog.v5u.win/tags/%E5%BC%80%E5%8F%91/</link>
+    <link>https://jinyuyoulong.github.io/tags/%E5%BC%80%E5%8F%91/</link>
     <description>Recent content in 开发 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 07 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>写代码原则整理</title>
-      <link>https://blog.v5u.win/post/system-%E5%86%99%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%88%99%E6%95%B4%E7%90%86/</link>
+      <link>https://jinyuyoulong.github.io/post/system-%E5%86%99%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%88%99%E6%95%B4%E7%90%86/</link>
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-%E5%86%99%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%88%99%E6%95%B4%E7%90%86/</guid>
+      <guid>https://jinyuyoulong.github.io/post/system-%E5%86%99%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%88%99%E6%95%B4%E7%90%86/</guid>
       <description> 写代码原则整理：
 写直观的代码 我写代码有一条重要的原则：如果有更加直接，更加清晰的写法，就选择它，即使它看起来更长，更笨，也一样选择它。
  防止过度工程的原则  王垠根据这些，我总结出来的防止过度工程的原则如下：

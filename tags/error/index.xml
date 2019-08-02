@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>error on 为吾优</title>
-    <link>https://blog.v5u.win/tags/error/</link>
+    <link>https://jinyuyoulong.github.io/tags/error/</link>
     <description>Recent content in error on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 25 Apr 2016 17:09:01 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/error/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/error/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>class xxx has no initializers</title>
-      <link>https://blog.v5u.win/post/swift-class-xxx-has-no-initializers/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-class-xxx-has-no-initializers/</link>
       <pubDate>Mon, 25 Apr 2016 17:09:01 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-class-xxx-has-no-initializers/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-class-xxx-has-no-initializers/</guid>
       <description>error: class xxx has no initializers 这是说变量没有初始化，比如 var label:UILabel 应该写成 var label:UILabel?</description>
     </item>
     

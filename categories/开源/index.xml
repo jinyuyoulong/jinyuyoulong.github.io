@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>开源 on 为吾优</title>
-    <link>https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/</link>
+    <link>https://jinyuyoulong.github.io/categories/%E5%BC%80%E6%BA%90/</link>
     <description>Recent content in 开源 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 10 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/categories/%E5%BC%80%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>提问的智慧</title>
-      <link>https://blog.v5u.win/post/system-getquestion/</link>
+      <link>https://jinyuyoulong.github.io/post/system-getquestion/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-getquestion/</guid>
+      <guid>https://jinyuyoulong.github.io/post/system-getquestion/</guid>
       <description>我不怕我&amp;rdquo;走&amp;rdquo;的很慢，因为我一直在移动。
 说明 本文摘自learnku社区：https://learnku.com/docs/guide/smart-questions/2032
 对 原文：How To Ask Questions The Smart Way 有所修改，使其更加适用于本社区。
@@ -46,10 +46,10 @@
     
     <item>
       <title>开源贡献者盟约</title>
-      <link>https://blog.v5u.win/post/system-%E8%B4%A1%E7%8C%AE%E8%80%85%E7%9B%9F%E7%BA%A6/</link>
+      <link>https://jinyuyoulong.github.io/post/system-%E8%B4%A1%E7%8C%AE%E8%80%85%E7%9B%9F%E7%BA%A6/</link>
       <pubDate>Tue, 25 Jun 2019 15:38:20 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-%E8%B4%A1%E7%8C%AE%E8%80%85%E7%9B%9F%E7%BA%A6/</guid>
+      <guid>https://jinyuyoulong.github.io/post/system-%E8%B4%A1%E7%8C%AE%E8%80%85%E7%9B%9F%E7%BA%A6/</guid>
       <description>[TOC]
 参与者公约 我们的保证 为了促进一个开放透明且友好的环境，我们作为贡献者和维护者保证：无论年龄、种族、民族、性别认同和表达（方式）、体型、身体健全与否、经验水平、国籍、个人表现、宗教或性别取向，参与者在我们项目和社区中都免于骚扰。
 我们的标准 有助于创造正面环境的行为包括但不限于：

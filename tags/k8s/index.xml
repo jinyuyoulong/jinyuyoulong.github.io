@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>k8s on 为吾优</title>
-    <link>https://blog.v5u.win/tags/k8s/</link>
+    <link>https://jinyuyoulong.github.io/tags/k8s/</link>
     <description>Recent content in k8s on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 08 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>k8s在Mac上的安装和使用</title>
-      <link>https://blog.v5u.win/post/docker-k8s/</link>
+      <link>https://jinyuyoulong.github.io/post/docker-k8s/</link>
       <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/docker-k8s/</guid>
+      <guid>https://jinyuyoulong.github.io/post/docker-k8s/</guid>
       <description> 安装 在Mac下安装前提条件，已经安装好了docker desktop，并修改了代理源 https://registry.docker-cn.com。
 直接在docker桌面端开启k8s是没用的，一直提示 kubernetes is starting… :cry: 我竟然不知道，这样子持续了n天。​
 自己手动安装 k8s

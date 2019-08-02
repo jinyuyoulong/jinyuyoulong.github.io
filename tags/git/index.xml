@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on 为吾优</title>
-    <link>https://blog.v5u.win/tags/git/</link>
+    <link>https://jinyuyoulong.github.io/tags/git/</link>
     <description>Recent content in Git on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 05 Jul 2016 14:47:35 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>FF的Git使用整理</title>
-      <link>https://blog.v5u.win/post/system-git_use/</link>
+      <link>https://jinyuyoulong.github.io/post/system-git_use/</link>
       <pubDate>Tue, 05 Jul 2016 14:47:35 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-git_use/</guid>
+      <guid>https://jinyuyoulong.github.io/post/system-git_use/</guid>
       <description>创建 Git仓库命令：(进入将要管理的Git文件夹地址下) git init 查看当前Git管理状态 git status 添加Git文件 git add * 提交文件到仓库 git commit -m &amp;ldquo;加入注释&amp;rdquo; 推送文件到远程仓库 git push origin master 参考文章：Git简易使用指南 http://www.bootcss.com/p/git-guide/
 git 命令行常用命令    git 作用 命令     检查更新状态 git status   将文件添加进更新列表 git add *   commit 提交 git commit * -m &amp;ldquo;add some(not null非空)&amp;rdquo;   发布到服务器 use &amp;ldquo;git push&amp;rdquo; to publish your local commits   发布到主线 git push origin master   发布tag release版本 git tag   add tag git tag -m &amp;ldquo;first release&amp;rdquo; 0.</description>
     </item>

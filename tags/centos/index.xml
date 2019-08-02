@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>centos on 为吾优</title>
-    <link>https://blog.v5u.win/tags/centos/</link>
+    <link>https://jinyuyoulong.github.io/tags/centos/</link>
     <description>Recent content in centos on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 30 Jun 2018 08:57:11 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mac虚拟机上的centos 7实现ssh连接</title>
-      <link>https://blog.v5u.win/763.html</link>
+      <link>https://jinyuyoulong.github.io/763.html</link>
       <pubDate>Sat, 30 Jun 2018 08:57:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/763.html</guid>
+      <guid>https://jinyuyoulong.github.io/763.html</guid>
       <description>mac虚拟机上的centos7实现ssh连接
  查看是否安装ssh rpm -qa | grep ssh（一般都内置了）
  配置sshd_config文件 /etc/ssh/sshd_config
@@ -34,20 +34,20 @@ ListenAddress ::
     
     <item>
       <title>centos7 更改系统启动模式</title>
-      <link>https://blog.v5u.win/753.html</link>
+      <link>https://jinyuyoulong.github.io/753.html</link>
       <pubDate>Tue, 26 Jun 2018 01:51:41 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/753.html</guid>
+      <guid>https://jinyuyoulong.github.io/753.html</guid>
       <description>centos7 更改系统启动模式
  查看当前启动模式 systemctl get-default 查看配置文件 cat /etc/inittab 设置启动模式为命令行模式 systemctl set-target multi-user.target 重启 shutdown -r now  </description>
     </item>
     
     <item>
       <title>centos7 PHP7环境配置</title>
-      <link>https://blog.v5u.win/751.html</link>
+      <link>https://jinyuyoulong.github.io/751.html</link>
       <pubDate>Tue, 26 Jun 2018 01:50:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/751.html</guid>
+      <guid>https://jinyuyoulong.github.io/751.html</guid>
       <description>centos7 PHP7环境配置 目录 1. 开启22端口2. 创建其他用户，使用其他用户ssh登录（root账户禁止登录）3. 关闭防火墙4. 关闭selinux5. 安装Apache6. 安装MySQL7. 安装PHP7.28. 配置 [TOC]
  开启22端口
  创建其他用户，使用其他用户ssh登录（root账户禁止登录）

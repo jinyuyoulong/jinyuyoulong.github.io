@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ST3 on 为吾优</title>
-    <link>https://blog.v5u.win/tags/st3/</link>
+    <link>https://jinyuyoulong.github.io/tags/st3/</link>
     <description>Recent content in ST3 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 29 Nov 2017 17:29:24 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/st3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/st3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>python-sublime</title>
-      <link>https://blog.v5u.win/post/python-sublime/</link>
+      <link>https://jinyuyoulong.github.io/post/python-sublime/</link>
       <pubDate>Wed, 29 Nov 2017 17:29:24 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/python-sublime/</guid>
+      <guid>https://jinyuyoulong.github.io/post/python-sublime/</guid>
       <description>sublime text 下的Python编译环境设置
 file name : python3.sublime-build
 { &amp;quot;shell_cmd&amp;quot;: &amp;quot;Python编译器的路径 ${file}&amp;quot;, &amp;quot;selector&amp;quot; :&amp;quot;source.python&amp;quot;, &amp;quot;file_regex&amp;quot;:&amp;quot;^(...*?):[0-9]:?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;:&amp;quot;${file_path}&amp;quot;, &amp;quot;env&amp;quot;: {&amp;quot;PYTHONIOENCODING&amp;quot;: &amp;quot;utf8&amp;quot;}, }  </description>

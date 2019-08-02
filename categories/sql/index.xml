@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SQL on 为吾优</title>
-    <link>https://blog.v5u.win/categories/sql/</link>
+    <link>https://jinyuyoulong.github.io/categories/sql/</link>
     <description>Recent content in SQL on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 07 Aug 2015 23:38:47 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/categories/sql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/categories/sql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>sqlite3的使用</title>
-      <link>https://blog.v5u.win/post/system-sqlite3/</link>
+      <link>https://jinyuyoulong.github.io/post/system-sqlite3/</link>
       <pubDate>Fri, 07 Aug 2015 23:38:47 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-sqlite3/</guid>
+      <guid>https://jinyuyoulong.github.io/post/system-sqlite3/</guid>
       <description>新建数据库
 sqlite3 databasefilename
 检查databasefilename是否存在，如果不存在就创建并进入数据库（如果直接退出，数据库文件不会创建）&amp;nbsp;&amp;nbsp;如果已经存在直接进入数据库 对数据库进行操作

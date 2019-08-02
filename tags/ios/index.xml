@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iOS on 为吾优</title>
-    <link>https://blog.v5u.win/tags/ios/</link>
+    <link>https://jinyuyoulong.github.io/tags/ios/</link>
     <description>Recent content in iOS on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 05 Jun 2019 10:37:16 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>iOS SwiftUI</title>
-      <link>https://blog.v5u.win/post/ios-swiftui/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-swiftui/</link>
       <pubDate>Wed, 05 Jun 2019 10:37:16 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-swiftui/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-swiftui/</guid>
       <description>[TOC]
 什么是swiftUI？ Apple的解释：
  更好的应用。更少的代码。
@@ -33,10 +33,10 @@ import SwiftUI struct Content : View { @State var model = Themes.ListModel var b
     
     <item>
       <title>App Store 上架流程</title>
-      <link>https://blog.v5u.win/post/ios-app-store-public/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-app-store-public/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-app-store-public/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-app-store-public/</guid>
       <description>App Store上架流程
  申请开发者账号 登录开发者网站，注册cer APP ID， profile (xcode 只能解决测试证书配置) 登录iTunes connection网站，注册APP xcode选择distribution profile 证书，设置build id，打包 上传到App Store。 设置APP story 发布信息，提交等待审核  </description>
     </item>

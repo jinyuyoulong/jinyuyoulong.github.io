@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pip on 为吾优</title>
-    <link>https://blog.v5u.win/tags/pip/</link>
+    <link>https://jinyuyoulong.github.io/tags/pip/</link>
     <description>Recent content in pip on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 19 Oct 2017 07:18:14 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/tags/pip/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/tags/pip/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mac下 pip 设置豆瓣源</title>
-      <link>https://blog.v5u.win/post/mac-pip/</link>
+      <link>https://jinyuyoulong.github.io/post/mac-pip/</link>
       <pubDate>Thu, 19 Oct 2017 07:18:14 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-pip/</guid>
+      <guid>https://jinyuyoulong.github.io/post/mac-pip/</guid>
       <description>在用户目录下创建文件夹.pip，在.pip下创建pip.conf pip.conf填入内容 [global] index-url = https://pypi.douban.com/simple [list] format=columns</description>
     </item>
     

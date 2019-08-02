@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iOS on 为吾优</title>
-    <link>https://blog.v5u.win/categories/ios/</link>
+    <link>https://jinyuyoulong.github.io/categories/ios/</link>
     <description>Recent content in iOS on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 05 Jun 2019 10:37:16 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.v5u.win/categories/ios/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jinyuyoulong.github.io/categories/ios/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>iOS SwiftUI</title>
-      <link>https://blog.v5u.win/post/ios-swiftui/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-swiftui/</link>
       <pubDate>Wed, 05 Jun 2019 10:37:16 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-swiftui/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-swiftui/</guid>
       <description>[TOC]
 什么是swiftUI？ Apple的解释：
  更好的应用。更少的代码。
@@ -33,19 +33,19 @@ import SwiftUI struct Content : View { @State var model = Themes.ListModel var b
     
     <item>
       <title>xcode 头文件引用</title>
-      <link>https://blog.v5u.win/707.html</link>
+      <link>https://jinyuyoulong.github.io/707.html</link>
       <pubDate>Thu, 12 Apr 2018 03:43:53 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/707.html</guid>
+      <guid>https://jinyuyoulong.github.io/707.html</guid>
       <description>头文件引用 头文件引用主要由#include 和#import 两种。每种又分为尖括号(&amp;lt;&amp;gt;)引用和双引号(&amp;rdquo; &amp;ldquo;)引用 。 #include 与 #import 的区别是: #import 不会造成重复引用，它会自己检查是否已经引用过，也可以防止递归包含。 尖括号(&amp;lt;&amp;gt;)引用与双引号(&amp;rdquo; &amp;ldquo;)引用的区别是: 双引号(&amp;rdquo; &amp;ldquo;)引用的文件，编译器会首先在存储源文件的同一目录下搜索，如果文件没有找到编译器会搜索默认目录（配置文件中配置的头文件引用目录）。 尖括号(&amp;lt;&amp;gt;)引用 只会在默认目录下搜索。 换句话说 双引号引入的方式其搜索目录的范围要更大，当然效率差一点。 双引号引用范围=源文件目录+默认目录 尖括号引用范围=默认目录</description>
     </item>
     
     <item>
       <title>xcode文档注释规则简要汇总</title>
-      <link>https://blog.v5u.win/676.html</link>
+      <link>https://jinyuyoulong.github.io/676.html</link>
       <pubDate>Wed, 04 Apr 2018 08:24:46 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/676.html</guid>
+      <guid>https://jinyuyoulong.github.io/676.html</guid>
       <description>xcode文档注释规则简要汇总 参考源 类与协议
 /** 文档B. * * 文档B的详细描述. */ @interface DocB : NSObject /// 文档A. @interface DocA : NSObject  文本链接
 /** * - [文档B](DocB) : 类的链接文本.（仅appledoc） */  单行注释
@@ -55,10 +55,10 @@ import SwiftUI struct Content : View { @State var model = Themes.ListModel var b
     
     <item>
       <title>appledoc使用说明</title>
-      <link>https://blog.v5u.win/673.html</link>
+      <link>https://jinyuyoulong.github.io/673.html</link>
       <pubDate>Wed, 04 Apr 2018 07:00:34 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/673.html</guid>
+      <guid>https://jinyuyoulong.github.io/673.html</guid>
       <description>appledoc使用说明 安装命令行：
  git clone git://github.com/tomaz/appledoc.git cd ./appledoc sudo sh install-appledoc.sh appledoc —version //检查successed  使用 生成HTML 当需要html文档时，可以加上“&amp;ndash;no-create-docset”——
 appledoc --no-create-docset --output ~/doc --project-name &amp;quot;DrowRect&amp;quot; --company-id &amp;quot;com.jinyuyoulong&amp;quot; --project-company &amp;quot;jinyuyoulong&amp;quot; ./  注: &amp;ndash;output ./doc：设置输出目录为“./doc”。 &amp;ndash;project-name objcdoc：设置项目名为“DrowRect”。 &amp;ndash;project-company &amp;ldquo;jinyuyoulong&amp;rdquo;：设置公司名为“jinyuyoulong”。 &amp;ndash;company-id &amp;ldquo;com.jinyuyoulong&amp;rdquo;：设置公司id为“com.jinyuyoulong”。 ./：当前目录。 生成docset 此路不通
@@ -70,28 +70,28 @@ appledoc --output ./doc --project-name &amp;quot;DrowRect&amp;quot; --project-co
     
     <item>
       <title>iOS indexPath.item vs indexPath.row</title>
-      <link>https://blog.v5u.win/669.html</link>
+      <link>https://jinyuyoulong.github.io/669.html</link>
       <pubDate>Mon, 02 Apr 2018 06:25:02 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/669.html</guid>
+      <guid>https://jinyuyoulong.github.io/669.html</guid>
       <description>Inside NSIndexPath, the indexes are stored in a simple c array called &amp;ldquo;_indexes&amp;rdquo; defined as NSUInteger* and the length of the array is stored in &amp;ldquo;_length&amp;rdquo; defined as NSUInteger. The accessor &amp;ldquo;section&amp;rdquo; is an alias to &amp;ldquo;_indexes[0]&amp;rdquo; and both &amp;ldquo;item&amp;rdquo; and &amp;ldquo;row&amp;rdquo; are aliases to &amp;ldquo;_indexes[1]&amp;rdquo;. Thus the two are functionally identical. In terms of programming style – and perhaps the definition chain – you would be better using &amp;ldquo;row&amp;rdquo; in the context of tables, and &amp;ldquo;item&amp;rdquo; in the context of collections.</description>
     </item>
     
     <item>
       <title>swift中weak和unowned的区别</title>
-      <link>https://blog.v5u.win/post/swift-weakunowned/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-weakunowned/</link>
       <pubDate>Tue, 13 Dec 2016 16:34:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-weakunowned/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-weakunowned/</guid>
       <description>weak和unowned都是解决循环引用的关键字 区别： 如果您是一直写 Objective-C 过来的，那么从表面的行为上来说 unowned 更像以前的 unsafe_unretained，而 weak 就是以前的 weak。 用通俗的话说，就是 unowned 设置以后即使它原来引用的内容已经被释放了，它仍然会保持对被已经释放了的对象的一个 &amp;ldquo;无效的&amp;rdquo; 引用，它不能是 Optional 值，也不会被指向 nil。如果你尝试调用这个引用的方法或者访问成员属性的话，程序就会崩溃。 而 weak 则友好一些，在引用的内容被释放后，标记为 weak 的成员将会自动地变成 nil (因此被标记为 @weak 的变量一定需要是 Optional 值)。 关于两者使用的选择，Apple 给我们的建议是如果能够确定在访问时不会已被释放的话，尽量使用 unowned，如果存在被释放的可能，那就选择用 weak。</description>
     </item>
     
     <item>
       <title>swift 关键字篇</title>
-      <link>https://blog.v5u.win/post/swift-%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-%E5%85%B3%E9%94%AE%E5%AD%97/</link>
       <pubDate>Tue, 13 Dec 2016 15:45:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
       <description>@noescape：no escape(没有逃脱) 用来修饰闭包，含义为非逃逸闭包。 当闭包作为参数传递进函数时，如果这个闭包只在函数中被使用，则开发者可以将这个闭包声明成非逃逸的，即告诉系统当此函数结束后，这个闭包的生命周期也将结束，这样做的好处是可以提高代码性能，将闭包声明成非逃逸的类型使用@noescape关键字。 (1) 默认，swift 3.0 弃用，函数结束后，这个闭包的生命周期也将结束。 (2) 在其内部如果需要使用self这个关键字，self可以被省略。
 @escaping 逃逸闭包 逃逸的闭包常用于异步的操作，这类函数会在异步操作开始之后立刻返回，但是闭包直到异步操作结束后才会被调用。例如这个闭包是异步处理一个网络请求，只有当请求结束后，闭包的生命周期才结束。当闭包作为函数的参数传入时，很有可能这个闭包在函数返回之后才会被执行。
 @autoclosure 自动闭包 (1)默认非逃逸 (2)闭包也可以被自动的生成，这种闭包被称为自动闭包，自动闭包自动将表达式封装成闭包。 (3)自动闭包不接收任何参数，被调用时会返回被包装在其中的表达式的值。 (4)当闭包作为函数参数时，可以将参数标记 @autoclosure 来接收自动闭包。 (5)自动闭包能够延迟求值,因为代码段不会被执行直到你调用这个闭包。 (6)自动闭包默认是非逃逸的，如果要使用逃逸的闭包，需要手动声明: @autoclosure @escaping 旧版本：@autoclosure(escaping)
@@ -105,10 +105,10 @@ func func2(auto: @autoclosure ()-&amp;gt;Void) -&amp;gt; Void { //执行自动�
     
     <item>
       <title>CocoaPods</title>
-      <link>https://blog.v5u.win/post/mac-cocoapods/</link>
+      <link>https://jinyuyoulong.github.io/post/mac-cocoapods/</link>
       <pubDate>Wed, 26 Oct 2016 10:37:38 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-cocoapods/</guid>
+      <guid>https://jinyuyoulong.github.io/post/mac-cocoapods/</guid>
       <description>.podspec文件是做什么的
 .podspec文件描述了一个库将怎样被添加进工程中。.podspec文件可以标识该第三方库所需要的源码文件、依赖库、编译选项，以及其他第三方库需要的配置。  Podfile 文件的自述
 Podfile是用于配置项目所需要的第三方库的地方，使用格式如下： platform :ios, &#39;7.0&#39; target &#39;xxx&#39; do pod &#39;AFNetworking&#39;, &#39;~&amp;gt; 3.1.0&#39; ## react-native (引用本地文件) pod &#39;React&#39;, :path =&amp;gt; &#39;./node_modules/react-native&#39;, :subspecs =&amp;gt; [ &#39;Core&#39;, ] end   ​</description>
@@ -116,10 +116,10 @@ Podfile是用于配置项目所需要的第三方库的地方，使用格式如�
     
     <item>
       <title>objective-c代码规范</title>
-      <link>https://blog.v5u.win/post/ios-oc-code-style/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-oc-code-style/</link>
       <pubDate>Thu, 25 Aug 2016 16:45:01 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-oc-code-style/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-oc-code-style/</guid>
       <description>Objective-C代码规范 前言 Apple公司提供了一些代码规范文档。如果有内容未在此文档中提及，请参考如下内容：
  The Objective-C Programming Language Cocoa Fundamentals Guide Coding Guidelines for Cocoa iOS App Programming Guide  适用范围 所有适用Objective-C语言开发的项目。 在这里我们希望以类似断言的方式,大家逐条对比写出的代码和下列规范是否吻合,以达到预期的代码的可读性。
 代码规范 命名 基于iOS objective-c项目对于命名，目前分为变量名和函数名两类
@@ -138,29 +138,29 @@ Podfile是用于配置项目所需要的第三方库的地方，使用格式如�
     
     <item>
       <title>Workspace的使用方法</title>
-      <link>https://blog.v5u.win/post/xcode-workspace/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-workspace/</link>
       <pubDate>Thu, 21 Jul 2016 16:39:53 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-workspace/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-workspace/</guid>
       <description> 更改 xcode-&amp;gt; Preference -&amp;gt; Location -&amp;gt; Advanced -&amp;gt; Custom -&amp;gt; Relative to Workspace 新建Workspace 新建项目或静态库，选择 add workspace name 引入路径依赖，User Header Search Paths 设为 $(BUILT_PRODUCTS_DIR) 选择递归搜索 recursive 检查 scheme manage 中的项目依赖  </description>
     </item>
     
     <item>
       <title>JavaScriptCore</title>
-      <link>https://blog.v5u.win/post/ios-javascriptcore/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-javascriptcore/</link>
       <pubDate>Fri, 29 Apr 2016 17:43:54 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-javascriptcore/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-javascriptcore/</guid>
       <description>JavaScript 和OC原生交互
 - (void)ocCallJSFunction{ JSContext context = [[JSContext alloc]init]; JSValue jsValue = [context evaluateScript:@&amp;quot;21+7&amp;quot;]; int iVal = [jsValue toInt32]; NSLog(@&amp;quot;js value=%@,int=%d&amp;quot;,jsValue, iVal); [context evaluateScript:@&amp;quot;var arr = [21, 7, &#39;fanyiqing.com&#39;];&amp;quot;]; JSValue jsArr = context[@&amp;quot;arr&amp;quot;]; NSLog(@&amp;quot;JS Array:%@ length:%@&amp;quot;,jsArr,jsArr[@&amp;quot;length&amp;quot;]); jsArr[1] = @&amp;quot;blog&amp;quot;; jsArr[7] = @7; NSLog(@&amp;quot;JS Array:%@, length:%d&amp;quot;,jsArr,[jsArr[@&amp;quot;length&amp;quot;] toInt32]); NSArray nsarray = [jsArr toArray]; NSLog(@&amp;quot;nsarray:%@&amp;quot;,nsarray); }  </description>
     </item>
     
     <item>
       <title>iOS GCD dispatch barrier</title>
-      <link>https://blog.v5u.win/post/ios-gcd-dispatch-barrier/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-gcd-dispatch-barrier/</link>
       <pubDate>Fri, 15 Apr 2016 10:15:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-gcd-dispatch-barrier/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-gcd-dispatch-barrier/</guid>
       <description>需求： 两个线程并行执行，当两线程都执行完后，在执行另一个线程，然后在执行并行多线程
 thread1 thread4 --&amp;amp;gt; thread3 --&amp;amp;gt; thread2 thread5  一个dispatch barrier 允许在一个并发队列中创建一个同步点。当在并发队列中遇到一个barrier, 他会延迟执行barrier的block,等待所有在barrier之前提交的blocks执行结束。 这时，barrier block自己开始执行。 之后， 队列继续正常的执行操作。
 调用这个函数总是在barrier block被提交之后立即返回，不会等到block被执行。当barrier block到并发队列的最前端，他不会立即执行。相反，队列会等到所有当前正在执行的blocks结束执行。到这时，barrier才开始自己执行。所有在barrier block之后提交的blocks会等到barrier block结束之后才执行。
@@ -169,10 +169,10 @@ thread1 thread4 --&amp;amp;gt; thread3 --&amp;amp;gt; thread2 thread5  一个dis
     
     <item>
       <title>Xcode7 恢复代码折叠功能</title>
-      <link>https://blog.v5u.win/post/xcode-xcode7-code-hidden/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-xcode7-code-hidden/</link>
       <pubDate>Fri, 08 Apr 2016 18:14:53 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode7-code-hidden/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-xcode7-code-hidden/</guid>
       <description>升级到Xcode7后，发现代码折叠功能不见了！！！ 苹果默认把这个功能禁掉了：在Xcode菜单里选择Preference——Text Editing，你会发现里面有一个“code folding ribbon”，勾选它就能恢复代码折叠功能了。
 然后通过菜单Editor——Code Folding，你就可以使用你需要的折叠功能。
    相关快捷键：     局部折叠（折叠一个函数） ：Command+Option+Left/Right   全局折叠（折叠当前文件下的全部函数）：Shift+Command+Option+Left/Right   折叠注释块：（/* */之间的文字） ： Ctrl+Shift+Command+Left/Right    </description>
@@ -180,57 +180,57 @@ thread1 thread4 --&amp;amp;gt; thread3 --&amp;amp;gt; thread2 thread5  一个dis
     
     <item>
       <title>Xcode7.3 cannot create __weak reference in file using</title>
-      <link>https://blog.v5u.win/post/xcode-xcode7-3-cannot-create-weak-reference-in-file-using/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-xcode7-3-cannot-create-weak-reference-in-file-using/</link>
       <pubDate>Fri, 08 Apr 2016 16:26:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode7-3-cannot-create-weak-reference-in-file-using/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-xcode7-3-cannot-create-weak-reference-in-file-using/</guid>
       <description>升级xcode7.3后项目编译不通过 error：cannot create __weak reference in file using manual reference counting 解决办法： Set Build Settings -&amp;gt; Apple LLVM 7.1 - Language - Objective C -&amp;gt; Weak References in Manual Retain Release to YES.</description>
     </item>
     
     <item>
       <title>xcode设置允许访问http请求</title>
-      <link>https://blog.v5u.win/post/xcode-http/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-http/</link>
       <pubDate>Sun, 03 Apr 2016 14:30:54 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-http/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-http/</guid>
       <description>项目的info.plist文件添加一下值： App Transport Security Settings Allow Arbitrary Loads 设为YES</description>
     </item>
     
     <item>
       <title>iOS老应用显示不完全</title>
-      <link>https://blog.v5u.win/post/ios-screenview-error/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-screenview-error/</link>
       <pubDate>Sun, 03 Apr 2016 13:55:06 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-screenview-error/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-screenview-error/</guid>
       <description>解决 ： * 新建launchScreen文件 * 设置plist文件，添加Launch screen interface file base name字段 并将value值设为刚刚新建文件的文件名 * 删除模拟器或真机上的app重新编译运行</description>
     </item>
     
     <item>
       <title>Xcode快捷键</title>
-      <link>https://blog.v5u.win/post/xcode-shortcut-key/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-shortcut-key/</link>
       <pubDate>Tue, 29 Mar 2016 23:50:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-shortcut-key/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-shortcut-key/</guid>
       <description>常用xcode快捷键
 整行移动 option+commend+[] 当前页快速定位：ctl+6 项目中file间快速定位：shift+cmd+o 删除光标右边的字符：Ctrl+D 删除本行：Ctrl+K 光标移动到上一行：Ctrl+P 移动光标到下一行：Ctrl + N 折叠全部方法实现：shift+option+commend+left 显示自动提示：ESC 变量重命名：ctl+cmd+e (Edit All In Scop) `&amp;lt;/pre&amp;gt; crl+i 对齐代码 1.如果是在打开的文档范围内： 查找： Command+ F 替换： Command+Option+F Replace All 是全部替换本文档范围内的字符串 Replace 是替换当前字符串 Replace &amp;amp;amp; Find是边查找边替换 2.如果是全局查找和替换 查找：点击左边工具栏里面的“放大镜”按钮 或者 Shift+Command +F 替换：点击左边工具栏里面的“放大镜”按钮，然后左边 Find 改为 Replace即可。或者 Shift+Option+Command+F 3.变量重命名 Menu: Editor -&amp;amp;gt; Edit All In Scope (also shows key binding) Keyboard Shortcut: Control-Command-E If you want you can change this key binding on Preferences -&amp;amp;gt; Key Bindings -&amp;amp;gt; search for &amp;quot;Edit all in scope&amp;quot;.</description>
     </item>
     
     <item>
       <title>react-native:unexpected token error</title>
-      <link>https://blog.v5u.win/post/reactnative-unexpected-token-error/</link>
+      <link>https://jinyuyoulong.github.io/post/reactnative-unexpected-token-error/</link>
       <pubDate>Tue, 22 Mar 2016 17:11:47 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/reactnative-unexpected-token-error/</guid>
+      <guid>https://jinyuyoulong.github.io/post/reactnative-unexpected-token-error/</guid>
       <description>react-native新建的项目默认使用ES6写法，所以如果你在用到 componentWillMount:function()这样的代码时会运行出错 解决：改成ES6写法componentWillMount(){} 其他几种方式都改为ES6写法 如果你是使用这种方式 class wyq extends Component {}定义一个组件 那么应该这样定义方法：componentWillMount(){} 如果使用这种方式定义组件 var MovieScreen = React.createClass({}） 那么应该使用这种方式定义方法：render: function() {}
 请使用ES6的新写法</description>
     </item>
     
     <item>
       <title>ReactNative如何真机测试</title>
-      <link>https://blog.v5u.win/post/reactnative-device-test/</link>
+      <link>https://jinyuyoulong.github.io/post/reactnative-device-test/</link>
       <pubDate>Fri, 18 Mar 2016 13:24:28 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/reactnative-device-test/</guid>
+      <guid>https://jinyuyoulong.github.io/post/reactnative-device-test/</guid>
       <description>初始学习ReactNative 最想现在真机上一睹为快，对于非零基础的程序员，最重要的是先搞明白整个工程的创建到完结的流程，对于编程语言来说从hello world，对于一个完整的项目开发平台，则从一个最简单的dome项目开始。
 iOS 真机调试
 方法一：（从设备访问开发服务器）
@@ -252,20 +252,20 @@ dev(默认的 true)——设置了 DEV 变量的值。当是 true 时，它会�
     
     <item>
       <title>ReactNative环境搭建</title>
-      <link>https://blog.v5u.win/post/reactnative-install/</link>
+      <link>https://jinyuyoulong.github.io/post/reactnative-install/</link>
       <pubDate>Fri, 18 Mar 2016 13:22:50 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/reactnative-install/</guid>
+      <guid>https://jinyuyoulong.github.io/post/reactnative-install/</guid>
       <description>最近换了macbook，于是又要装node.js，记录一下 系统：OS X Mountain Lion 10.8.3 1/ 下载node.js for mac http://nodejs.org
 双击安装，一路next，很简单。 `&amp;lt;/pre&amp;gt; 2/ 测试是否安装成功 control + space 打开spotlight，输入“终端”，就打开了终端，类似win下的cmd 输入 node -v , 回车； 输入 npm -v , 回车 若无错，则显示版本号 3/ 测试运行 在（Finder &amp;gt; ~username ）目录，新建 helloworld.js &amp;lt;pre&amp;gt;`若在Finder左侧栏看不到你的用户名，则打开Finder的偏好设置，勾选你的用户名 回到主题，helloworld.js 内容： `&amp;lt;/pre&amp;gt; *********code start********** var http = require(&#39;http&#39;); http.createServer(function(req, res){ res.writeHead(200, {&#39;Content-Type&#39;: &#39;text/plain&#39;}); res.end(&#39;Hello Worldn&#39;); }).listen(8808, &#39;127.0.0.1&#39;); console.log(&#39;Server running at http://127.0.0.1:8808&#39;); **********code end********** 运行: 打开“终端”，输入“node helloworld.js” （若在其他目录，则在简介里复制完整位置） such as： node /Users/inman/Sites/node/helloworld.js &amp;lt;pre&amp;gt;`若无误，则显示 Server running at http://127.</description>
     </item>
     
     <item>
       <title>React-Native 初次安装环境报错及解决记录</title>
-      <link>https://blog.v5u.win/post/reactnative-first-install/</link>
+      <link>https://jinyuyoulong.github.io/post/reactnative-first-install/</link>
       <pubDate>Tue, 15 Mar 2016 16:38:19 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/reactnative-first-install/</guid>
+      <guid>https://jinyuyoulong.github.io/post/reactnative-first-install/</guid>
       <description>创建第一个项目后，打开xcode运行，terminal报错
 Watchman: watchman&amp;ndash;no-pretty get-sockname returned with exit code null dyld: Library not loaded: /usr/local/opt/pcre/lib/libpcre.1.dylib
  解决方案：终端输入 brew link pcre， 如果报错没有写入权限（Could not symlink lib/libpcre.1.dylib /usr/local/lib is not writable.） 则授权给该文件 sudo chown -R $(whoami) /usr/local/lib  </description>
@@ -273,10 +273,10 @@ Watchman: watchman&amp;ndash;no-pretty get-sockname returned with exit code null
     
     <item>
       <title>正确的使用KVO</title>
-      <link>https://blog.v5u.win/post/ios-kvo/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-kvo/</link>
       <pubDate>Tue, 15 Mar 2016 11:02:37 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-kvo/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-kvo/</guid>
       <description>KVO，全称为Key-Value Observing，是iOS中的一种设计模式，用于检测对象的某些属性的实时变化情况并作出响应。网上广为流传普及的一个例子是利用KVO检测股票价格的变动，例如这里。这个例子作为扫盲入门还是可以的，但是当应用场景比较复杂时，里面的一些细节还是需要改进的，里面有多个地方存在crash的危险。本文旨在逐步递进深入地探讨出一种目前比较健壮稳定的KVO实现方案，弥补网上大部分教程的不足！
 首先，假设我们的目标是在一个UITableViewController内对tableview的contentOffset进行实时监测，很容易地使用KVO来实现为。 在初始化方法中加入：
 [_tableView addObserver:self forKeyPath:@&amp;quot;contentOffset&amp;quot; options:NSKeyValueObservingOptionNew context:nil]; `&amp;lt;/pre&amp;gt; 在dealloc中移除KVO监听： &amp;lt;pre&amp;gt;`[_tableView removeObserver:self forKeyPath:@&amp;quot;contentOffset&amp;quot; context:nil]; `&amp;lt;/pre&amp;gt; 添加默认的响应回调方法： &amp;lt;pre&amp;gt;`- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context { [self doSomethingWhenContentOffsetChanges]; } `&amp;lt;/pre&amp;gt; 好了，KVO实现就到此完美结束了，拜拜。。。开个玩笑，肯定没这么简单的，这样的代码太粗糙了，当你在controller中添加多个KVO时，所有的回调都是走同上述函数，那就必须对触发回调函数的来源进行判断。判断如下： &amp;lt;pre&amp;gt;`- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context { if (object == _tableView &amp;amp;amp;&amp;amp;amp; [keyPath isEqualToString:@&amp;quot;contentOffset&amp;quot;]) { [self doSomethingWhenContentOffsetChanges]; } } `&amp;lt;/pre&amp;gt; 你以为这样就结束了吗？答案是否定的！我们假设当前类(在例子中为UITableViewController)还有父类，并且父类也有自己绑定了一些其他KVO呢？我们看到，上述回调函数体中只有一个判断，如果这个if不成立，这次KVO事件的触发就会到此中断了。但事实上，若当前类无法捕捉到这个KVO，那很有可能是在他的superClass，或者super-superClass...中，上述处理砍断了这个链。合理的处理方式应该是这样的： &amp;lt;pre&amp;gt;`- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context { if (object == _tableView &amp;amp;amp;&amp;amp;amp; [keyPath isEqualToString:@&amp;quot;contentOffset&amp;quot;]) { [self doSomethingWhenContentOffsetChanges]; } else { [super observeValueForKeyPath:keyPath ofObject:object change:change context:context]; } }  这样就结束了吗？答案仍旧是否定的。潜在的问题有可能出现在dealloc中对KVO的注销上。KVO的一种缺陷(其实不能称为缺陷，应该称为特性)是，当对同一个keypath进行两次removeObserver时会导致程序crash，这种情况常常出现在父类有一个kvo，父类在dealloc中remove了一次，子类又remove了一次的情况下。不要以为这种情况很少出现！当你封装framework开源给别人用或者多人协作开发时是有可能出现的，而且这种crash很难发现。不知道你发现没，目前的代码中context字段都是nil，那能否利用该字段来标识出到底kvo是superClass注册的，还是self注册的？</description>
@@ -284,10 +284,10 @@ Watchman: watchman&amp;ndash;no-pretty get-sockname returned with exit code null
     
     <item>
       <title>AFNetworking3.0/NSURLSession的优势</title>
-      <link>https://blog.v5u.win/post/ios-afnetworking3.0-nsurlsession/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-afnetworking3.0-nsurlsession/</link>
       <pubDate>Tue, 15 Mar 2016 10:53:52 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-afnetworking3.0-nsurlsession/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-afnetworking3.0-nsurlsession/</guid>
       <description>很多时候，AFNetworking都是目前iOS开发者网络库中的不二选择。Github上2W+的star数足见其流行程度。而从iOS7.0开始，苹果推出了新的网络库继承者NSURLSession后，AFNetworking也毫不犹豫地加入了对其的支持。3.0+更加只是提供了NSURLSession的支持。 我们使用AFNetworking的时候，可能会有很多的朋友都会采用以下的写法：
 AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager]; sessionManager.requestSerializer = [AFHTTPRequestSerializer serializer]; sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer]; [sessionManager GET:urlString parameters:parameters progress:progressBlock success:successHandler failure:failureHandler];
 大概可以描述一下这个过程，每次开启一个网络请求时，首先新建一个AFHTTPSessionManager，然后将相关的requestSerializer和reponseSerializer赋值；最后发起相应的GET/POST等请求。 而如果是直接采用NSURLSession来请求网络呢，我们则经常会采用以下的写法：
@@ -304,48 +304,48 @@ TCP三次握手（图片来源于网络) 事实上在HTTP 0.9, HTTP 1.</descript
     
     <item>
       <title>简单实用UIImagePickerViewController</title>
-      <link>https://blog.v5u.win/post/ios-uiimagepickerviewcontroller/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-uiimagepickerviewcontroller/</link>
       <pubDate>Wed, 09 Mar 2016 13:31:36 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-uiimagepickerviewcontroller/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-uiimagepickerviewcontroller/</guid>
       <description>创建createVC
  UIImagePickerController* ipc = [[UIImagePickerController alloc] init]; ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //图像来源 ipc.delegate = self; [self presentModalViewController:ipc animated:YES]; ```` 完善代理delegate方法 ```` //选择图片 //- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{ headView.image = [info objectForKey:@&amp;quot;UIImagePickerControllerOriginalImage&amp;quot;]; [picker dismissModalViewControllerAnimated:YES]; } //取消 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{ [picker dismissModalViewControllerAnimated:YES]; }  </description>
     </item>
     
     <item>
       <title>Xcode7 如何设置访问某些权限时的alert内容</title>
-      <link>https://blog.v5u.win/post/xcode-xcode7-rightalert/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-xcode7-rightalert/</link>
       <pubDate>Mon, 07 Mar 2016 18:28:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode7-rightalert/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-xcode7-rightalert/</guid>
       <description>举个栗子: 我想访问用户的照片，第一次时会弹出alert框询问用户是否将该权限开放给APP 这时为了增加用户友好度，我们有必要在询问的时候加一些解释和说明。 那么，如何添加呢？ 我们在info.plist文件里面设置 info.plist文件&amp;ndash;&amp;gt;添加字段Privacy - Photo Library Usage Description&amp;ndash;&amp;gt;填写说明文字</description>
     </item>
     
     <item>
       <title>UIView何时创建加载subview比较合适？</title>
-      <link>https://blog.v5u.win/post/ios-uiview-subview/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-uiview-subview/</link>
       <pubDate>Mon, 07 Mar 2016 15:38:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-uiview-subview/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-uiview-subview/</guid>
       <description>当我们使用ViewController的时候有ViewDidLoad方法保证数据或UI只加载一次 但是在UIView中 没有这样的生命周期函数 如果你的subview的创建是这样写的
 - (instancetype)initWithFrame:(CGRect)frame { self = [super initWithFrame:frame]; if (self) { [self makeView]; } return self; }  那么恭喜你 你的代码很可能会出问题 因为我发现 initWithFrame会调用两次，不要问我为什么，我也不知道 所以应该在哪里创建呢？ 这时我想起来了tableView的delegate方法，是一组按顺序执行的接口方法，啊哈，这是个很好的解决方案。 我们可以对外暴露一个方法， 当View初始化完成之后 在调用创建subview的方法 想在那里执行就在那里执行，想什么时候创建就什么时候创建</description>
     </item>
     
     <item>
       <title>Xcode7如何给新建的类名自动添加前缀</title>
-      <link>https://blog.v5u.win/post/xcode-xcode7-prefix/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-xcode7-prefix/</link>
       <pubDate>Thu, 03 Mar 2016 15:03:01 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode7-prefix/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-xcode7-prefix/</guid>
       <description>Xcode7如何给新建的类名自动添加前缀 一直想给新创建类的时候自动添加前缀比如这样:FFObject Xcode5之前是可以在项目刚创建的时候填写的 Class Prefix Xcode6之后默认没有了，那么在哪里能找到去添加呢，在这里： - Project&amp;ndash;&amp;gt;Target&amp;ndash;&amp;gt;Class Prefix -</description>
     </item>
     
     <item>
       <title>Xcode注释</title>
-      <link>https://blog.v5u.win/post/xcode-notes/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-notes/</link>
       <pubDate>Wed, 02 Mar 2016 15:49:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-notes/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-notes/</guid>
       <description>Xcode注释 在所有的编程环境中 有几种通用的注释方式我们默认遵守他们的规则 它们是：TODO, FIXME, XXX, ??? , !!!
  它们分别代表什么意思？   TODO: + 说明： 说明在标识处有功能代码待编写，待实现的功能在说明中会简略说明。 对那些临时的, 短期的解决方案, 或已经够好但仍不完美的代码使用 TODO 注释.
 FIXME: + 说明： 说明标识处代码需要修正，甚至代码是错误的，不能工作，需要修复，如何修正会在说明中简略说明。
@@ -355,30 +355,30 @@ XXX: + 说明： 说明标识处代码虽然实现了功能，但是实现的方
     
     <item>
       <title>braced block of statements is an unused closure</title>
-      <link>https://blog.v5u.win/post/swift-braced-block-of-statements-is-an-unused-closure/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-braced-block-of-statements-is-an-unused-closure/</link>
       <pubDate>Tue, 01 Mar 2016 15:31:45 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-braced-block-of-statements-is-an-unused-closure/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-braced-block-of-statements-is-an-unused-closure/</guid>
       <description>使用swift写dome时xcode报一下错误： braced block of statements is an unused closure
 原因及收获： for循环的条件语句不能有空格，如：for i=0; i&amp;lt;3; i++ {} 其他控制语句也一样不能有空格</description>
     </item>
     
     <item>
       <title>swift中的打印</title>
-      <link>https://blog.v5u.win/post/swift-print/</link>
+      <link>https://jinyuyoulong.github.io/post/swift-print/</link>
       <pubDate>Fri, 26 Feb 2016 14:57:35 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-print/</guid>
+      <guid>https://jinyuyoulong.github.io/post/swift-print/</guid>
       <description> 自从swift2.0后 println 合并到了print，默认print()方法换行 如果不想换行可以使用，print(&amp;ldquo;print line&amp;rdquo;,terminator:&amp;ldquo;n&amp;rdquo;)
  </description>
     </item>
     
     <item>
       <title>SSH</title>
-      <link>https://blog.v5u.win/post/mac-ssh/</link>
+      <link>https://jinyuyoulong.github.io/post/mac-ssh/</link>
       <pubDate>Wed, 24 Feb 2016 16:02:58 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-ssh/</guid>
+      <guid>https://jinyuyoulong.github.io/post/mac-ssh/</guid>
       <description>[TOC]
 解释 Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。 SSH通过在网络中创建安全隧道来实现SSH客户端与服务器之间的连接[2]。 虽然任何网络服务都可以通过SSH实现安全传输，SSH最常见的用途是远程登录系统，人们通常利用SSH来传输命令行界面和远程执行命令。 使用频率最高的场合类Unix系统，但是Windows操作系统也能有限度地使用SSH。2015年，微软宣布将在未来的操作系统中提供原生SSH协议支持(摘自wikipedia)  生成 下面是Mac生成方法：
 1 ：打开终端 输入 ssh-keygen
@@ -395,10 +395,10 @@ Host aaa.github.com HostName git@github.com:aaa IdentityFile ~/.ssh/id_rsa.aaa U
     
     <item>
       <title>OC Quartz2D 绘图</title>
-      <link>https://blog.v5u.win/post/ios-oc-quartz2d/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-oc-quartz2d/</link>
       <pubDate>Tue, 23 Feb 2016 12:07:20 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-oc-quartz2d/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-oc-quartz2d/</guid>
       <description>如何利用Quartz2D绘制东西到view上?
 首先,得有图形上下文,因为它能保存绘图信息,并且决定着绘制到什么地方去
 其次,那个图形上下⽂必须跟view相关联,才能将内容绘制到view上面
@@ -418,10 +418,10 @@ Host aaa.github.com HostName git@github.com:aaa IdentityFile ~/.ssh/id_rsa.aaa U
     
     <item>
       <title>iOS创建.a静态库文件</title>
-      <link>https://blog.v5u.win/post/ios-a-library/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-a-library/</link>
       <pubDate>Mon, 22 Feb 2016 16:01:04 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-a-library/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-a-library/</guid>
       <description>步骤：
 1.创建项目（选择Framework&amp;amp;Library）
 2.删除无用文件，加入希望编译的文件
@@ -434,10 +434,10 @@ Host aaa.github.com HostName git@github.com:aaa IdentityFile ~/.ssh/id_rsa.aaa U
     
     <item>
       <title>iOS 各类作用</title>
-      <link>https://blog.v5u.win/post/ios-classes/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-classes/</link>
       <pubDate>Tue, 16 Feb 2016 16:23:17 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-classes/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-classes/</guid>
       <description>UIMenuController &amp;mdash;&amp;ndash;定制剪切，复制，粘贴组件。
 UILabel &amp;mdash;&amp;mdash;&amp;ndash;文本显示
 UIButton &amp;mdash;&amp;mdash;&amp;mdash;按钮
@@ -446,10 +446,10 @@ UIButton &amp;mdash;&amp;mdash;&amp;mdash;按钮
     
     <item>
       <title>ios copy 和 mutableCopy</title>
-      <link>https://blog.v5u.win/post/ios-copymutablecopy/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-copymutablecopy/</link>
       <pubDate>Mon, 18 Jan 2016 19:39:17 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-copymutablecopy/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-copymutablecopy/</guid>
       <description>通过copy方法可以创建可变对象或不可变对象的不可变副本，对于不可变副本，其对象的值不可以改变。
 通过mutableCopy方法可以创建可变对象或不可变对象的可变副本，对于可变副本其对象是可变的。
 当我们要给一个copy一个对象的时候，经常需要使用copy方法，可是copy有两种方法：</description>
@@ -457,10 +457,10 @@ UIButton &amp;mdash;&amp;mdash;&amp;mdash;按钮
     
     <item>
       <title>NSString 位数不足补0</title>
-      <link>https://blog.v5u.win/post/ios-nsstring-add-0/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-nsstring-add-0/</link>
       <pubDate>Fri, 15 Jan 2016 16:22:44 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-nsstring-add-0/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-nsstring-add-0/</guid>
       <description>%0nd ，n是多少位。0表示补0
 如果是%nd，就是不满n位，自动补充空格。 NSString* testStr;
 intf = 12;
@@ -470,10 +470,10 @@ NSLog(@&amp;ldquo;%@&amp;rdquo;,testStr);</description>
     
     <item>
       <title>如何改变xcode 源文件的目录位置</title>
-      <link>https://blog.v5u.win/post/xcode-%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98xcode-%E6%BA%90%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98xcode-%E6%BA%90%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE/</link>
       <pubDate>Mon, 11 Jan 2016 11:10:16 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98xcode-%E6%BA%90%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98xcode-%E6%BA%90%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE/</guid>
       <description>很多时候会遇到这样的问题，项目中的文件，需要改变目录路径，但是呢，如果仅仅是将本地的文件移到目标目录下，重新编译项目会发现有很多的warnning警告，看着极不舒服，本着优雅的原则，怎么移动文件才是正确的移动方式，不会产生警告呢，那么我(fans)总结的方法如下:
 xcode 源文件移动方式:
 1.复制源文件
@@ -483,30 +483,30 @@ xcode 源文件移动方式:
     
     <item>
       <title>iOS键盘高度的官方获取方法</title>
-      <link>https://blog.v5u.win/post/ios-keyboard-height/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-keyboard-height/</link>
       <pubDate>Wed, 02 Dec 2015 14:54:36 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-keyboard-height/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-keyboard-height/</guid>
       <description>处理键盘事件的正确方法是这样的：（包括获取键盘的高度以及键盘弹出和消失动画的时间）
 1）在要使用键盘的视图控制器中，接收键盘事件的通知：  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil]; [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];` ` // 键盘高度变化通知，ios5.0新增的 #ifdef __IPHONE_5_0 float version = [[[UIDevice currentDevice] systemVersion] floatValue]; if (version &amp;amp;gt;= 5.0) { [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillChangeFrameNotification object:nil]; } #endif`&amp;lt;/pre&amp;gt; &amp;lt;div class=&amp;quot;cnblogs_code_toolbar&amp;quot;&amp;gt;&amp;lt;span class=&amp;quot;cnblogs_code_copy&amp;quot;&amp;gt;&amp;lt;a title=&amp;quot;复制代码&amp;quot;&amp;gt;　2）然后添加键盘事件的处理代码：&amp;lt;/a&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; 获取到当前keyboard的高度以及动画时间，然后对视图进行对应的操作即可。 &amp;lt;div class=&amp;quot;cnblogs_code&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;cnblogs_code_toolbar&amp;quot;&amp;gt; &amp;lt;pre&amp;gt;`#pragma mark - #pragma mark Responding to keyboard events - (void)keyboardWillShow:(NSNotification *)notification { /* Reduce the size of the text view so that it&#39;s not obscured by the keyboard.</description>
     </item>
     
     <item>
       <title>Xcode7.1.1更新内容</title>
-      <link>https://blog.v5u.win/post/xcode-xcode7.1.1-update-content/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-xcode7.1.1-update-content/</link>
       <pubDate>Mon, 23 Nov 2015 11:25:15 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode7.1.1-update-content/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-xcode7.1.1-update-content/</guid>
       <description>Xcode 7.1.1 improves stability and fixes critical issues in interface Builder,debugging,and UI testing. Xcode 7.1 includes Swift2.1 and SDKs for iOS 9.1,watchOS 2,tvOS,and OS X 10.11 EI Capitan.
 Now you can go beyond the simulator to test your app on an iPad, iPhone, Apple TV, or Apple Watch - for free. Simply enter your Apple ID into the Accounts preference pane,then attach a device to your Mac using a Lightning cable.</description>
     </item>
     
     <item>
       <title>gem 包管理器</title>
-      <link>https://blog.v5u.win/post/system-gem%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
+      <link>https://jinyuyoulong.github.io/post/system-gem%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
       <pubDate>Thu, 12 Nov 2015 15:33:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-gem%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
+      <guid>https://jinyuyoulong.github.io/post/system-gem%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
       <description>gem 常用命令
 查看软件源 gem source -l,不能翻墙的，建议改成国内的源 https://gems.ruby-china.com
 移除某个源 gem sources --remove https://ruby.taobao.org/
@@ -521,10 +521,10 @@ sudo 安装的包是安装在系统目录下 /Library/Ruby/Gems/2.3.0/gems
     
     <item>
       <title>SEL如何保存到NSArray数组中</title>
-      <link>https://blog.v5u.win/post/ios-selnsarray/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-selnsarray/</link>
       <pubDate>Wed, 04 Nov 2015 11:09:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-selnsarray/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-selnsarray/</guid>
       <description>首先，SEL是不可以保存到array数组中去的。
 其次，SEL有两种创建方法： SEL&amp;nbsp;s1&amp;nbsp;=&amp;nbsp;&amp;nbsp;@selector&amp;nbsp;(test1);&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;将test1方法转换为NSString对象 SEL&amp;nbsp;s2&amp;nbsp;=&amp;nbsp;NSSelectorFromString&amp;nbsp;(&amp;nbsp;@&amp;quot;test1&amp;quot;&amp;nbsp;);&amp;nbsp;&amp;nbsp;&amp;nbsp;//&amp;nbsp;将一个字符串&amp;nbsp;&amp;nbsp;方法&amp;nbsp;转换成为SEL对象
 NSArray无法保存SEL，但是可以保存NSString。
@@ -534,10 +534,10 @@ NSArray无法保存SEL，但是可以保存NSString。
     
     <item>
       <title>Xcode 删除 Provisioning profile 证书</title>
-      <link>https://blog.v5u.win/post/xcode-provisioning-profile/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-provisioning-profile/</link>
       <pubDate>Sat, 24 Oct 2015 20:09:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-provisioning-profile/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-provisioning-profile/</guid>
       <description>xcode 删除 Provisioning profile
 证书存放路径：/Users/fans/Library/MobileDevice/Provisioning Profiles
 &amp;nbsp;</description>
@@ -545,20 +545,20 @@ NSArray无法保存SEL，但是可以保存NSString。
     
     <item>
       <title>Cannot find interface declaration for &#39;ClassA&#39;, superclass of &#39;ClassB&#39;</title>
-      <link>https://blog.v5u.win/post/ios-cannot-find-interface-declaration-for-classa-superclass-of-classb/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-cannot-find-interface-declaration-for-classa-superclass-of-classb/</link>
       <pubDate>Tue, 22 Sep 2015 11:49:57 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-cannot-find-interface-declaration-for-classa-superclass-of-classb/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-cannot-find-interface-declaration-for-classa-superclass-of-classb/</guid>
       <description>这个error 是由于 头文件循环引用的原因，导致的。
 只要删除其中一个class的头文件中的＃import引用，就会解决这个问题</description>
     </item>
     
     <item>
       <title>宏定义</title>
-      <link>https://blog.v5u.win/post/system-%E5%AE%8F%E5%AE%9A%E4%B9%89/</link>
+      <link>https://jinyuyoulong.github.io/post/system-%E5%AE%8F%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Fri, 18 Sep 2015 15:50:23 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
+      <guid>https://jinyuyoulong.github.io/post/system-%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
       <description>#define DLOG( s, &amp;hellip; ) NSLog(@&amp;quot;&amp;lt; %@: (%d) &amp;gt; %@&amp;quot;,[[NSString stringWithUTF8String:FILE] lastPathComponent], LINE, [NSString stringWithFormat:(s), ##VA_ARGS])
 这个宏定义是用来在打印log的时候，调试使用，可以显示当前log所在的controller名字。
 先写出来，原理以后查看了再来补，</description>
@@ -566,10 +566,10 @@ NSArray无法保存SEL，但是可以保存NSString。
     
     <item>
       <title>Objective-c NSClassFromString 使用方法</title>
-      <link>https://blog.v5u.win/post/ios-oc-nsclassfromstring/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-oc-nsclassfromstring/</link>
       <pubDate>Mon, 14 Sep 2015 11:58:58 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-oc-nsclassfromstring/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-oc-nsclassfromstring/</guid>
       <description>NSClassFromString 是一个很有用的东西，尤其在进行 iPhone toolchain 的开发上。
 正常来说， id&amp;nbsp;myObj&amp;nbsp;=&amp;nbsp;[[NSClassFromString(@&amp;quot;MySpecialClass&amp;quot;)&amp;nbsp;alloc]&amp;nbsp;init];
 和 id&amp;nbsp;myObj&amp;nbsp;=&amp;nbsp;[[MySpecialClass&amp;nbsp;alloc]&amp;nbsp;init];
@@ -585,10 +585,10 @@ NSClassFromString 的好处是：
     
     <item>
       <title>app 上架前的打包准备</title>
-      <link>https://blog.v5u.win/post/ios-appstore_public_archive/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-appstore_public_archive/</link>
       <pubDate>Thu, 10 Sep 2015 15:22:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-appstore_public_archive/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-appstore_public_archive/</guid>
       <description>app 上架前的打包准备
 1.检查是否是外网环境
 2.更新info.plist文件版本号
@@ -603,20 +603,20 @@ NSClassFromString 的好处是：
     
     <item>
       <title>UITableView,UICollectionView,UIScrollView快速返回顶部</title>
-      <link>https://blog.v5u.win/post/ios-uitableview-uicollectionview-uiscrollview-back-top/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-uitableview-uicollectionview-uiscrollview-back-top/</link>
       <pubDate>Tue, 01 Sep 2015 18:53:57 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-uitableview-uicollectionview-uiscrollview-back-top/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-uitableview-uicollectionview-uiscrollview-back-top/</guid>
       <description>UITableView， UICollectionView都继承自UIScrollView，所以可以使用UIScrollView的方法，设置显示内容的偏移量&amp;nbsp;
 [self.tableView setContentOffset:CGPointMake(0, 0) animated:YES];</description>
     </item>
     
     <item>
       <title>NSDate和时间戳互转</title>
-      <link>https://blog.v5u.win/post/ios-nsdate2timenumber/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-nsdate2timenumber/</link>
       <pubDate>Fri, 28 Aug 2015 16:53:17 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-nsdate2timenumber/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-nsdate2timenumber/</guid>
       <description>iOS 将时间NSDate转化为毫秒时间戳 对于将NSDate类型转换为时间戳，相信大家肯定都会，这样的示例代码，在百度等搜索引擎上面一搜索就是一大篇的东西，但是，大家有没有注意到的是 通过那些方法转换得到的时间戳是 10位的数值，这个数值在转化为 NSDate类型的时候，就会出点儿错，你会发现，每一个时间的 毫秒都是为000的；&amp;nbsp;
 而正确的应该是下面这样的输出：&amp;nbsp;
 &amp;nbsp;&amp;nbsp;&amp;nbsp; 好了，接下来就是问题所在了：其实呢，并不是我们代码出错了，而是因为 [[NSDate date] timeIntervalSince1970] 虽然可以获取到后面的毫秒、微秒 ，但是在保存的时候省略掉了。如一个时间戳不省略的情况下为 1395399556.862046 ，省略掉后为一般所见 1395399556 。所以想取得毫秒时用获取到的时间戳 *1000 ，想取得微秒时 用取到的时间戳 * 1000 * 1000 。这样就解释了上面的10位数值的问题，当你取毫秒的时候，就会变成13位数值了。我想这样大家应该明白了吧！&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; 当然，说了 这么多理论性的东西，为的就是我们接下来会附上的代码的：&amp;nbsp; 将这段代码写在 你需要获取时间戳和转换的地方，而我因为是简单示范，就放在-viewDidload里面的。&amp;nbsp;
@@ -626,10 +626,10 @@ NSDate *dat = [self getDateTimeFromMilliSeconds:time]; NSDateFormatter * formatt
     
     <item>
       <title>Unknown Class **** in Interface Builder file</title>
-      <link>https://blog.v5u.win/post/ios-unknown-class-in-interface-builder-file/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-unknown-class-in-interface-builder-file/</link>
       <pubDate>Mon, 24 Aug 2015 10:44:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-unknown-class-in-interface-builder-file/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-unknown-class-in-interface-builder-file/</guid>
       <description>I added a UIView xib file using the root class of&amp;nbsp;MyView.
 I created it in the wrong place and so moved it in the project. Same project just a different folder/group.
 I then had a problem when running saying&amp;hellip;
@@ -640,10 +640,10 @@ I&amp;#39;ve done a search using SublimeText2 for the string &amp;quot;MyView&am
     
     <item>
       <title>文字上添加删除线</title>
-      <link>https://blog.v5u.win/post/ios-%E6%96%87%E5%AD%97%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E7%BA%BF/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-%E6%96%87%E5%AD%97%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E7%BA%BF/</link>
       <pubDate>Fri, 21 Aug 2015 17:10:49 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-%E6%96%87%E5%AD%97%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E7%BA%BF/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-%E6%96%87%E5%AD%97%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E7%BA%BF/</guid>
       <description>&amp;nbsp; &amp;nbsp;&amp;nbsp;NSString * str = @&amp;quot;ABCDEFG HIJKLMN&amp;quot;;
 &amp;nbsp; &amp;nbsp; UILabel * aLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 100, 300, 300)];
 &amp;nbsp; &amp;nbsp; aLab.text = str;
@@ -655,10 +655,10 @@ I&amp;#39;ve done a search using SublimeText2 for the string &amp;quot;MyView&am
     
     <item>
       <title>App Store上架前的准备</title>
-      <link>https://blog.v5u.win/post/ios-appstore_public_before/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-appstore_public_before/</link>
       <pubDate>Fri, 21 Aug 2015 17:10:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-appstore_public_before/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-appstore_public_before/</guid>
       <description>一、制作ipa发布包
 1、所需装备
 1）一个distribution发布版证书
@@ -673,30 +673,30 @@ I&amp;#39;ve done a search using SublimeText2 for the string &amp;quot;MyView&am
     
     <item>
       <title>iOS自动布局解决警告Automatic Preferred Max Layout Width is not available on iOS versions prior to 8.0</title>
-      <link>https://blog.v5u.win/post/ios-automatic-preferred-max-layout-width-is-not-available-on-ios-versions-prior-to-8-0/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-automatic-preferred-max-layout-width-is-not-available-on-ios-versions-prior-to-8-0/</link>
       <pubDate>Sun, 16 Aug 2015 12:33:07 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-automatic-preferred-max-layout-width-is-not-available-on-ios-versions-prior-to-8-0/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-automatic-preferred-max-layout-width-is-not-available-on-ios-versions-prior-to-8-0/</guid>
       <description>部署环境为iOS7.0可能会遇到
 设置Label的 Preferred Width(自动换行最大宽度) &amp;nbsp;explicit &amp;nbsp;(明确的) &amp;nbsp; &amp;nbsp;即可</description>
     </item>
     
     <item>
       <title>主动退出iOS程序</title>
-      <link>https://blog.v5u.win/post/ios-force-exit/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-force-exit/</link>
       <pubDate>Mon, 10 Aug 2015 12:05:51 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-force-exit/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-force-exit/</guid>
       <description>exit(0);
 只有这个API可以通过AppStore。</description>
     </item>
     
     <item>
       <title>iOS7之后如何获得APP唯一的身份标识</title>
-      <link>https://blog.v5u.win/post/ios-uuid/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-uuid/</link>
       <pubDate>Sun, 09 Aug 2015 11:24:34 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-uuid/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-uuid/</guid>
       <description>历史：
 1) iOS 5.0以前，iOS 2.0版本以后UIDevice提供一个获取设备唯一标识符的方法uniqueIdentifier，因为该唯一标识符与手机一一对应，苹果觉得可能会泄露用户隐私，所以在 iOS 5.0之后该方法就被废弃掉了。
 2）iOS 6.0系统新增了两个用于替换uniqueIdentifier的接口，分别是：identifierForVendor，advertisingIdentifier。
@@ -719,10 +719,10 @@ KeyChain介绍
     
     <item>
       <title>获取tableviewCell在当前屏幕中的坐标值</title>
-      <link>https://blog.v5u.win/post/ios-tableviewcell-frame/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-tableviewcell-frame/</link>
       <pubDate>Fri, 07 Aug 2015 13:28:36 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-tableviewcell-frame/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-tableviewcell-frame/</guid>
       <description>获得当前cell对于当前屏幕的位置
 CGRect&amp;nbsp;rectInTableView&amp;nbsp;=&amp;nbsp;[tableView&amp;nbsp;rectForRowAtIndexPath:indexPath]; &amp;nbsp;&amp;nbsp;
 CGRect&amp;nbsp;rect&amp;nbsp;=&amp;nbsp;[tableView&amp;nbsp;convertRect:rectInTableView&amp;nbsp;toView:[tableView&amp;nbsp;superview]];</description>
@@ -730,10 +730,10 @@ CGRect&amp;nbsp;rect&amp;nbsp;=&amp;nbsp;[tableView&amp;nbsp;convertRect:rectInT
     
     <item>
       <title>自定义back按钮无法使用系统pop interactive gesture 问题</title>
-      <link>https://blog.v5u.win/post/ios-backbutton-pop-interactive-gesture/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-backbutton-pop-interactive-gesture/</link>
       <pubDate>Thu, 06 Aug 2015 18:50:01 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-backbutton-pop-interactive-gesture/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-backbutton-pop-interactive-gesture/</guid>
       <description>两种解决办法：
 方法一：
 A，我的应用是自定义的返回按钮图标(默认返回按钮样式不会出现问题3)，为了保险，写了这句代码[self.navigationItem setHidesBackButton:YES]。 由于自定义返回按钮，所以iOS7自带返回手势无效。在需要的页面加上navigationController.interactivePopGestureRecognizer.delegate = self 返回手势好用了。
@@ -752,19 +752,19 @@ C，好，第三个问题相继出现（其实是跟第二个一起出来的）�
     
     <item>
       <title>XCode上设备或证书不能自动建和修改的问题解决</title>
-      <link>https://blog.v5u.win/post/xcode-profile-file/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-profile-file/</link>
       <pubDate>Tue, 04 Aug 2015 20:59:44 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-profile-file/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-profile-file/</guid>
       <description>自从XCode支持自动维护证书之后，省去了我们手动添加设备再更新完证书之后下载的麻烦，但一直都没有搞明白自动维护的机制，导致经常出现XCode报错却不自动添加设备，同时由于证书是XCode创建的，又无法手动修改的问题。经过一段时间的测试，终于找到了解决办法，在这里分享给大家。正常的情况应该是：view sourceprint?1.no provisioning profile was found for this executable然后可以选择Fix Issue，这样XCode就会自动为我们将新的设备添加到证书里，再自动更新证书。可能遇到的错误如下：view sourceprint?1.A valid provisioning profile for this executable was not found解决方法是1. 在Target的General界面中将Team改为所对应的开发者账号团队2. 在Target的Build Settings中的Code Signing Identity都改为iOS Developer（这里不能选择自己的），Provisioning Profile改为Automatic3. 此时Clean之后再运行，就可以出现Fix Issue的对话框，选择Fix Issue即可。</description>
     </item>
     
     <item>
       <title>如何使用Xcode--切换tap栏</title>
-      <link>https://blog.v5u.win/post/xcode-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8xcode-%E5%88%87%E6%8D%A2tap%E6%A0%8F/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8xcode-%E5%88%87%E6%8D%A2tap%E6%A0%8F/</link>
       <pubDate>Thu, 16 Jul 2015 11:10:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8xcode-%E5%88%87%E6%8D%A2tap%E6%A0%8F/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8xcode-%E5%88%87%E6%8D%A2tap%E6%A0%8F/</guid>
       <description>切换tap栏快捷键：commend+Shift+[,] ，此方法通用于其他APP上的tap栏切换
 以下为转载
 转自http://m.blog.csdn.net/blog/okmyang/38734063#
@@ -786,10 +786,10 @@ Debug Debug这个Tab有些特殊。并不是我手动创建的。而且我配置
     
     <item>
       <title>NSTimer</title>
-      <link>https://blog.v5u.win/post/ios-nstimer/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-nstimer/</link>
       <pubDate>Thu, 16 Jul 2015 11:03:51 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-nstimer/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-nstimer/</guid>
       <description>转载自
 NSTimer的使用方法
 1、初始化
@@ -829,20 +829,20 @@ NSTimer *myTimer&amp;nbsp;= [NSTimer&amp;nbsp;timerWithTimeInterval:3.0&amp;nbsp
     
     <item>
       <title>iOS 开发error/debug</title>
-      <link>https://blog.v5u.win/post/ios-errordebug/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-errordebug/</link>
       <pubDate>Tue, 14 Jul 2015 21:36:20 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-errordebug/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-errordebug/</guid>
       <description>error:property with ‘retain(strong)’ attribute must be of object type&amp;nbsp;
 cause: 没有包含相应地头文件，造成变量引用错误，指针指向未知</description>
     </item>
     
     <item>
       <title>iOS端App的icon和Launch Image规格实时更新</title>
-      <link>https://blog.v5u.win/post/ios-launch-image/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-launch-image/</link>
       <pubDate>Tue, 14 Jul 2015 17:45:49 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-launch-image/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-launch-image/</guid>
       <description>启动影像 ：&amp;nbsp;iPhone&amp;nbsp;：320 x 480&amp;nbsp;640 x 960 640*1136&amp;nbsp;750*1334 1242*2208&amp;nbsp;&amp;nbsp;iPad&amp;nbsp;：768 x 1004&amp;nbsp;1536 x 2008
  APP图标：&amp;nbsp;iPhone：120 x 120&amp;nbsp;180 x 180iPad：76 x 76&amp;nbsp;152 x 152
  App Store商店：1024 x 1024
@@ -853,10 +853,10 @@ cause: 没有包含相应地头文件，造成变量引用错误，指针指向�
     
     <item>
       <title>Xcode如何添加pch文件</title>
-      <link>https://blog.v5u.win/post/xcode-pch/</link>
+      <link>https://jinyuyoulong.github.io/post/xcode-pch/</link>
       <pubDate>Tue, 14 Jul 2015 11:31:06 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-pch/</guid>
+      <guid>https://jinyuyoulong.github.io/post/xcode-pch/</guid>
       <description>Xcode6.0之后去掉了Precompile Prefix Header 文件，主要原因可能在于Prefix Header大大的增加了Build的时间。没有了Prefix Header之后就要通过手动@import来手动导入头文件了，在失去了编程便利性的同时也降低了Build的时间。具体原因
 StackOverFlow上讨论的已经比较清晰了
 StackOverFlow:为什么xcode6没有自动创建pch文件呢？
@@ -870,10 +870,10 @@ p style=&amp;ldquo;margin-top: 0px; margin-bottom: 0.75em; line-height: 27.20000
     
     <item>
       <title>iOS如何判断应用是否开启摄像头权限</title>
-      <link>https://blog.v5u.win/post/ios-camera-right/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-camera-right/</link>
       <pubDate>Fri, 19 Jun 2015 11:25:28 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-camera-right/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-camera-right/</guid>
       <description>NSString * mediaType = AVMediaTypeVideo;
 &amp;nbsp; &amp;nbsp; AVAuthorizationStatus&amp;nbsp; authorizationStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
 &amp;nbsp; &amp;nbsp; if (authorizationStatus == AVAuthorizationStatusRestricted || authorizationStatus == AVAuthorizationStatusDenied) {
@@ -889,10 +889,10 @@ p style=&amp;ldquo;margin-top: 0px; margin-bottom: 0.75em; line-height: 27.20000
     
     <item>
       <title>iOS NSString 字符串处理：截取字符串、匹配字符串、分隔字符串</title>
-      <link>https://blog.v5u.win/post/ios-string/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-string/</link>
       <pubDate>Thu, 04 Jun 2015 17:33:36 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-string/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-string/</guid>
       <description>1.截取字符串
 NSString*string =@&amp;quot;sdfsfsfsAdfsdf&amp;quot;; string = [string&amp;nbsp;substringToIndex:7];//截取下标7之后的字符串 NSLog(@&amp;quot;截取的值为：%@&amp;quot;,string); [string&amp;nbsp;substringFromIndex:2];//截取下标2之前的字符串 NSLog(@&amp;quot;截取的值为：%@&amp;quot;,string);
 2.匹配字符串 NSString*string =@&amp;quot;sdfsfsfsAdfsdf&amp;quot;; NSRangerange = [stringrangeOfString:@&amp;quot;f&amp;quot;];//匹配得到的下标 NSLog(@&amp;quot;rang:%@&amp;quot;,NSStringFromRange(range)); string = [string&amp;nbsp;substringWithRange:range];//截取范围类的字符串 NSLog(@&amp;quot;截取的值为：%@&amp;quot;,string);
@@ -902,10 +902,10 @@ NSArray&amp;nbsp;*array = [string&amp;nbsp;componentsSeparatedByString:@&amp;quo
     
     <item>
       <title>使用Autolayout xib实现动态高度的TableViewCell</title>
-      <link>https://blog.v5u.win/post/ios-autolayouttableviewcell/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-autolayouttableviewcell/</link>
       <pubDate>Wed, 03 Jun 2015 15:27:18 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-autolayouttableviewcell/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-autolayouttableviewcell/</guid>
       <description>文章来源于http://itony.me/381.html
 创建Xib文件 首先将Cell做好布局，调整到满意的位置和宽度，然后开始做Autolayout设定。
 Autolayout操作方式有两种，一种是选择目标后，使用右下角的工具栏；另一种是直接使用右键拖拽目标，在弹出的菜单中选择限制项。当选择的目标比较小的时候，可以打开左侧的菜单，在这里做拖拽操作一样是可以的。个人感觉后者更方便一些。
@@ -953,10 +953,10 @@ Autolayout操作方式有两种，一种是选择目标后，使用右下角的�
     
     <item>
       <title>微信联通公众号如何解绑</title>
-      <link>https://blog.v5u.win/post/life-%E5%BE%AE%E4%BF%A1%E8%81%94%E9%80%9A%E5%85%AC%E4%BC%97%E5%8F%B7%E5%A6%82%E4%BD%95%E8%A7%A3%E7%BB%91/</link>
+      <link>https://jinyuyoulong.github.io/post/life-%E5%BE%AE%E4%BF%A1%E8%81%94%E9%80%9A%E5%85%AC%E4%BC%97%E5%8F%B7%E5%A6%82%E4%BD%95%E8%A7%A3%E7%BB%91/</link>
       <pubDate>Tue, 26 May 2015 14:20:19 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/life-%E5%BE%AE%E4%BF%A1%E8%81%94%E9%80%9A%E5%85%AC%E4%BC%97%E5%8F%B7%E5%A6%82%E4%BD%95%E8%A7%A3%E7%BB%91/</guid>
+      <guid>https://jinyuyoulong.github.io/post/life-%E5%BE%AE%E4%BF%A1%E8%81%94%E9%80%9A%E5%85%AC%E4%BC%97%E5%8F%B7%E5%A6%82%E4%BD%95%E8%A7%A3%E7%BB%91/</guid>
       <description> 切换到输入框，输入“解绑&amp;quot;
  然后根据提示，回复Y即可。
   </description>
@@ -964,10 +964,10 @@ Autolayout操作方式有两种，一种是选择目标后，使用右下角的�
     
     <item>
       <title>如何避免在Block里用self造成循环引用</title>
-      <link>https://blog.v5u.win/post/ios-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%9C%A8block%E9%87%8C%E7%94%A8self%E9%80%A0%E6%88%90%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%9C%A8block%E9%87%8C%E7%94%A8self%E9%80%A0%E6%88%90%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</link>
       <pubDate>Fri, 15 May 2015 16:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%9C%A8block%E9%87%8C%E7%94%A8self%E9%80%A0%E6%88%90%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%9C%A8block%E9%87%8C%E7%94%A8self%E9%80%A0%E6%88%90%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</guid>
       <description>本文原引于Bannings的专栏博客
 一般来说我们总会在设置Block之后，在合适的时间回调Block，而不希望回调Block的时候Block已经被释放了，所以我们需要对Block进行copy，copy到堆中，以便后用。
 当一个Block被Copy的时候，如果你在Block里进行了一些调用，那么将会有一个强引用指向这些调用方法的调用者，有两个规则：
@@ -980,10 +980,10 @@ Autolayout操作方式有两种，一种是选择目标后，使用右下角的�
     
     <item>
       <title>UISegmentedControl简单使用</title>
-      <link>https://blog.v5u.win/post/ios-uisegmentedcontrol/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-uisegmentedcontrol/</link>
       <pubDate>Thu, 14 May 2015 16:53:26 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-uisegmentedcontrol/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-uisegmentedcontrol/</guid>
       <description>NSArray* segMArr = [NSArray arrayWithObjects:@&amp;quot;0&amp;quot;,@&amp;quot;1&amp;quot;, nil];
 UISegmentedControl* segmentC = [[UISegmentedControlalloc]initWithItems:segMArr];
 &amp;nbsp; &amp;nbsp; segmentC.frame = CGRectMake(0, 178, 320, 30);
@@ -1002,19 +1002,19 @@ UISegmentedControl* segmentC = [[UISegmentedControlalloc]initWithItems:segMArr];
     
     <item>
       <title>NSData转int</title>
-      <link>https://blog.v5u.win/post/ios-nsdata2int/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-nsdata2int/</link>
       <pubDate>Wed, 29 Apr 2015 14:03:07 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-nsdata2int/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-nsdata2int/</guid>
       <description>有一种借助string的方法，经验证不对，找了半天终于找到了一个合适的，可是没有看的太明白，特补充记录在此。 1.int&amp;nbsp;-&amp;gt;&amp;nbsp;data int&amp;nbsp;i&amp;nbsp;=&amp;nbsp;1; NSData&amp;nbsp;*data&amp;nbsp;=&amp;nbsp;[NSData&amp;nbsp;dataWithBytes:&amp;nbsp;&amp;amp;i&amp;nbsp;length:&amp;nbsp;sizeof(i)];//不多解释，不明白请留言 2.data&amp;nbsp;-&amp;gt;&amp;nbsp;int int&amp;nbsp;i; [data&amp;nbsp;getBytes:&amp;nbsp;&amp;amp;i&amp;nbsp;length:&amp;nbsp;sizeof(i)];//必须要事先声明&amp;nbsp;int&amp;nbsp;变量，此处是将data里的数据赋值到&amp;nbsp;int变量&amp;nbsp;i&amp;nbsp;的地址里。 </description>
     </item>
     
     <item>
       <title>svn上传.a文件</title>
-      <link>https://blog.v5u.win/post/system-svn-.a-upload/</link>
+      <link>https://jinyuyoulong.github.io/post/system-svn-.a-upload/</link>
       <pubDate>Thu, 23 Apr 2015 09:46:53 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-svn-.a-upload/</guid>
+      <guid>https://jinyuyoulong.github.io/post/system-svn-.a-upload/</guid>
       <description>在mac下很多svn管理工具默认都不能上传.a文件，这让人很苦恼。从网上扒了下，找到了两个方法。 方法一： 打开终端，cd 进入到需要上传的.a文件所在的文件夹。&amp;nbsp;确保 ls能看到.a文件 然后使用命令，如：svn add libzbar.a 使用完成后出现 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;A &amp;nbsp;(bin) &amp;nbsp;libzbar.a 
 表示添加成功，用svn图形管理工具就可以看到，刚才添加的.a文件，此时就可以手动上传了。
 再次update后commit后 .a 文件就传成功了
@@ -1031,10 +1031,10 @@ UISegmentedControl* segmentC = [[UISegmentedControlalloc]initWithItems:segMArr];
     
     <item>
       <title>iOS8.3发布了Swift 1.2带来哪些新变化</title>
-      <link>https://blog.v5u.win/post/ios-ios8.3-swift-changed/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-ios8.3-swift-changed/</link>
       <pubDate>Tue, 14 Apr 2015 14:59:50 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-ios8.3-swift-changed/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-ios8.3-swift-changed/</guid>
       <description>原文&amp;nbsp;&amp;nbsp;http://www.cnblogs.com/yuyongjian/p/4371400.html
 苹果前几日在面向开发者推送iOS 8.3 Beta的同时，还发布了版本号为6D520o的Xcode 6.3 Beta，其中便包含了iOS 8.3 Beta和OS X v10.10 SDK，并进一步提升了Swift与Objective-C代码的交互性，而Swift业已更新至1.2版本。@未来眼之老码团队第一时间翻译了完整的Release Note。共计50多处改动，同时修改了Objective-c的语法，足见苹果对Swift语言的重视。
 从&amp;nbsp;Xcode 6.3 Beta Release Notes&amp;nbsp;看出，Xcode 6.3 Beta包含了很多颇为值得开发者期待的改变，共计50多处改动，同时修改了Objective-C的语法，足见苹果对Swift语言的重视。而其代码迁移工具可以帮助开发者将其代码从Swift 1.1（Xcode 6.1）升级至Swift 1.2（Xcode 6.3），具体执行编辑菜单（Edit）-&amp;gt;转换（Convert）-至（To）Swift1.2即可。 具体更新如下：
@@ -1055,10 +1055,10 @@ let常量现在生成时不需要立即初始化，新的规则是let常量必�
     
     <item>
       <title>App Store 上架流程</title>
-      <link>https://blog.v5u.win/post/ios-app-store-public/</link>
+      <link>https://jinyuyoulong.github.io/post/ios-app-store-public/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-app-store-public/</guid>
+      <guid>https://jinyuyoulong.github.io/post/ios-app-store-public/</guid>
       <description>App Store上架流程
  申请开发者账号 登录开发者网站，注册cer APP ID， profile (xcode 只能解决测试证书配置) 登录iTunes connection网站，注册APP xcode选择distribution profile 证书，设置build id，打包 上传到App Store。 设置APP story 发布信息，提交等待审核  </description>
     </item>
