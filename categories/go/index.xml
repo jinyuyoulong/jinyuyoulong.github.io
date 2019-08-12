@@ -42,7 +42,10 @@ defer func（）{ if err！= nil {	//可能没有发生错误 - 检查 错误= .
       <description>做 Go 开发，一般使用的IDE是 Goland
 安装略，自己解决。下面说安装后的事情。
  配置文件，配置开发环境  goland 会自动读取 GOROOT 和 GOPATH，所以不用自己填写。我们要做的就是配置配置文件
-创建go build配置文件：Templates&amp;ndash;&amp;gt; Go Build Run kind 选Directory Directory 选你的main包所在文件夹 Output directory设置与go build -o 不相容，所以不用设置，我们使用-o参数来控制可执行文件的路径以及名字 Working directory保持默认就好 Go tool arguments 就是go build 的参数</description>
+创建go build配置文件：Templates&amp;ndash;&amp;gt; Go Build Run kind 选Directory Directory 选你的main包所在文件夹 Output directory设置与go build -o 不相容，所以不用设置，我们使用-o参数来控制可执行文件的路径以及名字 Working directory保持默认就好 Go tool arguments 就是go build 的参数
+ debug  goland 的 debug 功能可以看到 整个函数链条，和当下参数的值，以及 ·s 文件(汇编文件)的内部调用
+单文件调试：直接点击run旁边的debug按钮，左下方有细分子项：跳过执行（步过），单步调试（步入），步出
+整项目调试：</description>
     </item>
     
     <item>
@@ -51,7 +54,10 @@ defer func（）{ if err！= nil {	//可能没有发生错误 - 检查 错误= .
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jinyuyoulong.github.io/post/go-orm/</guid>
-      <description>   name xorm gorm     github-stars 5,053 14,262   github-fork 650 1,606         xorm 自动生成代码
+      <description>golang 中 orm最主流的两个包，xorm和gorm。所以主要在他们之间做抉择。
+   name xorm gorm     github-stars 5,053 14,262   github-fork 650 1,606         不管是从stars数还是fork gorm都是大比例拉开。gorm是老牌的项目，xorm是这两年崛起来的。
+最后我选择了xormplus 因为路径依赖，学习golang的时候的示例用的是xorm。:sweat_smile:
+xorm 自动生成代码
 xorm help reverse
 格式：xorm reverse dirver dbname 导出模板
 xorm reverse mysql &amp;quot;username:pwd@tcp(127.0.0.1:3306)/dbname?charset=utf8&amp;quot; $GOPATH/src/github.com/go-xorm/cmd/xorm/templates/goxorm  </description>

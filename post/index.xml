@@ -6,10 +6,52 @@
     <description>Recent content in Posts on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 26 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 10:46:26 +0800</lastBuildDate>
     
 	<atom:link href="https://jinyuyoulong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>System 进程间通讯方式</title>
+      <link>https://jinyuyoulong.github.io/post/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Mon, 12 Aug 2019 10:46:26 +0800</pubDate>
+      
+      <guid>https://jinyuyoulong.github.io/post/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/</guid>
+      <description>进程通信： 每个进程各自有不同的用户地址空间,任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核,在内核中开辟一块缓冲区,进程A把数据从用户空间拷到内核缓冲区,进程B再从内核缓冲区把数据读走,内核提供的这种机制称为进程间通信。
+[TOC]
+进程间8种通讯方式 匿名管道通信 匿名管道( pipe )：管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。
+// 需要的头文件 #include &amp;lt;unistd.h&amp;gt; // 通过pipe()函数来创建匿名管道 // 返回值：成功返回0，失败返回-1 // fd参数返回两个文件描述符 // fd[0]指向管道的读端，fd[1]指向管道的写端 // fd[1]的输出是fd[0]的输入。 int pipe (int fd[2]);  通过匿名管道实现进程间通信的步骤如下：
+父进程创建管道，得到两个⽂件描述符指向管道的两端 父进程fork出子进程，⼦进程也有两个⽂件描述符指向同⼀管道。 父进程关闭fd[0],子进程关闭fd[1]，即⽗进程关闭管道读端,⼦进程关闭管道写端（因为管道只支持单向通信）。⽗进程可以往管道⾥写,⼦进程可以从管道⾥读,管道是⽤环形队列实现的,数据从写端流⼊从读端流出,这样就实现了进程间通信。 详细可参考文章：进程间的通信方式——pipe（管道）
+高级管道通信 高级管道(popen)：将另一个程序当做一个新的进程在当前程序进程中启动，则它算是当前程序的子进程，这种方式我们成为高级管道方式。
+有名管道通信 有名管道 (named pipe) ： 有名管道也是半双工的通信方式，但是它允许无亲缘关系进程间的通信。
+消息队列通信 消息队列( message queue ) ： 消息队列是由消息的链表，存放在内核中并由消息队列标识符标识。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点。
+信号量通信 信号量( semophore ) ： 信号量是一个计数器，可以用来控制多个进程对共享资源的访问。它常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程内不同线程之间的同步手段。
+信号 信号 ( sinal ) ： 信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生。
+共享内存通信 共享内存( shared memory ) ：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。共享内存是最快的 IPC 方式，它是针对其他进程间通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号两，配合使用，来实现进程间的同步和通信。
+套接字通信 套接字( socket ) ： 套接口也是一种进程间通信机制，与其他通信机制不同的是，它可用于不同机器间的进程通信。</description>
+    </item>
+    
+    <item>
+      <title>Go Liteide IDE</title>
+      <link>https://jinyuyoulong.github.io/post/go-liteide/</link>
+      <pubDate>Fri, 02 Aug 2019 16:33:56 +0800</pubDate>
+      
+      <guid>https://jinyuyoulong.github.io/post/go-liteide/</guid>
+      <description>[TOC]
+liteide是专门为go编写的一个基于qt5的IDE，免费开源跨平台。 LiteIDE 是一个轻量级的开源跨平台 Go语言 IDE. 作者: 七叶 (visualfc)
+支持 Windows，Linux，Mac。
+下载地址：https://github.com/visualfc/liteide.git
+或命令行安装：brew search liteide
+配置环境变量  切换当前环境 &amp;gt; system—&amp;gt; darwin64-home, 点击旁边的小灰框(编辑当前环境) 在打开的文件中设置 go 环境： GOROOT, GOPATH,GOBIN, GOPROXY 注意查看下方的&amp;rdquo;事件记录&amp;rdquo; 输出日志，确认不在有报错  编译运行 BR : go build &amp;amp; run
+R : 直接运行可执行文件
+FR : go run file.go
+B : go build
+调试 用 LiteIDE 可以方便调试 Go 程序，它是用的 GDB 调试的，如果没有安装 GDB 的话，运行 “调试” 就会提示：
+Mac没有内置gdb，所以需要使用brew安装，但是Mac又不信任 gdb ，所以还要生成信任证书给gdb用。
+参考：shttps://windmt.com/2016/01/07/installing-gdb-on-macos/
+2.4 设置编译选项及编译
+编译-&amp;gt;编译配置，设置编译参数。在BUILDARGS添加-gcflags &amp;ldquo;-N -l&amp;rdquo;，目的是去掉编译优化，方便调试。</description>
+    </item>
     
     <item>
       <title>flutter安装</title>
@@ -68,7 +110,10 @@ defer func（）{ if err！= nil {	//可能没有发生错误 - 检查 错误= .
       <description>做 Go 开发，一般使用的IDE是 Goland
 安装略，自己解决。下面说安装后的事情。
  配置文件，配置开发环境  goland 会自动读取 GOROOT 和 GOPATH，所以不用自己填写。我们要做的就是配置配置文件
-创建go build配置文件：Templates&amp;ndash;&amp;gt; Go Build Run kind 选Directory Directory 选你的main包所在文件夹 Output directory设置与go build -o 不相容，所以不用设置，我们使用-o参数来控制可执行文件的路径以及名字 Working directory保持默认就好 Go tool arguments 就是go build 的参数</description>
+创建go build配置文件：Templates&amp;ndash;&amp;gt; Go Build Run kind 选Directory Directory 选你的main包所在文件夹 Output directory设置与go build -o 不相容，所以不用设置，我们使用-o参数来控制可执行文件的路径以及名字 Working directory保持默认就好 Go tool arguments 就是go build 的参数
+ debug  goland 的 debug 功能可以看到 整个函数链条，和当下参数的值，以及 ·s 文件(汇编文件)的内部调用
+单文件调试：直接点击run旁边的debug按钮，左下方有细分子项：跳过执行（步过），单步调试（步入），步出
+整项目调试：</description>
     </item>
     
     <item>
@@ -77,7 +122,10 @@ defer func（）{ if err！= nil {	//可能没有发生错误 - 检查 错误= .
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jinyuyoulong.github.io/post/go-orm/</guid>
-      <description>   name xorm gorm     github-stars 5,053 14,262   github-fork 650 1,606         xorm 自动生成代码
+      <description>golang 中 orm最主流的两个包，xorm和gorm。所以主要在他们之间做抉择。
+   name xorm gorm     github-stars 5,053 14,262   github-fork 650 1,606         不管是从stars数还是fork gorm都是大比例拉开。gorm是老牌的项目，xorm是这两年崛起来的。
+最后我选择了xormplus 因为路径依赖，学习golang的时候的示例用的是xorm。:sweat_smile:
+xorm 自动生成代码
 xorm help reverse
 格式：xorm reverse dirver dbname 导出模板
 xorm reverse mysql &amp;quot;username:pwd@tcp(127.0.0.1:3306)/dbname?charset=utf8&amp;quot; $GOPATH/src/github.com/go-xorm/cmd/xorm/templates/goxorm  </description>
@@ -122,15 +170,13 @@ xorm reverse mysql &amp;quot;username:pwd@tcp(127.0.0.1:3306)/dbname?charset=utf
       <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jinyuyoulong.github.io/post/docker-k8s/</guid>
-      <description> 安装 在Mac下安装前提条件，已经安装好了docker desktop，并修改了代理源 https://registry.docker-cn.com。
+      <description>安装 在Mac下安装前提条件，已经安装好了docker desktop，并修改了代理源 https://registry.docker-cn.com。
 直接在docker桌面端开启k8s是没用的，一直提示 kubernetes is starting… :cry: 我竟然不知道，这样子持续了n天。​
-自己手动安装 k8s
- git clone https://github.com/maguowei/k8s-docker-for-mac.git
+自己手动编译安装 k8s  git clone https://github.com/maguowei/k8s-docker-for-mac.git
  cd k8s-docker-for-mac/
  ./load_images.sh
-  安装minikube
-# install minikube $ brew cask install minikube $ brew install docker-machine-driver-xhyve # docker-machine-driver-xhyve need root owner and uid $ sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve $ sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve  最后启动minikube
-# start minikube. # http proxy is required in China $ minikube start --docker-env HTTP_PROXY=http://proxy-ip:port --docker-env HTTPS_PROXY=http://proxy-ip:port --vm-driver=xhyve  </description>
+  安装minikube # install minikube $ brew cask install minikube $ brew install docker-machine-driver-xhyve # docker-machine-driver-xhyve need root owner and uid $ sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve $ sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve  最后启动minikube
+# start minikube. # http proxy is required in China $ minikube start --docker-env HTTP_PROXY=http://proxy-ip:port --docker-env HTTPS_PROXY=http://proxy-ip:port --vm-driver=xhyve  Ubuntu 安装 kubeadm kubectl kubelet 三个包</description>
     </item>
     
     <item>
@@ -3352,6 +3398,19 @@ com-共同
       <guid>https://jinyuyoulong.github.io/post/ios-app-store-public/</guid>
       <description>App Store上架流程
  申请开发者账号 登录开发者网站，注册cer APP ID， profile (xcode 只能解决测试证书配置) 登录iTunes connection网站，注册APP xcode选择distribution profile 证书，设置build id，打包 上传到App Store。 设置APP story 发布信息，提交等待审核  </description>
+    </item>
+    
+    <item>
+      <title>Git 仓库</title>
+      <link>https://jinyuyoulong.github.io/post/system-git%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jinyuyoulong.github.io/post/system-git%E4%BB%93%E5%BA%93/</guid>
+      <description>git 仓库的创建流程：
+命令行模式创建 参考  创建裸仓库 git init --bare gitserver.git，表明允许其副本push操作。   使用 git init --bare &amp;lt;repo&amp;gt; 可以创建一个裸仓库，当创建一个裸存储库时，Git假定裸存储库将作为几个远程用户的源存储库，因此它不会创建默认远程源。这意味着基本的git pull和git push操作将无法工作，因为Git假设没有工作空间，你不打算提交对裸存储库的任何更改。
+从裸仓库 clone 下来的本地仓库可以进行正常的 push 操作， 但是从一般仓库 clone 下来的本地仓库却不行。 这也正是裸仓库存在的意义。 裸仓库一般情况下是作为远端的中心仓库而存在的。
+ git 创建裸仓库并修改该仓库目录的组权限为可写。
+$ ssh user@git.example.com $ cd /opt/git/my_project.git $ git init --bare --shared  gitea 工具创建 Gitea 是一个Go开发的开源Git管理工具。从Gogs项目中分裂出来，竟然是中国人无闻的项目（惊叹一下）。特点是：目标是打造一个最简单、最快速和最轻松的方式搭建自助 Git 服务。</description>
     </item>
     
     <item>
