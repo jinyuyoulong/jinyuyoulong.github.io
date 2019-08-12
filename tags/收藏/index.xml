@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>收藏 on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/tags/%E6%94%B6%E8%97%8F/</link>
+    <link>https://blog.v5u.win/tags/%E6%94%B6%E8%97%8F/</link>
     <description>Recent content in 收藏 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 09 Oct 2015 13:25:58 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/tags/%E6%94%B6%E8%97%8F/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/tags/%E6%94%B6%E8%97%8F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>.gitignore文件使用说明</title>
-      <link>https://jinyuyoulong.github.io/post/system-git-gitignore/</link>
+      <link>https://blog.v5u.win/post/system-git-gitignore/</link>
       <pubDate>Fri, 09 Oct 2015 13:25:58 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-git-gitignore/</guid>
+      <guid>https://blog.v5u.win/post/system-git-gitignore/</guid>
       <description>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，像是日志或者编译过程中创建的等等。我们可以创建一个名为&amp;nbsp;.gitignore&amp;nbsp;的文件，列出要忽略的文件模式，来看一个简单的例子： $&amp;nbsp;cat&amp;nbsp;.gitignore&amp;nbsp;.[oa]&amp;nbsp;~
 第一行告诉 Git 忽略所有以 .o 或 .a 结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的，我们用不着跟踪它们的版本。第二行告诉 Git 忽略所有以波浪符（~）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副本。此外，你可能还需要忽略 log，tmp 或者 pid 目录，以及自动生成的文档等等。要养成一开始就设置好&amp;nbsp;.gitignore&amp;nbsp;文件的习惯，以免将来误提交这类无用的文件。
 文件&amp;nbsp;.gitignore&amp;nbsp;的格式规范如下：

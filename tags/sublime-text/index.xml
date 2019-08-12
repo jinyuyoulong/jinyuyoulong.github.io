@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sublime Text on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/tags/sublime-text/</link>
+    <link>https://blog.v5u.win/tags/sublime-text/</link>
     <description>Recent content in Sublime Text on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 23 Jan 2017 15:22:20 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用sublime text 3 进行Python3开发</title>
-      <link>https://jinyuyoulong.github.io/post/sublime-python3/</link>
+      <link>https://blog.v5u.win/post/sublime-python3/</link>
       <pubDate>Mon, 23 Jan 2017 15:22:20 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/sublime-python3/</guid>
+      <guid>https://blog.v5u.win/post/sublime-python3/</guid>
       <description>痛点1：每次编写完Python文件后都要切到terminal下输入python fileName.py命令执行文件。 解决：mac版sublime text编辑器使用shift+command+b选择Python 直接执行文件
 痛点2：sublime默认执行的Python版本是系统默认的，不能直接使用Python3来执行Python文件 解决：Tools&amp;ndash;&amp;gt;Build System&amp;ndash;&amp;gt;New Build System 写入：
 { &amp;quot;shell_cmd&amp;quot;: &amp;quot;/usr/bin/env python3 ${file}&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.python&amp;quot;, &amp;quot;file_regex&amp;quot;: &amp;quot;^(...*?):([0-9]*):?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;: &amp;quot;${file_path}&amp;quot;, }  ​ 保存为/Packages/User/python3.sublime-build ​ 然后选择环境为python3即可</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Sublime Text3 使用心得</title>
-      <link>https://jinyuyoulong.github.io/post/sublime-nodejs/</link>
+      <link>https://blog.v5u.win/post/sublime-nodejs/</link>
       <pubDate>Fri, 09 Sep 2016 14:45:12 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/sublime-nodejs/</guid>
+      <guid>https://blog.v5u.win/post/sublime-nodejs/</guid>
       <description>build nodejs项目 sublime text 3自带build的系统，只需要在tools-&amp;gt;build system-&amp;gt; new build system&amp;hellip;
 { &amp;quot;shell_cmd&amp;quot;: &amp;quot;node $file&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.js&amp;quot; }   保存为 node.sublime-build，就可以使用cmd+shift+b调出窗口选择node编译.
 在keymap绑定按键：
@@ -40,10 +40,10 @@
     
     <item>
       <title>Sublime Texts使用tips</title>
-      <link>https://jinyuyoulong.github.io/post/sublime-tips/</link>
+      <link>https://blog.v5u.win/post/sublime-tips/</link>
       <pubDate>Sun, 04 Sep 2016 00:07:07 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/sublime-tips/</guid>
+      <guid>https://blog.v5u.win/post/sublime-tips/</guid>
       <description> 多行编辑：control + 点击各行编辑位置 全局修改所有单词：双击单词，comment+control+G 选中一个单词：Command + D 选中一个单词及下一个同样的单词 包管理工具：control package ,快捷键：shift+commend+P  </description>
     </item>
     

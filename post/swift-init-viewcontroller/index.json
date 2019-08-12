@@ -1,8 +1,0 @@
-{
-    "title": "swift 中初始化ViewController",
-    "date": "2016-06-06 18:25:00 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/swift-init-viewcontroller/index.json",
-    "summary" : "let vc = NameVC()
-init(title: String){ super.init(nibName: nil, bundle: nil) self.title = title } required init?(coder aDecoder: NSCoder) { fatalError(&quot;init(coder:) has not been implemented&quot;) }  "
-}

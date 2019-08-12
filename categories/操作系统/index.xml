@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>操作系统 on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+    <link>https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
     <description>Recent content in 操作系统 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 10 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>code review</title>
-      <link>https://jinyuyoulong.github.io/post/system-codereview/</link>
+      <link>https://blog.v5u.win/post/system-codereview/</link>
       <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-codereview/</guid>
+      <guid>https://blog.v5u.win/post/system-codereview/</guid>
       <description>Code Review的好处我觉得不用多说了，主要是让你的代码可以更好的组织起来，有更易读，有更高的维护性，同时可以达到知识共享，找到bug只是其中的副产品。
 我个人认为代码有这几种级别：1）可编译，2）可运行，3）可测试，4）可读，5）可维护，6）可重用。通过自动化测试的代码只能达到第3）级，而通过Code Review的代码少会在第4）级甚至更高。
 在Amazon，开发工程师都会被教育拿到需求后一定要问——“为什么要做？业务影响度有多大？有多少用户受益？”，
@@ -41,10 +41,10 @@ Gerrit
     
     <item>
       <title>mac虚拟机上的centos 7实现ssh连接</title>
-      <link>https://jinyuyoulong.github.io/763.html</link>
+      <link>https://blog.v5u.win/763.html</link>
       <pubDate>Sat, 30 Jun 2018 08:57:11 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/763.html</guid>
+      <guid>https://blog.v5u.win/763.html</guid>
       <description>mac虚拟机上的centos7实现ssh连接
  查看是否安装ssh rpm -qa | grep ssh（一般都内置了）
  配置sshd_config文件 /etc/ssh/sshd_config
@@ -62,20 +62,20 @@ ListenAddress ::
     
     <item>
       <title>centos7 更改系统启动模式</title>
-      <link>https://jinyuyoulong.github.io/753.html</link>
+      <link>https://blog.v5u.win/753.html</link>
       <pubDate>Tue, 26 Jun 2018 01:51:41 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/753.html</guid>
+      <guid>https://blog.v5u.win/753.html</guid>
       <description>centos7 更改系统启动模式
  查看当前启动模式 systemctl get-default 查看配置文件 cat /etc/inittab 设置启动模式为命令行模式 systemctl set-target multi-user.target 重启 shutdown -r now  </description>
     </item>
     
     <item>
       <title>centos7 PHP7环境配置</title>
-      <link>https://jinyuyoulong.github.io/751.html</link>
+      <link>https://blog.v5u.win/751.html</link>
       <pubDate>Tue, 26 Jun 2018 01:50:27 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/751.html</guid>
+      <guid>https://blog.v5u.win/751.html</guid>
       <description>centos7 PHP7环境配置 目录 1. 开启22端口2. 创建其他用户，使用其他用户ssh登录（root账户禁止登录）3. 关闭防火墙4. 关闭selinux5. 安装Apache6. 安装MySQL7. 安装PHP7.28. 配置 [TOC]
  开启22端口
  创建其他用户，使用其他用户ssh登录（root账户禁止登录）
@@ -95,10 +95,10 @@ centos7 默认使用firewalld，不在内置iptables //临时关闭 systemctl st
     
     <item>
       <title>docker 使用规则</title>
-      <link>https://jinyuyoulong.github.io/post/docker-%E7%AE%80%E4%BB%8B/</link>
+      <link>https://blog.v5u.win/post/docker-%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/docker-%E7%AE%80%E4%BB%8B/</guid>
+      <guid>https://blog.v5u.win/post/docker-%E7%AE%80%E4%BB%8B/</guid>
       <description>硬件/操作系统 要求 Docker支持以下的CentOS版本：
  CentOS 7 (64-bit) CentOS 6.5 (64-bit) 或更高的版本  前提条件 目前，CentOS 仅发行版本中的内核支持 Docker。
 Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。

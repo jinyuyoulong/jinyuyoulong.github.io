@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>UI on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/tags/ui/</link>
+    <link>https://blog.v5u.win/tags/ui/</link>
     <description>Recent content in UI on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 09 Mar 2016 13:31:36 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/tags/ui/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/tags/ui/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>简单实用UIImagePickerViewController</title>
-      <link>https://jinyuyoulong.github.io/post/ios-uiimagepickerviewcontroller/</link>
+      <link>https://blog.v5u.win/post/ios-uiimagepickerviewcontroller/</link>
       <pubDate>Wed, 09 Mar 2016 13:31:36 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/ios-uiimagepickerviewcontroller/</guid>
+      <guid>https://blog.v5u.win/post/ios-uiimagepickerviewcontroller/</guid>
       <description>创建createVC
  UIImagePickerController* ipc = [[UIImagePickerController alloc] init]; ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //图像来源 ipc.delegate = self; [self presentModalViewController:ipc animated:YES]; ```` 完善代理delegate方法 ```` //选择图片 //- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{ headView.image = [info objectForKey:@&amp;quot;UIImagePickerControllerOriginalImage&amp;quot;]; [picker dismissModalViewControllerAnimated:YES]; } //取消 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{ [picker dismissModalViewControllerAnimated:YES]; }  </description>
     </item>

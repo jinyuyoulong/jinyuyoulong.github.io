@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hexo on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/tags/hexo/</link>
+    <link>https://blog.v5u.win/tags/hexo/</link>
     <description>Recent content in hexo on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 30 Jun 2016 17:40:48 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用hexo的第一篇文章</title>
-      <link>https://jinyuyoulong.github.io/post/blog-hexo/</link>
+      <link>https://blog.v5u.win/post/blog-hexo/</link>
       <pubDate>Thu, 30 Jun 2016 17:40:48 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/blog-hexo/</guid>
+      <guid>https://blog.v5u.win/post/blog-hexo/</guid>
       <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new &amp;ldquo;文章名&amp;rdquo; 创建好的&amp;rdquo;文件名.md&amp;rdquo; 文件会放在站点目录 ./source/_posts/ 下
 注意：资源文件都放在source/_posts文件下（不要创建其他目录，否则解析的时候可能会报错）
 2.如何发布文章 每次发布文章都需要执行命令：

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/categories/mac/</link>
+    <link>https://blog.v5u.win/categories/mac/</link>
     <description>Recent content in Mac on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 30 Jun 2018 08:57:11 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/categories/mac/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/categories/mac/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mac虚拟机上的centos 7实现ssh连接</title>
-      <link>https://jinyuyoulong.github.io/763.html</link>
+      <link>https://blog.v5u.win/763.html</link>
       <pubDate>Sat, 30 Jun 2018 08:57:11 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/763.html</guid>
+      <guid>https://blog.v5u.win/763.html</guid>
       <description>mac虚拟机上的centos7实现ssh连接
  查看是否安装ssh rpm -qa | grep ssh（一般都内置了）
  配置sshd_config文件 /etc/ssh/sshd_config
@@ -34,10 +34,10 @@ ListenAddress ::
     
     <item>
       <title>ternimal</title>
-      <link>https://jinyuyoulong.github.io/734.html</link>
+      <link>https://blog.v5u.win/734.html</link>
       <pubDate>Fri, 18 May 2018 08:53:16 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/734.html</guid>
+      <guid>https://blog.v5u.win/734.html</guid>
       <description>暴力删除文件：输入 sudo rm -rf .Trash 再输入密码后 Enter 。 mac 设置软件安装安全级别 sudo spctl &amp;ndash;master-disable 文件权限修改
  文字设定法 chmod [who] [+ | - | =] [mode] 文件名?
  mkdir code
@@ -46,20 +46,20 @@ ListenAddress ::
     
     <item>
       <title>brew gem npm cocoapods</title>
-      <link>https://jinyuyoulong.github.io/post/mac-brew-gem-npm-cocoapods/</link>
+      <link>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</link>
       <pubDate>Fri, 20 Apr 2018 05:00:32 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/mac-brew-gem-npm-cocoapods/</guid>
+      <guid>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</guid>
       <description>Mac上的包管理器 常用的有：brew gem npm cocoapods pip3
  brew 用来管理Unix相关工具软件，就像centos之于yum，Ubuntu之于apt-get gem 即RubyGems,管理ruby社区的软件包。 npm 是nodejs的包管理器，用来管理nodejs社区的软件包。 pip 是Python的包管理器，用来管理Python社区的软件包 cocoapods 是iOS开发的包管理器，用来管理iOS代码包  </description>
     </item>
     
     <item>
       <title>terminal的显示增加色彩</title>
-      <link>https://jinyuyoulong.github.io/682.html</link>
+      <link>https://blog.v5u.win/682.html</link>
       <pubDate>Wed, 04 Apr 2018 10:16:29 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/682.html</guid>
+      <guid>https://blog.v5u.win/682.html</guid>
       <description>打开 .bash_profile文件，添加：
 export GREP_OPTIONS=‘—-color=auto’ #如果没有指定，则自动选择颜色 export CLICOLOR=1 #是否输出颜色 export LSCOLORS=Bxfxcxdxbxegedabagacad#指定颜色  LSCOLORS此变量的值描述使用 CLICOLOR 启用颜色时要使用哪种属性的颜色 。该字符串是 fb格式对的串联，其中f是前景色，b是 背景色。
 颜色代号如下：
@@ -72,10 +72,10 @@ a黑色 b红色 c绿色 d棕色 e蓝色 f洋红色 g青色 h浅灰色 黑色粗�
     
     <item>
       <title>appledoc使用说明</title>
-      <link>https://jinyuyoulong.github.io/673.html</link>
+      <link>https://blog.v5u.win/673.html</link>
       <pubDate>Wed, 04 Apr 2018 07:00:34 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/673.html</guid>
+      <guid>https://blog.v5u.win/673.html</guid>
       <description>appledoc使用说明 安装命令行：
  git clone git://github.com/tomaz/appledoc.git cd ./appledoc sudo sh install-appledoc.sh appledoc —version //检查successed  使用 生成HTML 当需要html文档时，可以加上“&amp;ndash;no-create-docset”——
 appledoc --no-create-docset --output ~/doc --project-name &amp;quot;DrowRect&amp;quot; --company-id &amp;quot;com.jinyuyoulong&amp;quot; --project-company &amp;quot;jinyuyoulong&amp;quot; ./  注: &amp;ndash;output ./doc：设置输出目录为“./doc”。 &amp;ndash;project-name objcdoc：设置项目名为“DrowRect”。 &amp;ndash;project-company &amp;ldquo;jinyuyoulong&amp;rdquo;：设置公司名为“jinyuyoulong”。 &amp;ndash;company-id &amp;ldquo;com.jinyuyoulong&amp;rdquo;：设置公司id为“com.jinyuyoulong”。 ./：当前目录。 生成docset 此路不通
@@ -87,10 +87,10 @@ appledoc --output ./doc --project-name &amp;quot;DrowRect&amp;quot; --project-co
     
     <item>
       <title>mac下安装composer</title>
-      <link>https://jinyuyoulong.github.io/post/mac-composer/</link>
+      <link>https://blog.v5u.win/post/mac-composer/</link>
       <pubDate>Fri, 09 Jun 2017 03:35:06 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/mac-composer/</guid>
+      <guid>https://blog.v5u.win/post/mac-composer/</guid>
       <description>composer是PHP的包管理器
 mac下如何安装呢？
 最简单的方法是通过brew工具
@@ -114,10 +114,10 @@ brew tap homebrew/php
     
     <item>
       <title>mac文件权限修改</title>
-      <link>https://jinyuyoulong.github.io/post/mac-file-right-change/</link>
+      <link>https://blog.v5u.win/post/mac-file-right-change/</link>
       <pubDate>Mon, 13 Mar 2017 17:20:42 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/mac-file-right-change/</guid>
+      <guid>https://blog.v5u.win/post/mac-file-right-change/</guid>
       <description>文件或目录的访问权限分为只读，只写和可执行三种。 文件被创建时，文件所有者自动拥有对该文件的读、写和可执行权限，以便于对文件的阅读和修改。 有三种不同类型的用户可对文件或目录进行访问：文件所有者，同组用户、其他用户。
 用ls -l命令显示文件或目录的详细信息，最左边的一列为文件的访问权限
 例:
@@ -137,10 +137,10 @@ chmod u+x script.swift
     
     <item>
       <title>mac 安装nginx</title>
-      <link>https://jinyuyoulong.github.io/post/mac-nginx/</link>
+      <link>https://blog.v5u.win/post/mac-nginx/</link>
       <pubDate>Sun, 26 Feb 2017 00:12:18 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/mac-nginx/</guid>
+      <guid>https://blog.v5u.win/post/mac-nginx/</guid>
       <description>安装 brew install nginx
 启动 sudo nginx
 重新启动 sudo nginx -s reload
@@ -149,19 +149,19 @@ chmod u+x script.swift
     
     <item>
       <title>brew 安装</title>
-      <link>https://jinyuyoulong.github.io/post/mac-brew-install/</link>
+      <link>https://blog.v5u.win/post/mac-brew-install/</link>
       <pubDate>Sat, 25 Feb 2017 22:54:49 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/mac-brew-install/</guid>
+      <guid>https://blog.v5u.win/post/mac-brew-install/</guid>
       <description>Mac自带ruby 安装brew ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&amp;quot; 已经安装了可以输入这个命令 ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot; 如何使用brew 举个栗子: wget 这个工具 输入命令: brew install wget 输入命令 brew uninstall wget</description>
     </item>
     
     <item>
       <title>mac 如何使用wget</title>
-      <link>https://jinyuyoulong.github.io/post/mac-wget/</link>
+      <link>https://blog.v5u.win/post/mac-wget/</link>
       <pubDate>Sat, 21 Jan 2017 23:38:52 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/mac-wget/</guid>
+      <guid>https://blog.v5u.win/post/mac-wget/</guid>
       <description>下载单个文件， 为什么不用mac原生自带的工具：curl &amp;ldquo;网址链接&amp;rdquo; -o &amp;ldquo;输出文件名&amp;rdquo; 解释一下，wget是Linux下自带的文件下载工具非常好用，mac下还是推荐使用原生。 呵呵哒，也许我是一片假的教程文章。</description>
     </item>
     

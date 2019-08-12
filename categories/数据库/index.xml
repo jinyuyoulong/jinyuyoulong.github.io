@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>数据库 on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <link>https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
     <description>Recent content in 数据库 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 21 Oct 2016 13:27:06 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MySQL</title>
-      <link>https://jinyuyoulong.github.io/post/system-mysql/</link>
+      <link>https://blog.v5u.win/post/system-mysql/</link>
       <pubDate>Fri, 21 Oct 2016 13:27:06 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-mysql/</guid>
+      <guid>https://blog.v5u.win/post/system-mysql/</guid>
       <description>MYSQL 经常使用tips  terminal登录：路径 -u 用户名 -p //mac下 /usr/local/mysql/bin/mysql -u root -p 更改初始密码：set password for &amp;lsquo;root&amp;rsquo;@&amp;lsquo;localhost&amp;rsquo; = password(&amp;lsquo;newPassword&amp;rsquo;);  db 操作 * show databases; * create NEW_DB; * drop NEW_DB; * use DBname;  table 操作 * CREATE TABLE table_name (column_name column_type); * DROP TABLE table_name ; * INSERT INTO table_name ( field1, field2,...fieldN ) VALUES ( value1, value2,...valueN ); * SELECT column_name,column_name FROM table_name [WHERE Clause] [OFFSET M ][LIMIT N] * DELETE FROM table_name [WHERE Clause]  brew安装MySQL后的提示 ==&amp;gt; .</description>
     </item>
     

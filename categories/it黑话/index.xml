@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IT黑话 on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/categories/it%E9%BB%91%E8%AF%9D/</link>
+    <link>https://blog.v5u.win/categories/it%E9%BB%91%E8%AF%9D/</link>
     <description>Recent content in IT黑话 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 21 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/categories/it%E9%BB%91%E8%AF%9D/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/categories/it%E9%BB%91%E8%AF%9D/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>词法作用域</title>
-      <link>https://jinyuyoulong.github.io/post/itblack-%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/</link>
+      <link>https://blog.v5u.win/post/itblack-%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/</link>
       <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/itblack-%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/</guid>
+      <guid>https://blog.v5u.win/post/itblack-%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/</guid>
       <description>首先你得明白程序设计中作用域这个概念：通常来说，一段程序代码中所用到的名字并不总是有效／可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域。
 词法作用域 VS 动态作用域 词法作用域，也叫静态作用域，它的作用域是指在词法分析阶段就确定了，不会改变。动态作用域是在运行时根据程序的流程信息来动态确定的，而不是在写代码时进行静态确定的。
 主要区别：词法作用域是在写代码或者定义时确定的，而动态作用域是在运行时确定的（this也是！）。词法作用域关注函数在何处声明，而动态作用域关注函数从何处调用。

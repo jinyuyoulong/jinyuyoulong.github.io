@@ -1,8 +1,0 @@
-{
-    "title": "Xcode快捷键",
-    "date": "2016-03-29 23:50:12 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/xcode-shortcut-key/index.json",
-    "summary" : "常用xcode快捷键
-整行移动 option+commend+[] 当前页快速定位：ctl+6 项目中file间快速定位：shift+cmd+o 删除光标右边的字符：Ctrl+D 删除本行：Ctrl+K 光标移动到上一行：Ctrl+P 移动光标到下一行：Ctrl + N 折叠全部方法实现：shift+option+commend+left 显示自动提示：ESC 变量重命名：ctl+cmd+e (Edit All In Scop) `&lt;/pre&gt; crl+i 对齐代码 1.如果是在打开的文档范围内： 查找： Command+ F 替换： Command+Option+F Replace All 是全部替换本文档范围内的字符串 Replace 是替换当前字符串 Replace &amp;amp; Find是边查找边替换 2.如果是全局查找和替换 查找：点击左边工具栏里面的“放大镜”按钮 或者 Shift+Command +F 替换：点击左边工具栏里面的“放大镜”按钮，然后左边 Find 改为 Replace即可。或者 Shift+Option+Command+F 3.变量重命名 Menu: Editor -&amp;gt; Edit All In Scope (also shows key binding) Keyboard Shortcut: Control-Command-E If you want you can change this key binding on Preferences -&amp;gt; Key Bindings -&amp;gt; search for &quot;Edit all in scope&quot;."
-}

@@ -1,8 +1,0 @@
-{
-    "title": "Centos7 添加 桌面运行环境",
-    "date": "2019-02-25 00:00:00 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/system-centos7-%E6%B7%BB%E5%8A%A0-%E6%A1%8C%E9%9D%A2%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/index.json",
-    "summary" : "Centos7 添加 桌面运行环境
- root 权限执行 yum groupinstall &quot;X Window System&quot; 检查安装情况 yum grouplist   "
-}

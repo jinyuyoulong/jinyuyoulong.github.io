@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>算法 on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/tags/%E7%AE%97%E6%B3%95/</link>
+    <link>https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/</link>
     <description>Recent content in 算法 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 23 Mar 2016 10:31:32 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>八大算法思想</title>
-      <link>https://jinyuyoulong.github.io/post/system-%E5%85%AB%E5%A4%A7%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/</link>
+      <link>https://blog.v5u.win/post/system-%E5%85%AB%E5%A4%A7%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/</link>
       <pubDate>Wed, 23 Mar 2016 10:31:32 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-%E5%85%AB%E5%A4%A7%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/</guid>
+      <guid>https://blog.v5u.win/post/system-%E5%85%AB%E5%A4%A7%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/</guid>
       <description> 枚举 递推 递归 分治 贪心 试探 动态迭代 模拟  </description>
     </item>
     

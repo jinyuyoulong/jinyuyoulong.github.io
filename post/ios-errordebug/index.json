@@ -1,8 +1,0 @@
-{
-    "title": "iOS 开发error/debug",
-    "date": "2015-07-14 21:36:20 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/ios-errordebug/index.json",
-    "summary" : "error:property with ‘retain(strong)’ attribute must be of object type&nbsp;
-cause: 没有包含相应地头文件，造成变量引用错误，指针指向未知"
-}

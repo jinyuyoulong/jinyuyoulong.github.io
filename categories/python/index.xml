@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/categories/python/</link>
+    <link>https://blog.v5u.win/categories/python/</link>
     <description>Recent content in Python on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 30 Mar 2018 03:20:02 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>pycharm如何添加 local venv</title>
-      <link>https://jinyuyoulong.github.io/666.html</link>
+      <link>https://blog.v5u.win/666.html</link>
       <pubDate>Fri, 30 Mar 2018 03:20:02 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/666.html</guid>
+      <guid>https://blog.v5u.win/666.html</guid>
       <description>需求：pycharm为项目添加已经存在的venv虚拟环境 前几天学习Django，开始是terminal + sublime text。后来学的差不多了，想想做项目还是得上pycharm，所以开始折腾。 说明，pycharm create project是会询问是否创建新的venv的，换句话说，其实pycharm是建议设置基础引用Python版本，然后在他的基础上，每个项目都有自己的venv。这种策略很好，每个项目的环境互不干扰。奈何范子处于学习阶段，local项目已经有了本地的venv，不需要重新创建。这时候我就需要考虑如何添加一个local venv。 然而道路颇多波折，localvenv的path是确切知道的，但是在pycharm的configurations中Python interperter是一个选择栏，而没有添加栏。这就尴尬了！ 万幸经过摸索，在设置中（Mac版 cmd+,）发现是可以添加的 在这里添加好了之后，在返回configurations，出现了新的选项，选择就可以了。</description>
     </item>
     
     <item>
       <title>mac下 pip 设置豆瓣源</title>
-      <link>https://jinyuyoulong.github.io/post/mac-pip/</link>
+      <link>https://blog.v5u.win/post/mac-pip/</link>
       <pubDate>Thu, 19 Oct 2017 07:18:14 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/mac-pip/</guid>
+      <guid>https://blog.v5u.win/post/mac-pip/</guid>
       <description>在用户目录下创建文件夹.pip，在.pip下创建pip.conf pip.conf填入内容 [global] index-url = https://pypi.douban.com/simple [list] format=columns</description>
     </item>
     
     <item>
       <title>python venv 虚拟环境使用</title>
-      <link>https://jinyuyoulong.github.io/post/python-venv/</link>
+      <link>https://blog.v5u.win/post/python-venv/</link>
       <pubDate>Tue, 04 Jul 2017 09:53:23 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/python-venv/</guid>
+      <guid>https://blog.v5u.win/post/python-venv/</guid>
       <description>virtualenv就是用来为一个应用创建一套“隔离”的Python运行环境。
 Python3.3以上的版本通过venv模块原生支持虚拟环境，可以代替Python之前的virtualenv。
 该venv模块提供了创建轻量级“虚拟环境”，提供与系统python的隔离支持。每一个虚拟环境都有其自己的Python二进制（允许有不同的Python版本创作环境），并且可以拥有自己独立的一套Python包。
@@ -49,10 +49,10 @@ virtualenv是如何创建“独立”的Python运行环境的呢？原理很简�
     
     <item>
       <title>使用sublime text 3 进行Python3开发</title>
-      <link>https://jinyuyoulong.github.io/post/sublime-python3/</link>
+      <link>https://blog.v5u.win/post/sublime-python3/</link>
       <pubDate>Mon, 23 Jan 2017 15:22:20 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/sublime-python3/</guid>
+      <guid>https://blog.v5u.win/post/sublime-python3/</guid>
       <description>痛点1：每次编写完Python文件后都要切到terminal下输入python fileName.py命令执行文件。 解决：mac版sublime text编辑器使用shift+command+b选择Python 直接执行文件
 痛点2：sublime默认执行的Python版本是系统默认的，不能直接使用Python3来执行Python文件 解决：Tools&amp;ndash;&amp;gt;Build System&amp;ndash;&amp;gt;New Build System 写入：
 { &amp;quot;shell_cmd&amp;quot;: &amp;quot;/usr/bin/env python3 ${file}&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.python&amp;quot;, &amp;quot;file_regex&amp;quot;: &amp;quot;^(...*?):([0-9]*):?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;: &amp;quot;${file_path}&amp;quot;, }  ​ 保存为/Packages/User/python3.sublime-build ​ 然后选择环境为python3即可</description>
@@ -60,10 +60,10 @@ virtualenv是如何创建“独立”的Python运行环境的呢？原理很简�
     
     <item>
       <title>使用Xcode8创建Python项目</title>
-      <link>https://jinyuyoulong.github.io/post/xcode-xcode8python/</link>
+      <link>https://blog.v5u.win/post/xcode-xcode8python/</link>
       <pubDate>Tue, 06 Dec 2016 10:44:31 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/xcode-xcode8python/</guid>
+      <guid>https://blog.v5u.win/post/xcode-xcode8python/</guid>
       <description> 今天想使用一个IDE来开发Python，省的每次写完后都要在terminal上敲命令。选来选去，既然已经安装了Xcode就先用他吧。
 那么怎么才能使用Xcode创建并运行Python文件呢？ 必要准备：mac &amp;amp; Xcode 开发环境整理： 1.1 创建 1.2 选择mac跨平台应用 1.3 添加项目名称 2.1 添加文件 2.2 Other &amp;gt; Empty Empty&amp;rdquo; /&amp;gt;
 2.3 给文件命名 3.1 Product &amp;gt; Scheme &amp;gt; Edit Scheme 3.2 Run &amp;gt; info &amp;gt; Executable &amp;gt; Other 3.3 Command+Shift+G 定位文件路径Go to the folder:填写/usr/bin/python 3.4 确认选中的可执行文件 3.5 确认Executable 选中python Debug executable 不用选中 3.6 Arguments &amp;gt; + &amp;gt;新建的文件名 3.7 Options &amp;gt; Working Directory &amp;gt;项目路径 选择文件 3.8 确认设置 4 运行 print &amp;quot;hello world&amp;quot; </description>
@@ -71,10 +71,10 @@ virtualenv是如何创建“独立”的Python运行环境的呢？原理很简�
     
     <item>
       <title>pyquery 解析网页乱码</title>
-      <link>https://jinyuyoulong.github.io/post/python-pyquery-code-type/</link>
+      <link>https://blog.v5u.win/post/python-pyquery-code-type/</link>
       <pubDate>Fri, 18 Nov 2016 10:08:22 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/python-pyquery-code-type/</guid>
+      <guid>https://blog.v5u.win/post/python-pyquery-code-type/</guid>
       <description> pyquery 解析网页乱码 问题：使用pyquery直接请求的网页，解析中文出现一半乱码，一般正常的情况
 花了半天的时间也没找到解决办法，第二天早上无意间点开一个搜索结果链接，经验证，完美解决问题，立字为证。 1\. 确认encode设置正确 2\. 根据知乎@actberw 的解释：pyquery的源码，http 请求使用的是requests，如果没有就调用标准库urllib2 3\. requests可以很好的处理返回的html编码问题，而urllib2不能 4\. 如果安装了requests还是不行的话，requests是有一个bug（2016年3月数据），有两种解决办法： 1). 构建pq对象的时候把encoding参数传进去 d=pq(url=&#39;xxx&#39;, encoding=&amp;quot;gbk&amp;quot;) 2). 把pyquery/openers.py 的_requests 函数中的 if encoding: resp.encoding = encoding 这两行换成 resp.encoding = encoding or None, 或者把 requests中get_encoding_from_headers 函数的后两行删除掉。 3)（我的情况正好就是没有requests库，然后选择了方法一解决了问题）  </description>
     </item>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>数据库 on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <link>https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
     <description>Recent content in 数据库 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 15 Dec 2016 14:21:18 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MySQL 数据库迁移</title>
-      <link>https://jinyuyoulong.github.io/post/system-mysql-change/</link>
+      <link>https://blog.v5u.win/post/system-mysql-change/</link>
       <pubDate>Thu, 15 Dec 2016 14:21:18 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-mysql-change/</guid>
+      <guid>https://blog.v5u.win/post/system-mysql-change/</guid>
       <description> mac 下迁移数据库的结构和内容 迁移准备：数据库文件（可用工具导出Mysql文件）
 注意：由于文件权限的问题 可能不能进入Mysql的data文件内  进入文件 /usr/local/mysql/data 如果打不开，修改文件访问权限，（右击，显示简介，修改文件读写权限） 将相应的文件(如：MYD,MYI,frm) copy进合适的数据库内（文件夹） 打开数据库，查看迁移情况  </description>
     </item>
     
     <item>
       <title>mac下MongoDB</title>
-      <link>https://jinyuyoulong.github.io/post/mac-bmongodb/</link>
+      <link>https://blog.v5u.win/post/mac-bmongodb/</link>
       <pubDate>Mon, 18 Jul 2016 18:16:11 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/mac-bmongodb/</guid>
+      <guid>https://blog.v5u.win/post/mac-bmongodb/</guid>
       <description>1. 安装 1.1 解压缩mongo文件，将解压缩后的文件移动到自己喜欢的目录下 1.2 由于没有配置环境变量，先测试使用。 终端进入mongodb的安装路径，在bin路径下，执行./mongod启动数据库
 有可能报错 exception in initAndListen: 29 Data directory /data/db not found 这是因为/data/db 目录不存在，若启动时，不指定任何参数， MongoDB 会默认使用 /data/db 目录存储数据， 我们可以使用 &amp;ndash;dbpath 来指定其它的路径，比如我使用的是下面这样的命令启动的： ./mongod --dbpath ../data/db 新开一个终端，在bin路径下执行./mongo启动mongodb管理
 2. 使用 show dbs 显示 数据库s use dbName 切换数据库 show collections 数据库下的显示表 db.表明.find() 显示表中数据</description>

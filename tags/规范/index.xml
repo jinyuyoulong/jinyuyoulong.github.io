@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>规范 on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/tags/%E8%A7%84%E8%8C%83/</link>
+    <link>https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/</link>
     <description>Recent content in 规范 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 08 Nov 2016 14:39:03 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/tags/%E8%A7%84%E8%8C%83/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>命名规范</title>
-      <link>https://jinyuyoulong.github.io/post/system-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</link>
+      <link>https://blog.v5u.win/post/system-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</link>
       <pubDate>Tue, 08 Nov 2016 14:39:03 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</guid>
+      <guid>https://blog.v5u.win/post/system-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</guid>
       <description>http://yemengying.com/2016/06/25/cleanCode4naming/</description>
     </item>
     

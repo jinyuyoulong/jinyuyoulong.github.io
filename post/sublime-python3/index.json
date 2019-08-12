@@ -1,9 +1,0 @@
-{
-    "title": "使用sublime text 3 进行Python3开发",
-    "date": "2017-01-23 15:22:20 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/sublime-python3/index.json",
-    "summary" : "痛点1：每次编写完Python文件后都要切到terminal下输入python fileName.py命令执行文件。 解决：mac版sublime text编辑器使用shift+command+b选择Python 直接执行文件
-痛点2：sublime默认执行的Python版本是系统默认的，不能直接使用Python3来执行Python文件 解决：Tools&ndash;&gt;Build System&ndash;&gt;New Build System 写入：
-{ &quot;shell_cmd&quot;: &quot;/usr/bin/env python3 ${file}&quot;, &quot;selector&quot;: &quot;source.python&quot;, &quot;file_regex&quot;: &quot;^(...*?):([0-9]*):?([0-9]*)&quot;, &quot;working_dir&quot;: &quot;${file_path}&quot;, }  ​ 保存为/Packages/User/python3.sublime-build ​ 然后选择环境为python3即可"
-}

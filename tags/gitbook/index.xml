@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gitbook on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/tags/gitbook/</link>
+    <link>https://blog.v5u.win/tags/gitbook/</link>
     <description>Recent content in gitbook on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 23 May 2018 15:44:43 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/tags/gitbook/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/tags/gitbook/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>gitbook如何生成epub</title>
-      <link>https://jinyuyoulong.github.io/736.html</link>
+      <link>https://blog.v5u.win/736.html</link>
       <pubDate>Wed, 23 May 2018 15:44:43 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/736.html</guid>
+      <guid>https://blog.v5u.win/736.html</guid>
       <description>全局安装gitbook ：npm install -g gitbook 下载calibre安装应用 将calibre中的执行文件ebook-convert链接到shall环境：$ sudo ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin 验证ebook-convert可用，terminal下输入ebook-convert 后回车 如果可用，导出epub文件 gitbook epub ./ ./mbook.epub  node: gitbook 项目需要先 npm install 配置好依赖库,再生成 epub 书籍
 Gitbook使用方法 http://www.chengweiyang.cn/gitbook/basic-usage/README.html</description>
     </item>

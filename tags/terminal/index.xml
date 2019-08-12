@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>terminal on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/tags/terminal/</link>
+    <link>https://blog.v5u.win/tags/terminal/</link>
     <description>Recent content in terminal on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 12 Jul 2018 02:38:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>iterm比terminal好在哪里？</title>
-      <link>https://jinyuyoulong.github.io/779.html</link>
+      <link>https://blog.v5u.win/779.html</link>
       <pubDate>Thu, 12 Jul 2018 02:38:00 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/779.html</guid>
+      <guid>https://blog.v5u.win/779.html</guid>
       <description>iterm比terminal好在哪里？ 为什么要用iterm  多窗口切换 command + T 同个窗口横向分屏 command + d 同个窗口，竖向分屏 command + shift + d 自动补齐命令 comm + ; 直接打开文件 按住command键并点击文件名 (ps: terminal用open命令也可以) 自动复制 直接双击需要复制的文字，即可自动复制 设置主题配色 在偏好设置里进行一些基本的颜色设置，在GitHub上下载做好的主题，导入。 (ps: 成品自由度高👍，合心意的需要手动配置-&amp;gt;terminal也可以手动配置)  这么好的东西我还是用terminal好了。</description>
     </item>
     
     <item>
       <title>terminal的显示增加色彩</title>
-      <link>https://jinyuyoulong.github.io/682.html</link>
+      <link>https://blog.v5u.win/682.html</link>
       <pubDate>Wed, 04 Apr 2018 10:16:29 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/682.html</guid>
+      <guid>https://blog.v5u.win/682.html</guid>
       <description>打开 .bash_profile文件，添加：
 export GREP_OPTIONS=‘—-color=auto’ #如果没有指定，则自动选择颜色 export CLICOLOR=1 #是否输出颜色 export LSCOLORS=Bxfxcxdxbxegedabagacad#指定颜色  LSCOLORS此变量的值描述使用 CLICOLOR 启用颜色时要使用哪种属性的颜色 。该字符串是 fb格式对的串联，其中f是前景色，b是 背景色。
 颜色代号如下：
@@ -38,10 +38,10 @@ a黑色 b红色 c绿色 d棕色 e蓝色 f洋红色 g青色 h浅灰色 黑色粗�
     
     <item>
       <title>mac文件权限修改</title>
-      <link>https://jinyuyoulong.github.io/post/mac-file-right-change/</link>
+      <link>https://blog.v5u.win/post/mac-file-right-change/</link>
       <pubDate>Mon, 13 Mar 2017 17:20:42 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/mac-file-right-change/</guid>
+      <guid>https://blog.v5u.win/post/mac-file-right-change/</guid>
       <description>文件或目录的访问权限分为只读，只写和可执行三种。 文件被创建时，文件所有者自动拥有对该文件的读、写和可执行权限，以便于对文件的阅读和修改。 有三种不同类型的用户可对文件或目录进行访问：文件所有者，同组用户、其他用户。
 用ls -l命令显示文件或目录的详细信息，最左边的一列为文件的访问权限
 例:

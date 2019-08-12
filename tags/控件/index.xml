@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>控件 on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/tags/%E6%8E%A7%E4%BB%B6/</link>
+    <link>https://blog.v5u.win/tags/%E6%8E%A7%E4%BB%B6/</link>
     <description>Recent content in 控件 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 16 Jul 2015 11:03:51 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/tags/%E6%8E%A7%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/tags/%E6%8E%A7%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>NSTimer</title>
-      <link>https://jinyuyoulong.github.io/post/ios-nstimer/</link>
+      <link>https://blog.v5u.win/post/ios-nstimer/</link>
       <pubDate>Thu, 16 Jul 2015 11:03:51 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/ios-nstimer/</guid>
+      <guid>https://blog.v5u.win/post/ios-nstimer/</guid>
       <description>转载自
 NSTimer的使用方法
 1、初始化

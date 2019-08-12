@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>web前端 on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/categories/web%E5%89%8D%E7%AB%AF/</link>
+    <link>https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/</link>
     <description>Recent content in web前端 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 08 Apr 2016 14:29:04 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/categories/web%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>react JS style样式设置总结</title>
-      <link>https://jinyuyoulong.github.io/post/web-react-js-style-collection/</link>
+      <link>https://blog.v5u.win/post/web-react-js-style-collection/</link>
       <pubDate>Fri, 08 Apr 2016 14:29:04 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/web-react-js-style-collection/</guid>
+      <guid>https://blog.v5u.win/post/web-react-js-style-collection/</guid>
       <description>const styles = StyleSheet.create({ style_0:{ flex:1, borderColor: &#39;red&#39;, borderWidth:1, }, &amp;amp;lt;View style={styles.style_0}&amp;amp;gt; &amp;amp;lt;View style={[styles.view, styles.center]}&amp;amp;gt;&amp;amp;lt;Text&amp;amp;gt;自由摆放&amp;amp;lt;/Text&amp;amp;gt;&amp;amp;lt;/View&amp;amp;gt; &amp;amp;lt;View style={[styles.style_1, {flexDirection: &#39;column&#39;}]}&amp;amp;gt; &amp;amp;lt;Text style={{marginTop:40, fontSize:25}}&amp;amp;gt;1／4高&amp;amp;lt;/Text&amp;amp;gt;  </description>
     </item>
     
     <item>
       <title>flex属性</title>
-      <link>https://jinyuyoulong.github.io/post/web-flex/</link>
+      <link>https://blog.v5u.win/post/web-flex/</link>
       <pubDate>Fri, 08 Apr 2016 10:56:38 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/web-flex/</guid>
+      <guid>https://blog.v5u.win/post/web-flex/</guid>
       <description>   流式布局     flex为可伸缩属性，当flex大于0时View可伸缩 当多个有flex属性的View时，根据flex值分配View的相对大小，   如`&amp;lt;superView style={flex:1}&amp;gt;&amp;lt;View1 style={flex:5}&amp;gt;&amp;lt;/View1&amp;gt;&amp;lt;View2 style={flex:10}&amp;gt;&amp;lt;/View2&amp;gt;&amp;lt;/superView&amp;gt;`   则5+10=15View1占superView的5/15大小，View2是superView的10/15   flexDirection:设定布局方向 value值为: row(横向布局)，column(纵向布局)   alignSelf:对齐方式 主要有四种：flex-start(left居左)、 flex-end(right居右)、 center、 auto(默认自动)、 stretch。    </description>
     </item>
     

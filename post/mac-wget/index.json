@@ -1,7 +1,0 @@
-{
-    "title": "mac 如何使用wget",
-    "date": "2017-01-21 23:38:52 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/mac-wget/index.json",
-    "summary" : "下载单个文件， 为什么不用mac原生自带的工具：curl &ldquo;网址链接&rdquo; -o &ldquo;输出文件名&rdquo; 解释一下，wget是Linux下自带的文件下载工具非常好用，mac下还是推荐使用原生。 呵呵哒，也许我是一片假的教程文章。"
-}

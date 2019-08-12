@@ -1,7 +1,0 @@
-{
-    "title": "XCode上设备或证书不能自动建和修改的问题解决",
-    "date": "2015-08-04 20:59:44 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/xcode-profile-file/index.json",
-    "summary" : "自从XCode支持自动维护证书之后，省去了我们手动添加设备再更新完证书之后下载的麻烦，但一直都没有搞明白自动维护的机制，导致经常出现XCode报错却不自动添加设备，同时由于证书是XCode创建的，又无法手动修改的问题。经过一段时间的测试，终于找到了解决办法，在这里分享给大家。正常的情况应该是：view sourceprint?1.no provisioning profile was found for this executable然后可以选择Fix Issue，这样XCode就会自动为我们将新的设备添加到证书里，再自动更新证书。可能遇到的错误如下：view sourceprint?1.A valid provisioning profile for this executable was not found解决方法是1. 在Target的General界面中将Team改为所对应的开发者账号团队2. 在Target的Build Settings中的Code Signing Identity都改为iOS Developer（这里不能选择自己的），Provisioning Profile改为Automatic3. 此时Clean之后再运行，就可以出现Fix Issue的对话框，选择Fix Issue即可。"
-}

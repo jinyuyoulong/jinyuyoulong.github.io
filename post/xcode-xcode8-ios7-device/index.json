@@ -1,7 +1,0 @@
-{
-    "title": "Xcode8添加iOS7真机调试",
-    "date": "2016-09-19 11:58:47 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/xcode-xcode8-ios7-device/index.json",
-    "summary" : "打开Xcode8和Xcode7的app包内容 Contants/Developer/Platforms/iPhoneOS.platform/DeviceSupport 将Xcode7的iOS7的框架copy到Xcode8内"
-}

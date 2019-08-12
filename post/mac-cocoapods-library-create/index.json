@@ -1,8 +1,0 @@
-{
-    "title": "cocoapods-library-create",
-    "date": "2018-08-15 14:48:36 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/mac-cocoapods-library-create/index.json",
-    "summary" : "readme文件如何添加 这种说明
- 打开网站https://shields.io/#/examples/funding 选择flat Style 在Link和Image中输入http://img.shields.io/cocoapods/v/库名称.svg，网站会自动解析库的版本，生成img copy下面的Markdown，paste到要显示说明的地方  "
-}

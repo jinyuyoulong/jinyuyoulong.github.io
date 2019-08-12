@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>other technology其他技术 on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/categories/other-technology%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/</link>
+    <link>https://blog.v5u.win/categories/other-technology%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/</link>
     <description>Recent content in other technology其他技术 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 19 Jan 2018 09:37:16 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/categories/other-technology%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/categories/other-technology%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>关键字探索 define const</title>
-      <link>https://jinyuyoulong.github.io/post/itblack-defineconst/</link>
+      <link>https://blog.v5u.win/post/itblack-defineconst/</link>
       <pubDate>Fri, 19 Jan 2018 09:37:16 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/itblack-defineconst/</guid>
+      <guid>https://blog.v5u.win/post/itblack-defineconst/</guid>
       <description> define 单纯的代码替换，预编译时进行 const 常数，不变的。 ​ const是一个关键字。它限定一个变量不允许被改变，产生静态作用。
  编译时进行处理
  只分配一次内存
@@ -27,20 +27,20 @@
     
     <item>
       <title>MySQL 数据库迁移</title>
-      <link>https://jinyuyoulong.github.io/post/system-mysql-change/</link>
+      <link>https://blog.v5u.win/post/system-mysql-change/</link>
       <pubDate>Thu, 15 Dec 2016 14:21:18 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-mysql-change/</guid>
+      <guid>https://blog.v5u.win/post/system-mysql-change/</guid>
       <description> mac 下迁移数据库的结构和内容 迁移准备：数据库文件（可用工具导出Mysql文件）
 注意：由于文件权限的问题 可能不能进入Mysql的data文件内  进入文件 /usr/local/mysql/data 如果打不开，修改文件访问权限，（右击，显示简介，修改文件读写权限） 将相应的文件(如：MYD,MYI,frm) copy进合适的数据库内（文件夹） 打开数据库，查看迁移情况  </description>
     </item>
     
     <item>
       <title>OpenShift的使用</title>
-      <link>https://jinyuyoulong.github.io/post/system-openshift/</link>
+      <link>https://blog.v5u.win/post/system-openshift/</link>
       <pubDate>Wed, 14 Dec 2016 17:56:33 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-openshift/</guid>
+      <guid>https://blog.v5u.win/post/system-openshift/</guid>
       <description> 注册完成后如何使用命令行连接服务器
 登录OpenShift网站，进入app的详情页，找到隐藏的ssh连接，不是下载地址的ssh连接，拷贝后直接在终端打开就行，无需密码
   </description>
@@ -48,19 +48,19 @@
     
     <item>
       <title>命名规范</title>
-      <link>https://jinyuyoulong.github.io/post/system-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</link>
+      <link>https://blog.v5u.win/post/system-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</link>
       <pubDate>Tue, 08 Nov 2016 14:39:03 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</guid>
+      <guid>https://blog.v5u.win/post/system-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</guid>
       <description>http://yemengying.com/2016/06/25/cleanCode4naming/</description>
     </item>
     
     <item>
       <title>数据结构</title>
-      <link>https://jinyuyoulong.github.io/post/system-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <link>https://blog.v5u.win/post/system-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
       <pubDate>Mon, 07 Nov 2016 22:13:26 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <guid>https://blog.v5u.win/post/system-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
       <description> 顺序表 链表 栈和队列 散列表 树结构
 适合表述层次关系
  图结构
@@ -69,19 +69,19 @@
     
     <item>
       <title>Sublime Texts使用tips</title>
-      <link>https://jinyuyoulong.github.io/post/sublime-tips/</link>
+      <link>https://blog.v5u.win/post/sublime-tips/</link>
       <pubDate>Sun, 04 Sep 2016 00:07:07 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/sublime-tips/</guid>
+      <guid>https://blog.v5u.win/post/sublime-tips/</guid>
       <description> 多行编辑：control + 点击各行编辑位置 全局修改所有单词：双击单词，comment+control+G 选中一个单词：Command + D 选中一个单词及下一个同样的单词 包管理工具：control package ,快捷键：shift+commend+P  </description>
     </item>
     
     <item>
       <title>mac下MongoDB</title>
-      <link>https://jinyuyoulong.github.io/post/mac-bmongodb/</link>
+      <link>https://blog.v5u.win/post/mac-bmongodb/</link>
       <pubDate>Mon, 18 Jul 2016 18:16:11 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/mac-bmongodb/</guid>
+      <guid>https://blog.v5u.win/post/mac-bmongodb/</guid>
       <description>1. 安装 1.1 解压缩mongo文件，将解压缩后的文件移动到自己喜欢的目录下 1.2 由于没有配置环境变量，先测试使用。 终端进入mongodb的安装路径，在bin路径下，执行./mongod启动数据库
 有可能报错 exception in initAndListen: 29 Data directory /data/db not found 这是因为/data/db 目录不存在，若启动时，不指定任何参数， MongoDB 会默认使用 /data/db 目录存储数据， 我们可以使用 &amp;ndash;dbpath 来指定其它的路径，比如我使用的是下面这样的命令启动的： ./mongod --dbpath ../data/db 新开一个终端，在bin路径下执行./mongo启动mongodb管理
 2. 使用 show dbs 显示 数据库s use dbName 切换数据库 show collections 数据库下的显示表 db.表明.find() 显示表中数据</description>
@@ -89,47 +89,38 @@
     
     <item>
       <title>mac下wireshark的使用方法</title>
-      <link>https://jinyuyoulong.github.io/post/mac-wireshark/</link>
+      <link>https://blog.v5u.win/post/mac-wireshark/</link>
       <pubDate>Wed, 18 May 2016 18:47:09 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/mac-wireshark/</guid>
+      <guid>https://blog.v5u.win/post/mac-wireshark/</guid>
       <description>Wireshark是mac下一款非常好的抓包工具，安装我就不说了，下面我重点来说说如何使用。 1.打开终端 2.rvictl -s  // 创建一个虚拟接口 3.打开Wireshark，点击设置按钮，选择rvi0接口 4.开始调试
 通过 RVI 抓取 iPhone 数据包 （1）RVI 简介 使用 Mac 抓取 iPhone 数据包可通过共享和代理两种方式： 使用 Mac 的网络共享功能将 Mac 的网络通过 WiFi 共享给 iPhone 连接； 使用代理软件（例如 Charles）在Mac上建立HTTP代理服务器。 这两种方式都是将 iPhone 的网络流量导入到 Mac 电脑中，通过 Mac 连接互联网。这就要求 Mac 本身是联网的，对于网络共享的方式还要求 Mac 本身的网络不能使用 WiFi，而且在 iPhone 上只能使用 WiFi 连接，无法抓取到 xG（2G/3G/4G） 网络包。 苹果在 iOS 5 中新引入了“远程虚拟接口（Remote Virtual Interface,RVI）”的特性，可以在 Mac 中建立一个虚拟网络接口来作为 iOS 设备的网络栈，这样所有经过 iOS 设备的流量都会经过此虚拟接口。此虚拟接口只是监听 iOS 设备本身的协议栈（但并没有将网络流量中转到 Mac 本身的网络连接上），所有网络连接都是 iOS 设备本身的，与 Mac 电脑本身联不联网或者联网类型无关。iOS设备本身可以为任意网络类型（WiFi/xG），这样在 Mac 电脑上使用任意抓包工具（tcpdump、Wireshark、CPA）抓取 RVI 接口上的数据包就实现了对 iPhone 的抓包。</description>
     </item>
     
     <item>
-      <title>vim使用记录</title>
-      <link>https://jinyuyoulong.github.io/post/system-vim/</link>
-      <pubDate>Mon, 18 Apr 2016 17:26:21 +0000</pubDate>
-      
-      <guid>https://jinyuyoulong.github.io/post/system-vim/</guid>
-      <description>剪切复制粘贴 命令模式下（esc）剪切一行：dd ;三行：3dd y复制 d()剪切 p(paste)粘贴</description>
-    </item>
-    
-    <item>
       <title>八大算法思想</title>
-      <link>https://jinyuyoulong.github.io/post/system-%E5%85%AB%E5%A4%A7%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/</link>
+      <link>https://blog.v5u.win/post/system-%E5%85%AB%E5%A4%A7%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/</link>
       <pubDate>Wed, 23 Mar 2016 10:31:32 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-%E5%85%AB%E5%A4%A7%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/</guid>
+      <guid>https://blog.v5u.win/post/system-%E5%85%AB%E5%A4%A7%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/</guid>
       <description> 枚举 递推 递归 分治 贪心 试探 动态迭代 模拟  </description>
     </item>
     
     <item>
       <title>计算中国农历</title>
-      <link>https://jinyuyoulong.github.io/post/system-%E8%AE%A1%E7%AE%97%E5%86%9C%E5%8E%86/</link>
+      <link>https://blog.v5u.win/post/system-%E8%AE%A1%E7%AE%97%E5%86%9C%E5%8E%86/</link>
       <pubDate>Sun, 13 Dec 2015 15:14:46 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-%E8%AE%A1%E7%AE%97%E5%86%9C%E5%8E%86/</guid>
+      <guid>https://blog.v5u.win/post/system-%E8%AE%A1%E7%AE%97%E5%86%9C%E5%8E%86/</guid>
       <description>文章请查看：http://blog.csdn.net/orbit/article/details/9210413</description>
     </item>
     
     <item>
       <title>大神F1刷机失败怎么办？</title>
-      <link>https://jinyuyoulong.github.io/post/life-%E5%A4%A7%E7%A5%9Ef1%E5%88%B7%E6%9C%BA%E5%A4%B1%E8%B4%A5%E6%80%8E%E4%B9%88%E5%8A%9E/</link>
+      <link>https://blog.v5u.win/post/life-%E5%A4%A7%E7%A5%9Ef1%E5%88%B7%E6%9C%BA%E5%A4%B1%E8%B4%A5%E6%80%8E%E4%B9%88%E5%8A%9E/</link>
       <pubDate>Sun, 29 Nov 2015 11:06:23 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/life-%E5%A4%A7%E7%A5%9Ef1%E5%88%B7%E6%9C%BA%E5%A4%B1%E8%B4%A5%E6%80%8E%E4%B9%88%E5%8A%9E/</guid>
+      <guid>https://blog.v5u.win/post/life-%E5%A4%A7%E7%A5%9Ef1%E5%88%B7%E6%9C%BA%E5%A4%B1%E8%B4%A5%E6%80%8E%E4%B9%88%E5%8A%9E/</guid>
       <description>刷机失败，需要进入Recovery模式才可以再次刷机
 那么如何如何进入Recovery模式呢？
 大神手机：
@@ -141,10 +132,10 @@
     
     <item>
       <title>HTML&amp;CSS</title>
-      <link>https://jinyuyoulong.github.io/post/web-html-css/</link>
+      <link>https://blog.v5u.win/post/web-html-css/</link>
       <pubDate>Sun, 25 Oct 2015 17:48:49 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/web-html-css/</guid>
+      <guid>https://blog.v5u.win/post/web-html-css/</guid>
       <description>&amp;lt;p&amp;gt; paragragh 段落
 &amp;lt;em&amp;gt; emphasize 强调(显示为斜体)
 &amp;lt;span&amp;gt; 样式
@@ -169,10 +160,10 @@
     
     <item>
       <title>.gitignore文件使用说明</title>
-      <link>https://jinyuyoulong.github.io/post/system-git-gitignore/</link>
+      <link>https://blog.v5u.win/post/system-git-gitignore/</link>
       <pubDate>Fri, 09 Oct 2015 13:25:58 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-git-gitignore/</guid>
+      <guid>https://blog.v5u.win/post/system-git-gitignore/</guid>
       <description>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，像是日志或者编译过程中创建的等等。我们可以创建一个名为&amp;nbsp;.gitignore&amp;nbsp;的文件，列出要忽略的文件模式，来看一个简单的例子： $&amp;nbsp;cat&amp;nbsp;.gitignore&amp;nbsp;.[oa]&amp;nbsp;~
 第一行告诉 Git 忽略所有以 .o 或 .a 结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的，我们用不着跟踪它们的版本。第二行告诉 Git 忽略所有以波浪符（~）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副本。此外，你可能还需要忽略 log，tmp 或者 pid 目录，以及自动生成的文档等等。要养成一开始就设置好&amp;nbsp;.gitignore&amp;nbsp;文件的习惯，以免将来误提交这类无用的文件。
 文件&amp;nbsp;.gitignore&amp;nbsp;的格式规范如下：
@@ -186,10 +177,10 @@
     
     <item>
       <title>用 Xcode 编写 C/C&#43;&#43; 的 Hello World！</title>
-      <link>https://jinyuyoulong.github.io/post/xcode-cc&#43;&#43;/</link>
+      <link>https://blog.v5u.win/post/xcode-cc&#43;&#43;/</link>
       <pubDate>Fri, 25 Sep 2015 12:24:51 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/xcode-cc&#43;&#43;/</guid>
+      <guid>https://blog.v5u.win/post/xcode-cc&#43;&#43;/</guid>
       <description>操作步骤：
  打开Xcode，在欢迎界面点击Create a new Xcode project。
  在左侧栏选择Mac OS X分类的Application，右侧选择Command Line Tool(命令行程序)，点击Next。
@@ -200,10 +191,10 @@
     
     <item>
       <title>MAC系统XAMPP 中 MySQL命令行客户端配置使用</title>
-      <link>https://jinyuyoulong.github.io/post/mac-xampp/</link>
+      <link>https://blog.v5u.win/post/mac-xampp/</link>
       <pubDate>Fri, 07 Aug 2015 23:42:00 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/mac-xampp/</guid>
+      <guid>https://blog.v5u.win/post/mac-xampp/</guid>
       <description>MySQL客户端
 &amp;nbsp; &amp;nbsp; &amp;nbsp;MySQL安装包里面，在一个名为bin的文件夹，放置了很多工具包，但是使用他们的方式是命令行（ps：最近上瘾了）。
 &amp;nbsp; &amp;nbsp; &amp;nbsp; 在MAC系统，使用命令行的工具可以使用系统自带的Terminal:
@@ -223,10 +214,10 @@ what ? 明明就在面前，如何not found，这下苦逼了！好吧，看来�
     
     <item>
       <title>text/html &amp; text/plain的区别</title>
-      <link>https://jinyuyoulong.github.io/post/web-texthtml-vs-textplain/</link>
+      <link>https://blog.v5u.win/post/web-texthtml-vs-textplain/</link>
       <pubDate>Fri, 24 Jul 2015 16:55:05 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/web-texthtml-vs-textplain/</guid>
+      <guid>https://blog.v5u.win/post/web-texthtml-vs-textplain/</guid>
       <description>需要了解的概念 　Content-Type：用于定义用户的浏览器或相关设备如何显示将要加载的数据，或者如何处理将要加载的数据
 　MIME：MIME类型就是设定某种扩展名的文件用一种应用程序来打开的方式类型，当该扩展名文件被访问的时候，浏览器会自动使用指定应用程序来打开。多用于指定一些客户端自定义的文件名，以及一些媒体文件打开方式。
 &amp;nbsp;
@@ -236,10 +227,10 @@ text/plain的意思是将文件设置为纯文本的形式，浏览器在获取�
     
     <item>
       <title>SEOer的优化思路</title>
-      <link>https://jinyuyoulong.github.io/post/system-seo/</link>
+      <link>https://blog.v5u.win/post/system-seo/</link>
       <pubDate>Sun, 26 Apr 2015 17:56:07 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/post/system-seo/</guid>
+      <guid>https://blog.v5u.win/post/system-seo/</guid>
       <description>&amp;nbsp;
 SEO是一门复杂的学问，手法很多，提高权重可以从很多角度着手，但是，什么样的网站需要用到什么样的手法，网站的不同阶段，又需要怎么样提高排名？这就是SEO排名思路了。
 网站上线一段时间，有了很多关键词的排名，每天的流量也有一些，但是怎么也提高不上去，怎么办呢？

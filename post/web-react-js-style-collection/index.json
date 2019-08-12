@@ -1,7 +1,0 @@
-{
-    "title": "react JS style样式设置总结",
-    "date": "2016-04-08 14:29:04 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/web-react-js-style-collection/index.json",
-    "summary" : "const styles = StyleSheet.create({ style_0:{ flex:1, borderColor: 'red', borderWidth:1, }, &amp;lt;View style={styles.style_0}&amp;gt; &amp;lt;View style={[styles.view, styles.center]}&amp;gt;&amp;lt;Text&amp;gt;自由摆放&amp;lt;/Text&amp;gt;&amp;lt;/View&amp;gt; &amp;lt;View style={[styles.style_1, {flexDirection: 'column'}]}&amp;gt; &amp;lt;Text style={{marginTop:40, fontSize:25}}&amp;gt;1／4高&amp;lt;/Text&amp;gt;  "
-}

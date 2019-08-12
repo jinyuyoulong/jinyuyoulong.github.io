@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>appledoc on 为吾优</title>
-    <link>https://jinyuyoulong.github.io/tags/appledoc/</link>
+    <link>https://blog.v5u.win/tags/appledoc/</link>
     <description>Recent content in appledoc on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 04 Apr 2018 08:24:46 +0000</lastBuildDate>
     
-	<atom:link href="https://jinyuyoulong.github.io/tags/appledoc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.v5u.win/tags/appledoc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>xcode文档注释规则简要汇总</title>
-      <link>https://jinyuyoulong.github.io/676.html</link>
+      <link>https://blog.v5u.win/676.html</link>
       <pubDate>Wed, 04 Apr 2018 08:24:46 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/676.html</guid>
+      <guid>https://blog.v5u.win/676.html</guid>
       <description>xcode文档注释规则简要汇总 参考源 类与协议
 /** 文档B. * * 文档B的详细描述. */ @interface DocB : NSObject /// 文档A. @interface DocA : NSObject  文本链接
 /** * - [文档B](DocB) : 类的链接文本.（仅appledoc） */  单行注释
@@ -26,10 +26,10 @@
     
     <item>
       <title>appledoc使用说明</title>
-      <link>https://jinyuyoulong.github.io/673.html</link>
+      <link>https://blog.v5u.win/673.html</link>
       <pubDate>Wed, 04 Apr 2018 07:00:34 +0000</pubDate>
       
-      <guid>https://jinyuyoulong.github.io/673.html</guid>
+      <guid>https://blog.v5u.win/673.html</guid>
       <description>appledoc使用说明 安装命令行：
  git clone git://github.com/tomaz/appledoc.git cd ./appledoc sudo sh install-appledoc.sh appledoc —version //检查successed  使用 生成HTML 当需要html文档时，可以加上“&amp;ndash;no-create-docset”——
 appledoc --no-create-docset --output ~/doc --project-name &amp;quot;DrowRect&amp;quot; --company-id &amp;quot;com.jinyuyoulong&amp;quot; --project-company &amp;quot;jinyuyoulong&amp;quot; ./  注: &amp;ndash;output ./doc：设置输出目录为“./doc”。 &amp;ndash;project-name objcdoc：设置项目名为“DrowRect”。 &amp;ndash;project-company &amp;ldquo;jinyuyoulong&amp;rdquo;：设置公司名为“jinyuyoulong”。 &amp;ndash;company-id &amp;ldquo;com.jinyuyoulong&amp;rdquo;：设置公司id为“com.jinyuyoulong”。 ./：当前目录。 生成docset 此路不通
