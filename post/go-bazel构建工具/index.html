@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>Go Bazel构建工具 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="范金龙" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Bazel构建工具"/>
+<meta name="twitter:description" content="[TOC]
+原文链接 https://filipnikolovski.com/managing-go-monorepo-with-bazel/
+使用Bazel管理Go monorepo 在InPlayer中，我们有一个使用*微服务*架构风格构建的平台，它基本上将应用程序构建为许多不同服务的集合。在这篇文章中，我将讨论如何建构(structure)，构建(build)和部署(deploy)Go应用程序。
+我们编写的每一段Go代码都驻留在一个Git存储库中 - 一个monorepo。由于每个库和服务都在一个项目中，因此它允许我们进行交叉更改，而无需使用某些外部包管理工具。基本上，代码不可能不同步，我们所做的每个更改都可以视为一个单元。
+虽然好处很明显，但使用Go monorepo的挑战是如何有效地构建和测试每个包。答案 - Bazel。
+Bazel是什么？ Bazel是一款速度极快的构建工具。它只重建必要的东西，它利用高级缓存机制和并行执行，使您的构建非常，非常快。除了这些功能外，它还可以管理您的代码依赖项，调用外部工具和插件，还可以从二进制可执行文件构建Docker镜像。它使用go build引擎盖，但它也可以支持许多不同的语言，而不仅仅是Go。您可以将它用于Java，C &#43;&#43;，Android，iOS和各种其他语言平台。您可以在三个主要操作系统上运行Bazel - Windows，macOS和Linux。
+项目结构 在我们深入了解Bazel之前，首先让我们讨论一下我们的项目结构：
+ platform |-- src | |-- foo | | |--cmd | | | `--bar | | | |--BUILD | | | `--main.go | | `--pkg | |-- utils | |-- vendor | |-- Gopkg.lock | |-- Gopkg.toml | |-- BUILD | `-- WORKSPACE |-- README.md `-- gitlab-ci.yml  该platform目录是我们的根本，一切从这里开始。在该文件夹中，我们有CI配置和src保存所有代码的目录。每个服务都是src文件夹中的子目录，在每个服务中我们都有两个顶级目录，即cmd和pkg文件夹。在下面cmd我们有我们的二进制文件（我们的主程序）的pkg目录，该目录用于我们的服务库。"/>
+
+    <meta property="og:title" content="Go Bazel构建工具" />
+<meta property="og:description" content="[TOC]
+原文链接 https://filipnikolovski.com/managing-go-monorepo-with-bazel/
+使用Bazel管理Go monorepo 在InPlayer中，我们有一个使用*微服务*架构风格构建的平台，它基本上将应用程序构建为许多不同服务的集合。在这篇文章中，我将讨论如何建构(structure)，构建(build)和部署(deploy)Go应用程序。
+我们编写的每一段Go代码都驻留在一个Git存储库中 - 一个monorepo。由于每个库和服务都在一个项目中，因此它允许我们进行交叉更改，而无需使用某些外部包管理工具。基本上，代码不可能不同步，我们所做的每个更改都可以视为一个单元。
+虽然好处很明显，但使用Go monorepo的挑战是如何有效地构建和测试每个包。答案 - Bazel。
+Bazel是什么？ Bazel是一款速度极快的构建工具。它只重建必要的东西，它利用高级缓存机制和并行执行，使您的构建非常，非常快。除了这些功能外，它还可以管理您的代码依赖项，调用外部工具和插件，还可以从二进制可执行文件构建Docker镜像。它使用go build引擎盖，但它也可以支持许多不同的语言，而不仅仅是Go。您可以将它用于Java，C &#43;&#43;，Android，iOS和各种其他语言平台。您可以在三个主要操作系统上运行Bazel - Windows，macOS和Linux。
+项目结构 在我们深入了解Bazel之前，首先让我们讨论一下我们的项目结构：
+ platform |-- src | |-- foo | | |--cmd | | | `--bar | | | |--BUILD | | | `--main.go | | `--pkg | |-- utils | |-- vendor | |-- Gopkg.lock | |-- Gopkg.toml | |-- BUILD | `-- WORKSPACE |-- README.md `-- gitlab-ci.yml  该platform目录是我们的根本，一切从这里开始。在该文件夹中，我们有CI配置和src保存所有代码的目录。每个服务都是src文件夹中的子目录，在每个服务中我们都有两个顶级目录，即cmd和pkg文件夹。在下面cmd我们有我们的二进制文件（我们的主程序）的pkg目录，该目录用于我们的服务库。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" />
+<meta property="article:published_time" content="2019-08-16T16:02:29&#43;08:00"/>
+<meta property="article:modified_time" content="2019-08-16T16:02:29&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="范金龙" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Go Bazel构建工具</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Aug 16, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>[TOC]</p>
+
+<p>原文链接 <a href="https://filipnikolovski.com/managing-go-monorepo-with-bazel/">https://filipnikolovski.com/managing-go-monorepo-with-bazel/</a></p>
+
+<h1 id="使用bazel管理go-monorepo">使用Bazel管理Go monorepo</h1>
+
+<p>在<a href="https://inplayer.com/">InPlayer中</a>，我们有一个使用*微服务*架构风格构建的平台，它基本上将应用程序构建为许多不同服务的集合。在这篇文章中，我将讨论如何建构(structure)，构建(build)和部署(deploy)Go应用程序。</p>
+
+<p>我们编写的每一段Go代码都驻留在一个Git存储库中 - 一个monorepo。由于每个库和服务都在一个项目中，因此它允许我们进行交叉更改，而无需使用某些外部包管理工具。基本上，代码不可能不同步，我们所做的每个更改都可以视为一个单元。</p>
+
+<p>虽然好处很明显，但使用Go monorepo的挑战是如何有效地构建和测试每个包。答案 - <a href="https://bazel.build/">Bazel</a>。</p>
+
+<h3 id="bazel是什么">Bazel是什么？</h3>
+
+<p>Bazel是一款速度极快的构建工具。它只重建必要的东西，它利用高级缓存机制和并行执行，使您的构建非常，非常快。除了这些功能外，它还可以管理您的代码依赖项，调用外部工具和插件，还可以从二进制可执行文件构建Docker镜像。它使用<code>go build</code>引擎盖，但它也可以支持许多不同的语言，而不仅仅是Go。您可以将它用于Java，C ++，Android，iOS和各种其他语言平台。您可以在三个主要操作系统上运行Bazel - Windows，macOS和Linux。</p>
+
+<h3 id="项目结构">项目结构</h3>
+
+<p>在我们深入了解Bazel之前，首先让我们讨论一下我们的项目结构：</p>
+
+<pre><code>    platform
+    |-- src
+    |    |-- foo
+    |    |   |--cmd
+    |    |   |  `--bar
+    |    |   |     |--BUILD
+    |    |   |     `--main.go
+    |    |   `--pkg
+    |    |-- utils
+    |    |-- vendor
+    |    |-- Gopkg.lock
+    |    |-- Gopkg.toml
+    |    |-- BUILD
+    |    `-- WORKSPACE
+    |-- README.md
+    `-- gitlab-ci.yml
+</code></pre>
+
+<p>该<code>platform</code>目录是我们的根本，一切从这里开始。在该文件夹中，我们有CI配置和<code>src</code>保存所有代码的目录。每个服务都是<code>src</code>文件夹中的子目录，在每个服务中我们都有两个顶级目录，即<code>cmd</code>和<code>pkg</code>文件夹。在下面<code>cmd</code>我们有我们的二进制文件（我们的主程序）的<code>pkg</code>目录，该目录用于我们的服务库。</p>
+
+<p>Bazel从名为*workspace*的目录中组织的代码构建软件，该目录基本上是我们的src目录。在这里，我们的工作空间目录必须包含一个名为的文件<code>WORKSPACE</code>，该文件可能引用了构建输出所需的外部依赖关系以及构建规则。</p>
+
+<p>这是一个示例WORKSPACE文件：</p>
+
+<pre><code>http_archive(
+    name = &quot;io_bazel_rules_go&quot;,
+    url = &quot;https://github.com/bazelbuild/rules_go/releases/download/0.9.0/rules_go-0.9.0.tar.gz&quot;,
+    sha256 = &quot;4d8d6244320dd751590f9100cf39fd7a4b75cd901e1f3ffdfd6f048328883695&quot;,
+)
+http_archive(
+    name = &quot;bazel_gazelle&quot;,
+    url = &quot;https://github.com/bazelbuild/bazel-gazelle/releases/download/0.9/bazel-gazelle-0.9.tar.gz&quot;,
+    sha256 = &quot;0103991d994db55b3b5d7b06336f8ae355739635e0c2379dea16b8213ea5a223&quot;,
+)
+git_repository(
+    name = &quot;io_bazel_rules_docker&quot;,
+    remote = &quot;https://github.com/bazelbuild/rules_docker.git&quot;,
+    tag = &quot;v0.3.0&quot;,
+)
+
+load(&quot;@io_bazel_rules_go//go:def.bzl&quot;, &quot;go_rules_dependencies&quot;, &quot;go_register_toolchains&quot;)
+go_rules_dependencies()
+go_register_toolchains()
+load(&quot;@bazel_gazelle//:deps.bzl&quot;, &quot;gazelle_dependencies&quot;)
+gazelle_dependencies()
+
+load(
+    &quot;@io_bazel_rules_docker//go:image.bzl&quot;,
+    _go_image_repos = &quot;repositories&quot;,
+)
+
+_go_image_repos()
+</code></pre>
+
+<p>在此文件中，有几个依赖项添加到工作区。我们特别声明我们将使用<a href="https://github.com/bazelbuild/rules_go">rules_go</a>和<a href="https://github.com/bazelbuild/rules_docker">rules_docker</a>依赖项以及<a href="https://github.com/bazelbuild/bazel-gazelle">Gazelle</a>，这将帮助我们生成Bazel所需的一些文件。不要担心，如果您不熟悉这种语法，需要一些时间来适应它。</p>
+
+<h3 id="build文件">BUILD文件</h3>
+
+<p>Bazel有一个关于*包*的概念，它被定义为相关文件的集合以及它们之间依赖关系的规范。如果Bazel工作空间内的目录包含名为的文件<code>BUILD</code>，则会将该目录视为包。包中包含其目录中的所有文件，以及其下的所有子目录，除了那些本身包含BUILD文件的文件。</p>
+
+<p>BUILD文件包含构建规则，这些规则定义了我们应该如何构建包。您可以<a href="https://docs.bazel.build/versions/master/build-ref.html">在此处</a>阅读有关概念和术语的更多信息。</p>
+
+<p>在开始一个新项目时，我们需要做的第一件事是在根目录中添加一个BUILD文件，这将加载稍后用于运行<a href="https://github.com/bazelbuild/bazel-gazelle">Gazelle</a> with Bazel 的瞪羚规则。</p>
+
+<pre><code>package(default_visibility = [&quot;//visibility:public&quot;])
+
+load(&quot;@io_bazel_rules_docker//container:container.bzl&quot;)
+load(&quot;@io_bazel_rules_go//go:def.bzl&quot;, &quot;go_prefix&quot;, &quot;gazelle&quot;)
+
+go_prefix(&quot;github.com/example/project&quot;)
+gazelle(
+  prefix = &quot;github.com/example/project/src&quot;,
+  name = &quot;gazelle&quot;,
+  command = &quot;fix&quot;,
+  external = &quot;vendored&quot;
+)
+</code></pre>
+
+<p>添加此文件后，我们可以使用以下命令运行Gazelle：</p>
+
+<pre><code>bazel run //:gazelle
+</code></pre>
+
+<p>这将根据项目中的go文件生成新的BUILD文件。稍后添加新程序和库时，应使用相同的命令更新现有的BUILD文件，否则构建可能会失败。</p>
+
+<p>作为一个例子（基于我们之前显示的项目结构），gazelle将为我们的<code>bar</code>程序生成一个BUILD文件，该文件位于<code>foo</code>包中，如下所示：</p>
+
+<pre><code>load(&quot;@io_bazel_rules_go//go:def.bzl&quot;, &quot;go_binary&quot;, &quot;go_library&quot;)
+
+package(default_visibility = [&quot;//visibility:public&quot;])
+
+go_library(
+    name = &quot;go_default_library&quot;,
+    srcs = [&quot;main.go&quot;],
+    importpath = &quot;github.com/example/project/src/foo/cmd/bar&quot;,
+    visibility = [&quot;//visibility:private&quot;],
+    deps = [
+        #Any dependencies that our library has will be loaded here
+    ],
+)
+
+go_binary(
+    name = &quot;bar&quot;,
+    embed = [&quot;:go_default_library&quot;],
+    importpath = &quot;github.com/example/project/src/foo/cmd/bar&quot;,
+    visibility = [&quot;//visibility:public&quot;],
+)
+</code></pre>
+
+<p>现在通过运行命令<code>bazel build //foo/...</code>bazel将构建我们的Go程序并将二进制文件保存在输出目录中。如果要构建整个项目，只需<code>bazel build //...</code>在根文件夹中运行即可。</p>
+
+<p>如果您为您的库和程序（您应该）编写测试，gazelle将为<code>go_test</code>它们生成规则，然后您可以运行<code>bazel test //...</code>将运行所有测试。</p>
+
+<p>Bazel的高级缓存，使运行<code>build</code>和<code>test</code>命令对整个工作区超级快，因为它只会建造或测试您已更改的文件，以及依赖于这些修改过的文件的文件。</p>
+
+<p>⚠️注意：确保将CI服务器设置为缓存输出目录，否则运行bazel不会带来太多好处。</p>
+
+<h3 id="docker镜像">Docker镜像</h3>
+
+<p>在我们想要将二进制文件构建和部署为docker图像的情况下，bazel有一套很好的规则可以做到这一点。更为重要的是，Bazel<strong>并不</strong>需要Docker拉取，构建或推送镜像。这意味着您可以使用这些规则在Windows / OSX上构建Docker镜像而无需使用<code>docker-machine</code>或者<code>boot2docker</code>也不需要在笔记本电脑上进行*root*访问。</p>
+
+<p>我们<code>bar</code>程序的BUILD文件的完整示例如下所示：</p>
+
+<pre><code>load(&quot;@io_bazel_rules_go//go:def.bzl&quot;, &quot;go_binary&quot;, &quot;go_library&quot;)
+
+# First we load the go_image and container_push rules
+load(&quot;@io_bazel_rules_docker//go:image.bzl&quot;, &quot;go_image&quot;)
+
+package(default_visibility = [&quot;//visibility:public&quot;])
+
+go_library(
+    name = &quot;go_default_library&quot;,
+    srcs = [&quot;main.go&quot;],
+    importpath = &quot;github.com/example/project/src/foo/cmd/bar&quot;,
+    visibility = [&quot;//visibility:private&quot;],
+    deps = [
+        #Any dependencies that our library has will be loaded here
+    ],
+)
+
+go_binary(
+    name = &quot;bar&quot;,
+    embed = [&quot;:go_default_library&quot;],
+    importpath = &quot;github.com/example/project/src/foo/cmd/bar&quot;,
+    visibility = [&quot;//visibility:public&quot;],
+)
+
+go_image(
+    name = &quot;docker&quot;,
+    binary = &quot;:bar&quot;,
+)
+</code></pre>
+
+<p>该<code>go_image</code>规则使用<a href="https://github.com/GoogleCloudPlatform/distroless">distroless</a>镜像作为基础，只添加二进制文件作为要运行的命令。<code>container_push</code>如果要将映像推送到远程存储库，也可以使用该规则。</p>
+
+<p>要将二进制文件作为docker镜像运行，只需键入<code>bazel run //foo/cmd/bar:docker</code>命令即可。您还可以构建一个tar包，然后可以使用以下命令手动将其加载到docker中：</p>
+
+<ul>
+<li><code>bazel build //foo/cmd/bar:docker.tar</code></li>
+<li><code>docker load -i bazel-output/foo/cmd/bar/docker.tar</code></li>
+</ul>
+
+<p>您可以在<a href="https://github.com/bazelbuild/rules_docker">此处</a>找到有关规则的更多信息。</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

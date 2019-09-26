@@ -6,10 +6,61 @@
     <description>Recent content in system on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 12 Aug 2019 10:46:26 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/system/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>epoll原理</title>
+      <link>https://blog.v5u.win/post/system-epoll/</link>
+      <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-epoll/</guid>
+      <description>epoll原理
+参考：https://my.oschina.net/editorial-story/blog/3052308
+ 网卡DMA传来数据，存入内存 网卡向CPU发送中断信号，操作系统得知有新数据到来，通过网卡中断程序去处理数据 将数据写入对应的socket接收缓冲区 唤醒对应进程 将进程放入工作队列  内核接收网络数据全过程 如下图所示，进程在 recv 阻塞期间，计算机收到了对端传送的数据（步骤①）——&amp;gt;
+数据经由网卡传送到内存（步骤②），——&amp;gt;
+然后网卡通过中断信号通知 CPU 有数据到达，CPU 执行中断程序（步骤③）。——&amp;gt;
+此处的中断程序主要有两项功能，先将网络数据写入到对应 socket 的接收缓冲区里面（步骤④），——&amp;gt;
+再唤醒进程 A（步骤⑤），——&amp;gt;
+重新将进程 A 放入工作队列中。
+以上是内核接收数据全过程，这里我们可能会思考两个问题：
+ 其一，操作系统如何知道网络数据对应于哪个 socket？ 其二，如何同时监视多个 socket 的数据？  第一个问题：因为一个 socket 对应着一个端口号，而网络数据包中包含了 ip 和端口的信息，内核可以通过端口号找到对应的 socket。当然，为了提高处理速度，操作系统会维护端口号到 socket 的索引结构，以快速读取。
+第二个问题是多路复用的重中之重，也正是本文后半部分的重点。
+select 简单的方法往往有缺点，主要是：
+其一，每次调用 select 都需要将进程加入到所有监视 socket 的等待队列，每次唤醒都需要从每个队列中移除。这里涉及了两次遍历，而且每次都要将整个 fds 列表传递给内核，有一定的开销。正是因为遍历操作开销大，出于效率的考量，才会规定 select 的最大监视数量，默认只能监视 1024 个 socket。
+其二，进程被唤醒后，程序并不知道哪些 socket 收到数据，还需要遍历一次。
+有没有减少遍历的方法？有没有保存就绪 socket 的方法？这两个问题便是 epoll 技术要解决的。
+epoll 通过以下一些措施来改进效率：
+措施一：功能分离
+select 低效的原因之一是将“维护等待队列”和“阻塞进程”两个步骤合二为一。</description>
+    </item>
+    
+    <item>
+      <title>System MQ消息队列</title>
+      <link>https://blog.v5u.win/post/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</link>
+      <pubDate>Fri, 23 Aug 2019 09:39:55 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</guid>
+      <description>[TOC]
+消息队列 MQ 能随便讲个应用场景嘛
+发短信，发邮件
+大量的定时任务
+支付回调也经常用
+你付款之后有很多步骤
+主要是付款是异步过程。
+你打钱，支付宝服务器通知电商后台服务器
+然后电商后台接到请求后，发送一个消息去队列里，带上订单信息
+然后服务器集群里有人接活
+咏闲 09:29:17 感觉说的是放入消息队列，然后被轮流接受，异步处理各个服务
+橙卡 09:29:38 比如购买流程很长的 橙卡 09:29:55 库存管理 账目转移 物流发货
+橙卡 09:30:09 要是在线等待起码半分钟
+橙卡 09:30:30 一般是拆成好几个任务 橙卡 09:30:34 一个一个来
+橙卡 09:30:53 最主要是有一个对等集群，可以容纳一切任务
+橙卡 09:30:59 平等的处理
+橙卡 09:31:46 我之前一直用的redis作为mq 橙卡 09:31:53 其实也还好。 橙卡 09:32:01 也就三四个月丢一单</description>
+    </item>
     
     <item>
       <title>System 进程间通讯方式</title>
@@ -140,16 +191,42 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
     </item>
     
     <item>
+      <title>SSH</title>
+      <link>https://blog.v5u.win/post/mac-ssh/</link>
+      <pubDate>Wed, 24 Feb 2016 16:02:58 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/mac-ssh/</guid>
+      <description>[TOC]
+解释  Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。 SSH通过在网络中创建安全隧道来实现SSH客户端与服务器之间的连接[2]。 虽然任何网络服务都可以通过SSH实现安全传输，SSH最常见的用途是远程登录系统，人们通常利用SSH来传输命令行界面和远程执行命令。 使用频率最高的场合类Unix系统，但是Windows操作系统也能有限度地使用SSH。2015年，微软宣布将在未来的操作系统中提供原生SSH协议支持(摘自wikipedia)
+ 生成 下面是Mac生成方法：
+1 ：打开终端 输入 ssh-keygen
+然后系统提示输入文件保存位置等信息，连续敲三次回车即可，生成的SSH key文件保存在中～/.ssh/id_rsa.pub
+2 然后用文本编辑工具打开该文件，我用的是vim,所以命令是： vim ~/.ssh/id_rsa.pub`
+禁忌 同一个网站，多个账户之间 不能共用同一个ssh公钥，这会造成服务器无法判断提交者的身份，所以如果有多个账户在同一个网站的话，还是创建多个ssh证书分别管理比较好。
+多证书管理 生成 指定文件名
+`ssh-keygen -t rsa -f ~/.ssh/id_rsa.name -C &amp;ldquo;ssh_name&amp;rdquo;
+创建配置文件
+vi ~/.ssh/config
+Host aaa.github.com HostName git@github.com:aaa IdentityFile ~/.ssh/id_rsa.aaa User git HostName bbb@github.com IdentityFile ~/.ssh/id_rsa User git  检测是否配置成功
+//查看当前rsa list ssh-add -l //如果列表中没有新增的rsa， 添加identifile 把专用密钥添加到 ssh-agent 的高速缓存中： ssh-add ~/.ssh/test_id_rsa  注： ssh-add 命令是把专用密钥添加到ssh-agent的高速缓存中。是把指定的私钥添加到 ssh-agent 所管理的一个 session 当中。而 ssh-agent 是一个用于存储私钥的临时性的 session 服务，重启之后，ssh-agent 服务也就重置了，session 会话也就失效了。</description>
+    </item>
+    
+    <item>
       <title>Git 仓库</title>
-      <link>https://blog.v5u.win/post/system-git%E4%BB%93%E5%BA%93/</link>
+      <link>https://blog.v5u.win/post/system-git_server/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-git%E4%BB%93%E5%BA%93/</guid>
+      <guid>https://blog.v5u.win/post/system-git_server/</guid>
       <description>git 仓库的创建流程：
 命令行模式创建 参考  创建裸仓库 git init --bare gitserver.git，表明允许其副本push操作。   使用 git init --bare &amp;lt;repo&amp;gt; 可以创建一个裸仓库，当创建一个裸存储库时，Git假定裸存储库将作为几个远程用户的源存储库，因此它不会创建默认远程源。这意味着基本的git pull和git push操作将无法工作，因为Git假设没有工作空间，你不打算提交对裸存储库的任何更改。
 从裸仓库 clone 下来的本地仓库可以进行正常的 push 操作， 但是从一般仓库 clone 下来的本地仓库却不行。 这也正是裸仓库存在的意义。 裸仓库一般情况下是作为远端的中心仓库而存在的。
  git 创建裸仓库并修改该仓库目录的组权限为可写。
-$ ssh user@git.example.com $ cd /opt/git/my_project.git $ git init --bare --shared  gitea 工具创建 Gitea 是一个Go开发的开源Git管理工具。从Gogs项目中分裂出来，竟然是中国人无闻的项目（惊叹一下）。特点是：目标是打造一个最简单、最快速和最轻松的方式搭建自助 Git 服务。</description>
+$ ssh user@git.example.com $ cd /opt/git/my_project.git $ git init --bare --shared  git clone
+git clone /Users/fanjinlong/dev/git/jdcrontab.git	 gitea 工具创建 Gitea 是一个Go开发的开源Git管理工具。从Gogs项目中分裂出来，竟然是中国人无闻的项目（惊叹一下）。特点是：目标是打造一个最简单、最快速和最轻松的方式搭建自助 Git 服务。
+ssh 登录配置 参考 http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html
+这时再输入下面的命令，将公钥传送到远程主机host上面：
+ 　$ ssh-copy-id user@host
+ 好了，从此你再登录，就不需要输入密码了。</description>
     </item>
     
   </channel>

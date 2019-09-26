@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>Go Gofmt // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="范金龙" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Gofmt"/>
+<meta name="twitter:description" content=" [TOC]
+为什么要用 gofmt 大多数人认为我们格式化Go代码gofmt 以使代码看起来更好或结束团队成员之间关于程序布局的争论。但是， 1是，如果一个算法定义围棋源代码是如何被格式化，然后编程，如goimports 或 gorename 或者 go fix，可以更容易地编辑源代码，而无需编写代码回来时引入伪格式更改。这有助于您长期维护代码。
+ 我认为源代码格式化工具非常简洁 提供。解析器/ ast /漂亮也是一件好事 打印机可用作mod。
+但是，我不确定是否尝试强制执行格式化样式 拒绝配置格式化程序的能力（如FAQ提及） 是个好主意。至少go /打印机包可能是好的 即使命令行gofmt工具，也允许更灵活的配置 没有。 对于gofmt的输出，没有人或将永远不会满意， 但它实际上相当不错，更重要的是，人们适应 令人惊讶的是，这种风格起初看起来很陌生。特别 在格式化方面，风格实际上只是“你习惯的”。 由于Go是一种全新的语言，所以不应该这样 很难习惯不同的格式。
+ 我们希望人们能够准确地接受gofmt的输出 因为它结束了这种风格的辩论。怎么样 C有很多不同的支撑款式吗？太多。
+就个人而言，我发现让gofmt格式化为我是一种解放， 因为这意味着我有更多可用的神经元 攻击有趣的编程问题。有 我不喜欢gofmt输出的东西，但我不喜欢 不再担心他们了。
+但所有这些都错过了我认为最激动人心的事情 关于gofmt：事实上我们有一个可以拿起每个人的工具 Go树中的源文件，将其解析为内部表示， 然后将完全相同的字节放回原位。 （很大一部分 这是由于进入gofmt的工作量，以及 其余的是因为我们同意对gofmt进行标准化 一旦你拥有了这样一个工具，它变得非常容易 在中间插入机械处理，解析之间 和印刷。所以我们拥有一个程序的所有难点 操纵工具只是坐着等待使用。我已经开始了 以前为C编写类似的工具，从来没有得到过输出 完全匹配输入。同意接受“gofmt风格” 是在有限数量的代码中使它可行的部分。
+我希望人们会按照自己的代码使用gofmt。 正如我所说，它不需要超过几个星期 习惯于新的编码风格，特别是如果你是一个品牌 新语言，每个人都有巨大的利益 相同的风格。
+我们当然打算继续格式化所有代码 使用gofmt去树。像Go一样，这是一个实验。
+Russ
+ 下面有邮件组的讨论过程 [return]   "/>
+
+    <meta property="og:title" content="Go Gofmt" />
+<meta property="og:description" content=" [TOC]
+为什么要用 gofmt 大多数人认为我们格式化Go代码gofmt 以使代码看起来更好或结束团队成员之间关于程序布局的争论。但是， 1是，如果一个算法定义围棋源代码是如何被格式化，然后编程，如goimports 或 gorename 或者 go fix，可以更容易地编辑源代码，而无需编写代码回来时引入伪格式更改。这有助于您长期维护代码。
+ 我认为源代码格式化工具非常简洁 提供。解析器/ ast /漂亮也是一件好事 打印机可用作mod。
+但是，我不确定是否尝试强制执行格式化样式 拒绝配置格式化程序的能力（如FAQ提及） 是个好主意。至少go /打印机包可能是好的 即使命令行gofmt工具，也允许更灵活的配置 没有。 对于gofmt的输出，没有人或将永远不会满意， 但它实际上相当不错，更重要的是，人们适应 令人惊讶的是，这种风格起初看起来很陌生。特别 在格式化方面，风格实际上只是“你习惯的”。 由于Go是一种全新的语言，所以不应该这样 很难习惯不同的格式。
+ 我们希望人们能够准确地接受gofmt的输出 因为它结束了这种风格的辩论。怎么样 C有很多不同的支撑款式吗？太多。
+就个人而言，我发现让gofmt格式化为我是一种解放， 因为这意味着我有更多可用的神经元 攻击有趣的编程问题。有 我不喜欢gofmt输出的东西，但我不喜欢 不再担心他们了。
+但所有这些都错过了我认为最激动人心的事情 关于gofmt：事实上我们有一个可以拿起每个人的工具 Go树中的源文件，将其解析为内部表示， 然后将完全相同的字节放回原位。 （很大一部分 这是由于进入gofmt的工作量，以及 其余的是因为我们同意对gofmt进行标准化 一旦你拥有了这样一个工具，它变得非常容易 在中间插入机械处理，解析之间 和印刷。所以我们拥有一个程序的所有难点 操纵工具只是坐着等待使用。我已经开始了 以前为C编写类似的工具，从来没有得到过输出 完全匹配输入。同意接受“gofmt风格” 是在有限数量的代码中使它可行的部分。
+我希望人们会按照自己的代码使用gofmt。 正如我所说，它不需要超过几个星期 习惯于新的编码风格，特别是如果你是一个品牌 新语言，每个人都有巨大的利益 相同的风格。
+我们当然打算继续格式化所有代码 使用gofmt去树。像Go一样，这是一个实验。
+Russ
+ 下面有邮件组的讨论过程 [return]   " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/go-gofmt/" />
+<meta property="article:published_time" content="2019-08-16T17:57:28&#43;08:00"/>
+<meta property="article:modified_time" content="2019-08-16T17:57:28&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="范金龙" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Go Gofmt</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Aug 16, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>[TOC]</p>
+
+<h1 id="为什么要用-gofmt">为什么要用 gofmt</h1>
+
+<p>大多数人认为我们格式化Go代码gofmt 以使代码看起来更好或结束团队成员之间关于程序布局的争论。但是， <sup class="footnote-ref" id="fnref:gofmt"><a href="#fn:gofmt">1</a></sup>是，如果一个算法定义围棋源代码是如何被格式化，然后编程，如goimports 或 gorename 或者 go fix，可以更容易地编辑源代码，而无需编写代码回来时引入伪格式更改。这有助于您长期维护代码。</p>
+
+<hr />
+
+<blockquote>
+<p>我认为源代码格式化工具非常简洁
+提供。解析器/ ast /漂亮也是一件好事
+打印机可用作mod。</p>
+
+<p>但是，我不确定是否尝试强制执行格式化样式
+拒绝配置格式化程序的能力（如FAQ提及）
+是个好主意。至少go /打印机包可能是好的
+即使命令行gofmt工具，也允许更灵活的配置
+没有。
+对于gofmt的输出，没有人或将永远不会满意，
+但它实际上相当不错，更重要的是，人们适应
+令人惊讶的是，这种风格起初看起来很陌生。特别
+在格式化方面，风格实际上只是“你习惯的”。
+由于Go是一种全新的语言，所以不应该这样
+很难习惯不同的格式。</p>
+</blockquote>
+
+<p>我们希望人们能够准确地接受gofmt的输出
+因为它结束了这种风格的辩论。怎么样
+C有很多不同的支撑款式吗？太多。</p>
+
+<p>就个人而言，我发现让gofmt格式化为我是一种解放，
+因为这意味着我有更多可用的神经元
+攻击有趣的编程问题。有
+我不喜欢gofmt输出的东西，但我不喜欢
+不再担心他们了。</p>
+
+<p>但所有这些都错过了我认为最激动人心的事情
+关于gofmt：事实上我们有一个可以拿起每个人的工具
+Go树中的源文件，将其解析为内部表示，
+然后将完全相同的字节放回原位。 （很大一部分
+这是由于进入gofmt的工作量，以及
+其余的是因为我们同意对gofmt进行标准化
+一旦你拥有了这样一个工具，它变得非常容易
+在中间插入机械处理，解析之间
+和印刷。所以我们拥有一个程序的所有难点
+操纵工具只是坐着等待使用。我已经开始了
+以前为C编写类似的工具，从来没有得到过输出
+完全匹配输入。同意接受“gofmt风格”
+是在有限数量的代码中使它可行的部分。</p>
+
+<p>我希望人们会按照自己的代码使用gofmt。
+正如我所说，它不需要超过几个星期
+习惯于新的编码风格，特别是如果你是一个品牌
+新语言，每个人都有巨大的利益
+相同的风格。</p>
+
+<p>我们当然打算继续格式化所有代码
+使用gofmt去树。像Go一样，这是一个实验。</p>
+
+<p>Russ</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:gofmt">下面有邮件组的讨论过程
+ <a class="footnote-return" href="#fnref:gofmt"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

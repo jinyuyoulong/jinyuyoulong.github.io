@@ -12,8 +12,12 @@
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="docker 使用规则"/>
-<meta name="twitter:description" content="硬件/操作系统 要求 Docker支持以下的CentOS版本：
- CentOS 7 (64-bit) CentOS 6.5 (64-bit) 或更高的版本  前提条件 目前，CentOS 仅发行版本中的内核支持 Docker。
+<meta name="twitter:description" content="[TOC]
+硬件/操作系统 要求 Docker支持以下的发行版版本：
+ Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版
+ CentOS 7 (64-bit)，要求内核版本不低于 3.10 。CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如 overlay2 存储层驱动）无法使用，并且部分功能可能不太稳定。
+ Debain 9
+  前提条件 目前，CentOS 仅发行版本中的内核支持 Docker。
 Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。
 Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64位、系统内核版本为 2.6.32-431 或者更高版本。
 ### docker 的组件结构
@@ -24,12 +28,15 @@ docker image 镜像(安装实例)
 Dockerfile(用于生成image)
 ### docker配置&#43;使用
 预先安装docker的相关库
- brew install docker docker-compose docker-machine  #### 启动docker-machine
-To have launchd start docker-machine now and restart at login: brew services start docker-machine"/>
+ brew install docker docker-compose docker-machine  关于 docker-machine Docker Machine 是 Docker 官方提供的一个工具，它可以帮助我们在远程的机器上安装 Docker，或者在虚拟机 host 上直接安装虚拟机并在虚拟机中安装 Docker。我们还可以通过 docker-machine 命令来管理这些虚拟机和 Docker。"/>
 
     <meta property="og:title" content="docker 使用规则" />
-<meta property="og:description" content="硬件/操作系统 要求 Docker支持以下的CentOS版本：
- CentOS 7 (64-bit) CentOS 6.5 (64-bit) 或更高的版本  前提条件 目前，CentOS 仅发行版本中的内核支持 Docker。
+<meta property="og:description" content="[TOC]
+硬件/操作系统 要求 Docker支持以下的发行版版本：
+ Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版
+ CentOS 7 (64-bit)，要求内核版本不低于 3.10 。CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如 overlay2 存储层驱动）无法使用，并且部分功能可能不太稳定。
+ Debain 9
+  前提条件 目前，CentOS 仅发行版本中的内核支持 Docker。
 Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。
 Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64位、系统内核版本为 2.6.32-431 或者更高版本。
 ### docker 的组件结构
@@ -40,8 +47,7 @@ docker image 镜像(安装实例)
 Dockerfile(用于生成image)
 ### docker配置&#43;使用
 预先安装docker的相关库
- brew install docker docker-compose docker-machine  #### 启动docker-machine
-To have launchd start docker-machine now and restart at login: brew services start docker-machine" />
+ brew install docker docker-compose docker-machine  关于 docker-machine Docker Machine 是 Docker 官方提供的一个工具，它可以帮助我们在远程的机器上安装 Docker，或者在虚拟机 host 上直接安装虚拟机并在虚拟机中安装 Docker。我们还可以通过 docker-machine 命令来管理这些虚拟机和 Docker。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.v5u.win/post/docker-%E7%AE%80%E4%BB%8B/" />
 
@@ -91,13 +97,18 @@ To have launchd start docker-machine now and restart at login: brew services sta
     <div class="post-content">
       
 
+<p>[TOC]</p>
+
 <h2 id="硬件-操作系统-要求">硬件/操作系统 要求</h2>
 
-<p>Docker支持以下的CentOS版本：</p>
+<p>Docker支持以下的发行版版本：</p>
 
 <ul>
-<li>CentOS 7 (64-bit)</li>
-<li>CentOS 6.5 (64-bit) 或更高的版本</li>
+<li><p>Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版</p></li>
+
+<li><p>CentOS 7 (64-bit)，要求内核版本不低于 3.10 。CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如 <code>overlay2</code> 存储层驱动）无法使用，并且部分功能可能不太稳定。</p></li>
+
+<li><p>Debain 9</p></li>
 </ul>
 
 <hr />
@@ -132,6 +143,14 @@ To have launchd start docker-machine now and restart at login: brew services sta
   docker-machine
 </code></pre>
 
+<h4 id="关于-docker-machine">关于 docker-machine</h4>
+
+<p><a href="https://docs.docker.com/machine/overview/">Docker Machine</a> 是 Docker 官方提供的一个工具，它可以帮助我们在远程的机器上安装 Docker，或者在虚拟机 host 上直接安装虚拟机并在虚拟机中安装 Docker。我们还可以通过 docker-machine 命令来管理这些虚拟机和 Docker。</p>
+
+<p>Mac 命令行安装 docker的话需要首先安装 docker-machine,默认启动的虚拟机对外IP：192.168.99.100</p>
+
+<p><code>tcp://192.168.99.100:2376</code></p>
+
 <p>#### 启动docker-machine</p>
 
 <p>To have launchd start docker-machine now and restart at login:
@@ -140,7 +159,7 @@ To have launchd start docker-machine now and restart at login: brew services sta
 <p>Or, if you don&rsquo;t want/need a background service you can just run:
   <code>docker-machine start</code></p>
 
-<p>### docker从创建到启动步骤</p>
+<p>### 利用docker-machine 使 docker从创建到启动步骤</p>
 
 <hr />
 
@@ -194,8 +213,10 @@ To have launchd start docker-machine now and restart at login: brew services sta
 </code></pre>
 
 <ol>
-<li>新建文本文件Dockerfile</li>
+<li>新建文本文件 Dockerfile</li>
 </ol>
+
+<p>Dockerfile 是一个文本文件，其内包含了一条条的 <strong>指令(Instruction)</strong>，每一条指令构建一层，因此每一条指令的内容，就是描述该层应当如何构建。</p>
 
 <p>写入环境配置</p>
 
@@ -212,6 +233,8 @@ To have launchd start docker-machine now and restart at login: brew services sta
 </ol>
 
 <p><code>docker image build -t koa-demo .</code> 或<code>docker image build -t koa-demo:0.0.1 .</code></p>
+
+<p><code>docker build</code> 命令最后有一个 <code>.</code>。<code>.</code> 表示当前目录，而 <code>Dockerfile</code> 就在当前目录，因此不少初学者以为这个路径是在指定 <code>Dockerfile</code> 所在路径，这么理解其实是不准确的。如果对应上面的命令格式，你可能会发现，这是在指定 <strong>上下文路径</strong>。</p>
 
 <ol>
 <li>生成容器</li>
@@ -230,7 +253,7 @@ To have launchd start docker-machine now and restart at login: brew services sta
 
 <p>### 其他docker命令</p>
 
-<pre><code>  docker-machine env 	// 查看环境变量：IP
+<pre><code class="language-sh">  docker-machine env 	// 查看环境变量：IP
   docker ps 					//查看运行的docker
   netstat -na|grep 8888 // 查看端口监听情况
   docker exec -it [容器ID] bash //进入容器，进行bash操作 -it：这是两个参数，一个是 -i 表示交互式操作，一个是 -t 为终端。
@@ -244,11 +267,35 @@ To have launchd start docker-machine now and restart at login: brew services sta
   docker container kill [containID] // 手动终止 运行的 容器
   docker container ls 	// 列出本机正在运行的容器
   docker container ls --all //列出本机所有容器，包括终止运行的容器
+  docker volume create portainer_data
+  
 </code></pre>
 
 <p>docker-machine create default // 创建docker虚拟主机，每一次启动都要重新创建，默认创建环境名为 default。如果报错，boot2docker.iso 无法下载可以在GitHub上单独下载后放到 /Users/$username/.docker/machine/cache/ 下</p>
 
 <p>在容器的命令行，按下 Ctrl + c 停止 Node 进程，然后按下 Ctrl + d （或者输入 exit）退出容器。</p>
+
+<h4 id="docker的数据持久化主要有两种方式">Docker的数据持久化主要有两种方式：</h4>
+
+<ul>
+<li>bind mount</li>
+<li>volume</li>
+</ul>
+
+<p><strong>使用volume</strong></p>
+
+<p>volume也是绕过container的文件系统，直接将数据写到host机器上，只是volume是被docker管理的，docker下所有的volume都在host机器上的指定目录下/var/lib/docker/volumes。</p>
+
+<p>将my-volume挂载到container中的/mydata目录：</p>
+
+<pre><code>docker run -it -v my-volume:/mydata alpine sh
+</code></pre>
+
+<h4 id="var-run-docker-sock文件">/var/run/docker.sock文件</h4>
+
+<p>这个文件是什么呢？为什么有些容器需要使用它？简单地说，它是Docker守护进程(Docker daemon)默认监听的Unix域套接字(Unix domain socket)，容器中的进程可以通过它与Docker守护进程进行通信。</p>
+
+<p>Portainer镜像通过绑定的/var/run/docker.sock文件与<strong>Docker守护进程</strong>通信，执行各种管理操作。</p>
 
 <p>#### 一些使用原则</p>
 
@@ -279,17 +326,52 @@ To have launchd start docker-machine now and restart at login: brew services sta
 
 <p>docker-compose.yml    //配置文件</p>
 
-<pre><code class="language-yaml">  version: '3'
-  services:
+<pre><code class="language-yaml">version: &quot;2&quot;
+services:
+  gili-api:
+    image: gili-api:latest
+    restart: always
+    environment:
+      MYSQL_DSN: &quot;root:K3b4XRqsmVpW@tcp(172.20.0.2)/giligili?charset=utf8&amp;parseTime=True&amp;loc=Local&quot;
+      REDIS_ADDR: &quot;172.21.0.2:6379&quot;
+      REDIS_PW: &quot;&quot;
+      REDIS_DB: &quot;0&quot;
+      SESSION_SECRE: &quot;K3b4XRqsmVpW&quot;
+      GIN_MODE: &quot;release&quot;
+    ports:
+      - 3002:3000
+  mysql:
+    image: mysql:5.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: K3b4XRqsmVpW
+    volumes:
+      - mysql_data:/var/lib/mysql/data
+    ports:
+      - 3306:3306
 
-    my-gin:
-      build: .
-      image: my-gin:v5
-      ports:
-       - &quot;7070:7070&quot;
-      container_name: goweb
-      hostname: web
+  redis:
+    container_name: redis
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+
 </code></pre>
+
+<p><strong>在docker容器里localhost并不是指宿主机的localhost</strong></p>
+
+<p>由此原因，并不能在容器中通过localhost:3306访问到宿主机的mysql</p>
+
+<p><strong>docker在运行时就建立了虚拟网卡，并命名为docker0</strong></p>
+
+<p>我们可以在宿主机上运行ifconfig看到它，这就是宿主机建立的网桥，用于与各个容器之间通信</p>
+
+<p><strong>宿主机在与容器同一局域网的IP地址一般是docker0对应的IP地址段的首个地址（如172.0.17.1）</strong></p>
+
+<p>我们可以在容器里通过172.0.17.1:3306访问到宿主机的mysql服务器</p>
+
+<p>ip 查询命令：<code>ip addr show</code></p>
 
 <p><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker 入门教程</a></p>
 
@@ -298,6 +380,8 @@ To have launchd start docker-machine now and restart at login: brew services sta
 <p><a href="https://studygolang.com/articles/4219">Dockerfile 最佳实践</a></p>
 
 <p><a href="https://registry.docker-cn.com">https://registry.docker-cn.com</a></p>
+
+<p><a href="https://yeasy.gitbooks.io/docker_practice/">https://yeasy.gitbooks.io/docker_practice/</a></p>
 
     </div>
     <div class="post-footer">

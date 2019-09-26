@@ -42,7 +42,9 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
       <description>安装 brew install nginx
 启动 sudo nginx
 重新启动 sudo nginx -s reload
-停止 sudo nginx -s stop</description>
+停止 sudo nginx -s stop
+检查配置文件是否正确
+sudo nginx -t</description>
     </item>
     
   </channel>

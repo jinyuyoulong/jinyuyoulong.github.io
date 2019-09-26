@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>Docker Etcd // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="范金龙" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker Etcd"/>
+<meta name="twitter:description" content=" [TOC]
+描述 etcd是CoreOS团队于2013年6月发起的开源项目，它的目标是构建一个高可用的分布式键值(key-value)数据库。etcd内部采用raft协议作为一致性算法，etcd基于Go语言实现。
+etcd作为服务发现系统，有以下的特点
+ 简单：安装配置简单，而且提供了HTTP API进行交互，使用也很简单 安全：支持SSL证书验证 快速：根据官方提供的benchmark数据，单实例支持每秒2k&#43;读操作 可靠：采用raft算法，实现分布式系统数据的可用性和一致性 etcd项目地址：https://github.com/coreos/etcd/  下载 $ docker search etcd $ docker pull xxx/etcd  ETCD参数说明  data-dir:指定节点的数据存储目录，这些数据包括节点ID，集群ID，集群初始化配置，Snapshot文件，若未指定—wal-dir，还会存储WAL文件； wal-dir:指定节点的was文件的存储目录，若指定了该参数，wal文件会和其他数据文件分开存储。 name: 节点名称 initial-advertise-peer-urls: 告知集群其他节点url.(对于集群内提供服务的url) listen-peer-urls: 监听URL，用于与其他节点通讯 advertise-client-urls: 告知客户端url, 也就是服务的url(对外提供服务的utl) initial-cluster-token: 集群的ID initial-cluster: 集群中所有节点  然后进入其中一个 Docker 主机：
+$ docker exec -it etcd bin/sh  执行下面命令（查看集群成员）：
+$ etcdctl member list  "/>
+
+    <meta property="og:title" content="Docker Etcd" />
+<meta property="og:description" content=" [TOC]
+描述 etcd是CoreOS团队于2013年6月发起的开源项目，它的目标是构建一个高可用的分布式键值(key-value)数据库。etcd内部采用raft协议作为一致性算法，etcd基于Go语言实现。
+etcd作为服务发现系统，有以下的特点
+ 简单：安装配置简单，而且提供了HTTP API进行交互，使用也很简单 安全：支持SSL证书验证 快速：根据官方提供的benchmark数据，单实例支持每秒2k&#43;读操作 可靠：采用raft算法，实现分布式系统数据的可用性和一致性 etcd项目地址：https://github.com/coreos/etcd/  下载 $ docker search etcd $ docker pull xxx/etcd  ETCD参数说明  data-dir:指定节点的数据存储目录，这些数据包括节点ID，集群ID，集群初始化配置，Snapshot文件，若未指定—wal-dir，还会存储WAL文件； wal-dir:指定节点的was文件的存储目录，若指定了该参数，wal文件会和其他数据文件分开存储。 name: 节点名称 initial-advertise-peer-urls: 告知集群其他节点url.(对于集群内提供服务的url) listen-peer-urls: 监听URL，用于与其他节点通讯 advertise-client-urls: 告知客户端url, 也就是服务的url(对外提供服务的utl) initial-cluster-token: 集群的ID initial-cluster: 集群中所有节点  然后进入其中一个 Docker 主机：
+$ docker exec -it etcd bin/sh  执行下面命令（查看集群成员）：
+$ etcdctl member list  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/docker-etcd/" />
+<meta property="article:published_time" content="2019-08-13T18:10:14&#43;08:00"/>
+<meta property="article:modified_time" content="2019-08-13T18:10:14&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="范金龙" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Docker Etcd</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Aug 13, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>[TOC]</p>
+
+<h3 id="描述">描述</h3>
+
+<p>etcd是CoreOS团队于2013年6月发起的开源项目，它的目标是构建一个高可用的分布式键值(key-value)数据库。etcd内部采用raft协议作为一致性算法，etcd基于Go语言实现。</p>
+
+<p>etcd作为服务发现系统，有以下的特点</p>
+
+<ul>
+<li>简单：安装配置简单，而且提供了HTTP API进行交互，使用也很简单</li>
+<li>安全：支持SSL证书验证</li>
+<li>快速：根据官方提供的benchmark数据，单实例支持每秒2k+读操作</li>
+<li>可靠：采用raft算法，实现分布式系统数据的可用性和一致性</li>
+<li>etcd项目地址：<a href="https://github.com/coreos/etcd/">https://github.com/coreos/etcd/</a></li>
+</ul>
+
+<h3 id="下载">下载</h3>
+
+<pre><code class="language-sh">$ docker search etcd
+$ docker pull xxx/etcd
+</code></pre>
+
+<h2 id="etcd参数说明">ETCD参数说明</h2>
+
+<ul>
+<li><strong>data-dir:</strong>指定节点的数据存储目录，这些数据包括节点ID，集群ID，集群初始化配置，Snapshot文件，若未指定—wal-dir，还会存储WAL文件；</li>
+<li><strong>wal-dir:</strong>指定节点的was文件的存储目录，若指定了该参数，wal文件会和其他数据文件分开存储。</li>
+<li><strong>name:</strong> 节点名称</li>
+<li><strong>initial-advertise-peer-urls:</strong> 告知集群其他节点url.(<code>对于集群内提供服务的url</code>)</li>
+<li><strong>listen-peer-urls:</strong> 监听URL，用于与其他节点通讯</li>
+<li><strong>advertise-client-urls:</strong> 告知客户端url, 也就是服务的url(<code>对外提供服务的utl</code>)</li>
+<li><strong>initial-cluster-token:</strong> 集群的ID</li>
+<li><strong>initial-cluster:</strong> 集群中所有节点</li>
+</ul>
+
+<p>然后进入其中一个 Docker 主机：</p>
+
+<pre><code class="language-sh">$ docker exec -it etcd bin/sh
+</code></pre>
+
+<p>执行下面命令（查看集群成员）：</p>
+
+<pre><code class="language-sh">$ etcdctl member list
+</code></pre>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

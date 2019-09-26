@@ -6,10 +6,24 @@
     <description>Recent content in Docker on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 08 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Aug 2019 18:10:14 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker Etcd</title>
+      <link>https://blog.v5u.win/post/docker-etcd/</link>
+      <pubDate>Tue, 13 Aug 2019 18:10:14 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/docker-etcd/</guid>
+      <description> [TOC]
+描述 etcd是CoreOS团队于2013年6月发起的开源项目，它的目标是构建一个高可用的分布式键值(key-value)数据库。etcd内部采用raft协议作为一致性算法，etcd基于Go语言实现。
+etcd作为服务发现系统，有以下的特点
+ 简单：安装配置简单，而且提供了HTTP API进行交互，使用也很简单 安全：支持SSL证书验证 快速：根据官方提供的benchmark数据，单实例支持每秒2k+读操作 可靠：采用raft算法，实现分布式系统数据的可用性和一致性 etcd项目地址：https://github.com/coreos/etcd/  下载 $ docker search etcd $ docker pull xxx/etcd  ETCD参数说明  data-dir:指定节点的数据存储目录，这些数据包括节点ID，集群ID，集群初始化配置，Snapshot文件，若未指定—wal-dir，还会存储WAL文件； wal-dir:指定节点的was文件的存储目录，若指定了该参数，wal文件会和其他数据文件分开存储。 name: 节点名称 initial-advertise-peer-urls: 告知集群其他节点url.(对于集群内提供服务的url) listen-peer-urls: 监听URL，用于与其他节点通讯 advertise-client-urls: 告知客户端url, 也就是服务的url(对外提供服务的utl) initial-cluster-token: 集群的ID initial-cluster: 集群中所有节点  然后进入其中一个 Docker 主机：
+$ docker exec -it etcd bin/sh  执行下面命令（查看集群成员）：
+$ etcdctl member list  </description>
+    </item>
     
     <item>
       <title>k8s在Mac上的安装和使用</title>
@@ -24,6 +38,31 @@
  ./load_images.sh
   安装minikube # install minikube $ brew cask install minikube $ brew install docker-machine-driver-xhyve # docker-machine-driver-xhyve need root owner and uid $ sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve $ sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve  最后启动minikube
 # start minikube. # http proxy is required in China $ minikube start --docker-env HTTP_PROXY=http://proxy-ip:port --docker-env HTTPS_PROXY=http://proxy-ip:port --vm-driver=xhyve  Ubuntu 安装 kubeadm kubectl kubelet 三个包</description>
+    </item>
+    
+    <item>
+      <title>docker 使用规则</title>
+      <link>https://blog.v5u.win/post/docker-%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/docker-%E7%AE%80%E4%BB%8B/</guid>
+      <description>[TOC]
+硬件/操作系统 要求 Docker支持以下的发行版版本：
+ Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版
+ CentOS 7 (64-bit)，要求内核版本不低于 3.10 。CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如 overlay2 存储层驱动）无法使用，并且部分功能可能不太稳定。
+ Debain 9
+  前提条件 目前，CentOS 仅发行版本中的内核支持 Docker。
+Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。
+Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64位、系统内核版本为 2.6.32-431 或者更高版本。
+### docker 的组件结构
+Docker 由镜像(Image)、容器(Container)、仓库(Repository) 三部分组成。
+docker-machine, docker, docker-compose (docker环境)
+docker container 容器(运行实例)
+docker image 镜像(安装实例)
+Dockerfile(用于生成image)
+### docker配置+使用
+预先安装docker的相关库
+ brew install docker docker-compose docker-machine  关于 docker-machine Docker Machine 是 Docker 官方提供的一个工具，它可以帮助我们在远程的机器上安装 Docker，或者在虚拟机 host 上直接安装虚拟机并在虚拟机中安装 Docker。我们还可以通过 docker-machine 命令来管理这些虚拟机和 Docker。</description>
     </item>
     
   </channel>

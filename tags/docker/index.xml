@@ -32,8 +32,12 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/docker-%E7%AE%80%E4%BB%8B/</guid>
-      <description>硬件/操作系统 要求 Docker支持以下的CentOS版本：
- CentOS 7 (64-bit) CentOS 6.5 (64-bit) 或更高的版本  前提条件 目前，CentOS 仅发行版本中的内核支持 Docker。
+      <description>[TOC]
+硬件/操作系统 要求 Docker支持以下的发行版版本：
+ Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版
+ CentOS 7 (64-bit)，要求内核版本不低于 3.10 。CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如 overlay2 存储层驱动）无法使用，并且部分功能可能不太稳定。
+ Debain 9
+  前提条件 目前，CentOS 仅发行版本中的内核支持 Docker。
 Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。
 Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64位、系统内核版本为 2.6.32-431 或者更高版本。
 ### docker 的组件结构
@@ -44,8 +48,7 @@ docker image 镜像(安装实例)
 Dockerfile(用于生成image)
 ### docker配置+使用
 预先安装docker的相关库
- brew install docker docker-compose docker-machine  #### 启动docker-machine
-To have launchd start docker-machine now and restart at login: brew services start docker-machine</description>
+ brew install docker docker-compose docker-machine  关于 docker-machine Docker Machine 是 Docker 官方提供的一个工具，它可以帮助我们在远程的机器上安装 Docker，或者在虚拟机 host 上直接安装虚拟机并在虚拟机中安装 Docker。我们还可以通过 docker-machine 命令来管理这些虚拟机和 Docker。</description>
     </item>
     
   </channel>
