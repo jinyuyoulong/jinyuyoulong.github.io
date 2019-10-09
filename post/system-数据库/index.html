@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>数据库选型 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="范金龙" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="数据库选型"/>
+<meta name="twitter:description" content="作者：大宽宽
+在整个行业发展过程中，一些需求催生了各种各样的的优化的机会。有人抓住机会去提出新的数据模型和查询接口。比如：
+ 想内存数据库，上redis 想高性能访问KV模型，有rocksDB 想制作树状结构的数据，mongo你值得拥有 想做图分析，有图数据库 想要时序数据，有influxdb和Prometheus这种列存 想做Data Warehouse，有GP、有大规模的并行计算引擎 想做高性能海量数据存储，但是访问的方式相对简单，可以上Hadoop全家桶，Spark全家桶 想做海量数据的KV，有HBase，Cassandra ……  就连SQL自己也在演进，比如各大数据库增加了对json格式的支持，MySQL还搞了个X-API，弄得像mongo一样；Postgres中一列可以是复合的类型（类似于struct），也可以是数组类型。mysql和postgres还支持全文索引（按照王垠的讲法，是不是这时候得先用一套LSM tree库玩转sstable管理，然后再攒一个lucene做分词和倒排？）
+根据实际需求，从上面这些备选中，总能找到几个东西组合在一起满足需要。如果还不够用，那就按照需求定制，就像polarDB，TiDB。但我相信，绝大部分的开发场景，弄个mysql，sqlite之类的就完事了，不需要特别仔细的优化。
+遇到了SQL处理不了的，有价值的问题，去解决，去优化，去建模就好。光吐槽SQL这也不行，那也不行，没有任何卵用。"/>
+
+    <meta property="og:title" content="数据库选型" />
+<meta property="og:description" content="作者：大宽宽
+在整个行业发展过程中，一些需求催生了各种各样的的优化的机会。有人抓住机会去提出新的数据模型和查询接口。比如：
+ 想内存数据库，上redis 想高性能访问KV模型，有rocksDB 想制作树状结构的数据，mongo你值得拥有 想做图分析，有图数据库 想要时序数据，有influxdb和Prometheus这种列存 想做Data Warehouse，有GP、有大规模的并行计算引擎 想做高性能海量数据存储，但是访问的方式相对简单，可以上Hadoop全家桶，Spark全家桶 想做海量数据的KV，有HBase，Cassandra ……  就连SQL自己也在演进，比如各大数据库增加了对json格式的支持，MySQL还搞了个X-API，弄得像mongo一样；Postgres中一列可以是复合的类型（类似于struct），也可以是数组类型。mysql和postgres还支持全文索引（按照王垠的讲法，是不是这时候得先用一套LSM tree库玩转sstable管理，然后再攒一个lucene做分词和倒排？）
+根据实际需求，从上面这些备选中，总能找到几个东西组合在一起满足需要。如果还不够用，那就按照需求定制，就像polarDB，TiDB。但我相信，绝大部分的开发场景，弄个mysql，sqlite之类的就完事了，不需要特别仔细的优化。
+遇到了SQL处理不了的，有价值的问题，去解决，去优化，去建模就好。光吐槽SQL这也不行，那也不行，没有任何卵用。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/system-%E6%95%B0%E6%8D%AE%E5%BA%93/" />
+<meta property="article:published_time" content="2018-07-07T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-07-07T00:00:00&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="范金龙" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">数据库选型</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 7, 2018
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></div></div>
+    </header>
+    <div class="post-content">
+      <p>作者：大宽宽</p>
+
+<p>在整个行业发展过程中，一些需求催生了各种各样的的优化的机会。有人抓住机会去提出新的数据模型和查询接口。比如：</p>
+
+<ul>
+<li>想内存数据库，上redis</li>
+<li>想高性能访问KV模型，有rocksDB</li>
+<li>想制作树状结构的数据，mongo你值得拥有</li>
+<li>想做图分析，有图数据库</li>
+<li>想要时序数据，有influxdb和Prometheus这种列存</li>
+<li>想做Data Warehouse，有GP、有大规模的并行计算引擎</li>
+<li>想做高性能海量数据存储，但是访问的方式相对简单，可以上Hadoop全家桶，Spark全家桶</li>
+<li>想做海量数据的KV，有HBase，Cassandra</li>
+<li>……</li>
+</ul>
+
+<p>就连SQL自己也在演进，比如各大数据库增加了对json格式的支持，MySQL还搞了个X-API，弄得像mongo一样；Postgres中一列可以是复合的类型（类似于struct），也可以是数组类型。mysql和postgres还支持全文索引（按照王垠的讲法，是不是这时候得先用一套LSM tree库玩转sstable管理，然后再攒一个lucene做分词和倒排？）</p>
+
+<p>根据实际需求，从上面这些备选中，总能找到几个东西组合在一起满足需要。如果还不够用，那就按照需求定制，就像polarDB，TiDB。但我相信，绝大部分的开发场景，弄个mysql，sqlite之类的就完事了，不需要特别仔细的优化。</p>
+
+<p>遇到了SQL处理不了的，有价值的问题，去解决，去优化，去建模就好。光吐槽SQL这也不行，那也不行，没有任何卵用。</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

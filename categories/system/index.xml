@@ -143,6 +143,31 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
     </item>
     
     <item>
+      <title>写代码原则整理</title>
+      <link>https://blog.v5u.win/post/system-%E5%86%99%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%88%99%E6%95%B4%E7%90%86/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-%E5%86%99%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%88%99%E6%95%B4%E7%90%86/</guid>
+      <description> 写代码原则整理：
+写直观的代码 我写代码有一条重要的原则：如果有更加直接，更加清晰的写法，就选择它，即使它看起来更长，更笨，也一样选择它。
+ 防止过度工程的原则  王垠根据这些，我总结出来的防止过度工程的原则如下：
+ 先把眼前的问题解决掉，解决好，再考虑将来的扩展问题。 先写出可用的代码，反复推敲，再考虑是否需要重用的问题。 先写出可用，简单，明显没有bug的代码，再考虑测试的问题。  </description>
+    </item>
+    
+    <item>
+      <title>数据库选型</title>
+      <link>https://blog.v5u.win/post/system-%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>作者：大宽宽
+在整个行业发展过程中，一些需求催生了各种各样的的优化的机会。有人抓住机会去提出新的数据模型和查询接口。比如：
+ 想内存数据库，上redis 想高性能访问KV模型，有rocksDB 想制作树状结构的数据，mongo你值得拥有 想做图分析，有图数据库 想要时序数据，有influxdb和Prometheus这种列存 想做Data Warehouse，有GP、有大规模的并行计算引擎 想做高性能海量数据存储，但是访问的方式相对简单，可以上Hadoop全家桶，Spark全家桶 想做海量数据的KV，有HBase，Cassandra ……  就连SQL自己也在演进，比如各大数据库增加了对json格式的支持，MySQL还搞了个X-API，弄得像mongo一样；Postgres中一列可以是复合的类型（类似于struct），也可以是数组类型。mysql和postgres还支持全文索引（按照王垠的讲法，是不是这时候得先用一套LSM tree库玩转sstable管理，然后再攒一个lucene做分词和倒排？）
+根据实际需求，从上面这些备选中，总能找到几个东西组合在一起满足需要。如果还不够用，那就按照需求定制，就像polarDB，TiDB。但我相信，绝大部分的开发场景，弄个mysql，sqlite之类的就完事了，不需要特别仔细的优化。
+遇到了SQL处理不了的，有价值的问题，去解决，去优化，去建模就好。光吐槽SQL这也不行，那也不行，没有任何卵用。</description>
+    </item>
+    
+    <item>
       <title>语言特性汇总</title>
       <link>https://blog.v5u.win/post/system-%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B1%87%E6%80%BB/</link>
       <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>

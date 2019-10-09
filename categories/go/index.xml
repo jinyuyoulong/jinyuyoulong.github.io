@@ -224,13 +224,13 @@ protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld �
       
       <guid>https://blog.v5u.win/post/go-modules/</guid>
       <description>go modules [TOC]
-环境配置  正确配置 GOROOT
+go 1.13 的环境配置 删除.zshrc 中的大部分配置，只配置goroot其余配置用下列命令：
+go env -w GOSUMDB=&amp;quot;sum.golang.google.cn&amp;quot; # 更换为国内的校验源，默认sum.golang.org go env -w GOPROXY=&amp;quot;https://goproxy.io,direct&amp;quot; # 解决代理 go env -w GO111MODULE=&amp;quot;on&amp;quot; go env -w GOPRIVATE=*.gitlab.com,*.gitee.com # 代理跳过私有库设置  环境配置  正确配置 GOROOT
  export GOPROXY=&amp;quot;https://goproxy.cn,direct&amp;quot; # 七牛提供的公共代理，解决golang/x/tools 下载失败
   初始化 同时 确定了项目的绝对目录路径 go mod init v5u.win/projectapi 生成 go.mod 导入包：import &amp;quot;v5u.win/projectapi/src/app/service&amp;quot;
 添加依赖 go mod tidy
 生成 go.sum 自动添加依赖关系到 go.mod go run main.go
-下载依赖包 go mod download github.com/pelletier/go-toml
-Tips:  不能在 golib/src 下创建项目 在 Go1.11 版本下，GOPATH 目录中的项目默认是禁用 Go Module 的，需要手动开启 export GOPROXY=&amp;ldquo;https://goproxy.cn,direct&amp;quot; // 微软提供的公共代理,也可以以此技术建立自己的公共库 export export GO111MODULE=on // 必须使用module依赖，在src/ 目录下可以使用module。 go1.13已经全面支持  一条 go env-w GOPROXY=https://goproxy.</description>
+下载依赖包 go mod download github.</description>
     </item>
     
     <item>
