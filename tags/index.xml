@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 23 Aug 2019 09:39:55 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTTP</title>
+      <link>https://blog.v5u.win/tags/http/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/tags/http/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>消息队列</title>
@@ -701,15 +710,6 @@
       <pubDate>Fri, 15 Apr 2016 10:15:25 +0000</pubDate>
       
       <guid>https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>http</title>
-      <link>https://blog.v5u.win/tags/http/</link>
-      <pubDate>Sun, 03 Apr 2016 14:30:54 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/tags/http/</guid>
       <description></description>
     </item>
     

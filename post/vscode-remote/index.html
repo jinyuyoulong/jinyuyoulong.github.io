@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <title>xcode设置允许访问http请求 // 为吾优</title>
+    <title>vscode远程开发 // 为吾优</title>
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.55.5" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,15 +11,26 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="xcode设置允许访问http请求"/>
-<meta name="twitter:description" content="项目的info.plist文件添加一下值： App Transport Security Settings Allow Arbitrary Loads 设为YES"/>
+<meta name="twitter:title" content="vscode远程开发"/>
+<meta name="twitter:description" content="vscode 远程编辑
+ 安装插件 remote-ssh
+ 配置.ssh/config 文件
+Host 10.211.55.5 HostName 10.211.55.5 IdentityFile ~/.ssh/id_rsa User test  右侧显示显示器图标
+ 点击远程server 新建文件夹（connet to host in new window）
+ 保证 本地Git版本和远程server 版本一致，最好都是git2.0&#43;
+  "/>
 
-    <meta property="og:title" content="xcode设置允许访问http请求" />
-<meta property="og:description" content="项目的info.plist文件添加一下值： App Transport Security Settings Allow Arbitrary Loads 设为YES" />
+    <meta property="og:title" content="vscode远程开发" />
+<meta property="og:description" content="vscode 远程编辑
+ 安装插件 remote-ssh
+ 配置.ssh/config 文件
+Host 10.211.55.5 HostName 10.211.55.5 IdentityFile ~/.ssh/id_rsa User test  右侧显示显示器图标
+ 点击远程server 新建文件夹（connet to host in new window）
+ 保证 本地Git版本和远程server 版本一致，最好都是git2.0&#43;
+  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.v5u.win/post/xcode-http/" />
-<meta property="article:published_time" content="2016-04-03T14:30:54&#43;00:00"/>
-<meta property="article:modified_time" content="2016-04-03T14:30:54&#43;00:00"/>
+<meta property="og:url" content="https://blog.v5u.win/post/vscode-remote/" />
+
 
 
   </head>
@@ -41,14 +52,14 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">xcode设置允许访问http请求</h1>
+      <h1 class ="post-title">vscode远程开发</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
   <title>calendar</title>
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
 </svg>
-          Apr 3, 2016
+          Jan 1, 0001
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
@@ -56,17 +67,28 @@
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
           1 min read
-        </div><div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
-  <title>tag</title>
-  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
-</svg>
-          <a class="tag" href="https://blog.v5u.win/tags/http/">HTTP</a><a class="tag" href="https://blog.v5u.win/tags/xcode/">xcode</a></div></div>
+        </div></div>
     </header>
     <div class="post-content">
-      <p>项目的info.plist文件添加一下值：
-  App Transport Security Settings
-    Allow Arbitrary Loads 设为YES</p>
+      <p>vscode 远程编辑</p>
+
+<ol>
+<li><p>安装插件 remote-ssh</p></li>
+
+<li><p>配置.ssh/config 文件</p>
+
+<pre><code>Host 10.211.55.5     
+HostName 10.211.55.5     
+IdentityFile ~/.ssh/id_rsa     
+User test 
+</code></pre></li>
+
+<li><p>右侧显示显示器图标</p></li>
+
+<li><p>点击远程server 新建文件夹（connet to host in new window）</p></li>
+
+<li><p>保证 本地Git版本和远程server 版本一致，最好都是git2.0+</p></li>
+</ol>
 
     </div>
     <div class="post-footer">

@@ -28,5 +28,14 @@
 行内格式 删除线 del 标签 加粗 strong 标签 斜体 em 标签</description>
     </item>
     
+    <item>
+      <title>markdown 流程图</title>
+      <link>https://blog.v5u.win/post/system-markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+      <description> Sequence Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks!  flow st=&amp;gt;start: Start op=&amp;gt;operation: Your Operation cond=&amp;gt;condition: Yes or No? e=&amp;gt;end st-&amp;gt;op-&amp;gt;cond cond(yes)-&amp;gt;e cond(no)-&amp;gt;op  mermaid graph LR A[Hard edge] --&amp;gt;B(Round edge) B --&amp;gt; C{Decision} C --&amp;gt;|One| D[Result one] C --&amp;gt;|Two| E[Result two]  Gantt %% Example with selection of syntaxes gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to mermaid section A section Completed task :done, des1, 2014-01-06,2014-01-08 Active task :active, des2, 2014-01-09, 3d Future task : des3, after des2, 5d Future task2 : des4, after des3, 5d section Critical tasks Completed task in the critical line :crit, done, 2014-01-06,24h Implement parser and jison :crit, done, after des1, 2d Create tests for parser :crit, active, 3d Future task in critical line :crit, 5d Create tests for renderer :2d Add to mermaid :1d section Documentation Describe gantt syntax :active, a1, after des1, 3d Add gantt diagram to demo page :after a1 , 20h Add another diagram to demo page :doc1, after a1 , 48h section Last section Describe gantt syntax :after doc1, 3d Add gantt diagram to demo page : 20h Add another diagram to demo page : 48h  </description>
+    </item>
+    
   </channel>
 </rss>

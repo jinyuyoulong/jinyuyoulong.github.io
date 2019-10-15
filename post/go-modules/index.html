@@ -207,10 +207,10 @@ replace gitee.com/rockyang/testmod =&gt; /gopath/src/gitee.com/rockyang/testmod
 
 <pre><code class="language-sh">GOSUMDB=off #解决私有库校验不过，放弃校验，大心脏者适用
 GOSUMDB=sum.golang.google.cn #或者 更换校验源
-go env -w GOSUMDB=&quot;sum.golang.google.cn&quot; # google 为我们提供了国内的校验yuan
+go env -w GOSUMDB=&quot;sum.golang.google.cn&quot; # google 为我们提供了国内的校验源
 </code></pre>
 
-<p>配置 .gitconfig 将 http 改为 ssh 获取。p.s. 这里没有解决我的问题</p>
+<p>配置 .gitconfig 将 http 改为 ssh 获取。<strong>p.s. 这里没有解决我的问题</strong></p>
 
 <pre><code class="language-sh">[http]
 	extraheader = PRIVATE-TOKEN: token

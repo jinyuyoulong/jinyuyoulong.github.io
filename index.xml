@@ -6,10 +6,20 @@
     <description>Recent content on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 26 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux版本使用总结</title>
+      <link>https://blog.v5u.win/post/system-http/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-http/</guid>
+      <description>作者：zhaoyanan
+HTTP 400 – 请求无效 HTTP 401.1 – 未授权：登录失败 HTTP 401.2 – 未授权：服务器配置问题导致登录失败 HTTP 401.3 – ACL 禁止访问资源 HTTP 401.4 – 未授权：授权被筛选器拒绝 HTTP 401.5 – 未授权：ISAPI 或 CGI 授权失败 HTTP 403 – 禁止访问 HTTP 403 – 对 Internet 服务管理器 的访问仅限于 Localhost HTTP 403.1 禁止访问：禁止可执行访问 HTTP 403.2 – 禁止访问：禁止读访问 HTTP 403.3 – 禁止访问：禁止写访问 HTTP 403.4 – 禁止访问：要求 SSL HTTP 403.5 – 禁止访问：要求 SSL 128 HTTP 403.6 – 禁止访问：IP 地址被拒绝 HTTP 403.7 – 禁止访问：要求客户证书 HTTP 403.</description>
+    </item>
     
     <item>
       <title>epoll原理</title>
@@ -59,7 +69,9 @@ select 低效的原因之一是将“维护等待队列”和“阻塞进程”�
 橙卡 09:30:30 一般是拆成好几个任务 橙卡 09:30:34 一个一个来
 橙卡 09:30:53 最主要是有一个对等集群，可以容纳一切任务
 橙卡 09:30:59 平等的处理
-橙卡 09:31:46 我之前一直用的redis作为mq 橙卡 09:31:53 其实也还好。 橙卡 09:32:01 也就三四个月丢一单</description>
+橙卡 09:31:46 我之前一直用的redis作为mq
+橙卡 09:31:53 其实也还好。
+橙卡 09:32:01 也就三四个月丢一单</description>
     </item>
     
     <item>
@@ -3714,6 +3726,21 @@ Dockerfile(用于生成image)
  确认当前页面session有没有添加成功 debug可不可以讲session值跨页面传递 设置php.ini文件session.auto_start=1,此时use_cookies=0，use_only_cookies=0  验证：
 php -i 查看PHP配置
 php.ini phpinfo()对比配置文件和实际环境配置</description>
+    </item>
+    
+    <item>
+      <title>vscode远程开发</title>
+      <link>https://blog.v5u.win/post/vscode-remote/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/vscode-remote/</guid>
+      <description>vscode 远程编辑
+ 安装插件 remote-ssh
+ 配置.ssh/config 文件
+Host 10.211.55.5 HostName 10.211.55.5 IdentityFile ~/.ssh/id_rsa User test  右侧显示显示器图标
+ 点击远程server 新建文件夹（connet to host in new window）
+ 保证 本地Git版本和远程server 版本一致，最好都是git2.0+
+  </description>
     </item>
     
     <item>

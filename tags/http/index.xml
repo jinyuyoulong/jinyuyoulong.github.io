@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>http on 为吾优</title>
+    <title>HTTP on 为吾优</title>
     <link>https://blog.v5u.win/tags/http/</link>
-    <description>Recent content in http on 为吾优</description>
+    <description>Recent content in HTTP on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 03 Apr 2016 14:30:54 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/http/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux版本使用总结</title>
+      <link>https://blog.v5u.win/post/system-http/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-http/</guid>
+      <description>作者：zhaoyanan
+HTTP 400 – 请求无效 HTTP 401.1 – 未授权：登录失败 HTTP 401.2 – 未授权：服务器配置问题导致登录失败 HTTP 401.3 – ACL 禁止访问资源 HTTP 401.4 – 未授权：授权被筛选器拒绝 HTTP 401.5 – 未授权：ISAPI 或 CGI 授权失败 HTTP 403 – 禁止访问 HTTP 403 – 对 Internet 服务管理器 的访问仅限于 Localhost HTTP 403.1 禁止访问：禁止可执行访问 HTTP 403.2 – 禁止访问：禁止读访问 HTTP 403.3 – 禁止访问：禁止写访问 HTTP 403.4 – 禁止访问：要求 SSL HTTP 403.5 – 禁止访问：要求 SSL 128 HTTP 403.6 – 禁止访问：IP 地址被拒绝 HTTP 403.7 – 禁止访问：要求客户证书 HTTP 403.</description>
+    </item>
     
     <item>
       <title>xcode设置允许访问http请求</title>

@@ -59,7 +59,9 @@ select 低效的原因之一是将“维护等待队列”和“阻塞进程”�
 橙卡 09:30:30 一般是拆成好几个任务 橙卡 09:30:34 一个一个来
 橙卡 09:30:53 最主要是有一个对等集群，可以容纳一切任务
 橙卡 09:30:59 平等的处理
-橙卡 09:31:46 我之前一直用的redis作为mq 橙卡 09:31:53 其实也还好。 橙卡 09:32:01 也就三四个月丢一单</description>
+橙卡 09:31:46 我之前一直用的redis作为mq
+橙卡 09:31:53 其实也还好。
+橙卡 09:32:01 也就三四个月丢一单</description>
     </item>
     
     <item>
@@ -140,6 +142,25 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
   var name = 代码块 div&amp;gt;pre&amp;gt;span &amp;lt;div&amp;gt; &amp;lt;pre&amp;gt; &amp;lt;span&amp;gt;var&amp;lt;/span&amp;gt; name = 代码块 &amp;lt;/pre&amp;gt; &amp;lt;/div&amp;gt;   &amp;lt;blockquote&amp;gt;&amp;lt;p&amp;gt;块级引用&amp;lt;/p&amp;gt;&amp;lt;/blockquote&amp;gt;
  段落 中间没有空行的连续不断的几行文字被视为一个段落。空一行 作为段落间的分割符
 行内格式 删除线 del 标签 加粗 strong 标签 斜体 em 标签</description>
+    </item>
+    
+    <item>
+      <title>markdown 流程图</title>
+      <link>https://blog.v5u.win/post/system-markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+      <description> Sequence Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks!  flow st=&amp;gt;start: Start op=&amp;gt;operation: Your Operation cond=&amp;gt;condition: Yes or No? e=&amp;gt;end st-&amp;gt;op-&amp;gt;cond cond(yes)-&amp;gt;e cond(no)-&amp;gt;op  mermaid graph LR A[Hard edge] --&amp;gt;B(Round edge) B --&amp;gt; C{Decision} C --&amp;gt;|One| D[Result one] C --&amp;gt;|Two| E[Result two]  Gantt %% Example with selection of syntaxes gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to mermaid section A section Completed task :done, des1, 2014-01-06,2014-01-08 Active task :active, des2, 2014-01-09, 3d Future task : des3, after des2, 5d Future task2 : des4, after des3, 5d section Critical tasks Completed task in the critical line :crit, done, 2014-01-06,24h Implement parser and jison :crit, done, after des1, 2d Create tests for parser :crit, active, 3d Future task in critical line :crit, 5d Create tests for renderer :2d Add to mermaid :1d section Documentation Describe gantt syntax :active, a1, after des1, 3d Add gantt diagram to demo page :after a1 , 20h Add another diagram to demo page :doc1, after a1 , 48h section Last section Describe gantt syntax :after doc1, 3d Add gantt diagram to demo page : 20h Add another diagram to demo page : 48h  </description>
+    </item>
+    
+    <item>
+      <title>Linux版本使用总结</title>
+      <link>https://blog.v5u.win/post/system-linux%E7%89%88%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 16 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-linux%E7%89%88%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
+      <description>Linux版本使用总结
+社区系 Debian9 没有中文系统，中文输入法。通病，没有内置Apache Ubuntu18 gnome3卡，虚拟机不支持全屏，没有内置Apache，放弃 Ubuntu14 桌面美观，完成度高 deepin深度 桌面美观，完成度高，虚拟机卡，UI优化，gnome味道 mint 18 桌面美观，完成度高，卡，UI优化，gnome味道，同deepin体验类似  红帽系 Fedora 26 RDHL试验田，源库变动频繁，放弃 centos7 很好，配置完ssh Apache  </description>
     </item>
     
     <item>
