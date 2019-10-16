@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Descs on 为吾优</title>
+    <link>https://blog.v5u.win/desc/</link>
+    <description>Recent content in Descs on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 16 Apr 2019 14:07:14 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/desc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关于范子</title>
+      <link>https://blog.v5u.win/desc/about/</link>
+      <pubDate>Tue, 16 Apr 2019 14:07:14 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/desc/about/</guid>
+      <description>概，范子，是一名iOS开发工程师，从2013年初进入移动互联网行业，从此开启了一个新的世界。关注于项目的架构，感兴于后台的实现和产品的交互，立志于移动开发平台。 范子，是一位很喜欢学习的人，爱好中医，喜欢传统文化。
+衣，范子，穿衣是一个相对保守，偶尔激进的人，不喜欢奇装异服，但也不喜欢古板保守，范子喜欢的风格就是像贝多芬的音乐一样，在既定的规则里玩出花样。
+食，范子，对于食物始终保持一份敬畏之心，不喜欢浪费，不过，范子对食物还是很挑剔的，喜欢好吃的，对于一个有家味美食情节的人，范子的口味偏北方，确切说河北口味。哦，范子偏爱素食。
+住，范子现在在北京工作，租房，范子喜欢家、里、的、房。
+行，范子，没有车，喜欢绿色的交通方式，研究过，自行车，摩托车，汽车，不爱电动车。
+吃，范子，喜欢零食，但是对大部分的零食无爱，现在只吃，瓜子，非膨化锅巴，非膨化薯片
+喝，范子，最喜欢喝的饮料是白开水，无毒，无害，无色素，在学习饮茶，不爱喝酒。
+玩，范子，玩过的东西很少，所以会对很多东西好奇，想试一试：滑板、溜冰，真人cs，各种旅游方式等。
+乐，范子喜欢健康，养·生，所以爱上了中医。 人生一世，草木一秋。
+范子，认为每一个人在世上只经历一次人生，最大的愿望就是此生无憾。
+范子，我爱范子，I love Fanzi。</description>
+    </item>
+    
+    <item>
+      <title>关于iOS</title>
+      <link>https://blog.v5u.win/desc/ios-about/</link>
+      <pubDate>Thu, 16 Apr 2015 14:51:21 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/desc/ios-about/</guid>
+      <description>iOS是苹果apple公司移动端设备的运行平台，该平台包括iPhone，iPad，iTouch，Apple Watch等多款设备终端。
+范子就是一名为该平台开发应用的iOS工程师。
+除此之外，开发者还分为游戏开发工程师，还有Android安卓平台开发者，windows平台开发者，后台数据库开发者。
+一个iOS应用，包括前端iOS平台代码的编写，同时也包括后台的开发，前期的原型和UI设计准备。
+所以大部分时候，一个iOS开发人员是不能独立完成一个APP的实现工作的，当一个工程师可以独立完成所有的工作的时候，我们称之为全栈工程师，他们都是牛逼的人，范子很尊敬他们，范子也希望成为这种人。
+iOS平台有非常多的优点，相对于Android来说，为iOS开发应用是一种享受。当然Android现在的进步也很大。范子希望两个平台都能很好的发展下去。
+iOS平台是一个，安全，高效，相对人性化的平台，它基于UNIX内核的衍生版本FreeBSD发展起来的操作系统。
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;————很幸运踏入了iOS开发领域，
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;————并由此进入了软件开发的世界。</description>
+    </item>
+    
+  </channel>
+</rss>

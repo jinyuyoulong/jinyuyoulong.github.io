@@ -65,6 +65,11 @@ let常量现在生成时不需要立即初始化，新的规则是let常量必�
   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
 </svg></a>
         
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg></a>
+        
       </div>
     </header>
     <main class="app-container">
@@ -86,7 +91,12 @@ let常量现在生成时不需要立即初始化，新的规则是let常量必�
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
           2 min read
-        </div></div>
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://blog.v5u.win/tags/ios/">iOS</a></div></div>
     </header>
     <div class="post-content">
       <p>原文&nbsp;&nbsp;<a href="http://www.cnblogs.com/yuyongjian/p/4371400.html?utm_source=tuicool">http://www.cnblogs.com/yuyongjian/p/4371400.html</a></p>
@@ -197,9 +207,8 @@ log(ns)&nbsp;//&nbsp;错误&nbsp;&nbsp;
 </ul>
 
 <p>为了完成桥接转换，需要用显式转化符标注：
-<pre>log(ns&nbsp;as&nbsp;String)&nbsp;//&nbsp;succeeds</pre></p>
-
-<p>从Swift类型到Objective-C类型的桥接隐式转换依然被允许，比如：
+<pre>log(ns&nbsp;as&nbsp;String)&nbsp;//&nbsp;succeeds</pre>
+从Swift类型到Objective-C类型的桥接隐式转换依然被允许，比如：
 <pre>func&nbsp;nsLog(ns:&nbsp;NSString)&nbsp;{&nbsp;println(ns)&nbsp;}&nbsp;&nbsp;
 &nbsp;let&nbsp;s:&nbsp;String&nbsp;=&nbsp;“some&nbsp;String”&nbsp;&nbsp;
 &nbsp;nsLog(s)&nbsp;//&nbsp;okay:&nbsp;implicit&nbsp;conversion&nbsp;from&nbsp;String&nbsp;to&nbsp;NSString&nbsp;is&nbsp;still&nbsp;permitted</pre></p>
@@ -304,12 +313,10 @@ func&nbsp;cellForRowAtIndexPath(indexPath:&nbsp;NSIndexPath)&nbsp;-&gt;&nbsp;UIT
 var&nbsp;backgroundView:&nbsp;UIView?</pre></p>
 
 <p>可空特性标示符也可以用在指针类型，包括C指针，block指针和C++成员指针，使用双下划线方式，比如：
-<pre>void&nbsp;enumerateStrings(<strong>nonnull&nbsp;CFStringRef&nbsp;(^&nbsp;</strong>nullable&nbsp;callback)(void));</pre></p>
-
-<p>这里，它自身的回调函数是nullable的，但是它的回调函数的返回类型为nonnull，所以这个API在Swift以如下方式使用：
-<pre>func&nbsp;enumerateStrings(callback:&nbsp;(()&nbsp;-&gt;&nbsp;CFString)?)</pre></p>
-
-<p>总的来说，可空特性标示符有三种，可以用双下划线（用在任何指针类型），或者没有下划线的（用在Objective-C属性，方法结果类型或者方法参数类型）。</p>
+<pre>void&nbsp;enumerateStrings(<strong>nonnull&nbsp;CFStringRef&nbsp;(^&nbsp;</strong>nullable&nbsp;callback)(void));</pre>
+这里，它自身的回调函数是nullable的，但是它的回调函数的返回类型为nonnull，所以这个API在Swift以如下方式使用：
+<pre>func&nbsp;enumerateStrings(callback:&nbsp;(()&nbsp;-&gt;&nbsp;CFString)?)</pre>
+总的来说，可空特性标示符有三种，可以用双下划线（用在任何指针类型），或者没有下划线的（用在Objective-C属性，方法结果类型或者方法参数类型）。</p>
 
 <p><img src="http://img0.tuicool.com/MjeInmR.jpg" alt="" title="1423711358267173.jpg" /></p>
 
@@ -331,17 +338,14 @@ var&nbsp;backgroundView:&nbsp;UIView?</pre></p>
 </ul>
 
 <p>这样的API在Swift使用隐式强制解封的方法使用：
-<pre>var&nbsp;tintColor:&nbsp;UIColor!</pre></p>
-
-<p>C指针类型的参数或者Block指针类型可以使用noescape新属性标志，它用来标明这个指针参数不会离开这个函数或者方法而使用。这种情况下，可以安全的传递一个局部变量地址，noescape block指针在Swift中将会被映射为@noescape参数：
-<pre>void&nbsp;executeImmediately(<strong>attribute</strong>((noescape))&nbsp;void&nbsp;(^callback)(void);</pre></p>
-
-<p>将被影射到Swift为：
-<pre>func&nbsp;executeImmediately(@noescape&nbsp;callback:&nbsp;()&nbsp;-&gt;&nbsp;Void)</pre></p>
+<pre>var&nbsp;tintColor:&nbsp;UIColor!</pre>
+C指针类型的参数或者Block指针类型可以使用noescape新属性标志，它用来标明这个指针参数不会离开这个函数或者方法而使用。这种情况下，可以安全的传递一个局部变量地址，noescape block指针在Swift中将会被映射为@noescape参数：
+<pre>void&nbsp;executeImmediately(<strong>attribute</strong>((noescape))&nbsp;void&nbsp;(^callback)(void);</pre>
+将被影射到Swift为：
+<pre>func&nbsp;executeImmediately(@noescape&nbsp;callback:&nbsp;()&nbsp;-&gt;&nbsp;Void)</pre>
+*   LLDB现在包含了一个printf()函数去计算C/C++/Objective-C表达式，这个将在arm64设备上提升表达式计算的体验，但是可能和用户在.lldbinit定义的表达式前缀冲突，如果你发现在表达式计算时出现错误，这可能就是root cause。</p>
 
 <ul>
-<li><p>LLDB现在包含了一个printf()函数去计算C/C++/Objective-C表达式，这个将在arm64设备上提升表达式计算的体验，但是可能和用户在.lldbinit定义的表达式前缀冲突，如果你发现在表达式计算时出现错误，这可能就是root cause。</p></li>
-
 <li><p>XCode 6.3将Apple LLVM编译器更新为6.1.0，这个新的编译器版本包含了对C++14标准的全部支持，包括大量的增强的警告诊断和新的优化，对于arm64架构的支持进行了有效的重构来支持ARM的实现， 这个将明显影响矩阵内联函数计算。</p></li>
 
 <li><p>为arm64 vfma/vfms内联函数预定的参数被移除，虽然这个改变不会产生一个编译时错误，但是它会中断代码运行时操作，我们需要明确这个变化来减少风险。默认的，编译器现在会对使用这种内联属性提供警告并维持固有的行为，在尽可能的情况下，你需要接受这个变化并且定义USE_CORRECT_VFMA_INTRINSICS宏为1告诉编译器接收警告，当然你也可以可以USE_CORRECT_VFMA_INTRINSICS宏为0来屏蔽警告并保持固有行为。但是请不要保留这样的代码太久，因为我们计划在未来的版本中移除对这种旧行为的支持。</p></li>

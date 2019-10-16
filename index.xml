@@ -110,13 +110,14 @@ Russ
       
       <guid>https://blog.v5u.win/post/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/</guid>
       <description>[TOC]
+为什么要了解Bazel 这段时间搞到了bilibili的一部分源码，那个事件你知道的，就不说了。怀着对大牛的向往，打算研究一下，之前听说主程做的这个架构很牛逼，就算是代码泄露也不会对服务器造成影响，而且模块化做的非常好，小弟们码好代码，主程一键做个合并打包发布就行。自动化做的很好。就想知道到底是怎么做的，于是我了解到了他——Bazel。
 原文链接 https://filipnikolovski.com/managing-go-monorepo-with-bazel/
 使用Bazel管理Go monorepo 在InPlayer中，我们有一个使用*微服务*架构风格构建的平台，它基本上将应用程序构建为许多不同服务的集合。在这篇文章中，我将讨论如何建构(structure)，构建(build)和部署(deploy)Go应用程序。
 我们编写的每一段Go代码都驻留在一个Git存储库中 - 一个monorepo。由于每个库和服务都在一个项目中，因此它允许我们进行交叉更改，而无需使用某些外部包管理工具。基本上，代码不可能不同步，我们所做的每个更改都可以视为一个单元。
 虽然好处很明显，但使用Go monorepo的挑战是如何有效地构建和测试每个包。答案 - Bazel。
 Bazel是什么？ Bazel是一款速度极快的构建工具。它只重建必要的东西，它利用高级缓存机制和并行执行，使您的构建非常，非常快。除了这些功能外，它还可以管理您的代码依赖项，调用外部工具和插件，还可以从二进制可执行文件构建Docker镜像。它使用go build引擎盖，但它也可以支持许多不同的语言，而不仅仅是Go。您可以将它用于Java，C ++，Android，iOS和各种其他语言平台。您可以在三个主要操作系统上运行Bazel - Windows，macOS和Linux。
 项目结构 在我们深入了解Bazel之前，首先让我们讨论一下我们的项目结构：
- platform |-- src | |-- foo | | |--cmd | | | `--bar | | | |--BUILD | | | `--main.go | | `--pkg | |-- utils | |-- vendor | |-- Gopkg.lock | |-- Gopkg.toml | |-- BUILD | `-- WORKSPACE |-- README.md `-- gitlab-ci.yml  该platform目录是我们的根本，一切从这里开始。在该文件夹中，我们有CI配置和src保存所有代码的目录。每个服务都是src文件夹中的子目录，在每个服务中我们都有两个顶级目录，即cmd和pkg文件夹。在下面cmd我们有我们的二进制文件（我们的主程序）的pkg目录，该目录用于我们的服务库。</description>
+ platform |-- src | |-- foo | | |--cmd | | | `--bar | | | |--BUILD | | | `--main.go | | `--pkg | |-- utils | |-- vendor | |-- Gopkg.lock | |-- Gopkg.toml | |-- BUILD | `-- WORKSPACE |-- README.md `-- gitlab-ci.</description>
     </item>
     
     <item>
@@ -523,6 +524,25 @@ package main import &amp;quot;github.com/gographics/imagick/imagick&amp;quot; fu
   var name = 代码块 div&amp;gt;pre&amp;gt;span &amp;lt;div&amp;gt; &amp;lt;pre&amp;gt; &amp;lt;span&amp;gt;var&amp;lt;/span&amp;gt; name = 代码块 &amp;lt;/pre&amp;gt; &amp;lt;/div&amp;gt;   &amp;lt;blockquote&amp;gt;&amp;lt;p&amp;gt;块级引用&amp;lt;/p&amp;gt;&amp;lt;/blockquote&amp;gt;
  段落 中间没有空行的连续不断的几行文字被视为一个段落。空一行 作为段落间的分割符
 行内格式 删除线 del 标签 加粗 strong 标签 斜体 em 标签</description>
+    </item>
+    
+    <item>
+      <title>关于范子</title>
+      <link>https://blog.v5u.win/desc/about/</link>
+      <pubDate>Tue, 16 Apr 2019 14:07:14 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/desc/about/</guid>
+      <description>概，范子，是一名iOS开发工程师，从2013年初进入移动互联网行业，从此开启了一个新的世界。关注于项目的架构，感兴于后台的实现和产品的交互，立志于移动开发平台。 范子，是一位很喜欢学习的人，爱好中医，喜欢传统文化。
+衣，范子，穿衣是一个相对保守，偶尔激进的人，不喜欢奇装异服，但也不喜欢古板保守，范子喜欢的风格就是像贝多芬的音乐一样，在既定的规则里玩出花样。
+食，范子，对于食物始终保持一份敬畏之心，不喜欢浪费，不过，范子对食物还是很挑剔的，喜欢好吃的，对于一个有家味美食情节的人，范子的口味偏北方，确切说河北口味。哦，范子偏爱素食。
+住，范子现在在北京工作，租房，范子喜欢家、里、的、房。
+行，范子，没有车，喜欢绿色的交通方式，研究过，自行车，摩托车，汽车，不爱电动车。
+吃，范子，喜欢零食，但是对大部分的零食无爱，现在只吃，瓜子，非膨化锅巴，非膨化薯片
+喝，范子，最喜欢喝的饮料是白开水，无毒，无害，无色素，在学习饮茶，不爱喝酒。
+玩，范子，玩过的东西很少，所以会对很多东西好奇，想试一试：滑板、溜冰，真人cs，各种旅游方式等。
+乐，范子喜欢健康，养·生，所以爱上了中医。 人生一世，草木一秋。
+范子，认为每一个人在世上只经历一次人生，最大的愿望就是此生无憾。
+范子，我爱范子，I love Fanzi。</description>
     </item>
     
     <item>
@@ -3501,10 +3521,10 @@ SEO是一门复杂的学问，手法很多，提高权重可以从很多角度�
     
     <item>
       <title>关于iOS</title>
-      <link>https://blog.v5u.win/ios-about/</link>
+      <link>https://blog.v5u.win/desc/ios-about/</link>
       <pubDate>Thu, 16 Apr 2015 14:51:21 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/ios-about/</guid>
+      <guid>https://blog.v5u.win/desc/ios-about/</guid>
       <description>iOS是苹果apple公司移动端设备的运行平台，该平台包括iPhone，iPad，iTouch，Apple Watch等多款设备终端。
 范子就是一名为该平台开发应用的iOS工程师。
 除此之外，开发者还分为游戏开发工程师，还有Android安卓平台开发者，windows平台开发者，后台数据库开发者。
@@ -3538,15 +3558,6 @@ let常量现在生成时不需要立即初始化，新的规则是let常量必�
  匿名的且含有非空返回类型的单表达式现在可以用在Void上下文中。
  多表达式的闭包类型的情况可能无法被类型推断出来，这归功于缺乏返回类型的情况能被正确的推断出来。
    Swift中的枚举类型现在可以通过@objc关键字导出到Objective-C中。@objc的枚举类型必须定义一个整型的原始类型，并且该枚举不能泛型化或者不能使用关联值。由于Objective-C中的枚举类型没有命名空间，所以导出到Objective-C中的枚举类型以枚举名字和case项目名字的组合的方式使用。 比如在Swift中的声明：@objc&amp;nbsp;&amp;nbsp; &amp;nbsp;enum&amp;nbsp;Bear:&amp;nbsp;Int&amp;nbsp;{&amp;nbsp;&amp;nbsp; &amp;nbsp;case&amp;nbsp;Black,&amp;nbsp;Grizzly,&amp;nbsp;Polar&amp;nbsp;&amp;nbsp; &amp;nbsp;}  导出到Objective-C： typedef&amp;nbsp;NS_ENUM(NSInteger,&amp;nbsp;Bear)&amp;nbsp;{&amp;nbsp;&amp;nbsp; BearBlack,&amp;nbsp;BearGrizzly,&amp;nbsp;BearPolar&amp;nbsp;&amp;nbsp; };</description>
-    </item>
-    
-    <item>
-      <title>入定法门</title>
-      <link>https://blog.v5u.win/post/life-%E5%85%A5%E5%AE%9A%E6%B3%95%E9%97%A8/</link>
-      <pubDate>Thu, 09 Apr 2015 09:41:15 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/life-%E5%85%A5%E5%AE%9A%E6%B3%95%E9%97%A8/</guid>
-      <description>心如止水无波，太虚无云，一寂然不动之境，然玄开一窍之中。存定真息真气，使气不离息，息不离气，合为一处，内者不出，外者不入，上下往来于一窍之内。绵绵若存，存于先天祖气，浑融磅礴，温然如春，酣然如醉，美在其中，醉然见于面，盎于背，施于四肢，四肢不言而喻。见之无象；求之无形，无一刻不在于玄关，至引则药归于鼎炉，而火候可行矣。如是则元神妙用自然，运用真火，周流运转于玄关之内</description>
     </item>
     
     <item>
