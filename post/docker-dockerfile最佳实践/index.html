@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>System Dockerfile最佳实践 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="范金龙" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="System Dockerfile最佳实践"/>
+<meta name="twitter:description" content="Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式：
+ 只用 Dockerfile 管理镜像 2. 使用docker-compose 容器编排技术 共同管理镜像的 build。 下面是我对Dockerfile最佳实践的总结： 共同遵守的原则:  一个容器只负责做一件事情。 保持常见的指令像 MAINTAINER 以及从上至下更新 Dockerfile 命令。 当构建镜像时使用可理解的标签，以便更好地管理镜像。 避免在 Dockerfile 中映射公有端口。 CMD 与 ENTRYPOINT 命令请使用数组语法。
+针对一：只用 Dockerfile 管理镜像的 build
+# 依赖最小Linux环境 alpine 只用5M大小 FROM alpine # MAINTAINER：设置该镜像的作者。 MAINTAINER jinlong # 将当前目录下的所有文件都拷贝进入 image 文件的/app目录 COPY ./bin/ /app # 指定接下来的工作路径为/app # WORKDIR：指定RUN、CMD与ENTRYPOINT命令的工作目录。 # 所有下面的 RUN 命令都在 WORKDIR 目录下面执行 WORKDIR /app # RUN：在shell或者exec的环境下执行的命令。RUN指令会在新创建的镜像上添加新的层面，接下来提交的结果用在Dockerfile的下一条指令中。 #RUN cd bin/ # ADD：复制文件指令。它有两个参数&lt;source&gt;和&lt;destination&gt;。 # destination是容器内的路径。 # source可以是URL或者是启动配置上下文中的一个文件。 # ADD 《src》 《destination》 # CMD：提供了容器默认的执行命令。 Dockerfile只允许使用一次CMD指令。 使用多个CMD会抵消之前所有的指令，只有最后一个指令生效。 # CMD有三种形式： #CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;] #CMD [&quot;param1&quot;,&quot;param2&quot;] #CMD command param1 param2 #CMD ."/>
+
+    <meta property="og:title" content="System Dockerfile最佳实践" />
+<meta property="og:description" content="Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式：
+ 只用 Dockerfile 管理镜像 2. 使用docker-compose 容器编排技术 共同管理镜像的 build。 下面是我对Dockerfile最佳实践的总结： 共同遵守的原则:  一个容器只负责做一件事情。 保持常见的指令像 MAINTAINER 以及从上至下更新 Dockerfile 命令。 当构建镜像时使用可理解的标签，以便更好地管理镜像。 避免在 Dockerfile 中映射公有端口。 CMD 与 ENTRYPOINT 命令请使用数组语法。
+针对一：只用 Dockerfile 管理镜像的 build
+# 依赖最小Linux环境 alpine 只用5M大小 FROM alpine # MAINTAINER：设置该镜像的作者。 MAINTAINER jinlong # 将当前目录下的所有文件都拷贝进入 image 文件的/app目录 COPY ./bin/ /app # 指定接下来的工作路径为/app # WORKDIR：指定RUN、CMD与ENTRYPOINT命令的工作目录。 # 所有下面的 RUN 命令都在 WORKDIR 目录下面执行 WORKDIR /app # RUN：在shell或者exec的环境下执行的命令。RUN指令会在新创建的镜像上添加新的层面，接下来提交的结果用在Dockerfile的下一条指令中。 #RUN cd bin/ # ADD：复制文件指令。它有两个参数&lt;source&gt;和&lt;destination&gt;。 # destination是容器内的路径。 # source可以是URL或者是启动配置上下文中的一个文件。 # ADD 《src》 《destination》 # CMD：提供了容器默认的执行命令。 Dockerfile只允许使用一次CMD指令。 使用多个CMD会抵消之前所有的指令，只有最后一个指令生效。 # CMD有三种形式： #CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;] #CMD [&quot;param1&quot;,&quot;param2&quot;] #CMD command param1 param2 #CMD ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/docker-dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" />
+<meta property="article:published_time" content="2019-05-05T13:44:44&#43;08:00"/>
+<meta property="article:modified_time" content="2019-05-05T13:44:44&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="范金龙" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://blog.v5u.win/desc/about/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">System Dockerfile最佳实践</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 5, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？
+Dockerfile 有两个方向上的使用方式：</p>
+
+<ol>
+<li>只用 Dockerfile 管理镜像</li>
+<li>2. 使用docker-compose 容器编排技术 共同管理镜像的 build。
+下面是我对Dockerfile最佳实践的总结：
+共同遵守的原则:</li>
+</ol>
+
+<p>一个容器只负责做一件事情。
+保持常见的指令像 MAINTAINER 以及从上至下更新 Dockerfile 命令。
+当构建镜像时使用可理解的标签，以便更好地管理镜像。
+避免在 Dockerfile 中映射公有端口。
+CMD 与 ENTRYPOINT 命令请使用数组语法。</p>
+
+<p>针对一：只用 Dockerfile 管理镜像的 build</p>
+
+<pre><code class="language-dockerfile"># 依赖最小Linux环境 alpine 只用5M大小
+FROM alpine
+
+# MAINTAINER：设置该镜像的作者。
+MAINTAINER jinlong
+# 将当前目录下的所有文件都拷贝进入 image 文件的/app目录
+COPY ./bin/ /app
+
+# 指定接下来的工作路径为/app
+# WORKDIR：指定RUN、CMD与ENTRYPOINT命令的工作目录。
+# 所有下面的 RUN 命令都在 WORKDIR 目录下面执行
+WORKDIR /app
+
+# RUN：在shell或者exec的环境下执行的命令。RUN指令会在新创建的镜像上添加新的层面，接下来提交的结果用在Dockerfile的下一条指令中。
+#RUN cd bin/
+
+# ADD：复制文件指令。它有两个参数&lt;source&gt;和&lt;destination&gt;。
+# destination是容器内的路径。
+# source可以是URL或者是启动配置上下文中的一个文件。
+# ADD 《src》 《destination》
+
+
+# CMD：提供了容器默认的执行命令。 Dockerfile只允许使用一次CMD指令。 使用多个CMD会抵消之前所有的指令，只有最后一个指令生效。 
+# CMD有三种形式：
+#CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]
+#CMD [&quot;param1&quot;,&quot;param2&quot;]
+#CMD command param1 param2
+#CMD ./gin
+CMD [&quot;./gin&quot;]
+
+
+#-------------
+# 开放端口 永远都不要在这里使用端口映射，这违反了可移植性
+# EXPOSE：指定容器在运行时监听的端口。
+# private and public mapping
+# EXPOSE 80:8080
+
+# ENTRYPOINT：配置给容器一个可执行的命令
+# 这意味着在每次使用镜像创建容器时一个特定的应用程序可以被设置为默认程序。同时也意味着该镜像每次被调用时仅能运行指定的应用。类似于CMD
+# ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;,&quot;param2&quot;]
+
+# ENV：设置环境变量。它们使用键值对，增加运行程序的灵活性。
+# ENV &lt;key&gt; &lt;value&gt;
+
+# USER：镜像正在运行时设置一个UID。语法如下
+# USER &lt;uid&gt;
+
+# VOLUME：授权访问从容器内到主机上的目录。
+# VOLUME [&quot;/data&quot;]
+</code></pre>
+
+<h2 id="有ui界面portainer-用什么命令行-sb">有UI界面portainer，用什么命令行，SB</h2>
+
+<p>好了安装portainer 镜像管理镜像吧。</p>
+
+<pre><code class="language-sh">$ docker volume create portainer_data
+$ docker run -d -p 9000:9000 -p 8000:8000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+</code></pre>
+
+<p>over.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

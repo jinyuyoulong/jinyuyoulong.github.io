@@ -6,10 +6,25 @@
     <description>Recent content in Posts on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 15 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Oct 2019 10:08:59 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go谚语</title>
+      <link>https://blog.v5u.win/post/go%E8%B0%9A%E8%AF%AD/</link>
+      <pubDate>Mon, 28 Oct 2019 10:08:59 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go%E8%B0%9A%E8%AF%AD/</guid>
+      <description>[TOC]
+本文摘自 https://www.kancloud.cn/cserli/golang/524388
+本文译自go-proverbs, 脱胎于 Rob Pike 振奋人心的演讲视频 talk at Gopherfest SV 2015 (bilibili).
+不要通过共享内存进行通信, 通过通信共享内存 (Don&amp;rsquo;t communicate by sharing memory, share memory by communicating)
+传统的线程模型（通常在编写 Java, C++ 和 Python 程序时使用）要求程序员使用共享内存在线程之间进行通信. 通常, 共享数据结构受锁保护, 线程将争夺这些锁访问数据, 在某些情况下, 通过使用 Python 的 Queue 等线程安全的数据结构可以使这变得更容易.
+Go 的并发原语 (goroutines 和 channels) 为构造并发软件提供了一种优雅而独特的手段. (这些概念有一个有趣的历史, 要从 C.A.R.Hoare 的通信顺序进程说起.) Go 鼓励使用 channels 在 goroutines 之间传递对数据的引用, 而不是显式地使用锁来调解对共享数据的访问. 这种方法确保只有一个 goroutine 可以在给定的时间访问数据. 这个概念总结在 Effective Go 文档中 (任何 Go 程序员都必须阅读).
+Go 官方博客中有一篇文章对该谚语解读, 可以参见原文.</description>
+    </item>
     
     <item>
       <title>Linux版本使用总结</title>
@@ -459,6 +474,26 @@ import SwiftUI struct Content : View { @State var model = Themes.ListModel var b
     </item>
     
     <item>
+      <title>Go BeeGoVSgin</title>
+      <link>https://blog.v5u.win/post/go-beegovsgin/</link>
+      <pubDate>Mon, 03 Jun 2019 13:38:52 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-beegovsgin/</guid>
+      <description>[TOC]
+beego和gin是现在用的最多的两个go框架，所以这里选择比较这两个。
+框架选择原则：永远站在大多数人这边。招人，公司，成本，问题解决时间成本都要考虑。
+   特性 BeeGo Bin     MVC 不支持 不完全支持   路由 RESTful Controller 正则支持的非常完整 RESTful router.Get() 组路由   Session 支持,也支持session持久化 不支持，使用三方包 github.com/astaxie/session    性能 从问正确的问题开始。。。
+ *高性能*本身是不是我们的目标？
+ 我们的目标是什么？
+ 创造价值，获得竞争优势
+  机器成本 vs 开发人员成本
+影响访问速度的因素有很多 例如系统中间层和数据层的耦合情况，数据层本身的能力，服务器所在机房的网络拓扑结构，负载均衡的配置情况，等等。
+数据层速度，表设计不合理，网络io,图片的加载速度很慢
+正确做性能优化的姿势  确定性能目标，并保证这个目标是出于实际需要 建立性能环境，staging环境，并与线上环境隔离 性能环境和staging环境应该与线上环境类似架构 压测，并获得性能瓶颈的真正证据 最后，持续改进，永远只对瓶颈改进。  只有改的是瓶颈的点才有用
+适用场景 Beego在业务方面比gin支持的更多  在业务更复杂的项目中，使用beego 在需要快速开发的项目中，适用beego 在1.0项目中，适用beego。  Gin在性能方面比Beego更好  当某个接口性能遭到较大的挑战的时候，考虑使用Gin重写接口 如果项目的规模不大，业务相对简单，使用Gin。  你会发现大部分时候这两个框架差不多。</description>
+    </item>
+    
+    <item>
       <title>Go 单例</title>
       <link>https://blog.v5u.win/post/go-%E5%8D%95%E4%BE%8B/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
@@ -510,6 +545,30 @@ package main import &amp;quot;github.com/gographics/imagick/imagick&amp;quot; fu
     </item>
     
     <item>
+      <title>Go 自定义包模板引用 moudle</title>
+      <link>https://blog.v5u.win/post/go-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E6%A8%A1%E6%9D%BF%E5%BC%95%E7%94%A8/</link>
+      <pubDate>Mon, 13 May 2019 13:17:53 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E6%A8%A1%E6%9D%BF%E5%BC%95%E7%94%A8/</guid>
+      <description>源起：最近在调研Go，需要使用Go搭建一套通用式的模板框架，用以当新开其他项目的时候直接基于模板框架开发。
+固定化引入自定义包的路径，解决——开启新的分支需要更改引入路径
+方案一：go mod 支持 go build -mod=vendor ，问题是 vendor 里的文件都是 gopath/pkg/mod 的拷贝，是不能基于自己公司的需求做修改的。
+方案二：使用 相对路径，相对路径 相对的是 gopath 的路径，使用此方案就需要 将项目必须放在 gopath 目录下，不能使用 go mod。
+目前生产环境用 go mod 还不太现实，因为多人写作不能下载就用，还需要安装第三方包， 我还是先推荐定义 GOPATH 和 vendor 用法。</description>
+    </item>
+    
+    <item>
+      <title>Go Nginx反向代理</title>
+      <link>https://blog.v5u.win/post/go-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Fri, 10 May 2019 16:08:55 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
+      <description>当我们启动一个go 程序的时候，通常监听的是本地端口如 IP:port 。但是实际的线上环境，解析路径是：通过 DNS 解析 ——&amp;gt; nginx vhost ——&amp;gt; IP:port 这个。单纯的使用 go 是不能处理 域名解析工作的。 所以通常是NGINX 和 Go 搭配着使用。
+nginx 可以帮我做很多工作，例如访问日志，cc 攻击，静态服务等，nginx 已经做的很成熟了。 Go 只要专注于业务逻辑和功能就好。 NGINX作为反向代理的配置如下：
+#列出所有服务器地址，nginx 自动均衡分发请求到各个服务器。 upstream frontends { ip_hash; server 192.168.199.1:8088; server 192.168.199.2:8089; } server { listen 80; server_name nav.v5u.win ; #静态资源交由nginx管理 location /static { root /var/www/mydomain/web; expires 1d; add_header Cache-Control public; access_log off; } # 反向代理设置 location ~ / { proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_redirect off; proxy_pass http://localhost:7070; } }  </description>
+    </item>
+    
+    <item>
       <title>markdown 常用语法整理</title>
       <link>https://blog.v5u.win/post/system-markdown%E5%8E%9F%E7%90%86/</link>
       <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
@@ -524,6 +583,108 @@ package main import &amp;quot;github.com/gographics/imagick/imagick&amp;quot; fu
   var name = 代码块 div&amp;gt;pre&amp;gt;span &amp;lt;div&amp;gt; &amp;lt;pre&amp;gt; &amp;lt;span&amp;gt;var&amp;lt;/span&amp;gt; name = 代码块 &amp;lt;/pre&amp;gt; &amp;lt;/div&amp;gt;   &amp;lt;blockquote&amp;gt;&amp;lt;p&amp;gt;块级引用&amp;lt;/p&amp;gt;&amp;lt;/blockquote&amp;gt;
  段落 中间没有空行的连续不断的几行文字被视为一个段落。空一行 作为段落间的分割符
 行内格式 删除线 del 标签 加粗 strong 标签 斜体 em 标签</description>
+    </item>
+    
+    <item>
+      <title>Go Quick Start</title>
+      <link>https://blog.v5u.win/post/go-quick-start/</link>
+      <pubDate>Wed, 08 May 2019 15:39:15 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-quick-start/</guid>
+      <description>有经验开发者，快速入门 Go 语言 发明Go语言是出于更好地完成工作的需要。Go不是计算机科学的最新发展潮流，但它却提供了解决现实问题的最新最快的方法。 Go拥有命令式语言的静态类型，编译很快，执行也很快，同时加入了对于目前多核CPU的并发计算支持，也有相应的特性来实现大规模编程。 Go语言有非常棒的标准库，还有一个充满热情的社区。
+有编程经验的小伙伴，朗诵以下代码块，完成Go语言快速入门。
+// 单行注释 /* 多行 注释 */ // 导入包的子句在每个源文件的开头。 // Main比较特殊，它用来声明可执行文件，而不是一个库。 package main // Import语句声明了当前文件引用的包。 import ( &amp;quot;fmt&amp;quot; // Go语言标准库中的包 &amp;quot;io/ioutil&amp;quot; // 包含一些输入输出函数 m &amp;quot;math&amp;quot; // 数学标准库，在此文件中别名为m &amp;quot;net/http&amp;quot; // 一个web服务器包 &amp;quot;os&amp;quot; // 系统底层函数，如文件读写 &amp;quot;strconv&amp;quot; // 字符串转换 ) // 函数声明：Main是程序执行的入口。 // 不管你喜欢还是不喜欢，反正Go就用了花括号来包住函数体。 func main() { // 往标准输出打印一行。 // 用包名fmt限制打印函数。 fmt.Println(&amp;quot;天坑欢迎你!&amp;quot;) // 调用当前包的另一个函数。 beyondHello() } // 函数可以在括号里加参数。 // 如果没有参数的话，也需要一个空括号。 func beyondHello() { var x int // 变量声明，变量必须在使用之前声明。 x = 3 // 变量赋值。 // 可以用:=来偷懒，它自动把变量类型、声明和赋值都搞定了。 y := 4 sum, prod := learnMultiple(x, y) // 返回多个变量的函数 fmt.</description>
+    </item>
+    
+    <item>
+      <title>Blog Wordpress Http Https</title>
+      <link>https://blog.v5u.win/post/blog-wordpress-http-https/</link>
+      <pubDate>Tue, 07 May 2019 17:58:56 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/blog-wordpress-http-https/</guid>
+      <description> wordpress http 升级HTTPS  lnmp 添加ssl：lnmp ssl add wordpress 后台修改：主域名改为https:// ,固定链接改为id格式 (postname的URL格式无法找到，未解决) 修改数据库,搜索数据库中的http的链接，修改为https update wp_posts set post_content = replace(post_content, ‘http://www.v5u.win/’,‘https://www.v5u.win/’) 访问网站查找跨域引用(js,css)，更改代码或者数据库文本。改为https  </description>
+    </item>
+    
+    <item>
+      <title>System Dockerfile最佳实践</title>
+      <link>https://blog.v5u.win/post/docker-dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Sun, 05 May 2019 13:44:44 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/docker-dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式：
+ 只用 Dockerfile 管理镜像 2. 使用docker-compose 容器编排技术 共同管理镜像的 build。 下面是我对Dockerfile最佳实践的总结： 共同遵守的原则:  一个容器只负责做一件事情。 保持常见的指令像 MAINTAINER 以及从上至下更新 Dockerfile 命令。 当构建镜像时使用可理解的标签，以便更好地管理镜像。 避免在 Dockerfile 中映射公有端口。 CMD 与 ENTRYPOINT 命令请使用数组语法。
+针对一：只用 Dockerfile 管理镜像的 build
+# 依赖最小Linux环境 alpine 只用5M大小 FROM alpine # MAINTAINER：设置该镜像的作者。 MAINTAINER jinlong # 将当前目录下的所有文件都拷贝进入 image 文件的/app目录 COPY ./bin/ /app # 指定接下来的工作路径为/app # WORKDIR：指定RUN、CMD与ENTRYPOINT命令的工作目录。 # 所有下面的 RUN 命令都在 WORKDIR 目录下面执行 WORKDIR /app # RUN：在shell或者exec的环境下执行的命令。RUN指令会在新创建的镜像上添加新的层面，接下来提交的结果用在Dockerfile的下一条指令中。 #RUN cd bin/ # ADD：复制文件指令。它有两个参数&amp;lt;source&amp;gt;和&amp;lt;destination&amp;gt;。 # destination是容器内的路径。 # source可以是URL或者是启动配置上下文中的一个文件。 # ADD 《src》 《destination》 # CMD：提供了容器默认的执行命令。 Dockerfile只允许使用一次CMD指令。 使用多个CMD会抵消之前所有的指令，只有最后一个指令生效。 # CMD有三种形式： #CMD [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;] #CMD [&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;] #CMD command param1 param2 #CMD .</description>
+    </item>
+    
+    <item>
+      <title>Go 代码规范</title>
+      <link>https://blog.v5u.win/post/go-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Mon, 29 Apr 2019 11:37:14 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
+      <description>[TOC]
+Golang代码规范 参考 https://golang.org/doc/effective_go.html 本文参考blog
+项目目录结构规范 PROJECT_NAME ├── README.md 介绍软件及文档入口 ├── bin 编译好的二进制文件,执行./build.sh自动生成，该目录也用于程序打包 ├── build.sh 自动编译的脚本 ├── doc 该项目的文档 ├── pack 打包后的程序放在此处 ├── pack.sh 自动打包的脚本，生成类似xxxx.20170713_14:45:35.tar.gz的文件，放在pack文件下 ├── public 公共文件/静态文件 └── src 该项目的源代码 ├── main 项目主函数 ├── test 测试 ├── app 项目代码 ├── research 在实现该项目中探究的一些程序 └── vendor 存放go的库 ├── github.com/xxx 第三方库 └── xxx.com/abc 公司内部的公共库  项目的目录结构尽量做到简明、层次清楚。
+./app ├── bootstrap	//入口引导文件 ├── cache ├── config	//项目配置 项目配置文件简单，配置项少。大部分配置公司要用配置中心统一配置。 ├── controller	//request请求处理中心 ——&amp;gt; controller ——&amp;gt; Response / view ├── library	//项目工具库 ├── log	//日志 ├── middleware	//中间件 ├── model	//data model.</description>
+    </item>
+    
+    <item>
+      <title>System 最小堆</title>
+      <link>https://blog.v5u.win/post/system-%E6%9C%80%E5%B0%8F%E5%A0%86/</link>
+      <pubDate>Thu, 25 Apr 2019 17:38:44 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-%E6%9C%80%E5%B0%8F%E5%A0%86/</guid>
+      <description> 最大—最小堆是最大层和最小层交替出现的二叉树，即最大层结点的子节点属于最小层，最小层结点的子节点属于最大层。 以最大（小）层结n点为根结点的子树保有最大（小）堆性质：根结点的键值为该子树结点键值中最大（小）项。
+最大堆和最小堆是二叉堆的两种形式。
+ 最大堆：根结点的键值是所有堆结点键值中最大者的堆。 最小堆：根结点的键值是所有堆结点键值中最小者的堆。  而最大—最小堆集结了最大堆和最小堆的优点，这也是其名字的由来。
+主要操作 插入 将节点插在二叉树的最后一个叶子结点位置，然后比较它与它父亲节点的大小：如果大则停止；如果小则交换位置，然后对父亲节点递归该过程直至根节点。复杂度为{\displaystyle O(log(n))}。
+一般来说，插入的位置可以不是最后一个叶子节点，可以作为任意中间节点的孩子节点插入，将这个叶子节点变为中间节点后，按上文所说的方法调整节点顺序以保证维持堆特性不变。
+删除 要从堆中删除一个节点，用最后一个节点替换掉要删除的节点，然后调整节点顺序以维持堆特性。
+应用  双端优先队列  </description>
+    </item>
+    
+    <item>
+      <title>Go web技术栈</title>
+      <link>https://blog.v5u.win/post/go-web%E6%8A%80%E6%9C%AF%E6%A0%88/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-web%E6%8A%80%E6%9C%AF%E6%A0%88/</guid>
+      <description> iris 框架
+ go-beanstalkd 消息队列 gRPC
+ go module 包管理
+ gin+gorm / singo
+  </description>
+    </item>
+    
+    <item>
+      <title>Go 交叉编译</title>
+      <link>https://blog.v5u.win/post/go-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Thu, 18 Apr 2019 17:22:29 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</guid>
+      <description>查看操作系统平台和内核版本：uname -a
+Mac 下编译 Linux 和 Windows 64位可执行程序
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go  Linux 下编译 Mac 和 Windows 64位可执行程序
+CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go  Windows 下编译 Mac 和 Linux 64位可执行程序
+SET CGO_ENABLED=0 SET GOOS=darwin SET GOARCH=amd64 go build main.go SET CGO_ENABLED=0 SET GOOS=linux SET GOARCH=amd64 go build main.go  GOOS：目标平台的操作系统（darwin、freebsd、linux、windows） GOARCH：目标平台的体系架构（386、amd64、arm） 交叉编译不支持 CGO 所以要禁用它,不要使用c代码库</description>
+    </item>
+    
+    <item>
+      <title>Hugo 开箱体验</title>
+      <link>https://blog.v5u.win/post/blog-hugo/</link>
+      <pubDate>Tue, 16 Apr 2019 14:09:31 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/blog-hugo/</guid>
+      <description>Hugo是Go写的静态网站生成器，生成速度快，性能开销小，正好也在学习Golang。我决定从 Hexo 切换到 Hugo。
+以下是试用总结，基本可以实现从0到1。至于从1到n，同学们加油！
+安装 brew install hugo
+创建站点 hugo new site path/blogname
+创建页面 hugo new post/first.md 默认文章创建位置为content目录
+预览 hugo server --theme=maupassant --buildDrafts
+生成静态页 直接运行hugo 单命令就可以生成 public 目录，内放生成的静态页面
+发布 使用 git或其他方式 将public目录下的文件发布到目标地址
+其他 hugo new theme themename 创建 theme</description>
     </item>
     
     <item>

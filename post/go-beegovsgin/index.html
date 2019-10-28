@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>Go BeeGoVSgin // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="范金龙" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go BeeGoVSgin"/>
+<meta name="twitter:description" content="[TOC]
+beego和gin是现在用的最多的两个go框架，所以这里选择比较这两个。
+框架选择原则：永远站在大多数人这边。招人，公司，成本，问题解决时间成本都要考虑。
+   特性 BeeGo Bin     MVC 不支持 不完全支持   路由 RESTful Controller 正则支持的非常完整 RESTful router.Get() 组路由   Session 支持,也支持session持久化 不支持，使用三方包 github.com/astaxie/session    性能 从问正确的问题开始。。。
+ *高性能*本身是不是我们的目标？
+ 我们的目标是什么？
+ 创造价值，获得竞争优势
+  机器成本 vs 开发人员成本
+影响访问速度的因素有很多 例如系统中间层和数据层的耦合情况，数据层本身的能力，服务器所在机房的网络拓扑结构，负载均衡的配置情况，等等。
+数据层速度，表设计不合理，网络io,图片的加载速度很慢
+正确做性能优化的姿势  确定性能目标，并保证这个目标是出于实际需要 建立性能环境，staging环境，并与线上环境隔离 性能环境和staging环境应该与线上环境类似架构 压测，并获得性能瓶颈的真正证据 最后，持续改进，永远只对瓶颈改进。  只有改的是瓶颈的点才有用
+适用场景 Beego在业务方面比gin支持的更多  在业务更复杂的项目中，使用beego 在需要快速开发的项目中，适用beego 在1.0项目中，适用beego。  Gin在性能方面比Beego更好  当某个接口性能遭到较大的挑战的时候，考虑使用Gin重写接口 如果项目的规模不大，业务相对简单，使用Gin。  你会发现大部分时候这两个框架差不多。"/>
+
+    <meta property="og:title" content="Go BeeGoVSgin" />
+<meta property="og:description" content="[TOC]
+beego和gin是现在用的最多的两个go框架，所以这里选择比较这两个。
+框架选择原则：永远站在大多数人这边。招人，公司，成本，问题解决时间成本都要考虑。
+   特性 BeeGo Bin     MVC 不支持 不完全支持   路由 RESTful Controller 正则支持的非常完整 RESTful router.Get() 组路由   Session 支持,也支持session持久化 不支持，使用三方包 github.com/astaxie/session    性能 从问正确的问题开始。。。
+ *高性能*本身是不是我们的目标？
+ 我们的目标是什么？
+ 创造价值，获得竞争优势
+  机器成本 vs 开发人员成本
+影响访问速度的因素有很多 例如系统中间层和数据层的耦合情况，数据层本身的能力，服务器所在机房的网络拓扑结构，负载均衡的配置情况，等等。
+数据层速度，表设计不合理，网络io,图片的加载速度很慢
+正确做性能优化的姿势  确定性能目标，并保证这个目标是出于实际需要 建立性能环境，staging环境，并与线上环境隔离 性能环境和staging环境应该与线上环境类似架构 压测，并获得性能瓶颈的真正证据 最后，持续改进，永远只对瓶颈改进。  只有改的是瓶颈的点才有用
+适用场景 Beego在业务方面比gin支持的更多  在业务更复杂的项目中，使用beego 在需要快速开发的项目中，适用beego 在1.0项目中，适用beego。  Gin在性能方面比Beego更好  当某个接口性能遭到较大的挑战的时候，考虑使用Gin重写接口 如果项目的规模不大，业务相对简单，使用Gin。  你会发现大部分时候这两个框架差不多。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/go-beegovsgin/" />
+<meta property="article:published_time" content="2019-06-03T13:38:52&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-03T13:38:52&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="范金龙" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://blog.v5u.win/desc/about/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Go BeeGoVSgin</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jun 3, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<p>[TOC]</p>
+
+<p>beego和gin是现在用的最多的两个go框架，所以这里选择比较这两个。</p>
+
+<p>框架选择原则：永远站在大多数人这边。招人，公司，成本，问题解决时间成本都要考虑。</p>
+
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>BeeGo</th>
+<th>Bin</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>MVC</td>
+<td>不支持</td>
+<td>不完全支持</td>
+</tr>
+
+<tr>
+<td>路由</td>
+<td>RESTful Controller 正则支持的非常完整</td>
+<td>RESTful router.Get() 组路由</td>
+</tr>
+
+<tr>
+<td>Session</td>
+<td>支持,也支持session持久化</td>
+<td>不支持，使用三方包 github.com/astaxie/session</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="性能">性能</h4>
+
+<p>从问正确的问题开始。。。</p>
+
+<ul>
+<li><p>*高性能*本身是不是我们的目标？</p></li>
+
+<li><p>我们的目标是什么？</p></li>
+
+<li><p>创造价值，获得竞争优势</p></li>
+</ul>
+
+<p>机器成本 vs 开发人员成本</p>
+
+<h4 id="影响访问速度的因素有很多">影响访问速度的因素有很多</h4>
+
+<p>例如系统中间层和数据层的耦合情况，数据层本身的能力，服务器所在机房的网络拓扑结构，负载均衡的配置情况，等等。</p>
+
+<p>数据层速度，表设计不合理，网络io,图片的加载速度很慢</p>
+
+<h4 id="正确做性能优化的姿势">正确做性能优化的姿势</h4>
+
+<ul>
+<li>确定性能目标，并保证这个目标是出于实际需要</li>
+<li>建立性能环境，staging环境，并与线上环境隔离</li>
+<li>性能环境和staging环境应该与线上环境类似架构</li>
+<li>压测，并获得性能瓶颈的真正证据</li>
+<li>最后，持续改进，永远只对瓶颈改进。</li>
+</ul>
+
+<p>只有改的是瓶颈的点才有用</p>
+
+<h4 id="适用场景">适用场景</h4>
+
+<h5 id="beego在业务方面比gin支持的更多">Beego在业务方面比gin支持的更多</h5>
+
+<ul>
+<li>在业务更复杂的项目中，使用beego</li>
+<li>在需要快速开发的项目中，适用beego</li>
+<li>在1.0项目中，适用beego。</li>
+</ul>
+
+<h5 id="gin在性能方面比beego更好">Gin在性能方面比Beego更好</h5>
+
+<ul>
+<li>当某个接口性能遭到较大的挑战的时候，考虑使用Gin重写接口</li>
+<li>如果项目的规模不大，业务相对简单，使用Gin。</li>
+</ul>
+
+<p>你会发现大部分时候这两个框架差不多。</p>
+
+<h5 id="关于mvc">关于MVC</h5>
+
+<p>Beego是典型的MVC框架</p>
+
+<ul>
+<li>V: View，体现为模板，Beego通过处理模板和渲染模板展示视图</li>
+</ul>
+
+<p><strong>特性</strong></p>
+
+<ul>
+<li>静态文件处理</li>
+<li>模板处理</li>
+
+<li><p>模板分页处理</p></li>
+
+<li><p>C: Controller ，体现为各种功能</p></li>
+</ul>
+
+<p><strong>特性</strong></p>
+
+<ul>
+<li>路由功能</li>
+<li>控制器函数</li>
+<li>CSRF(Cross-Site request forgery) 过滤器</li>
+<li>Session</li>
+<li>错误处理 &amp; 日志功能</li>
+</ul>
+
+<p>项目使用MVC架构，推荐用Beego。</p>
+
+<p>如果选择Gin的话，可以让浏览器做MVC，Gin让返回数据都是json，浏览器做ajax请求</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

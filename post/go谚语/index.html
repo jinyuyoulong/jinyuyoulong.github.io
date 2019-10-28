@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <title>Go谚语 // 为吾优</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="范金龙" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go谚语"/>
+<meta name="twitter:description" content="[TOC]
+本文摘自 https://www.kancloud.cn/cserli/golang/524388
+本文译自go-proverbs, 脱胎于 Rob Pike 振奋人心的演讲视频 talk at Gopherfest SV 2015 (bilibili).
+不要通过共享内存进行通信, 通过通信共享内存 (Don&rsquo;t communicate by sharing memory, share memory by communicating)
+传统的线程模型（通常在编写 Java, C&#43;&#43; 和 Python 程序时使用）要求程序员使用共享内存在线程之间进行通信. 通常, 共享数据结构受锁保护, 线程将争夺这些锁访问数据, 在某些情况下, 通过使用 Python 的 Queue 等线程安全的数据结构可以使这变得更容易.
+Go 的并发原语 (goroutines 和 channels) 为构造并发软件提供了一种优雅而独特的手段. (这些概念有一个有趣的历史, 要从 C.A.R.Hoare 的通信顺序进程说起.) Go 鼓励使用 channels 在 goroutines 之间传递对数据的引用, 而不是显式地使用锁来调解对共享数据的访问. 这种方法确保只有一个 goroutine 可以在给定的时间访问数据. 这个概念总结在 Effective Go 文档中 (任何 Go 程序员都必须阅读).
+Go 官方博客中有一篇文章对该谚语解读, 可以参见原文."/>
+
+    <meta property="og:title" content="Go谚语" />
+<meta property="og:description" content="[TOC]
+本文摘自 https://www.kancloud.cn/cserli/golang/524388
+本文译自go-proverbs, 脱胎于 Rob Pike 振奋人心的演讲视频 talk at Gopherfest SV 2015 (bilibili).
+不要通过共享内存进行通信, 通过通信共享内存 (Don&rsquo;t communicate by sharing memory, share memory by communicating)
+传统的线程模型（通常在编写 Java, C&#43;&#43; 和 Python 程序时使用）要求程序员使用共享内存在线程之间进行通信. 通常, 共享数据结构受锁保护, 线程将争夺这些锁访问数据, 在某些情况下, 通过使用 Python 的 Queue 等线程安全的数据结构可以使这变得更容易.
+Go 的并发原语 (goroutines 和 channels) 为构造并发软件提供了一种优雅而独特的手段. (这些概念有一个有趣的历史, 要从 C.A.R.Hoare 的通信顺序进程说起.) Go 鼓励使用 channels 在 goroutines 之间传递对数据的引用, 而不是显式地使用锁来调解对共享数据的访问. 这种方法确保只有一个 goroutine 可以在给定的时间访问数据. 这个概念总结在 Effective Go 文档中 (任何 Go 程序员都必须阅读).
+Go 官方博客中有一篇文章对该谚语解读, 可以参见原文." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/post/go%E8%B0%9A%E8%AF%AD/" />
+<meta property="article:published_time" content="2019-10-28T10:08:59&#43;08:00"/>
+<meta property="article:modified_time" content="2019-10-28T10:08:59&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="范金龙" /></a>
+      <h1>为吾优</h1>
+      <p>愿我走在通往幸福的路上</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://blog.v5u.win/desc/about/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Go谚语</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Oct 28, 2019
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <p>[TOC]</p>
+
+<p>本文摘自 <a href="https://www.kancloud.cn/cserli/golang/524388">https://www.kancloud.cn/cserli/golang/524388</a></p>
+
+<p>本文译自go-proverbs, 脱胎于 Rob Pike 振奋人心的演讲视频 talk at Gopherfest SV 2015 (bilibili).</p>
+
+<p><strong>不要通过共享内存进行通信, 通过通信共享内存 (Don&rsquo;t communicate by sharing memory, share memory by communicating)</strong></p>
+
+<p>传统的线程模型（通常在编写 Java, C++ 和 Python 程序时使用）要求程序员使用共享内存在线程之间进行通信. 通常, 共享数据结构受锁保护, 线程将争夺这些锁访问数据, 在某些情况下, 通过使用 Python 的 Queue 等线程安全的数据结构可以使这变得更容易.</p>
+
+<p>Go 的并发原语 (goroutines 和 channels) 为构造并发软件提供了一种优雅而独特的手段. (这些概念有一个有趣的历史, 要从 C.A.R.Hoare 的通信顺序进程说起.) Go 鼓励使用 channels 在 goroutines 之间传递对数据的引用, 而不是显式地使用锁来调解对共享数据的访问. 这种方法确保只有一个 goroutine 可以在给定的时间访问数据. 这个概念总结在 Effective Go 文档中 (任何 Go 程序员都必须阅读).</p>
+
+<p>Go 官方博客中有一篇文章对该谚语解读, 可以参见原文.</p>
+
+<p><strong>并发不是并行 (Concurrency is not parallelism)</strong></p>
+
+<p>当人们听到 并发 这个词的时候, 他们经常会想到并行, 这是一个相关的, 但非常独特的概念. 在编程中, 并发是独立执行的进程的组成, 而并行则是 (可能相关的) 计算的同时执行. 并发是一次处理很多事情. 并行是一次做很多事情.</p>
+
+<p>Channels 重排序; 互斥量串行化 (<strong>Channels orchestrate; mutexes serialize</strong>)</p>
+
+<p>这个看中文（翻译待商榷）是不是一脸懵 (虽然英文也看不懂) ? 其实分号前后说的是一个意思, 该谚语按我的个人理解可以用 go 程序 (来自 go tour) 解释成如下:</p>
+
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+func sum(s []int, c chan int) {
+    sum := 0
+    for _, v := range s {
+        sum += v
+    }
+    c &lt;- sum // 此处如果改成互斥量一样可以做到
+}
+
+func main() {
+    s := []int{7, 2, 8, -9, 4, 0}
+
+    c := make(chan int)
+    go sum(s[:len(s)/2], c)
+    go sum(s[len(s)/2:], c)
+    x, y := &lt;-c, &lt;-c
+
+    fmt.Println(x, y, x+y)
+}
+</code></pre>
+
+<p><strong>接口越大, 抽象越弱 (The bigger the interface, the weaker the abstraction)</strong></p>
+
+<p>接口背后的概念是通过将对象的行为抽象为简单的契约来允许重用性. 虽然接口不是 Go 专有的, 但由于 Go 接口通常趋向于小型化, Go 程序员才广泛使用它们. 通常情况下, 一个接口只限于一到两个方法.</p>
+
+<p>Go io 包接口就是典型的例子.</p>
+
+<p><strong>充分利用零值 (Make the zero value useful)</strong></p>
+
+<p>零值的典型例子如 bytes.Buffer 和 sync.Mutex:</p>
+
+<pre><code class="language-go">var buf bytes.Buffer
+buf.Write([]byte(&quot;hello&quot;))
+fmt.Println(buf.String())
+
+var mu sync.Mutex
+mu.Lock()
+mu.Unlock()
+</code></pre>
+
+<p>这样看起来是不是感觉一点用没有 ? 如果这样呢 ?</p>
+
+<pre><code class="language-go">type Map struct {
+    mu sync.RWMutex
+    // ...
+}
+
+func (m *Map) Set(k, v interface{}) {
+    m.mu.Lock()
+    defer m.mu.Unlock()
+    if m.m == nil {
+        m.m = make(map[interface{}]interface{})
+    }
+    m.m[k] = v
+}
+</code></pre>
+
+<p><strong>interface{} 言之无物 (interface{} says nothing)</strong></p>
+
+<p>该谚语不是说 interface {} 不代表任何东西, 而是说该类型无静态检查以及调用时保证, 比如你的 func 接收一个 interface{} 类型, 你写的时候是可用的, 但是某个时间你进行了代码重构可能坏掉了.</p>
+
+<p><strong>Gofmt 的风格没有人喜欢, 但是 gofmt 是每个人的最爱 (Gofmt&rsquo;s style is no one&rsquo;s favorite, yet gofmt is everyone&rsquo;s favorite)</strong></p>
+
+<p>该谚语告诉我们少些风格之争, 用这些时间多写代码.</p>
+
+<p><strong>小复制好过小依赖 (A little copying is better than a little dependency)</strong></p>
+
+<p>简单说就是如果你可以手动撸小快代码就不要导入一个库去做, 比如 UUID:</p>
+
+<pre><code class="language-go">// see: https://groups.google.com/d/msg/golang-nuts/d0nF_k4dSx4/rPGgfXv6QCoJ
+package main
+
+import (
+    &quot;fmt&quot;
+    &quot;os&quot;
+)
+
+func main() {
+    f, _ := os.Open(&quot;/dev/urandom&quot;) // 演示用忽略 errcheck
+    b := make([]byte, 16)
+    f.Read(b)
+    f.Close()
+    uuid := fmt.Sprintf(&quot;%x-%x-%x-%x-%x&quot;, b[0:4], b[4:6], b[6:8], b[8:10], b[10:])
+    fmt.Println(uuid)
+}
+</code></pre>
+
+<p>虽然有一堆写好的 UUID 库, 当你仅仅需要一个 UUID v4 实现.</p>
+
+<p><strong>系统调用必须始终使用构建标签保证 (Syscall must always be guarded with build tags)</strong></p>
+
+<p>不同的系统 (*NIX, Windows) 调用导致你同一个 func (实现并不一样) 可能需要在不同的系统上构建才能得到你想要的结果. 简单说就是系统调用不可移植才这么干. 示例可参见 Go 标准库 syscall.</p>
+
+<p><strong>Cgo 必须始终使用构建标签保证 (Cgo must always be guarded with build tags)</strong></p>
+
+<p>基本上原因同上一条.</p>
+
+<p><strong>Cgo 不是 Go (Cgo is not Go)</strong></p>
+
+<p>如果可能不要用 Cgo. 这里有篇文章说明了为什么.</p>
+
+<p><strong>unsafe 包无保证 (With the unsafe package there are no guarantees)</strong></p>
+
+<p>包如其名, 不安全. 你可以使用 unsafe 包如果你准备好了有一天它会坏掉.</p>
+
+<p><strong>清晰好过聪明 (Clear is better than clever)</strong></p>
+
+<p>Rob Pike 在他与别人合著的 &lt;程序设计实践&gt; 中写到: &ldquo;写清晰的代码, 不要写聪明的代码&rdquo;.</p>
+
+<p><strong>反射永远不是清晰的 (Reflection is never clear)</strong></p>
+
+<p>很多人在 Stackoverflow 上抱怨 Go 的反射不工作, 因为那不是为你准备的😂! 只有很少很少的人应该用反射这个非常强大而又非常难的特性. 新手应该远离反射和 interface{}.</p>
+
+<p><strong>错误也是一种值 (Errors are values)</strong></p>
+
+<p>值可以被编程, 并且由于错误是值, 所以错误可以被编程. Go 官方博客有对此的解读.</p>
+
+<p><strong>不要止步于检查错误而要优雅的处理 (Don&rsquo;t just check errors, handle them gracefully)</strong></p>
+
+<p>Dave Cheney 有篇博客详细解读了该谚语.</p>
+
+<p><strong>设计架构, 命名组件, 记录细节 (Design the architecture, name the components, document the details)</strong></p>
+
+<p>当你写一个大型系统的时候, 你把它设计成一种结构化的东西. 想象组件的每一个部分并行工作, 为不同的组件起好的名字, 因为这些名字会出现在稿纸上.</p>
+
+<p>拿 Go 程序来说, 如果名字不错, 组件就好理解, 那么程序的结构设计就会清晰, 程序会感觉很自然.</p>
+
+<p>但是还有很多东西你需要解释, 所以这些是你需要解释的细节. 但是命名会帮助你解释很大一部分设计. 细节只是填补材料的缺口可能用来为用户打印工程图解文档.</p>
+
+<p><strong>文档是针对用户的 (Documentation is for users)</strong></p>
+
+<p>很多人写文档表明某个 func 是做什么的, 但是他们不想想这个 func 是为谁而写. 这有很大的不同. 你知道这个 func 返回什么是对的, 但是它为什么返回了你使用的时候不一样的结果?</p>
+
+<p>把自己当成使用者而不是写它的人, 那么 godoc 上的文档就是对用户有用的. 这对于其他语言一样适用.</p>
+
+<p><strong>不要慌 (Don&rsquo;t panic)</strong></p>
+
+<p>不要使用 panic 进行正常的错误处理. 使用错误 (error) 和多个返回值.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

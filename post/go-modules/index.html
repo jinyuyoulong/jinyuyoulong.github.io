@@ -204,7 +204,7 @@ replace gitee.com/rockyang/testmod =&gt; /gopath/src/gitee.com/rockyang/testmod
 
 <p>然后再执行 <code>go build</code> 你会看到你想要的结果。</p>
 
-<h2 id="私有库">私有库</h2>
+<h2 id="私有库相关设置">私有库相关设置</h2>
 
 <p>首先私有服务器必须有一个域名，不能使用ip。</p>
 
@@ -215,7 +215,7 @@ GOSUMDB=sum.golang.google.cn #或者 更换校验源
 go env -w GOSUMDB=&quot;sum.golang.google.cn&quot; # google 为我们提供了国内的校验源
 </code></pre>
 
-<p>配置 .gitconfig 将 http 改为 ssh 获取。<strong>p.s. 这里没有解决我的问题</strong></p>
+<p>配置 .gitconfig 将 http 改为 ssh 获取。</p>
 
 <pre><code class="language-sh">[http]
 	extraheader = PRIVATE-TOKEN: token
@@ -223,21 +223,14 @@ go env -w GOSUMDB=&quot;sum.golang.google.cn&quot; # google 为我们提供了�
 	insteadOf = https://gitee.com/fan.jinlong/go_module_lib.git
 </code></pre>
 
-<h2 id="go1-13">Go1.13</h2>
+<p>坑4:拉取私有模块</p>
 
-<p><strong>问：在 Go 1.13 中如何解决私有库问题？</strong></p>
+<p><img src="https://image.eddycjy.com/075bdc3d3552c000981c9d4fdd8d0f3f.jpg" alt="image" /></p>
 
-<p>Go 1.13 还推出了一个 <code>GONOPROXY</code>环境变量（详见：<a href="https://golang.org/cmd/go/#hdr-Environment_variables">https://golang.org/cmd/go/#hdr-Environment_variables</a> ），通过设置它我们可以实现控制让哪些 module path 忽略 <code>GOPROXY</code>，无脑回源。比如 <code>GONOPROXY=*.corp.example.com</code>就意味着 <code>go</code>在抓取所有 corp.example.com 的三级子域名下的所有模块时都将忽略 <code>GOPROXY</code>设置直接回源到目标模块的原地址。</p>
+<p>这里主要想涉及两块知识点，如下：</p>
 
-<p><strong>问：在 Go 1.13 中如何防止从公共模块代理中抓取的模块被篡改？</strong></p>
-
-<p>答：Go 1.13 新推出了一个 <code>GOSUMDB</code></p>
-
-<p><strong>问：分别设置 GONOPROXY和 GONOSUMDB很麻烦，有没有更好的办法？</strong></p>
-
-<p>答：有，Go 1.13 为了方便管理私有库规则，还推出了一个 <code>GOPRIVATE</code>，</p>
-
-<p>参考<a href="https://studygolang.com/topics/10014"> go1.13 goproxy.cn - 为中国 Go 语言开发者量身打造的模块代理</a></p>
+<p>- GOPROXY 是无权访问到任何人的私有模块的，所以你放心，安全性没问题。
+- GOPROXY 除了设置模块代理的地址以外，还需要增加 “direct” 特殊标识才可以成功拉取私有库。</p>
 
     </div>
     <div class="post-footer">

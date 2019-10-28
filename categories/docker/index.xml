@@ -41,6 +41,18 @@ $ etcdctl member list  </description>
     </item>
     
     <item>
+      <title>System Dockerfile最佳实践</title>
+      <link>https://blog.v5u.win/post/docker-dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Sun, 05 May 2019 13:44:44 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/docker-dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式：
+ 只用 Dockerfile 管理镜像 2. 使用docker-compose 容器编排技术 共同管理镜像的 build。 下面是我对Dockerfile最佳实践的总结： 共同遵守的原则:  一个容器只负责做一件事情。 保持常见的指令像 MAINTAINER 以及从上至下更新 Dockerfile 命令。 当构建镜像时使用可理解的标签，以便更好地管理镜像。 避免在 Dockerfile 中映射公有端口。 CMD 与 ENTRYPOINT 命令请使用数组语法。
+针对一：只用 Dockerfile 管理镜像的 build
+# 依赖最小Linux环境 alpine 只用5M大小 FROM alpine # MAINTAINER：设置该镜像的作者。 MAINTAINER jinlong # 将当前目录下的所有文件都拷贝进入 image 文件的/app目录 COPY ./bin/ /app # 指定接下来的工作路径为/app # WORKDIR：指定RUN、CMD与ENTRYPOINT命令的工作目录。 # 所有下面的 RUN 命令都在 WORKDIR 目录下面执行 WORKDIR /app # RUN：在shell或者exec的环境下执行的命令。RUN指令会在新创建的镜像上添加新的层面，接下来提交的结果用在Dockerfile的下一条指令中。 #RUN cd bin/ # ADD：复制文件指令。它有两个参数&amp;lt;source&amp;gt;和&amp;lt;destination&amp;gt;。 # destination是容器内的路径。 # source可以是URL或者是启动配置上下文中的一个文件。 # ADD 《src》 《destination》 # CMD：提供了容器默认的执行命令。 Dockerfile只允许使用一次CMD指令。 使用多个CMD会抵消之前所有的指令，只有最后一个指令生效。 # CMD有三种形式： #CMD [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;] #CMD [&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;] #CMD command param1 param2 #CMD .</description>
+    </item>
+    
+    <item>
       <title>docker 使用规则</title>
       <link>https://blog.v5u.win/post/docker-%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>system on 为吾优</title>
+    <title>System on 为吾优</title>
     <link>https://blog.v5u.win/categories/system/</link>
-    <description>Recent content in system on 为吾优</description>
+    <description>Recent content in System on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Thu, 26 Sep 2019 00:00:00 +0000</lastBuildDate>
@@ -142,6 +142,21 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
   var name = 代码块 div&amp;gt;pre&amp;gt;span &amp;lt;div&amp;gt; &amp;lt;pre&amp;gt; &amp;lt;span&amp;gt;var&amp;lt;/span&amp;gt; name = 代码块 &amp;lt;/pre&amp;gt; &amp;lt;/div&amp;gt;   &amp;lt;blockquote&amp;gt;&amp;lt;p&amp;gt;块级引用&amp;lt;/p&amp;gt;&amp;lt;/blockquote&amp;gt;
  段落 中间没有空行的连续不断的几行文字被视为一个段落。空一行 作为段落间的分割符
 行内格式 删除线 del 标签 加粗 strong 标签 斜体 em 标签</description>
+    </item>
+    
+    <item>
+      <title>System 最小堆</title>
+      <link>https://blog.v5u.win/post/system-%E6%9C%80%E5%B0%8F%E5%A0%86/</link>
+      <pubDate>Thu, 25 Apr 2019 17:38:44 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-%E6%9C%80%E5%B0%8F%E5%A0%86/</guid>
+      <description> 最大—最小堆是最大层和最小层交替出现的二叉树，即最大层结点的子节点属于最小层，最小层结点的子节点属于最大层。 以最大（小）层结n点为根结点的子树保有最大（小）堆性质：根结点的键值为该子树结点键值中最大（小）项。
+最大堆和最小堆是二叉堆的两种形式。
+ 最大堆：根结点的键值是所有堆结点键值中最大者的堆。 最小堆：根结点的键值是所有堆结点键值中最小者的堆。  而最大—最小堆集结了最大堆和最小堆的优点，这也是其名字的由来。
+主要操作 插入 将节点插在二叉树的最后一个叶子结点位置，然后比较它与它父亲节点的大小：如果大则停止；如果小则交换位置，然后对父亲节点递归该过程直至根节点。复杂度为{\displaystyle O(log(n))}。
+一般来说，插入的位置可以不是最后一个叶子节点，可以作为任意中间节点的孩子节点插入，将这个叶子节点变为中间节点后，按上文所说的方法调整节点顺序以保证维持堆特性不变。
+删除 要从堆中删除一个节点，用最后一个节点替换掉要删除的节点，然后调整节点顺序以维持堆特性。
+应用  双端优先队列  </description>
     </item>
     
     <item>

@@ -6,44 +6,26 @@
     <description>Recent content in Categories on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 26 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Oct 2019 10:08:59 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>system</title>
+      <title>Go</title>
+      <link>https://blog.v5u.win/categories/go/</link>
+      <pubDate>Mon, 28 Oct 2019 10:08:59 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>System</title>
       <link>https://blog.v5u.win/categories/system/</link>
       <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/categories/system/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go-CGO</title>
-      <link>https://blog.v5u.win/categories/go-cgo/</link>
-      <pubDate>Tue, 20 Aug 2019 18:06:35 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/categories/go-cgo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go-gofmt</title>
-      <link>https://blog.v5u.win/categories/go-gofmt/</link>
-      <pubDate>Fri, 16 Aug 2019 17:57:28 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/categories/go-gofmt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://blog.v5u.win/categories/go/</link>
-      <pubDate>Fri, 16 Aug 2019 16:02:29 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/categories/go/</guid>
       <description></description>
     </item>
     
@@ -66,29 +48,11 @@
     </item>
     
     <item>
-      <title>Go-crontab</title>
-      <link>https://blog.v5u.win/categories/go-crontab/</link>
-      <pubDate>Fri, 19 Jul 2019 16:51:27 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/categories/go-crontab/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>开源</title>
       <link>https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>toml</title>
-      <link>https://blog.v5u.win/categories/toml/</link>
-      <pubDate>Wed, 26 Jun 2019 15:33:44 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/categories/toml/</guid>
       <description></description>
     </item>
     
@@ -107,6 +71,15 @@
       <pubDate>Wed, 05 Jun 2019 10:37:16 +0800</pubDate>
       
       <guid>https://blog.v5u.win/categories/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://blog.v5u.win/categories/blog/</link>
+      <pubDate>Tue, 07 May 2019 17:58:56 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/categories/blog/</guid>
       <description></description>
     </item>
     
@@ -260,15 +233,6 @@
       <pubDate>Fri, 05 Aug 2016 10:46:42 +0000</pubDate>
       
       <guid>https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blog</title>
-      <link>https://blog.v5u.win/categories/blog/</link>
-      <pubDate>Mon, 04 Jul 2016 14:39:44 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/categories/blog/</guid>
       <description></description>
     </item>
     

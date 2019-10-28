@@ -6,10 +6,36 @@
     <description>Recent content in blog on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 04 Jul 2016 14:39:44 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2019 17:58:56 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blog Wordpress Http Https</title>
+      <link>https://blog.v5u.win/post/blog-wordpress-http-https/</link>
+      <pubDate>Tue, 07 May 2019 17:58:56 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/blog-wordpress-http-https/</guid>
+      <description> wordpress http 升级HTTPS  lnmp 添加ssl：lnmp ssl add wordpress 后台修改：主域名改为https:// ,固定链接改为id格式 (postname的URL格式无法找到，未解决) 修改数据库,搜索数据库中的http的链接，修改为https update wp_posts set post_content = replace(post_content, ‘http://www.v5u.win/’,‘https://www.v5u.win/’) 访问网站查找跨域引用(js,css)，更改代码或者数据库文本。改为https  </description>
+    </item>
+    
+    <item>
+      <title>Hugo 开箱体验</title>
+      <link>https://blog.v5u.win/post/blog-hugo/</link>
+      <pubDate>Tue, 16 Apr 2019 14:09:31 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/blog-hugo/</guid>
+      <description>Hugo是Go写的静态网站生成器，生成速度快，性能开销小，正好也在学习Golang。我决定从 Hexo 切换到 Hugo。
+以下是试用总结，基本可以实现从0到1。至于从1到n，同学们加油！
+安装 brew install hugo
+创建站点 hugo new site path/blogname
+创建页面 hugo new post/first.md 默认文章创建位置为content目录
+预览 hugo server --theme=maupassant --buildDrafts
+生成静态页 直接运行hugo 单命令就可以生成 public 目录，内放生成的静态页面
+发布 使用 git或其他方式 将public目录下的文件发布到目标地址
+其他 hugo new theme themename 创建 theme</description>
+    </item>
     
     <item>
       <title>如何进入ghostblog的管理面板</title>

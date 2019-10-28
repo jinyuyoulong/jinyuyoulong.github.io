@@ -6,10 +6,54 @@
     <description>Recent content in Go on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 16 Aug 2019 16:02:29 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Oct 2019 10:08:59 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Go谚语</title>
+      <link>https://blog.v5u.win/post/go%E8%B0%9A%E8%AF%AD/</link>
+      <pubDate>Mon, 28 Oct 2019 10:08:59 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go%E8%B0%9A%E8%AF%AD/</guid>
+      <description>[TOC]
+本文摘自 https://www.kancloud.cn/cserli/golang/524388
+本文译自go-proverbs, 脱胎于 Rob Pike 振奋人心的演讲视频 talk at Gopherfest SV 2015 (bilibili).
+不要通过共享内存进行通信, 通过通信共享内存 (Don&amp;rsquo;t communicate by sharing memory, share memory by communicating)
+传统的线程模型（通常在编写 Java, C++ 和 Python 程序时使用）要求程序员使用共享内存在线程之间进行通信. 通常, 共享数据结构受锁保护, 线程将争夺这些锁访问数据, 在某些情况下, 通过使用 Python 的 Queue 等线程安全的数据结构可以使这变得更容易.
+Go 的并发原语 (goroutines 和 channels) 为构造并发软件提供了一种优雅而独特的手段. (这些概念有一个有趣的历史, 要从 C.A.R.Hoare 的通信顺序进程说起.) Go 鼓励使用 channels 在 goroutines 之间传递对数据的引用, 而不是显式地使用锁来调解对共享数据的访问. 这种方法确保只有一个 goroutine 可以在给定的时间访问数据. 这个概念总结在 Effective Go 文档中 (任何 Go 程序员都必须阅读).
+Go 官方博客中有一篇文章对该谚语解读, 可以参见原文.</description>
+    </item>
+    
+    <item>
+      <title>Go CGO</title>
+      <link>https://blog.v5u.win/post/go-cgo/</link>
+      <pubDate>Tue, 20 Aug 2019 18:06:35 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-cgo/</guid>
+      <description>[TOC]
+golang 中调用 c/c++ 代码有三种方式  直接嵌套在go文件中使用，最简单直观的 导入动态库 .so 或 dll 的形式，最安全但是很不爽也比较慢的 直接引用 c/c++ 文件的形式，层次分明，容易随时修改看结果的  需要的环境支持  Linux 具备 gcc 与 g++ 即可 Mac 参考 Linux Windows 需要安装 mingw，否则编译时会有这类错：cannot find -lmingwex  嵌套 package main // 嵌入式 调用 // #include &amp;lt;stdio.h&amp;gt; // #include &amp;lt;stdlib.h&amp;gt; /* void print(char *str) { printf(&amp;quot;%s\n&amp;quot;, str); } */ import &amp;quot;C&amp;quot;//这里可看作封装的伪包C, 这条语句要紧挨着上面的注释块，不可在它俩之间间隔空行！ import &amp;quot;unsafe&amp;quot; func main() { s := &amp;quot;Hello Cgo&amp;quot; cs := C.CString(s) C.</description>
+    </item>
+    
+    <item>
+      <title>Go Gofmt</title>
+      <link>https://blog.v5u.win/post/go-gofmt/</link>
+      <pubDate>Fri, 16 Aug 2019 17:57:28 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-gofmt/</guid>
+      <description> [TOC]
+为什么要用 gofmt 大多数人认为我们格式化Go代码gofmt 以使代码看起来更好或结束团队成员之间关于程序布局的争论。但是， 1是，如果一个算法定义围棋源代码是如何被格式化，然后编程，如goimports 或 gorename 或者 go fix，可以更容易地编辑源代码，而无需编写代码回来时引入伪格式更改。这有助于您长期维护代码。
+ 我认为源代码格式化工具非常简洁 提供。解析器/ ast /漂亮也是一件好事 打印机可用作mod。
+但是，我不确定是否尝试强制执行格式化样式 拒绝配置格式化程序的能力（如FAQ提及） 是个好主意。至少go /打印机包可能是好的 即使命令行gofmt工具，也允许更灵活的配置 没有。 对于gofmt的输出，没有人或将永远不会满意， 但它实际上相当不错，更重要的是，人们适应 令人惊讶的是，这种风格起初看起来很陌生。特别 在格式化方面，风格实际上只是“你习惯的”。 由于Go是一种全新的语言，所以不应该这样 很难习惯不同的格式。
+ 我们希望人们能够准确地接受gofmt的输出 因为它结束了这种风格的辩论。怎么样 C有很多不同的支撑款式吗？太多。
+就个人而言，我发现让gofmt格式化为我是一种解放， 因为这意味着我有更多可用的神经元 攻击有趣的编程问题。有 我不喜欢gofmt输出的东西，但我不喜欢 不再担心他们了。
+但所有这些都错过了我认为最激动人心的事情 关于gofmt：事实上我们有一个可以拿起每个人的工具 Go树中的源文件，将其解析为内部表示， 然后将完全相同的字节放回原位。 （很大一部分 这是由于进入gofmt的工作量，以及 其余的是因为我们同意对gofmt进行标准化 一旦你拥有了这样一个工具，它变得非常容易 在中间插入机械处理，解析之间 和印刷。所以我们拥有一个程序的所有难点 操纵工具只是坐着等待使用。我已经开始了 以前为C编写类似的工具，从来没有得到过输出 完全匹配输入。同意接受“gofmt风格” 是在有限数量的代码中使它可行的部分。
+我希望人们会按照自己的代码使用gofmt。 正如我所说，它不需要超过几个星期 习惯于新的编码风格，特别是如果你是一个品牌 新语言，每个人都有巨大的利益 相同的风格。
+我们当然打算继续格式化所有代码 使用gofmt去树。像Go一样，这是一个实验。
+Russ
+ 下面有邮件组的讨论过程 [return]   </description>
+    </item>
     
     <item>
       <title>Go Bazel构建工具</title>
@@ -45,6 +89,44 @@ func addToList(list []int, x int) []int { n := len(list) if n+1 &amp;lt; cap(lis
 所以我们在程序中使用了许多addToList函数，并将它们重新整型为Go本身提供的一个函数。添加append使得Go语言变得更复杂，但总的来说，即使考虑到学习append成本，它也使得编写Go程序的整体体验变得更加简单。
 这是另一个例子。对于Go 1，我们查看了Go发行版中的许多开发工具，并将它们重新编写为一个新命令。
 5a 8g 5g 8l 5l cgo 6a gobuild 6cov gofix → go 6g goinstall 6l gomake 6nm gopack 8a govet  这个go命令现在如此重要，以至于很容易忘记我们没有它这么长时间以及这个go命令涉及多少额外的工作。</description>
+    </item>
+    
+    <item>
+      <title>Go Liteide IDE</title>
+      <link>https://blog.v5u.win/post/go-liteide/</link>
+      <pubDate>Fri, 02 Aug 2019 16:33:56 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-liteide/</guid>
+      <description>[TOC]
+liteide是专门为go编写的一个基于qt5的IDE，免费开源跨平台。 LiteIDE 是一个轻量级的开源跨平台 Go语言 IDE. 作者: 七叶 (visualfc)
+支持 Windows，Linux，Mac。
+下载地址：https://github.com/visualfc/liteide.git
+或命令行安装：brew search liteide
+配置环境变量  切换当前环境 &amp;gt; system—&amp;gt; darwin64-home, 点击旁边的小灰框(编辑当前环境) 在打开的文件中设置 go 环境： GOROOT, GOPATH,GOBIN, GOPROXY 注意查看下方的&amp;rdquo;事件记录&amp;rdquo; 输出日志，确认不在有报错  编译运行 BR : go build &amp;amp; run
+R : 直接运行可执行文件
+FR : go run file.go
+B : go build
+调试 用 LiteIDE 可以方便调试 Go 程序，它是用的 GDB 调试的，如果没有安装 GDB 的话，运行 “调试” 就会提示：
+Mac没有内置gdb，所以需要使用brew安装，但是Mac又不信任 gdb ，所以还要生成信任证书给gdb用。
+参考：shttps://windmt.com/2016/01/07/installing-gdb-on-macos/
+2.4 设置编译选项及编译
+编译-&amp;gt;编译配置，设置编译参数。在BUILDARGS添加-gcflags &amp;ldquo;-N -l&amp;rdquo;，目的是去掉编译优化，方便调试。</description>
+    </item>
+    
+    <item>
+      <title>Go Crontab</title>
+      <link>https://blog.v5u.win/post/go-crontab/</link>
+      <pubDate>Fri, 19 Jul 2019 16:51:27 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-crontab/</guid>
+      <description>[TOC]
+计划任务 from Godoc
+包cron实现了cron规范解析器和作业运行器。
+安装 要下载特定的标记版本，请运行:
+go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中:
+import “github.com/robfig/cron/v3” 由于Go Modules的使用，它需要Go 1.11或更高版本。
+用法 呼叫者可以在给定的时间表上注册要调用的Func。Cron将在他们自己的goroutines中运行它们。
+c := cron.New() c.AddFunc(&amp;quot;30 * * * *&amp;quot;, func() { fmt.Println(&amp;quot;Every hour on the half hour&amp;quot;) }) c.AddFunc(&amp;quot;30 3-6,20-23 * * *&amp;quot;, func() { fmt.Println(&amp;quot;.. in the range 3-6am, 8-11pm&amp;quot;) }) c.AddFunc(&amp;quot;CRON_TZ=Asia/Tokyo 30 04 * * * *&amp;quot;, func() { fmt.Println(&amp;quot;Runs at 04:30 Tokyo time every day&amp;quot;) }) c.AddFunc(&amp;quot;@hourly&amp;quot;, func() { fmt.</description>
     </item>
     
     <item>
@@ -124,6 +206,18 @@ xorm reverse mysql &amp;quot;username:pwd@tcp(127.0.0.1:3306)/dbname?charset=utf
     </item>
     
     <item>
+      <title>Go Toml</title>
+      <link>https://blog.v5u.win/post/go-toml/</link>
+      <pubDate>Wed, 26 Jun 2019 15:33:44 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-toml/</guid>
+      <description>[TOC]
+常用的配置文件有：ini, ymal, json, toml
+说一下为什么要选择 toml。toml 格式是最新公布的配置文件格式，由GitHub创始人 Tom Preston-Werner 发明。TOML 的目标是成为一个极简的配置文件格式。TOML 被设计成可以无歧义地被映射为哈希表，从而被多种语言解析。
+TOML的优势  可以添加注释 没有缩进要求 表达简洁，丰富。 大小写敏感  写法 config.toml [app] #app名称 name = &amp;quot;project-web&amp;quot; url = &amp;quot;http://localhost&amp;quot; port = &amp;quot;:8080&amp;quot; debug = false [database] dirver = &amp;quot;mysql&amp;quot; [mysql] dbname = &amp;quot;@tcp(127.0.0.1:3306)/superstar?charset=utf8&amp;quot; username = &amp;quot;root&amp;quot; password = &amp;quot;333&amp;quot; [website] static_uri = &amp;quot;/static&amp;quot; site_title = &amp;quot;后台管理&amp;quot; copy_right = &amp;quot;&amp;lt;small&amp;gt;&amp;amp;copy;2019&amp;lt;/small&amp;gt;&amp;quot; [image] image_lib = &amp;quot;Imagick&amp;quot; # GD || Imagick image_path = &amp;quot;.</description>
+    </item>
+    
+    <item>
       <title>Go Iris Redis</title>
       <link>https://blog.v5u.win/post/go-iris-redis/</link>
       <pubDate>Tue, 11 Jun 2019 10:15:20 +0800</pubDate>
@@ -133,6 +227,26 @@ xorm reverse mysql &amp;quot;username:pwd@tcp(127.0.0.1:3306)/dbname?charset=utf
 iris 中使用 Redis iris 内置对 Redis 的支持，但是她和 session 结合的比较紧密，比如每一个方法传参都大部分都有 sid，在当前文件 database.go 找了半天没找到在哪里定义了 sid，func (db *Database) Get(sid string, key string) (value interface{})
 只能推断是 sessionId，果然在 Session struct 中发现了 sid。
 Session struct { sid string isNew bool flashes map[string]*flashMessage mu sync.RWMutex // for flashes. Lifetime LifeTime provider *provider }  所以可以下结论，iris中必须使用内置的 Redis 是只对 session 的配合支持，如果需要单独操作 Redis 数据库，则需要使用其他的第三方库来操作，比如：redigo 和 go-redis/redis</description>
+    </item>
+    
+    <item>
+      <title>Go BeeGoVSgin</title>
+      <link>https://blog.v5u.win/post/go-beegovsgin/</link>
+      <pubDate>Mon, 03 Jun 2019 13:38:52 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-beegovsgin/</guid>
+      <description>[TOC]
+beego和gin是现在用的最多的两个go框架，所以这里选择比较这两个。
+框架选择原则：永远站在大多数人这边。招人，公司，成本，问题解决时间成本都要考虑。
+   特性 BeeGo Bin     MVC 不支持 不完全支持   路由 RESTful Controller 正则支持的非常完整 RESTful router.Get() 组路由   Session 支持,也支持session持久化 不支持，使用三方包 github.com/astaxie/session    性能 从问正确的问题开始。。。
+ *高性能*本身是不是我们的目标？
+ 我们的目标是什么？
+ 创造价值，获得竞争优势
+  机器成本 vs 开发人员成本
+影响访问速度的因素有很多 例如系统中间层和数据层的耦合情况，数据层本身的能力，服务器所在机房的网络拓扑结构，负载均衡的配置情况，等等。
+数据层速度，表设计不合理，网络io,图片的加载速度很慢
+正确做性能优化的姿势  确定性能目标，并保证这个目标是出于实际需要 建立性能环境，staging环境，并与线上环境隔离 性能环境和staging环境应该与线上环境类似架构 压测，并获得性能瓶颈的真正证据 最后，持续改进，永远只对瓶颈改进。  只有改的是瓶颈的点才有用
+适用场景 Beego在业务方面比gin支持的更多  在业务更复杂的项目中，使用beego 在需要快速开发的项目中，适用beego 在1.0项目中，适用beego。  Gin在性能方面比Beego更好  当某个接口性能遭到较大的挑战的时候，考虑使用Gin重写接口 如果项目的规模不大，业务相对简单，使用Gin。  你会发现大部分时候这两个框架差不多。</description>
     </item>
     
     <item>
@@ -184,6 +298,67 @@ export CGO_CFLAGS_ALLOW=&#39;-Xpreprocessor&#39; #cgo	 Initialize() 和 Terminat
 通过New*构造函数（MagickWand，DrawingWand，PixelIterator，PixelWand，&amp;hellip;）创建的类型由Go GC通过使用终结器进行管理。
 如果使用struct literals，则应手动释放资源：
 package main import &amp;quot;github.com/gographics/imagick/imagick&amp;quot; func main() { imagick.Initialize() // Schedule cleanup defer imagick.Terminate() var err error mw := imagick.NewMagickWand() defer mw.Destroy() err = mw.ReadImage(&amp;quot;header.png&amp;quot;) if err != nil { panic(err) } // Get original logo size width := mw.</description>
+    </item>
+    
+    <item>
+      <title>Go 自定义包模板引用 moudle</title>
+      <link>https://blog.v5u.win/post/go-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E6%A8%A1%E6%9D%BF%E5%BC%95%E7%94%A8/</link>
+      <pubDate>Mon, 13 May 2019 13:17:53 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E6%A8%A1%E6%9D%BF%E5%BC%95%E7%94%A8/</guid>
+      <description>源起：最近在调研Go，需要使用Go搭建一套通用式的模板框架，用以当新开其他项目的时候直接基于模板框架开发。
+固定化引入自定义包的路径，解决——开启新的分支需要更改引入路径
+方案一：go mod 支持 go build -mod=vendor ，问题是 vendor 里的文件都是 gopath/pkg/mod 的拷贝，是不能基于自己公司的需求做修改的。
+方案二：使用 相对路径，相对路径 相对的是 gopath 的路径，使用此方案就需要 将项目必须放在 gopath 目录下，不能使用 go mod。
+目前生产环境用 go mod 还不太现实，因为多人写作不能下载就用，还需要安装第三方包， 我还是先推荐定义 GOPATH 和 vendor 用法。</description>
+    </item>
+    
+    <item>
+      <title>Go Nginx反向代理</title>
+      <link>https://blog.v5u.win/post/go-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Fri, 10 May 2019 16:08:55 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
+      <description>当我们启动一个go 程序的时候，通常监听的是本地端口如 IP:port 。但是实际的线上环境，解析路径是：通过 DNS 解析 ——&amp;gt; nginx vhost ——&amp;gt; IP:port 这个。单纯的使用 go 是不能处理 域名解析工作的。 所以通常是NGINX 和 Go 搭配着使用。
+nginx 可以帮我做很多工作，例如访问日志，cc 攻击，静态服务等，nginx 已经做的很成熟了。 Go 只要专注于业务逻辑和功能就好。 NGINX作为反向代理的配置如下：
+#列出所有服务器地址，nginx 自动均衡分发请求到各个服务器。 upstream frontends { ip_hash; server 192.168.199.1:8088; server 192.168.199.2:8089; } server { listen 80; server_name nav.v5u.win ; #静态资源交由nginx管理 location /static { root /var/www/mydomain/web; expires 1d; add_header Cache-Control public; access_log off; } # 反向代理设置 location ~ / { proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_redirect off; proxy_pass http://localhost:7070; } }  </description>
+    </item>
+    
+    <item>
+      <title>Go Quick Start</title>
+      <link>https://blog.v5u.win/post/go-quick-start/</link>
+      <pubDate>Wed, 08 May 2019 15:39:15 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-quick-start/</guid>
+      <description>有经验开发者，快速入门 Go 语言 发明Go语言是出于更好地完成工作的需要。Go不是计算机科学的最新发展潮流，但它却提供了解决现实问题的最新最快的方法。 Go拥有命令式语言的静态类型，编译很快，执行也很快，同时加入了对于目前多核CPU的并发计算支持，也有相应的特性来实现大规模编程。 Go语言有非常棒的标准库，还有一个充满热情的社区。
+有编程经验的小伙伴，朗诵以下代码块，完成Go语言快速入门。
+// 单行注释 /* 多行 注释 */ // 导入包的子句在每个源文件的开头。 // Main比较特殊，它用来声明可执行文件，而不是一个库。 package main // Import语句声明了当前文件引用的包。 import ( &amp;quot;fmt&amp;quot; // Go语言标准库中的包 &amp;quot;io/ioutil&amp;quot; // 包含一些输入输出函数 m &amp;quot;math&amp;quot; // 数学标准库，在此文件中别名为m &amp;quot;net/http&amp;quot; // 一个web服务器包 &amp;quot;os&amp;quot; // 系统底层函数，如文件读写 &amp;quot;strconv&amp;quot; // 字符串转换 ) // 函数声明：Main是程序执行的入口。 // 不管你喜欢还是不喜欢，反正Go就用了花括号来包住函数体。 func main() { // 往标准输出打印一行。 // 用包名fmt限制打印函数。 fmt.Println(&amp;quot;天坑欢迎你!&amp;quot;) // 调用当前包的另一个函数。 beyondHello() } // 函数可以在括号里加参数。 // 如果没有参数的话，也需要一个空括号。 func beyondHello() { var x int // 变量声明，变量必须在使用之前声明。 x = 3 // 变量赋值。 // 可以用:=来偷懒，它自动把变量类型、声明和赋值都搞定了。 y := 4 sum, prod := learnMultiple(x, y) // 返回多个变量的函数 fmt.</description>
+    </item>
+    
+    <item>
+      <title>Go web技术栈</title>
+      <link>https://blog.v5u.win/post/go-web%E6%8A%80%E6%9C%AF%E6%A0%88/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-web%E6%8A%80%E6%9C%AF%E6%A0%88/</guid>
+      <description> iris 框架
+ go-beanstalkd 消息队列 gRPC
+ go module 包管理
+ gin+gorm / singo
+  </description>
+    </item>
+    
+    <item>
+      <title>Go 交叉编译</title>
+      <link>https://blog.v5u.win/post/go-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Thu, 18 Apr 2019 17:22:29 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</guid>
+      <description>查看操作系统平台和内核版本：uname -a
+Mac 下编译 Linux 和 Windows 64位可执行程序
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go  Linux 下编译 Mac 和 Windows 64位可执行程序
+CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go  Windows 下编译 Mac 和 Linux 64位可执行程序
+SET CGO_ENABLED=0 SET GOOS=darwin SET GOARCH=amd64 go build main.go SET CGO_ENABLED=0 SET GOOS=linux SET GOARCH=amd64 go build main.go  GOOS：目标平台的操作系统（darwin、freebsd、linux、windows） GOARCH：目标平台的体系架构（386、amd64、arm） 交叉编译不支持 CGO 所以要禁用它,不要使用c代码库</description>
     </item>
     
     <item>
