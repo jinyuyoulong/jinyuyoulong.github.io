@@ -7,10 +7,12 @@ tags:
 id: 16
 ---
 
-搬瓦工(2.99$起≈20￥/月)
+# 在哪里购买合适的VPS 虚拟服务器
 
-[https://bandwagonhost.com/aff.php?aff=7288](https://bandwagonhost.com/aff.php?aff=7288)
-选Los Angeles机房<br/>
-参考：http://www.panxw.com/posts/good-vps-list.html
+作为新手推荐入门最便宜的vps，即便被墙了，也不会损失太多。那么下面我推荐一下各家的产品。
+
+- 搬瓦工(2.99$起≈20￥/月)[https://bandwagonhost.com](https://bandwagonhost.com/aff.php?aff=50533)
+
+优先推荐搬瓦工，这个是目前国内用的最多的服务商，支持微信/支付宝付款，机房稳定，提供一键装机，翻墙，宽带加速等工具，是老牌的优秀提供商了，以前还有免费n次/年更换IP的贴心服务，免去IP被墙的后顾之忧，从2019年不再免费提供，付费更换IP依然可用，不用担心。之前最便宜的2.99`$`/月，现在最便宜的成了49.99`$`/年，推荐选择Los Angeles机房。
 
 

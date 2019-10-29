@@ -39,11 +39,11 @@ go mod tidy
 4. export export GO111MODULE=on // 必须使用module依赖，在src/ 目录下可以使用module
 
 #### 常用命令
-```
+```sh
 go mod tidy //拉取缺少的模块，移除不用的模块。
 go mod download //下载依赖包
 go mod graph //打印模块依赖图
-go mod vendor //将依赖复制到vendor下
+go mod vendor //将依赖复制到 vendor 下
 go mod verify //校验依赖
 go mod why //解释为什么需要依赖
 go list -m -json all //依赖详情

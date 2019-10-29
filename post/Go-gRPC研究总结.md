@@ -55,6 +55,17 @@ protoc -I . add.proto --go_out=plugins=grpc:.
 
 在server.go 实现AddServiceServer 的接口方法
 
+```go
+type HelloServer struct {
+}
+
+func (h HelloServer) SayHello(c context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
+	return &pb.HelloReply{Message: "hello " + in.Name}, nil
+}	
+```
+
+
+
 实现server & client
 
 打开两个终端，分别启动 serve & client

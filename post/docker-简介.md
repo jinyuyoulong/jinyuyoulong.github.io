@@ -131,19 +131,19 @@ Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64
   ### 其他docker命令
 
   ```
-  docker-machine env // 查看环境变量：IP
-  docker ps //查看运行的docker
+  docker-machine env 	// 查看环境变量：IP
+  docker ps 					//查看运行的docker
   netstat -na|grep 8888 // 查看端口监听情况
   docker exec -it [容器ID] bash //进入容器，进行bash操作 -it：这是两个参数，一个是 -i 表示交互式操作，一个是 -t 为终端。
   docker run -ti -d --name my-nginx -p 8088:80 docker.io/nginx // 端口映射
   docker rm containerId // 删除 容器文件
-  docker rmi imageId // 删除 image文件
-  docker stop 1f // 停止运行的容器
-  docker start :启动一个或多个已经被停止的容器
-  docker stop :停止一个运行中的容器
-  docker restart :重启容器
+  docker rmi imageId 		// 删除 image文件
+  docker stop 1f 				// 停止运行的容器
+  docker start 					//启动一个或多个已经被停止的容器
+  docker stop 					//停止一个运行中的容器
+  docker restart b0				//重启容器
   docker container kill [containID] // 手动终止 运行的 容器
-  docker container ls // 列出本机正在运行的容器
+  docker container ls 	// 列出本机正在运行的容器
   docker container ls --all //列出本机所有容器，包括终止运行的容器
   ```
   docker-machine create default // 创建docker虚拟主机，每一次启动都要重新创建，默认创建环境名为 default。如果报错，boot2docker.iso 无法下载可以在GitHub上单独下载后放到 /Users/$username/.docker/machine/cache/ 下
@@ -193,3 +193,5 @@ Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64
   [Docker 微服务教程](http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html)
 
   [Dockerfile 最佳实践](https://studygolang.com/articles/4219)
+
+https://registry.docker-cn.com

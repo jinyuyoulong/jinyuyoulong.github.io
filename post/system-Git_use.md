@@ -26,7 +26,7 @@ id: 6
 |add tag  |git tag -m "first release" 0.1.0|
 |git push |git push --tags|
 | delete 远程tag |git push origin --delete tag|
-| 检出分支文件 | git checkout dev|
+| 检出远程分支文件 | git checkout -b dev origin/dev |
 | 公钥加入本地ssh|ssh-add ~/.ssh/id_rse|
 | 查看某域是否有ssh公钥，私钥|ssh -T git@git.oschina.net|
 

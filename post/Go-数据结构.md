@@ -247,3 +247,6 @@ int64, err := strconv.ParseInt(string, 10, 64)
 string:=strconv.Itoa(int)
 //int64到string
 string:=strconv.FormatInt(int64,10)
+// int64 to time
+nextTime := time.Now()
+time.Unix(nextTime,0)
