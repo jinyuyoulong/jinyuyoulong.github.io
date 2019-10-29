@@ -13,12 +13,11 @@
     
     <item>
       <title>编程语言特性汇总</title>
-      <link>https://blog.v5u.win/768.html</link>
+      <link>https://blog.v5u.win/post/system-program-language-feature/</link>
       <pubDate>Tue, 03 Jul 2018 10:23:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/768.html</guid>
-      <description>语言特性汇总：
- 类型推导， 类型检查， 惰性求值 currying 闭包 OO lambda  </description>
+      <guid>https://blog.v5u.win/post/system-program-language-feature/</guid>
+      <description>语言特性汇总： 类型推导， 类型检查， 惰性求值 currying 闭包 OO lambda</description>
     </item>
     
   </channel>

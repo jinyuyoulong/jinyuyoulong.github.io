@@ -17,9 +17,7 @@
       <pubDate>Tue, 15 Mar 2016 16:38:19 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/reactnative-first-install/</guid>
-      <description>创建第一个项目后，打开xcode运行，terminal报错
-Watchman: watchman&amp;ndash;no-pretty get-sockname returned with exit code null dyld: Library not loaded: /usr/local/opt/pcre/lib/libpcre.1.dylib
- 解决方案：终端输入 brew link pcre， 如果报错没有写入权限（Could not symlink lib/libpcre.1.dylib /usr/local/lib is not writable.） 则授权给该文件 sudo chown -R $(whoami) /usr/local/lib  </description>
+      <description>创建第一个项目后，打开xcode运行，terminal报错 Watchman: watchman&amp;ndash;no-pretty get-sockname returned with exit code null dyld: Library not loaded: /usr/local/opt/pcre/lib/libpcre.1.dylib 解决方案：终端输入 brew link pcre， 如果报错没有写入权限（C</description>
     </item>
     
   </channel>

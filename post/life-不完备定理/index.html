@@ -1,109 +1,100 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <title>不完备定理 // 为吾优</title>
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.55.5" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="范金龙" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>不完备定理 | 为吾优</title>
+    <meta property="og:title" content="不完备定理 - 为吾优">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-08-14T16:38:59&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-08-14T16:38:59&#43;08:00">
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="不完备定理">
+        
+    <meta name="author" content="金玉游龙">
+    <meta property="og:url" content="https://blog.v5u.win/post/life-%E4%B8%8D%E5%AE%8C%E5%A4%87%E5%AE%9A%E7%90%86/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="不完备定理"/>
-<meta name="twitter:description" content="转一段清华大学赵昊彤博士的解读，我认为算是简单清晰准确。 ““哥德尔不完备定理”到底说了些什么？——（一）
-【中文网上深入介绍哥德尔不完备定理的文章很少，我这篇文章写得很长，花了不少时间打磨它，希望能帮助到爱好数学与逻辑的人。文章把理解哥德尔不完备定理分为了五重，建议只是想初步了解的读者，可以重点看第一重；希望了解一些背景的读者，可以修炼到第二重；希望较深入理解哥德尔证明思路的读者，建议修炼到第三重；如果确实感兴趣，希望详细了解哥德尔证明过程以及其严谨性的读者，可以修炼到第四重；如果还想多知道一些知识的读者，可以练到第五重。
-——— 作者】
-1931年，库尔特∙弗雷德里希∙哥德尔（KurtFriedrich Gödel）发表了一篇影响深远的论文“On formally undecidablepropositions of Principia Mathematica and related systems I”[1]（论文的原文是用德文发表的，这里给出的是英译名）。今天，我们一般笼统的把论文中提出的定理称为“哥德尔不完备定理”。80多年过去了，“哥德尔不完备定理”的影响仍然持续、深远，特别是引起了很多非数学界人士的兴趣，引发了各种各样的解读。很遗憾，有一些解读是不准确的，甚至是错误的；更为严重的是，有一些人出于对“哥德尔不完备定理”的一知半解，甚至开始怀疑、批判人类的理性，以至于发展到相信、鼓吹不可知论。近期，我在认真研读了哥德尔论文原文（英译版，本人实在是不懂德文）和相关资料的基础上，加深了自己的认识，同时也很希望尽自己绵薄之力，分享对“哥德尔不完备定理”的理解，厘清对“哥德尔不完备定理”的误解。
-“哥德尔不完备定理”是数学、逻辑学领域的划时代成果，使人们对于数学研究基础的认识更加深刻、准确，同时它也是现代逻辑史上的重要里程碑。“哥德尔不完备定理”虽然伟大、深刻，但是个人认为它并不深奥。对于一个普通人，只要愿意动脑，都可以在一定程度上准确理解它。当今的互联网时代，网上有不少对“哥德尔不完备定理”的介绍和解读；60多年前，两位美国作家欧内斯特·内格尔（Ernest Nagel）和詹姆士 R. 纽曼 （James R. Newman）撰写的的著作《哥德尔证明》更是科普“哥德尔不完备定理”的重要作品。如今网上能看到的中文介绍“哥德尔不完备定理”的文章，绝大部分是转述《哥德尔证明》这本书的内容的。不过这本书撰写太早，有些新的结论当年尚不了解；另外这本书在普及哥德尔证明的时候，更多的是讲解背景、思路，并用作者自己的理解来讲述哥德尔的证明，个别地方不够严谨，一些讲述方式也不够准确。本文则全部基于哥德尔论文的原文来介绍“哥德尔不完备定理”的证明，并适当融入一些80多年来新的认识和结论，希望能帮助数学、逻辑学爱好者了解并理解“哥德尔不完备定理”。
-为了帮助更多人在各自需要的层面上理解“哥德尔不完备定理”，下面的介绍把理解“哥德尔不完备定理”分为了五重，从对定理的基本含义的理解一直到对核心证明的了解都包括了进来。读者可以像修习“乾坤大挪移”神功一样，依照自身内力基础，修炼到适合自己的层面即可。祝愿大家都能练成“哥德尔不完备定理”第五重神功！
-第一重：“庐山真面目”——准确了解“哥德尔不完备定理”
-赏玩一块美玉的时候，首先不应该是听各类专家讲这块玉多么晶莹剔透、多么价值连城，而应该是首先把玉拿出来让大家看看，有个感性认识。在哥德尔的论文中，我们一般所说的“哥德尔不完备定理”（有时候也被叫做“哥德尔第一不完备定理”）是指论文中的定理VI，原文如下：
-TheoremVI: For every ω-consistent primitive recursive class κ of formulae, there is aprimitive recursive class-sign r , such that neither forall(v,r) nornot(forall(v,r)) belongs to Conseq(κ) (where v is the free variable of r).
-尽量原汁原味的翻译如下：
-定理VI：对于任意一个ω一致（第四重）的原始递归公理集合κ，一定存在一个原始递归（第三重、第四重）的表达式r，使得无论是“r总成立”这个命题，还是“r不总成立”这个命题，都不属于通过κ可推导出来的定理的集合（原文中的Conseq(κ)）。
-补充说明一点，哥德尔论文中的κ所代表的公理集合，是指蕴含了皮亚诺算术公理（Peano Axioms）的集合，这是在哥德尔论文的前面明确了的，所以在阐述定理VI时就没有再特意强调。
-修炼第一重神功的读者可能会问了“大哥，你说的这些都是啥？”。别担心，修炼第一重神功没那么复杂。
-让我们先从公理说起，公理其实就是无需证明而被认定为成立的命题。公理体系是指一组公理的集合。通过这些公理和基本的逻辑关系，可以推导出更多成立的命题，称为定理。公理体系一般被认为发源于2300多年前欧几里德撰写的《几何原本》。在现代科学形成的过程中，人们发现通过定义一组公理再加上合理的逻辑推演，可以证明很多命题或结论。公理体系是当今数学研究和科学研究的基础，数学研究成果就是（或者说在极大的程度上依赖于）一组公理体系的推演，而其它科学研究除了依赖公理体系进行推演外，还需要通过系统的实验来进行验证。
-“哥德尔不完备定理”是针对公理体系的一项结论，它之所以如此伟大且深刻，正是因为它撼动的是一切科学的研究基础——公理体系。修炼第一重神功的时候，我们简要理解“哥德尔不完备定理”说的是：一个足够复杂的公理体系（至少蕴含了皮亚诺算术公理），如果它是一致的（相容的，无矛盾的），那么它就是不完备的。这里的完备，指的是“对于任何可在这个公理体系内描述的命题，都可以在这个公理体系内得到判定，要么是正确的，要么是错误的”。
-再用大白话解释一下，就是说，一个没有矛盾的公理体系内，总有一些命题是说不清楚对还是错的（务必注意，这是指在这个体系内说不清楚，不是说永远都说不清楚了）。也许有人说了，既然没矛盾的公理体系有问题，那就搞个有矛盾的公理体系呗。如果设想一个公理体系，一会儿告诉我们“1&#43;1=2”，一会儿又告诉我们“1&#43;12”，相信不会再有人把这个公理体系当回事。有矛盾的公理体系会导致彻底的无意义和虚无，修炼第二重神功的时候会详细阐明这一点。
-上述结论听起来是比较可怕的，公理体系必须没有矛盾，可是没有矛盾的公理体系又会导致出现一些命题说不清楚对错。于是开始出现了各种各样的解读，比如“哥德尔定理告诉了我们数学和逻辑的极限，这也几乎是人类理性的极限。它证明理性不是无所不能的”、“哥德尔定理告诉我们，人类不可能真正认识这个世界，永远不可能理解宇宙的真理”等等。相信作为人类理性智慧光辉代表之一的哥德尔，如果听到这些说法，可能也会很无奈吧。
-第一，“哥德尔不完备定理”不仅不是所谓人类理性的极限，恰恰相反，它是人类理性智慧的重大成果。它告诉了我们，正是由于有了人类理性的智慧，才有可能认识到这样深刻的结论。哥德尔是通过构造出了一个无法在这个公理体系内证明的命题来证明出“哥德尔不完备定理”的。这个命题的内容说的正是“命题自身无法在此公理体系内被证明”，既然哥德尔已经清楚的证明了这一点，说明这个命题毫无疑问是正确的。所以，“哥德尔不完备定理”的证明过程其实告诉了我们，存在一个可在这个公理体系内表达的正确的命题，但是在这个公理体系内却既不能证明它，也无法证伪它。如果说“哥德尔不完备定理”阐明了什么极限的话，那它阐明的也只是“某类公理体系的极限”，而不是“数学、逻辑的极限”，更不是什么“人类理性的极限”。"/>
-
-    <meta property="og:title" content="不完备定理" />
-<meta property="og:description" content="转一段清华大学赵昊彤博士的解读，我认为算是简单清晰准确。 ““哥德尔不完备定理”到底说了些什么？——（一）
-【中文网上深入介绍哥德尔不完备定理的文章很少，我这篇文章写得很长，花了不少时间打磨它，希望能帮助到爱好数学与逻辑的人。文章把理解哥德尔不完备定理分为了五重，建议只是想初步了解的读者，可以重点看第一重；希望了解一些背景的读者，可以修炼到第二重；希望较深入理解哥德尔证明思路的读者，建议修炼到第三重；如果确实感兴趣，希望详细了解哥德尔证明过程以及其严谨性的读者，可以修炼到第四重；如果还想多知道一些知识的读者，可以练到第五重。
-——— 作者】
-1931年，库尔特∙弗雷德里希∙哥德尔（KurtFriedrich Gödel）发表了一篇影响深远的论文“On formally undecidablepropositions of Principia Mathematica and related systems I”[1]（论文的原文是用德文发表的，这里给出的是英译名）。今天，我们一般笼统的把论文中提出的定理称为“哥德尔不完备定理”。80多年过去了，“哥德尔不完备定理”的影响仍然持续、深远，特别是引起了很多非数学界人士的兴趣，引发了各种各样的解读。很遗憾，有一些解读是不准确的，甚至是错误的；更为严重的是，有一些人出于对“哥德尔不完备定理”的一知半解，甚至开始怀疑、批判人类的理性，以至于发展到相信、鼓吹不可知论。近期，我在认真研读了哥德尔论文原文（英译版，本人实在是不懂德文）和相关资料的基础上，加深了自己的认识，同时也很希望尽自己绵薄之力，分享对“哥德尔不完备定理”的理解，厘清对“哥德尔不完备定理”的误解。
-“哥德尔不完备定理”是数学、逻辑学领域的划时代成果，使人们对于数学研究基础的认识更加深刻、准确，同时它也是现代逻辑史上的重要里程碑。“哥德尔不完备定理”虽然伟大、深刻，但是个人认为它并不深奥。对于一个普通人，只要愿意动脑，都可以在一定程度上准确理解它。当今的互联网时代，网上有不少对“哥德尔不完备定理”的介绍和解读；60多年前，两位美国作家欧内斯特·内格尔（Ernest Nagel）和詹姆士 R. 纽曼 （James R. Newman）撰写的的著作《哥德尔证明》更是科普“哥德尔不完备定理”的重要作品。如今网上能看到的中文介绍“哥德尔不完备定理”的文章，绝大部分是转述《哥德尔证明》这本书的内容的。不过这本书撰写太早，有些新的结论当年尚不了解；另外这本书在普及哥德尔证明的时候，更多的是讲解背景、思路，并用作者自己的理解来讲述哥德尔的证明，个别地方不够严谨，一些讲述方式也不够准确。本文则全部基于哥德尔论文的原文来介绍“哥德尔不完备定理”的证明，并适当融入一些80多年来新的认识和结论，希望能帮助数学、逻辑学爱好者了解并理解“哥德尔不完备定理”。
-为了帮助更多人在各自需要的层面上理解“哥德尔不完备定理”，下面的介绍把理解“哥德尔不完备定理”分为了五重，从对定理的基本含义的理解一直到对核心证明的了解都包括了进来。读者可以像修习“乾坤大挪移”神功一样，依照自身内力基础，修炼到适合自己的层面即可。祝愿大家都能练成“哥德尔不完备定理”第五重神功！
-第一重：“庐山真面目”——准确了解“哥德尔不完备定理”
-赏玩一块美玉的时候，首先不应该是听各类专家讲这块玉多么晶莹剔透、多么价值连城，而应该是首先把玉拿出来让大家看看，有个感性认识。在哥德尔的论文中，我们一般所说的“哥德尔不完备定理”（有时候也被叫做“哥德尔第一不完备定理”）是指论文中的定理VI，原文如下：
-TheoremVI: For every ω-consistent primitive recursive class κ of formulae, there is aprimitive recursive class-sign r , such that neither forall(v,r) nornot(forall(v,r)) belongs to Conseq(κ) (where v is the free variable of r).
-尽量原汁原味的翻译如下：
-定理VI：对于任意一个ω一致（第四重）的原始递归公理集合κ，一定存在一个原始递归（第三重、第四重）的表达式r，使得无论是“r总成立”这个命题，还是“r不总成立”这个命题，都不属于通过κ可推导出来的定理的集合（原文中的Conseq(κ)）。
-补充说明一点，哥德尔论文中的κ所代表的公理集合，是指蕴含了皮亚诺算术公理（Peano Axioms）的集合，这是在哥德尔论文的前面明确了的，所以在阐述定理VI时就没有再特意强调。
-修炼第一重神功的读者可能会问了“大哥，你说的这些都是啥？”。别担心，修炼第一重神功没那么复杂。
-让我们先从公理说起，公理其实就是无需证明而被认定为成立的命题。公理体系是指一组公理的集合。通过这些公理和基本的逻辑关系，可以推导出更多成立的命题，称为定理。公理体系一般被认为发源于2300多年前欧几里德撰写的《几何原本》。在现代科学形成的过程中，人们发现通过定义一组公理再加上合理的逻辑推演，可以证明很多命题或结论。公理体系是当今数学研究和科学研究的基础，数学研究成果就是（或者说在极大的程度上依赖于）一组公理体系的推演，而其它科学研究除了依赖公理体系进行推演外，还需要通过系统的实验来进行验证。
-“哥德尔不完备定理”是针对公理体系的一项结论，它之所以如此伟大且深刻，正是因为它撼动的是一切科学的研究基础——公理体系。修炼第一重神功的时候，我们简要理解“哥德尔不完备定理”说的是：一个足够复杂的公理体系（至少蕴含了皮亚诺算术公理），如果它是一致的（相容的，无矛盾的），那么它就是不完备的。这里的完备，指的是“对于任何可在这个公理体系内描述的命题，都可以在这个公理体系内得到判定，要么是正确的，要么是错误的”。
-再用大白话解释一下，就是说，一个没有矛盾的公理体系内，总有一些命题是说不清楚对还是错的（务必注意，这是指在这个体系内说不清楚，不是说永远都说不清楚了）。也许有人说了，既然没矛盾的公理体系有问题，那就搞个有矛盾的公理体系呗。如果设想一个公理体系，一会儿告诉我们“1&#43;1=2”，一会儿又告诉我们“1&#43;12”，相信不会再有人把这个公理体系当回事。有矛盾的公理体系会导致彻底的无意义和虚无，修炼第二重神功的时候会详细阐明这一点。
-上述结论听起来是比较可怕的，公理体系必须没有矛盾，可是没有矛盾的公理体系又会导致出现一些命题说不清楚对错。于是开始出现了各种各样的解读，比如“哥德尔定理告诉了我们数学和逻辑的极限，这也几乎是人类理性的极限。它证明理性不是无所不能的”、“哥德尔定理告诉我们，人类不可能真正认识这个世界，永远不可能理解宇宙的真理”等等。相信作为人类理性智慧光辉代表之一的哥德尔，如果听到这些说法，可能也会很无奈吧。
-第一，“哥德尔不完备定理”不仅不是所谓人类理性的极限，恰恰相反，它是人类理性智慧的重大成果。它告诉了我们，正是由于有了人类理性的智慧，才有可能认识到这样深刻的结论。哥德尔是通过构造出了一个无法在这个公理体系内证明的命题来证明出“哥德尔不完备定理”的。这个命题的内容说的正是“命题自身无法在此公理体系内被证明”，既然哥德尔已经清楚的证明了这一点，说明这个命题毫无疑问是正确的。所以，“哥德尔不完备定理”的证明过程其实告诉了我们，存在一个可在这个公理体系内表达的正确的命题，但是在这个公理体系内却既不能证明它，也无法证伪它。如果说“哥德尔不完备定理”阐明了什么极限的话，那它阐明的也只是“某类公理体系的极限”，而不是“数学、逻辑的极限”，更不是什么“人类理性的极限”。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.v5u.win/post/life-%E4%B8%8D%E5%AE%8C%E5%A4%87%E5%AE%9A%E7%90%86/" />
-<meta property="article:published_time" content="2018-08-14T16:38:59&#43;00:00"/>
-<meta property="article:modified_time" content="2018-08-14T16:38:59&#43;00:00"/>
 
 
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="范金龙" /></a>
-      <h1>为吾优</h1>
-      <p>愿我走在通往幸福的路上</p>
-      <div class="app-header-social">
-        
-          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
-  <title>github</title>
-  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-</svg></a>
-        
-          <a target="_blank" href="https://blog.v5u.win/desc/about/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
-  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-</svg></a>
-        
-      </div>
-    </header>
-    <main class="app-container">
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">不完备定理</h1>
-      <div class="post-meta">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Aug 14, 2018
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://blog.v5u.win">首页</a>
+                    
+                    <a  href="https://blog.v5u.win/categories/go/" title="Go">Go</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
         </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          1 min read
-        </div><div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
-  <title>tag</title>
-  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
-</svg>
-          <a class="tag" href="https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册</a></div></div>
-    </header>
-    <div class="post-content">
-      
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">不完备定理</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年8月14日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C">中国生存手册</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
 
 <h2 id="转一段清华大学赵昊彤博士的解读-我认为算是简单清晰准确"><strong>转一段清华大学赵昊彤博士的解读，我认为算是简单清晰准确。</strong></h2>
 
@@ -159,12 +150,503 @@ Newman）撰写的的著作《哥德尔证明》更是科普“哥德尔不完�
 
 <p><a href="https://link.zhihu.com/?target=http%3A//blog.sciencenet.cn/blog-409681-1067019.html">科学网-“哥德尔不完备定理”到底说了些什么？&ndash;（一） - 赵昊彤的博文</a></p>
 
-    </div>
-    <div class="post-footer">
-      
-    </div>
-  </article>
+                        </div>
 
-    </main>
-  </body>
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/life-%E8%AE%BA%E5%95%86%E4%B8%9A%E5%90%8D%E5%AD%97%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/">论商业名字的重要性</a></li>
+        
+        <li><a href="/post/itblack-profession-word/">专业术语，行业黑话</a></li>
+        
+        <li><a href="/post/xcode-debug-view-hierarchy/">Xcode-debug-view-hierarchy</a></li>
+        
+        <li><a href="/post/read-booklist-for-program/">程序员成长书录</a></li>
+        
+        <li><a href="/post/nodejs-npm-scripts/">npm-scripts.md</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C">中国生存手册</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go%E8%B0%9A%E8%AF%AD/" title="Go谚语">Go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/system-http/" title="Linux版本使用总结">Linux版本使用总结</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/system-epoll/" title="epoll原理">epoll原理</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="System MQ消息队列">System MQ消息队列</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go-cgo/" title="Go CGO">Go CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go-gofmt/" title="Go Gofmt">Go Gofmt</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" title="Go Bazel构建工具">Go Bazel构建工具</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/docker-etcd/" title="Docker Etcd">Docker Etcd</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go-go2/" title="Go2">Go2</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/android/">android(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/blog/">blog(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/docker/">docker(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/express/">express(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/git/">git(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(43)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ide/">ide(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(71)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/it%E9%BB%91%E8%AF%9D/">it黑话(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(13)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/seo/">seo(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/sql/">sql(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(14)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/system/">system(33)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web/">web(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%8C%BB/">中医(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%81%A5%E5%BA%B7/">健康(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/">开源(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E6%9C%AF/">软技术(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/">软技能(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93%E6%B3%95/">道法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%98%85%E8%AF%BB/">阅读(5)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/autoclosure/">autoclosure</a>
+    
+    <a href="https://blog.v5u.win/tags/book/">book</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/composer/">composer</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/error/">error</a>
+    
+    <a href="https://blog.v5u.win/tags/escaping/">escaping</a>
+    
+    <a href="https://blog.v5u.win/tags/express/">express</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/git/">git</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/hexo/">hexo</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/jekyll/">jekyll</a>
+    
+    <a href="https://blog.v5u.win/tags/k8s/">k8s</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kubernetes/">kubernetes</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/linux/">linux</a>
+    
+    <a href="https://blog.v5u.win/tags/lnmp/">lnmp</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongodb/">mongodb</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/noescape/">noescape</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nstimer/">nstimer</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/ppspider/">ppspider</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/sketch/">sketch</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/system/">system</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/unowned/">unowned</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/weak/">weak</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/xampp/">xampp</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode7/">xcode7</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%8C%BB/">中医</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4/">免费空间</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%85%B3%E9%94%AE%E5%AD%97/">关键字</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8E%A7%E4%BB%B6/">控件</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%96%87/">文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%97%B6%E9%97%B4%E6%88%B3/">时间戳</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+</body>
 </html>

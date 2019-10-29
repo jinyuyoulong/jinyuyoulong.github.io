@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>关键字 on 为吾优</title>
+    <link>https://blog.v5u.win/tags/%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+    <description>Recent content in 关键字 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 19 Jan 2018 09:37:16 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/%E5%85%B3%E9%94%AE%E5%AD%97/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>关键字探索 define const</title>
+      <link>https://blog.v5u.win/post/itblack-defineconst/</link>
+      <pubDate>Fri, 19 Jan 2018 09:37:16 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/itblack-defineconst/</guid>
+      <description>define 单纯的代码替换，预编译时进行 const 常数，不变的。 ​ const是一个关键字。它限定一个变量不允许被改变，产生静态作用。 编译时进行处理 只分配一次内</description>
+    </item>
+    
+  </channel>
+</rss>

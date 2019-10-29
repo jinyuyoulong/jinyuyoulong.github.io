@@ -17,12 +17,7 @@
       <pubDate>Tue, 13 Aug 2019 18:10:14 +0800</pubDate>
       
       <guid>https://blog.v5u.win/post/docker-etcd/</guid>
-      <description> [TOC]
-描述 etcd是CoreOS团队于2013年6月发起的开源项目，它的目标是构建一个高可用的分布式键值(key-value)数据库。etcd内部采用raft协议作为一致性算法，etcd基于Go语言实现。
-etcd作为服务发现系统，有以下的特点
- 简单：安装配置简单，而且提供了HTTP API进行交互，使用也很简单 安全：支持SSL证书验证 快速：根据官方提供的benchmark数据，单实例支持每秒2k+读操作 可靠：采用raft算法，实现分布式系统数据的可用性和一致性 etcd项目地址：https://github.com/coreos/etcd/  下载 $ docker search etcd $ docker pull xxx/etcd  ETCD参数说明  data-dir:指定节点的数据存储目录，这些数据包括节点ID，集群ID，集群初始化配置，Snapshot文件，若未指定—wal-dir，还会存储WAL文件； wal-dir:指定节点的was文件的存储目录，若指定了该参数，wal文件会和其他数据文件分开存储。 name: 节点名称 initial-advertise-peer-urls: 告知集群其他节点url.(对于集群内提供服务的url) listen-peer-urls: 监听URL，用于与其他节点通讯 advertise-client-urls: 告知客户端url, 也就是服务的url(对外提供服务的utl) initial-cluster-token: 集群的ID initial-cluster: 集群中所有节点  然后进入其中一个 Docker 主机：
-$ docker exec -it etcd bin/sh  执行下面命令（查看集群成员）：
-$ etcdctl member list  </description>
+      <description>[TOC] 描述 etcd是CoreOS团队于2013年6月发起的开源项目，它的目标是构建一个高可用的分布式键值(key-value)数据库。etcd内</description>
     </item>
     
     <item>
@@ -31,13 +26,7 @@ $ etcdctl member list  </description>
       <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/docker-k8s/</guid>
-      <description>安装 在Mac下安装前提条件，已经安装好了docker desktop，并修改了代理源 https://registry.docker-cn.com。
-直接在docker桌面端开启k8s是没用的，一直提示 kubernetes is starting… :cry: 我竟然不知道，这样子持续了n天。​
-自己手动编译安装 k8s  git clone https://github.com/maguowei/k8s-docker-for-mac.git
- cd k8s-docker-for-mac/
- ./load_images.sh
-  安装minikube # install minikube $ brew cask install minikube $ brew install docker-machine-driver-xhyve # docker-machine-driver-xhyve need root owner and uid $ sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve $ sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve  最后启动minikube
-# start minikube. # http proxy is required in China $ minikube start --docker-env HTTP_PROXY=http://proxy-ip:port --docker-env HTTPS_PROXY=http://proxy-ip:port --vm-driver=xhyve  Ubuntu 安装 kubeadm kubectl kubelet 三个包</description>
+      <description>安装 在Mac下安装前提条件，已经安装好了docker desktop，并修改了代理源 https://registry.docker-cn.co</description>
     </item>
     
     <item>
@@ -46,10 +35,7 @@ $ etcdctl member list  </description>
       <pubDate>Sun, 05 May 2019 13:44:44 +0800</pubDate>
       
       <guid>https://blog.v5u.win/post/docker-dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
-      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式：
- 只用 Dockerfile 管理镜像 2. 使用docker-compose 容器编排技术 共同管理镜像的 build。 下面是我对Dockerfile最佳实践的总结： 共同遵守的原则:  一个容器只负责做一件事情。 保持常见的指令像 MAINTAINER 以及从上至下更新 Dockerfile 命令。 当构建镜像时使用可理解的标签，以便更好地管理镜像。 避免在 Dockerfile 中映射公有端口。 CMD 与 ENTRYPOINT 命令请使用数组语法。
-针对一：只用 Dockerfile 管理镜像的 build
-# 依赖最小Linux环境 alpine 只用5M大小 FROM alpine # MAINTAINER：设置该镜像的作者。 MAINTAINER jinlong # 将当前目录下的所有文件都拷贝进入 image 文件的/app目录 COPY ./bin/ /app # 指定接下来的工作路径为/app # WORKDIR：指定RUN、CMD与ENTRYPOINT命令的工作目录。 # 所有下面的 RUN 命令都在 WORKDIR 目录下面执行 WORKDIR /app # RUN：在shell或者exec的环境下执行的命令。RUN指令会在新创建的镜像上添加新的层面，接下来提交的结果用在Dockerfile的下一条指令中。 #RUN cd bin/ # ADD：复制文件指令。它有两个参数&amp;lt;source&amp;gt;和&amp;lt;destination&amp;gt;。 # destination是容器内的路径。 # source可以是URL或者是启动配置上下文中的一个文件。 # ADD 《src》 《destination》 # CMD：提供了容器默认的执行命令。 Dockerfile只允许使用一次CMD指令。 使用多个CMD会抵消之前所有的指令，只有最后一个指令生效。 # CMD有三种形式： #CMD [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;] #CMD [&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;] #CMD command param1 param2 #CMD .</description>
+      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式： 只用 Dockerfile 管理镜像 2. 使用</description>
     </item>
     
     <item>
@@ -58,23 +44,16 @@ $ etcdctl member list  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/docker-%E7%AE%80%E4%BB%8B/</guid>
-      <description>[TOC]
-硬件/操作系统 要求 Docker支持以下的发行版版本：
- Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版
- CentOS 7 (64-bit)，要求内核版本不低于 3.10 。CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如 overlay2 存储层驱动）无法使用，并且部分功能可能不太稳定。
- Debain 9
-  前提条件 目前，CentOS 仅发行版本中的内核支持 Docker。
-Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。
-Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64位、系统内核版本为 2.6.32-431 或者更高版本。
-### docker 的组件结构
-Docker 由镜像(Image)、容器(Container)、仓库(Repository) 三部分组成。
-docker-machine, docker, docker-compose (docker环境)
-docker container 容器(运行实例)
-docker image 镜像(安装实例)
-Dockerfile(用于生成image)
-### docker配置+使用
-预先安装docker的相关库
- brew install docker docker-compose docker-machine  关于 docker-machine Docker Machine 是 Docker 官方提供的一个工具，它可以帮助我们在远程的机器上安装 Docker，或者在虚拟机 host 上直接安装虚拟机并在虚拟机中安装 Docker。我们还可以通过 docker-machine 命令来管理这些虚拟机和 Docker。</description>
+      <description>[TOC] 硬件/操作系统 要求 Docker支持以下的发行版版本： Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版 CentOS 7 (64-bit)，要求内核版本不低于 3.10 。</description>
+    </item>
+    
+    <item>
+      <title>docker 安装并使用Redis</title>
+      <link>https://blog.v5u.win/post/docker-redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/docker-redis/</guid>
+      <description>docker 安装并使用Redis docker search redis docker pull redis #获得的是lasted版本 redis:3.2 配置redis mkdir -p /root/redis/data mkdir -p /root/redis/conf vi redis.conf # redis.conf bind 127.0.0.1 protected-mode yes appendonly no//持久化 # requirepass foobared p.s. protected-mode 是在没有显</description>
     </item>
     
   </channel>

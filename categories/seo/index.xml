@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SEO on 为吾优</title>
+    <link>https://blog.v5u.win/categories/seo/</link>
+    <description>Recent content in SEO on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 26 Apr 2015 17:56:07 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/categories/seo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SEOer的优化思路</title>
+      <link>https://blog.v5u.win/post/system-seo/</link>
+      <pubDate>Sun, 26 Apr 2015 17:56:07 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-seo/</guid>
+      <description>&amp;nbsp; SEO是一门复杂的学问，手法很多，提高权重可以从很多角度着手，但是，什么样的网站需要用到什么样的手法，网站的不同阶段，又需要怎么样提高排名</description>
+    </item>
+    
+  </channel>
+</rss>

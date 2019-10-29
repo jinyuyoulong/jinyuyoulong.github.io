@@ -17,13 +17,43 @@
       <pubDate>Wed, 10 Oct 2018 09:40:11 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/read-%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E5%92%86%E5%93%AE%E9%98%85%E8%AF%BB%E6%80%BB%E7%BB%93/</guid>
-      <description> 编程界的数学
-学校的数学教育体系是错误的，因为这是数学领域的连续知识，但是在现实生活中很多没有实际用处。
-学校不教，现实中很有用的数学：统计，代数——线性代数，数理逻辑，信息论和柯氏复杂性
-运用数学的第一步是：界定问题。当一个问题在手却不知道如何下手的时候，是最花时间的。
-编译原理是计算机科学第二重要的科学，很重要，因为他非常切实的将你学到的几乎所有东西都捏合在了一起。 编译原理3个领域： 1. 解析，词法分析，语法分析生成解析树
- 类型检查 代码生成的正确性  Google的面试
- 细的马克笔 大O复杂度分析 知道排序是怎么回事，两个nlog(n)的排序算法，比如快排和归并排序 哈希表是人类已知的最重要的数据结构，一定要弄明白原理。 树，必须弄懂 图，内存中表示图的方法有3中(指针和对象，矩阵，邻接表) 每次遇到问题首先考虑的是图算法。他们是任何关系里最基本，最灵活的方法。 基本的离散数学 操作系统：线程，进程，并发这些概念，掌握锁的概念， 编程，对一门语言的细节有相当的了解  </description>
+      <description>编程界的数学 学校的数学教育体系是错误的，因为这是数学领域的连续知识，但是在现实生活中很多没有实际用处。 学校不教，现实中很有用的数学：统计，代</description>
+    </item>
+    
+    <item>
+      <title>程序员成长书录</title>
+      <link>https://blog.v5u.win/post/read-booklist-for-program/</link>
+      <pubDate>Wed, 01 Aug 2018 18:29:31 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/read-booklist-for-program/</guid>
+      <description>《程序员修炼之道》1 《人月神话》2 经验这个东西，往往并不能告诉我们什么一定对，但是可以告诉我们什么一定不对。这本书完全是经验凝成，没有大道理</description>
+    </item>
+    
+    <item>
+      <title>三省吾身，日醒三身</title>
+      <link>https://blog.v5u.win/post/read-introspection/</link>
+      <pubDate>Thu, 09 Nov 2017 16:06:38 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/read-introspection/</guid>
+      <description>孩子，中国人常说三省吾身，指的是每天自我审视三次，也就是我跟你提到的复盘，可如果方向错了，审视的思路不对，再多的次数那也是无用，所以我们佛家</description>
+    </item>
+    
+    <item>
+      <title>穷爸爸富爸爸读后感</title>
+      <link>https://blog.v5u.win/post/read-richdadreaded/</link>
+      <pubDate>Thu, 28 Jul 2016 09:24:11 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/read-richdadreaded/</guid>
+      <description>年轻退休 1. 心智的杠杆 词语是杠杆 2. 计划的杠杆 3. 行动的杠杆</description>
+    </item>
+    
+    <item>
+      <title>儒道至圣</title>
+      <link>https://blog.v5u.win/post/read-%E5%84%92%E9%81%93%E8%87%B3%E5%9C%A3/</link>
+      <pubDate>Mon, 21 Dec 2015 15:19:40 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/read-%E5%84%92%E9%81%93%E8%87%B3%E5%9C%A3/</guid>
+      <description>该书文笔很好，构思巧妙，值得一读。 以下为该书简介： 这是一个读书人掌握天地之力的世界。 才气在身，诗可杀敌，词能灭军，文章安天下。 秀才提笔，纸上</description>
     </item>
     
   </channel>

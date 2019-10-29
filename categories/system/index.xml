@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>System on 为吾优</title>
+    <title>system on 为吾优</title>
     <link>https://blog.v5u.win/categories/system/</link>
-    <description>Recent content in System on 为吾优</description>
+    <description>Recent content in system on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 26 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/system/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux版本使用总结</title>
+      <link>https://blog.v5u.win/post/system-http/</link>
+      <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-http/</guid>
+      <description>作者：zhaoyanan HTTP 400 – 请求无效 HTTP 401.1 – 未授权：登录失败 HTTP 401.2 – 未授权：服务器配置问题导致登录失败 HTTP 401.3 – ACL 禁止访问资源 HTTP 401.4 – 未授权：授权被</description>
+    </item>
     
     <item>
       <title>epoll原理</title>
@@ -17,24 +26,7 @@
       <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-epoll/</guid>
-      <description>epoll原理
-参考：https://my.oschina.net/editorial-story/blog/3052308
- 网卡DMA传来数据，存入内存 网卡向CPU发送中断信号，操作系统得知有新数据到来，通过网卡中断程序去处理数据 将数据写入对应的socket接收缓冲区 唤醒对应进程 将进程放入工作队列  内核接收网络数据全过程 如下图所示，进程在 recv 阻塞期间，计算机收到了对端传送的数据（步骤①）——&amp;gt;
-数据经由网卡传送到内存（步骤②），——&amp;gt;
-然后网卡通过中断信号通知 CPU 有数据到达，CPU 执行中断程序（步骤③）。——&amp;gt;
-此处的中断程序主要有两项功能，先将网络数据写入到对应 socket 的接收缓冲区里面（步骤④），——&amp;gt;
-再唤醒进程 A（步骤⑤），——&amp;gt;
-重新将进程 A 放入工作队列中。
-以上是内核接收数据全过程，这里我们可能会思考两个问题：
- 其一，操作系统如何知道网络数据对应于哪个 socket？ 其二，如何同时监视多个 socket 的数据？  第一个问题：因为一个 socket 对应着一个端口号，而网络数据包中包含了 ip 和端口的信息，内核可以通过端口号找到对应的 socket。当然，为了提高处理速度，操作系统会维护端口号到 socket 的索引结构，以快速读取。
-第二个问题是多路复用的重中之重，也正是本文后半部分的重点。
-select 简单的方法往往有缺点，主要是：
-其一，每次调用 select 都需要将进程加入到所有监视 socket 的等待队列，每次唤醒都需要从每个队列中移除。这里涉及了两次遍历，而且每次都要将整个 fds 列表传递给内核，有一定的开销。正是因为遍历操作开销大，出于效率的考量，才会规定 select 的最大监视数量，默认只能监视 1024 个 socket。
-其二，进程被唤醒后，程序并不知道哪些 socket 收到数据，还需要遍历一次。
-有没有减少遍历的方法？有没有保存就绪 socket 的方法？这两个问题便是 epoll 技术要解决的。
-epoll 通过以下一些措施来改进效率：
-措施一：功能分离
-select 低效的原因之一是将“维护等待队列”和“阻塞进程”两个步骤合二为一。</description>
+      <description>epoll原理 参考：https://my.oschina.net/editorial-story/blog/3052308 网卡DMA传来数据</description>
     </item>
     
     <item>
@@ -43,25 +35,7 @@ select 低效的原因之一是将“维护等待队列”和“阻塞进程”�
       <pubDate>Fri, 23 Aug 2019 09:39:55 +0800</pubDate>
       
       <guid>https://blog.v5u.win/post/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</guid>
-      <description>[TOC]
-消息队列 MQ 能随便讲个应用场景嘛
-发短信，发邮件
-大量的定时任务
-支付回调也经常用
-你付款之后有很多步骤
-主要是付款是异步过程。
-你打钱，支付宝服务器通知电商后台服务器
-然后电商后台接到请求后，发送一个消息去队列里，带上订单信息
-然后服务器集群里有人接活
-咏闲 09:29:17 感觉说的是放入消息队列，然后被轮流接受，异步处理各个服务
-橙卡 09:29:38 比如购买流程很长的 橙卡 09:29:55 库存管理 账目转移 物流发货
-橙卡 09:30:09 要是在线等待起码半分钟
-橙卡 09:30:30 一般是拆成好几个任务 橙卡 09:30:34 一个一个来
-橙卡 09:30:53 最主要是有一个对等集群，可以容纳一切任务
-橙卡 09:30:59 平等的处理
-橙卡 09:31:46 我之前一直用的redis作为mq
-橙卡 09:31:53 其实也还好。
-橙卡 09:32:01 也就三四个月丢一单</description>
+      <description>[TOC] 消息队列 MQ 能随便讲个应用场景嘛 发短信，发邮件 大量的定时任务 支付回调也经常用 你付款之后有很多步骤 主要是付款是异步过程。 你打钱，支付宝服务器通</description>
     </item>
     
     <item>
@@ -70,18 +44,7 @@ select 低效的原因之一是将“维护等待队列”和“阻塞进程”�
       <pubDate>Mon, 12 Aug 2019 10:46:26 +0800</pubDate>
       
       <guid>https://blog.v5u.win/post/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/</guid>
-      <description>进程通信： 每个进程各自有不同的用户地址空间,任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核,在内核中开辟一块缓冲区,进程A把数据从用户空间拷到内核缓冲区,进程B再从内核缓冲区把数据读走,内核提供的这种机制称为进程间通信。
-[TOC]
-进程间8种通讯方式 匿名管道通信 匿名管道( pipe )：管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。
-// 需要的头文件 #include &amp;lt;unistd.h&amp;gt; // 通过pipe()函数来创建匿名管道 // 返回值：成功返回0，失败返回-1 // fd参数返回两个文件描述符 // fd[0]指向管道的读端，fd[1]指向管道的写端 // fd[1]的输出是fd[0]的输入。 int pipe (int fd[2]);  通过匿名管道实现进程间通信的步骤如下：
-父进程创建管道，得到两个⽂件描述符指向管道的两端 父进程fork出子进程，⼦进程也有两个⽂件描述符指向同⼀管道。 父进程关闭fd[0],子进程关闭fd[1]，即⽗进程关闭管道读端,⼦进程关闭管道写端（因为管道只支持单向通信）。⽗进程可以往管道⾥写,⼦进程可以从管道⾥读,管道是⽤环形队列实现的,数据从写端流⼊从读端流出,这样就实现了进程间通信。 详细可参考文章：进程间的通信方式——pipe（管道）
-高级管道通信 高级管道(popen)：将另一个程序当做一个新的进程在当前程序进程中启动，则它算是当前程序的子进程，这种方式我们成为高级管道方式。
-有名管道通信 有名管道 (named pipe) ： 有名管道也是半双工的通信方式，但是它允许无亲缘关系进程间的通信。
-消息队列通信 消息队列( message queue ) ： 消息队列是由消息的链表，存放在内核中并由消息队列标识符标识。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点。
-信号量通信 信号量( semophore ) ： 信号量是一个计数器，可以用来控制多个进程对共享资源的访问。它常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程内不同线程之间的同步手段。
-信号 信号 ( sinal ) ： 信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生。
-共享内存通信 共享内存( shared memory ) ：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。共享内存是最快的 IPC 方式，它是针对其他进程间通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号两，配合使用，来实现进程间的同步和通信。
-套接字通信 套接字( socket ) ： 套接口也是一种进程间通信机制，与其他通信机制不同的是，它可用于不同机器间的进程通信。</description>
+      <description>进程通信： 每个进程各自有不同的用户地址空间,任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核,在内核中开辟一</description>
     </item>
     
     <item>
@@ -90,8 +53,7 @@ select 低效的原因之一是将“维护等待队列”和“阻塞进程”�
       <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-flutter%E5%AE%89%E8%A3%85/</guid>
-      <description>flutter安装
- git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc  export PATH=/Users/fanjinlong/dev/flutter/flutter/bin:$PATH export ANDROID_HOME=/Users/fanjinlong/Library/Android/sdk export PATH=${PATH}:${ANDROID_HOME}/tools export PATH=${PATH}:${ANDROID_HOME}/platform-tools export PUB_HOSTED_URL=https://pub.flutter-io.cn export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn	# 记得配置完了，执行下 source ~/.zshrc 更新环境变量   命令行执行 flutter doctor 检查环境配置情况。 在 Android studio 中添加插件 flutter + dart 根据flutter doctor 解决所有必要的问题 运行 flutter run 如果不能运行，查看报错，比如 flutter emulators——&amp;gt;flutter emulators --launch Pixel_2_API_29——&amp;gt; flutter run  Running &amp;quot;flutter pub get&amp;quot; in flutter_app... 3.4s Using hardware rendering with device Android SDK built for x86.</description>
+      <description>flutter安装 git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc export PATH=/Users/fanjinlong/dev/flutter/flutter/bin:$PATH export ANDROID_HOME=/Users/fanjinlong/Library/Android/sdk export PATH=${PATH}:${ANDROID_HOME}/tools export PATH=${PATH}:${ANDROID_HOME}/platform-tools export PUB_HOSTED_URL=https://pub.flutter-io.cn export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn # 记得配置完了，执行下 source ~/.zshrc 更新环境变量 命令行执</description>
     </item>
     
     <item>
@@ -100,31 +62,7 @@ select 低效的原因之一是将“维护等待队列”和“阻塞进程”�
       <pubDate>Mon, 01 Jul 2019 15:05:09 +0800</pubDate>
       
       <guid>https://blog.v5u.win/post/system-nginx/</guid>
-      <description>[TOC]
-有的时候要生成大量尺寸的缩图，事先不知道有哪些尺寸，所以可以用php动态生成；
-1.在nginx中配置
-location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.)/(.*)(\d+)(\d+).(gif|jpg|jpeg|png|bmp) /ImageTransferController.php?s=1/2_3_4.5; } expires 30d; }   完善 ImageTransferController.php 文件  </description>
-    </item>
-    
-    <item>
-      <title>开源贡献者盟约</title>
-      <link>https://blog.v5u.win/post/system-%E8%B4%A1%E7%8C%AE%E8%80%85%E7%9B%9F%E7%BA%A6/</link>
-      <pubDate>Tue, 25 Jun 2019 15:38:20 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/post/system-%E8%B4%A1%E7%8C%AE%E8%80%85%E7%9B%9F%E7%BA%A6/</guid>
-      <description>[TOC]
-参与者公约 我们的保证 为了促进一个开放透明且友好的环境，我们作为贡献者和维护者保证：无论年龄、种族、民族、性别认同和表达（方式）、体型、身体健全与否、经验水平、国籍、个人表现、宗教或性别取向，参与者在我们项目和社区中都免于骚扰。
-我们的标准 有助于创造正面环境的行为包括但不限于：
- 使用友好和包容性语言 尊重不同的观点和经历 耐心地接受建设性批评 关注对社区最有利的事情 友善对待其他社区成员  身为参与者不能接受的行为包括但不限于：
- 使用与性有关的言语或是图像，以及不受欢迎的性骚扰 捣乱/煽动/造谣的行为或进行侮辱/贬损的评论，人身攻击及政治攻击 公开或私下的骚扰 未经许可地发布他人的个人资料，例如住址或是电子地址 其他可以被合理地认定为不恰当或者违反职业操守的行为  我们的责任 项目维护者有责任为「可接受的行为」标准做出诠释，以及对已发生的不被接受的行为采取恰当且公平的纠正措施。
-项目维护者有权利及责任去删除、编辑、拒绝与本行为标准有所违背的评论 (comments)、提交 (commits)、代码、wiki 编辑、问题 (issues) 和其他贡献，以及项目维护者可暂时或永久性的禁止任何他们认为有不适当、威胁、冒犯、有害行为的贡献者。
-使用范围 当一个人代表该项目或是其社区时，本行为标准适用于其项目平台和公共平台。
-代表项目或是社区的情况，举例来说包括使用官方项目的电子邮件地址、通过官方的社区媒体账号发布或线上或线下事件中担任指定代表。
-该项目的呈现方式可由其项目维护者进行进一步的定义及解释。
-强制执行 可以通过[在此放入EMAIL]，来联系项目团队来举报滥用、骚扰或其他不被接受的行为。
-任何维护团队认为有必要且适合的所有投诉都将进行审查及调查，并做出相对应的回应。项目小组有对事件回报者有保密的义务。具体执行的方针近一步细节可能会单独公布。
-没有切实地遵守或是执行本行为标准的项目维护人员，可能会因项目领导人或是其他成员的决定，暂时或是永久地取消其参与资格。
-来源 本行为标准改编自贡献者公约，版本 1.4 可在此观看https://www.contributor-covenant.org/zh-cn/version/1/4/code-of-conduct.html</description>
+      <description>[TOC] 有的时候要生成大量尺寸的缩图，事先不知道有哪些尺寸，所以可以用php动态生成； 1.在nginx中配置 location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.)/(.*)(\d+)(\d+).(gif|jpg|jpeg|png|bmp) /ImageTransferController.php?s=1/2_3_4.5; } expires 30d; } 完善 ImageTransferController.php</description>
     </item>
     
     <item>
@@ -133,15 +71,7 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
       <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-markdown%E5%8E%9F%E7%90%86/</guid>
-      <description>Text  1级标题 Text  2级标题 Text  3级标题 Text  4级标题 Text  5级标题 Text  6级标题 有序列表 ul&amp;gt;li  有 序
-无序列表 ol&amp;gt;li 无
- 序
-任务列表 ul&amp;gt;li&amp;gt;input [ ] 任务
- [x] 列表
-代码修饰 短代码 &amp;lt;code&amp;gt;
-  var name = 代码块 div&amp;gt;pre&amp;gt;span &amp;lt;div&amp;gt; &amp;lt;pre&amp;gt; &amp;lt;span&amp;gt;var&amp;lt;/span&amp;gt; name = 代码块 &amp;lt;/pre&amp;gt; &amp;lt;/div&amp;gt;   &amp;lt;blockquote&amp;gt;&amp;lt;p&amp;gt;块级引用&amp;lt;/p&amp;gt;&amp;lt;/blockquote&amp;gt;
- 段落 中间没有空行的连续不断的几行文字被视为一个段落。空一行 作为段落间的分割符
-行内格式 删除线 del 标签 加粗 strong 标签 斜体 em 标签</description>
+      <description>Text 1级标题 Text 2级标题 Text 3级标题 Text 4级标题 Text 5级标题 Text 6级标题 有序列表 ul&amp;gt;li 有 序 无序列表 ol&amp;gt;li 无 序 任务列表 ul&amp;gt;li&amp;gt;input [ ] 任务 [x] 列表 代码修饰 短代码 &amp;lt;code&amp;gt; var name = 代码块</description>
     </item>
     
     <item>
@@ -150,13 +80,7 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
       <pubDate>Thu, 25 Apr 2019 17:38:44 +0800</pubDate>
       
       <guid>https://blog.v5u.win/post/system-%E6%9C%80%E5%B0%8F%E5%A0%86/</guid>
-      <description> 最大—最小堆是最大层和最小层交替出现的二叉树，即最大层结点的子节点属于最小层，最小层结点的子节点属于最大层。 以最大（小）层结n点为根结点的子树保有最大（小）堆性质：根结点的键值为该子树结点键值中最大（小）项。
-最大堆和最小堆是二叉堆的两种形式。
- 最大堆：根结点的键值是所有堆结点键值中最大者的堆。 最小堆：根结点的键值是所有堆结点键值中最小者的堆。  而最大—最小堆集结了最大堆和最小堆的优点，这也是其名字的由来。
-主要操作 插入 将节点插在二叉树的最后一个叶子结点位置，然后比较它与它父亲节点的大小：如果大则停止；如果小则交换位置，然后对父亲节点递归该过程直至根节点。复杂度为{\displaystyle O(log(n))}。
-一般来说，插入的位置可以不是最后一个叶子节点，可以作为任意中间节点的孩子节点插入，将这个叶子节点变为中间节点后，按上文所说的方法调整节点顺序以保证维持堆特性不变。
-删除 要从堆中删除一个节点，用最后一个节点替换掉要删除的节点，然后调整节点顺序以维持堆特性。
-应用  双端优先队列  </description>
+      <description>最大—最小堆是最大层和最小层交替出现的二叉树，即最大层结点的子节点属于最小层，最小层结点的子节点属于最大层。 以最大（小）层结n点为根结点的子</description>
     </item>
     
     <item>
@@ -165,7 +89,43 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
       <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
-      <description> Sequence Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks!  flow st=&amp;gt;start: Start op=&amp;gt;operation: Your Operation cond=&amp;gt;condition: Yes or No? e=&amp;gt;end st-&amp;gt;op-&amp;gt;cond cond(yes)-&amp;gt;e cond(no)-&amp;gt;op  mermaid graph LR A[Hard edge] --&amp;gt;B(Round edge) B --&amp;gt; C{Decision} C --&amp;gt;|One| D[Result one] C --&amp;gt;|Two| E[Result two]  Gantt %% Example with selection of syntaxes gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to mermaid section A section Completed task :done, des1, 2014-01-06,2014-01-08 Active task :active, des2, 2014-01-09, 3d Future task : des3, after des2, 5d Future task2 : des4, after des3, 5d section Critical tasks Completed task in the critical line :crit, done, 2014-01-06,24h Implement parser and jison :crit, done, after des1, 2d Create tests for parser :crit, active, 3d Future task in critical line :crit, 5d Create tests for renderer :2d Add to mermaid :1d section Documentation Describe gantt syntax :active, a1, after des1, 3d Add gantt diagram to demo page :after a1 , 20h Add another diagram to demo page :doc1, after a1 , 48h section Last section Describe gantt syntax :after doc1, 3d Add gantt diagram to demo page : 20h Add another diagram to demo page : 48h  </description>
+      <description>Sequence Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks! flow st=&amp;gt;start: Start op=&amp;gt;operation: Your Operation cond=&amp;gt;condition: Yes or No? e=&amp;gt;end st-&amp;gt;op-&amp;gt;cond cond(yes)-&amp;gt;e cond(no)-&amp;gt;op mermaid graph LR A[Hard edge] --&amp;gt;B(Round edge) B --&amp;gt; C{Decision} C --&amp;gt;|One| D[Result one] C --&amp;gt;|Two| E[Result two] Gantt %% Example with selection of syntaxes gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to mermaid section A section</description>
+    </item>
+    
+    <item>
+      <title>Centos7 添加 桌面运行环境</title>
+      <link>https://blog.v5u.win/post/system-centos7-%E6%B7%BB%E5%8A%A0-%E6%A1%8C%E9%9D%A2%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-centos7-%E6%B7%BB%E5%8A%A0-%E6%A1%8C%E9%9D%A2%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/</guid>
+      <description>Centos7 添加 桌面运行环境 root 权限执行 yum groupinstall &amp;quot;X Window System&amp;quot; 检查安装情况 yum grouplist</description>
+    </item>
+    
+    <item>
+      <title>vagrant&amp;homestead的使用</title>
+      <link>https://blog.v5u.win/post/system-vagranthomestead%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-vagranthomestead%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>~/Homestead 目录下执行下面的命令 - 初始化虚拟机vagrant up - 登录vagrant ssh - 退出虚拟机exit - 关闭 Homesteadvagrant halt</description>
+    </item>
+    
+    <item>
+      <title>数据结构与算法1-复杂度分析1</title>
+      <link>https://blog.v5u.win/post/system-datastructureandalgorithm1/</link>
+      <pubDate>Mon, 08 Oct 2018 10:53:57 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-datastructureandalgorithm1/</guid>
+      <description>为什么需要复杂度分析？ 有两种估算方法：1.事后统计法 2.大O复杂度表示法 事后统计法: 把代码跑一遍，通过统计、监控，就能得到算法执行的时间和占</description>
+    </item>
+    
+    <item>
+      <title>code review</title>
+      <link>https://blog.v5u.win/post/system-codereview/</link>
+      <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-codereview/</guid>
+      <description>Code Review的好处我觉得不用多说了，主要是让你的代码可以更好的组织起来，有更易读，有更高的维护性，同时可以达到知识共享，找到bug只是其中</description>
     </item>
     
     <item>
@@ -174,8 +134,7 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
       <pubDate>Mon, 16 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-linux%E7%89%88%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
-      <description>Linux版本使用总结
-社区系 Debian9 没有中文系统，中文输入法。通病，没有内置Apache Ubuntu18 gnome3卡，虚拟机不支持全屏，没有内置Apache，放弃 Ubuntu14 桌面美观，完成度高 deepin深度 桌面美观，完成度高，虚拟机卡，UI优化，gnome味道 mint 18 桌面美观，完成度高，卡，UI优化，gnome味道，同deepin体验类似  红帽系 Fedora 26 RDHL试验田，源库变动频繁，放弃 centos7 很好，配置完ssh Apache  </description>
+      <description>Linux版本使用总结 社区系 Debian9 没有中文系统，中文输入法。通病，没有内置Apache Ubuntu18 gnome3卡，虚拟机不支持全屏，没有内置Apache，</description>
     </item>
     
     <item>
@@ -184,10 +143,7 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-%E5%86%99%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%88%99%E6%95%B4%E7%90%86/</guid>
-      <description> 写代码原则整理：
-写直观的代码 我写代码有一条重要的原则：如果有更加直接，更加清晰的写法，就选择它，即使它看起来更长，更笨，也一样选择它。
- 防止过度工程的原则  王垠根据这些，我总结出来的防止过度工程的原则如下：
- 先把眼前的问题解决掉，解决好，再考虑将来的扩展问题。 先写出可用的代码，反复推敲，再考虑是否需要重用的问题。 先写出可用，简单，明显没有bug的代码，再考虑测试的问题。  </description>
+      <description>写代码原则整理： 写直观的代码 我写代码有一条重要的原则：如果有更加直接，更加清晰的写法，就选择它，即使它看起来更长，更笨，也一样选择它。 防止过</description>
     </item>
     
     <item>
@@ -196,11 +152,16 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
-      <description>作者：大宽宽
-在整个行业发展过程中，一些需求催生了各种各样的的优化的机会。有人抓住机会去提出新的数据模型和查询接口。比如：
- 想内存数据库，上redis 想高性能访问KV模型，有rocksDB 想制作树状结构的数据，mongo你值得拥有 想做图分析，有图数据库 想要时序数据，有influxdb和Prometheus这种列存 想做Data Warehouse，有GP、有大规模的并行计算引擎 想做高性能海量数据存储，但是访问的方式相对简单，可以上Hadoop全家桶，Spark全家桶 想做海量数据的KV，有HBase，Cassandra ……  就连SQL自己也在演进，比如各大数据库增加了对json格式的支持，MySQL还搞了个X-API，弄得像mongo一样；Postgres中一列可以是复合的类型（类似于struct），也可以是数组类型。mysql和postgres还支持全文索引（按照王垠的讲法，是不是这时候得先用一套LSM tree库玩转sstable管理，然后再攒一个lucene做分词和倒排？）
-根据实际需求，从上面这些备选中，总能找到几个东西组合在一起满足需要。如果还不够用，那就按照需求定制，就像polarDB，TiDB。但我相信，绝大部分的开发场景，弄个mysql，sqlite之类的就完事了，不需要特别仔细的优化。
-遇到了SQL处理不了的，有价值的问题，去解决，去优化，去建模就好。光吐槽SQL这也不行，那也不行，没有任何卵用。</description>
+      <description>作者：大宽宽 在整个行业发展过程中，一些需求催生了各种各样的的优化的机会。有人抓住机会去提出新的数据模型和查询接口。比如： 想内存数据库，上re</description>
+    </item>
+    
+    <item>
+      <title>编程语言特性汇总</title>
+      <link>https://blog.v5u.win/post/system-program-language-feature/</link>
+      <pubDate>Tue, 03 Jul 2018 10:23:27 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-program-language-feature/</guid>
+      <description>语言特性汇总： 类型推导， 类型检查， 惰性求值 currying 闭包 OO lambda</description>
     </item>
     
     <item>
@@ -209,8 +170,61 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
       <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B1%87%E6%80%BB/</guid>
-      <description>语言特性汇总：
- 类型推导， 类型检查， 惰性求值 currying 闭包 OO lambda  </description>
+      <description>语言特性汇总： 类型推导， 类型检查， 惰性求值 currying 闭包 OO lambda</description>
+    </item>
+    
+    <item>
+      <title>centos7 更改系统启动模式</title>
+      <link>https://blog.v5u.win/post/system-centos7-boot-type/</link>
+      <pubDate>Tue, 26 Jun 2018 01:51:41 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-centos7-boot-type/</guid>
+      <description>centos7 更改系统启动模式 查看当前启动模式 systemctl get-default 查看配置文件 cat /etc/inittab 设置启动模式为命令行模式 systemctl set-target multi-user.target 重启 shutdown -r now</description>
+    </item>
+    
+    <item>
+      <title>centos7 PHP7环境配置</title>
+      <link>https://blog.v5u.win/post/system-centos7-php7/</link>
+      <pubDate>Tue, 26 Jun 2018 01:50:27 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-centos7-php7/</guid>
+      <description>centos7 PHP7环境配置 目录 1. 开启22端口2. 创建其他用户，使用其他用户ssh登录（root账户禁止登录）3. 关闭防火墙4. 关闭selinux5.</description>
+    </item>
+    
+    <item>
+      <title>Apache不能访问directory 目录</title>
+      <link>https://blog.v5u.win/post/system-apache-directory/</link>
+      <pubDate>Mon, 28 May 2018 06:14:25 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-apache-directory/</guid>
+      <description>Mac升级了系统，发现启动了Apache，可以访问index.php文件。 当目录下找不到文件的时候，应该显示Indexes目录， 此时报错Fo</description>
+    </item>
+    
+    <item>
+      <title>关键字探索 define const</title>
+      <link>https://blog.v5u.win/post/itblack-defineconst/</link>
+      <pubDate>Fri, 19 Jan 2018 09:37:16 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/itblack-defineconst/</guid>
+      <description>define 单纯的代码替换，预编译时进行 const 常数，不变的。 ​ const是一个关键字。它限定一个变量不允许被改变，产生静态作用。 编译时进行处理 只分配一次内</description>
+    </item>
+    
+    <item>
+      <title>mac文件权限修改</title>
+      <link>https://blog.v5u.win/post/mac-file-right-change/</link>
+      <pubDate>Mon, 13 Mar 2017 17:20:42 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/mac-file-right-change/</guid>
+      <description>文件或目录的访问权限分为只读，只写和可执行三种。 文件被创建时，文件所有者自动拥有对该文件的读、写和可执行权限，以便于对文件的阅读和修改。 有三</description>
+    </item>
+    
+    <item>
+      <title>数据结构</title>
+      <link>https://blog.v5u.win/post/system-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Mon, 07 Nov 2016 22:13:26 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description>顺序表 链表 栈和队列 散列表 树结构 适合表述层次关系 图结构</description>
     </item>
     
     <item>
@@ -219,24 +233,16 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
       <pubDate>Fri, 05 Aug 2016 10:46:42 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
-      <description> 函数式编程的三大特性： •immutable data 不可变数据：
-像Clojure一样，默认上变量是不可变的，如果你要改变变量，你需要把变量copy出去修改。这样一来，可以让你的程序少很多Bug。因为，程序中的状态不好维护，在并发的时候更不好维护。（你可以试想一下如果你的程序有个复杂的状态，当以后别人改你代码的时候，是很容易出bug的，在并行中这样的问题就更多了）
-•first class functions：
-这个技术可以让你的函数就像变量一样来使用。也就是说，你的函数可以像变量一样被创建，修改，并当成变量一样传递，返回或是在函数中嵌套函数。这个有点像Javascript的Prototype（参看Javascript的面向对象编程）
-•尾递归优化：
-我们知道递归的害处，那就是如果递归很深的话，stack受不了，并会导致性能大幅度下降。所以，我们使用尾递归优化技术——每次递归时都会重用stack，这样一来能够提升性能，当然，这需要语言或编译器的支持。Python就不支持。
-函数式编程的准则：不依赖于外部的数据，而且也不改变外部数据的值，而是返回一个新的值给你。
-函数式编程的理念：把函数当成变量来用，关注于描述问题而不是怎么实现，这样可以让代码更易读。
-把代码逻辑封装成了函数后，我们就相当于给每个相对独立的程序逻辑取了个名字，于是代码成了自解释的。
-但是这些函数间必需知道其它函数是怎么修改它们之间的共享变量的，所以，这些函数是有状态的。解决办法就是Functional Programming 的编程范式
-函数式编程有如下好处：
-1.代码更简单了。
-2.数据集，操作，返回值都放到了一起。
-3.你在读代码的时候，没有了循环体，于是就可以少了些临时变量，以及变量倒来倒去逻辑。
-4.你的代码变成了在描述你要干什么，而不是怎么去干。
-避免使用程序状态和可变对象,是降低程序复杂度的有效方式之一,而这也正是函数式编程的精髓。 函数式编程强调执行的结果,而非执行的过程。
- 我们先构建一系列简单却具有一定功能的小函数,然后再将这些函数进行组装以实现完整的逻辑和复杂的运算,这是函数式编程的基本思想。
- </description>
+      <description>函数式编程的三大特性： •immutable data 不可变数据： 像Clojure一样，默认上变量是不可变的，如果你要改变变量，你需要把变量copy出</description>
+    </item>
+    
+    <item>
+      <title>mac下wireshark的使用方法</title>
+      <link>https://blog.v5u.win/post/mac-wireshark/</link>
+      <pubDate>Wed, 18 May 2016 18:47:09 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/mac-wireshark/</guid>
+      <description>Wireshark是mac下一款非常好的抓包工具，安装我就不说了，下面我重点来说说如何使用。 1.打开终端 2.rvictl -s // 创建一个虚拟接口 3.打开Wir</description>
     </item>
     
     <item>
@@ -245,10 +251,16 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
       <pubDate>Mon, 18 Apr 2016 17:26:21 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-vim/</guid>
-      <description>Vim
-自带教程 终端输入 vimtutor
-两种模式状态 1. 命令模式 2. 编辑模式
-命令模式下的操作  dd 删除一行;三行：3dd y复制 d()剪切 p(paste)粘贴 :wq 或 ZZ 或 保存退出 :q! 强制退出 / 搜索 命令模式下 /user 搜索 user 关键字 i 所有非hjkl的字符 进入编辑模式  编辑模式 文字编辑器</description>
+      <description>Vim 自带教程 终端输入 vimtutor 两种模式状态 1. 命令模式 2. 编辑模式 命令模式下的操作 dd 删除一行;三行：3dd y复制 d()剪切 p(paste)粘贴 :wq 或 ZZ 或 保存</description>
+    </item>
+    
+    <item>
+      <title>八大算法思想</title>
+      <link>https://blog.v5u.win/post/system-%E5%85%AB%E5%A4%A7%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/</link>
+      <pubDate>Wed, 23 Mar 2016 10:31:32 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-%E5%85%AB%E5%A4%A7%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/</guid>
+      <description>枚举 递推 递归 分治 贪心 试探 动态迭代 模拟</description>
     </item>
     
     <item>
@@ -257,19 +269,25 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
       <pubDate>Wed, 24 Feb 2016 16:02:58 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/mac-ssh/</guid>
-      <description>[TOC]
-解释  Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。 SSH通过在网络中创建安全隧道来实现SSH客户端与服务器之间的连接[2]。 虽然任何网络服务都可以通过SSH实现安全传输，SSH最常见的用途是远程登录系统，人们通常利用SSH来传输命令行界面和远程执行命令。 使用频率最高的场合类Unix系统，但是Windows操作系统也能有限度地使用SSH。2015年，微软宣布将在未来的操作系统中提供原生SSH协议支持(摘自wikipedia)
- 生成 下面是Mac生成方法：
-1 ：打开终端 输入 ssh-keygen
-然后系统提示输入文件保存位置等信息，连续敲三次回车即可，生成的SSH key文件保存在中～/.ssh/id_rsa.pub
-2 然后用文本编辑工具打开该文件，我用的是vim,所以命令是： vim ~/.ssh/id_rsa.pub`
-禁忌 同一个网站，多个账户之间 不能共用同一个ssh公钥，这会造成服务器无法判断提交者的身份，所以如果有多个账户在同一个网站的话，还是创建多个ssh证书分别管理比较好。
-多证书管理 生成 指定文件名
-`ssh-keygen -t rsa -f ~/.ssh/id_rsa.name -C &amp;ldquo;ssh_name&amp;rdquo;
-创建配置文件
-vi ~/.ssh/config
-Host aaa.github.com HostName git@github.com:aaa IdentityFile ~/.ssh/id_rsa.aaa User git HostName bbb@github.com IdentityFile ~/.ssh/id_rsa User git  检测是否配置成功
-//查看当前rsa list ssh-add -l //如果列表中没有新增的rsa， 添加identifile 把专用密钥添加到 ssh-agent 的高速缓存中： ssh-add ~/.ssh/test_id_rsa  注： ssh-add 命令是把专用密钥添加到ssh-agent的高速缓存中。是把指定的私钥添加到 ssh-agent 所管理的一个 session 当中。而 ssh-agent 是一个用于存储私钥的临时性的 session 服务，重启之后，ssh-agent 服务也就重置了，session 会话也就失效了。</description>
+      <description>[TOC] 解释 Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。 SSH通过在网</description>
+    </item>
+    
+    <item>
+      <title>日课 丙申年庚寅月丙寅日20160214</title>
+      <link>https://blog.v5u.win/post/system-%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%8E%9F%E5%88%99/</link>
+      <pubDate>Sun, 14 Feb 2016 12:03:13 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%8E%9F%E5%88%99/</guid>
+      <description>软件开发过程当中，需要传递数据作为参数，很多时候我们需要的数据是要经过处理的，这时作为参数传递的部分尽量传递源数据，数据处理放在数据接收之后</description>
+    </item>
+    
+    <item>
+      <title>MAC系统XAMPP 中 MySQL命令行客户端配置使用</title>
+      <link>https://blog.v5u.win/post/mac-xampp/</link>
+      <pubDate>Fri, 07 Aug 2015 23:42:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/mac-xampp/</guid>
+      <description>MySQL客户端 &amp;nbsp; &amp;nbsp; &amp;nbsp;MySQL安装包里面，在一个名为bin的文件夹，放置了很多工具包，但是使用他们的方式是命令行（ps：最近上瘾</description>
     </item>
     
     <item>
@@ -278,16 +296,16 @@ Host aaa.github.com HostName git@github.com:aaa IdentityFile ~/.ssh/id_rsa.aaa U
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-git_server/</guid>
-      <description>git 仓库的创建流程：
-命令行模式创建 参考  创建裸仓库 git init --bare gitserver.git，表明允许其副本push操作。   使用 git init --bare &amp;lt;repo&amp;gt; 可以创建一个裸仓库，当创建一个裸存储库时，Git假定裸存储库将作为几个远程用户的源存储库，因此它不会创建默认远程源。这意味着基本的git pull和git push操作将无法工作，因为Git假设没有工作空间，你不打算提交对裸存储库的任何更改。
-从裸仓库 clone 下来的本地仓库可以进行正常的 push 操作， 但是从一般仓库 clone 下来的本地仓库却不行。 这也正是裸仓库存在的意义。 裸仓库一般情况下是作为远端的中心仓库而存在的。
- git 创建裸仓库并修改该仓库目录的组权限为可写。
-$ ssh user@git.example.com $ cd /opt/git/my_project.git $ git init --bare --shared  git clone
-git clone /Users/fanjinlong/dev/git/jdcrontab.git	 gitea 工具创建 Gitea 是一个Go开发的开源Git管理工具。从Gogs项目中分裂出来，竟然是中国人无闻的项目（惊叹一下）。特点是：目标是打造一个最简单、最快速和最轻松的方式搭建自助 Git 服务。
-ssh 登录配置 参考 http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html
-这时再输入下面的命令，将公钥传送到远程主机host上面：
- 　$ ssh-copy-id user@host
- 好了，从此你再登录，就不需要输入密码了。</description>
+      <description>git 仓库的创建流程： 命令行模式创建 参考 创建裸仓库 git init --bare gitserver.git，表明允许其副本push操作。 使用 git init --bare &amp;lt;repo&amp;gt; 可以创建一个裸仓库，</description>
+    </item>
+    
+    <item>
+      <title>vscode远程开发</title>
+      <link>https://blog.v5u.win/post/vscode-remote/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/vscode-remote/</guid>
+      <description>vscode 远程编辑 安装插件 remote-ssh 配置.ssh/config 文件 Host 10.211.55.5 HostName 10.211.55.5 IdentityFile ~/.ssh/id_rsa User test 右侧显示显示器图标 点击远程server 新建文件夹（connet to host in new wi</description>
     </item>
     
   </channel>

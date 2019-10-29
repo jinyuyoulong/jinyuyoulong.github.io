@@ -17,8 +17,16 @@
       <pubDate>Tue, 20 Aug 2019 18:06:35 +0800</pubDate>
       
       <guid>https://blog.v5u.win/post/go-cgo/</guid>
-      <description>[TOC]
-golang 中调用 c/c++ 代码有三种方式  直接嵌套在go文件中使用，最简单直观的 导入动态库 .so 或 dll 的形式，最安全但是很不爽也比较慢的 直接引用 c/c++ 文件的形式，层次分明，容易随时修改看结果的  需要的环境支持  Linux 具备 gcc 与 g++ 即可 Mac 参考 Linux Windows 需要安装 mingw，否则编译时会有这类错：cannot find -lmingwex  嵌套 package main // 嵌入式 调用 // #include &amp;lt;stdio.h&amp;gt; // #include &amp;lt;stdlib.h&amp;gt; /* void print(char *str) { printf(&amp;quot;%s\n&amp;quot;, str); } */ import &amp;quot;C&amp;quot;//这里可看作封装的伪包C, 这条语句要紧挨着上面的注释块，不可在它俩之间间隔空行！ import &amp;quot;unsafe&amp;quot; func main() { s := &amp;quot;Hello Cgo&amp;quot; cs := C.CString(s) C.</description>
+      <description>[TOC] golang 中调用 c/c++ 代码有三种方式 直接嵌套在go文件中使用，最简单直观的 导入动态库 .so 或 dll 的形式，最安全但是很不爽也比较慢的 直接引用 c/c++ 文件的形式，层次</description>
+    </item>
+    
+    <item>
+      <title>Go-Authorization</title>
+      <link>https://blog.v5u.win/post/go-authorization/</link>
+      <pubDate>Mon, 15 Apr 2019 14:52:48 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/go-authorization/</guid>
+      <description>接口认证 一般接口开发中有以下常用的几种安全机制： 用户认证 数字签名 接口加密 用户认证 一般的接口测试工具都会提供一个User Auth/Author</description>
     </item>
     
     <item>
@@ -27,13 +35,7 @@ golang 中调用 c/c++ 代码有三种方式  直接嵌套在go文件中使用�
       <pubDate>Fri, 08 Mar 2019 17:25:10 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/go-iris-template/</guid>
-      <description>Iris 支持五个开箱即用的模板引擎，所有这五个模板引擎都具有通用API的共同特征，如布局，模板功能，特定于派对的布局，部分渲染等。
- 标准的html,它的模板解析器就是 golang.org/pkg/html/template/
-Django,它的模板解析器就是 github.com/flosch/pongo2
-Pug(Jade),它的模板解析器就是 github.com/Joker/jade
-Handlebars, 它的模板解析器 github.com/aymerick/raymond
-Amber, 它的模板解析器 github.com/eknkc/amber
- </description>
+      <description>Iris 支持五个开箱即用的模板引擎，所有这五个模板引擎都具有通用API的共同特征，如布局，模板功能，特定于派对的布局，部分渲染等。 标准的html,</description>
     </item>
     
   </channel>

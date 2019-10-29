@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>system on 为吾优</title>
+    <link>https://blog.v5u.win/tags/system/</link>
+    <description>Recent content in system on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 26 Jun 2018 01:50:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/system/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>centos7 PHP7环境配置</title>
+      <link>https://blog.v5u.win/post/system-centos7-php7/</link>
+      <pubDate>Tue, 26 Jun 2018 01:50:27 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-centos7-php7/</guid>
+      <description>centos7 PHP7环境配置 目录 1. 开启22端口2. 创建其他用户，使用其他用户ssh登录（root账户禁止登录）3. 关闭防火墙4. 关闭selinux5.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -17,7 +17,7 @@
       <pubDate>Tue, 07 May 2019 17:58:56 +0800</pubDate>
       
       <guid>https://blog.v5u.win/post/blog-wordpress-http-https/</guid>
-      <description> wordpress http 升级HTTPS  lnmp 添加ssl：lnmp ssl add wordpress 后台修改：主域名改为https:// ,固定链接改为id格式 (postname的URL格式无法找到，未解决) 修改数据库,搜索数据库中的http的链接，修改为https update wp_posts set post_content = replace(post_content, ‘http://www.v5u.win/’,‘https://www.v5u.win/’) 访问网站查找跨域引用(js,css)，更改代码或者数据库文本。改为https  </description>
+      <description>wordpress http 升级HTTPS lnmp 添加ssl：lnmp ssl add wordpress 后台修改：主域名改为https:// ,固定链接改为id格式 (postname的URL格式无法找</description>
     </item>
     
     <item>
@@ -26,15 +26,25 @@
       <pubDate>Tue, 16 Apr 2019 14:09:31 +0800</pubDate>
       
       <guid>https://blog.v5u.win/post/blog-hugo/</guid>
-      <description>Hugo是Go写的静态网站生成器，生成速度快，性能开销小，正好也在学习Golang。我决定从 Hexo 切换到 Hugo。
-以下是试用总结，基本可以实现从0到1。至于从1到n，同学们加油！
-安装 brew install hugo
-创建站点 hugo new site path/blogname
-创建页面 hugo new post/first.md 默认文章创建位置为content目录
-预览 hugo server --theme=maupassant --buildDrafts
-生成静态页 直接运行hugo 单命令就可以生成 public 目录，内放生成的静态页面
-发布 使用 git或其他方式 将public目录下的文件发布到目标地址
-其他 hugo new theme themename 创建 theme</description>
+      <description>Hugo是Go写的静态网站生成器，生成速度快，性能开销小，正好也在学习Golang。我决定从 Hexo 切换到 Hugo。 以下是试用总结，基本可以实现从</description>
+    </item>
+    
+    <item>
+      <title>WordPress4.4之后原生支持REST API</title>
+      <link>https://blog.v5u.win/post/blog-wordpress4-4-suported-rest-api/</link>
+      <pubDate>Tue, 10 Apr 2018 05:33:11 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/blog-wordpress4-4-suported-rest-api/</guid>
+      <description>WordPress4.4之后REST API 格式:www.网址/wp-json/wp/v2,例：www.v5u.win/wp-json/wp/v2</description>
+    </item>
+    
+    <item>
+      <title>WordPress4 如何添加友情链接</title>
+      <link>https://blog.v5u.win/post/blog-wordpress4-add-links/</link>
+      <pubDate>Tue, 10 Apr 2018 03:11:38 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/blog-wordpress4-add-links/</guid>
+      <description>链接—&amp;gt;创建链接分类目录 —&amp;gt;添加链接 外观—&amp;gt;小工具—&amp;gt;链接—&amp;gt;选择链接分类目录 以前有用友链插件或者自定义菜单目</description>
     </item>
     
     <item>
@@ -52,15 +62,7 @@
       <pubDate>Thu, 30 Jun 2016 17:40:48 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/blog-hexo/</guid>
-      <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new &amp;ldquo;文章名&amp;rdquo; 创建好的&amp;rdquo;文件名.md&amp;rdquo; 文件会放在站点目录 ./source/_posts/ 下
-注意：资源文件都放在source/_posts文件下（不要创建其他目录，否则解析的时候可能会报错）
-2.如何发布文章 每次发布文章都需要执行命令：
-hexo generate
-hexo deploy
-3.本地启动hexo 查看网站更新 hexo server
-4.设置新建文章的模板 创建新文件: hexo new passageName
-默认创建在source/_post目录下，使用scaffolds/post.md作为模板
-文章filename根据_config.yml配置自动创建为new_post_name: :year-:month-:day-:title.md</description>
+      <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new &amp;ldquo;文章名&amp;rdquo; 创建</description>
     </item>
     
     <item>
@@ -69,12 +71,7 @@ hexo deploy
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/blog-jekyll/</guid>
-      <description>jekyll using standards 使用规范  文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必须为&amp;rdquo;年-月-日-文章标题.后缀名&amp;rdquo;的格式。如果网页代码采用html格式，后缀名为html；如果采用markdown格式，后缀名为md。）
- 在该文件中，填入以下内容：（注意，行首不能有空格）
---- layout: default title: 你好，世界 --- &amp;lt;h2&amp;gt;{{ page.title }}&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;我的第一篇文章&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;{{ page.date | date_to_string }}&amp;lt;/p&amp;gt;  每篇文章的头部，必须有一个yaml文件头，用来设置一些元数据。 它用三根短划线&amp;rdquo;&amp;mdash;&amp;ldquo;，标记开始和结束，里面每一行设置一种元数据。&amp;rdquo;layout:default&amp;rdquo;，表示该文章的模板使用_layouts目录下的default.html文件；&amp;rdquo;title: 你好，世界&amp;rdquo;，表示该文章的标题是&amp;rdquo;你好，世界&amp;rdquo;， 如果不设置这个值，默认使用嵌入文件名的标题，即&amp;rdquo;hello world&amp;rdquo;。
-  每个页面都可以有自己的头信息，可以覆盖Jekyll和_config.yml里面的值
- --- layout: post title: 一步一步创建Jekyll主题 categories: [jekyll github markdown rouge] date: 2016-9-3 15:47:05 excerpt: &amp;quot;&amp;quot; # 覆盖清掉文章的摘要 pid: &amp;quot;&amp;quot; # 新建一个pid的字符串变量 ---   使用模板变量
-	在yaml文件头后面，就是文章的正式内容，里面可以使用模板变量。	{{ page.title }}就是文件头中设置的&amp;quot;你好，世界&amp;quot;，	{{ page.date }}则是嵌入文件名的日期（也可以在文件头重新定义date变量），&amp;quot;| date_to_string&amp;quot;表示将page.date变量转化成人类可读的格式。  发布</description>
+      <description>jekyll using standards 使用规范 文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必须为&amp;rdquo;</description>
     </item>
     
   </channel>

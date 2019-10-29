@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Xcode on 为吾优</title>
+    <title>xcode on 为吾优</title>
     <link>https://blog.v5u.win/categories/xcode/</link>
-    <description>Recent content in Xcode on 为吾优</description>
+    <description>Recent content in xcode on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 27 May 2016 12:51:27 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Oct 2016 09:58:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/xcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>升级xcode8后不能使用注释</title>
+      <link>https://blog.v5u.win/post/xcode-xcode8/</link>
+      <pubDate>Fri, 14 Oct 2016 09:58:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/xcode-xcode8/</guid>
+      <description>苹果解决xcode ghost。把插件屏蔽了。解决方法 命令运行： sudo /usr/libexec/xpccachectl 然后必须重启电脑后生效</description>
+    </item>
     
     <item>
       <title>Xcode插件XcodeColors的使用</title>
@@ -17,10 +26,7 @@
       <pubDate>Fri, 27 May 2016 12:51:27 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/xcode-xcodecolors/</guid>
-      <description>安装： 在 管理器中搜索 下载 Xcodecolors 重启Xcode 选择load boundle
-使用： 配置环境变量－&amp;gt; 打开Product -&amp;gt; Edit Scheme 选择Run-&amp;gt;&amp;ldquo;Arguments&amp;rdquo; tab 增加一个新的Environment Variable ，命名为&amp;rdquo;XcodeColors&amp;rdquo;，值赋为YES
-代码中添加：
-#define XCODE_COLORS_ESCAPE @&amp;quot;\033[&amp;quot; #define XCODE_COLORS_RESET XCODE_COLORS_ESCAPE @&amp;quot;;&amp;quot; // Clear any foreground or background color char * xcode_colors = getenv(&amp;quot;XcodeColors&amp;quot;); if (xcode_colors &amp;amp;amp;&amp;amp;amp; (strcmp(xcode_colors, &amp;quot;YES&amp;quot;)) == 0) { NSLog(XCODE_COLORS_ESCAPE @&amp;quot;fg0,0,255;&amp;quot; @&amp;quot;Blue text&amp;quot; XCODE_COLORS_RESET); }  说明：getenv()方法为c库中的获取环境变量内容方法。</description>
+      <description>安装： 在 管理器中搜索 下载 Xcodecolors 重启Xcode 选择load boundle 使用： 配置环境变量－&amp;gt; 打开Product -&amp;gt; Edit Scheme 选择Run-&amp;gt;&amp;ldquo;</description>
     </item>
     
   </channel>

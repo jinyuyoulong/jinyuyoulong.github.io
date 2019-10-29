@@ -17,41 +17,7 @@
       <pubDate>Thu, 16 Jul 2015 11:03:51 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/ios-nstimer/</guid>
-      <description>转载自
-NSTimer的使用方法
-1、初始化
-+ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo;
-
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo;
-
-注：不用scheduled方式初始化的，需要手动addTimer:forMode: 将timer添加到一个runloop中。
-而scheduled的初始化方法将以默认mode直接添加到当前的runloop中.
-&amp;nbsp;
-
-scheduledTimerWithTimeInterval:(NSTimeInterval)seconds &amp;nbsp;
-预订一个Timer,设置一个时间间隔。
-表示输入一个时间间隔对象，以秒为单位，一个&amp;gt;0的浮点类型的值，如果该值&amp;lt;0,系统会默认为0.1
-&amp;nbsp;target:(id)aTarget
-表示发送的对象，如self
-&amp;nbsp;selector:(SEL)aSelector
-方法选择器，在时间间隔内，选择调用一个实例方法
-userInfo:(id)userInfo
-此参数可以为nil，当定时器失效时，由你指定的对象保留和释放该定时器。
-repeats:(BOOL)yesOrNo
-当YES时，定时器会不断循环直至失效或被释放，当NO时，定时器会循环发送一次就失效。
-invocation:(NSInvocation *)invocation
-&amp;nbsp;
-举例：(不可控)
-NSTimer *timer&amp;nbsp;= [NSTimer&amp;nbsp;scheduledTimerWithTimeInterval:10.0&amp;nbsp;target:self&amp;nbsp;selector:@selector(timerFired:)&amp;nbsp;userInfo:nil&amp;nbsp;repeats:NO];
-或(可控制)
-NSTimer *myTimer&amp;nbsp;= [NSTimer&amp;nbsp;timerWithTimeInterval:3.0&amp;nbsp;target:selfselector:@selector(timerFired:)userInfo:nilrepeats:NO];
-[[NSRunLoop &amp;nbsp;currentRunLoop]addTimer:myTimerforMode:NSDefaultRunLoopMode];
-&amp;nbsp;
-2、触发（启动）
-当定时器创建完（不用scheduled的，添加到runloop中后，该定时器将在初始化时指定的timeInterval秒后自动触发。
-
-可以使用-(void)fire;方法来立即触发该定时器；
-注：You can use this method to fire a repeating timer without interrupting its regular firing schedule. If the timer is non-repeating, it is automatically invalidated after firing, even if its scheduled fire date has not arrived.</description>
+      <description>转载自 NSTimer的使用方法 1、初始化 + (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo; + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo; 注：不用scheduled方式初始化的，需要手动addTimer:for</description>
     </item>
     
   </channel>

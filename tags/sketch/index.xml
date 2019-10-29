@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sketch on 为吾优</title>
+    <link>https://blog.v5u.win/tags/sketch/</link>
+    <description>Recent content in sketch on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 04 Jul 2016 14:19:13 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/sketch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>sketch使用tips</title>
+      <link>https://blog.v5u.win/post/design-sketch_tips/</link>
+      <pubDate>Mon, 04 Jul 2016 14:19:13 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/design-sketch_tips/</guid>
+      <description>记录sketch使用心得 1. 打开设计模板：file&amp;ndash;&amp;gt; New from Template &amp;ndash;&amp;gt;选择需要的模板库（Android Icon Desi</description>
+    </item>
+    
+  </channel>
+</rss>

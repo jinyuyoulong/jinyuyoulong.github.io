@@ -17,10 +17,7 @@
       <pubDate>Mon, 01 Jul 2019 15:05:09 +0800</pubDate>
       
       <guid>https://blog.v5u.win/post/system-nginx/</guid>
-      <description>[TOC]
-有的时候要生成大量尺寸的缩图，事先不知道有哪些尺寸，所以可以用php动态生成；
-1.在nginx中配置
-location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.)/(.*)(\d+)(\d+).(gif|jpg|jpeg|png|bmp) /ImageTransferController.php?s=1/2_3_4.5; } expires 30d; }   完善 ImageTransferController.php 文件  </description>
+      <description>[TOC] 有的时候要生成大量尺寸的缩图，事先不知道有哪些尺寸，所以可以用php动态生成； 1.在nginx中配置 location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.)/(.*)(\d+)(\d+).(gif|jpg|jpeg|png|bmp) /ImageTransferController.php?s=1/2_3_4.5; } expires 30d; } 完善 ImageTransferController.php</description>
     </item>
     
     <item>
@@ -29,10 +26,16 @@ location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.
       <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-apache%E6%80%BB%E7%BB%93/</guid>
-      <description>Apache总结
-http.conf配置
-开启/关闭目录索引
-&amp;lt;Directory &amp;quot;D:/Apache/blog.phpha.com&amp;quot;&amp;gt; Options Indexes FollowSymLinks # 修改为: Options FollowSymLinks #Indexes 的作用就是当该目录下没有 index.html 文件时，就显示目录结构，去掉 Indexes ，Apache 就不会显示该目录的列表了。 AllowOverride None Order allow,deny Allow from all &amp;lt;/Directory&amp;gt;  </description>
+      <description>Apache总结 http.conf配置 开启/关闭目录索引 &amp;lt;Directory &amp;quot;D:/Apache/blog.phpha.com&amp;quot;&amp;gt; Options Indexes FollowSymLinks # 修改为: Options FollowSymLinks #Indexes 的作用就是当该目录下没有 index.html 文件时，就显示目录结构，去掉 Indexes ，</description>
+    </item>
+    
+    <item>
+      <title>centos7 PHP7环境配置</title>
+      <link>https://blog.v5u.win/post/system-centos7-php7/</link>
+      <pubDate>Tue, 26 Jun 2018 01:50:27 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-centos7-php7/</guid>
+      <description>centos7 PHP7环境配置 目录 1. 开启22端口2. 创建其他用户，使用其他用户ssh登录（root账户禁止登录）3. 关闭防火墙4. 关闭selinux5.</description>
     </item>
     
     <item>
@@ -41,25 +44,7 @@ http.conf配置
       <pubDate>Fri, 09 Jun 2017 03:35:06 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/mac-composer/</guid>
-      <description>composer是PHP的包管理器
-mac下如何安装呢？
-最简单的方法是通过brew工具
-brew install composer
-这时候可能会遇到这个问题：
-Searching for a previously deleted formula&amp;hellip;
-所以我们检查一下brew/core 中是否有composer可供安装
-brew search composer
-得到这个结果：
-homebrew/php/composer
-homebrew/php/composer@1.2
-caskroom/versions/multimarkdown-composer-beta
-caskroom/cask/multimarkdown-composer-pro
-caskroom/cask/multimarkdown-composer
-所以其实是有的，只是没找到
-这时候我们通过brew 的 tap方法来设置一下
-brew tap homebrew/php
-完事之后，再运行brew install composer就可以了。
-当然，还有其他的方法安装，但是我都不推荐，因为太麻烦！</description>
+      <description>composer是PHP的包管理器 mac下如何安装呢？ 最简单的方法是通过brew工具 brew install composer 这时候可能会遇到这个问题： Searching for a previously deleted formula&amp;hellip; 所以我们检查</description>
     </item>
     
     <item>
@@ -68,11 +53,7 @@ brew tap homebrew/php
       <pubDate>Tue, 18 Aug 2015 11:19:22 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/mac-php-local/</guid>
-      <description>从 OS X 10.0.0 版本开始，PHP 作为 Mac 机的标准配置被提供。在默认的 web 服务器中启用 PHP，只需将 Apache 配置文件 httpd.conf 中的几行配置指令最前面的注释符号去掉，而 CGI 或 CLI 默认都可使用（可以很容易的被终端程序使用）。
-按照以下的使用说明，可以快速的建立一个本地 PHP 开发环境。_强烈建议_将 PHP 升级到最新的版本。在大多数活跃的软件中， 新的版本会修复错误和添加新的功能，PHP 也是如此。请参见相应的 Mac OS X 安装文档，以进一步了解详细的信息。以下的说明以初学者的角度来详细描述如何操作来得到一个缺省的运行环境。建议所有的用户都编译或者安装一个新的打包版本。
-标准的安装类型为 mod_php，在 Mac OS X 的 Apache web 服务器（默认 web 服务器，可以从系统设置中访问）中启用 PHP 包含以下的步骤：
-&amp;nbsp;
- 找到并打开Apache的配置文件。默认情况下，这个配置文件的位置是： _/private/etc/apache2/httpd.conf_。 使用 Finder 或者 Spotlight 来找到这个文件可能不是很容易的事情，因为在默认情况下它一般是 root 用户拥有所有权的私有文件。 Note: 要打开这个文件，可以在命令行下面使用基于 Unix 的文本编辑器，例如 _nano_，因为他的属主是 _root_，所以我们需要使用 sudo 来打开（以 root 用户权限）。例如我们在 Terminal 程序中敲入下面的指令（操作后，会提示输入密码）：sudo nano /private/etc/apache2/httpd.conf 注意 nano 中的命令：_^w（搜索），^o_（保存），以及 _^x（退出）。^_ 表示 Ctrl 键。 Note: 在Mac OS X 10.</description>
+      <description>从 OS X 10.0.0 版本开始，PHP 作为 Mac 机的标准配置被提供。在默认的 web 服务器中启用 PHP，只需将 Apache 配置文件 httpd.conf 中的几行配置指令最前面的注释符号去掉，而 CGI</description>
     </item>
     
     <item>
@@ -81,10 +62,7 @@ brew tap homebrew/php
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/php-session-error/</guid>
-      <description>session错误
- 确认当前页面session有没有添加成功 debug可不可以讲session值跨页面传递 设置php.ini文件session.auto_start=1,此时use_cookies=0，use_only_cookies=0  验证：
-php -i 查看PHP配置
-php.ini phpinfo()对比配置文件和实际环境配置</description>
+      <description>session错误 确认当前页面session有没有添加成功 debug可不可以讲session值跨页面传递 设置php.ini文件session</description>
     </item>
     
   </channel>

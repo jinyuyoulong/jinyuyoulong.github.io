@@ -17,9 +17,7 @@
       <pubDate>Fri, 18 Sep 2015 15:50:23 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/system-%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
-      <description>#define DLOG( s, &amp;hellip; ) NSLog(@&amp;quot;&amp;lt; %@: (%d) &amp;gt; %@&amp;quot;,[[NSString stringWithUTF8String:FILE] lastPathComponent], LINE, [NSString stringWithFormat:(s), ##VA_ARGS])
-这个宏定义是用来在打印log的时候，调试使用，可以显示当前log所在的controller名字。
-先写出来，原理以后查看了再来补，</description>
+      <description>#define DLOG( s, &amp;hellip; ) NSLog(@&amp;quot;&amp;lt; %@: (%d) &amp;gt; %@&amp;quot;,[[NSString stringWithUTF8String:FILE] lastPathComponent], LINE, [NSString stringWithFormat:(s), ##VA_ARGS]) 这个宏定义是用来在打印log的时候，调试使用，可以显示当前log所在的controller名字。 先写出来，原</description>
     </item>
     
   </channel>

@@ -1,78 +1,100 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <title>PHP工程总结 // 为吾优</title>
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.55.5" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="范金龙" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PHP工程总结 | 为吾优</title>
+    <meta property="og:title" content="PHP工程总结 - 为吾优">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-07-02T00:00:00&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-07-02T00:00:00&#43;08:00">
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="PHP工程总结">
+        
+    <meta name="author" content="金玉游龙">
+    <meta property="og:url" content="https://blog.v5u.win/post/php%E5%B7%A5%E7%A8%8B%E6%80%BB%E7%BB%93/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PHP工程总结"/>
-<meta name="twitter:description" content="PHP工程总结
- 使用session需要调用session_start()手动开启环境，session_start()调用之前页面不允许输出任何内容，包括空格 sql语句 执行exec(),查询使用query() order不能作为表名称，这是关键字 获取最后一条插入数据 id使用PHP内置的方法调用: $db-&gt;lastInsertRowID();插入一条数据后获取此条数据id。 $\sum_{i=1}^{n}\sqrt{i&#43;\sin(i)}$ include 和 require 除了处理错误的方式不同之外，在其他方面都是相同的：  require 生成一个致命错误（E_COMPILE_ERROR），在错误发生后脚本会停止执行。 include 生成一个警告（E_WARNING），在错误发生后脚本会继续执行。  增 删 改updateRow(tablename, id, key-values ) 查 ```mysql 单表查询: select * from A where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)  两表联查: select * from A inner join user on A.uid=B.uid where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)
-三表联查: select * from ((A left join B on A.orderId = B.id) left join C on B.uid=C.uid) where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)
-三生万物，只有推到3，才能找到规律，推及万物
-11. 遇到问题： unable to open database file ，  原因为:当前文件夹的文件权限，需要为可读可写."/>
-
-    <meta property="og:title" content="PHP工程总结" />
-<meta property="og:description" content="PHP工程总结
- 使用session需要调用session_start()手动开启环境，session_start()调用之前页面不允许输出任何内容，包括空格 sql语句 执行exec(),查询使用query() order不能作为表名称，这是关键字 获取最后一条插入数据 id使用PHP内置的方法调用: $db-&gt;lastInsertRowID();插入一条数据后获取此条数据id。 $\sum_{i=1}^{n}\sqrt{i&#43;\sin(i)}$ include 和 require 除了处理错误的方式不同之外，在其他方面都是相同的：  require 生成一个致命错误（E_COMPILE_ERROR），在错误发生后脚本会停止执行。 include 生成一个警告（E_WARNING），在错误发生后脚本会继续执行。  增 删 改updateRow(tablename, id, key-values ) 查 ```mysql 单表查询: select * from A where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)  两表联查: select * from A inner join user on A.uid=B.uid where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)
-三表联查: select * from ((A left join B on A.orderId = B.id) left join C on B.uid=C.uid) where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)
-三生万物，只有推到3，才能找到规律，推及万物
-11. 遇到问题： unable to open database file ，  原因为:当前文件夹的文件权限，需要为可读可写." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.v5u.win/post/php%E5%B7%A5%E7%A8%8B%E6%80%BB%E7%BB%93/" />
-<meta property="article:published_time" content="2018-07-02T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2018-07-02T00:00:00&#43;00:00"/>
 
 
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="范金龙" /></a>
-      <h1>为吾优</h1>
-      <p>愿我走在通往幸福的路上</p>
-      <div class="app-header-social">
-        
-          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
-  <title>github</title>
-  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-</svg></a>
-        
-          <a target="_blank" href="https://blog.v5u.win/desc/about/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
-  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-</svg></a>
-        
-      </div>
-    </header>
-    <main class="app-container">
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">PHP工程总结</h1>
-      <div class="post-meta">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Jul 2, 2018
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://blog.v5u.win">首页</a>
+                    
+                    <a  href="https://blog.v5u.win/categories/go/" title="Go">Go</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
         </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          2 min read
-        </div></div>
-    </header>
-    <div class="post-content">
-      <p>PHP工程总结</p>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">PHP工程总结</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年7月2日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/php">PHP</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            <p>PHP工程总结</p>
 
 <ol>
 <li>使用session需要调用session_start()手动开启环境，<code>session_start()调用之前页面不允许输出任何内容，包括空格</code></li>
@@ -89,147 +111,634 @@
 <li>增</li>
 <li>删</li>
 <li>改updateRow(tablename, id, key-values )</li>
-<li>查
-```mysql
-单表查询:
-select * from A where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)</li>
-</ol>
 
-<p>两表联查:
-select * from A inner join user on A.uid=B.uid where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)</p>
+<li><p>查</p>
 
-<p>三表联查:
-select * from ((A left join B on A.orderId = B.id) left join C  on B.uid=C.uid)  where to_days(A.create_time)=to_days(&lsquo;2018-10-09&rsquo;)</p>
+<pre><code class="language-mysql">单表查询:
+select * from A where to_days(A.create_time)=to_days('2018-10-09')
 
-<p>三生万物，只有推到3，才能找到规律，推及万物</p>
+两表联查:
+select * from A inner join user on A.uid=B.uid where to_days(A.create_time)=to_days('2018-10-09')
 
-<pre><code>11. 遇到问题： unable to open database file ，
-</code></pre>
+三表联查:
+select * from ((A left join B on A.orderId = B.id) left join C  on B.uid=C.uid)  where to_days(A.create_time)=to_days('2018-10-09')
 
-<p>原因为:当前文件夹的文件权限，需要为可读可写.
- 原理为：当sqlite进行写操作时，会先 生成缓存文件，然后对缓存文件进行操作，而缓存文件的默认权限为当前文件夹的权限。</p>
+三生万物，只有推到3，才能找到规律，推及万物
+</code></pre></li>
 
-<pre><code>
-12. sqlite 中 inner outer 的区别：inner是两个表的交集，outer是一个表+另一个表不够补null的并集
-13. array 插入
-</code></pre>
+<li><p>遇到问题： unable to open database file ，</p>
 
-<p>// 第一种方式
-        $childArr[$i][&lsquo;name&rsquo;] = $name;
-        $childArr[$i][&lsquo;number&rsquo;] = $number;
-        $childArr[$i][&lsquo;unit&rsquo;] = $unit;</p>
+<pre><code>原因为:当前文件夹的文件权限，需要为可读可写.
+原理为：当sqlite进行写操作时，会先 生成缓存文件，然后对缓存文件进行操作，而缓存文件的默认权限为当前文件夹的权限。
+</code></pre></li>
 
-<pre><code>    // 第二种方式
-</code></pre>
+<li><p>sqlite 中 inner outer 的区别：inner是两个表的交集，outer是一个表+另一个表不够补null的并集</p></li>
 
-<p>//        $childArr[] = $subArrItem;</p>
+<li><p>array 插入</p>
 
-<pre><code>    // 第三种方式，差评！
+<pre><code>// 第一种方式
+    $childArr[$i]['name'] = $name;
+    $childArr[$i]['number'] = $number;
+    $childArr[$i]['unit'] = $unit;
+
+    // 第二种方式
+//        $childArr[] = $subArrItem;
+
+    // 第三种方式，差评！
     //竟然需要两个参数, 不直观
-</code></pre>
+//        array_push($childArr,$subArrItem);
+</code></pre></li>
 
-<p>//        array_push($childArr,$subArrItem);</p>
+<li><p>空值判断</p>
 
-<pre><code>14. 空值判断
-</code></pre>
+<pre><code>empty
 
-<p>empty</p>
+如果 变量 是非空或非零的值，则 empty() 返回 FALSE。
+换句话说，&quot;&quot;、0、&quot;0&quot;、NULL、FALSE、array()、var $var、未定义; 以及没有任何属性的对象都将被认为是空的，如果 var 为空，则返回 TRUE。
 
-<p>如果 变量 是非空或非零的值，则 empty() 返回 FALSE。
-换句话说，&rdquo;&ldquo;、0、&rdquo;0&rdquo;、NULL、FALSE、array()、var $var、未定义; 以及没有任何属性的对象都将被认为是空的，如果 var 为空，则返回 TRUE。</p>
+isset
 
-<p>isset</p>
+如果 变量 存在(非NULL)则返回 TRUE，否则返回 FALSE(包括未定义）。
+变量值设置为：null，返回也是false;unset一个变量后，变量被取消了。注意，isset对于NULL值变量，特殊处理。
 
-<p>如果 变量 存在(非NULL)则返回 TRUE，否则返回 FALSE(包括未定义）。
-变量值设置为：null，返回也是false;unset一个变量后，变量被取消了。注意，isset对于NULL值变量，特殊处理。</p>
+is_null
 
-<p>is_null</p>
+检测传入值【值，变量，表达式】是否是null,只有一个变量定义了，且它的值是null，它才返回TRUE . 其它都返回 FALSE 【未定义变量传入后会出错！】.
 
-<p>检测传入值【值，变量，表达式】是否是null,只有一个变量定义了，且它的值是null，它才返回TRUE . 其它都返回 FALSE 【未定义变量传入后会出错！】.</p>
+参考: www.cnblogs.com/chengmo/archive/2010/10/18/1854258.html
+</code></pre></li>
 
-<p>参考: www.cnblogs.com/chengmo/archive/2010/10/18/1854258.html</p>
+<li><p>数据库</p>
 
-<pre><code>15. 数据库
-</code></pre>
-
-<p>数据类型
+<pre><code>数据类型
 blob 二进制大数据块
 real 4字节浮点数-&gt;类float
 binary 指定字节长度的二进制数据
 timestamp 时间戳，MySQL自动添加当前时间
-参考<a href="http://dcx.sap.com/1201/zh/dbreference/dtnu.html">http://dcx.sap.com/1201/zh/dbreference/dtnu.html</a></p>
+参考http://dcx.sap.com/1201/zh/dbreference/dtnu.html
+</code></pre></li>
 
-<pre><code>16. MySQL中的timestamp数据类型不能直接用PHP时间和日期函数读取，先用strtotime函数将字符串转换成时间
-</code></pre>
+<li><p>MySQL中的timestamp数据类型不能直接用PHP时间和日期函数读取，先用strtotime函数将字符串转换成时间</p>
 
-<p>	$birthday = $ROW[&lsquo;user_birthday&rsquo;];
-    $birthday = strtotime($birthday);
-    $birthday  = date(&lsquo;n月j日&rsquo;,$birthday);
-    echo $birthday/r/n;        //输出如“12月5日”的日期格式</p>
+<pre><code>	$birthday = $ROW['user_birthday'];
+$birthday = strtotime($birthday);
+$birthday  = date('n月j日',$birthday);
+echo $birthday/r/n;        //输出如“12月5日”的日期格式
 
-<pre><code>date formate时间格式化： http://php.net/manual/zh/function.date.php
-</code></pre>
+date formate时间格式化： http://php.net/manual/zh/function.date.php
+</code></pre></li>
 
-<pre><code>17. phpstrom破解
-</code></pre>
+<li><p>phpstrom破解</p>
 
-<p>目前遇到的最好的PHP开发IDE：集成数据库，编程规范检查警告（包括PHP，HTML，SQL，数据库配置）</p>
+<pre><code>目前遇到的最好的PHP开发IDE：集成数据库，编程规范检查警告（包括PHP，HTML，SQL，数据库配置）
 
-<p>若资金允许，请点击<a href="https://www.jetbrains.com/idea/buy/购买正版，谢谢合作">https://www.jetbrains.com/idea/buy/购买正版，谢谢合作</a>
+若资金允许，请点击https://www.jetbrains.com/idea/buy/购买正版，谢谢合作 
 学生凭学生证可免费申请正版授权 | 创业公司可5折购买正版授权
 若资金不足，请尽量给予工具作者捐赠，支持作者&amp;以后还可以获得帮助。
-使用工具来源：<a href="http://idea.lanyus.com/">http://idea.lanyus.com/</a>
+使用工具来源：http://idea.lanyus.com/
 1. 下载工具
 2. 修改配置文件
 3. 移动破解工具到指定目录下
-4. 运行软件，弹出软件注册激活激活窗口，Enterkey-&gt;Activate license with-&gt;Activation code:随意输入激活码文本内容-&gt;OK</p>
+4. 运行软件，弹出软件注册激活激活窗口，Enterkey-&gt;Activate license with-&gt;Activation code:随意输入激活码文本内容-&gt;OK
 
-<p>2) phpstrom的配置文件为 /Application/PhpStorm.app/Contents/bin/phpstorm.vmoptions,
+2) phpstrom的配置文件为 /Application/PhpStorm.app/Contents/bin/phpstorm.vmoptions,
 修改这里添加破解包路径：
 -javaagent:/Applications/PhpStorm.app/Contents/bin/JetbrainsCrack.jar
 3) 下载的破解工具JetbrainsCrack添加到上面配置的路径下
-tips: 破解版本请不要轻易升级，以免升级使用后软件破解失效。</p>
+tips: 破解版本请不要轻易升级，以免升级使用后软件破解失效。
+</code></pre></li>
 
-<pre><code>18. 集合数据不能使用数字作为key，会直接赋值到对应的数组下标中，不会作为字典处理。
-19. ajax使用标签button请求，不能使用a标签，会造成事件冲突。
-20. phpstrom使用
-    alt+enter 为拼写检查添加忽略单词，需要光标放在单词位置
-21. MySQL联合查询语法（内联、左联、右联、全联）
-```sql
-T1表结构（用户名,密码）   userid   username password
-                    1   jack   jackpwd   
-                    2   owen   owenpwd  
+<li><p>集合数据不能使用数字作为key，会直接赋值到对应的数组下标中，不会作为字典处理。</p></li>
+
+<li><p>ajax使用标签button请求，不能使用a标签，会造成事件冲突。</p></li>
+
+<li><p>phpstrom使用
+alt+enter 为拼写检查添加忽略单词，需要光标放在单词位置</p></li>
+
+<li><p>MySQL联合查询语法（内联、左联、右联、全联）</p>
+
+<pre><code class="language-sql">T1表结构（用户名,密码）   userid   username password
+                1   jack   jackpwd   
+                2   owen   owenpwd  
 T2表结构（积分,等级）   userid   jifen    dengji 
-                    1   20   3   
-                    3   50   6   
+                1   20   3   
+                3   50   6   
 1. 内联（inner  join）：取T1，T2的交集
 SQL语句：select * from T1 inner join T2 on T1.userid=T2.userid
 运行结果   T1.userid   username   password   T2.userid   jifen   dengji   
-        1   jack   jackpwd   1   20   3   
+    1   jack   jackpwd   1   20   3   
 2. 左联（left outer join）:以T1为参考表，取T1,T2的并集，T2数据不足补null
 SQL语句：select * from T1 left outer join T2 on T1.userid=T2.userid
 运行结果   T1.userid   username   password   T2.userid   jifen   dengji   
-        1   jack   jackpwd   1   20   3   
-        2   owen   owenpwd   NULL   NULL   NULL   
+    1   jack   jackpwd   1   20   3   
+    2   owen   owenpwd   NULL   NULL   NULL   
 3. 右联（right outer join）:以T2为参考表，取T1,T2的并集，T1数据不足补null
 SQL语句：select * from T1 right outer join T2 on T1.userid=T2.userid
 运行结果   T1.userid   username   password   T2.userid   jifen   dengji   
-        1   jack   jackpwd   1   20   3   
-        NULL   NULL   NULL   3   50   6   
+    1   jack   jackpwd   1   20   3   
+    NULL   NULL   NULL   3   50   6   
 4. 全联（full outer join）：取T1,T2的并集，凡是数据不足的都补null
 SQL语句：select * from T1 full outer join T2 on T1.userid=T2.userid
 运行结果   T1.userid   username   password   T2.userid   jifen   dengji   
-        1   jack   jackpwd   1   20   3   
-        2   owen   owenpwd   NULL   NULL   NULL   
-        NULL   NULL   NULL   3   50   6   
-</code></pre>
+    1   jack   jackpwd   1   20   3   
+    2   owen   owenpwd   NULL   NULL   NULL   
+    NULL   NULL   NULL   3   50   6   
+</code></pre></li>
+</ol>
 
-    </div>
-    <div class="post-footer">
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/system-apache%E6%80%BB%E7%BB%93/">Apache使用总结</a></li>
+        
+        <li><a href="/post/mac-vritual-centos7-ssh/">mac虚拟机上的centos 7实现ssh连接</a></li>
+        
+        <li><a href="/post/system-centos7-boot-type/">centos7 更改系统启动模式</a></li>
+        
+        <li><a href="/post/system-centos7-php7/">centos7 PHP7环境配置</a></li>
+        
+        <li><a href="/post/system-apache-directory/">Apache不能访问directory 目录</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
       
-    </div>
-  </article>
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go%E8%B0%9A%E8%AF%AD/" title="Go谚语">Go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/system-http/" title="Linux版本使用总结">Linux版本使用总结</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/system-epoll/" title="epoll原理">epoll原理</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="System MQ消息队列">System MQ消息队列</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go-cgo/" title="Go CGO">Go CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go-gofmt/" title="Go Gofmt">Go Gofmt</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" title="Go Bazel构建工具">Go Bazel构建工具</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/docker-etcd/" title="Docker Etcd">Docker Etcd</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go-go2/" title="Go2">Go2</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
+    </li>
+    
+</ul>
+    </section>
 
-    </main>
-  </body>
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/android/">android(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/blog/">blog(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/docker/">docker(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/express/">express(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/git/">git(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(43)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ide/">ide(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(71)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/it%E9%BB%91%E8%AF%9D/">it黑话(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(13)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/seo/">seo(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/sql/">sql(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(14)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/system/">system(33)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web/">web(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%8C%BB/">中医(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%81%A5%E5%BA%B7/">健康(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/">开源(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E6%9C%AF/">软技术(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/">软技能(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93%E6%B3%95/">道法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%98%85%E8%AF%BB/">阅读(5)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/autoclosure/">autoclosure</a>
+    
+    <a href="https://blog.v5u.win/tags/book/">book</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/composer/">composer</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/error/">error</a>
+    
+    <a href="https://blog.v5u.win/tags/escaping/">escaping</a>
+    
+    <a href="https://blog.v5u.win/tags/express/">express</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/git/">git</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/hexo/">hexo</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/jekyll/">jekyll</a>
+    
+    <a href="https://blog.v5u.win/tags/k8s/">k8s</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kubernetes/">kubernetes</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/linux/">linux</a>
+    
+    <a href="https://blog.v5u.win/tags/lnmp/">lnmp</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongodb/">mongodb</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/noescape/">noescape</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nstimer/">nstimer</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/ppspider/">ppspider</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/sketch/">sketch</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/system/">system</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/unowned/">unowned</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/weak/">weak</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/xampp/">xampp</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode7/">xcode7</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%8C%BB/">中医</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4/">免费空间</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%85%B3%E9%94%AE%E5%AD%97/">关键字</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8E%A7%E4%BB%B6/">控件</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%96%87/">文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%97%B6%E9%97%B4%E6%88%B3/">时间戳</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+</body>
 </html>

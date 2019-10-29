@@ -1,322 +1,1021 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <title>Go // 为吾优</title>
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.55.5" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="范金龙" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="https://blog.v5u.win/css/main.min.59023e5fd38d6ecb0e1dfbb295077c3c67e00e3b9eb3feaf34b5a5e6b332897a.css" />
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Go | 为吾优</title>
+    <meta property="og:title" content="Go - 为吾优">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="Go">
+        
+    <meta name="author" content="金玉游龙">
+    <meta property="og:url" content="https://blog.v5u.win/categories/go/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="https://blog.v5u.win/categories/go/index.xml" title="为吾优" />
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Go"/>
-<meta name="twitter:description" content="愿我走在通往幸福的路上"/>
-
-    <meta property="og:title" content="Go" />
-<meta property="og:description" content="愿我走在通往幸福的路上" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://blog.v5u.win/categories/go/" />
-
-<meta property="og:updated_time" content="2019-10-28T10:08:59&#43;08:00"/>
 
 
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://blog.v5u.win"><img class="app-header-avatar" src="/avatar.jpg" alt="范金龙" /></a>
-      <h1>为吾优</h1>
-      <p>愿我走在通往幸福的路上</p>
-      <div class="app-header-social">
-        
-          <a target="_blank" href="https://github.com/jinyuyoulong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
-  <title>github</title>
-  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-</svg></a>
-        
-          <a target="_blank" href="https://blog.v5u.win/desc/about/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
-  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-</svg></a>
-        
-      </div>
-    </header>
-    <main class="app-container">
-      
-  <article>
-    <h1>Go</h1>
-    <ul class="posts-list">
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-web%E6%8A%80%E6%9C%AF%E6%A0%88/">Go web技术栈</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Apr 25, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/">Go 交叉编译</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Apr 18, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-authorization/">Go-Authorization</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Apr 15, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-grpc%E7%A0%94%E7%A9%B6%E6%80%BB%E7%BB%93/">Go gRPC研究总结</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Apr 11, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-modules/">Go modules</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 2 min read -
-            Apr 3, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-api-%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF%E6%96%87%E6%A1%A3/">Go-API 项目模板文档</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Apr 3, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-iris-template/">Go-iris-template</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Mar 8, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-iris-%E8%B7%AF%E7%94%B1/">Go Iris 路由</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Mar 8, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-error-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">Go Error 错误处理</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Mar 6, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-html-template/">Go HTML template</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Mar 5, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-%E8%AF%AD%E8%A8%80%E8%A6%81%E7%82%B9/">Go-语言要点</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Feb 27, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-%E8%AF%AD%E8%A8%80%E7%AE%80%E4%BB%8B/">Go 语言简介</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Feb 21, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-error/">Go异常处理</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 2 min read -
-            Feb 18, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">Go-流程控制</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 2 min read -
-            Feb 18, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-function/">Go的函数 结构体</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Feb 17, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">Go的数据结构</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 2 min read -
-            Feb 17, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-%E5%91%BD%E4%BB%A4/">go 常用命令</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Feb 15, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-vscode%E5%AE%89%E8%A3%85golang.org%E7%9A%84golint/">vscode安装golang.org的golint</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Feb 15, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-%E4%BB%A3%E7%A0%81%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F/">go-代码组织方式</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 2 min read -
-            Feb 14, 2019
-          </span>
-        </li>
-      
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="https://blog.v5u.win/post/go-workspace-gopath/">工作区和GOPATH</a>
-          <span class="posts-list-item-description">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg> 1 min read -
-            Feb 14, 2019
-          </span>
-        </li>
-      
-    </ul>
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://blog.v5u.win">首页</a>
+                    
+                    <a class="current" href="https://blog.v5u.win/categories/go/" title="Go">Go</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    
+                    <h3 class="archive-title">
+                        分类
+                        <span class="keyword">Go</span>
+                        中的文章
+                    </h3>
+                    
+
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">Go 代码规范</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年4月29日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                [TOC] Golang代码规范 参考 https://golang.org/doc/effective_go.html 本文参考blog 项目目录结构规范 PROJECT_NAME ├── README.md 介绍软件及文档入口 ├── bin 编译好的二进制文件,执行./build.sh……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-web%E6%8A%80%E6%9C%AF%E6%A0%88/">Go web技术栈</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年4月25日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                iris 框架 go-beanstalkd 消息队列 gRPC go module 包管理 gin+gorm / singo……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-web%E6%8A%80%E6%9C%AF%E6%A0%88/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/">Go 交叉编译</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年4月18日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                查看操作系统平台和内核版本：uname -a Mac 下编译 Linux 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go Linux 下编译 Mac 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-authorization/">Go-Authorization</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年4月15日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                接口认证 一般接口开发中有以下常用的几种安全机制： 用户认证 数字签名 接口加密 用户认证 一般的接口测试工具都会提供一个User Auth/Author……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-authorization/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-grpc%E7%A0%94%E7%A9%B6%E6%80%BB%E7%BB%93/">Go gRPC研究总结</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年4月11日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                什么是RPC RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RP……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-grpc%E7%A0%94%E7%A9%B6%E6%80%BB%E7%BB%93/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-modules/">Go modules</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年4月3日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                go modules [TOC] go 1.13 的环境配置 删除.zshrc 中的大部分配置，只配置goroot其余配置用下列命令： go env -w GOSUMDB=&quot;sum.golang.google.cn&quot; # 更换为国内的校验源，默认sum.gola……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-modules/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-api-%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF%E6%96%87%E6%A1%A3/">Go-API 项目模板文档</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年4月3日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                项目目录结构规范 PROJECT_NAME ├── README.md //介绍软件及文档入口 ├── bin //编译好的二进制文件,执行./build.sh自动生成，该目录也用于程序打包 ├──……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-api-%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF%E6%96%87%E6%A1%A3/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-iris-template/">Go-iris-template</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年3月8日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Iris 支持五个开箱即用的模板引擎，所有这五个模板引擎都具有通用API的共同特征，如布局，模板功能，特定于派对的布局，部分渲染等。 标准的html,……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-iris-template/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-iris-%E8%B7%AF%E7%94%B1/">Go Iris 路由</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年3月8日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                路由配置规则 直接通过 function 绑定 controller，function name 映射到 路由的地址 function named rule： func(*Controller) GetLoginBy(id int64) 绑定的controller HTTP-method+routePath map to - GET:/user/login/{param:long} 通……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-iris-%E8%B7%AF%E7%94%B1/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-error-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">Go Error 错误处理</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年3月6日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                常用的有五种方式 第一种策略 首先，也是最常用的方式是传播错误。这意味着函数中某个子程序的失败，会变成该函数的失败。我们使用该函数前缀添加额外的……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-error-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-html-template/">Go HTML template</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年3月5日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                文档 go doc text/template $ go doc html/template 应用 func main() { // 定义模板显示格式 const templ = `&lt;p&gt;A: {{.A}}&lt;/p&gt;&lt;p&gt;B: {{.B}}&lt;/p&gt;` // 模板配置函数 t := template.Must(template.New(&quot;escape&quot;).Parse(templ)) var data struct { A string // untrusted plain text B template.HTML // trusted HTML } // A是一个普通字符串，B是一个……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-html-template/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-%E8%AF%AD%E8%A8%80%E8%A6%81%E7%82%B9/">Go-语言要点</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年2月27日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                [TOC] 要点 本章对Go语言做了一些介绍，Go语言很多方面在有限的篇幅中无法覆盖到。本节会把没有讲到的内容也做一些简单的介绍，这样读者在读到完整的内……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-%E8%AF%AD%E8%A8%80%E8%A6%81%E7%82%B9/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-%E8%AF%AD%E8%A8%80%E7%AE%80%E4%BB%8B/">Go 语言简介</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年2月21日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                [TOC] C/C++ 与 Go语言的“价值观”对照 之前看过 白明老师 在GopherChina2017的一篇演讲文章《Go coding in go way》，里面提到C/C++/Go三……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-%E8%AF%AD%E8%A8%80%E7%AE%80%E4%BB%8B/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-error/">Go异常处理</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年2月18日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                type error interface { Error() string } error的声明 创建一个error if path == &quot;&quot; { return nil, errors.New(&quot;The parameter is invalid!&quot;) } error的使用 func readFile(path string) ([]byte, error) { file, err := os.Open(path) if err != nil { return nil, err } defer file.Close() return ioutil.ReadAll(file) } 异常……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-error/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">Go-流程控制</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年2月18日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                [TOC] if 判断语句 if 100 &gt; number { number += 3 } else if 100 &lt; number { number -= 2 } else { fmt.Println(&quot;OK!&quot;) } //变量赋值 if number := 4; 100 &gt; number { number += 3 } // 标识符的重声明和标识符的遮蔽 var number int if number := 4; 100……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-function/">Go的函数 结构体</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年2月17日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                func(input1 string ,input2 string) string type MyFunc func(input1 string ,input2 string) string// 函数声明 函数实现 func myFunc(part1 string, part2 string) (result string) { result = part1 + part2 return } //如果结果声明是带名称的，那么它就相当于一个已被声明但未被显式赋值的……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-function/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">Go的数据结构</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年2月17日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                [TOC] 先来看看Golang关于类型设计的一些原则 变量包括（type, value）两部分，理解这一点就知道为什么nil != nil了 type 包括 static type和……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-%E5%91%BD%E4%BB%A4/">go 常用命令</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年2月15日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                [TOC] go run 编译并运行Go源码文件，编译的可执行文件在tmp目录下，这会影响相对路径 go build 编译源码文件，代码包，依赖包 go get / go mod download xxx 动态获取远程代码……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-%E5%91%BD%E4%BB%A4/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-vscode%E5%AE%89%E8%A3%85golang.org%E7%9A%84golint/">vscode安装golang.org的golint</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年2月15日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                vscode 安装了 go 插件后，一些 Extensions 无法通过 vscode 自动安装，此时可以手动从控制台安装。下面是一些基础标准库 go get -u -v github.com/nsf/gocode go get -u -v github.com/rogpeppe/godef go get -u -v github.com/zmb3/gogetdoc go get -u -v github.com/golang/lint/golint go get -u -v github.com/lukehoban/go-outline……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-vscode%E5%AE%89%E8%A3%85golang.org%E7%9A%84golint/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/post/go-%E4%BB%A3%E7%A0%81%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F/">go-代码组织方式</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年2月14日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://blog.v5u.win/categories/go">Go</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                [TOC] 创建规则 引用Go常见问题解答： 供公众使用的软件包应尽量保持向后兼容性。 如果需要不同的功能，请添加新名称，而不是更改旧名称。 如果需要完全中断……
+                                <p class="readmore"><a href="https://blog.v5u.win/post/go-%E4%BB%A3%E7%A0%81%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+
+                    
+
+
+
+<ol class="page-navigator">
+    
+    <li class="prev">
+        <a href="https://blog.v5u.win/categories/go/">上一页</a>
+    </li>
     
 
-<ul class="pagination">
-  
-  <li class="page-item">
-    <a class="page-link" href="/categories/go/">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-arrow-left">
-  <title>arrow-left</title>
-  <line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>
-</svg>
-    </a>
-  </li>
-  
-  
-  <li class="page-item">
-    <a class="page-link" href="/categories/go/">
-      1
-    </a>
-  </li>
-  
-  <li class="page-item active">
-    <a class="page-link" href="/categories/go/page/2/">
-      2
-    </a>
-  </li>
-  
-  <li class="page-item">
-    <a class="page-link" href="/categories/go/page/3/">
-      3
-    </a>
-  </li>
-  
-  
-  <li class="page-item">
-    <a class="page-link" href="/categories/go/page/3/">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-arrow-right">
-  <title>arrow-right</title>
-  <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
-</svg>
-    </a>
-  </li>
-  
+    
+    <li >
+        <a href="https://blog.v5u.win/categories/go/">1</a>
+    </li>
+    
+    <li  class="current">
+        <a href="https://blog.v5u.win/categories/go/page/2/">2</a>
+    </li>
+    
+    <li >
+        <a href="https://blog.v5u.win/categories/go/page/3/">3</a>
+    </li>
+    
+
+    
+    <li class="next">
+        <a href="https://blog.v5u.win/categories/go/page/3/">下一页</a>
+    </li>
+    
+</ol>
+
+
+
+                </div>
+            </div>
+
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go%E8%B0%9A%E8%AF%AD/" title="Go谚语">Go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/system-http/" title="Linux版本使用总结">Linux版本使用总结</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/system-epoll/" title="epoll原理">epoll原理</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="System MQ消息队列">System MQ消息队列</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go-cgo/" title="Go CGO">Go CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go-gofmt/" title="Go Gofmt">Go Gofmt</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" title="Go Bazel构建工具">Go Bazel构建工具</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/docker-etcd/" title="Docker Etcd">Docker Etcd</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/go-go2/" title="Go2">Go2</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/post/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
+    </li>
+    
 </ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/android/">android(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/blog/">blog(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/docker/">docker(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/express/">express(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/git/">git(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(43)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ide/">ide(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(71)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/it%E9%BB%91%E8%AF%9D/">it黑话(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(13)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/seo/">seo(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/sql/">sql(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(14)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/system/">system(33)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web/">web(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%8C%BB/">中医(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%81%A5%E5%BA%B7/">健康(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/">开源(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E6%9C%AF/">软技术(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/">软技能(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93%E6%B3%95/">道法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%98%85%E8%AF%BB/">阅读(5)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/autoclosure/">autoclosure</a>
+    
+    <a href="https://blog.v5u.win/tags/book/">book</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/composer/">composer</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/error/">error</a>
+    
+    <a href="https://blog.v5u.win/tags/escaping/">escaping</a>
+    
+    <a href="https://blog.v5u.win/tags/express/">express</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/git/">git</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/hexo/">hexo</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/jekyll/">jekyll</a>
+    
+    <a href="https://blog.v5u.win/tags/k8s/">k8s</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kubernetes/">kubernetes</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/linux/">linux</a>
+    
+    <a href="https://blog.v5u.win/tags/lnmp/">lnmp</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongodb/">mongodb</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/noescape/">noescape</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nstimer/">nstimer</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/ppspider/">ppspider</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/sketch/">sketch</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/system/">system</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/unowned/">unowned</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/weak/">weak</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/xampp/">xampp</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode7/">xcode7</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%8C%BB/">中医</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4/">免费空间</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%85%B3%E9%94%AE%E5%AD%97/">关键字</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8E%A7%E4%BB%B6/">控件</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%96%87/">文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%97%B6%E9%97%B4%E6%88%B3/">时间戳</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
 
 
 
-  </article>
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
 
-    </main>
-  </body>
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+
+</body>
 </html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on 为吾优</title>
+    <link>https://blog.v5u.win/categories/web/</link>
+    <description>Recent content in Web on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 08 Apr 2016 10:56:38 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>flex属性</title>
+      <link>https://blog.v5u.win/post/web-flex/</link>
+      <pubDate>Fri, 08 Apr 2016 10:56:38 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/web-flex/</guid>
+      <description>流式布局 flex为可伸缩属性，当flex大于0时View可伸缩 当多个有flex属性的View时，根据flex值分配View的相对大小， 如`&amp;</description>
+    </item>
+    
+    <item>
+      <title>HTML&amp;CSS</title>
+      <link>https://blog.v5u.win/post/web-html-css/</link>
+      <pubDate>Sun, 25 Oct 2015 17:48:49 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/web-html-css/</guid>
+      <description>&amp;lt;p&amp;gt; paragragh 段落 &amp;lt;em&amp;gt; emphasize 强调(显示为斜体) &amp;lt;span&amp;gt; 样式 &amp;lt;q&amp;gt; quote [kwot] 引用，引号(显示默认添加双引号，故不用再次添加“ ”) &amp;lt;blockquote&amp;gt; 引用块 ，长文本引用(显示默认为缩进，左右都缩</description>
+    </item>
+    
+    <item>
+      <title>text/html &amp; text/plain的区别</title>
+      <link>https://blog.v5u.win/post/web-texthtml-vs-textplain/</link>
+      <pubDate>Fri, 24 Jul 2015 16:55:05 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/web-texthtml-vs-textplain/</guid>
+      <description>需要了解的概念 Content-Type：用于定义用户的浏览器或相关设备如何显示将要加载的数据，或者如何处理将要加载的数据 MIME：MIME类</description>
+    </item>
+    
+  </channel>
+</rss>

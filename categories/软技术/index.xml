@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>软技术 on 为吾优</title>
+    <link>https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 软技术 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 14 Dec 2016 17:56:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>OpenShift的使用</title>
+      <link>https://blog.v5u.win/post/system-openshift/</link>
+      <pubDate>Wed, 14 Dec 2016 17:56:33 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-openshift/</guid>
+      <description>注册完成后如何使用命令行连接服务器 登录OpenShift网站，进入app的详情页，找到隐藏的ssh连接，不是下载地址的ssh连接，拷贝后直接</description>
+    </item>
+    
+  </channel>
+</rss>

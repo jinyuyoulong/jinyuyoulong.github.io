@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sublime Text on 为吾优</title>
+    <title>sublime text on 为吾优</title>
     <link>https://blog.v5u.win/tags/sublime-text/</link>
-    <description>Recent content in Sublime Text on 为吾优</description>
+    <description>Recent content in sublime text on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 23 Jan 2017 15:22:20 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Nov 2017 17:29:24 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>python-sublime</title>
+      <link>https://blog.v5u.win/post/python-sublime/</link>
+      <pubDate>Wed, 29 Nov 2017 17:29:24 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/python-sublime/</guid>
+      <description>sublime text 下的Python编译环境设置 file name : python3.sublime-build { &amp;quot;shell_cmd&amp;quot;: &amp;quot;Python编译器的路径 ${file}&amp;quot;, &amp;quot;selector&amp;quot; :&amp;quot;source.python&amp;quot;, &amp;quot;file_regex&amp;quot;:&amp;quot;^(...*?):[0-9]:?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;:&amp;quot;${file_path}&amp;quot;, &amp;quot;env&amp;quot;: {&amp;quot;PYTHONIOENCODING&amp;quot;: &amp;quot;utf8&amp;quot;}, }</description>
+    </item>
     
     <item>
       <title>使用sublime text 3 进行Python3开发</title>
@@ -17,9 +26,7 @@
       <pubDate>Mon, 23 Jan 2017 15:22:20 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/sublime-python3/</guid>
-      <description>痛点1：每次编写完Python文件后都要切到terminal下输入python fileName.py命令执行文件。 解决：mac版sublime text编辑器使用shift+command+b选择Python 直接执行文件
-痛点2：sublime默认执行的Python版本是系统默认的，不能直接使用Python3来执行Python文件 解决：Tools&amp;ndash;&amp;gt;Build System&amp;ndash;&amp;gt;New Build System 写入：
-{ &amp;quot;shell_cmd&amp;quot;: &amp;quot;/usr/bin/env python3 ${file}&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.python&amp;quot;, &amp;quot;file_regex&amp;quot;: &amp;quot;^(...*?):([0-9]*):?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;: &amp;quot;${file_path}&amp;quot;, }  ​ 保存为/Packages/User/python3.sublime-build ​ 然后选择环境为python3即可</description>
+      <description>痛点1：每次编写完Python文件后都要切到terminal下输入python fileName.py命令执行文件。 解决：mac版sublim</description>
     </item>
     
     <item>
@@ -28,14 +35,7 @@
       <pubDate>Fri, 09 Sep 2016 14:45:12 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/sublime-nodejs/</guid>
-      <description>build nodejs项目 sublime text 3自带build的系统，只需要在tools-&amp;gt;build system-&amp;gt; new build system&amp;hellip;
-{ &amp;quot;shell_cmd&amp;quot;: &amp;quot;node $file&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.js&amp;quot; }   保存为 node.sublime-build，就可以使用cmd+shift+b调出窗口选择node编译.
-在keymap绑定按键：
-{ &amp;quot;keys&amp;quot;: [&amp;quot;ctrl+c&amp;quot;], &amp;quot;command&amp;quot;: &amp;quot;exec&amp;quot;, &amp;quot;args&amp;quot;: { &amp;quot;kill&amp;quot;: true } }  就可以使用快捷键ctrl+c关闭，或者手动点选tools-&amp;gt; cancel build中断。
-需要编译es6的代码的话可以考虑用babel，build tools替换成
-{ &amp;quot;shell_cmd&amp;quot;: &amp;quot;babel-node $file&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.js&amp;quot; }  插件安装 shift+commend+p 输入install敲return/Enter，查找插件
-我安装的插件： * Babel ES2015语法转化器 * EJS WEB所使用的模板引擎之一 * emmet 提高HTML &amp;amp;amp; CSS3编写速度 * ConvertToUTF8 UTF8转换 *
-插件使用教程： emmet : http://www.</description>
+      <description>build nodejs项目 sublime text 3自带build的系统，只需要在tools-&amp;gt;build system-&amp;gt; new build system&amp;hellip; { &amp;quot;shell_cmd&amp;quot;: &amp;quot;node $file&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.js&amp;quot; } 保存为 node.sublime-b</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Sun, 04 Sep 2016 00:07:07 +0000</pubDate>
       
       <guid>https://blog.v5u.win/post/sublime-tips/</guid>
-      <description> 多行编辑：control + 点击各行编辑位置 全局修改所有单词：双击单词，comment+control+G 选中一个单词：Command + D 选中一个单词及下一个同样的单词 包管理工具：control package ,快捷键：shift+commend+P  </description>
+      <description>多行编辑：control + 点击各行编辑位置 全局修改所有单词：双击单词，comment+control+G 选中一个单词：Command + D 选中</description>
     </item>
     
   </channel>
