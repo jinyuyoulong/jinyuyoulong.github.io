@@ -57,15 +57,6 @@
     </item>
     
     <item>
-      <title>Go Liteide IDE</title>
-      <link>https://blog.v5u.win/post/go-liteide/</link>
-      <pubDate>Fri, 02 Aug 2019 16:33:56 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-liteide/</guid>
-      <description>[TOC] liteide是专门为go编写的一个基于qt5的IDE，免费开源跨平台。 LiteIDE 是一个轻量级的开源跨平台 Go语言 IDE. 作者: 七叶 (visualfc) 支持 Windows</description>
-    </item>
-    
-    <item>
       <title>Go Crontab</title>
       <link>https://blog.v5u.win/post/go-crontab/</link>
       <pubDate>Fri, 19 Jul 2019 16:51:27 +0800</pubDate>

@@ -38,5 +38,14 @@
       <description>MySQL客户端 &amp;nbsp; &amp;nbsp; &amp;nbsp;MySQL安装包里面，在一个名为bin的文件夹，放置了很多工具包，但是使用他们的方式是命令行（ps：最近上瘾</description>
     </item>
     
+    <item>
+      <title>sqlite3的使用</title>
+      <link>https://blog.v5u.win/post/system-sqlite3/</link>
+      <pubDate>Fri, 07 Aug 2015 23:38:47 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-sqlite3/</guid>
+      <description>新建数据库 sqlite3 databasefilename 检查databasefilename是否存在，如果不存在就创建并进入数据库（如果直接退出，数据库文件不会创建）&amp;nbsp;&amp;n</description>
+    </item>
+    
   </channel>
 </rss>

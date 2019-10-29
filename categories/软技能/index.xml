@@ -29,5 +29,14 @@
       <description>在开放的基础上，环境应当设置的尽可能的平等。比如尽可能的采用圆桌形式，而且参与人员尽量围成一个圈，避免层次上的区别， 主持人的重点不是表达自己</description>
     </item>
     
+    <item>
+      <title>OpenShift的使用</title>
+      <link>https://blog.v5u.win/post/system-openshift/</link>
+      <pubDate>Wed, 14 Dec 2016 17:56:33 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/post/system-openshift/</guid>
+      <description>注册完成后如何使用命令行连接服务器 登录OpenShift网站，进入app的详情页，找到隐藏的ssh连接，不是下载地址的ssh连接，拷贝后直接</description>
+    </item>
+    
   </channel>
 </rss>
