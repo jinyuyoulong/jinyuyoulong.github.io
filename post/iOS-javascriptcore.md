@@ -1,10 +1,7 @@
 ---
 title: JavaScriptCore
-tags:
-  - javascriptCore
-id: 419
-categories:
-  - iOS
+tags: [javascriptCore]
+categories: [iOS]
 date: 2016-04-29 17:43:54
 ---
 

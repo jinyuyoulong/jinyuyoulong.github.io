@@ -1,9 +1,7 @@
 ---
-layout: default
 title: use sublime Text
 date: 2016-08-10
-categoty: 工具 Tools
-id: 13
+categoties: [工具]
 ---
 ### 如何设置折行 
 '将配置文件里 添加word_wrap:true 字段'

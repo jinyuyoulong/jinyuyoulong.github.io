@@ -1,10 +1,8 @@
 ---
 title: Express
 date: 2016-08-17 11:05:24
-tags:
-  - express
-category: Express
-id: 5
+tags: [express]
+categories: [Nodejs]
 ---
 nodejs + express 学习记录
 

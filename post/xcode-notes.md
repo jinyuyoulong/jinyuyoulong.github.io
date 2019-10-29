@@ -1,7 +1,6 @@
 ---
 title: Xcode注释
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-03-02 15:49:43
 tags:
 ---

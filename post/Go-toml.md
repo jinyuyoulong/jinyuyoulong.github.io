@@ -1,8 +1,7 @@
 ---
 title: "Go Toml"
 date: 2019-06-26T15:33:44+08:00
-categories:
-  - toml
+categories: [Go]
 ---
 
 [TOC]

@@ -1,10 +1,7 @@
 ---
 title: iOS键盘高度的官方获取方法
-tags:
-  - keyboard
-id: 259
-categories:
-  - iOS
+tags: [keyboard]
+categories: [iOS]
 date: 2015-12-02 14:54:36
 ---
 

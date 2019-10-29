@@ -1,10 +1,7 @@
 ---
 title: iOS7之后如何获得APP唯一的身份标识
-id: 134
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-08-09 11:24:34
-tags:
 ---
 
 **历史：**

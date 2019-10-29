@@ -1,8 +1,7 @@
 ---
 title: 《程序员的咆哮》阅读总结
 date: 2018-10-10 09:40:11
-categories: 
-  - 阅读
+categories: [阅读]
 ---
 
 

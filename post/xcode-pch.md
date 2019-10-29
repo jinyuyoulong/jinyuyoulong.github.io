@@ -1,8 +1,7 @@
 ---
 title: Xcode如何添加pch文件
 id: 90
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-07-14 11:31:06
 tags:
 ---

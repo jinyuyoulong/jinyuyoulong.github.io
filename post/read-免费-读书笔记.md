@@ -1,8 +1,7 @@
 ---
-title: 免费读书笔记
+title: 免费
 date: 2019-06-28
-category:
-  - 读书笔记
+categories: [阅读]
 ---
 
 

@@ -1,11 +1,7 @@
 ---
 title: pyquery 解析网页乱码
-tags:
-  - Python
-  - 爬虫
-id: 511
-categories:
-  - Python
+tags: [Python,爬虫]
+categories: [Python]
 date: 2016-11-18 10:08:22
 ---
 

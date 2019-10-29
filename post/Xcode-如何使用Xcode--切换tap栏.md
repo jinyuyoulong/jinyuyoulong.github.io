@@ -1,10 +1,7 @@
 ---
 title: 如何使用Xcode--切换tap栏
-tags:
-  - xcode
-id: 109
-categories:
-  - iOS
+tags: [xcode]
+categories: [iOS]
 date: 2015-07-16 11:10:27
 ---
 

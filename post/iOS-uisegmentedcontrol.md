@@ -1,10 +1,7 @@
 ---
 title: UISegmentedControl简单使用
-id: 59
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-05-14 16:53:26
-tags:
 ---
 
 <span style="font-family: Menlo; color: rgb(185, 134, 10);">NSArray</span><font face="Menlo"> * segMArr = [</font><span style="font-family: Menlo; color: rgb(185, 134, 10);">NSArray</span> <span style="font-family: Menlo; color: rgb(87, 44, 179);">arrayWithObjects</span><font face="Menlo">:</font><span style="color: rgb(195, 195, 0);"><font face="Menlo">@&quot;</font><font face="Heiti SC Light">0</font></span><span style="font-family: Menlo; color: rgb(195, 195, 0);">&quot;</span><font face="Menlo">,</font><span style="font-family: Menlo; color: rgb(195, 195, 0);">@&quot;</span><span style="color: rgb(195, 195, 0);"><font face="Heiti SC Light">1</font></span><span style="font-family: Menlo; color: rgb(195, 195, 0);">&quot;</span><font face="Menlo">, </font><span style="font-family: Menlo; color: rgb(6, 54, 152);">nil</span><font face="Menlo">];</font>

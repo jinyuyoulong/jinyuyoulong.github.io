@@ -1,10 +1,7 @@
 ---
 title: IT公司项目实现流程
-tags:
-  - 项目
-id: 510
-categories:
-  - 日课
+tags: [项目]
+categories: [日课]
 date: 2016-11-21 10:29:52
 ---
 

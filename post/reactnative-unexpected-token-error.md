@@ -1,10 +1,7 @@
 ---
 title: 'react-native:unexpected token error'
-id: 367
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-03-22 17:11:47
-tags:
 ---
 
 react-native新建的项目默认使用ES6写法，所以如果你在用到

@@ -1,10 +1,7 @@
 ---
 title: 获取tableviewCell在当前屏幕中的坐标值
-id: 124
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-08-07 13:28:36
-tags:
 ---
 
 获得当前cell对于当前屏幕的位置

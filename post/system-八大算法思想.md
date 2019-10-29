@@ -1,10 +1,7 @@
 ---
 title: 八大算法思想
-tags:
-  - 算法
-id: 369
-categories:
-  - other technology其他技术
+tags: [算法]
+categories: [System]
 date: 2016-03-23 10:31:32
 ---
 

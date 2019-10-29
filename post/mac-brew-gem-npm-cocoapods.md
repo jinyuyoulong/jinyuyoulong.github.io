@@ -1,10 +1,7 @@
 ---
 title: brew gem npm cocoapods
 Tags: ["brew","cocoapods","npm","gem"]
-categories:
-  - Mac
-  - 其他技术
-  - 工具
+categories: [Mac,工具]
 date: 2018-04-20 05:00:32
 ---
 

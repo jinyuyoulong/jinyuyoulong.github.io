@@ -1,10 +1,7 @@
 ---
 title: UIView何时创建加载subview比较合适？
-id: 333
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-03-07 15:38:43
-tags:
 ---
 
 当我们使用ViewController的时候有ViewDidLoad方法保证数据或UI只加载一次

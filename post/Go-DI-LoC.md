@@ -1,8 +1,7 @@
 ---
 title: Go DI LoC研究
 date: 2019-05-24
-categories:
-  - Go
+categories: [Go]
 ---
 
 依赖注入，控制反转

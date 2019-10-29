@@ -1,11 +1,7 @@
 ---
 title: mac 下配置PHP环境
-id: 499
-categories:
-  - PHP
-  - 日课
+categories: [PHP]
 date: 2016-10-20 17:11:54
-tags:
 ---
 
 set http.conf

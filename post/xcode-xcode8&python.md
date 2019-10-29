@@ -1,12 +1,7 @@
 ---
 title: 使用Xcode8创建Python项目
-tags:
-  - Python
-  - xcode
-id: 519
-categories:
-  - Python
-  - 工具
+tags: [Python,xcode]
+categories: [Python,工具]
 date: 2016-12-06 10:44:31
 ---
 

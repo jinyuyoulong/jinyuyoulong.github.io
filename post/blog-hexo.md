@@ -1,10 +1,8 @@
 ---
 title: 使用hexo的第一篇文章
 date: 2016-06-30 17:40:48
-tags: 
-  - hexo
-categories:
-  - blog
+tags: [hexo]
+categories: [blog]
 ---
 ### hexo建站之后如何使用
 #### 1.如何写文章

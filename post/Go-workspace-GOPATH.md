@@ -2,8 +2,7 @@
 title: 工作区和GOPATH
 date: 2019-02-14 15:34:03
 tags:
-categories:
-  - Go
+categories: [Go]
 ---
 
 ### 工作区和GOPATH

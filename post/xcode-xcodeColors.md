@@ -1,8 +1,6 @@
 ---
 title: Xcode插件XcodeColors的使用
-id: 434
-categories:
-  - Xcode
+categories: [Xcode]
 date: 2016-05-27 12:51:27
 tags:
 ---

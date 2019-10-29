@@ -1,8 +1,7 @@
 ---
 title: 专业术语，行业黑话
 date: 2018-08-09 15:52:32
-tags:
-categories:
+categories: [IT黑话]
 ---
 
 专业术语，行业黑话总结，解释

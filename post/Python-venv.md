@@ -1,10 +1,7 @@
 ---
 title: python venv 虚拟环境使用
-tags:
-  - Python
-id: 596
-categories:
-  - Python
+tags: [Python]
+categories: [Python]
 date: 2017-07-04 09:53:23
 ---
 

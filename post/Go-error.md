@@ -2,8 +2,7 @@
 title: Go异常处理
 date: 2019-02-18 15:48:37
 tags:
-categories:
-  - Go
+categories: [Go]
 ---
 
 ```go

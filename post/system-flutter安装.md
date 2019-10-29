@@ -1,10 +1,8 @@
 ---
 title: flutter安装
 date: 2019-07-26
-categories:
-  - system
-tages:
-  - flutter
+categories: [system]
+tages: [flutter]
 ---
 
 

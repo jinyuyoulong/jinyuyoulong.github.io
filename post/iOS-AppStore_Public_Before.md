@@ -1,8 +1,6 @@
 ---
 title: App Store上架前的准备
-id: 175
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-08-21 17:10:11
 tags:
 ---

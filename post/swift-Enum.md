@@ -1,11 +1,7 @@
 ---
 title: swift Enum
 date: 2016-10-25 19:50:02
-tags:
-  - enum
-categories:
-  - Swift
-id: 4
+categories: [Swift]
 ---
 
 普通创建

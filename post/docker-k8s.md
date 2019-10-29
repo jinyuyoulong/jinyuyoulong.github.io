@@ -1,12 +1,8 @@
 ---
 title: k8s在Mac上的安装和使用
 date: 2019-07-08
-categories:
-  - Docker
-tags:
-  - k8s
-  - kubernetes
-  - Docker
+categories: [Docker]
+tags: [k8s,kubernetes,Docker]
 ---
 
 # 安装
@@ -15,7 +11,9 @@ tags:
 
 直接在docker桌面端开启k8s是没用的，一直提示 kubernetes is starting… :cry: 我竟然不知道，这样子持续了n天。​
 
-自己手动安装 k8s
+
+
+## 自己手动编译安装 k8s
 
 - git clone https://github.com/maguowei/k8s-docker-for-mac.git
 
@@ -23,7 +21,11 @@ tags:
 
 - ./load_images.sh
 
-安装minikube
+
+
+
+
+## 安装minikube
 
 ```sh
 # install minikube
@@ -42,3 +44,8 @@ $ sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-mac
 $ minikube start --docker-env HTTP_PROXY=http://proxy-ip:port --docker-env HTTPS_PROXY=http://proxy-ip:port --vm-driver=xhyve
 ```
 
+
+
+## Ubuntu
+
+安装 kubeadm kubectl kubelet 三个包

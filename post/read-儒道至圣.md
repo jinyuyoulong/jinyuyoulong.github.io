@@ -1,10 +1,7 @@
 ---
 title: 儒道至圣
-id: 270
-categories:
-  - 日课
+categories: [阅读]
 date: 2015-12-21 15:19:40
-tags:
 ---
 
 该书文笔很好，构思巧妙，值得一读。

@@ -1,6 +1,8 @@
 ---
 title: docker 安装并使用Redis
 data: 2019-06-07
+categories: [Docker]
+tags: [Docker]
 ---
 
 docker 安装并使用Redis

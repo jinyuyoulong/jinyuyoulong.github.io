@@ -1,9 +1,7 @@
 ---
 title: "Go 交叉编译"
 date: 2019-04-18T17:22:29+08:00
-draft: true
-categories:
-  - Go
+categories: [Go]
 ---
 
 查看操作系统平台和内核版本：`uname -a`

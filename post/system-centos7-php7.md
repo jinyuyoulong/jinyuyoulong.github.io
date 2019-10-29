@@ -1,13 +1,7 @@
 ---
 title: centos7 PHP7环境配置
-tags:
-  - centos
-  - php7
-  - 操作系统
-url: 751.html
-id: 751
-categories:
-  - 操作系统
+tags: [centos,php,system]
+categories: [system]
 date: 2018-06-26 01:50:27
 ---
 

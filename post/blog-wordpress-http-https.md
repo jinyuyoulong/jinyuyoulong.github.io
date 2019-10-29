@@ -1,7 +1,7 @@
 ---
 title: "Blog Wordpress Http Https"
 date: 2019-05-07T17:58:56+08:00
-draft: true
+categories: [blog]
 ---
 
 # wordpress http 升级HTTPS

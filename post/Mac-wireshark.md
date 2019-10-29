@@ -1,11 +1,7 @@
 ---
 title: mac下wireshark的使用方法
-tags:
-  - Mac
-  - Wireshark
-id: 429
-categories:
-  - other technology其他技术
+tags: [Mac,Wireshark]
+categories: [system]
 date: 2016-05-18 18:47:09
 ---
 

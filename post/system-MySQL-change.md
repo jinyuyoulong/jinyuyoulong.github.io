@@ -1,12 +1,7 @@
 ---
 title: MySQL 数据库迁移
-tags:
-  - mysql
-  - 数据库
-id: 534
-categories:
-  - other technology其他技术
-  - PHP
+tags: [mysql,数据库]
+categories: [PHP]
 date: 2016-12-15 14:21:18
 ---
 

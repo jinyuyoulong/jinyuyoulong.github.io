@@ -1,10 +1,7 @@
 ---
 title: iOS老应用显示不完全
-id: 374
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-04-03 13:55:06
-tags:
 ---
 
 解决 ：

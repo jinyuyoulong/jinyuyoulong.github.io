@@ -1,11 +1,7 @@
 ---
 title: class xxx has no initializers
-tags:
-  - error
-  - swift
-id: 407
-categories:
-  - swift
+tags: [error,swift]
+categories: [swift]
 date: 2016-04-25 17:09:01
 ---
 

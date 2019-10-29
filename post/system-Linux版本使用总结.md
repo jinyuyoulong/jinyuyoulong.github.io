@@ -1,8 +1,8 @@
 ---
 title: Linux版本使用总结
 date: 2018-07-16
-tags: 
-  - Linux
+tags: [Linux]
+categories: [system]
 ---
 
 

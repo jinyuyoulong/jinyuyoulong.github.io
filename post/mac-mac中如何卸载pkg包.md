@@ -1,6 +1,7 @@
 ---
 title: mac中如何卸载pkg包
 date: 2019-03-19
+categorise: [Mac]
 ---
 
 

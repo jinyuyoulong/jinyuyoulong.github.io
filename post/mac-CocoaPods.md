@@ -1,10 +1,8 @@
 ---
 title: CocoaPods
 date: 2016-10-26 10:37:38
-Tags: ["Cocoapods"]
-categories: 
-  - iOS
-id: 3
+Tags: [Cocoapods]
+categories: [iOS,工具]
 
 ---
 

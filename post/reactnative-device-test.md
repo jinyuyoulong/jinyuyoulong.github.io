@@ -1,10 +1,7 @@
 ---
 title: ReactNative如何真机测试
-id: 361
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-03-18 13:24:28
-tags:
 ---
 
 初始学习ReactNative 最想现在真机上一睹为快，对于非零基础的程序员，最重要的是先搞明白整个工程的创建到完结的流程，对于编程语言来说从hello world，对于一个完整的项目开发平台，则从一个最简单的dome项目开始。

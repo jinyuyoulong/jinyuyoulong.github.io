@@ -1,8 +1,6 @@
 ---
 title: Xcode7 恢复代码折叠功能
-id: 393
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-04-08 18:14:53
 tags:
 ---

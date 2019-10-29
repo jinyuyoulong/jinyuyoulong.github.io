@@ -1,9 +1,6 @@
 ---
 title: iOS创建.a静态库文件
-id: 298
-categories:
-  - iOS
-  - 日课
+categories: [iOS]
 date: 2016-02-22 16:01:04
 tags:
 ---

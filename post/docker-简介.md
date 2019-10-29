@@ -1,16 +1,17 @@
 ---
   title: docker 使用规则
-  tags:
-    - docker
-  categories:
-    - 操作系统
+  tags: [Docker]
+  categories: [ 操作系统,Docker]
 date: 2018-04-04 09:39:10
 ---
+[TOC]
 ## 硬件/操作系统 要求
-Docker支持以下的CentOS版本：
+Docker支持以下的发行版版本：
 
-- CentOS 7 (64-bit)
-- CentOS 6.5 (64-bit) 或更高的版本
+- Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版
+
+- CentOS 7 (64-bit)，要求内核版本不低于 3.10 。CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如 `overlay2` 存储层驱动）无法使用，并且部分功能可能不太稳定。
+- Debain 9
 
 ------
 
@@ -44,7 +45,15 @@ Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64
   docker-machine
   ```
 
-  #### 启动docker-machine
+#### 关于 docker-machine 
+
+[Docker Machine](https://docs.docker.com/machine/overview/) 是 Docker 官方提供的一个工具，它可以帮助我们在远程的机器上安装 Docker，或者在虚拟机 host 上直接安装虚拟机并在虚拟机中安装 Docker。我们还可以通过 docker-machine 命令来管理这些虚拟机和 Docker。
+
+Mac 命令行安装 docker的话需要首先安装 docker-machine,默认启动的虚拟机对外IP：192.168.99.100
+
+`tcp://192.168.99.100:2376`
+
+  #### 启动docker-machine 
 
   To have launchd start docker-machine now and restart at login:
    `brew services start docker-machine`
@@ -52,7 +61,7 @@ Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64
   Or, if you don't want/need a background service you can just run:
   `docker-machine start`
 
-  ### docker从创建到启动步骤
+  ### 利用docker-machine 使 docker从创建到启动步骤
 
 ---
 
@@ -98,7 +107,9 @@ Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64
   node_modules
   npm-debug.log
   ```
-  2. 新建文本文件Dockerfile
+  2. 新建文本文件 Dockerfile
+
+Dockerfile 是一个文本文件，其内包含了一条条的 **指令(Instruction)**，每一条指令构建一层，因此每一条指令的内容，就是描述该层应当如何构建。
 
   写入环境配置
 
@@ -115,6 +126,8 @@ Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64
 
   `docker image build -t koa-demo .` 或` docker image build -t koa-demo:0.0.1 .` 
 
+`docker build` 命令最后有一个 `.`。`.` 表示当前目录，而 `Dockerfile` 就在当前目录，因此不少初学者以为这个路径是在指定 `Dockerfile` 所在路径，这么理解其实是不准确的。如果对应上面的命令格式，你可能会发现，这是在指定 **上下文路径**。
+
   4. 生成容器
 
   `docker container run -p 8000:3000 -it koa-demo /bin/bash`
@@ -130,7 +143,7 @@ Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64
 
   ### 其他docker命令
 
-  ```
+  ```sh
   docker-machine env 	// 查看环境变量：IP
   docker ps 					//查看运行的docker
   netstat -na|grep 8888 // 查看端口监听情况
@@ -145,10 +158,34 @@ Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64
   docker container kill [containID] // 手动终止 运行的 容器
   docker container ls 	// 列出本机正在运行的容器
   docker container ls --all //列出本机所有容器，包括终止运行的容器
+  docker volume create portainer_data
+  
   ```
   docker-machine create default // 创建docker虚拟主机，每一次启动都要重新创建，默认创建环境名为 default。如果报错，boot2docker.iso 无法下载可以在GitHub上单独下载后放到 /Users/$username/.docker/machine/cache/ 下
 
   在容器的命令行，按下 Ctrl + c 停止 Node 进程，然后按下 Ctrl + d （或者输入 exit）退出容器。
+
+#### Docker的数据持久化主要有两种方式：
+
+- bind mount
+- volume
+
+**使用volume**
+
+volume也是绕过container的文件系统，直接将数据写到host机器上，只是volume是被docker管理的，docker下所有的volume都在host机器上的指定目录下/var/lib/docker/volumes。
+
+将my-volume挂载到container中的/mydata目录：
+
+```
+docker run -it -v my-volume:/mydata alpine sh
+```
+
+
+
+#### /var/run/docker.sock文件
+这个文件是什么呢？为什么有些容器需要使用它？简单地说，它是Docker守护进程(Docker daemon)默认监听的Unix域套接字(Unix domain socket)，容器中的进程可以通过它与Docker守护进程进行通信。
+
+Portainer镜像通过绑定的/var/run/docker.sock文件与**Docker守护进程**通信，执行各种管理操作。
 
   #### 一些使用原则
 
@@ -176,17 +213,54 @@ Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64
   docker-compose.yml	//配置文件
 
   ```yaml
-  version: '3'
-  services:
+version: "2"
+services:
+  gili-api:
+    image: gili-api:latest
+    restart: always
+    environment:
+      MYSQL_DSN: "root:K3b4XRqsmVpW@tcp(172.20.0.2)/giligili?charset=utf8&parseTime=True&loc=Local"
+      REDIS_ADDR: "172.21.0.2:6379"
+      REDIS_PW: ""
+      REDIS_DB: "0"
+      SESSION_SECRE: "K3b4XRqsmVpW"
+      GIN_MODE: "release"
+    ports:
+      - 3002:3000
+  mysql:
+    image: mysql:5.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: K3b4XRqsmVpW
+    volumes:
+      - mysql_data:/var/lib/mysql/data
+    ports:
+      - 3306:3306
 
-    my-gin:
-      build: .
-      image: my-gin:v5
-      ports:
-       - "7070:7070"
-      container_name: goweb
-      hostname: web
+  redis:
+    container_name: redis
+    image: redis
+    restart: always
+    ports:
+      - 6379:6379
+
   ```
+
+
+
+**在docker容器里localhost并不是指宿主机的localhost**
+
+由此原因，并不能在容器中通过localhost:3306访问到宿主机的mysql
+
+**docker在运行时就建立了虚拟网卡，并命名为docker0**
+
+我们可以在宿主机上运行ifconfig看到它，这就是宿主机建立的网桥，用于与各个容器之间通信
+
+ **宿主机在与容器同一局域网的IP地址一般是docker0对应的IP地址段的首个地址（如172.0.17.1）**
+
+我们可以在容器里通过172.0.17.1:3306访问到宿主机的mysql服务器
+
+ip 查询命令：`ip addr show`
 
   [Docker 入门教程](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)
 
@@ -195,3 +269,5 @@ Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64
   [Dockerfile 最佳实践](https://studygolang.com/articles/4219)
 
 https://registry.docker-cn.com
+
+https://yeasy.gitbooks.io/docker_practice/

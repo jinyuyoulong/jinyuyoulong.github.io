@@ -1,8 +1,6 @@
 ---
 title: AFNetworking3.0/NSURLSession的优势
-id: 351
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-03-15 10:53:52
 tags:
 ---

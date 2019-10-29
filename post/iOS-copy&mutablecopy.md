@@ -1,8 +1,6 @@
 ---
 title: ios copy 和 mutableCopy
-id: 283
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-01-18 19:39:17
 tags:
 ---

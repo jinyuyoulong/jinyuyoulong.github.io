@@ -1,7 +1,7 @@
 ---
 title: "System Dockerfile最佳实践"
 date: 2019-05-05T13:44:44+08:00
-draft: true
+categories: [Docker]
 ---
 Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？
 Dockerfile 有两个方向上的使用方式：
@@ -18,7 +18,7 @@ Dockerfile 有两个方向上的使用方式：
 CMD 与 ENTRYPOINT 命令请使用数组语法。
 
 针对一：只用 Dockerfile 管理镜像的 build
-```
+```dockerfile
 # 依赖最小Linux环境 alpine 只用5M大小
 FROM alpine
 
@@ -29,16 +29,20 @@ COPY ./bin/ /app
 
 # 指定接下来的工作路径为/app
 # WORKDIR：指定RUN、CMD与ENTRYPOINT命令的工作目录。
+# 所有下面的 RUN 命令都在 WORKDIR 目录下面执行
 WORKDIR /app
 
 # RUN：在shell或者exec的环境下执行的命令。RUN指令会在新创建的镜像上添加新的层面，接下来提交的结果用在Dockerfile的下一条指令中。
 #RUN cd bin/
 
-# ADD：复制文件指令。它有两个参数<source>和<destination>。destination是容器内的路径。source可以是URL或者是启动配置上下文中的一个文件。
+# ADD：复制文件指令。它有两个参数<source>和<destination>。
+# destination是容器内的路径。
+# source可以是URL或者是启动配置上下文中的一个文件。
 # ADD 《src》 《destination》
 
 
-# CMD：提供了容器默认的执行命令。 Dockerfile只允许使用一次CMD指令。 使用多个CMD会抵消之前所有的指令，只有最后一个指令生效。 CMD有三种形式：
+# CMD：提供了容器默认的执行命令。 Dockerfile只允许使用一次CMD指令。 使用多个CMD会抵消之前所有的指令，只有最后一个指令生效。 
+# CMD有三种形式：
 #CMD ["executable","param1","param2"]
 #CMD ["param1","param2"]
 #CMD command param1 param2
@@ -65,3 +69,15 @@ CMD ["./gin"]
 # VOLUME：授权访问从容器内到主机上的目录。
 # VOLUME ["/data"]
 ```
+
+## 有UI界面portainer，用什么命令行，SB
+
+好了安装portainer 镜像管理镜像吧。
+
+```sh
+$ docker volume create portainer_data
+$ docker run -d -p 9000:9000 -p 8000:8000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+```
+
+over.
+

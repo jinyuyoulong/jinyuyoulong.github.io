@@ -1,7 +1,7 @@
 ---
 title: "Hugo 开箱体验"
 date: 2019-04-16T14:09:31+08:00
-draft: true
+categories: [blog]
 ---
 
 

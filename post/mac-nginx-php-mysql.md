@@ -1,11 +1,8 @@
 ---
 title: mac-nginx-php-mysql
 date: 2018-12-25 10:04:25
-tags: 
-- lnmp 
-- nginx
-categories: 
-- PHP
+tags: [lnmp,nginx]
+categories: [PHP]
 ---
 
 [TOC]

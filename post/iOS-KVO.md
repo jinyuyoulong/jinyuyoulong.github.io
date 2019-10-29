@@ -1,10 +1,7 @@
 ---
 title: 正确的使用KVO
-tags:
-  - KVO
-id: 354
-categories:
-  - iOS
+tags: [KVO]
+categories: [iOS]
 date: 2016-03-15 11:02:37
 ---
 

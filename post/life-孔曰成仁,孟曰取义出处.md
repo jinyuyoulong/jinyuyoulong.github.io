@@ -1,10 +1,7 @@
 ---
 title: 孔曰成仁，孟曰取义出处
-id: 273
-categories:
-  - 日课
+categories: [日课]
 date: 2015-12-23 12:15:29
-tags:
 ---
 
 <span class="s1">文天祥</span><span class="s2">就义前的绝笔中写道：</span>

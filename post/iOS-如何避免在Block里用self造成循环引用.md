@@ -1,10 +1,7 @@
 ---
 title: 如何避免在Block里用self造成循环引用
-id: 62
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-05-15 16:00:00
-tags:
 ---
 
 本文原引于[Bannings的专栏博客](http://blog.csdn.net/zhangao0086/article/details/38273239 "避免block中self循环引用")

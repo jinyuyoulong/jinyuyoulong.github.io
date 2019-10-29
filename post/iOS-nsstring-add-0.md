@@ -1,10 +1,7 @@
 ---
 title: NSString 位数不足补0
-id: 280
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-01-15 16:22:44
-tags:
 ---
 
 %0nd ，n是多少位。0表示补0

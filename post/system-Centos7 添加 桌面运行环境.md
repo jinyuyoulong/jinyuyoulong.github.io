@@ -1,6 +1,7 @@
 ---
 title: Centos7 添加 桌面运行环境
 date: 2019-02-25
+categories: [system]
 ---
 
 

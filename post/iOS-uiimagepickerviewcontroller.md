@@ -1,11 +1,6 @@
 ---
 title: 简单实用UIImagePickerViewController
-tags:
-  - UI
-  - UIImagePickerViewController
-id: 349
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-03-09 13:31:36
 ---
 

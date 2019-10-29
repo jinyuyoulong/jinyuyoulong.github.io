@@ -1,9 +1,7 @@
 ---
 title: php session 不能跨页面传递
-categories: 
-- PHP
-tags:
-- PHP
+categories: [PHP]
+tags: [PHP]
 ---
 
 

@@ -1,8 +1,7 @@
 ---
 title: "Go 代码规范"
 date: 2019-04-29T11:37:14+08:00
-draft: true
-category: Go
+categories: [Go]
 ---
 [TOC]
 ## Golang代码规范
@@ -12,7 +11,7 @@ category: Go
 
 ### 项目目录结构规范
 
-```
+```sh
 PROJECT_NAME
 ├── README.md 介绍软件及文档入口
 ├── bin 编译好的二进制文件,执行./build.sh自动生成，该目录也用于程序打包
@@ -33,7 +32,7 @@ PROJECT_NAME
 
 项目的目录结构尽量做到简明、层次清楚。
 
-```
+```sh
 ./app
 ├── bootstrap	//入口引导文件
 ├── cache
@@ -64,7 +63,7 @@ PROJECT_NAME
 
 接口的实现则去掉“er”
 
-```
+```go
 type Reader interface {
         Read(p []byte) (n int, err error)
 }
@@ -72,7 +71,7 @@ type Reader interface {
 
 两个函数的接口名综合两个函数名
 
-```
+```go
 type WriteFlusher interface {
     Write([]byte) (int, error)
     Flush() error
@@ -81,7 +80,7 @@ type WriteFlusher interface {
 
 三个以上函数的接口名，类似于结构体名
 
-```
+```go
 type Car interface {
     Start([]byte) 
     Stop() error
@@ -101,7 +100,7 @@ type Car interface {
 
 import在多行的情况下，goimports会自动帮你格式化，在一个文件里面引入了一个package，建议采用如下格式：
 
-```
+```go
 import (
     "fmt"
 )
@@ -109,7 +108,7 @@ import (
 
 如果你的包引入了三种类型的包，标准库包，程序内部包，第三方包，建议采用如下方式进行组织你的包：
 
-```
+```go
 import (
     "encoding/json"
     "strings"
@@ -120,6 +119,9 @@ import (
 
     "git.obc.im/dep/beego"
     "git.obc.im/dep/mysql"
+    // 空白引入需要添加注释
+		// 空白导入应该只在主包或测试包中，或者有一个注释证明它是正确的
+		_ "github.com/jinzhu/gorm/dialects/mysql"
 )  
 ```
 
@@ -127,13 +129,13 @@ import (
 
 // 这是不好的导入
 
-```
+```go
 import “../net”
 ```
 
 // 这是正确的做法
 
-```
+```go
 import “xxxx.com/proj/net”
 ```
 
@@ -147,7 +149,7 @@ error作为函数的值返回,必须尽快对error进行处理
 采用独立的错误流进行处理
 不要采用这种方式
 
-```
+```go
     if err != nil {
         // error handling
     } else {
@@ -157,7 +159,7 @@ error作为函数的值返回,必须尽快对error进行处理
 
 而要采用下面的方式
 
-```
+```go
     if err != nil {
         // error handling
         return // or continue, etc.
@@ -167,7 +169,7 @@ error作为函数的值返回,必须尽快对error进行处理
 
 如果返回值需要初始化，则采用下面的方式
 
-```
+```go
 x, err := f()
 if err != nil {
     // error handling
@@ -185,7 +187,7 @@ if err != nil {
 
 recover用于捕获runtime的异常，禁止滥用recover，在开发测试阶段尽量不要用recover，recover一般放在你认为会有不可预期的异常的地方。
 
-```
+```go
 func server(workChan <-chan *Work) {
     for work := range workChan {
         go safelyDo(work)
@@ -207,7 +209,7 @@ func safelyDo(work *Work) {
 
 defer在函数return之前执行，对于一些资源的回收用defer是好的，但也禁止滥用defer，defer是需要消耗性能的,所以频繁调用的函数尽量不要使用defer。
 
-```
+```go
 // Contents returns the file's contents as a string.
 func Contents(filename string) (string, error) {
     f, err := os.Open(filename)
@@ -238,7 +240,7 @@ func Contents(filename string) (string, error) {
 
 if接受初始化语句，约定如下方式建立局部变量
 
-```
+```go
 if err := file.Chmod(0664); err != nil {
     return err
 }
@@ -248,7 +250,7 @@ if err := file.Chmod(0664); err != nil {
 
 采用短声明建立局部变量
 
-```
+```go
 sum := 0
 for i := 0; i < 10; i++ {
     sum += i
@@ -259,7 +261,7 @@ for i := 0; i < 10; i++ {
 
 如果只需要第一项（key），就丢弃第二个：
 
-```
+```go
 for key := range m {
     if key.expired() {
         delete(m, key)
@@ -269,7 +271,7 @@ for key := range m {
 
 如果只需要第二项，则把第一项置为下划线
 
-```
+```go
 sum := 0
 for _, value := range array {
     sum += value
@@ -280,7 +282,7 @@ for _, value := range array {
 
 尽早return：一旦有错误发生，马上返回
 
-```
+```go
 f, err := os.Open(name)
 if err != nil {
     return err
@@ -297,14 +299,14 @@ codeUsing(f, d)
 
 名称 一般采用strcut的第一个字母且为小写，而不是this，me或者self
 
-```
+```go
     type T struct{} 
     func (p *T)Get(){}
 ```
 
 如果接收者是map,slice或者chan，不要用指针传递
 
-```
+```go
 //Map
 package main
 
@@ -349,7 +351,7 @@ func main() {
 
 如果需要对slice进行修改，通过返回值的方式重新赋值
 
-```
+```go
 //Slice
 package main
 
@@ -372,7 +374,7 @@ func (s slice) addOne(b byte) []byte {
 
 如果接收者是含有sync.Mutex或者类似同步字段的结构体，必须使用指针传递避免复制
 
-```
+```go
 package main
 
 import (
@@ -402,7 +404,7 @@ func main() {
 
 如果接收者是大的结构体或者数组，使用指针传递会更有效率。
 
-```
+```go
 package main
 
 import (

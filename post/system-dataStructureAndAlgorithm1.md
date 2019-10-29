@@ -1,8 +1,7 @@
 ---
 title: 数据结构与算法1-复杂度分析1
 date: 2018-10-08 10:53:57
-tags:
-categories:
+categories: [system]
 ---
 
 为什么需要复杂度分析？

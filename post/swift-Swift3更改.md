@@ -1,8 +1,8 @@
 ---
 title: Swift3更改
 date: 2016-09-18 13:51:51
-tag: Xcode
-category: iOS
+tags: [Xcode]
+categories: [iOS]
 id: 14
 ---
 ###  升级Swift3后代码的更改差异

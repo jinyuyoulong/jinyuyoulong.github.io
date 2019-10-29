@@ -1,10 +1,8 @@
 ---
 title: mac系统使用内置的 PHP
-id: 172
-categories:
-  - PHP
+categories: [PHP]
 date: 2015-08-18 11:19:22
-tags:
+tags: [PHP]
 ---
 
 <span class="s1">从 OS X 10.0.0 版本开始，PHP 作为 Mac 机的标准配置被提供。在默认的 web 服务器中启用 PHP，只需将 Apache 配置文件 _httpd.conf_ 中的几行配置指令最前面的注释符号去掉，而 CGI 或 CLI 默认都可使用（可以很容易的被终端程序使用）。</span>

@@ -1,11 +1,7 @@
 ---
 title: NSTimer
-tags:
-  - NSTimer
-  - 控件
-id: 106
-categories:
-  - iOS
+tags: [NSTimer,控件]
+categories: [iOS]
 date: 2015-07-16 11:03:51
 ---
 

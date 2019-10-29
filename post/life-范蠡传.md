@@ -1,13 +1,7 @@
 ---
 title: 范蠡传
-tags:
-  - 榜样
-  - 范蠡
-url: 642.html
-id: 642
-categories:
-  - 中国生存手册
-  - 日课
+tags: [榜样,范蠡]
+categories: [中国生存手册]
 date: 2018-03-19 08:19:12
 ---
 

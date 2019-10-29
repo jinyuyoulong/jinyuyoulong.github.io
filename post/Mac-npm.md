@@ -1,11 +1,7 @@
 ---
 title: mac下npm的使用方式
-tags:
-  - nodejs
-  - npm
-id: 482
-categories:
-  - Nodejs
+tags: [nodejs,npm]
+categories: [Nodejs]
 date: 2016-09-08 14:30:11
 ---
 

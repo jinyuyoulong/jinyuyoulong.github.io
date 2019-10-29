@@ -1,10 +1,7 @@
 ---
 title: OC Quartz2D 绘图
-id: 301
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-02-23 12:07:20
-tags:
 ---
 
 如何利用Quartz2D绘制东西到view上?

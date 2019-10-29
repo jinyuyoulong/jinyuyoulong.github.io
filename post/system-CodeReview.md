@@ -1,8 +1,7 @@
 ---
 title: code review
 date: 2018-09-10
-categories: 
-  - 操作系统
+categories: [system]
 ---
 
 

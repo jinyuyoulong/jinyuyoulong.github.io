@@ -1,11 +1,7 @@
 ---
 title: 用 Xcode 编写 C/C++ 的 Hello World！
-tags:
-  - Mac
-  - xcode
-id: 208
-categories:
-  - other technology其他技术
+tags: [Mac,xcode]
+categories: [工具]
 date: 2015-09-25 12:24:51
 ---
 

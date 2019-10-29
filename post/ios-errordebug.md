@@ -1,8 +1,6 @@
 ---
 title: iOS 开发error/debug
-id: 103
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-07-14 21:36:20
 tags:
 ---

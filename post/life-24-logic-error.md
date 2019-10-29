@@ -1,10 +1,7 @@
 ---
 title: 二十四种常见的逻辑谬误
-id: 546
-categories:
-  - 日课
+categories: [日课]
 date: 2017-02-07 13:52:49
-tags:
 ---
 
 二十四种常见的逻辑谬误

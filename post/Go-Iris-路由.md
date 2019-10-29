@@ -1,8 +1,7 @@
 ---
 title: Go Iris 路由
 date: 2019-03-08
-categories:
-  - Go
+categories: [Go]
 ---
 
 ##### 路由配置规则

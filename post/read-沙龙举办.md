@@ -1,6 +1,7 @@
 ---
 title: 沙龙举办流程
 date: 2018-11-19
+categories: [软技能]
 ---
 
 

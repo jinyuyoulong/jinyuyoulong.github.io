@@ -1,9 +1,7 @@
 ---
 title: App Store 上架流程
-tags: 
-  - iOS
-categories: 
-  - iOS
+tags: [iOS]
+categories: [ iOS]
 ---
 
 

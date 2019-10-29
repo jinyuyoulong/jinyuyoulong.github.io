@@ -1,11 +1,7 @@
 ---
 title: nvm管理不同的node版本
-tags:
-  - nodejs
-  - nvm
-id: 550
-categories:
-  - Nodejs
+tags: [nodejs,nvm]
+categories: [Nodejs]
 date: 2017-02-24 09:59:52
 ---
 
@@ -32,7 +28,7 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | 
 *   显示所有安装的版本
 `nvm ls`
 *   设置默认使用的版本
-`nvm alias default &lt;version&gt;`
+`nvm alias default version`
 
 #### 卸载
 

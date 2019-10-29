@@ -1,11 +1,7 @@
 ---
 title: 基金A类B类C类是什么意思？
-tags:
-  - 基金
-url: 697.html
-id: 697
-categories:
-  - 中国生存手册
+tags: [基金]
+categories: [中国生存手册]
 date: 2018-04-10 02:41:38
 ---
 

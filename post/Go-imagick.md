@@ -1,8 +1,7 @@
 ---
 title: imagick
 date: 2019-05-17
-categories:
-  - Go
+categories: [Go]
 ---
 
 
@@ -14,6 +13,8 @@ imagick 是一个开源的 c语言图片处理库，所以需要本地安装，�
 Mac 安装imagic
 
 `brew install imagemagick`
+
+有的可能需要安装 	` brew install pkg-config`
 
 CGO配置
 

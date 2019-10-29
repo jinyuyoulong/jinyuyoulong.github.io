@@ -1,12 +1,7 @@
 ---
 title: swift中weak和unowned的区别
-tags:
-  - unowned
-  - weak
-id: 528
-categories:
-  - iOS
-  - swift
+tags: [unowned,weak]
+categories: [iOS,swift]
 date: 2016-12-13 16:34:00
 ---
 

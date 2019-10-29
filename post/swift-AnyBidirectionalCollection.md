@@ -1,11 +1,7 @@
 ---
 title: AnyBidirectionalCollection
 date: 2016-10-27 20:01:25
-categories: 
-  - Swift
-id: 1
-
-
+categories: [ Swift]
 ---
 
 A type-erased wrapper over any collection with indices that support bidirectional traversal.

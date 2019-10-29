@@ -1,11 +1,7 @@
 ---
 title: Xcode快捷键
-tags:
-  - xcode
-  - 快捷键
-id: 372
-categories:
-  - iOS
+tags: [xcode,快捷键]
+categories: [iOS]
 date: 2016-03-29 23:50:12
 ---
 

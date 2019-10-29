@@ -1,8 +1,6 @@
 ---
 title: app 上架前的打包准备
-id: 191
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-09-10 15:22:12
 tags:
 ---

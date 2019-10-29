@@ -1,8 +1,8 @@
 ```
 title: 面试
 date: 2018-08-16
-tags: 面试
-categories: iOS
+tags: [面试]
+categories: [iOS]
 ```
 
 

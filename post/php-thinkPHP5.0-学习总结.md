@@ -1,6 +1,7 @@
 ---
 title: thinkPHP5.0 学习总结
 date: 2018-11-15
+categories: [PHP]
 ---
 
 

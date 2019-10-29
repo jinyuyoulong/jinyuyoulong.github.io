@@ -1,7 +1,8 @@
 ---
 title: npm-scripts.md
 date: 2018-07-17 16:47:27
-tag: nodejs
+tags: [nodejs]
+categorise: [Nodejs]
 ---
 
 scripts是npm的脚本编辑的地方，不是node的

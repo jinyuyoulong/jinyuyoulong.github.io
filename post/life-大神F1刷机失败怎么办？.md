@@ -1,10 +1,7 @@
 ---
 title: 大神F1刷机失败怎么办？
-id: 256
-categories:
-  - other technology其他技术
+categories: [Android]
 date: 2015-11-29 11:06:23
-tags:
 ---
 
 刷机失败，需要进入Recovery模式才可以再次刷机

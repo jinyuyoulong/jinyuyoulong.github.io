@@ -1,9 +1,7 @@
 ---
 title: "Go 自定义包模板引用 moudle"
 date: 2019-05-13T13:17:53+08:00
-draft: true
-categories:
-  - Go
+categories: [Go]
 ---
 
 源起：最近在调研Go，需要使用Go搭建一套通用式的模板框架，用以当新开其他项目的时候直接基于模板框架开发。

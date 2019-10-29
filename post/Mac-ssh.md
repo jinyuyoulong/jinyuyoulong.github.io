@@ -1,11 +1,8 @@
 ---
 title: SSH
-id: 318
-categories:
-  - iOS
+categories: [system]
 date: 2016-02-24 16:02:58
-tags: 
-  - SSH
+tags: [SSH]
 ---
 
 
@@ -14,12 +11,11 @@ tags:
 
 #### 解释
 
-```
-Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。
-SSH通过在网络中创建安全隧道来实现SSH客户端与服务器之间的连接[2]。
-虽然任何网络服务都可以通过SSH实现安全传输，SSH最常见的用途是远程登录系统，人们通常利用SSH来传输命令行界面和远程执行命令。
-使用频率最高的场合类Unix系统，但是Windows操作系统也能有限度地使用SSH。2015年，微软宣布将在未来的操作系统中提供原生SSH协议支持(摘自wikipedia)
-```
+> Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。
+> SSH通过在网络中创建安全隧道来实现SSH客户端与服务器之间的连接[2]。
+> 虽然任何网络服务都可以通过SSH实现安全传输，SSH最常见的用途是远程登录系统，人们通常利用SSH来传输命令行界面和远程执行命令。
+> 使用频率最高的场合类Unix系统，但是Windows操作系统也能有限度地使用SSH。2015年，微软宣布将在未来的操作系统中提供原生SSH协议支持(摘自wikipedia)
+
 
 
 
@@ -77,5 +73,7 @@ git 修改config
 | before                                 | after                                            |
 | -------------------------------------- | ------------------------------------------------ |
 | url = git@github.com:fanyubing/xxx.git | url = git@fanyubing.github.com:fanyubing/xxx.git |
+
+上传到远端设备`~  ssh-copy-id -i .ssh/id_rsa.pub root@172.xx.yy.zzz`
 
 参考：https://my.oschina.net/meilihao/blog/157716

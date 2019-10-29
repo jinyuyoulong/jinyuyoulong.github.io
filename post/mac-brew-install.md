@@ -1,11 +1,7 @@
 ---
 title: brew 安装
-tags:
-  - brew
-id: 554
-categories:
-  - Mac
-  - 工具
+tags: [brew]
+categories: [Mac,工具]
 date: 2017-02-25 22:54:49
 ---
 

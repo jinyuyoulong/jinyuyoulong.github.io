@@ -1,10 +1,7 @@
 ---
 title: Objective-c NSClassFromString 使用方法
-id: 196
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-09-14 11:58:58
-tags:
 ---
 
 NSClassFromString 是一个很有用的东西，尤其在进行 iPhone toolchain 的开发上。

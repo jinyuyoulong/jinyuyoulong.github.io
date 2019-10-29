@@ -1,10 +1,7 @@
 ---
 title: NodeJS 文件系统
-id: 443
-categories:
-  - Nodejs
+categories: [Nodejs]
 date: 2016-06-30 11:39:32
-tags:
 ---
 
 文件加载顺序：

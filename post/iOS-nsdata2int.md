@@ -1,8 +1,5 @@
 ---
 title: NSData转int
-id: 55
-categories:
-  - iOS
 date: 2015-04-29 14:03:07
 tags:
 ---

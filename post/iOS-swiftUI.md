@@ -1,12 +1,8 @@
 ---
 title: "iOS SwiftUI"
 date: 2019-06-05T10:37:16+08:00
-categories:
-  - iOS
-  - swift
-tags:
-  - iOS
-  - swift
+categories: [iOS,swift]
+tags: [iOS,swift]
 ---
 
 [TOC]

@@ -1,12 +1,7 @@
 ---
 title: 使用sublime text 3 进行Python3开发
-tags:
-  - Python
-  - Sublime Text
-id: 543
-categories:
-  - Python
-  - 工具
+tags: [Python,Sublime Text]
+categories: [Python,工具]
 date: 2017-01-23 15:22:20
 ---
 

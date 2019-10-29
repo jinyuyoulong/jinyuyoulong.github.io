@@ -1,11 +1,7 @@
 ---
 title: 关键字探索 define const
-tags:
-  - const
-  - define
-id: 631
-categories:
-  - other technology其他技术
+tags: [关键字]
+categories: [system]
 date: 2018-01-19 09:37:16
 ---
 

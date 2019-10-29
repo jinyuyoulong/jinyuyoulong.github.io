@@ -1,11 +1,7 @@
 ---
 title: Apache不能访问directory 目录
-tags:
-  - Apache
-url: 740.html
-id: 740
-categories:
-  - PHP
+tags: [Apache]
+categories: [system]
 date: 2018-05-28 06:14:25
 ---
 

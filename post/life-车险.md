@@ -1,11 +1,7 @@
 ---
 title: 车险
-url: 731.html
-id: 731
-categories:
-  - 中国生存手册
+categories: [中国生存手册]
 date: 2018-05-17 09:40:11
-tags:
 ---
 
 ### 续保的保费计算逻辑

@@ -1,8 +1,8 @@
 ```
 title: Socket
 date: 2018-08-16
-tags: socket, HTTP
-categories: HTTP
+tags: [socket, HTTP]
+categories: [HTTP]
 ```
 
 

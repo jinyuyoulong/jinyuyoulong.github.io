@@ -1,8 +1,8 @@
 ---
 title: sketch使用tips
 date: 2016-07-04 14:19:13
-tag: sketch
-id: 12
+tags: [sketch]
+categorise: [tool]
 ---
 
 |记录sketch使用心得|

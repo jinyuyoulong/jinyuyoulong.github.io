@@ -1,9 +1,7 @@
 ---
 title: "Go BeeGoVSgin"
 date: 2019-06-03T13:38:52+08:00
-draft: true
-categories:
-  - Go
+categories: [Go]
 ---
 
 [TOC]

@@ -1,11 +1,8 @@
 ---
 title: Python_pyspider
 date: 2016-11-02 10:34:41
-tags:
-  - ppspider
-category:
-  - Python
-id: 10
+tags: [ppspider]
+categories: [Python]
 ---
 
 ### mac 下pyspider的安装

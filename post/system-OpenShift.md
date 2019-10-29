@@ -1,10 +1,7 @@
 ---
 title: OpenShift的使用
-tags:
-  - OpenShift
-id: 532
-categories:
-  - other technology其他技术
+tags: [OpenShift]
+categories: [软技能]
 date: 2016-12-14 17:56:33
 ---
 

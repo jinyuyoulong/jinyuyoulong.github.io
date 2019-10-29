@@ -1,8 +1,6 @@
 ---
 title: 数据结构
-id: 503
-categories:
-  - other technology其他技术
+categories: [system]
 date: 2016-11-07 22:13:26
 tags:
 ---

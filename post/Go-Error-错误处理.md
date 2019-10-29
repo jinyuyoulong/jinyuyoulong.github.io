@@ -1,8 +1,7 @@
 ---
 title: Go Error 错误处理
 date: 2019-03-06
-categories:
-  - Go
+categories: [Go]
 ---
 
 常用的有五种方式

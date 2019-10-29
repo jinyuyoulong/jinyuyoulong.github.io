@@ -1,11 +1,7 @@
 ---
 title: Xcode8添加iOS7真机调试
-tags:
-  - xcode
-id: 487
-categories:
-  - swift
-  - 工具
+tags: [xcode]
+categories: [swift,工具]
 date: 2016-09-19 11:58:47
 ---
 

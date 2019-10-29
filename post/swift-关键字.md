@@ -1,13 +1,7 @@
 ---
 title: swift 关键字篇
-tags:
-  - '@autoclosure'
-  - '@escaping'
-  - '@noescape'
-id: 525
-categories:
-  - iOS
-  - swift
+tags: ['@autoclosure','@escaping','@noescape']
+categories: [iOS,swift]
 date: 2016-12-13 15:45:27
 ---
 

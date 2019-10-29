@@ -1,8 +1,6 @@
 ---
 title: iOS NSString 字符串处理：截取字符串、匹配字符串、分隔字符串
-id: 72
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-06-04 17:33:36
 tags:
 ---

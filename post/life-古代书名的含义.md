@@ -1,13 +1,7 @@
 ---
 title: 注、疏、解、记、典、经、传
-tags:
-  - 文
-url: 715.html
-id: 715
-categories:
-  - 中医
-  - 日课
-  - 道法
+tags: [文]
+categories: [日课,道法]
 date: 2018-04-17 09:18:10
 ---
 

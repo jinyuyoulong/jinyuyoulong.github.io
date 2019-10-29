@@ -1,10 +1,7 @@
 ---
 title: 命名规范
-tags:
-  - 规范
-id: 502
-categories:
-  - other technology其他技术
+tags: [规范]
+categories: [编程技巧]
 date: 2016-11-08 14:39:03
 ---
 

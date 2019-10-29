@@ -1,8 +1,6 @@
 ---
 title: svn上传.a文件
-id: 42
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-04-23 09:46:53
 tags:
 ---

@@ -1,10 +1,8 @@
 ---
 title: Wordpress中各个全局函数的含义和应用
-id: 169
-categories:
-  - PHP
+categories: [PHP]
 date: 2015-08-18 10:10:38
-tags:
+tags: [wordpress]
 ---
 
 <span class="s1">在wordpress插件和主题开发中经常需要获取各种URL路径，wordpress提供了以下集中方法获得URL路径：</span>

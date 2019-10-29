@@ -1,8 +1,7 @@
 ---
 title: Go的数据结构
 date: 2019-02-17
-categories:
-  - Go
+categories: [Go]
 ---
 
 [TOC]

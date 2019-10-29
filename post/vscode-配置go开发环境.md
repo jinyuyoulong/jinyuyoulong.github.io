@@ -1,6 +1,8 @@
 ---
 title: vscode配置go开发环境
 data: 2019-02-15
+categories: [工具]
+tags: [vscode]
 ---
 
 下载安装 vscode，安装Go插件。在商店中搜索安装。

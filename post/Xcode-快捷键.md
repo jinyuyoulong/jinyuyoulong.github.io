@@ -1,9 +1,8 @@
 ---
 title: Xcode实用快捷键收集
 date: 2016-09-20 13:51:51
-tag: Xcode
-category: iOS
-id: 21
+tags: [Xcode]
+categories: [iOS]
 ---
 
 ```

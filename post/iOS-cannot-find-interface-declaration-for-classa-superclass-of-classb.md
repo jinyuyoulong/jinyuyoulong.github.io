@@ -1,8 +1,6 @@
 ---
 title: 'Cannot find interface declaration for ''ClassA'', superclass of ''ClassB'''
-id: 205
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-09-22 11:49:57
 tags:
 ---

@@ -1,9 +1,8 @@
 ---
 title: python-sublime
 date: 2017-11-29 17:29:24
-tags: 
-  - ST3
-  - python
+tags: [sublime text,python]
+categories: [Python]
 ---
 
 sublime text 下的Python编译环境设置

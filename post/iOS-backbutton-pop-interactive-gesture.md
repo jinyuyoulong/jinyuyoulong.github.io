@@ -1,8 +1,6 @@
 ---
 title: 自定义back按钮无法使用系统pop interactive gesture 问题
-id: 121
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-08-06 18:50:01
 tags:
 ---

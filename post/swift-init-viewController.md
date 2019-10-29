@@ -1,10 +1,7 @@
 ---
 title: swift 中初始化ViewController
-id: 438
-categories:
-  - swift
+categories: [swift]
 date: 2016-06-06 18:25:00
-tags:
 ---
 
 let vc = NameVC()

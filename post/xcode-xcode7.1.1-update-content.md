@@ -1,10 +1,7 @@
 ---
 title: Xcode7.1.1更新内容
-tags:
-  - Xcode7
-id: 251
-categories:
-  - iOS
+tags: [Xcode7]
+categories: [iOS]
 date: 2015-11-23 11:25:15
 ---
 

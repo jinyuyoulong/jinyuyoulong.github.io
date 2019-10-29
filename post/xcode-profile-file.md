@@ -1,8 +1,6 @@
 ---
 title: XCode上设备或证书不能自动建和修改的问题解决
-id: 119
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-08-04 20:59:44
 tags:
 ---

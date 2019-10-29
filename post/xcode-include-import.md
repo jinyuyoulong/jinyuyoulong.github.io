@@ -1,11 +1,7 @@
 ---
 title: xcode 头文件引用
-tags:
-  - xcode
-url: 707.html
-id: 707
-categories:
-  - iOS
+tags: [xcode]
+categories: [iOS]
 date: 2018-04-12 03:43:53
 ---
 

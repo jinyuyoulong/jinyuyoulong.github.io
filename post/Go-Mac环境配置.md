@@ -1,8 +1,7 @@
 ---
 title: go Mac环境配置
 data: 2019-02-14
-categories:
-  - Go
+categories: [Go]
 ---
 
 1. 在官网下载pkg安装包,点击安装，安装完成后，资源被写入/usr/local/go 目录下

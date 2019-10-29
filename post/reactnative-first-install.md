@@ -1,10 +1,7 @@
 ---
 title: React-Native 初次安装环境报错及解决记录
-tags:
-  - ReactNative
-id: 356
-categories:
-  - iOS
+tags: [ReactNative]
+categories: [iOS]
 date: 2016-03-15 16:38:19
 ---
 

@@ -1,8 +1,6 @@
 ---
 title: sqlite3的使用
-id: 126
-categories:
-  - SQL
+categories: [数据库]
 date: 2015-08-07 23:38:47
 tags:
 ---

@@ -1,9 +1,7 @@
 ---
 title: "开源贡献者盟约"
 date: 2019-06-25T15:38:20+08:00
-categories:
-  - "system"
-  - "开源"
+categories: [软技能]
 ---
 
 [TOC]

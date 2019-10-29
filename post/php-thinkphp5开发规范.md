@@ -1,6 +1,7 @@
 ---
 title: thinkphp5开发规范
 date: 2018-11-09
+categories: [PHP]
 ---
 
 #### 目录结构

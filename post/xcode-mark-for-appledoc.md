@@ -1,11 +1,7 @@
 ---
 title: xcode文档注释规则简要汇总
-tags:
-  - appledoc
-url: 676.html
-id: 676
-categories:
-  - iOS
+tags: [appledoc]
+categories: [iOS]
 date: 2018-04-04 08:24:46
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: chrome 调试
 date: 2018-11-08
+categories: [工具]
 ---
 
 

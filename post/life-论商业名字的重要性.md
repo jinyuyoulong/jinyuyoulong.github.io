@@ -1,10 +1,8 @@
 ---
 title: 论商业名字的重要性
 date: 2018-07-07
-tags: 
-- 中国生存手册
-categories: 
-- 中国生存手册
+tags: [中国生存手册]
+categories: [中国生存手册]
 ---
 
 

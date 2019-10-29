@@ -1,11 +1,7 @@
 ---
 title: centos7 更改系统启动模式
-tags:
-  - centos
-url: 753.html
-id: 753
-categories:
-  - 操作系统
+tags: [centos]
+categories: [system]
 date: 2018-06-26 01:51:41
 ---
 

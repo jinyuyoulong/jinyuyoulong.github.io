@@ -1,8 +1,6 @@
 ---
 title: Xcode7如何给新建的类名自动添加前缀
-id: 337
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-03-03 15:03:01
 tags:
 ---

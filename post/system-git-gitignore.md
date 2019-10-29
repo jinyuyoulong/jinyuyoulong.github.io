@@ -1,10 +1,7 @@
 ---
 title: .gitignore文件使用说明
-tags:
-  - 收藏
-id: 213
-categories:
-  - other technology其他技术
+tags: [git]
+categories: [Git]
 date: 2015-10-09 13:25:58
 ---
 

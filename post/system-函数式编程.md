@@ -1,11 +1,7 @@
 ---
 title: 函数式编程
-id: 464
-categories:
-  - system
-  - 设计
+categories: [system]
 date: 2016-08-05 10:46:42
-tags:
 ---
 
 ### 函数式编程的三大特性：

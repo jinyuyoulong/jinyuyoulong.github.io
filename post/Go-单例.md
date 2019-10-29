@@ -1,8 +1,7 @@
 ---
 title: Go 单例
 date: 2019-05-27
-categories:
-  - Go
+categories: [Go]
 ---
 为什么使用单例？
 

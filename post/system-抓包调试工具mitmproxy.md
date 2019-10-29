@@ -1,10 +1,7 @@
 ---
 title: 抓包调试工具mitmproxy
-tags:
-  - 抓包
-id: 538
-categories:
-  - 工具
+tags: [抓包]
+categories: [工具]
 date: 2016-12-27 10:39:15
 ---
 

@@ -1,10 +1,7 @@
 ---
 title: mac 文件如何校验
-id: 266
-categories:
-  - 日课
+categories: [日课,工具]
 date: 2015-12-17 11:08:37
-tags:
 ---
 
 mac 自带文件校验工具，已经内置在终端(Terminal)下了

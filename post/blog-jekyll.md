@@ -1,9 +1,7 @@
 ---
 title: jekyll using standards 使用规范
-categories: 
-- blog
-tags:
-  - jekyll
+categories: [blog]
+tags: [jekyll]
 date: 2016-9-3 15:47:05
 ---
 

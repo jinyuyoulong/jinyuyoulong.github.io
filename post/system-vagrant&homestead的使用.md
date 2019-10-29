@@ -1,6 +1,7 @@
 ---
 title: vagrant&homestead的使用
 date: 2018-12-04
+categories: [system]
 ---
 
 

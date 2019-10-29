@@ -1,9 +1,7 @@
 ---
 title: Workspace的使用方法
-tags:
-  - xcode
-categories:
-  - iOS
+tags: [xcode]
+categories: [iOS]
 date: 2016-07-21 16:39:53
 ---
 

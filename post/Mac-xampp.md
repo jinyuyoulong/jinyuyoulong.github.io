@@ -1,10 +1,9 @@
 ---
 title: MAC系统XAMPP 中 MySQL命令行客户端配置使用
 id: 129
-categories:
-  - other technology其他技术
+categories: [system,数据库]
+Tags: [xampp,mysql]
 date: 2015-08-07 23:42:00
-tags:
 ---
 
 **<span style="font-size: 18px;">MySQL客户端</span>**

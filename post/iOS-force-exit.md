@@ -1,8 +1,7 @@
 ---
 title: 主动退出iOS程序
 id: 137
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-08-10 12:05:51
 tags:
 ---

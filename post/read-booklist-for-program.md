@@ -1,8 +1,8 @@
 ---
 title: 程序员成长书录
 date: 2018-08-01 18:29:31
-tag: book
-category: book
+tags: [book]
+categories: [阅读]
 ---
 
 - 《程序员修炼之道》[^注]

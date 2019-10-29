@@ -1,10 +1,7 @@
 ---
 title: 宏定义
-tags:
-  - 宏定义
-id: 242
-categories:
-  - iOS
+tags: [宏定义]
+categories: [iOS]
 date: 2015-09-18 15:50:23
 ---
 

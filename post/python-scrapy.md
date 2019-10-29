@@ -1,6 +1,7 @@
 ---
 title: scrapy
 date: 2018-12-18
+categories: [Python]
 ---
 
 `scrapy crawl m530p`crawl会去搜搜cmd目录下的scrapy.cfg

@@ -1,10 +1,7 @@
 ---
 title: text/html & text/plain的区别
-id: 113
-categories:
-  - other technology其他技术
+categories: [web]
 date: 2015-07-24 16:55:05
-tags:
 ---
 
 #### 需要了解的概念

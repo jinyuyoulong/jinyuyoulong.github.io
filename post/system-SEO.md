@@ -1,8 +1,6 @@
 ---
 title: SEOer的优化思路
-id: 51
-categories:
-  - other technology其他技术
+categories: [SEO]
 date: 2015-04-26 17:56:07
 tags:
 ---

@@ -1,11 +1,7 @@
 ---
 title: Sublime Texts使用tips
-tags:
-  - Sublime Text
-  - 工具
-id: 476
-categories:
-  - other technology其他技术
+tags: [Sublime Text,工具]
+categories: [工具]
 date: 2016-09-04 00:07:07
 ---
 

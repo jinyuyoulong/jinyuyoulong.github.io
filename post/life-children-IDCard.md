@@ -1,11 +1,7 @@
 ---
 title: 孩子多大能办身份证？
-tags:
-  - 身份证
-url: 711.html
-id: 711
-categories:
-  - 中国生存手册
+tags: [身份证]
+categories: [中国生存手册]
 date: 2018-04-16 08:16:03
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: Xcode-debug-view-hierarchy
 date: 2018-08-03 10:34:49
-tag: Xcode
-category: iOS
+tags: [Xcode]
+categories: [iOS]
 ---
 
 ### Xcode 教程之调试视图层次结构

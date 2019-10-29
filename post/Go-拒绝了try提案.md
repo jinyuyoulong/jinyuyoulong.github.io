@@ -1,8 +1,7 @@
 ---
 title: go社区拒绝了try提案
 date: 2019-07-17
-categories:
-  - Go
+categories: [Go]
 ---
 
 ## 提案：内置的Go错误检查功能， `try`

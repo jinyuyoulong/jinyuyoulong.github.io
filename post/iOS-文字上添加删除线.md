@@ -1,8 +1,7 @@
 ---
 title: 文字上添加删除线
 id: 177
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-08-21 17:10:49
 tags:
 ---

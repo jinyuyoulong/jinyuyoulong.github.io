@@ -1,10 +1,7 @@
 ---
 title: Xcode7 如何设置访问某些权限时的alert内容
-tags:
-  - plist
-id: 341
-categories:
-  - iOS
+tags: [plist]
+categories: [iOS]
 date: 2016-03-07 18:28:25
 ---
 

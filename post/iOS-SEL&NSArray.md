@@ -1,8 +1,6 @@
 ---
 title: SEL如何保存到NSArray数组中
-id: 243
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-11-04 11:09:43
 tags:
 ---

@@ -1,8 +1,6 @@
 ---
 title: react JS style样式设置总结
-id: 388
-categories:
-  - web前端
+categories: [web前端]
 date: 2016-04-08 14:29:04
 tags:
 ---

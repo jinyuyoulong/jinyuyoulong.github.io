@@ -1,10 +1,7 @@
 ---
 title: ReactNative环境搭建
-id: 347
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-03-18 13:22:50
-tags:
 ---
 
 最近换了macbook，于是又要装node.js，记录一下

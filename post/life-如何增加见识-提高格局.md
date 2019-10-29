@@ -1,8 +1,6 @@
 ---
 title: 如何增加见识，提高格局
-url: 724.html
-id: 724
-Categories: ["中国生存手册"]
+Categories: [中国生存手册]
 date: 2018-04-23 05:43:54
 Tags:
 ---

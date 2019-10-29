@@ -1,8 +1,7 @@
 ---
 title: 词法作用域
 date: 2019-02-21
-categories: 
-  - IT黑话
+categories: [IT黑话]
 ---
 
 

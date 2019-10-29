@@ -1,8 +1,6 @@
 ---
 title: Xcode 删除 Provisioning profile 证书
-id: 233
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-10-24 20:09:12
 tags:
 ---

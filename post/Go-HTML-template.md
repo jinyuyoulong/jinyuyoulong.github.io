@@ -1,8 +1,7 @@
 ---
 title: Go HTML template
 date: 2019-03-05
-categories:
-  - Go
+categories: [Go]
 ---
 
 ```go
@@ -42,3 +41,74 @@ B:Hello!
 */
 ```
 
+### 语法
+
+```go
+//取值
+<p>{{.ArticleContent}}<span>{{.ArticleId}}</span></p>
+// if 语句
+{{if .condition}}
+{{end}}
+
+{{if .condition1}}
+{{else if .contition2}}
+{{end}}
+
+// go 方法调用
+{{funcname .arg1 .arg2}}
+func add(left int, right int) int
+{{add 1 2}}
+
+// 逻辑判断
+not 非
+{{if not .condition}}
+{{end}}
+
+and 与
+{{if and .condition1 .condition2}}
+{{end}}
+
+or 或
+{{if or .condition1 .condition2}}
+{{end}}
+
+eq 等于
+{{if eq .var1 .var2}}
+{{end}}
+
+ne 不等于
+{{if ne .var1 .var2}}
+{{end}}
+
+lt 小于 (less than)
+{{if lt .var1 .var2}}
+{{end}}
+
+le 小于等于
+{{if le .var1 .var2}}
+{{end}}
+
+gt 大于
+{{if gt .var1 .var2}}
+{{end}}
+
+ge 大于等于
+{{if ge .var1 .var2}}
+{{end}}
+
+循环
+{{range $i, $v := .slice}}
+{{end}}
+
+{{range .slice}}
+{{.field}}
+{{end}}
+
+模板嵌套
+{{template "navbar"}}// 使用
+{{define "navbar"}}// 定义
+{{end}}
+{{template "navbar" .}}// 获取父模板的变量
+```
+
+参考https://www.kancloud.cn/cserli/golang/531904

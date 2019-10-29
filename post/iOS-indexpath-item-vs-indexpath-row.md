@@ -1,9 +1,6 @@
 ---
 title: iOS indexPath.item vs indexPath.row
-url: 669.html
-id: 669
-categories:
-  - iOS
+categories: [iOS]
 date: 2018-04-02 06:25:02
 tags:
 ---

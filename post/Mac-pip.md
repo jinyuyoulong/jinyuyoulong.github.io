@@ -1,11 +1,7 @@
 ---
 title: mac下 pip 设置豆瓣源
-tags:
-  - pip
-  - Python
-id: 611
-categories:
-  - Python
+tags: [pip,Python]
+categories: [Python]
 date: 2017-10-19 07:18:14
 ---
 

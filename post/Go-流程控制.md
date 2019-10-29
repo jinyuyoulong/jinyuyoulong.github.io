@@ -1,9 +1,7 @@
 ---
 title: Go-流程控制
 date: 2019-02-18 11:38:16
-tags:
-categories:
-  - Go
+categories: [Go]
 ---
 
 [TOC]

@@ -1,13 +1,7 @@
 ---
 title: appledoc使用说明
-tags:
-  - appledoc
-url: 673.html
-id: 673
-categories:
-  - iOS
-  - Mac
-  - 工具
+tags: [appledoc]
+categories: [iOS,Mac,工具]
 date: 2018-04-04 07:00:34
 ---
 

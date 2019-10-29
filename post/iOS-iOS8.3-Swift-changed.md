@@ -1,10 +1,9 @@
 ---
 title: iOS8.3发布了Swift 1.2带来哪些新变化
 id: 18
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-04-14 14:59:50
-tags:
+tags: [iOS]
 ---
 
 原文&nbsp;&nbsp;[http://www.cnblogs.com/yuyongjian/p/4371400.html](http://www.cnblogs.com/yuyongjian/p/4371400.html?utm_source=tuicool)
@@ -102,7 +101,6 @@ log(ns)&nbsp;//&nbsp;错误&nbsp;&nbsp;
 
 为了完成桥接转换，需要用显式转化符标注：
 <pre>log(ns&nbsp;as&nbsp;String)&nbsp;//&nbsp;succeeds</pre>
-
 从Swift类型到Objective-C类型的桥接隐式转换依然被允许，比如：
 <pre>func&nbsp;nsLog(ns:&nbsp;NSString)&nbsp;{&nbsp;println(ns)&nbsp;}&nbsp;&nbsp;
 &nbsp;let&nbsp;s:&nbsp;String&nbsp;=&nbsp;“some&nbsp;String”&nbsp;&nbsp;
@@ -203,10 +201,8 @@ var&nbsp;backgroundView:&nbsp;UIView?</pre>
 
 可空特性标示符也可以用在指针类型，包括C指针，block指针和C++成员指针，使用双下划线方式，比如：
 <pre>void&nbsp;enumerateStrings(__nonnull&nbsp;CFStringRef&nbsp;(^&nbsp;__nullable&nbsp;callback)(void));</pre>
-
 这里，它自身的回调函数是nullable的，但是它的回调函数的返回类型为nonnull，所以这个API在Swift以如下方式使用：
 <pre>func&nbsp;enumerateStrings(callback:&nbsp;(()&nbsp;-&gt;&nbsp;CFString)?)</pre>
-
 总的来说，可空特性标示符有三种，可以用双下划线（用在任何指针类型），或者没有下划线的（用在Objective-C属性，方法结果类型或者方法参数类型）。
 
 ![](http://img0.tuicool.com/MjeInmR.jpg "1423711358267173.jpg")
@@ -228,13 +224,10 @@ var&nbsp;backgroundView:&nbsp;UIView?</pre>
 
 这样的API在Swift使用隐式强制解封的方法使用：
 <pre>var&nbsp;tintColor:&nbsp;UIColor!</pre>
-
 C指针类型的参数或者Block指针类型可以使用noescape新属性标志，它用来标明这个指针参数不会离开这个函数或者方法而使用。这种情况下，可以安全的传递一个局部变量地址，noescape block指针在Swift中将会被映射为@noescape参数：
 <pre>void&nbsp;executeImmediately(__attribute__((noescape))&nbsp;void&nbsp;(^callback)(void);</pre>
-
 将被影射到Swift为：
 <pre>func&nbsp;executeImmediately(@noescape&nbsp;callback:&nbsp;()&nbsp;-&gt;&nbsp;Void)</pre>
-
 *   LLDB现在包含了一个printf()函数去计算C/C++/Objective-C表达式，这个将在arm64设备上提升表达式计算的体验，但是可能和用户在.lldbinit定义的表达式前缀冲突，如果你发现在表达式计算时出现错误，这可能就是root cause。
 
 *   XCode 6.3将Apple LLVM编译器更新为6.1.0，这个新的编译器版本包含了对C++14标准的全部支持，包括大量的增强的警告诊断和新的优化，对于arm64架构的支持进行了有效的重构来支持ARM的实现， 这个将明显影响矩阵内联函数计算。

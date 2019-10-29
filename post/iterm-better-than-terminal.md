@@ -1,11 +1,7 @@
 ---
 title: iterm比terminal好在哪里？
-tags:
-  - terminal
-url: 779.html
-id: 779
-categories:
-  - 工具
+tags: [terminal]
+categories: [工具]
 date: 2018-07-12 02:38:00
 ---
 

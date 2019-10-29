@@ -1,9 +1,7 @@
 ---
 title: objective-c代码规范
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-08-25 16:45:01
-tags:
 ---
 
 # Objective-C代码规范

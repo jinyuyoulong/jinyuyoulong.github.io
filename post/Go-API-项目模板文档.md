@@ -1,8 +1,7 @@
 ---
 title: Go-API 项目模板文档
 date: 2019-04-03
-categories:
-  - Go
+categories: [Go]
 ---
 
 

@@ -1,11 +1,7 @@
 ---
 title: as as! as?
 date: 2016-10-26 13:52:46
-tags: 
-  - as
-categories: 
-  - Swift
-id: 2
+categories: [ Swift]
 ---
 
 Swift开发之 is、 as、as!、as?三种类型转换操作符

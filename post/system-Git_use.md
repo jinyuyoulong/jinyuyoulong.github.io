@@ -1,9 +1,8 @@
 ---
 title: FF的Git使用整理
 date: 2016-07-05 14:47:35
-tags: 
-  - Git
-id: 6
+tags: [Git]
+categories: [Git]
 ---
 创建 Git仓库命令：(进入将要管理的Git文件夹地址下) git init
 查看当前Git管理状态 git status

@@ -1,9 +1,7 @@
 ---
 title: Apache使用总结
 date: 2018-07-02
-tags: 
-- Apache
-- PHP
+tags: [Apache,PHP]
 ---
 
 

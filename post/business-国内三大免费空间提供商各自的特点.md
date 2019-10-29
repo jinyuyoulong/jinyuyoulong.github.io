@@ -1,10 +1,7 @@
 ---
 title: 国内三大免费空间提供商各自的特点
-tags:
-  - 免费空间
-id: 290
-categories:
-  - 日课
+tags: [免费空间]
+categories: [日课]
 date: 2016-02-15 11:51:02
 ---
 

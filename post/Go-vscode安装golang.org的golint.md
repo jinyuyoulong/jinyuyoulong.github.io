@@ -1,8 +1,7 @@
 ---
 title: vscode安装golang.org的golint
 date: 2019-02-15
-categories:
-  - Go
+categories: [Go]
 ---
 
 vscode 安装了 go 插件后，一些 Extensions 无法通过 vscode 自动安装，此时可以手动从控制台安装。下面是一些基础标准库

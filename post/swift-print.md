@@ -1,10 +1,7 @@
 ---
 title: swift中的打印
-id: 326
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-02-26 14:57:35
-tags:
 ---
 
 > 自从swift2.0后

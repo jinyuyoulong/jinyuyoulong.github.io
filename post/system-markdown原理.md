@@ -1,10 +1,8 @@
 ---
 title: markdown 常用语法整理
 date: 2019-05-10
-categories:
-  - system
-tags:
-  - markdown
+categories: [system]
+tags: [markdown]
 ---
 
 

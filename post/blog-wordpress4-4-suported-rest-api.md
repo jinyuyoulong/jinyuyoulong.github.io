@@ -1,11 +1,7 @@
 ---
 title: WordPress4.4之后原生支持REST API
-tags:
-  - WordPress
-url: 703.html
-id: 703
-categories:
-  - 其他技术
+tags: [WordPress]
+categories: [blog]
 date: 2018-04-10 05:33:11
 ---
 

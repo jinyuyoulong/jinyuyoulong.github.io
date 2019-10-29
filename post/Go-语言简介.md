@@ -1,9 +1,33 @@
 ---
 title: Go 语言简介
 date: 2019-02-21
-categories: 
-  - Go
+categories: [ Go]
 ---
+[TOC]
+###  C/C++ 与 Go语言的“价值观”对照
+
+之前看过 白明老师 在GopherChina2017的一篇演讲文章[《Go coding in go way》](http://tonybai.com/2017/04/20/go-coding-in-go-way/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)，里面提到C/C++/Go三门语言价值观，感觉很有意思，分享给大家感受一下：
+
+C的价值观摘录
+
+- 相信程序员：提供指针和指针运算，让C程序员天马行空的发挥
+- 自己动手，丰衣足食：提供一个很小的标准库，其余的让程序员自造
+- 保持语言的短小和简单
+- 性能优先
+
+C++价值观摘录
+
+- 支持多范式，不强迫程序员使用某个特定的范式
+- 不求完美，但求实用（并且立即可用）
+
+Go价值观
+
+- Overall Simplicity 全面的简单
+- Orthogonal Composition 正交组合
+- Preference in Concurrency 偏好并发
+
+用一句话概括Go的价值观： Go is about orthogonal composition of simple concepts with preference in concurrency(Go是在偏好并发的环境下的简单概念/事物的正交组合).
+
 ##### Go 的底层语言是什么
 
 借用大神的话来说

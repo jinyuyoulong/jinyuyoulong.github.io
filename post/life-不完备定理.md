@@ -1,10 +1,8 @@
 ---
 title: 不完备定理
 date: 2018-08-14 16:38:59
-tags: 
-  - 中国生存手册
-categories: 
-  - 中国生存手册
+tags: [中国生存手册]
+categories: [中国生存手册]
 ---
 
  

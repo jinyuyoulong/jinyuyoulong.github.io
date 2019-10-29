@@ -1,12 +1,7 @@
 ---
 title: mac下MongoDB
-tags:
-  - Mongo
-  - 数据库
-id: 459
-categories:
-  - Nodejs
-  - other technology其他技术
+tags: [MongoDB,数据库]
+categories: [Nodejs,数据库]
 date: 2016-07-18 18:16:11
 ---
 

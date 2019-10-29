@@ -1,11 +1,7 @@
 ---
 title: xcode设置允许访问http请求
-tags:
-  - http
-  - xcode
-id: 376
-categories:
-  - iOS
+tags: [http,xcode]
+categories: [iOS]
 date: 2016-04-03 14:30:54
 ---
 

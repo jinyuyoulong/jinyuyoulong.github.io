@@ -1,11 +1,8 @@
 ---
 title: Go-iris-template
 date: 2019-03-08 17:25:10
-tags: 
-- Go
-- Iris
-categories: 
-- Go
+tags: [Go,Iris]
+categories: [Go]
 ---
 
 Iris 支持五个开箱即用的模板引擎，所有这五个模板引擎都具有通用API的共同特征，如布局，模板功能，特定于派对的布局，部分渲染等。

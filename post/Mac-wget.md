@@ -1,11 +1,7 @@
 ---
 title: mac 如何使用wget
-tags:
-  - Mac
-id: 541
-categories:
-  - Mac
-  - 工具
+tags: [Mac]
+categories: [Mac,工具]
 date: 2017-01-21 23:38:52
 ---
 

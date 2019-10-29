@@ -1,8 +1,7 @@
 ---
 title: Go-语言要点
 date: 2019-02-27
-categories:
-  - Go
+categories: [Go]
 ---
 
 [TOC]

@@ -1,8 +1,6 @@
 ---
 title: 使用Autolayout xib实现动态高度的TableViewCell
-id: 70
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-06-03 15:27:18
 tags:
 ---

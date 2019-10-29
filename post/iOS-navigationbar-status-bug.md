@@ -1,6 +1,6 @@
 ---
 title: navigationbar status bug
-cagegorys: iOS 
+cagegorys: [iOS] 
 ---
 
 源起：

@@ -1,8 +1,6 @@
 ---
 title: 如何改变xcode 源文件的目录位置
-id: 278
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-01-11 11:10:16
 tags:
 ---

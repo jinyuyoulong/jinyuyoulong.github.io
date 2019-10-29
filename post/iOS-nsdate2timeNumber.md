@@ -1,11 +1,7 @@
 ---
 title: NSDate和时间戳互转
-tags:
-  - NSDate
-  - 时间戳
-id: 185
-categories:
-  - iOS
+tags: [NSDate,时间戳]
+categories: [iOS]
 date: 2015-08-28 16:53:17
 ---
 

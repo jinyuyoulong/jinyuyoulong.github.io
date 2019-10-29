@@ -1,15 +1,7 @@
 ---
 title: mac虚拟机上的centos 7实现ssh连接
-tags:
-  - centos
-  - Mac
-url: 763.html
-id: 763
-categories:
-  - Mac
-  - 其他技术
-  - 工具
-  - 操作系统
+tags: [centos,Mac]
+categories: [Mac,工具,操作系统]
 date: 2018-06-30 08:57:11
 ---
 

@@ -1,9 +1,7 @@
 ---
 title: go 常用命令
 date: 2019-02-15 15:50:32
-tags:
-categories:
-  - Go
+categories: [Go]
 ---
 
 [TOC]

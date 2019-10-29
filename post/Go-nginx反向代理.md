@@ -1,9 +1,7 @@
 ---
 title: "Go Nginx反向代理"
 date: 2019-05-10T16:08:55+08:00
-draft: true
-categories:
-  - Go
+categories: [Go]
 ---
 
 当我们启动一个go 程序的时候，通常监听的是本地端口如 IP:port 。但是实际的线上环境，解析路径是：通过 DNS 解析 ——> nginx vhost ——> IP:port 这个。单纯的使用 go 是不能处理 域名解析工作的。

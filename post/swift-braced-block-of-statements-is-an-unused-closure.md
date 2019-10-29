@@ -1,11 +1,8 @@
 ---
 title: braced block of statements is an unused closure
 id: 330
-categories:
-  - iOS
-  - swift
+categories: [iOS,swift]
 date: 2016-03-01 15:31:45
-tags:
 ---
 
 使用swift写dome时xcode报一下错误：

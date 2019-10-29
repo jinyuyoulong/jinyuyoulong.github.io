@@ -1,11 +1,7 @@
 ---
 title: terminal的显示增加色彩
-tags:
-  - terminal
-url: 682.html
-id: 682
-categories:
-  - Mac
+tags: [terminal]
+categories: [Mac]
 date: 2018-04-04 10:16:29
 ---
 

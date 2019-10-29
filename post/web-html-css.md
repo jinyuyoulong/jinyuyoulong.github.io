@@ -1,12 +1,7 @@
 ---
 title: HTML&CSS
-tags:
-  - css
-  - html
-id: 236
-categories:
-  - other technology其他技术
-  - PHP
+tags: [css,html]
+categories: [Web]
 date: 2015-10-25 17:48:49
 ---
 

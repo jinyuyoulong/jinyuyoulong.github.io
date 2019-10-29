@@ -1,10 +1,7 @@
 ---
 title: Sublime Text3 使用心得
-tags:
-  - Sublime Text
-id: 484
-categories:
-  - 工具
+tags: [Sublime Text]
+categories: [工具]
 date: 2016-09-09 14:45:12
 ---
 

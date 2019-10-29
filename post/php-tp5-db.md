@@ -1,6 +1,7 @@
 ---
 title: tp5 db
 date: 2018-12-18
+categories: [PHP]
 ---
 
 ```mysql

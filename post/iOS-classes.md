@@ -1,8 +1,6 @@
 ---
 title: iOS 各类作用
-id: 27
-categories:
-  - iOS
+categories: [iOS]
 date: 2016-02-16 16:23:17
 tags:
 ---

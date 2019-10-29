@@ -1,11 +1,7 @@
 ---
 title: iOS GCD dispatch barrier
-tags:
-  - GCD
-  - 多线程
-id: 396
-categories:
-  - iOS
+tags: [GCD,多线程]
+categories: [iOS]
 date: 2016-04-15 10:15:25
 ---
 

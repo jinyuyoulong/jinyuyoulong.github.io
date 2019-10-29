@@ -1,9 +1,8 @@
 ---
 title: swiftError
 date: 2016-07-29 11:46:10
-tag: swift
-category: Swift
-id: 15
+tag: [swift]
+categories: [Swift]
 ---
 value of type 'UILable' has no member 'then'
 

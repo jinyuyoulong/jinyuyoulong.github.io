@@ -1,12 +1,7 @@
 ---
 title: mac下nvm 使用记录
-tags:
-  - nodejs
-  - npm
-  - nvm
-id: 575
-categories:
-  - Nodejs
+tags: [nodejs,npm,nvm]
+categories: [Nodejs]
 date: 2017-05-02 10:29:55
 ---
 

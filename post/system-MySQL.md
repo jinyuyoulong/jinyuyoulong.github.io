@@ -1,11 +1,8 @@
 ---
 title: MySQL
 date: 2016-10-21 13:27:06
-tags:
-  - mysql
-categories:
-  - 数据库
-id: 9
+tags: [mysql]
+categories: [数据库]
 ---
 
 ### MYSQL 经常使用tips

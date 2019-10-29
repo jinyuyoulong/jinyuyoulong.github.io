@@ -1,8 +1,7 @@
 ---
 title: 写代码原则整理
 date: 2018-07-07
-tags: 
-  - 开发
+categories: [system]
 ---
 
 

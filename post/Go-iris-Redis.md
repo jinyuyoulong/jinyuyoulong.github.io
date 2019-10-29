@@ -1,8 +1,7 @@
 ---
 title: "Go Iris Redis"
 date: 2019-06-11T10:15:20+08:00
-categories:
-  - Go
+categories: [Go]
 ---
 
 [TOC]

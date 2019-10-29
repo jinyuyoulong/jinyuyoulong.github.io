@@ -1,10 +1,6 @@
 ---
 title: ternimal
-url: 734.html
-id: 734
-categories:
-  - Mac
-  - 工具
+categories: [Mac,工具]
 date: 2018-05-18 08:53:16
 tags:
 ---

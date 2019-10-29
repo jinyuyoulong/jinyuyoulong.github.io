@@ -2,7 +2,7 @@
 title: cocoapods-library-create
 date: 2018-08-15 14:48:36
 Tags: ["cocoapods"]
-Categories: ["Cocoapods"]
+Categories: [工具]
 ---
 
 readme文件如何添加

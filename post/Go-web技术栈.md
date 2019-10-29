@@ -1,9 +1,7 @@
 ---
 title: Go web技术栈
 date: 2019-04-25
-draft: true
-categories:
-  - Go
+categories: [Go]
 ---
 
 - iris 框架
@@ -12,3 +10,4 @@ categories:
 
 - go module 包管理
 
+- gin+gorm / singo

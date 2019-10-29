@@ -1,12 +1,7 @@
 ---
 title: mac下安装composer
-tags:
-  - composer
-  - PHP
-id: 586
-categories:
-  - Mac
-  - PHP
+tags: [composer,PHP]
+categories: [Mac,PHP,工具]
 date: 2017-06-09 03:35:06
 ---
 

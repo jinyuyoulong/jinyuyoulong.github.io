@@ -1,11 +1,7 @@
 ---
 title: WordPress4 如何添加友情链接
-tags:
-  - WordPress
-url: 700.html
-id: 700
-categories:
-  - 其他技术
+tags: [WordPress]
+categories: [blog]
 date: 2018-04-10 03:11:38
 ---
 

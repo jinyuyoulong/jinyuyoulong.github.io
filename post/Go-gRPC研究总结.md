@@ -1,8 +1,7 @@
 ---
 title: Go gRPC研究总结
 date: 2019-04-11
-categories:
-  - Go
+categories: [Go]
 ---
 
 ### 什么是RPC
@@ -11,7 +10,7 @@ RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络�
 
 支持环境配置(Mac)
 
-安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制[protocol buffer](https://juejin.im/post/5b852d476fb9a019e4505873) 
+安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制[Protocol Buffers 3 简明教程](https://juejin.im/post/5b852d476fb9a019e4505873) 
 
 ```protobuf
 brew info protobuf

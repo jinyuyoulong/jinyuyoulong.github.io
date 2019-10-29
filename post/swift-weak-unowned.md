@@ -1,10 +1,8 @@
 ---
 title: weak-unowned
 date: 2016-09-19 18:11:47
-tags:
-- swift
-category: Swift
-id: 17
+tags: [swift]
+categories: [Swift]
 ---
 
 ### swift weak和unowned 的区别

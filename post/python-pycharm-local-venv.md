@@ -1,12 +1,7 @@
 ---
 title: pycharm如何添加 local venv
-tags:
-  - pycharm
-url: 666.html
-id: 666
-categories:
-  - Python
-  - 工具
+tags: [pycharm]
+categories: [Python,工具]
 date: 2018-03-30 03:20:02
 ---
 

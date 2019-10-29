@@ -1,9 +1,7 @@
 ---
 title: "Go Quick Start"
 date: 2019-05-08T15:39:15+08:00
-draft: true
-categories:
-  - Go
+categories: [Go]
 ---
 ## 有经验开发者，快速入门 Go 语言
 

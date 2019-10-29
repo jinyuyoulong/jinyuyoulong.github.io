@@ -1,10 +1,7 @@
 ---
 title: gem 包管理器
-id: 247
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-11-12 15:33:43
-tags:
 ---
 
 gem 常用命令

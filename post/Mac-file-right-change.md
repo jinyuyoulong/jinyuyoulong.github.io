@@ -1,12 +1,7 @@
 ---
 title: mac文件权限修改
-tags:
-  - chmod
-  - terminal
-id: 568
-categories:
-  - Mac
-  - 工具
+tags: [chmod,terminal]
+categories: [工具,system]
 date: 2017-03-13 17:20:42
 ---
 

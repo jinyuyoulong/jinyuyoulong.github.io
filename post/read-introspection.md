@@ -1,10 +1,6 @@
 ---
 title: 三省吾身，日醒三身
-tags:
-  - 三省吾身
-id: 622
-categories:
-  - 日课
+categories: [阅读]
 date: 2017-11-09 16:06:38
 ---
 

@@ -1,8 +1,6 @@
 ---
 title: iOS端App的icon和Launch Image规格实时更新
-id: 99
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-07-14 17:45:49
 tags:
 ---

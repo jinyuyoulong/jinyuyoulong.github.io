@@ -1,10 +1,7 @@
 ---
 title: 'Swift与Objective-C的兼容方法:@objc和Dynamic'
-id: 440
-categories:
-  - swift
+categories: [swift]
 date: 2016-06-07 10:02:09
-tags:
 ---
 
 Swift必须考虑与Objective-C的兼容。

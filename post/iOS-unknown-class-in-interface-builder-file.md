@@ -1,10 +1,7 @@
 ---
 title: Unknown Class **** in Interface Builder file
-id: 181
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-08-24 10:44:12
-tags:
 ---
 
 I added a UIView xib file using the root class of&nbsp;`MyView`.

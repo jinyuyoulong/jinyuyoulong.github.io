@@ -1,8 +1,6 @@
 ---
 title: iOS如何判断应用是否开启摄像头权限
-id: 76
-categories:
-  - iOS
+categories: [iOS]
 date: 2015-06-19 11:25:28
 tags:
 ---

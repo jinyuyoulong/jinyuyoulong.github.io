@@ -1,8 +1,7 @@
 ---
 title: Go JSON
 data: 2019-03-05
-categories:
-  - Go
+categories: [Go]
 ---
 
 

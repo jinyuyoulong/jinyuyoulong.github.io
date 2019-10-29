@@ -1,6 +1,7 @@
 ---
 title: PHP 命名空间 namespace
 date: 2018-11-12
+categories: [PHP]
 ---
 
 

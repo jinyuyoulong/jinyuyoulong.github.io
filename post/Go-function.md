@@ -2,8 +2,7 @@
 title: Go的函数 结构体
 date: 2019-02-17 21:15:19
 tags:
-categories:
-  - Go
+categories: [Go]
 ---
 
 ```go

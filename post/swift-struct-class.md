@@ -1,10 +1,7 @@
 ---
 title: struct 和class的区别
-tags:
-  - struct
-id: 470
-categories:
-  - swift
+tags: [struct]
+categories: [swift]
 date: 2016-08-15 15:58:34
 ---
 

@@ -1,8 +1,6 @@
 ---
 title: flex属性
-id: 385
-categories:
-  - web前端
+categories: [web]
 date: 2016-04-08 10:56:38
 tags:
 ---

@@ -1,11 +1,8 @@
 ---
 title: "Nginx 动态生成缩略图"
 date: 2019-07-01T15:05:09+08:00
-categories:
-  "system"
-tags:
-  - nginx
-  - PHP
+categories: [system]
+tags: [nginx,PHP]
 ---
 
 [TOC]
