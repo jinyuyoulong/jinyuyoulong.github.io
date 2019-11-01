@@ -3,8 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.v5u.win/categories/archives/</loc>
+    <lastmod>2019-11-01T11:21:46+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.v5u.win/categories/</loc>
-    <lastmod>2019-10-30T06:15:11+00:00</lastmod>
+    <lastmod>2019-11-01T11:21:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.v5u.win/</loc>
+    <lastmod>2019-11-01T11:21:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.v5u.win/archives/</loc>
+    <lastmod>2019-11-01T11:21:46+08:00</lastmod>
   </url>
   
   <url>
@@ -19,11 +34,6 @@
   
   <url>
     <loc>https://blog.v5u.win/posts/</loc>
-    <lastmod>2019-10-30T06:15:11+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.v5u.win/</loc>
     <lastmod>2019-10-30T06:15:11+00:00</lastmod>
   </url>
   
@@ -198,12 +208,12 @@
   </url>
   
   <url>
-    <loc>https://blog.v5u.win/tags/swift/</loc>
+    <loc>https://blog.v5u.win/categories/swift/</loc>
     <lastmod>2019-07-16T06:05:05+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.v5u.win/categories/swift/</loc>
+    <loc>https://blog.v5u.win/tags/swift/</loc>
     <lastmod>2019-07-16T06:05:05+00:00</lastmod>
   </url>
   

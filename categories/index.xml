@@ -6,10 +6,19 @@
     <description>Recent content in Categories on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 30 Oct 2019 06:15:11 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Nov 2019 11:21:46 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Archives</title>
+      <link>https://blog.v5u.win/categories/archives/</link>
+      <pubDate>Fri, 01 Nov 2019 11:21:46 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/categories/archives/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Go</title>
