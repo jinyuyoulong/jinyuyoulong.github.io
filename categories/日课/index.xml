@@ -6,90 +6,216 @@
     <description>Recent content in 日课 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 19 Apr 2018 09:38:27 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 May 2019 07:11:51 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Mac OS X 背后的故事读后感</title>
+      <link>https://blog.v5u.win/mac-os-x-%E8%83%8C%E5%90%8E%E7%9A%84%E6%95%85%E4%BA%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+      <pubDate>Thu, 16 May 2019 07:11:51 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/mac-os-x-%E8%83%8C%E5%90%8E%E7%9A%84%E6%95%85%E4%BA%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+      <description>早上在“知识小集”发现了一篇《Mac OS X 背后的故事二》，非常喜欢非常感兴趣，于是往前找第一篇，发现了全文的链接，从地铁上开始，到下午共计4个</description>
+    </item>
+    
+    <item>
+      <title>2018-年终总结</title>
+      <link>https://blog.v5u.win/2018-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sat, 29 Dec 2018 07:07:56 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/2018-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+      <description>做个复盘 TODO： &amp;#8211; 年初购买了齐俊杰的粉丝圈和读书圈，坚持读书和学习投资知识，持续时间半年，断续时间一年。 &amp;#8211; 今年的读完的书有：正书：《指数基</description>
+    </item>
+    
+    <item>
+      <title>解读一富爸爸现金流游戏</title>
+      <link>https://blog.v5u.win/%E8%A7%A3%E8%AF%BB%E4%B8%80%E5%AF%8C%E7%88%B8%E7%88%B8%E7%8E%B0%E9%87%91%E6%B5%81%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Mon, 10 Dec 2018 06:20:40 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E8%A7%A3%E8%AF%BB%E4%B8%80%E5%AF%8C%E7%88%B8%E7%88%B8%E7%8E%B0%E9%87%91%E6%B5%81%E6%B8%B8%E6%88%8F/</guid>
+      <description>来自:&amp;nbsp;船长(富爸爸现金流俱乐部)&amp;nbsp;2012-04-13 21:13:58 首先，在开始现金流游戏之前，你要明确自己的目的。虽然这个产品被</description>
+    </item>
+    
+    <item>
+      <title>对富爸爸系列的批判性阅读！</title>
+      <link>https://blog.v5u.win/%E5%AF%B9%E5%AF%8C%E7%88%B8%E7%88%B8%E7%B3%BB%E5%88%97%E7%9A%84%E6%89%B9%E5%88%A4%E6%80%A7%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Mon, 10 Dec 2018 06:14:20 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%AF%B9%E5%AF%8C%E7%88%B8%E7%88%B8%E7%B3%BB%E5%88%97%E7%9A%84%E6%89%B9%E5%88%A4%E6%80%A7%E9%98%85%E8%AF%BB/</guid>
+      <description>声明：本文由ydy135原创，请尊重作者劳动，如需转载，请注明作者和出处。&amp;nbsp; 来这里的朋友应该对富爸爸系列不会陌生，但真正把富爸爸系</description>
+    </item>
+    
+    <item>
+      <title>让我们安静的等待黎明的到来-艾青</title>
+      <link>https://blog.v5u.win/%E8%AE%A9%E6%88%91%E4%BB%AC%E5%AE%89%E9%9D%99%E7%9A%84%E7%AD%89%E5%BE%85%E9%BB%8E%E6%98%8E%E7%9A%84%E5%88%B0%E6%9D%A5-%E8%89%BE%E9%9D%92/</link>
+      <pubDate>Mon, 10 Dec 2018 05:08:32 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E8%AE%A9%E6%88%91%E4%BB%AC%E5%AE%89%E9%9D%99%E7%9A%84%E7%AD%89%E5%BE%85%E9%BB%8E%E6%98%8E%E7%9A%84%E5%88%B0%E6%9D%A5-%E8%89%BE%E9%9D%92/</guid>
+      <description>请你告诉他们 说他们所等待的已经要来 说我已踏着露水而来 已借着最后一颗星的照引而来 我从东方来 从汹涌着波涛的还上来 我将带光明给世界 又将带温暖给人来</description>
+    </item>
+    
+    <item>
+      <title>thinkPHP5.0 学习总结感悟</title>
+      <link>https://blog.v5u.win/thinkphp5-0-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%E6%84%9F%E6%82%9F/</link>
+      <pubDate>Thu, 15 Nov 2018 09:24:57 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/thinkphp5-0-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%E6%84%9F%E6%82%9F/</guid>
+      <description>thinkPHP5.0 学习总结感悟 免费的是最贵的，学习使用文档和手册，学习效率低下——改用优秀视频后，效果显著，如果使用付费内容想必效果会更好，参考买的《数据结</description>
+    </item>
+    
+    <item>
+      <title>鸭子定律</title>
+      <link>https://blog.v5u.win/%E9%B8%AD%E5%AD%90%E5%AE%9A%E5%BE%8B/</link>
+      <pubDate>Fri, 02 Nov 2018 02:50:06 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E9%B8%AD%E5%AD%90%E5%AE%9A%E5%BE%8B/</guid>
+      <description>鸭子定律 定律1 如果走路像鸭子、说话像鸭子、长得像鸭子、啄食也像鸭子，那它肯定就是一只鸭子。 重述：事物的外在特征就是事物本质的表现。 定律2 即使</description>
+    </item>
+    
+    <item>
       <title>古代读书人的学习流程</title>
-      <link>https://blog.v5u.win/post/life-%E5%8F%A4%E4%BB%A3%E8%AF%BB%E4%B9%A6%E4%BA%BA%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%B5%81%E7%A8%8B/</link>
+      <link>https://blog.v5u.win/%E5%8F%A4%E4%BB%A3%E8%AF%BB%E4%B9%A6%E4%BA%BA%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%B5%81%E7%A8%8B/</link>
       <pubDate>Thu, 19 Apr 2018 09:38:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/life-%E5%8F%A4%E4%BB%A3%E8%AF%BB%E4%B9%A6%E4%BA%BA%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%B5%81%E7%A8%8B/</guid>
+      <guid>https://blog.v5u.win/%E5%8F%A4%E4%BB%A3%E8%AF%BB%E4%B9%A6%E4%BA%BA%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%B5%81%E7%A8%8B/</guid>
       <description>我内亲一家是清代有名的科举世家，从清初到晚清，号称“代有闻人”，十代九进士。他们家在晚清留下过一张单子，大概就是所谓家学流程。单子虽然不方便</description>
     </item>
     
     <item>
-      <title>注、疏、解、记、典、经、传</title>
-      <link>https://blog.v5u.win/post/life-%E5%8F%A4%E4%BB%A3%E4%B9%A6%E5%90%8D%E7%9A%84%E5%90%AB%E4%B9%89/</link>
-      <pubDate>Tue, 17 Apr 2018 09:18:10 +0000</pubDate>
+      <title>藏酒</title>
+      <link>https://blog.v5u.win/%E8%97%8F%E9%85%92/</link>
+      <pubDate>Sat, 07 Apr 2018 13:09:36 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/life-%E5%8F%A4%E4%BB%A3%E4%B9%A6%E5%90%8D%E7%9A%84%E5%90%AB%E4%B9%89/</guid>
-      <description>古文考据，遣词造句。 （一）传注类（诂、训、传、注、笺等） 1.诂、训这两个名称，笼统说来没有什么区别，凡侧重于字词、名物解释的，一般称作“诂”</description>
+      <guid>https://blog.v5u.win/%E8%97%8F%E9%85%92/</guid>
+      <description>操作： 容器：陶罐/瓷罐（结构致密不漏，略有微孔，小分子可以渗透） 温度：3-23°C（维持微生物的活性：冬天冰点以上，夏天不可暴晒） 避光：直射</description>
+    </item>
+    
+    <item>
+      <title>范蠡传</title>
+      <link>https://blog.v5u.win/%E8%8C%83%E8%A0%A1%E4%BC%A0/</link>
+      <pubDate>Mon, 19 Mar 2018 08:19:12 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E8%8C%83%E8%A0%A1%E4%BC%A0/</guid>
+      <description>分事略记 学艺 范蠡生卒约为孔子同时期，出身贫寒。父母早亡，由哥嫂扶养成人。范蠡小时天资聪慧，博闻强识，喜读书，抱负大，不喜耕作，众乡邻不齿。范</description>
+    </item>
+    
+    <item>
+      <title>三省吾身，日醒三身</title>
+      <link>https://blog.v5u.win/%E4%B8%89%E7%9C%81%E5%90%BE%E8%BA%AB%E6%97%A5%E9%86%92%E4%B8%89%E8%BA%AB/</link>
+      <pubDate>Thu, 09 Nov 2017 16:06:38 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E4%B8%89%E7%9C%81%E5%90%BE%E8%BA%AB%E6%97%A5%E9%86%92%E4%B8%89%E8%BA%AB/</guid>
+      <description>孩子，中国人常说三省吾身，指的是每天自我审视三次，也就是我跟你提到的复盘，可如果方向错了，审视的思路不对，再多的次数那也是无用，所以我们佛家</description>
     </item>
     
     <item>
       <title>二十四种常见的逻辑谬误</title>
-      <link>https://blog.v5u.win/post/life-24-logic-error/</link>
-      <pubDate>Tue, 07 Feb 2017 13:52:49 +0000</pubDate>
+      <link>https://blog.v5u.win/%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E9%80%BB%E8%BE%91%E8%B0%AC%E8%AF%AF/</link>
+      <pubDate>Tue, 07 Feb 2017 05:52:49 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/life-24-logic-error/</guid>
-      <description>二十四种常见的逻辑谬误 第一条：稻草人 第二条：错误归因 第三条：诉诸感情 第四条：谬误谬误 第五条：滑坡谬误 第六条：人身攻击 第七条：诉诸虚伪 第八条：</description>
+      <guid>https://blog.v5u.win/%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84%E9%80%BB%E8%BE%91%E8%B0%AC%E8%AF%AF/</guid>
+      <description>二十四种常见的逻辑谬误 第一条：稻草人&amp;lt;br /&amp;gt; 第二条：错误归因&amp;lt;br /&amp;gt; 第三条：诉诸感情&amp;lt;br /&amp;gt; 第四条：谬误谬误&amp;lt;br /&amp;gt;</description>
     </item>
     
     <item>
       <title>IT公司项目实现流程</title>
-      <link>https://blog.v5u.win/post/business-it%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B/</link>
-      <pubDate>Mon, 21 Nov 2016 10:29:52 +0000</pubDate>
+      <link>https://blog.v5u.win/it%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Mon, 21 Nov 2016 02:29:52 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/business-it%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B/</guid>
+      <guid>https://blog.v5u.win/it%E5%85%AC%E5%8F%B8%E9%A1%B9%E7%9B%AE%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B/</guid>
       <description>注册公司，注册账号和其他所需资料（apple账号，第三方平台账号，合作平台资料） 市场调查，验证idea 项目立项，搜集需求 设计UE，确定需求 需</description>
     </item>
     
     <item>
-      <title>资深程序员是如何用五年时间攒够100万的--阅后总结</title>
-      <link>https://blog.v5u.win/post/life-%E8%B5%84%E6%B7%B1%E7%A8%8B%E5%BA%8F%E5%91%98%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8%E4%BA%94%E5%B9%B4%E6%97%B6%E9%97%B4%E6%94%92%E5%A4%9F100%E4%B8%87%E7%9A%84-%E9%98%85%E5%90%8E%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Wed, 24 Feb 2016 15:37:17 +0000</pubDate>
+      <title>如何选择编程语言</title>
+      <link>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Wed, 19 Oct 2016 02:20:13 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/life-%E8%B5%84%E6%B7%B1%E7%A8%8B%E5%BA%8F%E5%91%98%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8%E4%BA%94%E5%B9%B4%E6%97%B6%E9%97%B4%E6%94%92%E5%A4%9F100%E4%B8%87%E7%9A%84-%E9%98%85%E5%90%8E%E6%80%BB%E7%BB%93/</guid>
-      <description>资深程序员是如何用五年时间攒够100万的&amp;ndash;阅后总结 做好职业规划，先选职位，再选行业，最后是公司 内省：职业已选 iOS开发，行业未选</description>
+      <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
+      <description>学习某个技能，不是单纯为了哪个技能更有前途，而是因为以下几种原因： 解决问题需要用到他； 自己在这方面有天赋能很快的掌握它，技不压身； 学习他能获</description>
+    </item>
+    
+    <item>
+      <title>如何进入ghostblog的管理面板</title>
+      <link>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E8%BF%9B%E5%85%A5ghostblog%E7%9A%84%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/</link>
+      <pubDate>Mon, 04 Jul 2016 06:39:44 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E8%BF%9B%E5%85%A5ghostblog%E7%9A%84%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/</guid>
+      <description>在域名后面加上/ghost 进入网站空间下的ghost路径下就行</description>
+    </item>
+    
+    <item>
+      <title>资深程序员是如何用五年时间攒够100万的–阅后总结</title>
+      <link>https://blog.v5u.win/%E8%B5%84%E6%B7%B1%E7%A8%8B%E5%BA%8F%E5%91%98%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8%E4%BA%94%E5%B9%B4%E6%97%B6%E9%97%B4%E6%94%92%E5%A4%9F100%E4%B8%87%E7%9A%84-%E9%98%85%E5%90%8E%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 24 Feb 2016 07:37:17 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E8%B5%84%E6%B7%B1%E7%A8%8B%E5%BA%8F%E5%91%98%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8%E4%BA%94%E5%B9%B4%E6%97%B6%E9%97%B4%E6%94%92%E5%A4%9F100%E4%B8%87%E7%9A%84-%E9%98%85%E5%90%8E%E6%80%BB%E7%BB%93/</guid>
+      <description>资深程序员是如何用五年时间攒够100万的&amp;#8211;阅后总结 做好职业规划，先选职位，再选行业，最后是公司 内省：职业已选 iOS开发，行业未选</description>
+    </item>
+    
+    <item>
+      <title>iOS创建.a静态库文件</title>
+      <link>https://blog.v5u.win/ios%E5%88%9B%E5%BB%BA-a%E9%9D%99%E6%80%81%E5%BA%93%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Mon, 22 Feb 2016 08:01:04 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/ios%E5%88%9B%E5%BB%BA-a%E9%9D%99%E6%80%81%E5%BA%93%E6%96%87%E4%BB%B6/</guid>
+      <description>步骤： 1.创建项目（选择Framework&amp;amp;Library） 2.删除无用文件，加入希望编译的文件 3.edit scheme &amp;#8211;&amp;gt;release 4.编译真机平台文件：选择io</description>
     </item>
     
     <item>
       <title>国内三大免费空间提供商各自的特点</title>
-      <link>https://blog.v5u.win/post/business-%E5%9B%BD%E5%86%85%E4%B8%89%E5%A4%A7%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4%E6%8F%90%E4%BE%9B%E5%95%86%E5%90%84%E8%87%AA%E7%9A%84%E7%89%B9%E7%82%B9/</link>
-      <pubDate>Mon, 15 Feb 2016 11:51:02 +0000</pubDate>
+      <link>https://blog.v5u.win/%E5%9B%BD%E5%86%85%E4%B8%89%E5%A4%A7%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4%E6%8F%90%E4%BE%9B%E5%95%86%E5%90%84%E8%87%AA%E7%9A%84%E7%89%B9%E7%82%B9/</link>
+      <pubDate>Mon, 15 Feb 2016 03:51:02 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/business-%E5%9B%BD%E5%86%85%E4%B8%89%E5%A4%A7%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4%E6%8F%90%E4%BE%9B%E5%95%86%E5%90%84%E8%87%AA%E7%9A%84%E7%89%B9%E7%82%B9/</guid>
+      <guid>https://blog.v5u.win/%E5%9B%BD%E5%86%85%E4%B8%89%E5%A4%A7%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4%E6%8F%90%E4%BE%9B%E5%95%86%E5%90%84%E8%87%AA%E7%9A%84%E7%89%B9%E7%82%B9/</guid>
       <description>主机屋： 特点：主要面向国内市场 主机屋是北京爱迪通联科技有限公司旗下网络服务品牌，是中国领先的互联网服务提供 商。公司致力于为大众提供最优质的互</description>
     </item>
     
     <item>
-      <title>孔曰成仁，孟曰取义出处</title>
-      <link>https://blog.v5u.win/post/life-%E5%AD%94%E6%9B%B0%E6%88%90%E4%BB%81%E5%AD%9F%E6%9B%B0%E5%8F%96%E4%B9%89%E5%87%BA%E5%A4%84/</link>
-      <pubDate>Wed, 23 Dec 2015 12:15:29 +0000</pubDate>
+      <title>编程原则-参数处理</title>
+      <link>https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99-%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sun, 14 Feb 2016 04:03:13 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/life-%E5%AD%94%E6%9B%B0%E6%88%90%E4%BB%81%E5%AD%9F%E6%9B%B0%E5%8F%96%E4%B9%89%E5%87%BA%E5%A4%84/</guid>
+      <guid>https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99-%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86/</guid>
+      <description>参数处理原则 软件开发过程当中，需要传递数据作为参数，很多时候我们需要的数据是要经过处理的，这时作为参数传递的部分尽量传递源数据，数据处理放在</description>
+    </item>
+    
+    <item>
+      <title>孔曰成仁，孟曰取义出处</title>
+      <link>https://blog.v5u.win/%E5%AD%94%E6%9B%B0%E6%88%90%E4%BB%81%E5%AD%9F%E6%9B%B0%E5%8F%96%E4%B9%89%E5%87%BA%E5%A4%84/</link>
+      <pubDate>Wed, 23 Dec 2015 04:15:29 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%AD%94%E6%9B%B0%E6%88%90%E4%BB%81%E5%AD%9F%E6%9B%B0%E5%8F%96%E4%B9%89%E5%87%BA%E5%A4%84/</guid>
       <description>文天祥就义前的绝笔中写道： “孔曰成仁，孟曰取义，唯其义尽，所以仁至。读圣贤书，所学何事？而今而后，庶几无愧。”</description>
     </item>
     
     <item>
-      <title>mac 文件如何校验</title>
-      <link>https://blog.v5u.win/post/mac-file-check/</link>
-      <pubDate>Thu, 17 Dec 2015 11:08:37 +0000</pubDate>
+      <title>儒道至圣</title>
+      <link>https://blog.v5u.win/%E5%84%92%E9%81%93%E8%87%B3%E5%9C%A3/</link>
+      <pubDate>Mon, 21 Dec 2015 07:19:40 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-file-check/</guid>
+      <guid>https://blog.v5u.win/%E5%84%92%E9%81%93%E8%87%B3%E5%9C%A3/</guid>
+      <description>该书文笔很好，构思巧妙，值得一读。 以下为该书简介： 这是一个读书人掌握天地之力的世界。 才气在身，诗可杀敌，词能灭军，文章安天下。 秀才提笔，纸上</description>
+    </item>
+    
+    <item>
+      <title>mac 文件如何校验</title>
+      <link>https://blog.v5u.win/mac-%E6%96%87%E4%BB%B6%E5%A6%82%E4%BD%95%E6%A0%A1%E9%AA%8C/</link>
+      <pubDate>Thu, 17 Dec 2015 03:08:37 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/mac-%E6%96%87%E4%BB%B6%E5%A6%82%E4%BD%95%E6%A0%A1%E9%AA%8C/</guid>
       <description>mac 自带文件校验工具，已经内置在终端(Terminal)下了 输入md5 空格后面加上要校验的文件路径（将文件拖到Terminal窗口就行）回车 或</description>
     </item>
     
     <item>
-      <title>ViewController 界面的推出调用时间</title>
-      <link>https://blog.v5u.win/post/ios-viewcontroller-push-time/</link>
-      <pubDate>Tue, 13 Oct 2015 10:22:27 +0000</pubDate>
+      <title>入定法门</title>
+      <link>https://blog.v5u.win/%E5%85%A5%E5%AE%9A%E6%B3%95%E9%97%A8/</link>
+      <pubDate>Thu, 09 Apr 2015 01:41:15 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-viewcontroller-push-time/</guid>
-      <description>ViewController 界面的推出，是在ViewDidLoad方法运行之后才被推出的， 所以说，ViewWillAppear和ViewDidAppear 是在View</description>
+      <guid>https://blog.v5u.win/%E5%85%A5%E5%AE%9A%E6%B3%95%E9%97%A8/</guid>
+      <description>中国人讲究打坐入定，现在则流行瑜伽冥想，名 不同，而 实 不异。 以下为道家的入定法门： 心如止水无波，太虚无云，一寂然不动之境，然玄开一窍之中。存定</description>
     </item>
     
   </channel>

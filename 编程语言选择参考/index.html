@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>编程语言选择参考 | 为吾优</title>
+    <meta property="og:title" content="编程语言选择参考 - 为吾优">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-03-21T05:59:52&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-03-21T05:59:52&#43;08:00">
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="编程语言选择参考">
+        <meta name="author" content="fan">
+        
+    <meta property="og:url" content="https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E9%80%89%E6%8B%A9%E5%8F%82%E8%80%83/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://blog.v5u.win">首页</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">编程语言选择参考</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年3月21日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/nodejs">Nodejs</a></span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80">编程语言</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
+
+<p>编程语言选择参考</p>
+
+<p>[TOC]</p>
+
+<h3 id="包和模块管理">包和模块管理</h3>
+
+<ul>
+<li>依赖包多版本管理
+
+<ul>
+<li>python 不能直接管理，需要利用 virtualenv来分割不同的环境</li>
+<li>nodejs NPM 包管理，可以同时依赖不同版本的第三方模块</li>
+</ul></li>
+<li>引入模块
+
+<ul>
+<li>python 使用 from / import，不同模块同名不好区分</li>
+<li>nodejs 模块引入的其他模块在本模块内都有局部有效的名字</li>
+</ul></li>
+
+<li><p>导出模块</p>
+
+<ul>
+<li><p>python</p></li>
+
+<li><p>nodejs 直接向 exports 中添加属性，或向 module.exports 赋值即可，非语言级别，而是普通操作</p></li>
+</ul></li>
+</ul>
+
+<h2 id="语言本身">语言本身</h2>
+
+<ul>
+<li>版本统一性
+
+<ul>
+<li>python 2,3不兼容</li>
+<li>nodejs 版本兼容</li>
+</ul></li>
+<li>语法
+
+<ul>
+<li>python 的确比较精炼清晰，丰富的数据结构，各种运算符代替函数，有丰富的语法糖</li>
+<li>nodejs 语言是 javascript，核心更为精简，数据结构和数据处理比较简陋。</li>
+</ul></li>
+<li>灵活性
+
+<ul>
+<li>javascript 基于 prototype 的继承灵活</li>
+<li>nodejs 基于事件的处理使得处处是钩子和扩展点</li>
+</ul></li>
+<li>可hack性
+
+<ul>
+<li>python 不容易 hack</li>
+<li>javascript 非常容易hack</li>
+</ul></li>
+</ul>
+
+<h2 id="性能">性能</h2>
+
+<ul>
+<li>都是解释性语言
+
+<ul>
+<li>python 无JIT</li>
+<li>nodejs v8 可以 JIT 执行 javascript，性能要更好</li>
+</ul></li>
+<li>并发模型
+
+<ul>
+<li>python 需要多线程编程</li>
+<li>nodejs 异步I/O读磁盘数据，做非CPU(计算)密集型应用高效</li>
+</ul></li>
+</ul>
+
+<h2 id="开发质量和效率">开发质量和效率</h2>
+
+<ul>
+<li>都是解释性语言
+
+<ul>
+<li>都无法再编译期进行各种检查</li>
+<li>nodejs 有 javascript 语言的格式和语法检查器</li>
+<li>可以采用 coffee-script 开发 javascript，吸收了大量的 python 语法糖</li>
+<li>build system</li>
+<li>nodejs 有完整的build system(grunt/gulp)</li>
+<li>nodejs web 开发资源的高于 python</li>
+</ul></li>
+</ul>
+
+<h2 id="学习成本">学习成本</h2>
+
+<ul>
+<li>解释型语言都不难</li>
+</ul>
+
+<h2 id="异步编程框架比较">异步编程框架比较</h2>
+
+<ul>
+<li>javascript 的 nodejs 和 python 的 tornado 比较</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>角度</th>
+<th>nodejs (javascript)</th>
+<th>tornado (python)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>语言本身性能</td>
+<td>v8引擎性能很好</td>
+<td>python 解释器性能较差</td>
+</tr>
+
+<tr>
+<td>IO性能</td>
+<td>使用epoll等高效IO机制，性能好</td>
+<td>使用epoll等高效IO机制，性能好</td>
+</tr>
+
+<tr>
+<td>生态圈</td>
+<td>nodejs各个版本和外围模块版本匹配好</td>
+<td>python存在各种版本的兼容性问题， 也不易集成第三方模块</td>
+</tr>
+
+<tr>
+<td>跨平台</td>
+<td>nodejs在x86/arm/power/sparc都支持</td>
+<td>python 由于大量使用c/c++模块，跨平台较差</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="其他类似点">其他类似点</h2>
+
+<table>
+<thead>
+<tr>
+<th>方面</th>
+<th>nodejs (javascript)</th>
+<th>tornado (python)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>包管理器</td>
+<td>npm</td>
+<td>pip</td>
+</tr>
+
+<tr>
+<td>平台多版本管理器</td>
+<td>n</td>
+<td>virtualenv</td>
+</tr>
+
+<tr>
+<td>进程监控器</td>
+<td>pm2</td>
+<td>supervisor</td>
+</tr>
+</tbody>
+</table>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/mysql8/">MySQL8</a></li>
+        
+        <li><a href="/mac%E4%B8%AD%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDpkg%E5%8C%85/">mac中如何卸载pkg包</a></li>
+        
+        <li><a href="/lnmp-%E8%B7%A8%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E8%AE%BE%E7%BD%AE/">LNMP 跨目录访问权限设置</a></li>
+        
+        <li><a href="/iris-mvc%E6%9E%B6%E6%9E%84%E7%9A%84%E7%9B%AE%E5%BD%95%E6%8B%86%E8%A7%A3/">iris-mvc架构的目录拆解</a></li>
+        
+        <li><a href="/go-iris-%E6%9C%8D%E5%8A%A1%E5%99%A8-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%8E%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/">go iris 服务器 性能优化与性能对比</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/epoll/" title="epoll">epoll</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/cgo/" title="CGO">CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/gofmt/" title="Gofmt">Gofmt</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" title="Go Bazel构建工具">Go Bazel构建工具</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/etcd/" title="etcd">etcd</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(51)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(20)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(19)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(10)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">其他技术(35)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%8D%81%E4%B8%87%E4%B8%AA%E4%B8%BA%E4%BB%80%E4%B9%88/">十万个为什么(10)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(30)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%97%E6%96%87/">诗文(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(20)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93/">道(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/">错误集锦(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/apple/">apple</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/const/">const</a>
+    
+    <a href="https://blog.v5u.win/tags/crontab/">crontab</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/define/">define</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/flutter/">flutter</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E8%80%83%E5%8F%A4/">it考古</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E9%BB%91%E8%AF%9D/">it黑话</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/mardown/">mardown</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongo/">mongo</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/node/">node</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nstimer/">nstimer</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/orm/">orm</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/skecth/">skecth</a>
+    
+    <a href="https://blog.v5u.win/tags/sqlite/">sqlite</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/toml/">toml</a>
+    
+    <a href="https://blog.v5u.win/tags/ui/">ui</a>
+    
+    <a href="https://blog.v5u.win/tags/uicollectionview/">uicollectionview</a>
+    
+    <a href="https://blog.v5u.win/tags/uiimagepickerviewcontroller/">uiimagepickerviewcontroller</a>
+    
+    <a href="https://blog.v5u.win/tags/uiscrollview/">uiscrollview</a>
+    
+    <a href="https://blog.v5u.win/tags/uitableview/">uitableview</a>
+    
+    <a href="https://blog.v5u.win/tags/unowned/">unowned</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/weak/">weak</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/workspace/">workspace</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode7/">xcode7</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%89%E7%9C%81%E5%90%BE%E8%BA%AB/">三省吾身</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4/">免费空间</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8E%A7%E4%BB%B6/">控件</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%94%B6%E8%97%8F/">收藏</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%97%E6%96%87/">诗文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/">返回顶部</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/">进程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%81%93/">道</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+</body>
+</html>

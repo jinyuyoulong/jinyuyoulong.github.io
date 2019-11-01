@@ -6,18 +6,99 @@
     <description>Recent content in web前端 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 08 Apr 2016 14:29:04 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 May 2019 03:18:37 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>react JS style样式设置总结</title>
-      <link>https://blog.v5u.win/post/web-react-js-style-collection/</link>
-      <pubDate>Fri, 08 Apr 2016 14:29:04 +0000</pubDate>
+      <title>markdown 常用语法整理</title>
+      <link>https://blog.v5u.win/markdown-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/</link>
+      <pubDate>Fri, 10 May 2019 03:18:37 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/web-react-js-style-collection/</guid>
-      <description>const styles = StyleSheet.create({ style_0:{ flex:1, borderColor: &#39;red&#39;, borderWidth:1, }, &amp;amp;lt;View style={styles.style_0}&amp;amp;gt; &amp;amp;lt;View style={[styles.view, styles.center]}&amp;amp;gt;&amp;amp;lt;Text&amp;amp;gt;自由摆放&amp;amp;lt;/</description>
+      <guid>https://blog.v5u.win/markdown-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/</guid>
+      <description>Text &amp;lt; h1&amp;gt; 1级标题 &amp;lt; h1&amp;gt; Text &amp;lt; h2&amp;gt; 2级标题 &amp;lt; h2&amp;gt; Text &amp;lt; h3&amp;gt; 3级标题 &amp;lt; h3&amp;gt; Text &amp;lt; h4&amp;gt; 4级标题 &amp;lt; h4&amp;gt; Text &amp;lt; h5&amp;gt; 5级标题 &amp;lt; h5&amp;gt; Text &amp;lt; h6&amp;gt; 6级标题 &amp;lt; h6&amp;gt; 有序列表 ul&amp;gt;li 有 序 无序列表 ol&amp;gt;li 无 序 任务</description>
+    </item>
+    
+    <item>
+      <title>markdown 流程图</title>
+      <link>https://blog.v5u.win/markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <pubDate>Thu, 09 May 2019 05:31:31 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+      <description>Sequence Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks! flow st=&amp;gt;start: Start op=&amp;gt;operation: Your Operation cond=&amp;gt;condition: Yes or No? e=&amp;gt;end st-&amp;gt;op-&amp;gt;cond cond(yes)-&amp;gt;e cond(no)-&amp;gt;op mermaid Gantt</description>
+    </item>
+    
+    <item>
+      <title>hexo</title>
+      <link>https://blog.v5u.win/hexo/</link>
+      <pubDate>Wed, 16 Jan 2019 05:52:02 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/hexo/</guid>
+      <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new &amp;#8220;文章名&amp;#8221; 创建</description>
+    </item>
+    
+    <item>
+      <title>如何进入ghostblog的管理面板</title>
+      <link>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E8%BF%9B%E5%85%A5ghostblog%E7%9A%84%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF-2/</link>
+      <pubDate>Wed, 16 Jan 2019 05:32:49 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E8%BF%9B%E5%85%A5ghostblog%E7%9A%84%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF-2/</guid>
+      <description>* *title: 如何进入ghostblog的管理面板 id: 442 categories: &amp;#8211; blog &amp;#8211; ghostblog date: 2016-07-04 14:39:44 tags: 在域名后面加上/ghost 进入网站空间下的ghost路径下就行</description>
+    </item>
+    
+    <item>
+      <title>chrome 调试</title>
+      <link>https://blog.v5u.win/chrome-%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Wed, 16 Jan 2019 03:43:41 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/chrome-%E8%B0%83%E8%AF%95/</guid>
+      <description>* *title: chrome 调试 date: 2018-11-08 chrome 调试 keyword: workspace,breakpoints 将调试代码文件添加到Chrome 的Workspace中：Sources&amp;#8211;&amp;gt;filesystem&amp;#</description>
+    </item>
+    
+    <item>
+      <title>scrapy</title>
+      <link>https://blog.v5u.win/scrapy/</link>
+      <pubDate>Wed, 16 Jan 2019 03:29:12 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/scrapy/</guid>
+      <description>scrapy 使用总结 scrapy crawl m530pcrawl会去搜搜cmd目录下的scrapy.cfg 有些Scrapy命令(比如 crawl)要求必须在Scrapy项目</description>
+    </item>
+    
+    <item>
+      <title>jekyll using standards 使用规范</title>
+      <link>https://blog.v5u.win/jekyll-using-standards-%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Wed, 16 Jan 2019 03:11:57 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/jekyll-using-standards-%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/</guid>
+      <description>* *layout: default title: jekyll using standards 使用规范 categories: [jekyll github markdown rouge] date: 2016-9-3 15:47:05 excerpt: &amp;#8220;本文摘要&amp;#8221; # 覆盖清掉文章的摘要 pid: &amp;#8220;1&amp;#8221; # 新建一个pid的字符串变量 published: true #是否发</description>
+    </item>
+    
+    <item>
+      <title>个人网站是否需要备案</title>
+      <link>https://blog.v5u.win/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%A4%87%E6%A1%88/</link>
+      <pubDate>Wed, 16 Jan 2019 03:03:31 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%A4%87%E6%A1%88/</guid>
+      <description>ShunYea初期制作，我觉得可以考虑国外，可以避免上述很多问题，否则你是娱乐性网站，估计又要涉及很多前置审批的问题。 举个例子，多年前办过一</description>
+    </item>
+    
+    <item>
+      <title>react JS style样式设置总结</title>
+      <link>https://blog.v5u.win/react-js-style%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 08 Apr 2016 06:29:04 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/react-js-style%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%80%BB%E7%BB%93/</guid>
+      <description>const styles = StyleSheet.create({ style_0:{ flex:1, borderColor: &#39;red&#39;, borderWidth:1, }, &amp;lt;View style={styles.style_0}&amp;gt; &amp;lt;View style={[styles.view, styles.center]}&amp;gt;&amp;lt;Text&amp;gt;自由摆放&amp;lt;/Text&amp;gt;&amp;lt;/Vie</description>
+    </item>
+    
+    <item>
+      <title>flex属性</title>
+      <link>https://blog.v5u.win/flex%E5%B1%9E%E6%80%A7/</link>
+      <pubDate>Fri, 08 Apr 2016 02:56:38 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/flex%E5%B1%9E%E6%80%A7/</guid>
+      <description>流式布局 flex为可伸缩属性，当flex大于0时View可伸缩 当多个有flex属性的View时，根据flex值分配View的相对大小， 如&amp;l</description>
     </item>
     
   </channel>

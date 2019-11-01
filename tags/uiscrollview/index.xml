@@ -6,19 +6,18 @@
     <description>Recent content in UIScrollView on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 01 Sep 2015 18:53:57 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2015 10:53:57 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/uiscrollview/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>UITableView,UICollectionView,UIScrollView快速返回顶部</title>
-      <link>https://blog.v5u.win/post/ios-uitableview-uicollectionview-uiscrollview-back-top/</link>
-      <pubDate>Tue, 01 Sep 2015 18:53:57 +0000</pubDate>
+      <link>https://blog.v5u.win/uitableviewuicollectionviewuiscrollview%E5%BF%AB%E9%80%9F%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/</link>
+      <pubDate>Tue, 01 Sep 2015 10:53:57 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-uitableview-uicollectionview-uiscrollview-back-top/</guid>
-      <description>UITableView， UICollectionView都继承自UIScrollView，所以可以使用UIScrollView的方法，设置显示内容的偏移量&amp;nbsp;
-[self.tableView setContentOffset:CGPointMake(0, 0) animated:YES];</description>
+      <guid>https://blog.v5u.win/uitableviewuicollectionviewuiscrollview%E5%BF%AB%E9%80%9F%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/</guid>
+      <description>UITableView， UICollectionView都继承自UIScrollView，所以可以使用UIScrollView的方法，设置显</description>
     </item>
     
   </channel>

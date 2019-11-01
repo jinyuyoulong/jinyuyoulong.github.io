@@ -6,18 +6,18 @@
     <description>Recent content in SSH on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 24 Feb 2016 16:02:58 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Feb 2016 08:02:58 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>SSH</title>
-      <link>https://blog.v5u.win/post/mac-ssh/</link>
-      <pubDate>Wed, 24 Feb 2016 16:02:58 +0000</pubDate>
+      <title>ssh</title>
+      <link>https://blog.v5u.win/mac-%E7%94%9F%E6%88%90-ssh-keys/</link>
+      <pubDate>Wed, 24 Feb 2016 08:02:58 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-ssh/</guid>
-      <description>[TOC] 解释 Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。 SSH通过在网</description>
+      <guid>https://blog.v5u.win/mac-%E7%94%9F%E6%88%90-ssh-keys/</guid>
+      <description>解释 Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。 SSH通过在网络</description>
     </item>
     
   </channel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>错误集锦 on 为吾优</title>
+    <link>https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/</link>
+    <description>Recent content in 错误集锦 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 27 Feb 2019 09:10:11 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go 编译报错 expected &#39;IDENT&#39;, found &#39;go&#39;</title>
+      <link>https://blog.v5u.win/expected-ident-found-go/</link>
+      <pubDate>Wed, 27 Feb 2019 09:10:11 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/expected-ident-found-go/</guid>
+      <description>报错 expected &amp;#8216;IDENT&amp;#8217;, found &amp;#8216;go&amp;#8217; 运行go run 文件目录为 . ├── README.md ├── fetch │ ├── fetch.go │ ├── fetch1.7.go │ ├── fetchall.go │ ├── server1.go │ ├── server2.go │ └── server3.go └── go-demo ├── main.go ├── mgif.go └──</description>
+    </item>
+    
+  </channel>
+</rss>

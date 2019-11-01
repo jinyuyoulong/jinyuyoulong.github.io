@@ -6,648 +6,870 @@
     <description>Recent content in iOS on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 05 Jun 2019 10:37:16 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Oct 2019 06:00:04 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/ios/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>iOS SwiftUI</title>
-      <link>https://blog.v5u.win/post/ios-swiftui/</link>
-      <pubDate>Wed, 05 Jun 2019 10:37:16 +0800</pubDate>
+      <title>flutter安装</title>
+      <link>https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Wed, 30 Oct 2019 06:00:04 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-swiftui/</guid>
+      <guid>https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/</guid>
+      <description>flutter安装 git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc export PATH=/Users/fanjinlong/dev/flutter/flutter/bin:$PATH export ANDROID_HOME=/Users/fanjinlong/Library/Android/sdk export PATH=${PATH}:${ANDROID_HOME}/tools export PATH=${PATH}:${ANDROID_HOME}/platform-tools export PUB_HOSTED_URL=https://pub.flutter-io.cn export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn # 记得配置完了，执行下 source ~/.zshrc 更新环境变量 命令行执</description>
+    </item>
+    
+    <item>
+      <title>什么是swiftUI</title>
+      <link>https://blog.v5u.win/%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</link>
+      <pubDate>Tue, 16 Jul 2019 06:05:05 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</guid>
       <description>[TOC] 什么是swiftUI？ Apple的解释： 更好的应用。更少的代码。 SwiftUI是一种创新的，非常简单的方法，可以通过Swift的强大功能在</description>
     </item>
     
     <item>
-      <title>Xcode-debug-view-hierarchy</title>
-      <link>https://blog.v5u.win/post/xcode-debug-view-hierarchy/</link>
-      <pubDate>Fri, 03 Aug 2018 10:34:49 +0000</pubDate>
+      <title>Objective-C 内存管理</title>
+      <link>https://blog.v5u.win/objective-c-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Thu, 16 May 2019 01:45:17 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-debug-view-hierarchy/</guid>
+      <guid>https://blog.v5u.win/objective-c-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
+      <description>在 2011 年 WWDC（苹果全球开发者大会）的一场与 Objective-C 相关的讲座上，开发者的人生观被颠覆了。 作为一个开发者，管理好自己程序所使用的内存是天经地义的事</description>
+    </item>
+    
+    <item>
+      <title>如何选购鼠标</title>
+      <link>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E9%80%89%E8%B4%AD%E9%BC%A0%E6%A0%87/</link>
+      <pubDate>Sun, 14 Apr 2019 12:57:54 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E9%80%89%E8%B4%AD%E9%BC%A0%E6%A0%87/</guid>
+      <description>&lt;h3 id=&#34;三种握姿&#34;&gt;三种握姿&lt;/h3&gt;
+
+&lt;p&gt;趴式握鼠 =掌握&lt;/p&gt;
+
+&lt;p&gt;姿势特点：手掌掌心全部与鼠标背部贴合，大拇指、无名指与小拇指自然伸直共同操作鼠标。食中二指自然平放在鼠标按键上。点击按键时，指腹与按键接触。移动时，手腕随鼠标移动。此姿势由于鼠标活动范围大，手常自然放在鼠标上不易疲劳，适合于低SENS的FPS玩家长时间练习。&lt;/p&gt;
+
+&lt;p&gt;趴式握鼠依靠手腕做支点，整个手自然落在鼠标上，如果在右手型鼠标上第一感觉就是舒适，这也是大部分人采用的握姿。手部疲劳度低，依靠手腕运动，所以长时间操作及右手型鼠标用户推荐此种握法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>免费字体可商用</title>
+      <link>https://blog.v5u.win/%E5%85%8D%E8%B4%B9%E5%AD%97%E4%BD%93%E5%8F%AF%E5%95%86%E7%94%A8/</link>
+      <pubDate>Sun, 14 Apr 2019 11:51:08 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%85%8D%E8%B4%B9%E5%AD%97%E4%BD%93%E5%8F%AF%E5%95%86%E7%94%A8/</guid>
+      <description>免费字体 宋体、黑体、仿宋、隶属、楷体、幼圆 这些属于通用字体，没有著作权，是可以用来商用的。 思源字体 是adobe和Google合作开发的开源字</description>
+    </item>
+    
+    <item>
+      <title>图书保存六忌</title>
+      <link>https://blog.v5u.win/%E5%9B%BE%E4%B9%A6%E4%BF%9D%E5%AD%98%E5%85%AD%E5%BF%8C/</link>
+      <pubDate>Thu, 28 Feb 2019 09:21:44 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%9B%BE%E4%B9%A6%E4%BF%9D%E5%AD%98%E5%85%AD%E5%BF%8C/</guid>
+      <description>图书保存六忌 作为一个现代化家庭，很重要的一点就是要讲求知识品位。常言说得好，“酒香花香不如书香，藏金藏银不如藏书。”家庭藏书及藏书多少并不是</description>
+    </item>
+    
+    <item>
+      <title>撞车之后，报保险不要傻里傻气的！</title>
+      <link>https://blog.v5u.win/%E6%92%9E%E8%BD%A6%E4%B9%8B%E5%90%8E%E6%8A%A5%E4%BF%9D%E9%99%A9%E4%B8%8D%E8%A6%81%E5%82%BB%E9%87%8C%E5%82%BB%E6%B0%94%E7%9A%84/</link>
+      <pubDate>Wed, 16 Jan 2019 07:04:23 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E6%92%9E%E8%BD%A6%E4%B9%8B%E5%90%8E%E6%8A%A5%E4%BF%9D%E9%99%A9%E4%B8%8D%E8%A6%81%E5%82%BB%E9%87%8C%E5%82%BB%E6%B0%94%E7%9A%84/</guid>
+      <description>来自: 四闹铃先生 豆瓣 1，对方全责提出私了1500，你死活不干，要求走保险，又是吵又是闹又是折腾，定损2200，修理厂要求2400，自掏200</description>
+    </item>
+    
+    <item>
+      <title>navigationbar status bug</title>
+      <link>https://blog.v5u.win/navigationbar-status-bug/</link>
+      <pubDate>Wed, 16 Jan 2019 05:56:27 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/navigationbar-status-bug/</guid>
+      <description>源起： 遇到一个问题，当A-&amp;gt;B, A隐藏navigationBar，设置了statusBar的颜色; B反之。 当navigationcon</description>
+    </item>
+    
+    <item>
+      <title>CocoaPods</title>
+      <link>https://blog.v5u.win/cocoapods/</link>
+      <pubDate>Wed, 16 Jan 2019 03:46:29 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/cocoapods/</guid>
+      <description>* *title: CocoaPods date: 2016-10-26 10:37:38 tags: Cocoapods category: iOS id: 3 .podspec文件是做什么的 .podspec文件描述了一个库将怎样被添加进工程中。.podspec文件可以标识该第</description>
+    </item>
+    
+    <item>
+      <title>cocoapods-library-create</title>
+      <link>https://blog.v5u.win/cocoapods-library-create/</link>
+      <pubDate>Wed, 16 Jan 2019 03:45:07 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/cocoapods-library-create/</guid>
+      <description>* *title: cocoapods-library-create date: 2018-08-15 14:48:36 tags: cocoapods categories: cocoapods readme文件如何添加 这种说明 打开网站https://shields.io/#/examples/funding 选择f</description>
+    </item>
+    
+    <item>
+      <title>as as! as?</title>
+      <link>https://blog.v5u.win/as-as-as/</link>
+      <pubDate>Wed, 16 Jan 2019 03:40:02 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/as-as-as/</guid>
+      <description>* *title: as as! as? date: 2016-10-26 13:52:46 tags: as categories: Swift id: 2 Swift开发之 is、 as、as!、as?三种类型转换操作符 1，as使用场合 （1）从派生类转换为基类，向上转型（</description>
+    </item>
+    
+    <item>
+      <title>App Store 上架流程</title>
+      <link>https://blog.v5u.win/app-store-%E4%B8%8A%E6%9E%B6%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Wed, 16 Jan 2019 03:36:48 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/app-store-%E4%B8%8A%E6%9E%B6%E6%B5%81%E7%A8%8B/</guid>
+      <description>* *title: App Store 上架流程 tags: iOS categories: iOS App Store上架流程 申请开发者账号 登录开发者网站，注册cer APP ID， profile (xcode 只能解决测试证书配置) 登录iTunes con</description>
+    </item>
+    
+    <item>
+      <title>食-家庭</title>
+      <link>https://blog.v5u.win/%E9%A3%9F-%E5%AE%B6%E5%BA%AD/</link>
+      <pubDate>Wed, 16 Jan 2019 03:15:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E9%A3%9F-%E5%AE%B6%E5%BA%AD/</guid>
+      <description>* *title: 食-家庭 layout: default date: 2018-10-18 [ 剩菜](#### 剩菜) 腌菜 腊肠熏肉 盐 酒 明确的致癌物 [TOC] ####剩菜 叶类蔬菜的硝酸盐比较高，特别是深绿色的叶菜。剩饭菜中，</description>
+    </item>
+    
+    <item>
+      <title>还信用卡时钱存多了怎么免费取出来？</title>
+      <link>https://blog.v5u.win/%E8%BF%98%E4%BF%A1%E7%94%A8%E5%8D%A1%E6%97%B6%E9%92%B1%E5%AD%98%E5%A4%9A%E4%BA%86%E6%80%8E%E4%B9%88%E5%85%8D%E8%B4%B9%E5%8F%96%E5%87%BA%E6%9D%A5/</link>
+      <pubDate>Wed, 16 Jan 2019 03:14:17 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E8%BF%98%E4%BF%A1%E7%94%A8%E5%8D%A1%E6%97%B6%E9%92%B1%E5%AD%98%E5%A4%9A%E4%BA%86%E6%80%8E%E4%B9%88%E5%85%8D%E8%B4%B9%E5%8F%96%E5%87%BA%E6%9D%A5/</guid>
+      <description>我一直有个良好的习惯就是每个月定期在某一天会把所有的信用卡账单在支付宝上还了，一来可以增加自己的芝麻信用分，二来很方便，可以避免忘记还款又还</description>
+    </item>
+    
+    <item>
+      <title>信用卡刷卡原则推荐</title>
+      <link>https://blog.v5u.win/%E4%BF%A1%E7%94%A8%E5%8D%A1%E5%88%B7%E5%8D%A1%E5%8E%9F%E5%88%99%E6%8E%A8%E8%8D%90/</link>
+      <pubDate>Wed, 16 Jan 2019 03:13:39 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E4%BF%A1%E7%94%A8%E5%8D%A1%E5%88%B7%E5%8D%A1%E5%8E%9F%E5%88%99%E6%8E%A8%E8%8D%90/</guid>
+      <description>1、每执行25+2+1原则，最少一月执行一轮，真实消费最好。25次十元以上，2次大额，1次刷爆（额度一万以下刷爆，一万以上建议到五分之一），</description>
+    </item>
+    
+    <item>
+      <title>公司股权设置规则</title>
+      <link>https://blog.v5u.win/%E5%85%AC%E5%8F%B8%E8%82%A1%E6%9D%83%E8%AE%BE%E7%BD%AE%E8%A7%84%E5%88%99/</link>
+      <pubDate>Wed, 16 Jan 2019 03:12:46 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%85%AC%E5%8F%B8%E8%82%A1%E6%9D%83%E8%AE%BE%E7%BD%AE%E8%A7%84%E5%88%99/</guid>
+      <description>公司股权设置规则通用的是有四条线， 第一：10%，公司累计持有10%股东，有权申请公司解散； 第二：1/3以上，否决性控股，对公司重大事项具有一</description>
+    </item>
+    
+    <item>
+      <title>烧香，檀香</title>
+      <link>https://blog.v5u.win/854/</link>
+      <pubDate>Sat, 03 Nov 2018 07:43:24 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/854/</guid>
+      <description>随着香道的兴盛，如今除了在寺庙和祭祀场所集中烧香外，不少人也把燃香请进家中，或为礼佛，或为获取安神之类的健康功效。然而人们不知道，就在你尽情</description>
+    </item>
+    
+    <item>
+      <title>Xcode debug view hierarchy调试视图层次结构</title>
+      <link>https://blog.v5u.win/xcode-debug-view-hierarchy%E8%B0%83%E8%AF%95%E8%A7%86%E5%9B%BE%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Fri, 03 Aug 2018 03:20:58 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/xcode-debug-view-hierarchy%E8%B0%83%E8%AF%95%E8%A7%86%E5%9B%BE%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/</guid>
       <description>Xcode 教程之调试视图层次结构 Xcode开发，当我们需要调整/检查UI时正确的处理方式是什么？ 答案：debug view hierarchy P.s. 下面是为什么要使用debug view</description>
     </item>
     
     <item>
+      <title>车险</title>
+      <link>https://blog.v5u.win/%E8%BD%A6%E9%99%A9/</link>
+      <pubDate>Thu, 17 May 2018 09:40:11 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E8%BD%A6%E9%99%A9/</guid>
+      <description>续保的保费计算逻辑 商业险 一般来说，车主在第一年只要符合下面的这些情况就可以享受降价的好处： 首先，第一年你得没有出险。 其次，出险的次数要少于两</description>
+    </item>
+    
+    <item>
+      <title>如何增加见识，提高格局</title>
+      <link>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E5%A2%9E%E5%8A%A0%E8%A7%81%E8%AF%86%E6%8F%90%E9%AB%98%E6%A0%BC%E5%B1%80/</link>
+      <pubDate>Mon, 23 Apr 2018 05:43:54 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E5%A2%9E%E5%8A%A0%E8%A7%81%E8%AF%86%E6%8F%90%E9%AB%98%E6%A0%BC%E5%B1%80/</guid>
+      <description>一个原则：增加经历—— 不管是经历人还是事，哪个方面都算。 具体办法： 交朋友。了解别人眼中的世界，经历小圈子，小社交的人情处事 旅游。经历社会，自</description>
+    </item>
+    
+    <item>
+      <title>孩子多大能办身份证？</title>
+      <link>https://blog.v5u.win/%E5%AD%A9%E5%AD%90%E5%A4%9A%E5%A4%A7%E8%83%BD%E5%8A%9E%E8%BA%AB%E4%BB%BD%E8%AF%81/</link>
+      <pubDate>Mon, 16 Apr 2018 08:16:03 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%AD%A9%E5%AD%90%E5%A4%9A%E5%A4%A7%E8%83%BD%E5%8A%9E%E8%BA%AB%E4%BB%BD%E8%AF%81/</guid>
+      <description>孩子多大能办身份证？ 根据派出所的规定，只要孩子愿意办身份证，16岁以下也可以办理，但是需要在家长或监护人的陪同下办理，并且有效期只有5年，当</description>
+    </item>
+    
+    <item>
       <title>xcode 头文件引用</title>
-      <link>https://blog.v5u.win/post/xcode-include-import/</link>
+      <link>https://blog.v5u.win/xcode-%E5%A4%B4%E6%96%87%E4%BB%B6%E5%BC%95%E7%94%A8/</link>
       <pubDate>Thu, 12 Apr 2018 03:43:53 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-include-import/</guid>
-      <description>头文件引用 头文件引用主要由#include 和#import 两种。每种又分为尖括号(&amp;lt;&amp;gt;)引用和双引号(&amp;rdquo; &amp;ldquo</description>
+      <guid>https://blog.v5u.win/xcode-%E5%A4%B4%E6%96%87%E4%BB%B6%E5%BC%95%E7%94%A8/</guid>
+      <description>头文件引用 头文件引用主要由#inlude 和#import 两种。每种又分为尖括号(&amp;lt;&amp;gt;)引用和双引号(&amp;#8221; &amp;#8220;</description>
+    </item>
+    
+    <item>
+      <title>基金A类B类C类是什么意思？</title>
+      <link>https://blog.v5u.win/%E5%9F%BA%E9%87%91a%E7%B1%BBb%E7%B1%BBc%E7%B1%BB%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D/</link>
+      <pubDate>Tue, 10 Apr 2018 02:41:38 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%9F%BA%E9%87%91a%E7%B1%BBb%E7%B1%BBc%E7%B1%BB%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D/</guid>
+      <description>货币基金和短期理财债券基金 在货币基金和短期理财债券基金里，最常见的后缀是A和B，它们的差别主要是参与门槛的不同： A类是低申购起点，1分、1元</description>
     </item>
     
     <item>
       <title>xcode文档注释规则简要汇总</title>
-      <link>https://blog.v5u.win/post/xcode-mark-for-appledoc/</link>
+      <link>https://blog.v5u.win/xcode%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A%E8%A7%84%E5%88%99%E7%AE%80%E8%A6%81%E6%B1%87%E6%80%BB/</link>
       <pubDate>Wed, 04 Apr 2018 08:24:46 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-mark-for-appledoc/</guid>
+      <guid>https://blog.v5u.win/xcode%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A%E8%A7%84%E5%88%99%E7%AE%80%E8%A6%81%E6%B1%87%E6%80%BB/</guid>
       <description>xcode文档注释规则简要汇总 参考源 类与协议 /** 文档B. * * 文档B的详细描述. */ @interface DocB : NSObject /// 文档A. @interface DocA : NSObject 文本链接 /** * - [文档B](DocB)</description>
     </item>
     
     <item>
       <title>appledoc使用说明</title>
-      <link>https://blog.v5u.win/post/ios-appledoc/</link>
+      <link>https://blog.v5u.win/appledoc%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link>
       <pubDate>Wed, 04 Apr 2018 07:00:34 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-appledoc/</guid>
+      <guid>https://blog.v5u.win/appledoc%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
       <description>appledoc使用说明 安装命令行： git clone git://github.com/tomaz/appledoc.git cd ./appledoc sudo sh install-appledoc.sh appledoc —version //检查successed 使用 生成HTML 当需要html文档时，可以加</description>
     </item>
     
     <item>
-      <title>iOS indexPath.item vs indexPath.row</title>
-      <link>https://blog.v5u.win/post/ios-indexpath-item-vs-indexpath-row/</link>
+      <title>indexPath.item vs indexPath.row</title>
+      <link>https://blog.v5u.win/indexpath-item-vs-indexpath-row/</link>
       <pubDate>Mon, 02 Apr 2018 06:25:02 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-indexpath-item-vs-indexpath-row/</guid>
-      <description>Inside NSIndexPath, the indexes are stored in a simple c array called &amp;ldquo;_indexes&amp;rdquo; defined as NSUInteger* and the length of the array is stored in &amp;ldquo;_length&amp;rdquo; defined as NSUInteger. The accessor &amp;ldquo;section&amp;rdquo; is an alias to &amp;ldquo;_indexes[0]&amp;rdquo; and both &amp;ldquo;item&amp;rdquo; and &amp;ldquo;row&amp;rdquo; are aliases to &amp;ldquo;_indexes[1]&amp;rdquo;. Thus the two are functionally identical. In terms of programming style – and perhaps the definition chain – you would be better using &amp;ldquo;row&amp;rdquo;</description>
+      <guid>https://blog.v5u.win/indexpath-item-vs-indexpath-row/</guid>
+      <description>Inside NSIndexPath, the indexes are stored in a simple c array called &amp;#8220;_indexes&amp;#8221; defined as NSUInteger* and the length of the array is stored in &amp;#8220;_length&amp;#8221; defined as NSUInteger. The accessor &amp;#8220;section&amp;#8221; is an alias to &amp;#8220;_indexes[0]&amp;#8221; and both &amp;#8220;item&amp;#8221; and &amp;#8220;row&amp;#8221; are aliases to &amp;#8220;_indexes[1]&amp;#8221;. Thus the two are functionally identical. In terms of programming style – and perhaps the definition chain – you would be better using &amp;#8220;row&amp;#8221;</description>
+    </item>
+    
+    <item>
+      <title>中国人的“故土难离”其实缘于中国式求人,缘于故土有其多年织下的关系网</title>
+      <link>https://blog.v5u.win/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E7%9A%84%E6%95%85%E5%9C%9F%E9%9A%BE%E7%A6%BB%E5%85%B6%E5%AE%9E%E7%BC%98%E4%BA%8E%E4%B8%AD%E5%9B%BD%E5%BC%8F%E6%B1%82%E4%BA%BA%E7%BC%98%E4%BA%8E%E6%95%85/</link>
+      <pubDate>Wed, 20 Sep 2017 02:12:10 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E4%B8%AD%E5%9B%BD%E4%BA%BA%E7%9A%84%E6%95%85%E5%9C%9F%E9%9A%BE%E7%A6%BB%E5%85%B6%E5%AE%9E%E7%BC%98%E4%BA%8E%E4%B8%AD%E5%9B%BD%E5%BC%8F%E6%B1%82%E4%BA%BA%E7%BC%98%E4%BA%8E%E6%95%85/</guid>
+      <description>这些年,中国人似乎往远走的多些了。但往远走的中国人大多年轻,上了一点儿年龄的,还是大都不喜远走,哪怕这旮旯兔子都不拉屎,他也愿窝在这儿。 什么</description>
     </item>
     
     <item>
       <title>swift中weak和unowned的区别</title>
-      <link>https://blog.v5u.win/post/swift-weakunowned/</link>
-      <pubDate>Tue, 13 Dec 2016 16:34:00 +0000</pubDate>
+      <link>https://blog.v5u.win/swift%E4%B8%ADweak%E5%92%8Cunowned%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Tue, 13 Dec 2016 08:34:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-weakunowned/</guid>
+      <guid>https://blog.v5u.win/swift%E4%B8%ADweak%E5%92%8Cunowned%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
       <description>weak和unowned都是解决循环引用的关键字 区别： 如果您是一直写 Objective-C 过来的，那么从表面的行为上来说 unowned 更像以前的 unsafe_unretai</description>
     </item>
     
     <item>
       <title>swift 关键字篇</title>
-      <link>https://blog.v5u.win/post/swift-%E5%85%B3%E9%94%AE%E5%AD%97/</link>
-      <pubDate>Tue, 13 Dec 2016 15:45:27 +0000</pubDate>
+      <link>https://blog.v5u.win/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/</link>
+      <pubDate>Tue, 13 Dec 2016 07:45:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+      <guid>https://blog.v5u.win/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/</guid>
       <description>@noescape：no escape(没有逃脱) 用来修饰闭包，含义为非逃逸闭包。 当闭包作为参数传递进函数时，如果这个闭包只在函数中被使用，则</description>
     </item>
     
     <item>
-      <title>CocoaPods</title>
-      <link>https://blog.v5u.win/post/mac-cocoapods/</link>
-      <pubDate>Wed, 26 Oct 2016 10:37:38 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/mac-cocoapods/</guid>
-      <description>.podspec文件是做什么的 .podspec文件描述了一个库将怎样被添加进工程中。.podspec文件可以标识该第三方库所需要的源码文件、</description>
-    </item>
-    
-    <item>
-      <title>Xcode实用快捷键收集</title>
-      <link>https://blog.v5u.win/post/xcode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
-      <pubDate>Tue, 20 Sep 2016 13:51:51 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/xcode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
-      <description>整行移动 option+commend+[] 当前页快速定位：ctl+6 项目中file间快速定位：shift+cmd+o 删除光标右边的字符：Ctrl+D 删除本行：Ctrl+K 光</description>
-    </item>
-    
-    <item>
-      <title>Swift3更改</title>
-      <link>https://blog.v5u.win/post/swift-swift3%E6%9B%B4%E6%94%B9/</link>
-      <pubDate>Sun, 18 Sep 2016 13:51:51 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/swift-swift3%E6%9B%B4%E6%94%B9/</guid>
-      <description>升级Swift3后代码的更改差异 before after error as NSError error UIColor().blackColor() UIColor().balck xxx.hidden xxx.isHidden 所有的bool属性，都+前缀：is private fileprivate NSBundle Bundle func fetchInfo(complete: () -&amp;gt; ()) {} func fetchInfo(_ complete: () -&amp;gt; ()) {} function的参</description>
-    </item>
-    
-    <item>
       <title>objective-c代码规范</title>
-      <link>https://blog.v5u.win/post/ios-oc-code-style/</link>
-      <pubDate>Thu, 25 Aug 2016 16:45:01 +0000</pubDate>
+      <link>https://blog.v5u.win/objective-c%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Thu, 25 Aug 2016 08:45:01 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-oc-code-style/</guid>
+      <guid>https://blog.v5u.win/objective-c%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
       <description>Objective-C代码规范 前言 Apple公司提供了一些代码规范文档。如果有内容未在此文档中提及，请参考如下内容： The Objective-C Programming Language Cocoa Fundamentals Guide Coding Guidelines for Cocoa iOS</description>
     </item>
     
     <item>
       <title>Workspace的使用方法</title>
-      <link>https://blog.v5u.win/post/xcode-workspace/</link>
-      <pubDate>Thu, 21 Jul 2016 16:39:53 +0000</pubDate>
+      <link>https://blog.v5u.win/workspace%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Thu, 21 Jul 2016 08:39:53 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-workspace/</guid>
+      <guid>https://blog.v5u.win/workspace%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
       <description>更改 xcode-&amp;gt; Preference -&amp;gt; Location -&amp;gt; Advanced -&amp;gt; Custom -&amp;gt; Relative to Workspace 新建Workspace 新建项目或静态库，选择 add workspace name 引入路径依赖，User Header Search Paths 设为 $(BUILT_PRODUCTS_DIR) 选择递归搜索 recursive 检查 scheme manage 中的项</description>
     </item>
     
     <item>
-      <title>JavaScriptCore</title>
-      <link>https://blog.v5u.win/post/ios-javascriptcore/</link>
-      <pubDate>Fri, 29 Apr 2016 17:43:54 +0000</pubDate>
+      <title>Xcode插件XcodeColors的使用</title>
+      <link>https://blog.v5u.win/xcode%E6%8F%92%E4%BB%B6xcodecolors%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 27 May 2016 12:51:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-javascriptcore/</guid>
-      <description>JavaScript 和OC原生交互 - (void)ocCallJSFunction{ JSContext context = [[JSContext alloc]init]; JSValue jsValue = [context evaluateScript:@&amp;quot;21+7&amp;quot;]; int iVal = [jsValue toInt32]; NSLog(@&amp;quot;js value=%@,int=%d&amp;quot;,jsValue, iVal); [context evaluateScript:@&amp;quot;var arr = [21, 7, &#39;fanyiqing.com&#39;];&amp;quot;]; JSValue jsArr = context[@&amp;quot;arr&amp;quot;]; NSLog(@&amp;quot;JS Array:%@ length:%@&amp;quot;,jsArr,jsArr[@&amp;quot;length&amp;quot;]); jsArr[1] = @&amp;quot;blog&amp;quot;; jsArr[7] = @7; NSLog(@&amp;quot;JS Array:%@, length:%d&amp;quot;,jsArr,[jsArr[@&amp;quot;length&amp;quot;] toInt32]); NSArray nsarray = [jsArr toArray]; NSLog(@&amp;quot;nsarray:%@&amp;quot;,nsarray); }</description>
+      <guid>https://blog.v5u.win/xcode%E6%8F%92%E4%BB%B6xcodecolors%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>安装： 在 管理器中搜索 下载 Xcodecolors 重启Xcode 选择load boundle 使用： 配置环境变量－&amp;gt; 打开Product -&amp;gt; Edit Scheme 选择Run-&amp;gt;&amp;#8221;</description>
     </item>
     
     <item>
-      <title>iOS GCD dispatch barrier</title>
-      <link>https://blog.v5u.win/post/ios-gcd-dispatch-barrier/</link>
-      <pubDate>Fri, 15 Apr 2016 10:15:25 +0000</pubDate>
+      <title>JavaScriptCore</title>
+      <link>https://blog.v5u.win/javascriptcore/</link>
+      <pubDate>Fri, 29 Apr 2016 09:43:54 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-gcd-dispatch-barrier/</guid>
-      <description>需求： 两个线程并行执行，当两线程都执行完后，在执行另一个线程，然后在执行并行多线程 thread1 thread4 --&amp;amp;gt; thread3 --&amp;amp;gt; thread2 thread5 一个dispatch barrier 允许在一个并发队列中创</description>
+      <guid>https://blog.v5u.win/javascriptcore/</guid>
+      <description>JavaScript 和OC原生交互 &amp;lt;br /&amp;gt;- (void)ocCallJSFunction{ JSContext context = [[JSContext alloc]init]; JSValue jsValue = [context evaluateScript:@&amp;quot;21+7&amp;quot;]; int iVal = [jsValue toInt32]; NSLog(@&amp;quot;js value=%@,int=%d&amp;quot;,jsValue, iVal); [context evaluateScript:@&amp;quot;var arr = [21, 7, &#39;fanyiqing.com&#39;];&amp;quot;]; JSValue jsArr = context[@&amp;quot;arr&amp;quot;]; NSLog(@&amp;quot;JS Array:%@ length:%@&amp;quot;,jsArr,jsArr[@&amp;quot;length&amp;quot;]); jsArr[1] = @&amp;quot;blog&amp;quot;; jsArr[7] = @7; NSLog(@&amp;quot;JS Array:%@, length:%d&amp;quot;,jsArr,[jsArr[@&amp;quot;length&amp;quot;] toInt32]); NSArray nsarray = [jsArr toArray]; NSLog(@&amp;quot;nsarray:%@&amp;quot;,nsarray); }</description>
+    </item>
+    
+    <item>
+      <title>GCD dispatch barrier</title>
+      <link>https://blog.v5u.win/gcd-dispatch-barrier/</link>
+      <pubDate>Fri, 15 Apr 2016 02:15:25 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/gcd-dispatch-barrier/</guid>
+      <description>需求： 两个线程并行执行，当两线程都执行完后，在执行另一个线程，然后在执行并行多线程 thread1 thread4 --&amp;gt; thread3 --&amp;gt; thread2 thread5 一个dispatch barrier 允许在一个并发队列中创</description>
     </item>
     
     <item>
       <title>Xcode7 恢复代码折叠功能</title>
-      <link>https://blog.v5u.win/post/xcode-xcode7-code-hidden/</link>
-      <pubDate>Fri, 08 Apr 2016 18:14:53 +0000</pubDate>
+      <link>https://blog.v5u.win/xcode7-%E6%81%A2%E5%A4%8D%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Fri, 08 Apr 2016 10:14:53 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode7-code-hidden/</guid>
+      <guid>https://blog.v5u.win/xcode7-%E6%81%A2%E5%A4%8D%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0%E5%8A%9F%E8%83%BD/</guid>
       <description>升级到Xcode7后，发现代码折叠功能不见了！！！ 苹果默认把这个功能禁掉了：在Xcode菜单里选择Preference——Text Editi</description>
     </item>
     
     <item>
       <title>Xcode7.3 cannot create __weak reference in file using</title>
-      <link>https://blog.v5u.win/post/xcode-xcode7-3-cannot-create-weak-reference-in-file-using/</link>
-      <pubDate>Fri, 08 Apr 2016 16:26:43 +0000</pubDate>
+      <link>https://blog.v5u.win/xcode7-3-cannot-create-__weak-reference-in-file-using/</link>
+      <pubDate>Fri, 08 Apr 2016 08:26:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode7-3-cannot-create-weak-reference-in-file-using/</guid>
-      <description>升级xcode7.3后项目编译不通过 error：cannot create __weak reference in file using manual reference counting 解决办法： Set Build Settings -&amp;gt; Apple LLVM 7.1 - Language - Objective C -&amp;gt; Weak References in Manual Retain Release to YES.</description>
+      <guid>https://blog.v5u.win/xcode7-3-cannot-create-__weak-reference-in-file-using/</guid>
+      <description>升级xcode7.3后项目编译不通过 error：cannot create __weak reference in file using manual reference counting 解决办法： Set Build Settings -&amp;gt; Apple LLVM 7.1 &amp;#8211; Language &amp;#8211; Objective C -&amp;gt; Weak References in Manual Retain Release to YES.</description>
     </item>
     
     <item>
       <title>xcode设置允许访问http请求</title>
-      <link>https://blog.v5u.win/post/xcode-http/</link>
-      <pubDate>Sun, 03 Apr 2016 14:30:54 +0000</pubDate>
+      <link>https://blog.v5u.win/xcode%E8%AE%BE%E7%BD%AE%E5%85%81%E8%AE%B8%E8%AE%BF%E9%97%AEhttp%E8%AF%B7%E6%B1%82/</link>
+      <pubDate>Sun, 03 Apr 2016 06:30:54 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-http/</guid>
+      <guid>https://blog.v5u.win/xcode%E8%AE%BE%E7%BD%AE%E5%85%81%E8%AE%B8%E8%AE%BF%E9%97%AEhttp%E8%AF%B7%E6%B1%82/</guid>
       <description>项目的info.plist文件添加一下值： App Transport Security Settings Allow Arbitrary Loads 设为YES</description>
     </item>
     
     <item>
       <title>iOS老应用显示不完全</title>
-      <link>https://blog.v5u.win/post/ios-screenview-error/</link>
-      <pubDate>Sun, 03 Apr 2016 13:55:06 +0000</pubDate>
+      <link>https://blog.v5u.win/ios%E8%80%81%E5%BA%94%E7%94%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%AE%8C%E5%85%A8/</link>
+      <pubDate>Sun, 03 Apr 2016 05:55:06 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-screenview-error/</guid>
-      <description>解决 ： * 新建launchScreen文件 * 设置plist文件，添加Launch screen interface file base name字段 并将value值设为刚刚新建文件的文件名 *</description>
+      <guid>https://blog.v5u.win/ios%E8%80%81%E5%BA%94%E7%94%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%AE%8C%E5%85%A8/</guid>
+      <description>解决 ： 新建launchScreen文件 设置plist文件，添加Launch screen interface file base name字段 并将value值设为刚刚新建文件的文件名 删除模</description>
     </item>
     
     <item>
       <title>Xcode快捷键</title>
-      <link>https://blog.v5u.win/post/xcode-shortcut-key/</link>
-      <pubDate>Tue, 29 Mar 2016 23:50:12 +0000</pubDate>
+      <link>https://blog.v5u.win/xcode%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Tue, 29 Mar 2016 15:50:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-shortcut-key/</guid>
+      <guid>https://blog.v5u.win/xcode%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
       <description>常用xcode快捷键 整行移动 option+commend+[] 当前页快速定位：ctl+6 项目中file间快速定位：shift+cmd+o 删除光标右边的字符：Ctrl+D 删除</description>
     </item>
     
     <item>
       <title>react-native:unexpected token error</title>
-      <link>https://blog.v5u.win/post/reactnative-unexpected-token-error/</link>
-      <pubDate>Tue, 22 Mar 2016 17:11:47 +0000</pubDate>
+      <link>https://blog.v5u.win/react-nativeunexpected-token-error/</link>
+      <pubDate>Tue, 22 Mar 2016 09:11:47 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/reactnative-unexpected-token-error/</guid>
+      <guid>https://blog.v5u.win/react-nativeunexpected-token-error/</guid>
       <description>react-native新建的项目默认使用ES6写法，所以如果你在用到 componentWillMount:function()这样的代码时</description>
     </item>
     
     <item>
       <title>ReactNative如何真机测试</title>
-      <link>https://blog.v5u.win/post/reactnative-device-test/</link>
-      <pubDate>Fri, 18 Mar 2016 13:24:28 +0000</pubDate>
+      <link>https://blog.v5u.win/reactnative%E5%A6%82%E4%BD%95%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Fri, 18 Mar 2016 05:24:28 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/reactnative-device-test/</guid>
+      <guid>https://blog.v5u.win/reactnative%E5%A6%82%E4%BD%95%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95/</guid>
       <description>初始学习ReactNative 最想现在真机上一睹为快，对于非零基础的程序员，最重要的是先搞明白整个工程的创建到完结的流程，对于编程语言来说从</description>
     </item>
     
     <item>
       <title>ReactNative环境搭建</title>
-      <link>https://blog.v5u.win/post/reactnative-install/</link>
-      <pubDate>Fri, 18 Mar 2016 13:22:50 +0000</pubDate>
+      <link>https://blog.v5u.win/reactnative%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Fri, 18 Mar 2016 05:22:50 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/reactnative-install/</guid>
-      <description>最近换了macbook，于是又要装node.js，记录一下 系统：OS X Mountain Lion 10.8.3 1/ 下载node.js for mac http://nodejs.org 双击安装，一路next，很简单。 `&amp;lt;/pre&amp;gt; 2/ 测</description>
+      <guid>https://blog.v5u.win/reactnative%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description>最近换了macbook，于是又要装node.js，记录一下 系统：OS X Mountain Lion 10.8.3 1/ 下载node.js for mac http://nodejs.org 双击安装，一路next，很简单。 2/ 测试</description>
     </item>
     
     <item>
       <title>React-Native 初次安装环境报错及解决记录</title>
-      <link>https://blog.v5u.win/post/reactnative-first-install/</link>
-      <pubDate>Tue, 15 Mar 2016 16:38:19 +0000</pubDate>
+      <link>https://blog.v5u.win/react-native-%E5%88%9D%E6%AC%A1%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 15 Mar 2016 08:38:19 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/reactnative-first-install/</guid>
-      <description>创建第一个项目后，打开xcode运行，terminal报错 Watchman: watchman&amp;ndash;no-pretty get-sockname returned with exit code null dyld: Library not loaded: /usr/local/opt/pcre/lib/libpcre.1.dylib 解决方案：终端输入 brew link pcre， 如果报错没有写入权限（C</description>
+      <guid>https://blog.v5u.win/react-native-%E5%88%9D%E6%AC%A1%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/</guid>
+      <description>创建第一个项目后，打开xcode运行，terminal报错 Watchman: watchman&amp;#8211;no-pretty get-sockname returned with exit code null dyld: Library not loaded: /usr/local/opt/pcre/lib/libpcre.1.dylib 解决方案：终端输入 brew link pcre， 如果报错没有写入权限（C</description>
     </item>
     
     <item>
       <title>正确的使用KVO</title>
-      <link>https://blog.v5u.win/post/ios-kvo/</link>
-      <pubDate>Tue, 15 Mar 2016 11:02:37 +0000</pubDate>
+      <link>https://blog.v5u.win/%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BD%BF%E7%94%A8kvo/</link>
+      <pubDate>Tue, 15 Mar 2016 03:02:37 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-kvo/</guid>
-      <description>KVO，全称为Key-Value Observing，是iOS中的一种设计模式，用于检测对象的某些属性的实时变化情况并作出响应。网上广为流传普</description>
+      <guid>https://blog.v5u.win/%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BD%BF%E7%94%A8kvo/</guid>
+      <description>KVO，全称为Key-Value Observing，是一种设计模式，用于检测对象的某些属性的实时变化情况并作出响应。网上广为流传普及的一个例</description>
     </item>
     
     <item>
       <title>AFNetworking3.0/NSURLSession的优势</title>
-      <link>https://blog.v5u.win/post/ios-afnetworking3.0-nsurlsession/</link>
-      <pubDate>Tue, 15 Mar 2016 10:53:52 +0000</pubDate>
+      <link>https://blog.v5u.win/351/</link>
+      <pubDate>Tue, 15 Mar 2016 02:53:52 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-afnetworking3.0-nsurlsession/</guid>
+      <guid>https://blog.v5u.win/351/</guid>
       <description>很多时候，AFNetworking都是目前iOS开发者网络库中的不二选择。Github上2W+的star数足见其流行程度。而从iOS7.0开</description>
     </item>
     
     <item>
       <title>简单实用UIImagePickerViewController</title>
-      <link>https://blog.v5u.win/post/ios-uiimagepickerviewcontroller/</link>
-      <pubDate>Wed, 09 Mar 2016 13:31:36 +0000</pubDate>
+      <link>https://blog.v5u.win/uiimagepickerviewcontroller/</link>
+      <pubDate>Wed, 09 Mar 2016 05:31:36 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-uiimagepickerviewcontroller/</guid>
+      <guid>https://blog.v5u.win/uiimagepickerviewcontroller/</guid>
       <description>创建createVC UIImagePickerController* ipc = [[UIImagePickerController alloc] init]; ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //图像来源 ipc.delegate = self; [self presentModalViewController:ipc animated:YES]; ```` 完善代理delegate方法 ```` //选择图片 //- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{ headView.image = [info objectForKey:@&amp;quot;UIImagePickerControllerOriginalImage&amp;quot;]; [picker</description>
     </item>
     
     <item>
       <title>Xcode7 如何设置访问某些权限时的alert内容</title>
-      <link>https://blog.v5u.win/post/xcode-xcode7-rightalert/</link>
-      <pubDate>Mon, 07 Mar 2016 18:28:25 +0000</pubDate>
+      <link>https://blog.v5u.win/xcode7-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E8%AE%BF%E9%97%AE%E6%9F%90%E4%BA%9B%E6%9D%83%E9%99%90%E6%97%B6%E7%9A%84alert%E5%86%85%E5%AE%B9/</link>
+      <pubDate>Mon, 07 Mar 2016 10:28:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode7-rightalert/</guid>
+      <guid>https://blog.v5u.win/xcode7-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E8%AE%BF%E9%97%AE%E6%9F%90%E4%BA%9B%E6%9D%83%E9%99%90%E6%97%B6%E7%9A%84alert%E5%86%85%E5%AE%B9/</guid>
       <description>举个栗子: 我想访问用户的照片，第一次时会弹出alert框询问用户是否将该权限开放给APP 这时为了增加用户友好度，我们有必要在询问的时候加一些</description>
     </item>
     
     <item>
       <title>UIView何时创建加载subview比较合适？</title>
-      <link>https://blog.v5u.win/post/ios-uiview-subview/</link>
-      <pubDate>Mon, 07 Mar 2016 15:38:43 +0000</pubDate>
+      <link>https://blog.v5u.win/uiview%E4%BD%95%E6%97%B6%E5%88%9B%E5%BB%BA%E5%8A%A0%E8%BD%BDsubview%E6%AF%94%E8%BE%83%E5%90%88%E9%80%82/</link>
+      <pubDate>Mon, 07 Mar 2016 07:38:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-uiview-subview/</guid>
+      <guid>https://blog.v5u.win/uiview%E4%BD%95%E6%97%B6%E5%88%9B%E5%BB%BA%E5%8A%A0%E8%BD%BDsubview%E6%AF%94%E8%BE%83%E5%90%88%E9%80%82/</guid>
       <description>当我们使用ViewController的时候有ViewDidLoad方法保证数据或UI只加载一次 但是在UIView中 没有这样的生命周期函数 如</description>
     </item>
     
     <item>
       <title>Xcode7如何给新建的类名自动添加前缀</title>
-      <link>https://blog.v5u.win/post/xcode-xcode7-prefix/</link>
-      <pubDate>Thu, 03 Mar 2016 15:03:01 +0000</pubDate>
+      <link>https://blog.v5u.win/xcode7%E5%A6%82%E4%BD%95%E7%BB%99%E6%96%B0%E5%BB%BA%E7%9A%84%E7%B1%BB%E5%90%8D%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%89%8D%E7%BC%80/</link>
+      <pubDate>Thu, 03 Mar 2016 07:03:01 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode7-prefix/</guid>
+      <guid>https://blog.v5u.win/xcode7%E5%A6%82%E4%BD%95%E7%BB%99%E6%96%B0%E5%BB%BA%E7%9A%84%E7%B1%BB%E5%90%8D%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E5%89%8D%E7%BC%80/</guid>
       <description>Xcode7如何给新建的类名自动添加前缀 一直想给新创建类的时候自动添加前缀比如这样:FFObject Xcode5之前是可以在项目刚创建的时候</description>
     </item>
     
     <item>
       <title>Xcode注释</title>
-      <link>https://blog.v5u.win/post/xcode-notes/</link>
-      <pubDate>Wed, 02 Mar 2016 15:49:43 +0000</pubDate>
+      <link>https://blog.v5u.win/xcode%E6%B3%A8%E9%87%8A/</link>
+      <pubDate>Wed, 02 Mar 2016 07:49:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-notes/</guid>
+      <guid>https://blog.v5u.win/xcode%E6%B3%A8%E9%87%8A/</guid>
       <description>Xcode注释 在所有的编程环境中 有几种通用的注释方式我们默认遵守他们的规则 它们是：TODO, FIXME, XXX, ??? , !!! 它们分别代表什么意思？ TODO: + 说明： 说明在</description>
     </item>
     
     <item>
       <title>braced block of statements is an unused closure</title>
-      <link>https://blog.v5u.win/post/swift-braced-block-of-statements-is-an-unused-closure/</link>
-      <pubDate>Tue, 01 Mar 2016 15:31:45 +0000</pubDate>
+      <link>https://blog.v5u.win/braced-block-of-statements-is-an-unused-closure/</link>
+      <pubDate>Tue, 01 Mar 2016 07:31:45 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-braced-block-of-statements-is-an-unused-closure/</guid>
+      <guid>https://blog.v5u.win/braced-block-of-statements-is-an-unused-closure/</guid>
       <description>使用swift写dome时xcode报一下错误： braced block of statements is an unused closure 原因及收获： for循环的条件语句不能有空格，如：for i=0; i&amp;lt;3; i++ {} 其他控制语句也</description>
     </item>
     
     <item>
       <title>swift中的打印</title>
-      <link>https://blog.v5u.win/post/swift-print/</link>
-      <pubDate>Fri, 26 Feb 2016 14:57:35 +0000</pubDate>
+      <link>https://blog.v5u.win/swift%E4%B8%AD%E7%9A%84%E6%89%93%E5%8D%B0/</link>
+      <pubDate>Fri, 26 Feb 2016 06:57:35 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/swift-print/</guid>
-      <description>自从swift2.0后 println 合并到了print，默认print()方法换行 如果不想换行可以使用，print(&amp;ldquo;print line&amp;rdquo;,terminator:&amp;ldquo;n&amp;rdquo;)</description>
+      <guid>https://blog.v5u.win/swift%E4%B8%AD%E7%9A%84%E6%89%93%E5%8D%B0/</guid>
+      <description>自从swift2.0后 println 合并到了print，默认print()方法换行 如果不想换行可以使用，print(&amp;#8220;print line&amp;#8221;,terminator:&amp;#8221;n&amp;#8221;)</description>
     </item>
     
     <item>
       <title>OC Quartz2D 绘图</title>
-      <link>https://blog.v5u.win/post/ios-oc-quartz2d/</link>
-      <pubDate>Tue, 23 Feb 2016 12:07:20 +0000</pubDate>
+      <link>https://blog.v5u.win/oc-quartz2d-%E7%BB%98%E5%9B%BE/</link>
+      <pubDate>Tue, 23 Feb 2016 04:07:20 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-oc-quartz2d/</guid>
+      <guid>https://blog.v5u.win/oc-quartz2d-%E7%BB%98%E5%9B%BE/</guid>
       <description>如何利用Quartz2D绘制东西到view上? 首先,得有图形上下文,因为它能保存绘图信息,并且决定着绘制到什么地方去 其次,那个图形上下⽂必须</description>
     </item>
     
     <item>
       <title>iOS创建.a静态库文件</title>
-      <link>https://blog.v5u.win/post/ios-a-library/</link>
-      <pubDate>Mon, 22 Feb 2016 16:01:04 +0000</pubDate>
+      <link>https://blog.v5u.win/ios%E5%88%9B%E5%BB%BA-a%E9%9D%99%E6%80%81%E5%BA%93%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Mon, 22 Feb 2016 08:01:04 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-a-library/</guid>
-      <description>步骤： 1.创建项目（选择Framework&amp;amp;Library） 2.删除无用文件，加入希望编译的文件 3.edit scheme &amp;ndash;&amp;gt;release 4.编译真机平台文件：选择io</description>
+      <guid>https://blog.v5u.win/ios%E5%88%9B%E5%BB%BA-a%E9%9D%99%E6%80%81%E5%BA%93%E6%96%87%E4%BB%B6/</guid>
+      <description>步骤： 1.创建项目（选择Framework&amp;amp;Library） 2.删除无用文件，加入希望编译的文件 3.edit scheme &amp;#8211;&amp;gt;release 4.编译真机平台文件：选择io</description>
     </item>
     
     <item>
       <title>iOS 各类作用</title>
-      <link>https://blog.v5u.win/post/ios-classes/</link>
-      <pubDate>Tue, 16 Feb 2016 16:23:17 +0000</pubDate>
+      <link>https://blog.v5u.win/ios-%E5%90%84%E7%B1%BB%E4%BD%9C%E7%94%A8/</link>
+      <pubDate>Tue, 16 Feb 2016 08:23:17 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-classes/</guid>
-      <description>UIMenuController &amp;mdash;&amp;ndash;定制剪切，复制，粘贴组件。 UILabel &amp;mdash;&amp;mdash;&amp;ndash;文本显示 UIButton &amp;mdash;&amp;mdash;&amp;</description>
+      <guid>https://blog.v5u.win/ios-%E5%90%84%E7%B1%BB%E4%BD%9C%E7%94%A8/</guid>
+      <description>UIMenuController &amp;#8212;&amp;#8211;定制剪切，复制，粘贴组件。 UILabel &amp;#8212;&amp;#8212;&amp;#8211;文本显示 UIButton &amp;#8212;&amp;#8212;&amp;</description>
     </item>
     
     <item>
-      <title>ios copy 和 mutableCopy</title>
-      <link>https://blog.v5u.win/post/ios-copymutablecopy/</link>
-      <pubDate>Mon, 18 Jan 2016 19:39:17 +0000</pubDate>
+      <title>copy 和 mutableCopy</title>
+      <link>https://blog.v5u.win/copy-%E5%92%8C-mutablecopy/</link>
+      <pubDate>Mon, 18 Jan 2016 11:39:17 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-copymutablecopy/</guid>
+      <guid>https://blog.v5u.win/copy-%E5%92%8C-mutablecopy/</guid>
       <description>通过copy方法可以创建可变对象或不可变对象的不可变副本，对于不可变副本，其对象的值不可以改变。 通过mutableCopy方法可以创建可变对</description>
     </item>
     
     <item>
       <title>NSString 位数不足补0</title>
-      <link>https://blog.v5u.win/post/ios-nsstring-add-0/</link>
-      <pubDate>Fri, 15 Jan 2016 16:22:44 +0000</pubDate>
+      <link>https://blog.v5u.win/nsstring-%E4%BD%8D%E6%95%B0%E4%B8%8D%E8%B6%B3%E8%A1%A50/</link>
+      <pubDate>Fri, 15 Jan 2016 08:22:44 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-nsstring-add-0/</guid>
-      <description>%0nd ，n是多少位。0表示补0 如果是%nd，就是不满n位，自动补充空格。 NSString* testStr; intf = 12; testStr = [NSString stringWithFormat:@&amp;ldquo;%03d&amp;rdquo;,f]; NSLog(@&amp;ldquo;%@&amp;rdquo;,testStr);</description>
+      <guid>https://blog.v5u.win/nsstring-%E4%BD%8D%E6%95%B0%E4%B8%8D%E8%B6%B3%E8%A1%A50/</guid>
+      <description>%0nd ，n是多少位。0表示补0 如果是%nd，就是不满n位，自动补充空格。 NSString* testStr; intf = 12; testStr = [NSString stringWithFormat:@&amp;#8221;%03d&amp;#8221;,f]; NSLog(@&amp;#8221;%@&amp;#8221;,testStr);</description>
     </item>
     
     <item>
       <title>如何改变xcode 源文件的目录位置</title>
-      <link>https://blog.v5u.win/post/xcode-%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98xcode-%E6%BA%90%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE/</link>
-      <pubDate>Mon, 11 Jan 2016 11:10:16 +0000</pubDate>
+      <link>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98xcode-%E6%BA%90%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 11 Jan 2016 03:10:16 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98xcode-%E6%BA%90%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE/</guid>
+      <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98xcode-%E6%BA%90%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE/</guid>
       <description>很多时候会遇到这样的问题，项目中的文件，需要改变目录路径，但是呢，如果仅仅是将本地的文件移到目标目录下，重新编译项目会发现有很多的warnn</description>
     </item>
     
     <item>
-      <title>计算中国农历</title>
-      <link>https://blog.v5u.win/post/system-%E8%AE%A1%E7%AE%97%E5%86%9C%E5%8E%86/</link>
-      <pubDate>Sun, 13 Dec 2015 15:14:46 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/system-%E8%AE%A1%E7%AE%97%E5%86%9C%E5%8E%86/</guid>
-      <description>文章请查看：http://blog.csdn.net/orbit/article/details/9210413</description>
-    </item>
-    
-    <item>
       <title>iOS键盘高度的官方获取方法</title>
-      <link>https://blog.v5u.win/post/ios-keyboard-height/</link>
-      <pubDate>Wed, 02 Dec 2015 14:54:36 +0000</pubDate>
+      <link>https://blog.v5u.win/ios%E9%94%AE%E7%9B%98%E9%AB%98%E5%BA%A6%E7%9A%84%E5%AE%98%E6%96%B9%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 02 Dec 2015 06:54:36 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-keyboard-height/</guid>
+      <guid>https://blog.v5u.win/ios%E9%94%AE%E7%9B%98%E9%AB%98%E5%BA%A6%E7%9A%84%E5%AE%98%E6%96%B9%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/</guid>
       <description>处理键盘事件的正确方法是这样的：（包括获取键盘的高度以及键盘弹出和消失动画的时间） 1）在要使用键盘的视图控制器中，接收键盘事件的通知： [[NSNotificationCenter defaultCenter] addObserver:self</description>
     </item>
     
     <item>
       <title>Xcode7.1.1更新内容</title>
-      <link>https://blog.v5u.win/post/xcode-xcode7.1.1-update-content/</link>
-      <pubDate>Mon, 23 Nov 2015 11:25:15 +0000</pubDate>
+      <link>https://blog.v5u.win/xcode7-1-1%E6%9B%B4%E6%96%B0%E5%86%85%E5%AE%B9/</link>
+      <pubDate>Mon, 23 Nov 2015 03:25:15 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-xcode7.1.1-update-content/</guid>
-      <description>Xcode 7.1.1 improves stability and fixes critical issues in interface Builder,debugging,and UI testing. Xcode 7.1 includes Swift2.1 and SDKs for iOS 9.1,watchOS 2,tvOS,and OS X 10.11 EI Capitan. Now you can go beyond the simulator to test your app on an iPad, iPhone, Apple TV, or Apple Watch - for free. Simply enter your Apple ID into the Accounts preference pane,then attach a device to your Mac using a Lightning</description>
+      <guid>https://blog.v5u.win/xcode7-1-1%E6%9B%B4%E6%96%B0%E5%86%85%E5%AE%B9/</guid>
+      <description>Xcode 7.1.1 improves stability and fixes critical issues in interface Builder,debugging,and UI testing. Xcode 7.1 includes Swift2.1 and SDKs for iOS 9.1,watchOS 2,tvOS,and OS X 10.11 EI Capitan. Now you can go beyond the simulator to test your app on an iPad, iPhone, Apple TV, or Apple Watch &amp;#8211; for free. Simply enter your Apple ID into the Accounts preference pane,then attach a device to your Mac using a Lightning</description>
     </item>
     
     <item>
       <title>gem 包管理器</title>
-      <link>https://blog.v5u.win/post/system-gem%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
-      <pubDate>Thu, 12 Nov 2015 15:33:43 +0000</pubDate>
+      <link>https://blog.v5u.win/gem-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
+      <pubDate>Thu, 12 Nov 2015 07:33:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-gem%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
+      <guid>https://blog.v5u.win/gem-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
       <description>gem 常用命令 查看软件源 gem source -l,不能翻墙的，建议改成国内的源 https://gems.ruby-china.com 移除某个源 gem sources --remove https://ruby.taobao.org/ 添加新的源 gem sources -a https://gems.ruby-china.com/ 安装 gem install [name] gem install cocoapods 卸载指定版本 sudo gem uninstall cocoapods --version=1.5.3 查看 gem</description>
     </item>
     
     <item>
       <title>SEL如何保存到NSArray数组中</title>
-      <link>https://blog.v5u.win/post/ios-selnsarray/</link>
-      <pubDate>Wed, 04 Nov 2015 11:09:43 +0000</pubDate>
+      <link>https://blog.v5u.win/sel%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E5%88%B0nsarray%E6%95%B0%E7%BB%84%E4%B8%AD/</link>
+      <pubDate>Wed, 04 Nov 2015 03:09:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-selnsarray/</guid>
+      <guid>https://blog.v5u.win/sel%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E5%88%B0nsarray%E6%95%B0%E7%BB%84%E4%B8%AD/</guid>
       <description>首先，SEL是不可以保存到array数组中去的。 其次，SEL有两种创建方法： SEL&amp;nbsp;s1&amp;nbsp;=&amp;nbsp;&amp;nbsp;@s</description>
     </item>
     
     <item>
       <title>Xcode 删除 Provisioning profile 证书</title>
-      <link>https://blog.v5u.win/post/xcode-provisioning-profile/</link>
-      <pubDate>Sat, 24 Oct 2015 20:09:12 +0000</pubDate>
+      <link>https://blog.v5u.win/xcode-%E5%88%A0%E9%99%A4-provisioning-profile-%E8%AF%81%E4%B9%A6/</link>
+      <pubDate>Sat, 24 Oct 2015 12:09:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-provisioning-profile/</guid>
+      <guid>https://blog.v5u.win/xcode-%E5%88%A0%E9%99%A4-provisioning-profile-%E8%AF%81%E4%B9%A6/</guid>
       <description>xcode 删除 Provisioning profile 证书存放路径：/Users/fans/Library/MobileDevice/Provisioning Profiles &amp;nbsp;</description>
     </item>
     
     <item>
-      <title>Cannot find interface declaration for &#39;ClassA&#39;, superclass of &#39;ClassB&#39;</title>
-      <link>https://blog.v5u.win/post/ios-cannot-find-interface-declaration-for-classa-superclass-of-classb/</link>
-      <pubDate>Tue, 22 Sep 2015 11:49:57 +0000</pubDate>
+      <title>ViewController 界面的推出调用时间</title>
+      <link>https://blog.v5u.win/viewcontroller-%E7%95%8C%E9%9D%A2%E7%9A%84%E6%8E%A8%E5%87%BA%E8%B0%83%E7%94%A8%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Tue, 13 Oct 2015 02:22:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-cannot-find-interface-declaration-for-classa-superclass-of-classb/</guid>
+      <guid>https://blog.v5u.win/viewcontroller-%E7%95%8C%E9%9D%A2%E7%9A%84%E6%8E%A8%E5%87%BA%E8%B0%83%E7%94%A8%E6%97%B6%E9%97%B4/</guid>
+      <description>ViewController 界面的推出，是在ViewDidLoad方法运行之后才被推出的， 所以说，ViewWillAppear和ViewDidAppear 是在View</description>
+    </item>
+    
+    <item>
+      <title>Cannot find interface declaration for &#39;ClassA&#39;, superclass of &#39;ClassB&#39;</title>
+      <link>https://blog.v5u.win/cannot-find-interface-declaration-for-classa-superclass-of-classb/</link>
+      <pubDate>Tue, 22 Sep 2015 03:49:57 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/cannot-find-interface-declaration-for-classa-superclass-of-classb/</guid>
       <description>这个error 是由于 头文件循环引用的原因，导致的。 只要删除其中一个class的头文件中的＃import引用，就会解决这个问题</description>
     </item>
     
     <item>
       <title>宏定义</title>
-      <link>https://blog.v5u.win/post/system-%E5%AE%8F%E5%AE%9A%E4%B9%89/</link>
-      <pubDate>Fri, 18 Sep 2015 15:50:23 +0000</pubDate>
+      <link>https://blog.v5u.win/%E5%AE%8F%E5%AE%9A%E4%B9%89/</link>
+      <pubDate>Fri, 18 Sep 2015 07:50:23 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
-      <description>#define DLOG( s, &amp;hellip; ) NSLog(@&amp;quot;&amp;lt; %@: (%d) &amp;gt; %@&amp;quot;,[[NSString stringWithUTF8String:FILE] lastPathComponent], LINE, [NSString stringWithFormat:(s), ##VA_ARGS]) 这个宏定义是用来在打印log的时候，调试使用，可以显示当前log所在的controller名字。 先写出来，原</description>
+      <guid>https://blog.v5u.win/%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
+      <description>#define DLOG( s, &amp;#8230; ) NSLog(@&#34;%@&#34;,[[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__]) 这个宏定义是用来在打印log的时候，调试使用，可以显示当前log所在的controller名字。 先写出来，原理以后查</description>
     </item>
     
     <item>
       <title>Objective-c NSClassFromString 使用方法</title>
-      <link>https://blog.v5u.win/post/ios-oc-nsclassfromstring/</link>
-      <pubDate>Mon, 14 Sep 2015 11:58:58 +0000</pubDate>
+      <link>https://blog.v5u.win/objective-c-nsclassfromstring-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 14 Sep 2015 03:58:58 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-oc-nsclassfromstring/</guid>
-      <description>NSClassFromString 是一个很有用的东西，尤其在进行 iPhone toolchain 的开发上。 正常来说， id&amp;nbsp;myObj&amp;nbsp;=&amp;nbsp;[[NSClassFromString(@&amp;quot;MySpecialClass&amp;quot;)&amp;nbsp;alloc]&amp;nbsp;init]; 和 id&amp;nbsp;myObj&amp;nbsp;=&amp;nbsp;[[MySpecialClass&amp;nbsp;alloc]&amp;nbsp;init]; 是一样的。但是，如果你的程序中并不存在 MySpecialClass 这个类，下面的写法会出错，而上面的写法</description>
+      <guid>https://blog.v5u.win/objective-c-nsclassfromstring-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <description>NSClassFromString 是一个很有用的东西，尤其在进行 iPhone toolchain 的开发上。 正常来说， id&amp;nbsp;myObj&amp;nbsp;=&amp;nbsp;[[NSClassFromString(@&#34;MySpecialClass&#34;)&amp;nbsp;alloc]&amp;nbsp;init]; 和 id&amp;nbsp;myObj&amp;nbsp;=&amp;nbsp;[[MySpecialClass&amp;nbsp;alloc]&amp;nbsp;init]; 是一样的。但是，如果你的程序中并不存在 MySpecialClass 这个类，下面的写法会出错，而上面的写法</description>
     </item>
     
     <item>
       <title>app 上架前的打包准备</title>
-      <link>https://blog.v5u.win/post/ios-appstore_public_archive/</link>
-      <pubDate>Thu, 10 Sep 2015 15:22:12 +0000</pubDate>
+      <link>https://blog.v5u.win/app-%E4%B8%8A%E6%9E%B6%E5%89%8D%E7%9A%84%E6%89%93%E5%8C%85%E5%87%86%E5%A4%87/</link>
+      <pubDate>Thu, 10 Sep 2015 07:22:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-appstore_public_archive/</guid>
-      <description>app 上架前的打包准备 1.检查是否是外网环境 2.更新info.plist文件版本号 3.product&amp;mdash;&amp;gt;scheme&amp;mdash;-&amp;gt;eidt scheme&amp;mdash;&amp;gt; &amp;nbsp;&amp;nbsp; build configuration 改为 release 4.build setting&amp;mdash;&amp;gt;architectures &amp;ndash;&amp;gt;&amp;nbsp; &amp;nbsp;&amp;nbsp; build active architecture only 设置为NO 5.build setting&amp;mdash;&amp;gt; code signing &amp;ndash;&amp;gt; &amp;nbsp;&amp;nbsp; Provisioning&amp;nbsp; Profile 设置</description>
+      <guid>https://blog.v5u.win/app-%E4%B8%8A%E6%9E%B6%E5%89%8D%E7%9A%84%E6%89%93%E5%8C%85%E5%87%86%E5%A4%87/</guid>
+      <description>app 上架前的打包准备 1.检查是否是外网环境 2.更新info.plist文件版本号 3.product&amp;#8212;scheme&amp;#8212;-eidt scheme&amp;#8212; &amp;nbsp;&amp;nbsp; build configuration 改为 release 4.build setting&amp;#8212;architectures &amp;#8211;&amp;nbsp; &amp;nbsp;&amp;nbsp; build active architecture only 设置为NO 5.build setting&amp;#8212; code signing &amp;#8211; &amp;nbsp;&amp;nbsp; Provisioning&amp;nbsp; Profile 设置</description>
+    </item>
+    
+    <item>
+      <title>UITableView,UICollectionView,UIScrollView快速返回顶部</title>
+      <link>https://blog.v5u.win/uitableviewuicollectionviewuiscrollview%E5%BF%AB%E9%80%9F%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/</link>
+      <pubDate>Tue, 01 Sep 2015 10:53:57 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/uitableviewuicollectionviewuiscrollview%E5%BF%AB%E9%80%9F%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/</guid>
+      <description>UITableView， UICollectionView都继承自UIScrollView，所以可以使用UIScrollView的方法，设置显</description>
     </item>
     
     <item>
       <title>NSDate和时间戳互转</title>
-      <link>https://blog.v5u.win/post/ios-nsdate2timenumber/</link>
-      <pubDate>Fri, 28 Aug 2015 16:53:17 +0000</pubDate>
+      <link>https://blog.v5u.win/nsdate%E5%92%8C%E6%97%B6%E9%97%B4%E6%88%B3%E4%BA%92%E8%BD%AC/</link>
+      <pubDate>Fri, 28 Aug 2015 08:53:17 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-nsdate2timenumber/</guid>
+      <guid>https://blog.v5u.win/nsdate%E5%92%8C%E6%97%B6%E9%97%B4%E6%88%B3%E4%BA%92%E8%BD%AC/</guid>
       <description>iOS 将时间NSDate转化为毫秒时间戳 对于将NSDate类型转换为时间戳，相信大家肯定都会，这样的示例代码，在百度等搜索引擎上面一搜索就是一大</description>
     </item>
     
     <item>
       <title>Unknown Class **** in Interface Builder file</title>
-      <link>https://blog.v5u.win/post/ios-unknown-class-in-interface-builder-file/</link>
-      <pubDate>Mon, 24 Aug 2015 10:44:12 +0000</pubDate>
+      <link>https://blog.v5u.win/unknown-class-in-interface-builder-file/</link>
+      <pubDate>Mon, 24 Aug 2015 02:44:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-unknown-class-in-interface-builder-file/</guid>
-      <description>I added a UIView xib file using the root class of&amp;nbsp;MyView. I created it in the wrong place and so moved it in the project. Same project just a different folder/group. I then had a problem when running saying&amp;hellip; Unknown Class MyView in Interface Builder file I couldn&amp;#39;t work out what was wrong so I have now deleted the files both from the project and from the directory. I&amp;#39;ve done</description>
+      <guid>https://blog.v5u.win/unknown-class-in-interface-builder-file/</guid>
+      <description>I added a UIView xib file using the root class of&amp;nbsp;MyView. I created it in the wrong place and so moved it in the project. Same project just a different folder/group. I then had a problem when running saying&amp;#8230; Unknown Class MyView in Interface Builder file I couldn&#39;t work out what was wrong so I have now deleted the files both from the project and from the directory. I&#39;ve done</description>
     </item>
     
     <item>
       <title>文字上添加删除线</title>
-      <link>https://blog.v5u.win/post/ios-%E6%96%87%E5%AD%97%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E7%BA%BF/</link>
-      <pubDate>Fri, 21 Aug 2015 17:10:49 +0000</pubDate>
+      <link>https://blog.v5u.win/%E6%96%87%E5%AD%97%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E7%BA%BF/</link>
+      <pubDate>Fri, 21 Aug 2015 09:10:49 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-%E6%96%87%E5%AD%97%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E7%BA%BF/</guid>
-      <description>&amp;nbsp; &amp;nbsp;&amp;nbsp;NSString * str = @&amp;quot;ABCDEFG HIJKLMN&amp;quot;; &amp;nbsp; &amp;nbsp; UILabel * aLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 100, 300, 300)]; &amp;nbsp; &amp;nbsp; aLab.text = str; &amp;nbsp; &amp;nbsp; NSMutableAttributedString * testAttriString = [[NSMutableAttributedString alloc] initWithString:str]; &amp;nbsp;&amp;nbsp; [testAttriString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleSingle] range:NSMakeRange(0, testAttriString.length)]; &amp;nbsp; &amp;nbsp; aLab.attributedText = testAttriString; &amp;nbsp; &amp;nbsp; [self.view addSubview:aLab];</description>
+      <guid>https://blog.v5u.win/%E6%96%87%E5%AD%97%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E7%BA%BF/</guid>
+      <description>&amp;nbsp; &amp;nbsp;&amp;nbsp;NSString * str = @&#34;ABCDEFG HIJKLMN&#34;; &amp;nbsp; &amp;nbsp; UILabel * aLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 100, 300, 300)]; &amp;nbsp; &amp;nbsp; aLab.text = str; &amp;nbsp; &amp;nbsp; NSMutableAttributedString * testAttriString = [[NSMutableAttributedString alloc] initWithString:str]; &amp;nbsp;&amp;nbsp; [testAttriString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleSingle] range:NSMakeRange(0, testAttriString.length)]; &amp;nbsp; &amp;nbsp; aLab.attributedText = testAttriString; &amp;nbsp; &amp;nbsp; [self.view addSubview:aLab];</description>
     </item>
     
     <item>
       <title>App Store上架前的准备</title>
-      <link>https://blog.v5u.win/post/ios-appstore_public_before/</link>
-      <pubDate>Fri, 21 Aug 2015 17:10:11 +0000</pubDate>
+      <link>https://blog.v5u.win/app-store%E4%B8%8A%E6%9E%B6%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87/</link>
+      <pubDate>Fri, 21 Aug 2015 09:10:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-appstore_public_before/</guid>
+      <guid>https://blog.v5u.win/app-store%E4%B8%8A%E6%9E%B6%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87/</guid>
       <description>一、制作ipa发布包 1、所需装备 1）一个distribution发布版证书 2）Xcode，iTunes，完成的项目，这都不用说了 开始配置Xc</description>
     </item>
     
     <item>
-      <title>主动退出iOS程序</title>
-      <link>https://blog.v5u.win/post/ios-force-exit/</link>
-      <pubDate>Mon, 10 Aug 2015 12:05:51 +0000</pubDate>
+      <title>iOS自动布局解决警告Automatic Preferred Max Layout Width is not available on iOS versions prior to 8.0</title>
+      <link>https://blog.v5u.win/ios%E8%87%AA%E5%8A%A8%E5%B8%83%E5%B1%80%E8%A7%A3%E5%86%B3%E8%AD%A6%E5%91%8Aautomatic-preferred-max-layout-width-is-not-available-on-ios-versions-prior-to-8-0/</link>
+      <pubDate>Sun, 16 Aug 2015 04:33:07 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-force-exit/</guid>
+      <guid>https://blog.v5u.win/ios%E8%87%AA%E5%8A%A8%E5%B8%83%E5%B1%80%E8%A7%A3%E5%86%B3%E8%AD%A6%E5%91%8Aautomatic-preferred-max-layout-width-is-not-available-on-ios-versions-prior-to-8-0/</guid>
+      <description>部署环境为iOS7.0可能会遇到 设置Label的 Preferred Width(自动换行最大宽度) &amp;nbsp;explicit &amp;nbsp;(明确的) &amp;nbsp; &amp;nbsp;即可</description>
+    </item>
+    
+    <item>
+      <title>主动退出iOS程序</title>
+      <link>https://blog.v5u.win/%E4%B8%BB%E5%8A%A8%E9%80%80%E5%87%BAios%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Mon, 10 Aug 2015 04:05:51 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E4%B8%BB%E5%8A%A8%E9%80%80%E5%87%BAios%E7%A8%8B%E5%BA%8F/</guid>
       <description>exit(0); 只有这个API可以通过AppStore。</description>
     </item>
     
     <item>
       <title>iOS7之后如何获得APP唯一的身份标识</title>
-      <link>https://blog.v5u.win/post/ios-uuid/</link>
-      <pubDate>Sun, 09 Aug 2015 11:24:34 +0000</pubDate>
+      <link>https://blog.v5u.win/ios7%E4%B9%8B%E5%90%8E%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97app%E5%94%AF%E4%B8%80%E7%9A%84%E8%BA%AB%E4%BB%BD%E6%A0%87%E8%AF%86/</link>
+      <pubDate>Sun, 09 Aug 2015 03:24:34 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-uuid/</guid>
+      <guid>https://blog.v5u.win/ios7%E4%B9%8B%E5%90%8E%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97app%E5%94%AF%E4%B8%80%E7%9A%84%E8%BA%AB%E4%BB%BD%E6%A0%87%E8%AF%86/</guid>
       <description>历史： 1) iOS 5.0以前，iOS 2.0版本以后UIDevice提供一个获取设备唯一标识符的方法uniqueIdentifier，因为该唯一标识符</description>
     </item>
     
     <item>
       <title>获取tableviewCell在当前屏幕中的坐标值</title>
-      <link>https://blog.v5u.win/post/ios-tableviewcell-frame/</link>
-      <pubDate>Fri, 07 Aug 2015 13:28:36 +0000</pubDate>
+      <link>https://blog.v5u.win/%E8%8E%B7%E5%8F%96tableviewcell%E5%9C%A8%E5%BD%93%E5%89%8D%E5%B1%8F%E5%B9%95%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E5%80%BC/</link>
+      <pubDate>Fri, 07 Aug 2015 05:28:36 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-tableviewcell-frame/</guid>
+      <guid>https://blog.v5u.win/%E8%8E%B7%E5%8F%96tableviewcell%E5%9C%A8%E5%BD%93%E5%89%8D%E5%B1%8F%E5%B9%95%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E5%80%BC/</guid>
       <description>获得当前cell对于当前屏幕的位置 CGRect&amp;nbsp;rectInTableView&amp;nbsp;=&amp;nbsp;[tableView&amp;nbsp;rectForRowAtIndexPath:indexPath]; &amp;nbsp;&amp;nbsp; CGRect&amp;nbsp;rect&amp;nbsp;=&amp;nbsp;[tableView&amp;nbsp;convertRect:rectInTableView&amp;nbsp;toView:[tableView&amp;nbsp;superview]];</description>
     </item>
     
     <item>
       <title>自定义back按钮无法使用系统pop interactive gesture 问题</title>
-      <link>https://blog.v5u.win/post/ios-backbutton-pop-interactive-gesture/</link>
-      <pubDate>Thu, 06 Aug 2015 18:50:01 +0000</pubDate>
+      <link>https://blog.v5u.win/%E8%87%AA%E5%AE%9A%E4%B9%89back%E6%8C%89%E9%92%AE%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9Fpop-interactive-gesture-%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 06 Aug 2015 10:50:01 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-backbutton-pop-interactive-gesture/</guid>
+      <guid>https://blog.v5u.win/%E8%87%AA%E5%AE%9A%E4%B9%89back%E6%8C%89%E9%92%AE%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9Fpop-interactive-gesture-%E9%97%AE%E9%A2%98/</guid>
       <description>两种解决办法： 方法一： A，我的应用是自定义的返回按钮图标(默认返回按钮样式不会出现问题3)，为了保险，写了这句代码[self.navigat</description>
     </item>
     
     <item>
       <title>XCode上设备或证书不能自动建和修改的问题解决</title>
-      <link>https://blog.v5u.win/post/xcode-profile-file/</link>
-      <pubDate>Tue, 04 Aug 2015 20:59:44 +0000</pubDate>
+      <link>https://blog.v5u.win/xcode%E4%B8%8A%E8%AE%BE%E5%A4%87%E6%88%96%E8%AF%81%E4%B9%A6%E4%B8%8D%E8%83%BD%E8%87%AA%E5%8A%A8%E5%BB%BA%E5%92%8C%E4%BF%AE%E6%94%B9%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Tue, 04 Aug 2015 12:59:44 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-profile-file/</guid>
+      <guid>https://blog.v5u.win/xcode%E4%B8%8A%E8%AE%BE%E5%A4%87%E6%88%96%E8%AF%81%E4%B9%A6%E4%B8%8D%E8%83%BD%E8%87%AA%E5%8A%A8%E5%BB%BA%E5%92%8C%E4%BF%AE%E6%94%B9%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</guid>
       <description>自从XCode支持自动维护证书之后，省去了我们手动添加设备再更新完证书之后下载的麻烦，但一直都没有搞明白自动维护的机制，导致经常出现XCod</description>
     </item>
     
     <item>
-      <title>如何使用Xcode--切换tap栏</title>
-      <link>https://blog.v5u.win/post/xcode-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8xcode-%E5%88%87%E6%8D%A2tap%E6%A0%8F/</link>
-      <pubDate>Thu, 16 Jul 2015 11:10:27 +0000</pubDate>
+      <title>如何使用Xcode–切换tap栏</title>
+      <link>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8xcode-%E5%88%87%E6%8D%A2tap%E6%A0%8F/</link>
+      <pubDate>Thu, 16 Jul 2015 03:10:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8xcode-%E5%88%87%E6%8D%A2tap%E6%A0%8F/</guid>
+      <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8xcode-%E5%88%87%E6%8D%A2tap%E6%A0%8F/</guid>
       <description>切换tap栏快捷键：commend+Shift+[,] ，此方法通用于其他APP上的tap栏切换 以下为转载 转自http://m.blog.cs</description>
     </item>
     
     <item>
       <title>NSTimer</title>
-      <link>https://blog.v5u.win/post/ios-nstimer/</link>
-      <pubDate>Thu, 16 Jul 2015 11:03:51 +0000</pubDate>
+      <link>https://blog.v5u.win/nstimer/</link>
+      <pubDate>Thu, 16 Jul 2015 03:03:51 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-nstimer/</guid>
+      <guid>https://blog.v5u.win/nstimer/</guid>
       <description>转载自 NSTimer的使用方法 1、初始化 + (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo; + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo; 注：不用scheduled方式初始化的，需要手动addTimer:for</description>
     </item>
     
     <item>
       <title>iOS 开发error/debug</title>
-      <link>https://blog.v5u.win/post/ios-errordebug/</link>
-      <pubDate>Tue, 14 Jul 2015 21:36:20 +0000</pubDate>
+      <link>https://blog.v5u.win/ios-%E5%BC%80%E5%8F%91errordebug/</link>
+      <pubDate>Tue, 14 Jul 2015 13:36:20 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-errordebug/</guid>
+      <guid>https://blog.v5u.win/ios-%E5%BC%80%E5%8F%91errordebug/</guid>
       <description>error:property with ‘retain(strong)’ attribute must be of object type&amp;nbsp; cause: 没有包含相应地头文件，造成变量引用错误，指针指向未知</description>
     </item>
     
     <item>
       <title>iOS端App的icon和Launch Image规格实时更新</title>
-      <link>https://blog.v5u.win/post/ios-launch-image/</link>
-      <pubDate>Tue, 14 Jul 2015 17:45:49 +0000</pubDate>
+      <link>https://blog.v5u.win/ios%E7%AB%AFapp%E7%9A%84icon%E5%92%8Claunch-image%E8%A7%84%E6%A0%BC%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0/</link>
+      <pubDate>Tue, 14 Jul 2015 09:45:49 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-launch-image/</guid>
+      <guid>https://blog.v5u.win/ios%E7%AB%AFapp%E7%9A%84icon%E5%92%8Claunch-image%E8%A7%84%E6%A0%BC%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0/</guid>
       <description>启动影像 ：&amp;nbsp;iPhone&amp;nbsp;：320 x 480&amp;nbsp;640 x 960 640*1136&amp;nbsp;750*1334 1242*2208&amp;nbsp;&amp;nbsp;iPad&amp;nbsp;：768 x 1004&amp;nbsp;1536 x</description>
     </item>
     
     <item>
       <title>Xcode如何添加pch文件</title>
-      <link>https://blog.v5u.win/post/xcode-pch/</link>
-      <pubDate>Tue, 14 Jul 2015 11:31:06 +0000</pubDate>
+      <link>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0pch%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Tue, 14 Jul 2015 03:31:06 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-pch/</guid>
+      <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0pch%E6%96%87%E4%BB%B6/</guid>
       <description>Xcode6.0之后去掉了Precompile Prefix Header 文件，主要原因可能在于Prefix Header大大的增加了Build的时间。没有了Pref</description>
     </item>
     
     <item>
-      <title>iOS如何判断应用是否开启摄像头权限</title>
-      <link>https://blog.v5u.win/post/ios-camera-right/</link>
-      <pubDate>Fri, 19 Jun 2015 11:25:28 +0000</pubDate>
+      <title>FF的Git使用知识</title>
+      <link>https://blog.v5u.win/jl%E7%9A%84git%E4%BD%BF%E7%94%A8%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Thu, 09 Jul 2015 07:05:28 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-camera-right/</guid>
+      <guid>https://blog.v5u.win/jl%E7%9A%84git%E4%BD%BF%E7%94%A8%E7%9F%A5%E8%AF%86/</guid>
+      <description>创建 Git仓库命令：(进入将要管理的Git文件夹地址下) git init 查看当前Git管理状态 git status 添加Git文件 git add * 提交文件到仓库 git commit -m &amp;#8220;</description>
+    </item>
+    
+    <item>
+      <title>iOS如何判断应用是否开启摄像头权限</title>
+      <link>https://blog.v5u.win/ios%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E5%BA%94%E7%94%A8%E6%98%AF%E5%90%A6%E5%BC%80%E5%90%AF%E6%91%84%E5%83%8F%E5%A4%B4%E6%9D%83%E9%99%90/</link>
+      <pubDate>Fri, 19 Jun 2015 03:25:28 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/ios%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E5%BA%94%E7%94%A8%E6%98%AF%E5%90%A6%E5%BC%80%E5%90%AF%E6%91%84%E5%83%8F%E5%A4%B4%E6%9D%83%E9%99%90/</guid>
       <description>NSString * mediaType = AVMediaTypeVideo; &amp;nbsp; &amp;nbsp; AVAuthorizationStatus&amp;nbsp; authorizationStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType]; &amp;nbsp; &amp;nbsp; if (authorizationStatus == AVAuthorizationStatusRestricted || authorizationStatus == AVAuthorizationStatusDenied) { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; UIAlertController* alertC = [UIAlertControlleralertControllerWithTit</description>
     </item>
     
     <item>
       <title>iOS NSString 字符串处理：截取字符串、匹配字符串、分隔字符串</title>
-      <link>https://blog.v5u.win/post/ios-string/</link>
-      <pubDate>Thu, 04 Jun 2015 17:33:36 +0000</pubDate>
+      <link>https://blog.v5u.win/ios-nsstring-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E6%88%AA%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%86%E9%9A%94/</link>
+      <pubDate>Thu, 04 Jun 2015 09:33:36 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-string/</guid>
-      <description>1.截取字符串 NSString*string =@&amp;quot;sdfsfsfsAdfsdf&amp;quot;; string = [string&amp;nbsp;substringToIndex:7];//截取下标7之后的字符串 NSLog(@&amp;quot;</description>
+      <guid>https://blog.v5u.win/ios-nsstring-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E6%88%AA%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%86%E9%9A%94/</guid>
+      <description>1.截取字符串NSString*string =@&amp;ldquo;sdfsfsfsAdfsdf&amp;rdquo;;string = [string&amp;nbsp;substringToIndex:7];//截取下标7之后的字符串</description>
     </item>
     
     <item>
       <title>使用Autolayout xib实现动态高度的TableViewCell</title>
-      <link>https://blog.v5u.win/post/ios-autolayouttableviewcell/</link>
-      <pubDate>Wed, 03 Jun 2015 15:27:18 +0000</pubDate>
+      <link>https://blog.v5u.win/%E4%BD%BF%E7%94%A8autolayout-xib%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E9%AB%98%E5%BA%A6%E7%9A%84tableviewcell/</link>
+      <pubDate>Wed, 03 Jun 2015 07:27:18 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-autolayouttableviewcell/</guid>
+      <guid>https://blog.v5u.win/%E4%BD%BF%E7%94%A8autolayout-xib%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E9%AB%98%E5%BA%A6%E7%9A%84tableviewcell/</guid>
       <description>文章来源于http://itony.me/381.html 创建Xib文件 首先将Cell做好布局，调整到满意的位置和宽度，然后开始做Autol</description>
     </item>
     
     <item>
-      <title>如何避免在Block里用self造成循环引用</title>
-      <link>https://blog.v5u.win/post/ios-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%9C%A8block%E9%87%8C%E7%94%A8self%E9%80%A0%E6%88%90%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</link>
-      <pubDate>Fri, 15 May 2015 16:00:00 +0000</pubDate>
+      <title>微信联通公众号如何解绑</title>
+      <link>https://blog.v5u.win/%E5%BE%AE%E4%BF%A1%E8%81%94%E9%80%9A%E5%85%AC%E4%BC%97%E5%8F%B7%E5%A6%82%E4%BD%95%E8%A7%A3%E7%BB%91/</link>
+      <pubDate>Tue, 26 May 2015 06:20:19 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%9C%A8block%E9%87%8C%E7%94%A8self%E9%80%A0%E6%88%90%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</guid>
+      <guid>https://blog.v5u.win/%E5%BE%AE%E4%BF%A1%E8%81%94%E9%80%9A%E5%85%AC%E4%BC%97%E5%8F%B7%E5%A6%82%E4%BD%95%E8%A7%A3%E7%BB%91/</guid>
+      <description>切换到输入框，输入“解绑&#34; 然后根据提示，回复Y即可。</description>
+    </item>
+    
+    <item>
+      <title>如何避免在Block里用self造成循环引用</title>
+      <link>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%9C%A8block%E9%87%8C%E7%94%A8self%E9%80%A0%E6%88%90%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</link>
+      <pubDate>Fri, 15 May 2015 08:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%9C%A8block%E9%87%8C%E7%94%A8self%E9%80%A0%E6%88%90%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</guid>
       <description>本文原引于Bannings的专栏博客 一般来说我们总会在设置Block之后，在合适的时间回调Block，而不希望回调Block的时候Block</description>
     </item>
     
     <item>
       <title>UISegmentedControl简单使用</title>
-      <link>https://blog.v5u.win/post/ios-uisegmentedcontrol/</link>
-      <pubDate>Thu, 14 May 2015 16:53:26 +0000</pubDate>
+      <link>https://blog.v5u.win/uisegmentedcontrol%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Thu, 14 May 2015 08:53:26 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-uisegmentedcontrol/</guid>
-      <description>NSArray* segMArr = [NSArray arrayWithObjects:@&amp;quot;0&amp;quot;,@&amp;quot;1&amp;quot;, nil]; UISegmentedControl* segmentC = [[UISegmentedControlalloc]initWithItems:segMArr]; &amp;nbsp; &amp;nbsp; segmentC.frame = CGRectMake(0, 178, 320, 30); &amp;nbsp; &amp;nbsp; segmentC.segmentedControlStyle= UISegmentedControlStylePlain; &amp;nbsp; &amp;nbsp; segmentC.tintColor = [UIColor BlueColor]; &amp;nbsp; &amp;nbsp; segmentC.selectedSegmentIndex= 0; &amp;nbsp; &amp;nbsp; [segmentC addTarget:selfaction:@selector(segmentedControlSelected:) forControlEvents:UIControlEventValueChanged]; &amp;nbsp; &amp;nbsp; [bgView addSubview:segmentC]; (void)segmentedControlSelected:(UISegmentedControl*)seg{ &amp;nbsp; &amp;nbsp; if(seg.selectedSegmentIndex== 0) { &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }elseif(seg.selectedSegmentIndex== 1){ &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; } }</description>
+      <guid>https://blog.v5u.win/uisegmentedcontrol%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</guid>
+      <description>NSArray* segMArr = [NSArray arrayWithObjects:@&#34;&#34;,@&#34;1&#34;, nil]; UISegmentedControl* segmentC = [[UISegmentedControlalloc]initWithItems:segMArr]; &amp;nbsp; &amp;nbsp; segmentC.frame = CGRectMake(0, 178, 320, 30); &amp;nbsp; &amp;nbsp; segmentC.segmentedControlStyle= UISegmentedControlStylePlain; &amp;nbsp; &amp;nbsp; segmentC.tintColor = [UIColor BlueColor]; &amp;nbsp; &amp;nbsp; segmentC.selectedSegmentIndex= ; &amp;nbsp; &amp;nbsp; [segmentC addTarget:selfaction:@selector(segmentedControlSelected:) forControlEvents:UIControlEventValueChanged]; &amp;nbsp; &amp;nbsp; [bgView addSubview:segmentC]; &amp;#8211; (void)segmentedControlSelected:(UISegmentedControl*)seg{ &amp;nbsp; &amp;nbsp; if(seg.selectedSegmentIndex== ) { &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }elseif(seg.selectedSegmentIndex== 1){ &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; } }</description>
+    </item>
+    
+    <item>
+      <title>NSData转int</title>
+      <link>https://blog.v5u.win/nsdata%E8%BD%ACint/</link>
+      <pubDate>Wed, 29 Apr 2015 06:03:07 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/nsdata%E8%BD%ACint/</guid>
+      <description>有一种借助string的方法，经验证不对，找了半天终于找到了一个合适的，可是没有看的太明白，特补充记录在此。 1.int&amp;nbsp;-&amp;gt;&amp;nbsp;data int&amp;nbsp;i&amp;nbsp;=&amp;nbsp;1; NSData&amp;nbsp;*d</description>
     </item>
     
     <item>
       <title>svn上传.a文件</title>
-      <link>https://blog.v5u.win/post/system-svn-.a-upload/</link>
-      <pubDate>Thu, 23 Apr 2015 09:46:53 +0000</pubDate>
+      <link>https://blog.v5u.win/svn%E4%B8%8A%E4%BC%A0-a%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Thu, 23 Apr 2015 01:46:53 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-svn-.a-upload/</guid>
-      <description>在mac下很多svn管理工具默认都不能上传.a文件，这让人很苦恼。从网上扒了下，找到了两个方法。 方法一： 打开终端，cd 进入到需要上传的.a文</description>
+      <guid>https://blog.v5u.win/svn%E4%B8%8A%E4%BC%A0-a%E6%96%87%E4%BB%B6/</guid>
+      <description>在mac下很多svn管理工具默认都不能上传.a文件，这让人很苦恼。从网上扒了下，找到了两个方法。方法一： 打开终端，cd 进入到需要上传的.a文</description>
+    </item>
+    
+    <item>
+      <title>tableView 如何设置某一行cell可以编辑</title>
+      <link>https://blog.v5u.win/tableview-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E6%9F%90%E4%B8%80%E8%A1%8Ccell%E5%8F%AF%E4%BB%A5%E7%BC%96%E8%BE%91/</link>
+      <pubDate>Tue, 14 Apr 2015 08:30:39 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/tableview-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E6%9F%90%E4%B8%80%E8%A1%8Ccell%E5%8F%AF%E4%BB%A5%E7%BC%96%E8%BE%91/</guid>
+      <description>当我们使用UITableView的时候，会有这样的情况：我们想要某一条可以编辑删除或不可可以编辑删除，但是tableview默认的是对所有的</description>
     </item>
     
     <item>
       <title>iOS8.3发布了Swift 1.2带来哪些新变化</title>
-      <link>https://blog.v5u.win/post/ios-ios8.3-swift-changed/</link>
-      <pubDate>Tue, 14 Apr 2015 14:59:50 +0000</pubDate>
+      <link>https://blog.v5u.win/ios8-3%E5%8F%91%E5%B8%83%E4%BA%86swift-1-2%E5%B8%A6%E6%9D%A5%E5%93%AA%E4%BA%9B%E6%96%B0%E5%8F%98%E5%8C%96/</link>
+      <pubDate>Tue, 14 Apr 2015 06:59:50 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-ios8.3-swift-changed/</guid>
+      <guid>https://blog.v5u.win/ios8-3%E5%8F%91%E5%B8%83%E4%BA%86swift-1-2%E5%B8%A6%E6%9D%A5%E5%93%AA%E4%BA%9B%E6%96%B0%E5%8F%98%E5%8C%96/</guid>
       <description>原文&amp;nbsp;&amp;nbsp;http://www.cnblogs.com/yuyongjian/p/4371400.html 苹果前几日在面向</description>
-    </item>
-    
-    <item>
-      <title>App Store 上架流程</title>
-      <link>https://blog.v5u.win/post/ios-app-store-public/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/ios-app-store-public/</guid>
-      <description>App Store上架流程 申请开发者账号 登录开发者网站，注册cer APP ID， profile (xcode 只能解决测试证书配置) 登录iTunes connection网站，注册</description>
     </item>
     
   </channel>

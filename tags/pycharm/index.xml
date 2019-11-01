@@ -13,10 +13,10 @@
     
     <item>
       <title>pycharm如何添加 local venv</title>
-      <link>https://blog.v5u.win/post/python-pycharm-local-venv/</link>
+      <link>https://blog.v5u.win/pycharm%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0-local-venv/</link>
       <pubDate>Fri, 30 Mar 2018 03:20:02 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/python-pycharm-local-venv/</guid>
+      <guid>https://blog.v5u.win/pycharm%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0-local-venv/</guid>
       <description>需求：pycharm为项目添加已经存在的venv虚拟环境 前几天学习Django，开始是terminal + sublime text。后来学的差不多了，想想做</description>
     </item>
     

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IT黑话 on 为吾优</title>
+    <link>https://blog.v5u.win/tags/it%E9%BB%91%E8%AF%9D/</link>
+    <description>Recent content in IT黑话 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 21 Feb 2019 06:41:46 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/it%E9%BB%91%E8%AF%9D/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>词法作用域</title>
+      <link>https://blog.v5u.win/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/</link>
+      <pubDate>Thu, 21 Feb 2019 06:41:46 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/</guid>
+      <description>首先你得明白程序设计中作用域这个概念：通常来说，一段程序代码中所用到的名字并不总是有效／可用的，而限定这个名字的可用性的代码范围就是这个名字</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -13,28 +13,28 @@
     
     <item>
       <title>iterm比terminal好在哪里？</title>
-      <link>https://blog.v5u.win/post/iterm-better-than-terminal/</link>
+      <link>https://blog.v5u.win/iterm%E6%AF%94terminal%E5%A5%BD%E5%9C%A8%E5%93%AA%E9%87%8C/</link>
       <pubDate>Thu, 12 Jul 2018 02:38:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/iterm-better-than-terminal/</guid>
+      <guid>https://blog.v5u.win/iterm%E6%AF%94terminal%E5%A5%BD%E5%9C%A8%E5%93%AA%E9%87%8C/</guid>
       <description>iterm比terminal好在哪里？ 为什么要用iterm 多窗口切换 command + T 同个窗口横向分屏 command + d 同个窗口，竖向分屏 command + shift + d 自动补齐命令 comm +</description>
     </item>
     
     <item>
       <title>terminal的显示增加色彩</title>
-      <link>https://blog.v5u.win/post/system-terminal-add-colors/</link>
+      <link>https://blog.v5u.win/terminal%E7%9A%84%E6%98%BE%E7%A4%BA%E5%A2%9E%E5%8A%A0%E8%89%B2%E5%BD%A9/</link>
       <pubDate>Wed, 04 Apr 2018 10:16:29 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-terminal-add-colors/</guid>
+      <guid>https://blog.v5u.win/terminal%E7%9A%84%E6%98%BE%E7%A4%BA%E5%A2%9E%E5%8A%A0%E8%89%B2%E5%BD%A9/</guid>
       <description>打开 .bash_profile文件，添加： export GREP_OPTIONS=‘—-color=auto’ #如果没有指定，则自动选择颜色 export CLICOLOR=1 #是否输</description>
     </item>
     
     <item>
       <title>mac文件权限修改</title>
-      <link>https://blog.v5u.win/post/mac-file-right-change/</link>
-      <pubDate>Mon, 13 Mar 2017 17:20:42 +0000</pubDate>
+      <link>https://blog.v5u.win/mac%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%BF%AE%E6%94%B9/</link>
+      <pubDate>Mon, 13 Mar 2017 09:20:42 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-file-right-change/</guid>
+      <guid>https://blog.v5u.win/mac%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%BF%AE%E6%94%B9/</guid>
       <description>文件或目录的访问权限分为只读，只写和可执行三种。 文件被创建时，文件所有者自动拥有对该文件的读、写和可执行权限，以便于对文件的阅读和修改。 有三</description>
     </item>
     

@@ -6,17 +6,17 @@
     <description>Recent content in 快捷键 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 29 Mar 2016 23:50:12 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Mar 2016 15:50:12 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Xcode快捷键</title>
-      <link>https://blog.v5u.win/post/xcode-shortcut-key/</link>
-      <pubDate>Tue, 29 Mar 2016 23:50:12 +0000</pubDate>
+      <link>https://blog.v5u.win/xcode%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Tue, 29 Mar 2016 15:50:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-shortcut-key/</guid>
+      <guid>https://blog.v5u.win/xcode%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
       <description>常用xcode快捷键 整行移动 option+commend+[] 当前页快速定位：ctl+6 项目中file间快速定位：shift+cmd+o 删除光标右边的字符：Ctrl+D 删除</description>
     </item>
     

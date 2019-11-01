@@ -6,387 +6,468 @@
     <description>Recent content in Go on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 28 Oct 2019 10:08:59 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Oct 2019 06:15:11 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/go/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Go谚语</title>
-      <link>https://blog.v5u.win/post/go%E8%B0%9A%E8%AF%AD/</link>
-      <pubDate>Mon, 28 Oct 2019 10:08:59 +0800</pubDate>
+      <title>go谚语</title>
+      <link>https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/</link>
+      <pubDate>Wed, 30 Oct 2019 06:15:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go%E8%B0%9A%E8%AF%AD/</guid>
-      <description>[TOC] 本文摘自 https://www.kancloud.cn/cserli/golang/524388 本文译自go-proverbs, 脱胎于 Rob Pike 振奋人心的演讲视频 talk at Gopherfest SV 2015 (bilibili). 不要通过共享内存进行通信, 通过通信共享内存 (Don&amp;rsquo;t communicate by sharing memory, share memory</description>
+      <guid>https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/</guid>
+      <description>本文摘自 https://www.kancloud.cn/cserli/golang/524388 本文译自go-proverbs, 脱胎于 Rob Pike 振奋人心的演讲视频 talk at Gopherfest SV 2015 (bilibili). 不要通过共享内存进行通信, 通过通信共享内存 (Don’t communicate by</description>
     </item>
     
     <item>
-      <title>Go CGO</title>
-      <link>https://blog.v5u.win/post/go-cgo/</link>
-      <pubDate>Tue, 20 Aug 2019 18:06:35 +0800</pubDate>
+      <title>CGO</title>
+      <link>https://blog.v5u.win/cgo/</link>
+      <pubDate>Wed, 30 Oct 2019 06:12:52 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-cgo/</guid>
-      <description>[TOC] golang 中调用 c/c++ 代码有三种方式 直接嵌套在go文件中使用，最简单直观的 导入动态库 .so 或 dll 的形式，最安全但是很不爽也比较慢的 直接引用 c/c++ 文件的形式，层次</description>
+      <guid>https://blog.v5u.win/cgo/</guid>
+      <description>golang 中调用 c/c++ 代码有三种方式 直接嵌套在go文件中使用，最简单直观的 导入动态库 .so 或 dll 的形式，最安全但是很不爽也比较慢的 直接引用 c/c++ 文件的形式，层次分</description>
     </item>
     
     <item>
-      <title>Go Gofmt</title>
-      <link>https://blog.v5u.win/post/go-gofmt/</link>
-      <pubDate>Fri, 16 Aug 2019 17:57:28 +0800</pubDate>
+      <title>Gofmt</title>
+      <link>https://blog.v5u.win/gofmt/</link>
+      <pubDate>Wed, 30 Oct 2019 06:11:21 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-gofmt/</guid>
+      <guid>https://blog.v5u.win/gofmt/</guid>
       <description>[TOC] 为什么要用 gofmt 大多数人认为我们格式化Go代码gofmt 以使代码看起来更好或结束团队成员之间关于程序布局的争论。但是， 1是，如果一个算法定义围</description>
     </item>
     
     <item>
       <title>Go Bazel构建工具</title>
-      <link>https://blog.v5u.win/post/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Fri, 16 Aug 2019 16:02:29 +0800</pubDate>
+      <link>https://blog.v5u.win/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Wed, 30 Oct 2019 06:10:37 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/</guid>
+      <guid>https://blog.v5u.win/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/</guid>
       <description>[TOC] 为什么要了解Bazel 这段时间搞到了bilibili的一部分源码，那个事件你知道的，就不说了。怀着对大牛的向往，打算研究一下，之前听说主程</description>
     </item>
     
     <item>
-      <title>Go2</title>
-      <link>https://blog.v5u.win/post/go-go2/</link>
-      <pubDate>Tue, 13 Aug 2019 14:02:52 +0800</pubDate>
+      <title>etcd</title>
+      <link>https://blog.v5u.win/etcd/</link>
+      <pubDate>Wed, 30 Oct 2019 06:09:26 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-go2/</guid>
-      <description>[TOC] 中文版 English version 介绍 [这是我上周在Gophercon 2019上发表的博客文章。我们将在演讲结束后添加视频链接。] 我们都正在一起走向Go 2的路上，</description>
+      <guid>https://blog.v5u.win/etcd/</guid>
+      <description>[TOC] 描述 etcd是CoreOS团队于2013年6月发起的开源项目，它的目标是构建一个高可用的分布式键值(key-value)数据库。etcd内</description>
     </item>
     
     <item>
-      <title>Go Crontab</title>
-      <link>https://blog.v5u.win/post/go-crontab/</link>
-      <pubDate>Fri, 19 Jul 2019 16:51:27 +0800</pubDate>
+      <title>Go2</title>
+      <link>https://blog.v5u.win/go2-2/</link>
+      <pubDate>Wed, 30 Oct 2019 06:04:04 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-crontab/</guid>
-      <description>[TOC] 计划任务 from Godoc 包cron实现了cron规范解析器和作业运行器。 安装 要下载特定的标记版本，请运行: go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中: import “github.</description>
+      <guid>https://blog.v5u.win/go2-2/</guid>
+      <description>Go：为何带来泛型 中文版 English version 介绍 [这是在Gophercon 2019上发表的演讲版本。视频链接可供使用。] 这篇文章是关于向Go添加泛型的意义，</description>
+    </item>
+    
+    <item>
+      <title>LiteIDE</title>
+      <link>https://blog.v5u.win/liteide/</link>
+      <pubDate>Wed, 30 Oct 2019 06:01:39 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/liteide/</guid>
+      <description>[TOC] 简介 liteide是专门为go编写的一个基于qt5的IDE，免费开源跨平台。 LiteIDE 是一个轻量级的开源跨平台 Go语言 IDE. 作者: 七叶 (visualfc) 支持 Windo</description>
     </item>
     
     <item>
       <title>Go Crontab v3</title>
-      <link>https://blog.v5u.win/post/go-crontab-v3/</link>
-      <pubDate>Fri, 19 Jul 2019 16:51:27 +0800</pubDate>
+      <link>https://blog.v5u.win/go-crontab-v3/</link>
+      <pubDate>Thu, 12 Sep 2019 02:58:15 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-crontab-v3/</guid>
+      <guid>https://blog.v5u.win/go-crontab-v3/</guid>
       <description>[TOC] 关于cron更新 Cron V3已经发布！ 要下载特定的标记版本，请运行: go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中: import &amp;quot;github.com/robfig/cron/v3&amp;quot; 由于Go Modules的使用，它需要Go 1.1</description>
     </item>
     
     <item>
-      <title>go社区拒绝了try提案</title>
-      <link>https://blog.v5u.win/post/go-%E6%8B%92%E7%BB%9D%E4%BA%86try%E6%8F%90%E6%A1%88/</link>
-      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-%E6%8B%92%E7%BB%9D%E4%BA%86try%E6%8F%90%E6%A1%88/</guid>
-      <description>提案：内置的Go错误检查功能， try 该提案已经结束。谢谢大家，感谢您的投入。 在评论之前，请阅读详细的设计文档，并查看截至6月6日的摘要，截至6月</description>
-    </item>
-    
-    <item>
       <title>Goland 使用</title>
-      <link>https://blog.v5u.win/post/go-goland/</link>
-      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      <link>https://blog.v5u.win/goland-%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sun, 01 Sep 2019 11:45:59 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-goland/</guid>
+      <guid>https://blog.v5u.win/goland-%E4%BD%BF%E7%94%A8/</guid>
       <description>做 Go 开发，一般使用的IDE是 Goland 安装略，自己解决。下面说安装后的事情。 配置文件，配置开发环境 goland 会自动读取 GOROOT 和 GOPATH，所以不用自己填写。我</description>
     </item>
     
     <item>
-      <title>Go orm 对比选择</title>
-      <link>https://blog.v5u.win/post/go-orm/</link>
-      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      <title>Go CGO</title>
+      <link>https://blog.v5u.win/go-cgo/</link>
+      <pubDate>Tue, 20 Aug 2019 10:40:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-orm/</guid>
-      <description>golang 中 orm最主流的两个包，xorm和gorm。所以主要在他们之间做抉择。 name xorm gorm github-stars 5,053 14,262 github-fork 650 1,606 不管是从stars数还是fork gorm都是大比例</description>
+      <guid>https://blog.v5u.win/go-cgo/</guid>
+      <description>[TOC] golang 中调用 c/c++ 代码有三种方式 直接嵌套在go文件中使用，最简单直观的 导入动态库 .so 或 dll 的形式，最安全但是很不爽也比较慢的 直接引用 c/c++ 文件的形式，层次</description>
+    </item>
+    
+    <item>
+      <title>Go2</title>
+      <link>https://blog.v5u.win/go2/</link>
+      <pubDate>Tue, 13 Aug 2019 05:59:16 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go2/</guid>
+      <description>[TOC] 中文版 English version 介绍 社区做了哪些努力 [这是我上周在Gophercon 2019上发表的博客文章。我们将在演讲结束后添加视频链接。] 我们都正在一起走</description>
+    </item>
+    
+    <item>
+      <title>Go Crontab</title>
+      <link>https://blog.v5u.win/go-crontab/</link>
+      <pubDate>Fri, 19 Jul 2019 10:18:33 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go-crontab/</guid>
+      <description>[TOC] 计划任务 from Godoc 包cron实现了cron规范解析器和作业运行器。 安装 要下载特定的标记版本，请运行: go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中: import “github.</description>
     </item>
     
     <item>
       <title>Go Toml</title>
-      <link>https://blog.v5u.win/post/go-toml/</link>
-      <pubDate>Wed, 26 Jun 2019 15:33:44 +0800</pubDate>
+      <link>https://blog.v5u.win/go-toml/</link>
+      <pubDate>Tue, 16 Jul 2019 05:47:02 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-toml/</guid>
+      <guid>https://blog.v5u.win/go-toml/</guid>
       <description>[TOC] 常用的配置文件有：ini, ymal, json, toml 说一下为什么要选择 toml。toml 格式是最新公布的配置文件格式，由GitHub创始人 Tom Preston-Werner 发明。TOML 的</description>
     </item>
     
     <item>
-      <title>Go Iris Redis</title>
-      <link>https://blog.v5u.win/post/go-iris-redis/</link>
-      <pubDate>Tue, 11 Jun 2019 10:15:20 +0800</pubDate>
+      <title>Go语言 imagick 使用总结</title>
+      <link>https://blog.v5u.win/go%E8%AF%AD%E8%A8%80-imagick-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 16 Jul 2019 05:45:35 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-iris-redis/</guid>
-      <description>[TOC] iris 中使用 Redis iris 内置对 Redis 的支持，但是她和 session 结合的比较紧密，比如每一个方法传参都大部分都有 sid，在当前文件 database.go 找了半天没找到在哪里定义了 sid，</description>
-    </item>
-    
-    <item>
-      <title>Go BeeGoVSgin</title>
-      <link>https://blog.v5u.win/post/go-beegovsgin/</link>
-      <pubDate>Mon, 03 Jun 2019 13:38:52 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-beegovsgin/</guid>
-      <description>[TOC] beego和gin是现在用的最多的两个go框架，所以这里选择比较这两个。 框架选择原则：永远站在大多数人这边。招人，公司，成本，问题解决时间</description>
-    </item>
-    
-    <item>
-      <title>Go 单例</title>
-      <link>https://blog.v5u.win/post/go-%E5%8D%95%E4%BE%8B/</link>
-      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-%E5%8D%95%E4%BE%8B/</guid>
-      <description>为什么使用单例？ 由于Go的多协程机制，当只是单核的时候，变量还不会出现问题，但是当设置成多核之后，就会涉及到变量的作用域问题，只用普通方式常</description>
-    </item>
-    
-    <item>
-      <title>Go DI LoC研究</title>
-      <link>https://blog.v5u.win/post/go-di-loc/</link>
-      <pubDate>Fri, 24 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-di-loc/</guid>
-      <description>依赖注入，控制反转 目的：实现模块与项目的解耦 实现流程 首先模块有指针，其次DI拿到指针，再次DI将指针赋给调用者 共调研了三个框架：iris内置</description>
-    </item>
-    
-    <item>
-      <title>imagick</title>
-      <link>https://blog.v5u.win/post/go-imagick/</link>
-      <pubDate>Fri, 17 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-imagick/</guid>
+      <guid>https://blog.v5u.win/go%E8%AF%AD%E8%A8%80-imagick-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
       <description>Go语言imagick 使用总结 imagick 是一个开源的 c语言图片处理库，所以需要本地安装，并且配置 CGO Mac 安装imagic brew install imagemagick 有的可能需要安装 brew install pkg-config CG</description>
     </item>
     
     <item>
-      <title>Go 自定义包模板引用 moudle</title>
-      <link>https://blog.v5u.win/post/go-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E6%A8%A1%E6%9D%BF%E5%BC%95%E7%94%A8/</link>
-      <pubDate>Mon, 13 May 2019 13:17:53 +0800</pubDate>
+      <title>Go Iris Redis</title>
+      <link>https://blog.v5u.win/go-iris-redis/</link>
+      <pubDate>Tue, 16 Jul 2019 05:43:58 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E6%A8%A1%E6%9D%BF%E5%BC%95%E7%94%A8/</guid>
-      <description>源起：最近在调研Go，需要使用Go搭建一套通用式的模板框架，用以当新开其他项目的时候直接基于模板框架开发。 固定化引入自定义包的路径，解决——</description>
-    </item>
-    
-    <item>
-      <title>Go Nginx反向代理</title>
-      <link>https://blog.v5u.win/post/go-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</link>
-      <pubDate>Fri, 10 May 2019 16:08:55 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</guid>
-      <description>当我们启动一个go 程序的时候，通常监听的是本地端口如 IP:port 。但是实际的线上环境，解析路径是：通过 DNS 解析 ——&amp;gt; nginx vhost ——&amp;gt; IP:port 这个。单纯的</description>
-    </item>
-    
-    <item>
-      <title>Go Quick Start</title>
-      <link>https://blog.v5u.win/post/go-quick-start/</link>
-      <pubDate>Wed, 08 May 2019 15:39:15 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-quick-start/</guid>
-      <description>有经验开发者，快速入门 Go 语言 发明Go语言是出于更好地完成工作的需要。Go不是计算机科学的最新发展潮流，但它却提供了解决现实问题的最新最快的方</description>
-    </item>
-    
-    <item>
-      <title>Go 代码规范</title>
-      <link>https://blog.v5u.win/post/go-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</link>
-      <pubDate>Mon, 29 Apr 2019 11:37:14 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
-      <description>[TOC] Golang代码规范 参考 https://golang.org/doc/effective_go.html 本文参考blog 项目目录结构规范 PROJECT_NAME ├── README.md 介绍软件及文档入口 ├── bin 编译好的二进制文件,执行./build.sh</description>
-    </item>
-    
-    <item>
-      <title>Go web技术栈</title>
-      <link>https://blog.v5u.win/post/go-web%E6%8A%80%E6%9C%AF%E6%A0%88/</link>
-      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-web%E6%8A%80%E6%9C%AF%E6%A0%88/</guid>
-      <description>iris 框架 go-beanstalkd 消息队列 gRPC go module 包管理 gin+gorm / singo</description>
-    </item>
-    
-    <item>
-      <title>Go 交叉编译</title>
-      <link>https://blog.v5u.win/post/go-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</link>
-      <pubDate>Thu, 18 Apr 2019 17:22:29 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</guid>
-      <description>查看操作系统平台和内核版本：uname -a Mac 下编译 Linux 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go Linux 下编译 Mac 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows</description>
+      <guid>https://blog.v5u.win/go-iris-redis/</guid>
+      <description>[TOC] iris 中使用 Redis iris 内置对 Redis 的支持，但是她和 session 结合的比较紧密，比如每一个方法传参都大部分都有 sid，在当前文件 database.go 找了半天没找到在哪里定义了 sid，</description>
     </item>
     
     <item>
       <title>Go-Authorization</title>
-      <link>https://blog.v5u.win/post/go-authorization/</link>
-      <pubDate>Mon, 15 Apr 2019 14:52:48 +0000</pubDate>
+      <link>https://blog.v5u.win/go-authorization/</link>
+      <pubDate>Tue, 16 Jul 2019 05:40:34 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-authorization/</guid>
+      <guid>https://blog.v5u.win/go-authorization/</guid>
       <description>接口认证 一般接口开发中有以下常用的几种安全机制： 用户认证 数字签名 接口加密 用户认证 一般的接口测试工具都会提供一个User Auth/Author</description>
     </item>
     
     <item>
-      <title>Go gRPC研究总结</title>
-      <link>https://blog.v5u.win/post/go-grpc%E7%A0%94%E7%A9%B6%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Thu, 11 Apr 2019 00:00:00 +0000</pubDate>
+      <title>Go BeeGo VS Gin</title>
+      <link>https://blog.v5u.win/go-beego-vs-gin/</link>
+      <pubDate>Tue, 16 Jul 2019 05:36:51 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-grpc%E7%A0%94%E7%A9%B6%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://blog.v5u.win/go-beego-vs-gin/</guid>
+      <description>[TOC] beego和gin是现在用的最多的两个go框架，所以这里选择比较这两个。 框架选择原则：永远站在大多数人这边。招人，公司，成本，问题解决时间</description>
+    </item>
+    
+    <item>
+      <title>Go DI LoC 依赖注入研究</title>
+      <link>https://blog.v5u.win/go-di-loc-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E7%A0%94%E7%A9%B6/</link>
+      <pubDate>Wed, 29 May 2019 03:18:11 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go-di-loc-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E7%A0%94%E7%A9%B6/</guid>
+      <description>依赖注入，控制反转 设计模式 目的：实现模块与项目的解耦 实现流程 首先模块有指针，其次DI拿到指针，再次DI将指针赋给调用者 共调研了三个框架：ir</description>
+    </item>
+    
+    <item>
+      <title>Go 单例</title>
+      <link>https://blog.v5u.win/go-%E5%8D%95%E4%BE%8B/</link>
+      <pubDate>Mon, 27 May 2019 09:25:43 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go-%E5%8D%95%E4%BE%8B/</guid>
+      <description>单例的作用不用我多说，大家都知道，那么在go中如何构造单例呢，下面是我的总结。 一、 sync.Once用法 在Go中有一个简洁的方法就是使用sy</description>
+    </item>
+    
+    <item>
+      <title>Go模板框架自定义包的引用</title>
+      <link>https://blog.v5u.win/go%E6%A8%A1%E6%9D%BF%E6%A1%86%E6%9E%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E7%9A%84%E5%BC%95%E7%94%A8/</link>
+      <pubDate>Tue, 14 May 2019 09:09:50 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go%E6%A8%A1%E6%9D%BF%E6%A1%86%E6%9E%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E7%9A%84%E5%BC%95%E7%94%A8/</guid>
+      <description>源起：最近在调研Go，需要使用Go搭建一套通用式的模板框架，用以当新开其他项目的时候直接基于模板框架开发。 固定化引入自定义包的路径，解决——</description>
+    </item>
+    
+    <item>
+      <title>nginx 反向代理 go 服务</title>
+      <link>https://blog.v5u.win/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86-go-%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Fri, 10 May 2019 08:04:08 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86-go-%E6%9C%8D%E5%8A%A1/</guid>
+      <description>当我们启动一个go 程序的时候，通常监听的是本地端口如 IP:port 。但是实际的线上环境，解析路径是：通过 DNS 解析 ——&amp;gt; nginx vhost ——&amp;gt; IP:port 这个。单纯的</description>
+    </item>
+    
+    <item>
+      <title>有经验开发者，快速入门 Go 语言</title>
+      <link>https://blog.v5u.win/%E6%9C%89%E7%BB%8F%E9%AA%8C%E5%BC%80%E5%8F%91%E8%80%85%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-go-%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Wed, 08 May 2019 07:39:21 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E6%9C%89%E7%BB%8F%E9%AA%8C%E5%BC%80%E5%8F%91%E8%80%85%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-go-%E8%AF%AD%E8%A8%80/</guid>
+      <description>有经验开发者，快速入门 Go 语言 发明Go语言是出于更好地完成工作的需要。Go不是计算机科学的最新发展潮流，但它却提供了解决现实问题的最新最快的方</description>
+    </item>
+    
+    <item>
+      <title>Dockerfile最佳实践</title>
+      <link>https://blog.v5u.win/dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Wed, 08 May 2019 02:12:20 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式： 只用 Dockerfile 管理镜像 使用d</description>
+    </item>
+    
+    <item>
+      <title>Go交叉编译</title>
+      <link>https://blog.v5u.win/go%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Thu, 18 Apr 2019 09:25:29 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</guid>
+      <description>查看操作系统平台和内核版本：uname -a Mac 下编译 Linux 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go Linux 下编译 Mac 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows</description>
+    </item>
+    
+    <item>
+      <title>Go gRPC研究总结</title>
+      <link>https://blog.v5u.win/go-grpc%E7%A0%94%E7%A9%B6%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 15 Apr 2019 06:47:55 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go-grpc%E7%A0%94%E7%A9%B6%E6%80%BB%E7%BB%93/</guid>
       <description>什么是RPC RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RP</description>
     </item>
     
     <item>
-      <title>Go modules</title>
-      <link>https://blog.v5u.win/post/go-modules/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      <title>Go Web框架选型</title>
+      <link>https://blog.v5u.win/go-web%E6%A1%86%E6%9E%B6%E9%80%89%E5%9E%8B/</link>
+      <pubDate>Mon, 08 Apr 2019 03:34:20 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-modules/</guid>
-      <description>go modules [TOC] go 1.13 的环境配置 删除.zshrc 中的大部分配置，只配置goroot其余配置用下列命令： go env -w GOSUMDB=&amp;quot;sum.golang.google.cn&amp;quot; # 更换为国内的校验源，默认sum.gola</description>
+      <guid>https://blog.v5u.win/go-web%E6%A1%86%E6%9E%B6%E9%80%89%E5%9E%8B/</guid>
+      <description>[TOC] Beego 在某些方面，Beego会让人联想到Python中包罗万象的Django Web框架。它具备各种Web应用程序的通用功能，总共有八个模块，你</description>
     </item>
     
     <item>
-      <title>Go-API 项目模板文档</title>
-      <link>https://blog.v5u.win/post/go-api-%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF%E6%96%87%E6%A1%A3/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      <title>为什么需要go语言</title>
+      <link>https://blog.v5u.win/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81go%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Thu, 28 Mar 2019 08:40:14 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-api-%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF%E6%96%87%E6%A1%A3/</guid>
-      <description>项目目录结构规范 PROJECT_NAME ├── README.md //介绍软件及文档入口 ├── bin //编译好的二进制文件,执行./build.sh自动生成，该目录也用于程序打包 ├──</description>
+      <guid>https://blog.v5u.win/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81go%E8%AF%AD%E8%A8%80/</guid>
+      <description>为什么需要go语言 计算机硬件技术更新频繁，多核CPU不能充分发挥性能 目前的语言不够简洁高效（现有语言：1.风格不统一 2.计算能力不够 3.处理</description>
     </item>
     
     <item>
-      <title>Go-iris-template</title>
-      <link>https://blog.v5u.win/post/go-iris-template/</link>
-      <pubDate>Fri, 08 Mar 2019 17:25:10 +0000</pubDate>
+      <title>go modules 包管理</title>
+      <link>https://blog.v5u.win/go-modules-%E5%8C%85%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Fri, 22 Mar 2019 08:35:56 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-iris-template/</guid>
-      <description>Iris 支持五个开箱即用的模板引擎，所有这五个模板引擎都具有通用API的共同特征，如布局，模板功能，特定于派对的布局，部分渲染等。 标准的html,</description>
+      <guid>https://blog.v5u.win/go-modules-%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
+      <description>go modules [TOC] 环境配置 正确配置 GOROOT export GOPROXY=&amp;quot;https://athens.azurefd.net&amp;quot; # 微软提供的公共代理，解决golang/x/tools 下载失败 也可以以此技术建立自己的公共库 初始化 同时 确定了项目</description>
+    </item>
+    
+    <item>
+      <title>Golang代码规范</title>
+      <link>https://blog.v5u.win/golang%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Thu, 21 Mar 2019 07:48:02 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/golang%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
+      <description>Golang代码规范 参考 https://golang.org/doc/effective_go.html 本文参考blog [TOC] 项目目录结构规范 PROJECT_NAME ├── README.md 介绍软件及文档入口 ├── bin 编译好的二进制文件,执行./build.sh</description>
+    </item>
+    
+    <item>
+      <title>iris-mvc架构的目录拆解</title>
+      <link>https://blog.v5u.win/iris-mvc%E6%9E%B6%E6%9E%84%E7%9A%84%E7%9B%AE%E5%BD%95%E6%8B%86%E8%A7%A3/</link>
+      <pubDate>Wed, 13 Mar 2019 07:52:15 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/iris-mvc%E6%9E%B6%E6%9E%84%E7%9A%84%E7%9B%AE%E5%BD%95%E6%8B%86%E8%A7%A3/</guid>
+      <description>├── bootstrap │ └── bootstrapper.go 引导者。全局变量配置，模板、session、web socket、Error page ├── conf │ └── db.go 数据库配置模型。struct</description>
+    </item>
+    
+    <item>
+      <title>go iris 服务器 性能优化与性能对比</title>
+      <link>https://blog.v5u.win/go-iris-%E6%9C%8D%E5%8A%A1%E5%99%A8-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%8E%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/</link>
+      <pubDate>Wed, 13 Mar 2019 07:32:08 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go-iris-%E6%9C%8D%E5%8A%A1%E5%99%A8-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E4%B8%8E%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94/</guid>
+      <description>性能优化与性能对比 对比1，模板是否支持每次更新检查 对比2，开启xorm数据缓存 对比3，不用模板，不查数据 *优化方向： 尽量减少模板更新 善用数据</description>
+    </item>
+    
+    <item>
+      <title>压力测试 ab wrk</title>
+      <link>https://blog.v5u.win/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95-ab-wrk/</link>
+      <pubDate>Tue, 12 Mar 2019 08:37:12 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95-ab-wrk/</guid>
+      <description>压力测试 ab wrk ab为Apache内置 ab -n1000 -c10 http://localhost:8080/ 1000次请求 10个并发,分析 Requests per second 字段 Server Software: Iris: Server Hostname: localhost Server Port: 8080 Document Path: / Document Length: 5368 bytes Concurrency Level: 10 Time taken for tests: 0.758 seconds Complete requests: 1000 Failed</description>
+    </item>
+    
+    <item>
+      <title>xorm cmd 墙内安装</title>
+      <link>https://blog.v5u.win/xorm-%E5%A2%99%E5%86%85%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 11 Mar 2019 07:12:34 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/xorm-%E5%A2%99%E5%86%85%E5%AE%89%E8%A3%85/</guid>
+      <description>xorm cmd 墙内安装 有两个库不能墙内访问 civil crypto.所以我们需要迂回一下安装。 可以直接用 git clone github.com 上的库。这两个库都可以在GitHub上找到。 go get github.com/go-xorm/cmd/xorm</description>
+    </item>
+    
+    <item>
+      <title>Go-如何选择合适的Web模板引擎</title>
+      <link>https://blog.v5u.win/go-iris-template/</link>
+      <pubDate>Fri, 08 Mar 2019 09:29:09 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go-iris-template/</guid>
+      <description>所谓模板引擎，则将模板和数据进行渲染的输出格式化后的字符程序。对于go，执行这个流程大概需要三步。 创建模板对象 加载模板字串 执行渲染模板 其中最</description>
     </item>
     
     <item>
       <title>Go Iris 路由</title>
-      <link>https://blog.v5u.win/post/go-iris-%E8%B7%AF%E7%94%B1/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
+      <link>https://blog.v5u.win/go-iris-%E8%B7%AF%E7%94%B1/</link>
+      <pubDate>Fri, 08 Mar 2019 09:27:20 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-iris-%E8%B7%AF%E7%94%B1/</guid>
+      <guid>https://blog.v5u.win/go-iris-%E8%B7%AF%E7%94%B1/</guid>
       <description>路由配置规则 直接通过 function 绑定 controller，function name 映射到 路由的地址 function named rule： func(*Controller) GetLoginBy(id int64) 绑定的controller HTTP-method+routePath map to - GET:/user/login/{param:long} 通</description>
     </item>
     
     <item>
-      <title>Go Error 错误处理</title>
-      <link>https://blog.v5u.win/post/go-error-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</link>
-      <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-error-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</guid>
-      <description>常用的有五种方式 第一种策略 首先，也是最常用的方式是传播错误。这意味着函数中某个子程序的失败，会变成该函数的失败。我们使用该函数前缀添加额外的</description>
-    </item>
-    
-    <item>
       <title>Go HTML template</title>
-      <link>https://blog.v5u.win/post/go-html-template/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      <link>https://blog.v5u.win/go-html-template/</link>
+      <pubDate>Tue, 05 Mar 2019 09:47:46 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-html-template/</guid>
-      <description>文档 go doc text/template $ go doc html/template 应用 func main() { // 定义模板显示格式 const templ = `&amp;lt;p&amp;gt;A: {{.A}}&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;B: {{.B}}&amp;lt;/p&amp;gt;` // 模板配置函数 t := template.Must(template.New(&amp;quot;escape&amp;quot;).Parse(templ)) var data struct { A string // untrusted plain text B template.HTML // trusted HTML } // A是一个普通字符串，B是一个</description>
+      <guid>https://blog.v5u.win/go-html-template/</guid>
+      <description>文档 go doc text/template $ go doc html/template 应用 &amp;lt;br /func main() { // 定义模板显示格式 const templ = `A: {{.A}} &amp;lt;p&amp;gt;B: {{.B}}&amp;lt;/p&amp;gt;` // 模板配置函数 t := template.Must(template.New(&#34;escape&#34;).Parse(templ)) var data struct { A string // untrusted plain text B template.HTML // trusted HTML } // A是一个普通字符串，B是</description>
     </item>
     
     <item>
-      <title>Go-语言要点</title>
-      <link>https://blog.v5u.win/post/go-%E8%AF%AD%E8%A8%80%E8%A6%81%E7%82%B9/</link>
-      <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+      <title>Go JSON</title>
+      <link>https://blog.v5u.win/go-json/</link>
+      <pubDate>Tue, 05 Mar 2019 09:45:57 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-%E8%AF%AD%E8%A8%80%E8%A6%81%E7%82%B9/</guid>
-      <description>[TOC] 要点 本章对Go语言做了一些介绍，Go语言很多方面在有限的篇幅中无法覆盖到。本节会把没有讲到的内容也做一些简单的介绍，这样读者在读到完整的内</description>
+      <guid>https://blog.v5u.win/go-json/</guid>
+      <description>标准库 encoding/json、encoding/xml、encoding/asn1 Model type Movie struct { Title string Year int `json:&#34;released&#34;` Color bool `json:&#34;color,omitempty&#34;` Actors []string } // 赋值 var movies = []Movie{ {Title: &#34;Casablanca&#34;, Year: 1942,</description>
+    </item>
+    
+    <item>
+      <title>Go语言要点</title>
+      <link>https://blog.v5u.win/go%E8%AF%AD%E8%A8%80%E8%A6%81%E7%82%B9/</link>
+      <pubDate>Wed, 27 Feb 2019 09:50:32 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go%E8%AF%AD%E8%A8%80%E8%A6%81%E7%82%B9/</guid>
+      <description>控制流： 在本章我们只介绍了if控制和for，但是没有提到switch多路选择。这里是一个简单的switch的例子： switch coinflip() { case &#34;heads&#34;: heads++ case &#34;tails&#34;: tails++ default: fmt.Println(&#34;landed on edge!&#34;)</description>
+    </item>
+    
+    <item>
+      <title>Go 编译报错 expected &#39;IDENT&#39;, found &#39;go&#39;</title>
+      <link>https://blog.v5u.win/expected-ident-found-go/</link>
+      <pubDate>Wed, 27 Feb 2019 09:10:11 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/expected-ident-found-go/</guid>
+      <description>报错 expected &amp;#8216;IDENT&amp;#8217;, found &amp;#8216;go&amp;#8217; 运行go run 文件目录为 . ├── README.md ├── fetch │ ├── fetch.go │ ├── fetch1.7.go │ ├── fetchall.go │ ├── server1.go │ ├── server2.go │ └── server3.go └── go-demo ├── main.go ├── mgif.go └──</description>
     </item>
     
     <item>
       <title>Go 语言简介</title>
-      <link>https://blog.v5u.win/post/go-%E8%AF%AD%E8%A8%80%E7%AE%80%E4%BB%8B/</link>
-      <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
+      <link>https://blog.v5u.win/go-%E8%AF%AD%E8%A8%80%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Thu, 21 Feb 2019 09:51:30 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-%E8%AF%AD%E8%A8%80%E7%AE%80%E4%BB%8B/</guid>
-      <description>[TOC] C/C++ 与 Go语言的“价值观”对照 之前看过 白明老师 在GopherChina2017的一篇演讲文章《Go coding in go way》，里面提到C/C++/Go三</description>
+      <guid>https://blog.v5u.win/go-%E8%AF%AD%E8%A8%80%E7%AE%80%E4%BB%8B/</guid>
+      <description>Go 的底层语言是什么 借用大神的话来说 编译器就是输入源代码输出其他语言源代码的程序 所以这个程序用什么语言实现无所谓 然而，一开始没有go，所以用c</description>
+    </item>
+    
+    <item>
+      <title>Go 命令</title>
+      <link>https://blog.v5u.win/go-%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 19 Feb 2019 05:14:51 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go-%E5%91%BD%E4%BB%A4/</guid>
+      <description>go run 编译并运行Go源码文件 go build 编译源码文件，代码包，依赖包 go get 动态获取远程代码包 go get 简介（1) 用于从远程代码仓库（如著名Github )上下载</description>
+    </item>
+    
+    <item>
+      <title>Go-源码组织方式</title>
+      <link>https://blog.v5u.win/go-%E6%BA%90%E7%A0%81%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Tue, 19 Feb 2019 05:13:48 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go-%E6%BA%90%E7%A0%81%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F/</guid>
+      <description>Go源码文件以 .go 为后缀。 Go语言的代码通过包（package）组织，包类似于其它语言里的库（libraries）或者模块（modules）。</description>
+    </item>
+    
+    <item>
+      <title>Go-工作区和GOPATH</title>
+      <link>https://blog.v5u.win/go-%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8Cgopath/</link>
+      <pubDate>Tue, 19 Feb 2019 05:12:26 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go-%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8Cgopath/</guid>
+      <description>工作区和GOPATH 工作区是放置Go源码文件的目录，一般情况下，Go源码文件都需要放在工作区，但是对于命令源码文件来说，这不是必须的。 工作区</description>
     </item>
     
     <item>
       <title>Go异常处理</title>
-      <link>https://blog.v5u.win/post/go-error/</link>
-      <pubDate>Mon, 18 Feb 2019 15:48:37 +0000</pubDate>
+      <link>https://blog.v5u.win/go%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+      <pubDate>Tue, 19 Feb 2019 05:09:32 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-error/</guid>
-      <description>type error interface { Error() string } error的声明 创建一个error if path == &amp;quot;&amp;quot; { return nil, errors.New(&amp;quot;The parameter is invalid!&amp;quot;) } error的使用 func readFile(path string) ([]byte, error) { file, err := os.Open(path) if err != nil { return nil, err } defer file.Close() return ioutil.ReadAll(file) } 异常</description>
+      <guid>https://blog.v5u.win/go%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
+      <description>type error interface { Error() string } error的声明 创建一个error if path == &#34;&#34; { return nil, errors.New(&#34;The parameter is invalid!&#34;) } error的使用 func readFile(path string) ([]byte, error) { file, err := os.Open(path) if err != nil { return nil, err } defer file.Close() return ioutil.ReadAll(file) } 异常</description>
     </item>
     
     <item>
       <title>Go-流程控制</title>
-      <link>https://blog.v5u.win/post/go-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</link>
-      <pubDate>Mon, 18 Feb 2019 11:38:16 +0000</pubDate>
+      <link>https://blog.v5u.win/go-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</link>
+      <pubDate>Tue, 19 Feb 2019 05:08:57 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
-      <description>[TOC] if 判断语句 if 100 &amp;gt; number { number += 3 } else if 100 &amp;lt; number { number -= 2 } else { fmt.Println(&amp;quot;OK!&amp;quot;) } //变量赋值 if number := 4; 100 &amp;gt; number { number += 3 } // 标识符的重声明和标识符的遮蔽 var number int if number := 4; 100</description>
+      <guid>https://blog.v5u.win/go-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
+      <description>if if 100 &amp;gt; number { number += 3 } else if 100 &amp;lt; number { number -= 2 } else { fmt.Println(&#34;OK!&#34;) } //变量赋值 if number := 4; 100 &amp;gt; number { number += 3 } // 标识符的重声明和标识符的遮蔽 var number int if number := 4; 100 &amp;gt; number { number +=</description>
     </item>
     
     <item>
       <title>Go的函数 结构体</title>
-      <link>https://blog.v5u.win/post/go-function/</link>
-      <pubDate>Sun, 17 Feb 2019 21:15:19 +0000</pubDate>
+      <link>https://blog.v5u.win/go%E7%9A%84%E5%87%BD%E6%95%B0-%E7%BB%93%E6%9E%84%E4%BD%93/</link>
+      <pubDate>Tue, 19 Feb 2019 05:07:33 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-function/</guid>
+      <guid>https://blog.v5u.win/go%E7%9A%84%E5%87%BD%E6%95%B0-%E7%BB%93%E6%9E%84%E4%BD%93/</guid>
       <description>func(input1 string ,input2 string) string type MyFunc func(input1 string ,input2 string) string// 函数声明 函数实现 func myFunc(part1 string, part2 string) (result string) { result = part1 + part2 return } //如果结果声明是带名称的，那么它就相当于一个已被声明但未被显式赋值的</description>
     </item>
     
     <item>
       <title>Go的数据结构</title>
-      <link>https://blog.v5u.win/post/go-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
-      <pubDate>Sun, 17 Feb 2019 00:00:00 +0000</pubDate>
+      <link>https://blog.v5u.win/go%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sun, 17 Feb 2019 13:13:29 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <guid>https://blog.v5u.win/go%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
       <description>[TOC] 先来看看Golang关于类型设计的一些原则 变量包括（type, value）两部分，理解这一点就知道为什么nil != nil了 type 包括 static type和</description>
     </item>
     
     <item>
-      <title>go 常用命令</title>
-      <link>https://blog.v5u.win/post/go-%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Fri, 15 Feb 2019 15:50:32 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-%E5%91%BD%E4%BB%A4/</guid>
-      <description>[TOC] go run 编译并运行Go源码文件，编译的可执行文件在tmp目录下，这会影响相对路径 go build 编译源码文件，代码包，依赖包 go get / go mod download xxx 动态获取远程代码</description>
-    </item>
-    
-    <item>
       <title>vscode安装golang.org的golint</title>
-      <link>https://blog.v5u.win/post/go-vscode%E5%AE%89%E8%A3%85golang.org%E7%9A%84golint/</link>
-      <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
+      <link>https://blog.v5u.win/vscode%E5%AE%89%E8%A3%85golang-org%E7%9A%84golint/</link>
+      <pubDate>Fri, 15 Feb 2019 07:44:23 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-vscode%E5%AE%89%E8%A3%85golang.org%E7%9A%84golint/</guid>
+      <guid>https://blog.v5u.win/vscode%E5%AE%89%E8%A3%85golang-org%E7%9A%84golint/</guid>
       <description>vscode 安装了 go 插件后，一些 Extensions 无法通过 vscode 自动安装，此时可以手动从控制台安装。下面是一些基础标准库 go get -u -v github.com/nsf/gocode go get -u -v github.com/rogpeppe/godef go get -u -v github.com/zmb3/gogetdoc go get -u -v github.com/golang/lint/golint go get -u -v github.com/lukehoban/go-outline</description>
     </item>
     
     <item>
-      <title>go-代码组织方式</title>
-      <link>https://blog.v5u.win/post/go-%E4%BB%A3%E7%A0%81%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F/</link>
-      <pubDate>Thu, 14 Feb 2019 15:48:05 +0000</pubDate>
+      <title>vscode配置go开发环境</title>
+      <link>https://blog.v5u.win/vscode%E9%85%8D%E7%BD%AEgo%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Fri, 15 Feb 2019 07:42:58 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-%E4%BB%A3%E7%A0%81%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F/</guid>
-      <description>[TOC] 创建规则 引用Go常见问题解答： 供公众使用的软件包应尽量保持向后兼容性。 如果需要不同的功能，请添加新名称，而不是更改旧名称。 如果需要完全中断</description>
-    </item>
-    
-    <item>
-      <title>工作区和GOPATH</title>
-      <link>https://blog.v5u.win/post/go-workspace-gopath/</link>
-      <pubDate>Thu, 14 Feb 2019 15:34:03 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-workspace-gopath/</guid>
-      <description>工作区和GOPATH 工作区是放置Go源码文件的目录，一般情况下，Go源码文件都需要放在工作区，但是对于命令源码文件来说，这不是必须的。 工作区</description>
-    </item>
-    
-    <item>
-      <title>Go JSON</title>
-      <link>https://blog.v5u.win/post/go-json/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/go-json/</guid>
-      <description>标准库 encoding/json、encoding/xml、encoding/asn1 Model type Movie struct { Title string Year int `json:&amp;quot;released&amp;quot;` Color bool `json:&amp;quot;color,omitempty&amp;quot;` Actors []string } // 赋值 var movies = []Movie{ {Title: &amp;quot;Casablanca&amp;quot;, Year: 1942,</description>
+      <guid>https://blog.v5u.win/vscode%E9%85%8D%E7%BD%AEgo%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>下载安装 vscode，安装Go插件。在商店中搜索安装。 配置 settings.json cmd+, ——&amp;gt; 用户设置/扩展 ——&amp;gt; Go configuration / 在 setting.json 中编辑。 参考 Sublime Text 中的 preferences.sublime-setting 很像。 在</description>
     </item>
     
     <item>
       <title>go Mac环境配置</title>
-      <link>https://blog.v5u.win/post/go-mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.v5u.win/go-mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 14 Feb 2019 07:31:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/go-mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
-      <description>在官网下载pkg安装包,点击安装，安装完成后，资源被写入/usr/local/go 目录下 设置profile文件，我用的zsh，修改~/.zs</description>
+      <guid>https://blog.v5u.win/go-mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>在官网下载pkg安装包,点击安装，安装完成后，资源被写入/usr/local/go 目录下 或者 brew install go 使用brew下载 （推荐） 设置profile</description>
+    </item>
+    
+    <item>
+      <title>docker 简介</title>
+      <link>https://blog.v5u.win/docker-%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Wed, 04 Apr 2018 09:39:10 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/docker-%E7%AE%80%E4%BB%8B/</guid>
+      <description>[TOC] 硬件/操作系统 要求 Docker支持以下的发行版版本： Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版 CentOS 7 (64-bit)，要求内核版本不低于 3.10 。</description>
     </item>
     
   </channel>

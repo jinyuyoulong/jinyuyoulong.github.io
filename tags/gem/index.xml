@@ -13,11 +13,20 @@
     
     <item>
       <title>brew gem npm cocoapods</title>
-      <link>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</link>
+      <link>https://blog.v5u.win/brew-gem-npm-cocoapods/</link>
       <pubDate>Fri, 20 Apr 2018 05:00:32 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</guid>
+      <guid>https://blog.v5u.win/brew-gem-npm-cocoapods/</guid>
       <description>Mac上的包管理器 常用的有：brew gem npm cocoapods pip3 brew 用来管理Unix相关工具软件，就像centos之于yum，Ubuntu之于apt-get gem 即R</description>
+    </item>
+    
+    <item>
+      <title>gem 包管理器</title>
+      <link>https://blog.v5u.win/gem-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
+      <pubDate>Thu, 12 Nov 2015 07:33:43 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/gem-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
+      <description>gem 常用命令 查看软件源 gem source -l,不能翻墙的，建议改成国内的源 https://gems.ruby-china.com 移除某个源 gem sources --remove https://ruby.taobao.org/ 添加新的源 gem sources -a https://gems.ruby-china.com/ 安装 gem install [name] gem install cocoapods 卸载指定版本 sudo gem uninstall cocoapods --version=1.5.3 查看 gem</description>
     </item>
     
   </channel>

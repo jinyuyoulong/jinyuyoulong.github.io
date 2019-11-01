@@ -6,18 +6,18 @@
     <description>Recent content in ReactNative on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 15 Mar 2016 16:38:19 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Mar 2016 08:38:19 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/reactnative/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>React-Native 初次安装环境报错及解决记录</title>
-      <link>https://blog.v5u.win/post/reactnative-first-install/</link>
-      <pubDate>Tue, 15 Mar 2016 16:38:19 +0000</pubDate>
+      <link>https://blog.v5u.win/react-native-%E5%88%9D%E6%AC%A1%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 15 Mar 2016 08:38:19 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/reactnative-first-install/</guid>
-      <description>创建第一个项目后，打开xcode运行，terminal报错 Watchman: watchman&amp;ndash;no-pretty get-sockname returned with exit code null dyld: Library not loaded: /usr/local/opt/pcre/lib/libpcre.1.dylib 解决方案：终端输入 brew link pcre， 如果报错没有写入权限（C</description>
+      <guid>https://blog.v5u.win/react-native-%E5%88%9D%E6%AC%A1%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/</guid>
+      <description>创建第一个项目后，打开xcode运行，terminal报错 Watchman: watchman&amp;#8211;no-pretty get-sockname returned with exit code null dyld: Library not loaded: /usr/local/opt/pcre/lib/libpcre.1.dylib 解决方案：终端输入 brew link pcre， 如果报错没有写入权限（C</description>
     </item>
     
   </channel>

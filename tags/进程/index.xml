@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>进程 on 为吾优</title>
+    <link>https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/</link>
+    <description>Recent content in 进程 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 12 Aug 2019 02:37:18 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>进程间8种通讯方式</title>
+      <link>https://blog.v5u.win/%E8%BF%9B%E7%A8%8B%E9%97%B48%E7%A7%8D%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Mon, 12 Aug 2019 02:37:18 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E8%BF%9B%E7%A8%8B%E9%97%B48%E7%A7%8D%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/</guid>
+      <description>进程通信： 每个进程各自有不同的用户地址空间,任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核,在内核中开辟一</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>NSTimer | 为吾优</title>
+    <meta property="og:title" content="NSTimer - 为吾优">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2015-07-16T03:03:51&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2015-07-16T03:03:51&#43;08:00">
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="NSTimer">
+        <meta name="author" content="fan">
+        
+    <meta property="og:url" content="https://blog.v5u.win/nstimer/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://blog.v5u.win">首页</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">NSTimer</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2015年7月16日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/ios">iOS</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            <p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">转载自</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">NSTimer的使用方法</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">1、初始化</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">+ (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo;</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;"><br /></span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo;</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;"><br /></span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">注：不用scheduled方式初始化的，需要手动addTimer:forMode: 将timer添加到一个runloop中。</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">　　而scheduled的初始化方法将以默认mode直接添加到当前的runloop中.</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+   
+</p>
+
+<p><span style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px;"></span><span style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; background-color: rgb(255, 255, 255);"></span></p>
+
+<p style="color: rgb(51, 51, 51); white-space: normal; margin-top: 0px; margin-bottom: 0px; margin-left: 36px; font-size: 13px; font-family: 'Lucida Grande'; text-indent: -36px;">
+  <span style="font-size: 18px;">scheduledTimerWithTimeInterval:<span style="font-size: 13px; font-family: Courier;">(NSTimeInterval)</span>seconds  </span>
+</p>
+
+<p style="color: rgb(51, 51, 51); white-space: normal; margin-top: 0px; margin-bottom: 0px; margin-left: 36px; font-size: 13px; font-family: 'Heiti SC Light'; text-indent: -36px;">
+  <span style="font-size: 18px;">预订一个Timer,设置一个时间间隔。</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); white-space: normal; margin-top: 0px; margin-bottom: 0px; font-size: 13px; font-family: 'Heiti SC Light';">
+  <span style="font-size: 18px;">表示输入一个时间间隔对象，以秒为单位，一个>0的浮点类型的值，如果该值<0,系统会默认为0.1</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); white-space: normal; margin-top: 0px; margin-bottom: 0px; margin-left: 36px; font-size: 13px; font-family: 'Lucida Grande'; text-indent: -36px;">
+  <span style="font-size: 18px;"> target:(id)aTarget</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); white-space: normal; margin-top: 0px; margin-bottom: 0px; margin-left: 36px; font-size: 13px; font-family: 'Heiti SC Light'; text-indent: -36px;">
+  <span style="font-size: 18px;">表示发送的对象，如<span style="font-size: 13px; font-family: 'Lucida Grande';">self</span></span>
+</p>
+
+<p style="color: rgb(51, 51, 51); white-space: normal; margin-top: 0px; margin-bottom: 0px; margin-left: 36px; font-size: 13px; font-family: 'Lucida Grande'; text-indent: -36px;">
+  <span style="font-size: 18px;"> selector:(SEL)aSelector</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); white-space: normal; margin-top: 0px; margin-bottom: 0px; margin-left: 36px; font-size: 13px; font-family: 'Heiti SC Light'; text-indent: -36px;">
+  <span style="font-size: 18px;">方法选择器，在时间间隔内，选择调用一个实例方法</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); white-space: normal; margin-top: 0px; margin-bottom: 0px; margin-left: 36px; font-size: 13px; font-family: 'Lucida Grande'; text-indent: -36px;">
+  <span style="font-size: 18px;">userInfo:(id)userInfo</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); white-space: normal; margin-top: 0px; margin-bottom: 0px; margin-left: 36px; font-size: 13px; font-family: 'Heiti SC Light'; text-indent: -36px;">
+  <span style="font-size: 18px;">此参数可以为nil，当定时器失效时，由你指定的对象保留和释放该定时器。</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); white-space: normal; margin-top: 0px; margin-bottom: 0px; margin-left: 36px; font-size: 13px; font-family: 'Lucida Grande'; text-indent: -36px;">
+  <span style="font-size: 18px;">repeats:(BOOL)yesOrNo</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); white-space: normal; margin-top: 0px; margin-bottom: 0px; margin-left: 36px; font-size: 13px; font-family: 'Heiti SC Light'; text-indent: -36px;">
+  <span style="font-size: 18px;">当<span style="font-size: 13px; font-family: 'Lucida Grande';">YES</span>时，定时器会不断循环直至失效或被释放，当NO时，定时器会循环发送一次就失效。</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); white-space: normal; margin-top: 0px; margin-bottom: 0px; margin-left: 36px; font-size: 13px; font-family: Courier; text-indent: -36px;">
+  <span style="font-size: 24px;">invocation:(NSInvocation *)invocation</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+   
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">举例：(不可控)</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:NO];</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">或(可控制)</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">NSTimer *<span class="s1">myTimer</span><span class="s2"> = [</span><span class="s3">NSTimer </span>timerWithTimeInterval<span class="s2">:</span><span class="s4">3.0 </span>target<span class="s2">:</span><span class="s5">self</span>selector<span class="s2">:</span><span class="s5">@selector</span><span class="s2">(timerFired:)</span>userInfo<span class="s2">:</span><span class="s5">nil</span>repeats<span class="s2">:</span><span class="s5">NO</span><span class="s2">]</span><span class="s2">;</span></span>
+</p>
+
+<p class="p1" style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;"><span class="s2">[[</span><span class="s3">NSRunLoop  </span>currentRunLoop<span class="s2">]</span>addTimer<span class="s2">:</span><span class="s1">myTimer</span>forMode<span class="s2">:</span><span class="s3">NSDefaultRunLoopMode</span><span class="s2">];</span></span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;"> </span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">2、触发（启动）</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family:
+Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">当定时器创建完（不用scheduled的，添加到runloop中后，该定时器将在初始化时指定的timeInterval秒后自动触发。</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;"></span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">可以使用-(void)fire;方法来立即触发该定时器；</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">注：You can use this method to fire a repeating timer without interrupting its regular firing schedule. If the timer is non-repeating, it is automatically invalidated after firing, even if its scheduled fire date has not arrived.</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">在重复执行的定时器中调用此方法后立即触发该定时器，但不会中断其之前的执行计划；</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">在不重复执行的定时器中调用此方法，立即触发后，就会使这个定时器失效。</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;"> </span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">3、停止</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">&#8211; (void)invalidate;</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">这个是唯一一个可以将计时器从runloop中移出的方法。</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;"> </span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">注：</span>
+</p>
+
+<p style="color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;">
+  <span style="font-size: 18px;">NSTimer可以精确到50-100毫秒.</span>
+</p>
+
+<p>&lt;</p>
+
+<p>p style=&#8221;color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;&#8221;&gt;<span style="font-size: 18px;">NSTimer不是绝对准确的,而且中间耗时或阻塞错过下一个点,那么下一个点就pass过去了.</span></p>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/ios-%E5%BC%80%E5%8F%91errordebug/">iOS 开发error/debug</a></li>
+        
+        <li><a href="/ios%E7%AB%AFapp%E7%9A%84icon%E5%92%8Claunch-image%E8%A7%84%E6%A0%BC%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0/">iOS端App的icon和Launch Image规格实时更新</a></li>
+        
+        <li><a href="/%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0pch%E6%96%87%E4%BB%B6/">Xcode如何添加pch文件</a></li>
+        
+        <li><a href="/jl%E7%9A%84git%E4%BD%BF%E7%94%A8%E7%9F%A5%E8%AF%86/">FF的Git使用知识</a></li>
+        
+        <li><a href="/ios%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E5%BA%94%E7%94%A8%E6%98%AF%E5%90%A6%E5%BC%80%E5%90%AF%E6%91%84%E5%83%8F%E5%A4%B4%E6%9D%83%E9%99%90/">iOS如何判断应用是否开启摄像头权限</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://blog.v5u.win/tags/ios">iOS</a></li>
+                                
+                                <li><a href="https://blog.v5u.win/tags/nstimer">NSTimer</a></li>
+                                
+                                <li><a href="https://blog.v5u.win/tags/%E6%8E%A7%E4%BB%B6">控件</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/epoll/" title="epoll">epoll</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/cgo/" title="CGO">CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/gofmt/" title="Gofmt">Gofmt</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" title="Go Bazel构建工具">Go Bazel构建工具</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/etcd/" title="etcd">etcd</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(51)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(20)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(19)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(10)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">其他技术(35)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%8D%81%E4%B8%87%E4%B8%AA%E4%B8%BA%E4%BB%80%E4%B9%88/">十万个为什么(10)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(30)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%97%E6%96%87/">诗文(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(20)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93/">道(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/">错误集锦(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/apple/">apple</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/const/">const</a>
+    
+    <a href="https://blog.v5u.win/tags/crontab/">crontab</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/define/">define</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/flutter/">flutter</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E8%80%83%E5%8F%A4/">it考古</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E9%BB%91%E8%AF%9D/">it黑话</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/mardown/">mardown</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongo/">mongo</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/node/">node</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nstimer/">nstimer</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/orm/">orm</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/skecth/">skecth</a>
+    
+    <a href="https://blog.v5u.win/tags/sqlite/">sqlite</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/toml/">toml</a>
+    
+    <a href="https://blog.v5u.win/tags/ui/">ui</a>
+    
+    <a href="https://blog.v5u.win/tags/uicollectionview/">uicollectionview</a>
+    
+    <a href="https://blog.v5u.win/tags/uiimagepickerviewcontroller/">uiimagepickerviewcontroller</a>
+    
+    <a href="https://blog.v5u.win/tags/uiscrollview/">uiscrollview</a>
+    
+    <a href="https://blog.v5u.win/tags/uitableview/">uitableview</a>
+    
+    <a href="https://blog.v5u.win/tags/unowned/">unowned</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/weak/">weak</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/workspace/">workspace</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode7/">xcode7</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%89%E7%9C%81%E5%90%BE%E8%BA%AB/">三省吾身</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4/">免费空间</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8E%A7%E4%BB%B6/">控件</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%94%B6%E8%97%8F/">收藏</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%97%E6%96%87/">诗文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/">返回顶部</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/">进程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%81%93/">道</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+</body>
+</html>

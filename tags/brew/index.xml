@@ -13,19 +13,19 @@
     
     <item>
       <title>brew gem npm cocoapods</title>
-      <link>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</link>
+      <link>https://blog.v5u.win/brew-gem-npm-cocoapods/</link>
       <pubDate>Fri, 20 Apr 2018 05:00:32 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</guid>
+      <guid>https://blog.v5u.win/brew-gem-npm-cocoapods/</guid>
       <description>Mac上的包管理器 常用的有：brew gem npm cocoapods pip3 brew 用来管理Unix相关工具软件，就像centos之于yum，Ubuntu之于apt-get gem 即R</description>
     </item>
     
     <item>
       <title>brew 安装</title>
-      <link>https://blog.v5u.win/post/mac-brew-install/</link>
-      <pubDate>Sat, 25 Feb 2017 22:54:49 +0000</pubDate>
+      <link>https://blog.v5u.win/brew-%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 25 Feb 2017 14:54:49 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-brew-install/</guid>
+      <guid>https://blog.v5u.win/brew-%E5%AE%89%E8%A3%85/</guid>
       <description>Mac自带ruby 安装brew ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&amp;quot; 已经安装了可以输入这个命令 ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot; 如何使用brew 举个栗子: wget 这个工具 输入命令: brew install wget 输入命令 brew uninstall</description>
     </item>
     

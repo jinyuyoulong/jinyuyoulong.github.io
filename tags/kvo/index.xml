@@ -6,18 +6,18 @@
     <description>Recent content in KVO on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 15 Mar 2016 11:02:37 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Mar 2016 03:02:37 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/kvo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>正确的使用KVO</title>
-      <link>https://blog.v5u.win/post/ios-kvo/</link>
-      <pubDate>Tue, 15 Mar 2016 11:02:37 +0000</pubDate>
+      <link>https://blog.v5u.win/%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BD%BF%E7%94%A8kvo/</link>
+      <pubDate>Tue, 15 Mar 2016 03:02:37 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-kvo/</guid>
-      <description>KVO，全称为Key-Value Observing，是iOS中的一种设计模式，用于检测对象的某些属性的实时变化情况并作出响应。网上广为流传普</description>
+      <guid>https://blog.v5u.win/%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BD%BF%E7%94%A8kvo/</guid>
+      <description>KVO，全称为Key-Value Observing，是一种设计模式，用于检测对象的某些属性的实时变化情况并作出响应。网上广为流传普及的一个例</description>
     </item>
     
   </channel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workspace on 为吾优</title>
+    <link>https://blog.v5u.win/tags/workspace/</link>
+    <description>Recent content in Workspace on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 21 Jul 2016 08:39:53 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/workspace/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Workspace的使用方法</title>
+      <link>https://blog.v5u.win/workspace%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Thu, 21 Jul 2016 08:39:53 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/workspace%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <description>更改 xcode-&amp;gt; Preference -&amp;gt; Location -&amp;gt; Advanced -&amp;gt; Custom -&amp;gt; Relative to Workspace 新建Workspace 新建项目或静态库，选择 add workspace name 引入路径依赖，User Header Search Paths 设为 $(BUILT_PRODUCTS_DIR) 选择递归搜索 recursive 检查 scheme manage 中的项</description>
+    </item>
+    
+  </channel>
+</rss>

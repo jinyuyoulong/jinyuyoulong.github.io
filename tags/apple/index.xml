@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apple on 为吾优</title>
+    <link>https://blog.v5u.win/tags/apple/</link>
+    <description>Recent content in Apple on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 16 May 2019 07:11:51 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/apple/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac OS X 背后的故事读后感</title>
+      <link>https://blog.v5u.win/mac-os-x-%E8%83%8C%E5%90%8E%E7%9A%84%E6%95%85%E4%BA%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+      <pubDate>Thu, 16 May 2019 07:11:51 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/mac-os-x-%E8%83%8C%E5%90%8E%E7%9A%84%E6%95%85%E4%BA%8B%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+      <description>早上在“知识小集”发现了一篇《Mac OS X 背后的故事二》，非常喜欢非常感兴趣，于是往前找第一篇，发现了全文的链接，从地铁上开始，到下午共计4个</description>
+    </item>
+    
+  </channel>
+</rss>

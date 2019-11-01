@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构与算法 on 为吾优</title>
+    <link>https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 数据结构与算法 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 08 Oct 2018 03:50:23 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>数据结构与算法1-复杂度分析1</title>
+      <link>https://blog.v5u.win/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%951-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%901/</link>
+      <pubDate>Mon, 08 Oct 2018 03:50:23 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%951-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%901/</guid>
+      <description>为什么需要复杂度分析？ 有两种估算方法：1.事后统计法 2.大O复杂度表示法 事后统计法: 把代码跑一遍，通过统计、监控，就能得到算法执行的时间和占</description>
+    </item>
+    
+    <item>
+      <title>数据结构与算法之美0</title>
+      <link>https://blog.v5u.win/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E0/</link>
+      <pubDate>Sun, 30 Sep 2018 02:20:57 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BE%8E0/</guid>
+      <description>技术人员究竟需要修炼那些内功？ 无外乎就是大学里的那些基础课程： 操作系统 计算机网络 编译原理 数据结构和算法 学好这些东西，在学其他东西就会很简单，</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,126 +6,180 @@
     <description>Recent content in PHP on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 25 Dec 2018 10:04:25 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 May 2019 02:10:48 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>mac-nginx-php-mysql</title>
-      <link>https://blog.v5u.win/post/mac-nginx-php-mysql/</link>
-      <pubDate>Tue, 25 Dec 2018 10:04:25 +0000</pubDate>
+      <title>nginx try_files</title>
+      <link>https://blog.v5u.win/nginx-try_files/</link>
+      <pubDate>Wed, 08 May 2019 02:10:48 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-nginx-php-mysql/</guid>
-      <description>[TOC] 安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf server { location / { root /rootDocument/; index index.html index.htm index.php; autoindex on; # //开启目录浏览功</description>
+      <guid>https://blog.v5u.win/nginx-try_files/</guid>
+      <description>源起： WordPress http 升级成 https 之后，只有 首页可以正常访问，其他链接均失效，改固定链接为 ?p=id可以正常显示，但是以前的 Google 收录页面面临失效的风险。遂着手</description>
     </item>
     
     <item>
-      <title>tp5 db</title>
-      <link>https://blog.v5u.win/post/php-tp5-db/</link>
-      <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
+      <title>LNMP 跨目录访问权限设置</title>
+      <link>https://blog.v5u.win/lnmp-%E8%B7%A8%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Fri, 15 Mar 2019 01:53:05 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/php-tp5-db/</guid>
-      <description># 表达式 不区分大小写， # EQ = # NEQ &amp;lt;&amp;gt; 不等于 # LT &amp;lt; # ELT &amp;lt;= # RT &amp;gt; # ELT &amp;gt;= # BETWEEN BETWEEN * AND * # NOTBETWEEN NOTBETWEEN * AND * # IN IN (*,*) # NOTIN NOT IN (*,*) $sql = $db-&amp;gt;where(&#39;id&#39;,&#39;between&#39;,&amp;quot;1,5&amp;quot;)-&amp;gt;buildSql();</description>
+      <guid>https://blog.v5u.win/lnmp-%E8%B7%A8%E7%9B%AE%E5%BD%95%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E8%AE%BE%E7%BD%AE/</guid>
+      <description>LNMP 跨目录访问权限设置 在 ThinkPHP Laravel Typecho 等框架中网站目录一般是在public下，但是public下的程序要跨目录调用public上级目录下的文件，因为L</description>
     </item>
     
     <item>
-      <title>thinkPHP5.0 学习总结</title>
-      <link>https://blog.v5u.win/post/php-thinkphp5.0-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Thu, 15 Nov 2018 00:00:00 +0000</pubDate>
+      <title>为什么PHP中的变量前边要加&#39;$&#39;符号</title>
+      <link>https://blog.v5u.win/%E4%B8%BA%E4%BB%80%E4%B9%88php%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E5%89%8D%E8%BE%B9%E8%A6%81%E5%8A%A0%E7%AC%A6%E5%8F%B7/</link>
+      <pubDate>Sat, 23 Feb 2019 06:24:55 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/php-thinkphp5.0-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</guid>
-      <description>thinkPHP5.0 学习总结感悟 免费的是最贵的，学习使用文档和手册，学习效率低下——改用优秀视频后，效果显著，如果使用付费内容想必效果会更好，参考买的《数据结</description>
-    </item>
-    
-    <item>
-      <title>PHP 命名空间 namespace</title>
-      <link>https://blog.v5u.win/post/php-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4-namespace/</link>
-      <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/php-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4-namespace/</guid>
-      <description>PHP 命名空间 namespace 声明： &amp;lt;?php // file1.php namespace MyProject; namespace MyProject\Sub\Level; //声明分层次的单个命名空间 namespace MyProject { const CONNECT_OK = 1; class Connection { /* ... */ } function connect() { /* ... */ } namespace Foo\Bar\subnamespace; const FOO = 1; function foo() {} class foo { static function staticmethod() {} } } ?&amp;gt;</description>
-    </item>
-    
-    <item>
-      <title>thinkphp5开发规范</title>
-      <link>https://blog.v5u.win/post/php-thinkphp5%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</link>
-      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/php-thinkphp5%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</guid>
-      <description>目录结构 ./application ​ ./index ​ ./controller 控制层 ​ ./model 模型 ​ ./view ​ ./admin 后台模块 ​ command.php 控制台配置，命令行执行，读取该模块 ​ common.php 项目的公共文件，通用函数，全局调用 ​ config.php 应用的配置文</description>
-    </item>
-    
-    <item>
-      <title>php 网站效率原理</title>
-      <link>https://blog.v5u.win/post/php-%E7%BD%91%E7%AB%99%E6%95%88%E7%8E%87%E5%8E%9F%E7%90%86/</link>
-      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/php-%E7%BD%91%E7%AB%99%E6%95%88%E7%8E%87%E5%8E%9F%E7%90%86/</guid>
-      <description>确实如你所言, 是我对php的认识不足. 刚刚补了一下这里的知识, 应该是这样的: php有三种工作模式. 其中是最常见的是php作为一个模块工作在一</description>
+      <guid>https://blog.v5u.win/%E4%B8%BA%E4%BB%80%E4%B9%88php%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E5%89%8D%E8%BE%B9%E8%A6%81%E5%8A%A0%E7%AC%A6%E5%8F%B7/</guid>
+      <description>为什么PHP中的变量前边要加&amp;#8217;$&amp;#8217;符号 一直都特别好奇 PHP 中的变量前边都加 $ 符号。别的大众编程语言从没见过这种设定，比如</description>
     </item>
     
     <item>
       <title>PHP工程总结</title>
-      <link>https://blog.v5u.win/post/php%E5%B7%A5%E7%A8%8B%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      <link>https://blog.v5u.win/php%E5%B7%A5%E7%A8%8B%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 16 Jan 2019 06:16:21 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/php%E5%B7%A5%E7%A8%8B%E6%80%BB%E7%BB%93/</guid>
-      <description>PHP工程总结 使用session需要调用session_start()手动开启环境，session_start()调用之前页面不允许输出任何</description>
+      <guid>https://blog.v5u.win/php%E5%B7%A5%E7%A8%8B%E6%80%BB%E7%BB%93/</guid>
+      <description>* *title: PHP工程总结 date: 2018-07-02 PHP工程总结 使用session需要调用session_start()手动开启环境，session_start()调用</description>
+    </item>
+    
+    <item>
+      <title>php session 不能跨页面传递</title>
+      <link>https://blog.v5u.win/php-session-%E4%B8%8D%E8%83%BD%E8%B7%A8%E9%A1%B5%E9%9D%A2%E4%BC%A0%E9%80%92/</link>
+      <pubDate>Wed, 16 Jan 2019 06:15:18 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/php-session-%E4%B8%8D%E8%83%BD%E8%B7%A8%E9%A1%B5%E9%9D%A2%E4%BC%A0%E9%80%92/</guid>
+      <description>* *title: php session 不能跨页面传递 categories: PHP tags: PHP session错误 确认当前页面session有没有添加成功 debug可不可以讲session值跨页面传递 设置p</description>
+    </item>
+    
+    <item>
+      <title>php 网站效率原理</title>
+      <link>https://blog.v5u.win/php-%E7%BD%91%E7%AB%99%E6%95%88%E7%8E%87%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Wed, 16 Jan 2019 06:12:30 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/php-%E7%BD%91%E7%AB%99%E6%95%88%E7%8E%87%E5%8E%9F%E7%90%86/</guid>
+      <description>* *title: php 网站效率原理 date: 2018-11-07 确实如你所言, 是我对php的认识不足. 刚刚补了一下这里的知识, 应该是这样的: php有三种工作模式. 其中是最常见的是ph</description>
+    </item>
+    
+    <item>
+      <title>PHP 命名空间 namespace</title>
+      <link>https://blog.v5u.win/php-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4-namespace/</link>
+      <pubDate>Wed, 16 Jan 2019 06:06:12 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/php-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4-namespace/</guid>
+      <description>PHP 命名空间 namespace 声明： &amp;lt;?php // file1.php namespace MyProject; namespace MyProject\Sub\Level; //声明分层次的单个命名空间 namespace MyProject { const CONNECT_OK = 1; class Connection { /* &amp;hellip; / } function connect() { / &amp;hellip; */ } namespace Foo\Bar\subnamespace; const FOO = 1; function foo() {} class foo { static function staticmethod() {} } } ?&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>thinkphp5之SQL</title>
+      <link>https://blog.v5u.win/thinkphp5%E4%B9%8Bsql/</link>
+      <pubDate>Wed, 16 Jan 2019 03:27:54 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/thinkphp5%E4%B9%8Bsql/</guid>
+      <description>* *title: tp5 date: 2018-12-18 # 表达式 不区分大小写， # EQ = # NEQ &amp;lt;&amp;gt; 不等于 # LT &amp;lt; # ELT &amp;lt;= # RT &amp;gt; # ELT &amp;gt;= # BETWEEN BETWEEN * AND * # NOTBETWEEN NOTBETWEEN * AND * # IN IN (*,*) # NOTIN NOT IN (*,*) $sql = $db-&amp;gt;where(&#39;id&#39;,&#39;between&#39;,&amp;quot;1,5&amp;quot;)-&amp;gt;buildSql();</description>
+    </item>
+    
+    <item>
+      <title>thinkphp5开发规范</title>
+      <link>https://blog.v5u.win/thinkphp5%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Wed, 16 Jan 2019 03:26:32 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/thinkphp5%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</guid>
+      <description>* *title: thinkphp5开发规范 date: 2018-11-09 目录结构 ./application ​ ./index ​ ./controller 控制层 ​ ./model 模型 ​ ./view ​ ./admin 后台模块 ​ command.php 控制台配置，命令行执行，读取该模块 ​ common.php 项目的公共文件，</description>
+    </item>
+    
+    <item>
+      <title>vagrant&amp;homestead的使用</title>
+      <link>https://blog.v5u.win/vagranthomestead%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 11 Jan 2019 07:32:39 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/vagranthomestead%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>~/Homestead 目录下执行下面的命令 初始化虚拟机vagrant up 登录vagrant ssh 退出虚拟机exit 关闭 Homesteadvagrant halt</description>
+    </item>
+    
+    <item>
+      <title>thinkPHP5.0 学习总结感悟</title>
+      <link>https://blog.v5u.win/thinkphp5-0-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%E6%84%9F%E6%82%9F/</link>
+      <pubDate>Thu, 15 Nov 2018 09:24:57 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/thinkphp5-0-%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93%E6%84%9F%E6%82%9F/</guid>
+      <description>thinkPHP5.0 学习总结感悟 免费的是最贵的，学习使用文档和手册，学习效率低下——改用优秀视频后，效果显著，如果使用付费内容想必效果会更好，参考买的《数据结</description>
+    </item>
+    
+    <item>
+      <title>composer的使用</title>
+      <link>https://blog.v5u.win/composer%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 21 Aug 2018 18:27:06 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/composer%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>composer是PHP的包管理器 使用： 在项目目录下执行 引入 composer require twbs/bootstrap 删除 composer remove twbs/bootstrap p.s. 这种方式的引入讲整个项目都下载下载，本人非常不喜欢 参考网站 https://www.phpcomposer.com/</description>
+    </item>
+    
+    <item>
+      <title>Apache不能访问directory 目录</title>
+      <link>https://blog.v5u.win/apache%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEdirectory-%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Mon, 28 May 2018 06:14:25 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/apache%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEdirectory-%E7%9B%AE%E5%BD%95/</guid>
+      <description>Mac升级了系统，发现启动了Apache，可以访问index.php文件。 当目录下找不到文件的时候，应该显示Indexes目录， 此时报错Fo</description>
     </item>
     
     <item>
       <title>mac下安装composer</title>
-      <link>https://blog.v5u.win/post/mac-composer/</link>
+      <link>https://blog.v5u.win/mac%E4%B8%8B%E5%AE%89%E8%A3%85composer/</link>
       <pubDate>Fri, 09 Jun 2017 03:35:06 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-composer/</guid>
-      <description>composer是PHP的包管理器 mac下如何安装呢？ 最简单的方法是通过brew工具 brew install composer 这时候可能会遇到这个问题： Searching for a previously deleted formula&amp;hellip; 所以我们检查</description>
+      <guid>https://blog.v5u.win/mac%E4%B8%8B%E5%AE%89%E8%A3%85composer/</guid>
+      <description>composer是PHP的包管理器 mac下如何安装呢？ 最简单的方法是通过brew工具 brew install composer 这时候可能会遇到这个问题： Searching for a previously deleted formula&amp;#8230; 所以我们检查</description>
     </item>
     
     <item>
       <title>MySQL 数据库迁移</title>
-      <link>https://blog.v5u.win/post/system-mysql-change/</link>
-      <pubDate>Thu, 15 Dec 2016 14:21:18 +0000</pubDate>
+      <link>https://blog.v5u.win/mysql-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</link>
+      <pubDate>Thu, 15 Dec 2016 06:21:18 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-mysql-change/</guid>
+      <guid>https://blog.v5u.win/mysql-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%81%E7%A7%BB/</guid>
       <description>mac 下迁移数据库的结构和内容 迁移准备：数据库文件（可用工具导出Mysql文件） 注意：由于文件权限的问题 可能不能进入Mysql的data文件内 进</description>
     </item>
     
     <item>
       <title>mac 下配置PHP环境</title>
-      <link>https://blog.v5u.win/post/mac-php/</link>
-      <pubDate>Thu, 20 Oct 2016 17:11:54 +0000</pubDate>
+      <link>https://blog.v5u.win/mac-%E4%B8%8B%E9%85%8D%E7%BD%AEphp%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Thu, 20 Oct 2016 09:11:54 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-php/</guid>
-      <description>set http.conf # ...http_vhost.conf 取消注释# # ServerName www.example.com 打开 set http.vhost.conf For OSX 10.10 Apache 2.4 设置虚拟机 &amp;amp;lt;Directory &amp;quot;/Users/username/Sites/&amp;quot;&amp;amp;gt; AllowOverride All Options Indexes MultiViews FollowSymLinks Require all granted &amp;amp;lt;/Directory&amp;amp;gt; set php LoadModule php5_module libexec/apache2/libphp5.so 修改文件权限 chmod 777 MetInfo5.3</description>
+      <guid>https://blog.v5u.win/mac-%E4%B8%8B%E9%85%8D%E7%BD%AEphp%E7%8E%AF%E5%A2%83/</guid>
+      <description>set http.conf # ...http_vhost.conf 取消注释# # ServerName www.example.com 打开 set http.vhost.conf For OSX 10.10 Apache 2.4 设置虚拟机 &amp;lt;Directory &amp;quot;/Users/username/Sites/&amp;quot;&amp;gt; AllowOverride All Options Indexes MultiViews FollowSymLinks Require all granted &amp;lt;/Directory&amp;gt; set php LoadModule php5_module libexec/apache2/libphp5.so 修改文件权限 chmod 777 MetInfo5.3</description>
+    </item>
+    
+    <item>
+      <title>HTML&amp;CSS</title>
+      <link>https://blog.v5u.win/htmlcss/</link>
+      <pubDate>Sun, 25 Oct 2015 09:48:49 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/htmlcss/</guid>
+      <description>paragragh 段落 emphasize 强调(显示为斜体) 样式 quote [kwot] 引用，引号(显示默认添加双引号，故不用再次添加“ ”) 引用块 ，长文本引用(显示默认为缩进，左右都缩进) break 换行</description>
     </item>
     
     <item>
       <title>mac系统使用内置的 PHP</title>
-      <link>https://blog.v5u.win/post/mac-php-local/</link>
-      <pubDate>Tue, 18 Aug 2015 11:19:22 +0000</pubDate>
+      <link>https://blog.v5u.win/mac%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E5%86%85%E7%BD%AE%E7%9A%84-php/</link>
+      <pubDate>Tue, 18 Aug 2015 03:19:22 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-php-local/</guid>
+      <guid>https://blog.v5u.win/mac%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E5%86%85%E7%BD%AE%E7%9A%84-php/</guid>
       <description>从 OS X 10.0.0 版本开始，PHP 作为 Mac 机的标准配置被提供。在默认的 web 服务器中启用 PHP，只需将 Apache 配置文件 httpd.conf 中的几行配置指令最前面的注释符号去掉，而 CGI</description>
     </item>
     
     <item>
-      <title>Wordpress中各个全局函数的含义和应用</title>
-      <link>https://blog.v5u.win/post/blog-wordpress-global-funtion/</link>
-      <pubDate>Tue, 18 Aug 2015 10:10:38 +0000</pubDate>
+      <title>WordPress中各个全局函数的含义和应用</title>
+      <link>https://blog.v5u.win/wordpress%E4%B8%AD%E5%90%84%E4%B8%AA%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0%E7%9A%84%E5%90%AB%E4%B9%89%E5%92%8C%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Tue, 18 Aug 2015 02:10:38 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/blog-wordpress-global-funtion/</guid>
+      <guid>https://blog.v5u.win/wordpress%E4%B8%AD%E5%90%84%E4%B8%AA%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0%E7%9A%84%E5%90%AB%E4%B9%89%E5%92%8C%E5%BA%94%E7%94%A8/</guid>
       <description>在wordpress插件和主题开发中经常需要获取各种URL路径，wordpress提供了以下集中方法获得URL路径： plugins_url() — 插件目录的 URL (例如：</description>
-    </item>
-    
-    <item>
-      <title>php session 不能跨页面传递</title>
-      <link>https://blog.v5u.win/post/php-session-error/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/php-session-error/</guid>
-      <description>session错误 确认当前页面session有没有添加成功 debug可不可以讲session值跨页面传递 设置php.ini文件session</description>
     </item>
     
   </channel>

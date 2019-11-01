@@ -6,27 +6,27 @@
     <description>Recent content in Apache on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 02 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 May 2018 06:14:25 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/apache/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Apache使用总结</title>
-      <link>https://blog.v5u.win/post/system-apache%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      <title>Apache不能访问directory 目录</title>
+      <link>https://blog.v5u.win/apache%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEdirectory-%E7%9B%AE%E5%BD%95/</link>
+      <pubDate>Mon, 28 May 2018 06:14:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-apache%E6%80%BB%E7%BB%93/</guid>
-      <description>Apache总结 http.conf配置 开启/关闭目录索引 &amp;lt;Directory &amp;quot;D:/Apache/blog.phpha.com&amp;quot;&amp;gt; Options Indexes FollowSymLinks # 修改为: Options FollowSymLinks #Indexes 的作用就是当该目录下没有 index.html 文件时，就显示目录结构，去掉 Indexes ，</description>
+      <guid>https://blog.v5u.win/apache%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEdirectory-%E7%9B%AE%E5%BD%95/</guid>
+      <description>Mac升级了系统，发现启动了Apache，可以访问index.php文件。 当目录下找不到文件的时候，应该显示Indexes目录， 此时报错Fo</description>
     </item>
     
     <item>
-      <title>Apache不能访问directory 目录</title>
-      <link>https://blog.v5u.win/post/system-apache-directory/</link>
-      <pubDate>Mon, 28 May 2018 06:14:25 +0000</pubDate>
+      <title>mac 下配置PHP环境</title>
+      <link>https://blog.v5u.win/mac-%E4%B8%8B%E9%85%8D%E7%BD%AEphp%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Thu, 20 Oct 2016 09:11:54 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-apache-directory/</guid>
-      <description>Mac升级了系统，发现启动了Apache，可以访问index.php文件。 当目录下找不到文件的时候，应该显示Indexes目录， 此时报错Fo</description>
+      <guid>https://blog.v5u.win/mac-%E4%B8%8B%E9%85%8D%E7%BD%AEphp%E7%8E%AF%E5%A2%83/</guid>
+      <description>set http.conf # ...http_vhost.conf 取消注释# # ServerName www.example.com 打开 set http.vhost.conf For OSX 10.10 Apache 2.4 设置虚拟机 &amp;lt;Directory &amp;quot;/Users/username/Sites/&amp;quot;&amp;gt; AllowOverride All Options Indexes MultiViews FollowSymLinks Require all granted &amp;lt;/Directory&amp;gt; set php LoadModule php5_module libexec/apache2/libphp5.so 修改文件权限 chmod 777 MetInfo5.3</description>
     </item>
     
   </channel>

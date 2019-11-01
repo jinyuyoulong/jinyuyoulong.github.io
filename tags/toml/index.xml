@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>toml on 为吾优</title>
+    <link>https://blog.v5u.win/tags/toml/</link>
+    <description>Recent content in toml on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 16 Jul 2019 05:47:02 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/toml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go Toml</title>
+      <link>https://blog.v5u.win/go-toml/</link>
+      <pubDate>Tue, 16 Jul 2019 05:47:02 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go-toml/</guid>
+      <description>[TOC] 常用的配置文件有：ini, ymal, json, toml 说一下为什么要选择 toml。toml 格式是最新公布的配置文件格式，由GitHub创始人 Tom Preston-Werner 发明。TOML 的</description>
+    </item>
+    
+  </channel>
+</rss>

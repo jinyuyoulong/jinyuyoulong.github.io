@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>进程间8种通讯方式 | 为吾优</title>
+    <meta property="og:title" content="进程间8种通讯方式 - 为吾优">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-08-12T02:37:18&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-08-12T02:37:18&#43;08:00">
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="进程间8种通讯方式">
+        <meta name="author" content="fan">
+        
+    <meta property="og:url" content="https://blog.v5u.win/%E8%BF%9B%E7%A8%8B%E9%97%B48%E7%A7%8D%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://blog.v5u.win">首页</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">进程间8种通讯方式</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年8月12日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
+
+<p>进程通信：</p>
+
+<p>每个进程各自有不同的用户地址空间,任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核,在内核中开辟一块缓冲区,进程A把数据从用户空间拷到内核缓冲区,进程B再从内核缓冲区把数据读走,内核提供的这种机制称为进程间通信。</p>
+
+<p>[TOC]</p>
+
+<h1 id="进程间8种通讯方式">进程间8种通讯方式</h1>
+
+<h2 id="匿名管道通信">匿名管道通信</h2>
+
+<p>匿名管道( pipe )：管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。</p>
+
+<pre><code class="line-numbers">// 需要的头文件
+#include &lt;unistd.h&gt;
+// 通过pipe()函数来创建匿名管道
+// 返回值：成功返回0，失败返回-1
+// fd参数返回两个文件描述符
+// fd[0]指向管道的读端，fd[1]指向管道的写端
+// fd[1]的输出是fd[0]的输入。
+int pipe (int fd[2]);
+</code></pre>
+
+<p>通过匿名管道实现进程间通信的步骤如下：</p>
+
+<p>父进程创建管道，得到两个⽂件描述符指向管道的两端</p>
+
+<p>父进程fork出子进程，⼦进程也有两个⽂件描述符指向同⼀管道。</p>
+
+<p>父进程关闭fd[0],子进程关闭fd[1]，即⽗进程关闭管道读端,⼦进程关闭管道写端（因为管道只支持单向通信）。⽗进程可以往管道⾥写,⼦进程可以从管道⾥读,管道是⽤环形队列实现的,数据从写端流⼊从读端流出,这样就实现了进程间通信。</p>
+
+<p>详细可参考文章：进程间的通信方式——pipe（管道）</p>
+
+<h2 id="高级管道通信">高级管道通信</h2>
+
+<p>高级管道(popen)：将另一个程序当做一个新的进程在当前程序进程中启动，则它算是当前程序的子进程，这种方式我们成为高级管道方式。</p>
+
+<h2 id="有名管道通信">有名管道通信</h2>
+
+<p>有名管道 (named pipe) ： 有名管道也是半双工的通信方式，但是它允许无亲缘关系进程间的通信。</p>
+
+<h2 id="消息队列通信">消息队列通信</h2>
+
+<p>消息队列( message queue ) ： 消息队列是由消息的链表，存放在内核中并由消息队列标识符标识。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点。</p>
+
+<h2 id="信号量通信">信号量通信</h2>
+
+<p>信号量( semophore ) ： 信号量是一个计数器，可以用来控制多个进程对共享资源的访问。它常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程内不同线程之间的同步手段。</p>
+
+<h2 id="信号">信号</h2>
+
+<p>信号 ( sinal ) ： 信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生。</p>
+
+<h2 id="共享内存通信">共享内存通信</h2>
+
+<p>共享内存( shared memory ) ：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。共享内存是最快的 IPC 方式，它是针对其他进程间通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号两，配合使用，来实现进程间的同步和通信。</p>
+
+<h2 id="套接字通信">套接字通信</h2>
+
+<p>套接字( socket ) ： 套接口也是一种进程间通信机制，与其他通信机制不同的是，它可用于不同机器间的进程通信。</p>
+
+<p>之前写过一个课程设计：基于Internet的Linux客户机/服务器系统通讯设计与实现</p>
+
+<p>是利用sock通信实现的，可以参考一下。</p>
+
+<p>通信过程如下：</p>
+
+<h3 id="命名socket">命名socket</h3>
+
+<p>SOCK_STREAM 式本地套接字的通信双方均需要具有本地地址，其中服务器端的本地地址需要明确指定，指定方法是使用 struct sockaddr_un 类型的变量。</p>
+
+<h3 id="绑定">绑定</h3>
+
+<p>SOCK_STREAM 式本地套接字的通信双方均需要具有本地地址，其中服务器端的本地地址需要明确指定，指定方法是使用 struct sockaddr_un 类型的变量，将相应字段赋值，再将其绑定在创建的服务器套接字上，绑定要使用 bind 系统调用，其原形如下：</p>
+
+<p>int bind(int socket, const struct sockaddr *address, size_t address_len);</p>
+
+<p>1</p>
+
+<p>其中 socket表示服务器端的套接字描述符，address 表示需要绑定的本地地址，是一个 struct sockaddr_un 类型的变量，address_len 表示该本地地址的字节长度。</p>
+
+<h3 id="监听">监听</h3>
+
+<p>服务器端套接字创建完毕并赋予本地地址值（名称，本例中为Server Socket）后，需要进行监听，等待客户端连接并处理请求，监听使用 listen 系统调用，接受客户端连接使用accept系统调用，它们的原形如下：</p>
+
+<pre><code class="line-numbers">int listen(int socket, int backlog);
+int accept(int socket, struct sockaddr *address, size_t *address_len);
+</code></pre>
+
+<p>其中 socket 表示服务器端的套接字描述符；backlog 表示排队连接队列的长度（若有多个客户端同时连接，则需要进行排队）；address 表示当前连接客户端的本地地址，该参数为输出参数，是客户端传递过来的关于自身的信息；address_len 表示当前连接客户端本地地址的字节长度，这个参数既是输入参数，又是输出参数。</p>
+
+<h3 id="连接服务器">连接服务器</h3>
+
+<p>客户端套接字创建完毕并赋予本地地址值后，需要连接到服务器端进行通信，让服务器端为其提供处理服务。</p>
+
+<p>对于SOCK_STREAM类型的流式套接字，需要客户端与服务器之间进行连接方可使用。连接要使用 connect 系统调用，其原形为</p>
+
+<pre><code class="line-numbers">int connect(int socket, const struct sockaddr *address, size_t address_len);
+</code></pre>
+
+<p>其中socket为客户端的套接字描述符，address表示当前客户端的本地地址，是一个 struct sockaddr_un 类型的变量，address_len 表示本地地址的字节长度。实现连接的代码如下：</p>
+
+<pre><code class="line-numbers">connect(client_sockfd, (struct sockaddr*)&client_address, sizeof(client_address));
+</code></pre>
+
+<h3 id="相互发送接收数据">相互发送接收数据</h3>
+
+<p>无论客户端还是服务器，都要和对方进行数据上的交互，这种交互也正是我们进程通信的主题。一个进程扮演客户端的角色，另外一个进程扮演服务器的角色，两个进程之间相互发送接收数据，这就是基于本地套接字的进程通信。发送和接收数据要使用 write 和 read 系统调用，它们的原形为：</p>
+
+<pre><code class="line-numbers">int read(int socket, char *buffer, size_t len);
+int write(int socket, char *buffer, size_t len);
+</code></pre>
+
+<p>其中 socket 为套接字描述符；len 为需要发送或需要接收的数据长度；</p>
+
+<p>对于 read 系统调用，buffer 是用来存放接收数据的缓冲区，即接收来的数据存入其中，是一个输出参数；</p>
+
+<p>对于 write 系统调用，buffer 用来存放需要发送出去的数据，即 buffer 内的数据被发送出去，是一个输入参数；返回值为已经发送或接收的数据长度。</p>
+
+<h3 id="断开连接">断开连接</h3>
+
+<p>交互完成后，需要将连接断开以节省资源，使用close系统调用，其原形为：</p>
+
+<pre><code class="line-numbers">int close(int socket);
+</code></pre>
+
+<ul>
+<li>* *版权声明：本文为CSDN博主「Violet-Guo」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+
+
+<br /></li>
+</ul>
+
+<p>原文链接：<a href="https://blog.csdn.net/violet_echo_0908/article/details/51201278">https://blog.csdn.net/violet_echo_0908/article/details/51201278</a></p></p>
+
+<ul>
+<li>* *注：
+
+
+<br /></li>
+</ul>
+
+<p>通讯方式的选择：</p>
+
+<p>PIPE和FIFO用来实现进程间相互发送非常短小的、频率很高的消息；这两种方式通常适用于两个进程间的通信。</p>
+
+<p>共享内存用来实现进程间共享的、非常庞大的、读写操作频率很高的数据（配合信号量使用）；这种方式通常适用于多进程间通信。</p>
+
+<p>其他考虑用socket。这里的“其他情况”，其实是今天主要会碰到的情况：<strong>分布式开发</strong>。</p>
+
+<p>在多进程、多线程、多模块所构成的今天最常见的分布式系统开发中，socket是第一选择。</p>
+
+<p>消息队列，现在建议不要使用了 &#8212;- 因为找不到使用它们的理由。</p>
+
+<p>从易用性，可扩展性等方面考虑，只使用socket就行了。性能不够，加块CPU。</p>
+
+<p>理论来源：<a href="https://www.zhihu.com/question/23995948">https://www.zhihu.com/question/23995948</a></p></p>
+
+<h2 id="关于消息队列">关于消息队列</h2>
+
+<p>这里主要说一下关于消息队列的缺点。消息队列是在系统范围内起作用的，没有引用计数。当消息队列终止而队列中还存有消息的时候，该消息队列及其内容不会被删除，将一直保留至系统中发生的一些动作为止：</p>
+
+<ul>
+<li>某个进程调用msgrcv或msgctl读消息或删除消息队列；</li>
+<li>某个进程执行ipcrm命令删除消息队列；</li>
+<li>正在自举的系统删除消息队列。对于匿名管道，最后一个引用管道的进程终止，管道就被删除；对于有名管道，最后一个引用 FIFO 的进程终止，虽然 FIFO 名字保留在系统中，但留在 FIFO 的数据已经被删除</li>
+</ul>
+
+<p>《APUE》一书指出，消息队列原来主要是提供高于一般速度的IPC，但现在与其他形式的IPC相比，速度上已没有太多的优势，因此，考虑消息队列遇到的问题，在新的应用程序中，不应再考虑使用它来实现 IPC。</p>
+
+<p>作者：Zyoung</p>
+
+<p>链接：<a href="https://www.zhihu.com/question/23995948/answer/538348089">https://www.zhihu.com/question/23995948/answer/538348089</a></p>
+
+<p>来源：知乎</p>
+
+<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/%E8%B5%98%E5%A9%BF%E7%9A%84%E7%AC%94%E8%AE%B0/">《赘婿》的笔记</a></li>
+        
+        <li><a href="/%E6%91%B8%E9%B1%BC%E5%84%BF/">摸鱼儿</a></li>
+        
+        <li><a href="/go-crontab/">Go Crontab</a></li>
+        
+        <li><a href="/k8s%E5%9C%A8mac%E4%B8%8A%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">k8s在Mac上的安装和使用</a></li>
+        
+        <li><a href="/%E4%BB%80%E4%B9%88%E6%98%AFswiftui/">什么是swiftUI</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B">进程</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/epoll/" title="epoll">epoll</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/cgo/" title="CGO">CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/gofmt/" title="Gofmt">Gofmt</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" title="Go Bazel构建工具">Go Bazel构建工具</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/etcd/" title="etcd">etcd</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(51)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(20)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(19)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(10)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">其他技术(35)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%8D%81%E4%B8%87%E4%B8%AA%E4%B8%BA%E4%BB%80%E4%B9%88/">十万个为什么(10)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(30)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%97%E6%96%87/">诗文(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(20)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93/">道(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/">错误集锦(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/apple/">apple</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/const/">const</a>
+    
+    <a href="https://blog.v5u.win/tags/crontab/">crontab</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/define/">define</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/flutter/">flutter</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E8%80%83%E5%8F%A4/">it考古</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E9%BB%91%E8%AF%9D/">it黑话</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/mardown/">mardown</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongo/">mongo</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/node/">node</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nstimer/">nstimer</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/orm/">orm</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/skecth/">skecth</a>
+    
+    <a href="https://blog.v5u.win/tags/sqlite/">sqlite</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/toml/">toml</a>
+    
+    <a href="https://blog.v5u.win/tags/ui/">ui</a>
+    
+    <a href="https://blog.v5u.win/tags/uicollectionview/">uicollectionview</a>
+    
+    <a href="https://blog.v5u.win/tags/uiimagepickerviewcontroller/">uiimagepickerviewcontroller</a>
+    
+    <a href="https://blog.v5u.win/tags/uiscrollview/">uiscrollview</a>
+    
+    <a href="https://blog.v5u.win/tags/uitableview/">uitableview</a>
+    
+    <a href="https://blog.v5u.win/tags/unowned/">unowned</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/weak/">weak</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/workspace/">workspace</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode7/">xcode7</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%89%E7%9C%81%E5%90%BE%E8%BA%AB/">三省吾身</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4/">免费空间</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8E%A7%E4%BB%B6/">控件</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%94%B6%E8%97%8F/">收藏</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%97%E6%96%87/">诗文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/">返回顶部</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/">进程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%81%93/">道</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+</body>
+</html>

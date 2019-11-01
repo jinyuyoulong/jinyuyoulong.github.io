@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>docker 简介 | 为吾优</title>
+    <meta property="og:title" content="docker 简介 - 为吾优">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2018-04-04T09:39:10&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2018-04-04T09:39:10&#43;08:00">
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="docker 简介">
+        <meta name="author" content="fan">
+        
+    <meta property="og:url" content="https://blog.v5u.win/docker-%E7%AE%80%E4%BB%8B/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://blog.v5u.win">首页</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">docker 简介</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2018年4月4日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/go">Go</a></span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
+
+<p>[TOC]</p>
+
+<h2 id="硬件-操作系统-要求">硬件/操作系统 要求</h2>
+
+<p>Docker支持以下的发行版版本：</p>
+
+<ul>
+<li>Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版</p></li>
+
+<li><p>CentOS 7 (64-bit)，要求内核版本不低于 3.10 。CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如 <code>overlay2</code> 存储层驱动）无法使用，并且部分功能可能不太稳定。</p></li>
+
+<li><p>Debain 9</p></li>
+</ul>
+
+<hr />
+
+<h2 id="前提条件">前提条件</h2>
+
+<p>目前，CentOS 仅发行版本中的内核支持 Docker。</p>
+
+<p>Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。</p>
+
+<p>Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64位、系统内核版本为 2.6.32-431 或者更高版本。</p>
+
+<p>### docker 的组件结构</p>
+
+<p>Docker 由镜像(Image)、容器(Container)、仓库(Repository) 三部分组成。</p>
+
+<p>docker-machine, docker, docker-compose (docker环境)</p>
+
+<p>docker container 容器(运行实例)</p>
+
+<p>docker image 镜像(安装实例)</p>
+
+<p>Dockerfile(用于生成image)</p>
+
+<p>### docker配置+使用</p>
+
+<p>预先安装docker的相关库</p>
+
+<p><code>brew install&lt;br /&gt;
+  docker&lt;br /&gt;
+  docker-compose&lt;br /&gt;
+  docker-machine</code></p>
+
+<h4 id="关于-docker-machine">关于 docker-machine</h4>
+
+<p><a href="https://docs.docker.com/machine/overview/">Docker Machine</a> 是 Docker 官方提供的一个工具，它可以帮助我们在远程的机器上安装 Docker，或者在虚拟机 host 上直接安装虚拟机并在虚拟机中安装 Docker。我们还可以通过 docker-machine 命令来管理这些虚拟机和 Docker。</p>
+
+<p>Mac 命令行安装 docker的话需要首先安装 docker-machine,默认启动的虚拟机对外IP：192.168.99.100</p>
+
+<p><code>tcp://192.168.99.100:2376</code></p>
+
+<p>#### 启动docker-machine</p>
+
+<p>To have launchd start docker-machine now and restart at login:</p>
+
+<p><code>brew services start docker-machine</code></p>
+
+<p>Or, if you don&#8217;t want/need a background service you can just run:</p>
+
+<p><code>docker-machine start</code></p>
+
+<p>### 利用docker-machine 使 docker从创建到启动步骤</p>
+
+<hr />
+
+<ol>
+<li>docker-machine ls //检查docker-machine 是否启动了,如果查看的URL为空，则启动docker-machine</p></li>
+
+<li><p>docker-machine start 或 docker-machine create default // 启动或创建docker虚拟主机。每一次启动都要重新创建，默认为 default。</p></li>
+
+<li><p>docker-machine env //配置docker 虚拟主机环境变量</p></li>
+
+<li><p>eval $(docker-machine env) // 使default环境变量生效</p></li>
+</ol>
+
+<hr />
+
+<p>docker操作</p>
+
+<ol>
+<li>docker image pull ubuntu // 拉取镜像库</li>
+</ol>
+
+<ol start="6">
+  <li>
+    docker image ls // 查看 已经安装的 image 镜像</p>
+  </li>
+  <li>
+    <p>
+      docker container run ubuntu //命令会从 image 文件，生成一个正在运行的容器实例。
+    </p>
+  </li>
+  
+  <li>
+    <p>
+      docker exec -it [容器ID] bash //进入已运行的容器，进行bash操作
+    </p>
+    
+    <h3>
+      docker 使用规则
+    </h3>
+    
+    <p>
+      镜像源：https://www.docker-cn.com/registry-mirror<br /> 在docker或网易蜂巢的镜像库中找到需要的image<br /> docker pull hub.c.163.com/library/mysql:latest<br /> docker images<br /> //启动容器,端口映射8888:8080<br /> docker run -b -p 8888:8080 hub.c.163.com/library/mysql<br /> <code>docker container run hello-world</code><br /> 输出这段提示以后，<code>hello world</code>就会停止运行，容器自动终止。<br /> 有些容器不会自动终止，因为提供的是服务。比如，安装运行 Ubuntu 的 image，就可以在命令行体验 Ubuntu 系统。<br /> <code>docker container run -it ubuntu bash</code>
+    </p>
+    
+    <h3>
+      编写 Dockerfile 文件生成image
+    </h3>
+  </li>
+  
+  <li>
+    新建 .dockerignore 文件<br /> 写入要忽略的目录/文件</p> <pre><code class="line-numbers">.git
+node_modules
+npm-debug.log
+</code></pre>
+  </li>
+  
+  <li>
+    新建文本文件 Dockerfile
+  </li>
+</ol>
+
+<p>Dockerfile 是一个文本文件，其内包含了一条条的 <strong>指令(Instruction)</strong>，每一条指令构建一层，因此每一条指令的内容，就是描述该层应当如何构建。</p>
+
+<p>写入环境配置</p>
+
+<p><code>dockerfile&lt;br /&gt;
+  FROM node:8.4 //该 image 文件继承官方的 node image，冒号表示标签，这里标签是8.4，即8.4版本的 node。&lt;br /&gt;
+  COPY . /app   //将当前目录下的所有文件（除了.dockerignore排除的路径），都拷贝进入 image 文件的/app目录。&lt;br /&gt;
+  WORKDIR /app  //指定接下来的工作路径为/app。&lt;br /&gt;
+  RUN npm install --registry=https://registry.npm.taobao.org    //在/app目录下，运行npm install命令安装依赖。注意，安装后所有的依赖，都将打包进入 image 文件。&lt;br /&gt;
+  EXPOSE 3000   //将容器 3000 端口暴露出来， 允许外部连接这个端口。&lt;br /&gt;
+  CMD node demos/01.js  //容器启动后自动执行node demos/01.js。</code></p>
+
+<ol start="3">
+  <li>
+    创建 image 文件<br /> <code>docker image build -t koa-demo .</code> 或<code>docker image build -t koa-demo:0.0.1 .</code></p>
+  </li>
+</ol>
+
+<p><code>docker build</code> 命令最后有一个 <code>.</code>。<code>.</code> 表示当前目录，而 <code>Dockerfile</code> 就在当前目录，因此不少初学者以为这个路径是在指定 <code>Dockerfile</code> 所在路径，这么理解其实是不准确的。如果对应上面的命令格式，你可能会发现，这是在指定 <strong>上下文路径</strong>。</p>
+
+<ol start="4">
+  <li>
+    生成容器<br /> <code>docker container run -p 8000:3000 -it koa-demo /bin/bash</code></p> <h3>
+      发布 image 文件
+    </h3>
+    
+    <p>
+      去 hub.docker.com 或 cloud.docker.com 注册一个账户.
+    </p>
+  </li>
+  
+  <li>
+    docker login
+  </li>
+  <li>
+    为本地的 image 标注用户名和版本。
+  </li>
+  <li>
+    重新构建一下 image 文件。
+  </li>
+  <li>
+    发布 image 文件。
+  </li>
+  <li>
+    <p>
+      发布成功以后，登录 hub.docker.com，查看已经发布的 image 文件。
+    </p>
+    
+    <h3>
+      其他docker命令
+    </h3>
+    
+    <pre><code class="language-sh line-numbers">docker-machine env    // 查看环境变量：IP
+docker ps                     //查看运行的docker
+netstat -na|grep 8888 // 查看端口监听情况
+docker exec -it [容器ID] bash //进入容器，进行bash操作 -it：这是两个参数，一个是 -i 表示交互式操作，一个是 -t 为终端。
+docker run -ti -d --name my-nginx -p 8088:80 docker.io/nginx // 端口映射
+docker rm containerId // 删除 容器文件
+docker rmi imageId        // 删除 image文件
+docker stop 1f                // 停止运行的容器
+docker start                  //启动一个或多个已经被停止的容器
+docker stop                   //停止一个运行中的容器
+docker restart b0             //重启容器
+docker container kill [containID] // 手动终止 运行的 容器
+docker container ls   // 列出本机正在运行的容器
+docker container ls --all //列出本机所有容器，包括终止运行的容器
+docker volume create portainer_data
+</code></pre>
+    
+    <p>
+      docker-machine create default // 创建docker虚拟主机，每一次启动都要重新创建，默认创建环境名为 default。如果报错，boot2docker.iso 无法下载可以在GitHub上单独下载后放到 /Users/$username/.docker/machine/cache/ 下<br /> 在容器的命令行，按下 Ctrl + c 停止 Node 进程，然后按下 Ctrl + d （或者输入 exit）退出容器。
+    </p>
+  </li>
+</ol>
+
+<h4 id="docker的数据持久化主要有两种方式">Docker的数据持久化主要有两种方式：</h4>
+
+<ul>
+<li>bind mount</li>
+<li>volume</li>
+</ul>
+
+<p><strong>使用volume</strong></p>
+
+<p>volume也是绕过container的文件系统，直接将数据写到host机器上，只是volume是被docker管理的，docker下所有的volume都在host机器上的指定目录下/var/lib/docker/volumes。</p>
+
+<p>将my-volume挂载到container中的/mydata目录：</p>
+
+<pre><code class="line-numbers">docker run -it -v my-volume:/mydata alpine sh
+</code></pre>
+
+<h4 id="var-run-docker-sock文件">/var/run/docker.sock文件</h4>
+
+<p>这个文件是什么呢？为什么有些容器需要使用它？简单地说，它是Docker守护进程(Docker daemon)默认监听的Unix域套接字(Unix domain socket)，容器中的进程可以通过它与Docker守护进程进行通信。</p>
+
+<p>Portainer镜像通过绑定的/var/run/docker.sock文件与<strong>Docker守护进程</strong>通信，执行各种管理操作。</p>
+
+<p>#### 一些使用原则</p>
+
+<ol>
+<li><em>在创建 Docker Image 的时候使用 <strong>-t</strong> 参数对 Image 打上 Tag</em></p></li>
+
+<li><p><em>不要在 Dockerfile 中进行端口映射</em></p>
+
+<p>如果 Image 的使用者关心 Container 应该将自己的什么端口和 host 的端口进行映射，那就会显式地在创建 Container 的时候使用 <strong>-p</strong> 参数进行设置，否则，Docker 会自动给 Container 分配一个 host 上的端口进行映射。</p></li>
+
+<li><p>在使用 <strong>CMD</strong> 和 <strong>ENTRYPOINT</strong> 指示的时候使用数组传入参数 <code>CMD [&quot;/bin/echo&quot;]</code></p></li>
+
+<li><p><strong>CMD **和 **ENTRYPOINT</strong> 最好配合使用</p>
+
+<p><strong>注意</strong></p>
+
+<p>docker是运行在Linux上的，在Windows/Mac中运行docker，实际上还是在Windows/Mac下先安装了一个Linux环境，然后在这个系统中运行的docker。也就是说，服务中使用的localhost指的是这个Linux环境的地址，而不是我们的宿主环境Windows/Mac。我们可以通过命令：<code>docker-machine ip default</code></p>
+
+<p><strong>找到这个Linux的ip地址，一般情况下这个地址是192.168.99.100，然后在 Windows/Mac 的浏览器中，输入这个地址，加上服务的端口即可启用了。</strong> <code>http://192.168.99.100:8080</code></p>
+
+<h3 id="docker-compose-编排项目">docker-compose 编排项目</h3>
+
+<p>docker-compose build //编排 image</p>
+
+<p>docker-compose run my-gin //创建并启动容器</p>
+
+<p>docker-compose.yml //配置文件</p>
+
+<p><pre><code class="language-yaml line-numbers">version: &ldquo;2&rdquo;
+services:
+gili-api:
+image: gili-api:latest
+restart: always
+environment:
+MYSQL_DSN: &ldquo;root:K3b4XRqsmVpW@tcp(172.20.0.2)/giligili?charset=utf8&amp;parseTime=True&amp;loc=Local&rdquo;
+REDIS_ADDR: &ldquo;172.21.0.2:6379&rdquo;
+REDIS_PW: &ldquo;&rdquo;
+REDIS_DB: &ldquo;0&rdquo;
+SESSION_SECRE: &ldquo;K3b4XRqsmVpW&rdquo;
+GIN_MODE: &ldquo;release&rdquo;
+ports:</p></li>
+
+<li><p>3002:3000
+mysql:
+image: mysql:5.6
+restart: always
+environment:
+MYSQL_ROOT_PASSWORD: K3b4XRqsmVpW
+volumes:</p></li>
+
+<li><p>mysql_data:/var/lib/mysql/data
+ports:</p></li>
+
+<li><p>3306:3306
+redis:
+container_name: redis
+image: redis
+restart: always
+ports:</p></li>
+
+<li><p>6379:6379
+</code></pre></p></li>
+</ol>
+
+<p><strong>在docker容器里localhost并不是指宿主机的localhost</strong></p>
+
+<p>由此原因，并不能在容器中通过localhost:3306访问到宿主机的mysql</p>
+
+<p><strong>docker在运行时就建立了虚拟网卡，并命名为docker0</strong></p>
+
+<p>我们可以在宿主机上运行ifconfig看到它，这就是宿主机建立的网桥，用于与各个容器之间通信</p>
+
+<p><strong>宿主机在与容器同一局域网的IP地址一般是docker0对应的IP地址段的首个地址（如172.0.17.1）</strong></p>
+
+<p>我们可以在容器里通过172.0.17.1:3306访问到宿主机的mysql服务器</p>
+
+<p>ip 查询命令：<code>ip addr show</code></p>
+
+<p><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker 入门教程</a></p>
+
+<p><a href="http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html">Docker 微服务教程</a></p>
+
+<p><a href="https://studygolang.com/articles/4219">Dockerfile 最佳实践</a></p>
+
+<p><a href="https://registry.docker-cn.com">https://registry.docker-cn.com</a></p>
+
+<p><a href="https://yeasy.gitbooks.io/docker_practice/">https://yeasy.gitbooks.io/docker_practice/</a></p>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/mysql-%E7%BB%8F%E5%B8%B8%E4%BD%BF%E7%94%A8tips/">MYSQL 经常使用tips</a></li>
+        
+        <li><a href="/xcode%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A%E8%A7%84%E5%88%99%E7%AE%80%E8%A6%81%E6%B1%87%E6%80%BB/">xcode文档注释规则简要汇总</a></li>
+        
+        <li><a href="/appledoc%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">appledoc使用说明</a></li>
+        
+        <li><a href="/indexpath-item-vs-indexpath-row/">indexPath.item vs indexPath.row</a></li>
+        
+        <li><a href="/pycharm%E5%A6%82%E4%BD%95%E6%B7%BB%E5%8A%A0-local-venv/">pycharm如何添加 local venv</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://blog.v5u.win/tags/docker">docker</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/epoll/" title="epoll">epoll</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/cgo/" title="CGO">CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/gofmt/" title="Gofmt">Gofmt</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" title="Go Bazel构建工具">Go Bazel构建工具</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/etcd/" title="etcd">etcd</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(51)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(20)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(19)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(10)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">其他技术(35)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%8D%81%E4%B8%87%E4%B8%AA%E4%B8%BA%E4%BB%80%E4%B9%88/">十万个为什么(10)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(30)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%97%E6%96%87/">诗文(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(20)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93/">道(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/">错误集锦(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/apple/">apple</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/const/">const</a>
+    
+    <a href="https://blog.v5u.win/tags/crontab/">crontab</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/define/">define</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/flutter/">flutter</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E8%80%83%E5%8F%A4/">it考古</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E9%BB%91%E8%AF%9D/">it黑话</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/mardown/">mardown</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongo/">mongo</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/node/">node</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nstimer/">nstimer</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/orm/">orm</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/skecth/">skecth</a>
+    
+    <a href="https://blog.v5u.win/tags/sqlite/">sqlite</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/toml/">toml</a>
+    
+    <a href="https://blog.v5u.win/tags/ui/">ui</a>
+    
+    <a href="https://blog.v5u.win/tags/uicollectionview/">uicollectionview</a>
+    
+    <a href="https://blog.v5u.win/tags/uiimagepickerviewcontroller/">uiimagepickerviewcontroller</a>
+    
+    <a href="https://blog.v5u.win/tags/uiscrollview/">uiscrollview</a>
+    
+    <a href="https://blog.v5u.win/tags/uitableview/">uitableview</a>
+    
+    <a href="https://blog.v5u.win/tags/unowned/">unowned</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/weak/">weak</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/workspace/">workspace</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode7/">xcode7</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%89%E7%9C%81%E5%90%BE%E8%BA%AB/">三省吾身</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4/">免费空间</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8E%A7%E4%BB%B6/">控件</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%94%B6%E8%97%8F/">收藏</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%97%E6%96%87/">诗文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/">返回顶部</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/">进程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%81%93/">道</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+</body>
+</html>

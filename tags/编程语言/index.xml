@@ -13,10 +13,10 @@
     
     <item>
       <title>编程语言特性汇总</title>
-      <link>https://blog.v5u.win/post/system-program-language-feature/</link>
+      <link>https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B1%87%E6%80%BB/</link>
       <pubDate>Tue, 03 Jul 2018 10:23:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-program-language-feature/</guid>
+      <guid>https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B1%87%E6%80%BB/</guid>
       <description>语言特性汇总： 类型推导， 类型检查， 惰性求值 currying 闭包 OO lambda</description>
     </item>
     

@@ -6,17 +6,17 @@
     <description>Recent content in keyboard on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 02 Dec 2015 14:54:36 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Dec 2015 06:54:36 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/keyboard/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>iOS键盘高度的官方获取方法</title>
-      <link>https://blog.v5u.win/post/ios-keyboard-height/</link>
-      <pubDate>Wed, 02 Dec 2015 14:54:36 +0000</pubDate>
+      <link>https://blog.v5u.win/ios%E9%94%AE%E7%9B%98%E9%AB%98%E5%BA%A6%E7%9A%84%E5%AE%98%E6%96%B9%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 02 Dec 2015 06:54:36 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-keyboard-height/</guid>
+      <guid>https://blog.v5u.win/ios%E9%94%AE%E7%9B%98%E9%AB%98%E5%BA%A6%E7%9A%84%E5%AE%98%E6%96%B9%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/</guid>
       <description>处理键盘事件的正确方法是这样的：（包括获取键盘的高度以及键盘弹出和消失动画的时间） 1）在要使用键盘的视图控制器中，接收键盘事件的通知： [[NSNotificationCenter defaultCenter] addObserver:self</description>
     </item>
     

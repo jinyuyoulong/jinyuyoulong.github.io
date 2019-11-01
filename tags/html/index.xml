@@ -6,18 +6,18 @@
     <description>Recent content in html on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 25 Oct 2015 17:48:49 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2015 09:48:49 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/html/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HTML&amp;CSS</title>
-      <link>https://blog.v5u.win/post/web-html-css/</link>
-      <pubDate>Sun, 25 Oct 2015 17:48:49 +0000</pubDate>
+      <link>https://blog.v5u.win/htmlcss/</link>
+      <pubDate>Sun, 25 Oct 2015 09:48:49 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/web-html-css/</guid>
-      <description>&amp;lt;p&amp;gt; paragragh 段落 &amp;lt;em&amp;gt; emphasize 强调(显示为斜体) &amp;lt;span&amp;gt; 样式 &amp;lt;q&amp;gt; quote [kwot] 引用，引号(显示默认添加双引号，故不用再次添加“ ”) &amp;lt;blockquote&amp;gt; 引用块 ，长文本引用(显示默认为缩进，左右都缩</description>
+      <guid>https://blog.v5u.win/htmlcss/</guid>
+      <description>paragragh 段落 emphasize 强调(显示为斜体) 样式 quote [kwot] 引用，引号(显示默认添加双引号，故不用再次添加“ ”) 引用块 ，长文本引用(显示默认为缩进，左右都缩进) break 换行</description>
     </item>
     
   </channel>

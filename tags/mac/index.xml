@@ -13,37 +13,37 @@
     
     <item>
       <title>mac虚拟机上的centos 7实现ssh连接</title>
-      <link>https://blog.v5u.win/post/mac-vritual-centos7-ssh/</link>
+      <link>https://blog.v5u.win/mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</link>
       <pubDate>Sat, 30 Jun 2018 08:57:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-vritual-centos7-ssh/</guid>
+      <guid>https://blog.v5u.win/mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</guid>
       <description>mac虚拟机上的centos7实现ssh连接 查看是否安装ssh rpm -qa | grep ssh（一般都内置了） 配置sshd_config文件 /etc/ssh/sshd_config Port 22 ListenAddress 0.0.0.0 ListenAddress :: 防火</description>
     </item>
     
     <item>
       <title>mac 如何使用wget</title>
-      <link>https://blog.v5u.win/post/mac-wget/</link>
-      <pubDate>Sat, 21 Jan 2017 23:38:52 +0000</pubDate>
+      <link>https://blog.v5u.win/mac-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8wget/</link>
+      <pubDate>Sat, 21 Jan 2017 15:38:52 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-wget/</guid>
-      <description>下载单个文件， 为什么不用mac原生自带的工具：curl &amp;ldquo;网址链接&amp;rdquo; -o &amp;ldquo;输出文件名&amp;rdquo; 解释一下，</description>
+      <guid>https://blog.v5u.win/mac-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8wget/</guid>
+      <description>下载单个文件， 为什么不用mac原生自带的工具：curl &amp;#8220;网址链接&amp;#8221; -o &amp;#8220;输出文件名&amp;#8221; 解释一下，</description>
     </item>
     
     <item>
       <title>mac下wireshark的使用方法</title>
-      <link>https://blog.v5u.win/post/mac-wireshark/</link>
-      <pubDate>Wed, 18 May 2016 18:47:09 +0000</pubDate>
+      <link>https://blog.v5u.win/mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 18 May 2016 10:47:09 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-wireshark/</guid>
+      <guid>https://blog.v5u.win/mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
       <description>Wireshark是mac下一款非常好的抓包工具，安装我就不说了，下面我重点来说说如何使用。 1.打开终端 2.rvictl -s // 创建一个虚拟接口 3.打开Wir</description>
     </item>
     
     <item>
       <title>用 Xcode 编写 C/C&#43;&#43; 的 Hello World！</title>
-      <link>https://blog.v5u.win/post/xcode-cc&#43;&#43;/</link>
-      <pubDate>Fri, 25 Sep 2015 12:24:51 +0000</pubDate>
+      <link>https://blog.v5u.win/%E7%94%A8-xcode-%E7%BC%96%E5%86%99-cc-%E7%9A%84-hello-world/</link>
+      <pubDate>Fri, 25 Sep 2015 04:24:51 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/xcode-cc&#43;&#43;/</guid>
+      <guid>https://blog.v5u.win/%E7%94%A8-xcode-%E7%BC%96%E5%86%99-cc-%E7%9A%84-hello-world/</guid>
       <description>操作步骤： 打开Xcode，在欢迎界面点击Create a new Xcode project。 在左侧栏选择Mac OS X分类的Application，右侧选择Com</description>
     </item>
     

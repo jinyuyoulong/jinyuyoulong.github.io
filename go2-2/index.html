@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.58.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Go2 | 为吾优</title>
+    <meta property="og:title" content="Go2 - 为吾优">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-10-30T06:04:04&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-10-30T06:04:04&#43;08:00">
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="Go2">
+        <meta name="author" content="fan">
+        
+    <meta property="og:url" content="https://blog.v5u.win/go2-2/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://blog.v5u.win">首页</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Go2</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年10月30日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/go">Go</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
+
+<h1 id="go-为何带来泛型">Go：为何带来泛型</h1>
+
+<ul>
+<li>中文版</li>
+<li><a href="https://github.com/llgoer/go-generics/blob/master/README-en.md">English version</a></li>
+</ul>
+
+<h2 id="介绍">介绍</h2>
+
+<p>[这是在Gophercon 2019上发表的演讲版本。视频链接可供使用。]</p>
+
+<p>这篇文章是关于向Go添加泛型的意义，以及为什么我认为我们应该这样做。我还将介绍为Go添加泛型的设计可能的改变。</p>
+
+<p>Go于2009年11月10日发布。不到24小时后，我们看到了<a href="https://groups.google.com/d/msg/golang-nuts/70-pdwUUrbI/onMsQspcljcJ">关于泛型</a>的<a href="https://groups.google.com/d/msg/golang-nuts/70-pdwUUrbI/onMsQspcljcJ">第一条评论</a>。（该评论还提到了我们在2010年初以panic和recover的形式添加到语言中的情况。）</p>
+
+<p>在Go调查的三年中，缺乏泛型一直被列为该语言需要修复的三大问题之一。</p>
+
+<hr />
+
+<p>本项目会带来更多关于Go泛型的文档、代码及讨论。</p>
+
+<h2 id="为什么是泛型">为什么是泛型？</h2>
+
+<p>但是添加泛型是什么意思，为什么我们想要呢？</p>
+
+<p>用 <a href="https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=98171">Jazayeri等人的话来说</a>：泛型编程能够以通用类型的形式表示函数和数据结构。</p>
+
+<p>那意味着什么呢？</p>
+
+<p>举一个简单的例子，我们假设我们想要反转切片中的元素。这不是很多程序需要做的事情，但并不是那么不寻常。</p>
+
+<p>让我们说它是一个int slice。</p>
+
+<pre><code class="line-numbers">func ReverseInts(s []int) {
+    first := 0
+    last := len(s)
+    for first &lt; last {
+        s[first], s[last] = s[last], s[first]
+        first++
+        last--
+    }
+}
+</code></pre>
+
+<p>非常简单，但即使是一个简单的功能，你也想写一些测试用例。事实上，当我这样做时，我发现了一个错误。我相信很多读者已经发现了它。</p>
+
+<pre><code class="line-numbers">func ReverseInts(s []int) {
+    first := 0
+    last := len(s) - 1
+    for first &lt; last {
+        s[first], s[last] = s[last], s[first]
+        first++
+        last--
+    }
+}
+</code></pre>
+
+<p>我们在最后设置变量时需要减去1。</p>
+
+<p>现在让我们反转一段字符串。</p>
+
+<pre><code class="line-numbers">func ReverseStrings(s []string) {
+    first := 0
+    last := len(s) - 1
+    for first &lt; last {
+        s[first], s[last] = s[last], s[first]
+        first++
+        last--
+    }
+}
+</code></pre>
+
+<p>如果比较ReverseInts以及ReverseStrings，您将看到两个函数完全相同，除了参数的类型。我认为没有任何读者对此感到惊讶。</p>
+
+<p>有些人对Go感到惊讶的是，没有办法编写Reverse适用于任何类型切片的简单函数。</p>
+
+<p>大多数其他语言都可以让你编写这种功能。</p>
+
+<p>在像Python或JavaScript这样的动态类型语言中，您可以简单地编写函数，而无需指定元素类型。这在Go中不起作用，因为Go是静态类型的，并且要求您记下切片的确切类型和切片元素的类型。</p>
+
+<p>大多数其他静态类型语言，如C++或Java或Rust或Swift，支持泛型来解决这类问题。</p>
+
+<h2 id="今天的go通用编程">今天的Go通用编程</h2>
+
+<p>那么人们如何在Go中编写这种代码呢？</p>
+
+<p>在Go中，您可以使用接口类型编写适用于不同切片类型的单个函数，并在要传递的切片类型上定义方法。这就是标准库的sort.Sort功能的工作方式。</p>
+
+<p>换句话说，Go中的接口类型是通用编程的一种形式。他们让我们捕捉不同类型的共同方面，并将它们表达为方法。然后我们可以编写使用这些接口类型的函数，这些函数将适用于实现这些方法的任何类型。</p>
+
+<p>但这种做法不符合我们的要求。使用接口，您必须自己编写方法。使用几种方法定义命名类型来反转切片是很尴尬的。你编写的方法对于每种切片类型都是完全相同的，所以从某种意义上说，我们只是移动并压缩了重复的代码，我们还没有消除它。虽然接口是泛型的一种形式，但它们并没有向我们提供我们想要的所有泛型。</p>
+
+<p>使用泛型接口的另一种方法是，可以解决自己编写方法的需要，就是让语言为某些类型定义方法。这不是语言支持的东西，但是，例如，语言可以定义每个切片类型都有一个返回元素的Index方法。但是为了在实践中使用该方法，它必须返回一个空接口类型，然后我们失去了静态类型的所有好处。更巧妙的是，没有办法定义一个泛型函数，该函数采用具有相同元素类型的两个不同切片，或者采用一个元素类型的映射并返回相同元素类型的切片。Go是一种静态类型语言，因为这样可以更容易地编写大型程序; 我们不想失去静态类型的好处，以获得泛型的好处。</p>
+
+<p>另一种方法是Reverse使用反射包编写一个泛型函数，但这样写起来很笨拙而且运行速度慢，很少有人这样做。该方法还需要显式类型断言，并且没有静态类型检查。</p>
+
+<p>或者，您可以编写一个代码生成器，它接受一个类型并Reverse为该类型的切片生成一个函数。有几个代码生成器就是这样做的。但是这为需要的每个包添加了另一个步骤Reverse，它使构建变得复杂，因为必须编译所有不同的副本，并且修复主源中的错误需要重新生成所有实例，其中一些实例可能完全在不同的项目中。</p>
+
+<p>所有这些方法都很尴尬，我认为大多数必须在Go中反转切片的人只是为他们需要的特定切片类型编写函数。然后他们需要为函数编写测试用例，以确保它们没有像我最初制作的那样犯一个简单的错误。而且他们需要定期运行这些测试。</p>
+
+<p>但是我们这样做，这意味着除了元素类型之外，对于看起来完全相同的函数来说，还有很多额外的工作。并不是说它无法完成。显然可以做到，Go程序员正在这样做。只是应该有更好的方式。</p>
+
+<p>对于像Go这样的静态类型语言，更好的方法是泛型。我之前写的是泛型编程能够以通用形式表示函数和数据结构，并将类型考虑在内。这正是我们想要的。</p>
+
+<h2 id="为go可以带来什么样的泛型">为Go可以带来什么样的泛型</h2>
+
+<p>我们想要从Go中的泛型中获得的第一个也是最重要的事情是能够编写函数，Reverse而不必关心切片的元素类型。我们想要分解出那种元素类型。然后我们可以编写一次函数，编写测试一次，将它们放在一个go-gettable包中，并随时调用它们。</p>
+
+<p>更好的是，由于这是一个开源世界，其他人可以写Reverse一次，我们可以使用他们的实现。</p>
+
+<p>在这一点上，我应该说“泛型”可能意味着很多不同的东西。在本文中，我所说的“泛型”是我刚才所描述的。特别是，我不是指C ++语言中的模板，它支持的内容比我在这里写的要多得多。</p>
+
+<p>我Reverse详细介绍了，但是我们可以编写许多其他功能，例如：</p>
+
+<ul>
+<li>查找切片中的最小/最大元素</li>
+<li>求出切片的平均值/标准差</li>
+<li>计算联合/交叉的maps</li>
+<li>在node/edge中查找最短路径</li>
+<li>将转换函数应用于slice/map，返回新的slice/map</li>
+</ul>
+
+<p>这些示例以大多数其他语言提供。实际上，我通过浏览C++标准模板库来编写这个列表。</p>
+
+<p>还有一些特定于Go的示例，它强烈支持并发性。</p>
+
+<ul>
+<li>从具有超时的通道读取</li>
+<li>将两个通道组合成一个通道</li>
+<li>并行调用函数列表，返回一片结果</li>
+<li>调用函数列表，使用Context，返回第一个函数的结果来完成，取消和清理额外的goroutines</li>
+</ul>
+
+<p>我已经看到所有这些函数用不同的类型写了很多次。在Go中编写它们并不难。但是能够重用适用于任何值类型的高效且便于调试的实现会很好。</p>
+
+<p>需要说明的是，这些仅仅是一些例子。还有许多通用功能可以使用泛型更容易和安全地编写。</p>
+
+<p>另外，正如我之前所写，它不仅仅是功能。它也是数据结构。</p>
+
+<p>Go有两种内置于该语言中的通用通用数据结构：切片和maps。切片和maps可以保存任何数据类型的值，使用静态类型检查存储和检索的值。值存储为自身，而不是接口类型。也就是说，当我有a时[]int，切片直接保存int，而不是int转换为接口类型。</p>
+
+<p>切片和maps是最有用的通用数据结构，但它们不是唯一的。以下是其他一些例子。</p>
+
+<ul>
+<li>Sets</li>
+<li>自平衡树，有序插入和按行排序遍历</li>
+<li>Multimaps，具有密钥的多个实例</li>
+<li>并发哈希映射，支持并行插入和查找，没有单个锁</li>
+</ul>
+
+<p>如果我们可以编写泛型类型，我们可以定义像这样的新数据结构，它们具有与切片和映射相同的类型检查优势：编译器可以静态地类型检查它们所持有的值的类型，并且值可以存储为自身，而不是存储为接口类型。</p>
+
+<p>还应该可以采用前面提到的算法并将它们应用于通用数据结构。</p>
+
+<p>这些示例应该就像Reverse：通用函数和数据结构一次编写，在包中，并在需要时重用。它们应该像切片和maps一样工作，因为它们不应该存储空接口类型的值，但是应该存储特定的类型，并且应该在编译时检查这些类型。</p>
+
+<p>这就是Go可以从泛型中获得的东西。泛型可以为我们提供强大的构建块，让我们可以更轻松地共享代码和构建程序。</p>
+
+<p>我希望我已经解释了为什么值得研究。</p>
+
+<h2 id="好处和成本">好处和成本</h2>
+
+<p>但泛型并非来自<a href="https://mainlynorfolk.info/folk/songs/bigrockcandymountain.html">Big Rock Candy Mountain</a>，那里每天阳光照射在<a href="http://www.lat-long.com/Latitude-Longitude-773297-Montana-Lemonade_Springs.html">柠檬水泉上</a>。每一种语言变化都有成本。毫无疑问，向Go添加泛型将使语言更复杂。与语言的任何变化一样，我们需要谈论最大化利益并最大限度地降低成本。</p>
+
+<p>在Go中，我们的目标是通过可以自由组合的独立，正交语言功能来降低复杂性。我们通过简化各个功能来降低复杂性，并通过允许其自由组合来最大化功能的好处。我们希望对泛型做同样的事情。</p>
+
+<p>为了使这个更具体，我将列出一些我们应该遵循的准则。</p>
+
+<p>*尽量减少新概念</p>
+
+<p>我们应该尽可能少地为语言添加新概念。这意味着最少的添加新语法和最少的新关键字和其他名称。</p>
+
+<p>*复杂性落在通用代码的编写者身上，而不是用户身上</p>
+
+<p>编程通用包的程序员应尽可能地降低复杂性。我们不希望包的用户不必担心泛型。这意味着应该可以以自然的方式调用泛型函数，同时使用通用包时的任何错误都应该以易于理解和修复的方式报告。将调用调用为通用代码也应该很容易。</p>
+
+<p>*作家和用户可以独立工作</p>
+
+<p>同样，我们应该很容易将通用代码的编写者及其用户的关注点分开，以便他们可以独立开发代码。他们不应该担心对方在做什么，不仅仅是不同包中正常功能的编写者和调用者都要担心。这听起来很明显，但对于其他所有编程语言中的泛型都不是这样。</p>
+
+<p>*构建时间短，执行时间短</p>
+
+<p>当然，尽可能地，我们希望保持Go给我们今天的短建造时间和快速执行时间。泛型倾向于在快速构建和快速执行之间进行权衡。我们尽可能地想要两者。</p>
+
+<p>*保持Go的清晰度和简洁性</p>
+
+<p>最重要的是，Go今天是一种简单的语言。Go程序通常清晰易懂。我们探索这个空间的漫长过程的一个主要部分是试图了解如何在保持清晰度和简洁性的同时添加泛型。我们需要找到适合现有语言的机制，而不是把它变成完全不同的东西。</p>
+
+<p>这些指南应适用于Go中的任何泛型实现。这是我今天想要留给你的最重要的信息： 泛型可以为语言带来显着的好处，但是如果Go仍然感觉像Go那么它们是值得做的。</p>
+
+<h2 id="草案设计">草案设计</h2>
+
+<p>幸运的是，我认为可以做到。为了完成这篇文章，我将讨论为什么我们想要泛型，以及对它们的要求是什么，简要讨论我们认为如何将它们添加到语言中的设计。</p>
+
+<p>在今年的Gophercon Robert Griesemer和我发布了<a href="https://github.com/golang/proposal/blob/master/design/go2draft-contracts.md">一个设计草案</a>，为Go添加泛型。有关详细信息，请参阅草案。我将在这里讨论一些要点。</p>
+
+<p>这是此设计中的通用反向函数。</p>
+
+<pre><code class="line-numbers">func Reverse (type Element) (s []Element) {
+    first := 0
+    last := len(s) - 1
+    for first &lt; last {
+        s[first], s[last] = s[last], s[first]
+        first++
+        last--
+    }
+}
+</code></pre>
+
+<p>您会注意到函数的主体完全相同。只有签名发生了变化。</p>
+
+<p>已经考虑了切片的元素类型。它现在被命名Element并成为我们所谓的 类型参数。它不是成为slice参数类型的一部分，而是一个单独的附加类型参数。</p>
+
+<p>要使用类型参数调用函数，在一般情况下，您传递一个类型参数，这与任何其他参数类似，只不过它是一个类型。</p>
+
+<pre><code class="line-numbers">func ReverseAndPrint(s []int) {
+    Reverse(int)(s)
+    fmt.Println(s)
+}
+</code></pre>
+
+<p>这是在这个例子中就是你看到的Reverse后面的(int)。</p>
+
+<p>幸运的是，在大多数情况下，包括这个，编译器可以从常规参数的类型中推断出类型参数，并且根本不需要提及类型参数。</p>
+
+<p>调用泛型函数就像调用任何其他函数一样。</p>
+
+<pre><code class="line-numbers">func ReverseAndPrint(s []int) {
+    Reverse(s)
+    fmt.Println(s)
+}
+</code></pre>
+
+<p>换句话说，虽然通用Reverse功能略高于更加复杂ReverseInts和ReverseStrings，这种复杂落在函数上，而不是编写和调用。</p>
+
+<h2 id="合约">合约</h2>
+
+<p>由于Go是一种静态类型语言，我们必须讨论类型参数的类型。这个元类型告诉编译器在调用泛型函数时允许哪种类型的参数，以及泛型函数可以对类型参数的值执行哪些操作。</p>
+
+<p>该Reverse函数可以使用任何类型的切片。它对类型值的唯一作用Element是赋值，它适用于Go中的任何类型。对于这种通用函数，这是一种非常常见的情况，我们不需要对类型参数说些什么特别的。</p>
+
+<p>让我们快速浏览一下不同的功能。</p>
+
+<pre><code class="line-numbers">func IndexByte (type T Sequence) (s T, b byte) int {
+    for i := 0; i &lt; len(s); i++ {
+        if s[i] == b {
+            return i
+        }
+    }
+    return -1
+}
+</code></pre>
+
+<p>目前，标准库中的bytes包和strings包都有一个IndexByte函数。此函数返回b序列中的索引s，其中s是一个string或一个[]byte。我们可以使用这个单一的泛型函数来替换字节和字符串包中的两个函数。在实践中，我们可能不会这样做，但这是一个有用的简单示例。</p>
+
+<p>在这里，我们需要知道类型参数的T作用类似于一个string或一个[]byte。我们可以调用len它，我们可以索引它，我们可以将索引操作的结果与字节值进行比较。</p>
+
+<p>要进行编译，type参数T本身需要一个类型。它是一个元类型，但是因为我们有时需要描述多个相关类型，并且因为它描述了泛型函数的实现与其调用者之间的关系，所以我们实际上调用T了契约的类型。合约在这里命名Sequence。它出现在类型参数列表之后。</p>
+
+<p>这是为此示例定义Sequence契约的方式。</p>
+
+<pre><code class="line-numbers">contract Sequence(T) {
+    T string, []byte
+}
+</code></pre>
+
+<p>这很简单，因为这是一个简单的例子：type参数 T可以是string或[]byte。这contract可能是一个新的关键字，或在包范围内识别的特殊标识符; 请参阅设计草案了解详情。</p>
+
+<p>任何记得我们在<a href="https://github.com/golang/proposal/blob/4a530dae40977758e47b78fae349d8e5f86a6c0a/design/go2draft-contracts.md">Gophercon 2018上展示过的设计</a>的人 都会发现这种签订合约的方式要简单得多。我们得到了很多关于合约过于复杂的早期设计的反馈，我们已经尝试将其考虑在内。新合约的编写，阅读和理解都要简单得多。</p>
+
+<p>它们允许您指定类型参数的基础类型，和/或列出类型参数的方法。它们还可以让您描述不同类型参数之间的关系。</p>
+
+<h2 id="与方法签订合约">与方法签订合约</h2>
+
+<p>这是另一个简单的例子，它使用String方法返回[]string所有元素的字符串表示形式s。</p>
+
+<pre><code class="line-numbers">func ToStrings (type E Stringer) (s []E) []string {
+    r := make([]string, len(s))
+    for i, v := range s {
+        r[i] = v.String()
+    }
+    return r
+}
+</code></pre>
+
+<p>它非常简单：遍历切片，String 在每个元素上调用方法，然后返回结果字符串的切片。</p>
+
+<p>此函数要求元素类型实现该String 方法。字符串合约确保了这一点。</p>
+
+<pre><code class="line-numbers">contract Stringer(T) {
+    T String() string
+}
+</code></pre>
+
+<p>合约只是说T必须实施该String 方法。</p>
+
+<p>您可能会注意到此合约看起来像fmt.Stringer 接口，因此值得指出ToStrings函数的参数 不是一个分支fmt.Stringer。它是元素类型实现的一些元素类型的片段 fmt.Stringer。元素类型切片的内存表示和fmt.Stringer 切片通常是不同的，Go不支持它们之间的直接转换。所以即使fmt.Stringer存在，这是值得写的。</p>
+
+<h2 id="有多种类型的合约">有多种类型的合约</h2>
+
+<p>以下是具有多个类型参数的合约示例。</p>
+
+<pre><code class="line-numbers">type Graph (type Node, Edge G) struct { ... }
+
+contract G(Node, Edge) {
+    Node Edges() []Edge
+    Edge Nodes() (from Node, to Node)
+}
+
+func New (type Node, Edge G) (nodes []Node) *Graph(Node, Edge) {
+    ...
+}
+
+func (g *Graph(Node, Edge)) ShortestPath(from, to Node) []Edge {
+    ...
+}
+</code></pre>
+
+<p>这里我们描述一个由Node和Edge构建的Graph。我们不需要Graph的特定数据结构。相反，我们说Node类型必须有一个Edges 方法，返回连接到的Edge的列表Node。而且Edge类型必须有一个Nodes返回两个方法 Nodes，该Edge所连接。</p>
+
+<p>我已经跳过了实现，但是这显示了一个New返回a 的 函数Graph的签名，以及一个ShortestPath方法的签名 Graph。</p>
+
+<p>这里的重要内容是合约不仅仅是一种类型。它可以描述两种或更多种类型之间的关系。</p>
+
+<h2 id="有序类型">有序类型</h2>
+
+<p>关于Go的一个令人惊讶的常见抱怨是它没有Min函数。同样也没有Max函数。这是因为一个有用的Min函数应该适用于任何有序类型，这意味着它必须是通用的。</p>
+
+<p>虽然Min编写自己非常简单，但任何有用的泛型实现都应该让我们将它添加到标准库中。这就是我们的设计。</p>
+
+<pre><code class="line-numbers">func Min (type T Ordered) (a, b T) T {
+    if a &lt; b {
+        return a
+    }
+    return b
+}
+</code></pre>
+
+<p>该Ordered合约上说T具有类型是有序类型，这意味着它支持像小于，大于，等运算。</p>
+
+<pre><code class="line-numbers">contract Ordered(T) {
+    T int, int8, int16, int32, int64,
+        uint, uint8, uint16, uint32, uint64, uintptr,
+        float32, float64,
+        string
+}
+</code></pre>
+
+<p>该Ordered合约仅仅是所有由语言定义的有序类型的列表。此合约接受任何列出的类型，或其基础类型为其中一种类型的任何命名类型。基本上，您可以使用任何可以使用小于运算符的类型。</p>
+
+<p>事实证明，简单地枚举支持小于运算符的类型比发明一个适用于所有运算符的新表示法要容易得多。毕竟，在Go中，只有内置类型支持运算符。</p>
+
+<p>这种方法可以用于任何运算符，或者更一般地，用于编写旨在与内置类型一起使用的任何通用函数的契约。它允许泛型函数的编写者清楚地指定函数应该与之一起使用的类型集。它允许通用函数的调用者清楚地看到该函数是否适用于所使用的类型。</p>
+
+<p>实际上，这份合约可能会进入标准库。所以Min函数（可能也会在某个标准库中）看起来就像这样。这里我们只是提到包中定义的Ordered合约。</p>
+
+<pre><code class="line-numbers">func Min (type T contracts.Ordered) (a, b T) T {
+    if a &lt; b {
+        return a
+    }
+    return b
+}
+</code></pre>
+
+<h2 id="通用数据结构">通用数据结构</h2>
+
+<p>最后，让我们看一个简单的通用数据结构，一个二叉树。在此示例中，树具有比较功能，因此对元素类型没有要求。</p>
+
+<pre><code class="line-numbers">type Tree (type E) struct {
+    root    *node(E)
+    compare func(E, E) int
+}
+
+type node (type E) struct {
+    val         E
+    left, right *node(E)
+}
+</code></pre>
+
+<p>以下是如何创建新的二叉树。比较函数传递给New函数。</p>
+
+<pre><code class="line-numbers">func New (type E) (cmp func(E, E) int) *Tree(E) {
+    return &Tree(E){compare: cmp}
+}
+</code></pre>
+
+<p>未导出的方法返回一个指向持有v的槽的指针，或指向树应该去的位置。</p>
+
+<pre><code class="line-numbers">func (t *Tree(E)) find(v E) **node(E) {
+    pn := &t.root
+    for *pn != nil {
+        switch cmp := t.compare(v, (*pn).val); {
+        case cmp &lt; 0:
+            pn = &(*pn).left
+        case cmp &gt; 0:
+            pn = &(*pn).right
+        default:
+            return pn
+        }
+    }
+    return pn
+}
+</code></pre>
+
+<p>这里的细节并不重要，特别是因为我没有测试过这段代码。我只想展示编写简单通用数据结构的样子。</p>
+
+<p>这是用于测试树是否包含值的代码。</p>
+
+<pre><code class="line-numbers">func (t *Tree(E)) Contains(v E) bool {
+    return *t.find(e) != nil
+}
+</code></pre>
+
+<p>这是插入新值的代码。</p>
+
+<pre><code class="line-numbers">func (t *Tree(E)) Insert(v E) bool {
+    pn := t.find(v)
+    if *pn != nil {
+        return false
+    }
+    *pn = &node(E){val: v}
+    return true
+}
+</code></pre>
+
+<p>注意类型参数E的类型node。这就是编写通用数据结构的样子。正如您所看到的，它看起来像编写普通的Go代码，除了在这里和那里散布一些类型的参数。</p>
+
+<p>使用树很简单。</p>
+
+<pre><code class="line-numbers">var intTree = tree.New(func(a, b int) int { return a - b })
+
+func InsertAndCheck(v int) {
+    intTree.Insert(v)
+    if !intTree.Contains(v) {
+        log.Fatalf("%d not found after insertion", v)
+    }
+}
+</code></pre>
+
+<p>这是应该的。编写通用数据结构要困难一些，因为您经常需要为支持类型显式写出类型参数，但尽可能使用一个与使用普通的非通用数据结构没有什么不同。</p>
+
+<h2 id="下一步">下一步</h2>
+
+<p>我们正在开展实际实施，以便我们尝试这种设计。能够在实践中尝试设计非常重要，以确保我们可以编写我们想要编写的程序类型。它没有像我们希望的那样快，但我们将在这些实现可用时发送更多详细信息。</p>
+
+<p>Robert Griesemer编写了一个<a href="https://golang.org/cl/187317">初步的CL</a>，修改了go/types包。这允许测试使用泛型和合约的代码是否可以键入检查。它现在还不完整，但它主要适用于单个包，我们将继续努力。</p>
+
+<p>我们希望人们对这个和未来的实现做的是尝试编写和使用通用代码，看看会发生什么。我们希望确保人们可以编写他们需要的代码，并且他们可以按预期使用它。当然，一开始并不会所有的都行得通，随着我们不断的探索，我们可能不得不改变一些东西。而且，要清楚，我们对语义的反馈比对语法的细节更感兴趣。</p>
+
+<p>我要感谢所有对早期设计发表评论的人，以及所有讨论过Go中泛型的人。我们已经阅读了所有评论，我们非常感谢人们为此付出的努力。如果没有那项工作，我们就不会成为今天的所在。</p>
+
+<p>我们的目标是实现一种设计，使我能够编写我今天讨论的通用代码，而不会使语言过于复杂或不再使用Go。我们希望这个设计是朝着这个目标迈出的一步，我们希望在我们学习的过程中继续调整它，从我们的经验和你的经验，什么有效，什么无效。如果我们确实达到了这个目标，那么我们就可以为Go的未来版本提供一些建议。</p>
+
+<p>作者：Ian Lance Taylor</p>
+
+<p>原文：<a href="https://blog.golang.org/why-generics">https://blog.golang.org/why-generics</a></p>
+
+<p>译文：<a href="https://github.com/llgoer/go-generics">https://github.com/llgoer/go-generics</a></p>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/">System 进程间通讯方式</a></li>
+        
+        <li><a href="/liteide/">LiteIDE</a></li>
+        
+        <li><a href="/flutter%E5%AE%89%E8%A3%85/">flutter安装</a></li>
+        
+        <li><a href="/crontab/">Crontab</a></li>
+        
+        <li><a href="/go-crontab-v3/">Go Crontab v3</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/epoll/" title="epoll">epoll</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/cgo/" title="CGO">CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/gofmt/" title="Gofmt">Gofmt</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" title="Go Bazel构建工具">Go Bazel构建工具</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/etcd/" title="etcd">etcd</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(51)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(20)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(19)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(10)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(6)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">其他技术(35)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%8D%81%E4%B8%87%E4%B8%AA%E4%B8%BA%E4%BB%80%E4%B9%88/">十万个为什么(10)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(30)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(23)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%97%E6%96%87/">诗文(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(20)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93/">道(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/">错误集锦(1)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/apple/">apple</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/const/">const</a>
+    
+    <a href="https://blog.v5u.win/tags/crontab/">crontab</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/define/">define</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/flutter/">flutter</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E8%80%83%E5%8F%A4/">it考古</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E9%BB%91%E8%AF%9D/">it黑话</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/mardown/">mardown</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongo/">mongo</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/node/">node</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nstimer/">nstimer</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/orm/">orm</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/skecth/">skecth</a>
+    
+    <a href="https://blog.v5u.win/tags/sqlite/">sqlite</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/toml/">toml</a>
+    
+    <a href="https://blog.v5u.win/tags/ui/">ui</a>
+    
+    <a href="https://blog.v5u.win/tags/uicollectionview/">uicollectionview</a>
+    
+    <a href="https://blog.v5u.win/tags/uiimagepickerviewcontroller/">uiimagepickerviewcontroller</a>
+    
+    <a href="https://blog.v5u.win/tags/uiscrollview/">uiscrollview</a>
+    
+    <a href="https://blog.v5u.win/tags/uitableview/">uitableview</a>
+    
+    <a href="https://blog.v5u.win/tags/unowned/">unowned</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/weak/">weak</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/workspace/">workspace</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode7/">xcode7</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%89%E7%9C%81%E5%90%BE%E8%BA%AB/">三省吾身</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4/">免费空间</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">快捷键</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8E%A7%E4%BB%B6/">控件</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%94%B6%E8%97%8F/">收藏</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%97%E6%96%87/">诗文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/">返回顶部</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/">进程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%81%93/">道</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+</body>
+</html>

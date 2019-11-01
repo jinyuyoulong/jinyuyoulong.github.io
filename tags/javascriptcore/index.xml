@@ -6,18 +6,18 @@
     <description>Recent content in javascriptCore on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 29 Apr 2016 17:43:54 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Apr 2016 09:43:54 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/javascriptcore/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JavaScriptCore</title>
-      <link>https://blog.v5u.win/post/ios-javascriptcore/</link>
-      <pubDate>Fri, 29 Apr 2016 17:43:54 +0000</pubDate>
+      <link>https://blog.v5u.win/javascriptcore/</link>
+      <pubDate>Fri, 29 Apr 2016 09:43:54 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/ios-javascriptcore/</guid>
-      <description>JavaScript 和OC原生交互 - (void)ocCallJSFunction{ JSContext context = [[JSContext alloc]init]; JSValue jsValue = [context evaluateScript:@&amp;quot;21+7&amp;quot;]; int iVal = [jsValue toInt32]; NSLog(@&amp;quot;js value=%@,int=%d&amp;quot;,jsValue, iVal); [context evaluateScript:@&amp;quot;var arr = [21, 7, &#39;fanyiqing.com&#39;];&amp;quot;]; JSValue jsArr = context[@&amp;quot;arr&amp;quot;]; NSLog(@&amp;quot;JS Array:%@ length:%@&amp;quot;,jsArr,jsArr[@&amp;quot;length&amp;quot;]); jsArr[1] = @&amp;quot;blog&amp;quot;; jsArr[7] = @7; NSLog(@&amp;quot;JS Array:%@, length:%d&amp;quot;,jsArr,[jsArr[@&amp;quot;length&amp;quot;] toInt32]); NSArray nsarray = [jsArr toArray]; NSLog(@&amp;quot;nsarray:%@&amp;quot;,nsarray); }</description>
+      <guid>https://blog.v5u.win/javascriptcore/</guid>
+      <description>JavaScript 和OC原生交互 &amp;lt;br /&amp;gt;- (void)ocCallJSFunction{ JSContext context = [[JSContext alloc]init]; JSValue jsValue = [context evaluateScript:@&amp;quot;21+7&amp;quot;]; int iVal = [jsValue toInt32]; NSLog(@&amp;quot;js value=%@,int=%d&amp;quot;,jsValue, iVal); [context evaluateScript:@&amp;quot;var arr = [21, 7, &#39;fanyiqing.com&#39;];&amp;quot;]; JSValue jsArr = context[@&amp;quot;arr&amp;quot;]; NSLog(@&amp;quot;JS Array:%@ length:%@&amp;quot;,jsArr,jsArr[@&amp;quot;length&amp;quot;]); jsArr[1] = @&amp;quot;blog&amp;quot;; jsArr[7] = @7; NSLog(@&amp;quot;JS Array:%@, length:%d&amp;quot;,jsArr,[jsArr[@&amp;quot;length&amp;quot;] toInt32]); NSArray nsarray = [jsArr toArray]; NSLog(@&amp;quot;nsarray:%@&amp;quot;,nsarray); }</description>
     </item>
     
   </channel>

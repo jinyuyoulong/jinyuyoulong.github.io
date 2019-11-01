@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>flutter on 为吾优</title>
+    <link>https://blog.v5u.win/tags/flutter/</link>
+    <description>Recent content in flutter on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 30 Oct 2019 06:00:04 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>flutter安装</title>
+      <link>https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Wed, 30 Oct 2019 06:00:04 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/</guid>
+      <description>flutter安装 git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc export PATH=/Users/fanjinlong/dev/flutter/flutter/bin:$PATH export ANDROID_HOME=/Users/fanjinlong/Library/Android/sdk export PATH=${PATH}:${ANDROID_HOME}/tools export PATH=${PATH}:${ANDROID_HOME}/platform-tools export PUB_HOSTED_URL=https://pub.flutter-io.cn export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn # 记得配置完了，执行下 source ~/.zshrc 更新环境变量 命令行执</description>
+    </item>
+    
+  </channel>
+</rss>

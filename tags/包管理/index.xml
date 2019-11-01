@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>包管理 on 为吾优</title>
+    <link>https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/</link>
+    <description>Recent content in 包管理 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 22 Mar 2019 08:35:56 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>go modules 包管理</title>
+      <link>https://blog.v5u.win/go-modules-%E5%8C%85%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Fri, 22 Mar 2019 08:35:56 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go-modules-%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
+      <description>go modules [TOC] 环境配置 正确配置 GOROOT export GOPROXY=&amp;quot;https://athens.azurefd.net&amp;quot; # 微软提供的公共代理，解决golang/x/tools 下载失败 也可以以此技术建立自己的公共库 初始化 同时 确定了项目</description>
+    </item>
+    
+    <item>
+      <title>brew gem npm cocoapods</title>
+      <link>https://blog.v5u.win/brew-gem-npm-cocoapods/</link>
+      <pubDate>Fri, 20 Apr 2018 05:00:32 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/brew-gem-npm-cocoapods/</guid>
+      <description>Mac上的包管理器 常用的有：brew gem npm cocoapods pip3 brew 用来管理Unix相关工具软件，就像centos之于yum，Ubuntu之于apt-get gem 即R</description>
+    </item>
+    
+  </channel>
+</rss>

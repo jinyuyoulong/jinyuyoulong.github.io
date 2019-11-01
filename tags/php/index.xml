@@ -6,63 +6,36 @@
     <description>Recent content in PHP on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 01 Jul 2019 15:05:09 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 Aug 2018 18:27:06 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Nginx 动态生成缩略图</title>
-      <link>https://blog.v5u.win/post/system-nginx/</link>
-      <pubDate>Mon, 01 Jul 2019 15:05:09 +0800</pubDate>
+      <title>composer的使用</title>
+      <link>https://blog.v5u.win/composer%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 21 Aug 2018 18:27:06 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-nginx/</guid>
-      <description>[TOC] 有的时候要生成大量尺寸的缩图，事先不知道有哪些尺寸，所以可以用php动态生成； 1.在nginx中配置 location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.)/(.*)(\d+)(\d+).(gif|jpg|jpeg|png|bmp) /ImageTransferController.php?s=1/2_3_4.5; } expires 30d; } 完善 ImageTransferController.php</description>
-    </item>
-    
-    <item>
-      <title>Apache使用总结</title>
-      <link>https://blog.v5u.win/post/system-apache%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/system-apache%E6%80%BB%E7%BB%93/</guid>
-      <description>Apache总结 http.conf配置 开启/关闭目录索引 &amp;lt;Directory &amp;quot;D:/Apache/blog.phpha.com&amp;quot;&amp;gt; Options Indexes FollowSymLinks # 修改为: Options FollowSymLinks #Indexes 的作用就是当该目录下没有 index.html 文件时，就显示目录结构，去掉 Indexes ，</description>
+      <guid>https://blog.v5u.win/composer%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>composer是PHP的包管理器 使用： 在项目目录下执行 引入 composer require twbs/bootstrap 删除 composer remove twbs/bootstrap p.s. 这种方式的引入讲整个项目都下载下载，本人非常不喜欢 参考网站 https://www.phpcomposer.com/</description>
     </item>
     
     <item>
       <title>centos7 PHP7环境配置</title>
-      <link>https://blog.v5u.win/post/system-centos7-php7/</link>
+      <link>https://blog.v5u.win/centos7-php7%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Tue, 26 Jun 2018 01:50:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-centos7-php7/</guid>
+      <guid>https://blog.v5u.win/centos7-php7%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
       <description>centos7 PHP7环境配置 目录 1. 开启22端口2. 创建其他用户，使用其他用户ssh登录（root账户禁止登录）3. 关闭防火墙4. 关闭selinux5.</description>
     </item>
     
     <item>
       <title>mac下安装composer</title>
-      <link>https://blog.v5u.win/post/mac-composer/</link>
+      <link>https://blog.v5u.win/mac%E4%B8%8B%E5%AE%89%E8%A3%85composer/</link>
       <pubDate>Fri, 09 Jun 2017 03:35:06 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-composer/</guid>
-      <description>composer是PHP的包管理器 mac下如何安装呢？ 最简单的方法是通过brew工具 brew install composer 这时候可能会遇到这个问题： Searching for a previously deleted formula&amp;hellip; 所以我们检查</description>
-    </item>
-    
-    <item>
-      <title>mac系统使用内置的 PHP</title>
-      <link>https://blog.v5u.win/post/mac-php-local/</link>
-      <pubDate>Tue, 18 Aug 2015 11:19:22 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/mac-php-local/</guid>
-      <description>从 OS X 10.0.0 版本开始，PHP 作为 Mac 机的标准配置被提供。在默认的 web 服务器中启用 PHP，只需将 Apache 配置文件 httpd.conf 中的几行配置指令最前面的注释符号去掉，而 CGI</description>
-    </item>
-    
-    <item>
-      <title>php session 不能跨页面传递</title>
-      <link>https://blog.v5u.win/post/php-session-error/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/php-session-error/</guid>
-      <description>session错误 确认当前页面session有没有添加成功 debug可不可以讲session值跨页面传递 设置php.ini文件session</description>
+      <guid>https://blog.v5u.win/mac%E4%B8%8B%E5%AE%89%E8%A3%85composer/</guid>
+      <description>composer是PHP的包管理器 mac下如何安装呢？ 最简单的方法是通过brew工具 brew install composer 这时候可能会遇到这个问题： Searching for a previously deleted formula&amp;#8230; 所以我们检查</description>
     </item>
     
   </channel>

@@ -1,41 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cocoapods on 为吾优</title>
+    <title>cocoapods on 为吾优</title>
     <link>https://blog.v5u.win/tags/cocoapods/</link>
-    <description>Recent content in Cocoapods on 为吾优</description>
+    <description>Recent content in cocoapods on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 Aug 2018 14:48:36 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Apr 2018 05:00:32 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/cocoapods/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>cocoapods-library-create</title>
-      <link>https://blog.v5u.win/post/mac-cocoapods-library-create/</link>
-      <pubDate>Wed, 15 Aug 2018 14:48:36 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/mac-cocoapods-library-create/</guid>
-      <description>readme文件如何添加 这种说明 打开网站https://shields.io/#/examples/funding 选择flat Style 在Link和</description>
-    </item>
-    
-    <item>
       <title>brew gem npm cocoapods</title>
-      <link>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</link>
+      <link>https://blog.v5u.win/brew-gem-npm-cocoapods/</link>
       <pubDate>Fri, 20 Apr 2018 05:00:32 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-brew-gem-npm-cocoapods/</guid>
+      <guid>https://blog.v5u.win/brew-gem-npm-cocoapods/</guid>
       <description>Mac上的包管理器 常用的有：brew gem npm cocoapods pip3 brew 用来管理Unix相关工具软件，就像centos之于yum，Ubuntu之于apt-get gem 即R</description>
-    </item>
-    
-    <item>
-      <title>CocoaPods</title>
-      <link>https://blog.v5u.win/post/mac-cocoapods/</link>
-      <pubDate>Wed, 26 Oct 2016 10:37:38 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/mac-cocoapods/</guid>
-      <description>.podspec文件是做什么的 .podspec文件描述了一个库将怎样被添加进工程中。.podspec文件可以标识该第三方库所需要的源码文件、</description>
     </item>
     
   </channel>

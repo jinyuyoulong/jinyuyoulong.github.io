@@ -6,27 +6,18 @@
     <description>Recent content in markdown on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 10 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 May 2019 05:31:31 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>markdown 常用语法整理</title>
-      <link>https://blog.v5u.win/post/system-markdown%E5%8E%9F%E7%90%86/</link>
-      <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/system-markdown%E5%8E%9F%E7%90%86/</guid>
-      <description>Text 1级标题 Text 2级标题 Text 3级标题 Text 4级标题 Text 5级标题 Text 6级标题 有序列表 ul&amp;gt;li 有 序 无序列表 ol&amp;gt;li 无 序 任务列表 ul&amp;gt;li&amp;gt;input [ ] 任务 [x] 列表 代码修饰 短代码 &amp;lt;code&amp;gt; var name = 代码块</description>
-    </item>
-    
-    <item>
       <title>markdown 流程图</title>
-      <link>https://blog.v5u.win/post/system-markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
+      <link>https://blog.v5u.win/markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <pubDate>Thu, 09 May 2019 05:31:31 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
-      <description>Sequence Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks! flow st=&amp;gt;start: Start op=&amp;gt;operation: Your Operation cond=&amp;gt;condition: Yes or No? e=&amp;gt;end st-&amp;gt;op-&amp;gt;cond cond(yes)-&amp;gt;e cond(no)-&amp;gt;op mermaid graph LR A[Hard edge] --&amp;gt;B(Round edge) B --&amp;gt; C{Decision} C --&amp;gt;|One| D[Result one] C --&amp;gt;|Two| E[Result two] Gantt %% Example with selection of syntaxes gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to mermaid section A section</description>
+      <guid>https://blog.v5u.win/markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+      <description>Sequence Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks! flow st=&amp;gt;start: Start op=&amp;gt;operation: Your Operation cond=&amp;gt;condition: Yes or No? e=&amp;gt;end st-&amp;gt;op-&amp;gt;cond cond(yes)-&amp;gt;e cond(no)-&amp;gt;op mermaid Gantt</description>
     </item>
     
   </channel>

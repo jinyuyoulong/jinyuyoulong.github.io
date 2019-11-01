@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crontab on 为吾优</title>
+    <link>https://blog.v5u.win/tags/crontab/</link>
+    <description>Recent content in crontab on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 12 Sep 2019 02:58:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/tags/crontab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go Crontab v3</title>
+      <link>https://blog.v5u.win/go-crontab-v3/</link>
+      <pubDate>Thu, 12 Sep 2019 02:58:15 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/go-crontab-v3/</guid>
+      <description>[TOC] 关于cron更新 Cron V3已经发布！ 要下载特定的标记版本，请运行: go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中: import &amp;quot;github.com/robfig/cron/v3&amp;quot; 由于Go Modules的使用，它需要Go 1.1</description>
+    </item>
+    
+  </channel>
+</rss>
