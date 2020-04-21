@@ -1,7 +1,7 @@
 ---
 title: NSData转int
 date: 2015-04-29 14:03:07
-categories:[iOS]
+categories: [iOS]
 ---
 ```
 有一种借助string的方法，经验证不对，找了半天终于找到了一个合适的，可是没有看的太明白，特补充记录在此。

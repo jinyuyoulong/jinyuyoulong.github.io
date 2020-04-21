@@ -1,29 +1,16 @@
 ---
-<<<<<<< HEAD:posts/2019-05-08-有经验开发者，快速入门-go-语言.md
-title: 有经验开发者，快速入门 Go 语言
-author: fan
-type: post
-date: 2019-05-08T07:39:21+00:00
-url: /有经验开发者，快速入门-go-语言/
-categories:
-  - Go
-tags:
-  - Go
-
-=======
-title: "Go Quick Start"
+title: "Go 快速入门"
 date: 2019-05-08T15:39:15+08:00
 categories: [Go]
->>>>>>> 9b93207d813e2b213031f967612e37c68194cf37:post/Go-quick-start.md
 ---
 ## 有经验开发者，快速入门 Go 语言
 
 发明Go语言是出于更好地完成工作的需要。Go不是计算机科学的最新发展潮流，但它却提供了解决现实问题的最新最快的方法。
-  
+
 Go拥有命令式语言的静态类型，编译很快，执行也很快，同时加入了对于目前多核CPU的并发计算支持，也有相应的特性来实现大规模编程。
-  
+
 Go语言有非常棒的标准库，还有一个充满热情的社区。
-  
+
 有编程经验的小伙伴，朗诵以下代码块，完成Go语言快速入门。
 
 <pre><code class="language-go line-numbers">// 单行注释
@@ -347,5 +334,5 @@ func requestServer() {
 </code></pre>
 
 转载自 https://mp.weixin.qq.com/s/k5CpO6vVSMP4tOYAcAXcqg
-  
+
 翻译自：https://learnxinyminutes.com/docs/go/

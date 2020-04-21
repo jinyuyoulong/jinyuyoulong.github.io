@@ -1,22 +1,10 @@
 ---
 title: Go-流程控制
-<<<<<<< HEAD:posts/2019-02-19-go-流程控制.md
-author: fan
-type: post
-date: 2019-02-19T05:08:57+00:00
-url: /go-流程控制/
-categories:
-  - Go
-=======
 date: 2019-02-18 11:38:16
 categories: [Go]
 ---
-
 [TOC]
->>>>>>> 9b93207d813e2b213031f967612e37c68194cf37:post/Go-流程控制.md
-
----
-if
+## if
 
 <pre><code class="language-go line-numbers">if 100 &gt; number {
     number += 3
@@ -41,9 +29,9 @@ if number := 4; 100 &gt; number {
 </code></pre>
 
 **标识符的重声明和标识符的遮蔽**
-  
+
 上述代码被执行完毕之后，第二次声明的`number`变量的值会是`7`，而第一次声明的`number`变量的值仍会是``。
-  
+
 switch
 
 <pre><code class="language-go line-numbers">names := []string{"Golang", "Java", "Rust", "C"}
@@ -119,7 +107,7 @@ default:
 </code></pre>
 
 如果该`select`语句被执行时通道`ch1`和`ch2`中都没有任何数据，那么肯定只有`default case`会被执行。但是，只要有一个通道在当时有数据就不会轮到`default case`执行了。显然，对于包含通道接收操作的`case`来讲，其执行条件就是通道中存在数据（或者说通道未空）。如果在当时有数据的通道多于一个，那么Go语言会通过一种伪随机的算法来决定哪一个`case`将被执行。
-  
+
 我们一直在说`case`执行条件的满足与否取决于其操作的通道在当时的状态。这里特别强调一点，即：未被初始化的通道会使操作它的`case`永远满足不了执行条件。对于针对它的发送操作和接收操作来说都是如此。
 
 <pre><code class="language-go line-numbers">ch4 := make(chan int, 1)
@@ -154,9 +142,9 @@ for i := 0; i &lt; 4; i++ {
 </code></pre>
 
 注意，当这条`defer`语句被执行的时候，其中的这条表达式语句并不会被立即执行。它的确切的执行时机是在其所属的函数（这里是`readFile`）的执行即将结束的那个时刻。也就是说，在`readFile`函数真正结束执行的前一刻，`file.Close()`才会被执行。
-  
+
 注意，当一个函数中存在多个`defer`语句时，它们携带的表达式语句的执行顺序一定是它们的出现顺序的倒序。
-  
+
 最后，对于`defer`语句，我还有两个特别提示：
 
   1. `defer`携带的表达式语句代表的是对某个函数或方法的调用。这个调用可能会有参数传入，比如：`fmt.Print(i + 1)`。如果代表传入参数的是一个表达式，那么在`defer`语句被执行的时候该表达式就会被求值了。注意，这与被携带的表达式语句的执行时机是不同的。
