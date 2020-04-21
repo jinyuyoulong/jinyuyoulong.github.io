@@ -1,7 +1,0 @@
-{
-    "title": "Xcode7.3 cannot create __weak reference in file using",
-    "date": "2016-04-08 16:26:43 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/xcode-xcode7-3-cannot-create-weak-reference-in-file-using/index.json",
-    "summary" : "升级xcode7.3后项目编译不通过 error：cannot create __weak reference in file using manual reference counting 解决办法： Set Build Settings -&gt; Apple LLVM 7.1 - Language - Objective C -&gt; Weak References in Manual Retain Release to YES."
-}

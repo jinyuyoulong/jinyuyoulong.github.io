@@ -1,8 +1,0 @@
-{
-    "title": "App Store 上架流程",
-    "date": "0001-01-01 00:00:00 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/ios-app-store-public/index.json",
-    "summary" : "App Store上架流程
- 申请开发者账号 登录开发者网站，注册cer APP ID， profile (xcode 只能解决测试证书配置) 登录iTunes connection网站，注册APP xcode选择distribution profile 证书，设置build id，打包 上传到App Store。 设置APP story 发布信息，提交等待审核  "
-}

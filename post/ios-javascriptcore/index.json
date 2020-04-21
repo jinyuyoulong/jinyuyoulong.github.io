@@ -1,8 +1,0 @@
-{
-    "title": "JavaScriptCore",
-    "date": "2016-04-29 17:43:54 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/ios-javascriptcore/index.json",
-    "summary" : "JavaScript 和OC原生交互
-- (void)ocCallJSFunction{ JSContext context = [[JSContext alloc]init]; JSValue jsValue = [context evaluateScript:@&quot;21+7&quot;]; int iVal = [jsValue toInt32]; NSLog(@&quot;js value=%@,int=%d&quot;,jsValue, iVal); [context evaluateScript:@&quot;var arr = [21, 7, 'fanyiqing.com'];&quot;]; JSValue jsArr = context[@&quot;arr&quot;]; NSLog(@&quot;JS Array:%@ length:%@&quot;,jsArr,jsArr[@&quot;length&quot;]); jsArr[1] = @&quot;blog&quot;; jsArr[7] = @7; NSLog(@&quot;JS Array:%@, length:%d&quot;,jsArr,[jsArr[@&quot;length&quot;] toInt32]); NSArray nsarray = [jsArr toArray]; NSLog(@&quot;nsarray:%@&quot;,nsarray); }  "
-}

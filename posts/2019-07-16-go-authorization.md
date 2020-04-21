@@ -1,0 +1,45 @@
+---
+title: Go-Authorization
+author: fan
+type: post
+date: 2019-07-16T05:40:34+00:00
+url: /go-authorization/
+categories:
+  - Go
+tags:
+  - Go
+
+---
+# 接口认证
+
+一般接口开发中有以下常用的几种安全机制：
+
+  * 用户认证
+  * 数字签名
+  * 接口加密
+
+### 用户认证
+
+一般的接口测试工具都会提供一个User Auth/Authorization的选项
+
+  * 基本认证（Basic Auth）
+  * 摘要认证（Digest Auth）
+  * OAuth 2.0（最常见，现在的网站接口多数提供此用户认证方式）授权认证方式
+
+接口需要认证：auth=(&#8220;username&#8221;,&#8221;password&#8221;)
+
+### 数字签名
+
+在使用 HTTP/SOAP 协议传输数据的时候，签名作为其中一个参数，可以起到关键作用：通过客户的密钥，服务端的密钥匹配；当服务器接收到请求后，同样需要对“signpassword”进行 MD5 加密，然后，比对与调用者传来的 sign 加密串是否一致，从而来鉴别调用者是否有权限使用该接口。
+  
+`http://127.0.0.1:8000/sign/?a=1&b=2&sign=6648e929329e53e7a91c50ae685a88b5`
+
+### 接口加密
+
+通常接口会使用更复杂一点的方式来进行加密的操作，常见的是AES的使用
+  
+AES加密里面有两个关键，一个是key（必须为16,24,32位），一个是VI（必须为16位）
+  
+解密：解密者必须要同时知道key和VI才可以解密
+  
+参考: https://www.jianshu.com/p/add7518a3fbe

@@ -1,8 +1,0 @@
-{
-    "title": "FF的Git使用整理",
-    "date": "2016-07-05 14:47:35 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/system-git_use/index.json",
-    "summary" : "创建 Git仓库命令：(进入将要管理的Git文件夹地址下) git init 查看当前Git管理状态 git status 添加Git文件 git add * 提交文件到仓库 git commit -m &ldquo;加入注释&rdquo; 推送文件到远程仓库 git push origin master 参考文章：Git简易使用指南 http://www.bootcss.com/p/git-guide/
-git 命令行常用命令    git 作用 命令     检查更新状态 git status   将文件添加进更新列表 git add *   commit 提交 git commit * -m &ldquo;add some(not null非空)&rdquo;   发布到服务器 use &ldquo;git push&rdquo; to publish your local commits   发布到主线 git push origin master   发布tag release版本 git tag   add tag git tag -m &ldquo;first release&rdquo; 0."
-}

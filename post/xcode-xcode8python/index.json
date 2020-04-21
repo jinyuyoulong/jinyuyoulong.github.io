@@ -1,9 +1,0 @@
-{
-    "title": "使用Xcode8创建Python项目",
-    "date": "2016-12-06 10:44:31 +0000 UTC",
-    "type": "post",
-    "permalink" : "http://blog.v5u.win/post/xcode-xcode8python/index.json",
-    "summary" : " 今天想使用一个IDE来开发Python，省的每次写完后都要在terminal上敲命令。选来选去，既然已经安装了Xcode就先用他吧。
-那么怎么才能使用Xcode创建并运行Python文件呢？ 必要准备：mac &amp; Xcode 开发环境整理： 1.1 创建 1.2 选择mac跨平台应用 1.3 添加项目名称 2.1 添加文件 2.2 Other &gt; Empty Empty&rdquo; /&gt;
-2.3 给文件命名 3.1 Product &gt; Scheme &gt; Edit Scheme 3.2 Run &gt; info &gt; Executable &gt; Other 3.3 Command+Shift+G 定位文件路径Go to the folder:填写/usr/bin/python 3.4 确认选中的可执行文件 3.5 确认Executable 选中python Debug executable 不用选中 3.6 Arguments &gt; + &gt;新建的文件名 3.7 Options &gt; Working Directory &gt;项目路径 选择文件 3.8 确认设置 4 运行 print &quot;hello world&quot; "
-}
