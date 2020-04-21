@@ -13,20 +13,11 @@
     
     <item>
       <title>2020 04 21 元编程</title>
-      <link>https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/</link>
+      <link>https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Tue, 21 Apr 2020 13:09:22 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
       <description>元编程 meta programming 元编程是一种通过代码生成代码的思想，一般分为两种形式： macro宏展开 或者 模板 runtime 运行时 宏系统分为两种： 文本替换，比如 C 和 C++ 抽象语法</description>
-    </item>
-    
-    <item>
-      <title>数据结构与算法1-复杂度分析1</title>
-      <link>https://blog.v5u.win/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%951-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%901/</link>
-      <pubDate>Mon, 08 Oct 2018 03:50:23 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%951-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%901/</guid>
-      <description>为什么需要复杂度分析？ 有两种估算方法：1.事后统计法 2.大O复杂度表示法 事后统计法: 把代码跑一遍，通过统计、监控，就能得到算法执行的时间和占</description>
     </item>
     
     <item>

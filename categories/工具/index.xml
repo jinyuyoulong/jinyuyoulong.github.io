@@ -6,18 +6,18 @@
     <description>Recent content in 工具 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 30 Oct 2019 06:01:39 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Aug 2019 16:33:56 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>LiteIDE</title>
-      <link>https://blog.v5u.win/liteide/</link>
-      <pubDate>Wed, 30 Oct 2019 06:01:39 +0000</pubDate>
+      <title>Go Liteide IDE</title>
+      <link>https://blog.v5u.win/posts/go-liteide/</link>
+      <pubDate>Fri, 02 Aug 2019 16:33:56 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/liteide/</guid>
-      <description>[TOC] 简介 liteide是专门为go编写的一个基于qt5的IDE，免费开源跨平台。 LiteIDE 是一个轻量级的开源跨平台 Go语言 IDE. 作者: 七叶 (visualfc) 支持 Windo</description>
+      <guid>https://blog.v5u.win/posts/go-liteide/</guid>
+      <description>[TOC] liteide是专门为go编写的一个基于qt5的IDE，免费开源跨平台。 LiteIDE 是一个轻量级的开源跨平台 Go语言 IDE. 作者: 七叶 (visualfc) 支持 Windows</description>
     </item>
     
     <item>
@@ -30,48 +30,21 @@
     </item>
     
     <item>
-      <title>vscode安装golang.org的golint</title>
-      <link>https://blog.v5u.win/vscode%E5%AE%89%E8%A3%85golang-org%E7%9A%84golint/</link>
-      <pubDate>Fri, 15 Feb 2019 07:44:23 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/vscode%E5%AE%89%E8%A3%85golang-org%E7%9A%84golint/</guid>
-      <description>vscode 安装了 go 插件后，一些 Extensions 无法通过 vscode 自动安装，此时可以手动从控制台安装。下面是一些基础标准库 其中 golint guru gorename 需要手动编译。 因为GitHub中的gol</description>
-    </item>
-    
-    <item>
-      <title>vscode配置go开发环境</title>
-      <link>https://blog.v5u.win/vscode%E9%85%8D%E7%BD%AEgo%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
-      <pubDate>Fri, 15 Feb 2019 07:42:58 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/vscode%E9%85%8D%E7%BD%AEgo%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
-      <description>下载安装 vscode，安装Go插件。在商店中搜索安装。 配置 settings.json cmd+, ——&amp;gt; 用户设置/扩展 ——&amp;gt; Go configuration / 在 setting.json 中编辑。 参考 Sublime Text 中的 preferences.sublime-setting 很像。 在</description>
-    </item>
-    
-    <item>
       <title>CocoaPods</title>
       <link>https://blog.v5u.win/cocoapods/</link>
       <pubDate>Wed, 16 Jan 2019 03:46:29 +0000</pubDate>
       
       <guid>https://blog.v5u.win/cocoapods/</guid>
-      <description>*title: CocoaPods date: 2016-10-26 10:37:38 tags: Cocoapods category: iOS id: 3 .podspec文件是做什么的 Podfile 文件的自述 ​</description>
+      <description>podspec文件是做什么的 Podfile 文件的自述 readme文件如何添加 这种说明 打开网站https://shields.io/#/examples/</description>
     </item>
     
     <item>
-      <title>cocoapods-library-create</title>
-      <link>https://blog.v5u.win/cocoapods-library-create/</link>
-      <pubDate>Wed, 16 Jan 2019 03:45:07 +0000</pubDate>
+      <title>chrome 调试</title>
+      <link>https://blog.v5u.win/posts/web-chrome-%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Thu, 08 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/cocoapods-library-create/</guid>
-      <description>*title: cocoapods-library-create date: 2018-08-15 14:48:36 tags: cocoapodscategories: cocoapods readme文件如何添加 这种说明 打开网站https://shields.io/#/examples/funding 选择fla</description>
-    </item>
-    
-    <item>
-      <title>Xcode debug view hierarchy调试视图层次结构</title>
-      <link>https://blog.v5u.win/xcode-debug-view-hierarchy%E8%B0%83%E8%AF%95%E8%A7%86%E5%9B%BE%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/</link>
-      <pubDate>Fri, 03 Aug 2018 03:20:58 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/xcode-debug-view-hierarchy%E8%B0%83%E8%AF%95%E8%A7%86%E5%9B%BE%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84/</guid>
-      <description>Xcode 教程之调试视图层次结构 Xcode开发，当我们需要调整/检查UI时正确的处理方式是什么？ 答案：debug view hierarchy P.s. 下面是为什么要使用debug view</description>
+      <guid>https://blog.v5u.win/posts/web-chrome-%E8%B0%83%E8%AF%95/</guid>
+      <description>chrome 调试 keyword: workspace,breakpoints 将调试代码文件添加到Chrome 的Workspace中：Sources&amp;ndash;&amp;gt;filesystem&amp;ndash;&amp;g</description>
     </item>
     
     <item>
@@ -85,11 +58,20 @@
     
     <item>
       <title>mac虚拟机上的centos 7实现ssh连接</title>
-      <link>https://blog.v5u.win/mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</link>
+      <link>https://blog.v5u.win/posts/system-mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</link>
       <pubDate>Sat, 30 Jun 2018 08:57:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</guid>
+      <guid>https://blog.v5u.win/posts/system-mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</guid>
       <description>mac虚拟机上的centos7实现ssh连接 查看是否安装ssh rpm -qa | grep ssh（一般都内置了） 配置sshd_config文件 /etc/ssh/sshd_config Port 22 ListenAddress 0.0.0.0 ListenAddress :: 防火</description>
+    </item>
+    
+    <item>
+      <title>gitbook如何生成epub</title>
+      <link>https://blog.v5u.win/posts/system-gitbook-make-epub/</link>
+      <pubDate>Wed, 23 May 2018 15:44:43 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/system-gitbook-make-epub/</guid>
+      <description>全局安装gitbook ：npm install -g gitbook 下载calibre安装应用 将calibre中的执行文件ebook-convert链接到shall环境：$</description>
     </item>
     
     <item>
@@ -102,12 +84,12 @@
     </item>
     
     <item>
-      <title>Mac terminal的使用</title>
-      <link>https://blog.v5u.win/ternimal/</link>
+      <title>ternimal</title>
+      <link>https://blog.v5u.win/posts/system-terminal/</link>
       <pubDate>Fri, 18 May 2018 08:53:16 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/ternimal/</guid>
-      <description>暴力删除文件：输入 sudo rm -rf .Trash 再输入密码后 Enter 。 mac 设置软件安装安全级别 sudo spctl –master-disable 文件权限修改 文字设定法 chmod \[who\] \[+ | &amp;amp;#8211; | =\] [mode] 文件</description>
+      <guid>https://blog.v5u.win/posts/system-terminal/</guid>
+      <description>暴力删除文件：输入 sudo rm -rf .Trash 再输入密码后 Enter 。 mac 设置软件安装安全级别 sudo spctl &amp;ndash;master-disable 文件权限修改 文字设定法 chmod [who] [+ | - | =] [mode] 文件名? mkdir code 修改权限的命令格式 chmod</description>
     </item>
     
     <item>
@@ -121,11 +103,20 @@
     
     <item>
       <title>appledoc使用说明</title>
-      <link>https://blog.v5u.win/appledoc%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link>
+      <link>https://blog.v5u.win/posts/ios-appledoc%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link>
       <pubDate>Wed, 04 Apr 2018 07:00:34 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/appledoc%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
+      <guid>https://blog.v5u.win/posts/ios-appledoc%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
       <description>appledoc使用说明 安装命令行： git clone git://github.com/tomaz/appledoc.git cd ./appledoc sudo sh install-appledoc.sh appledoc —version //检查successed 使用 生成HTML 当需要html文档时，可以加</description>
+    </item>
+    
+    <item>
+      <title>pycharm如何添加 local venv</title>
+      <link>https://blog.v5u.win/posts/python-pycharm-local-venv/</link>
+      <pubDate>Fri, 30 Mar 2018 03:20:02 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/python-pycharm-local-venv/</guid>
+      <description>需求：pycharm为项目添加已经存在的venv虚拟环境 前几天学习Django，开始是terminal + sublime text。后来学的差不多了，想想做</description>
     </item>
     
     <item>
@@ -139,10 +130,10 @@
     
     <item>
       <title>mac文件权限修改</title>
-      <link>https://blog.v5u.win/mac%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%BF%AE%E6%94%B9/</link>
-      <pubDate>Mon, 13 Mar 2017 09:20:42 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/system-mac%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%BF%AE%E6%94%B9/</link>
+      <pubDate>Mon, 13 Mar 2017 17:20:42 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/mac%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%BF%AE%E6%94%B9/</guid>
+      <guid>https://blog.v5u.win/posts/system-mac%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%BF%AE%E6%94%B9/</guid>
       <description>文件或目录的访问权限分为只读，只写和可执行三种。 文件被创建时，文件所有者自动拥有对该文件的读、写和可执行权限，以便于对文件的阅读和修改。 有三</description>
     </item>
     
@@ -157,20 +148,20 @@
     
     <item>
       <title>brew 安装</title>
-      <link>https://blog.v5u.win/brew-%E5%AE%89%E8%A3%85/</link>
-      <pubDate>Sat, 25 Feb 2017 14:54:49 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/system-brew-%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 25 Feb 2017 22:54:49 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/brew-%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://blog.v5u.win/posts/system-brew-%E5%AE%89%E8%A3%85/</guid>
       <description>Mac自带ruby 安装brew ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&amp;quot; 已经安装了可以输入这个命令 ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot; 如何使用brew 举个栗子: wget 这个工具 输入命令: brew install wget 输入命令 brew uninstall</description>
     </item>
     
     <item>
-      <title>使用sublime text 3 进行Python3开发</title>
-      <link>https://blog.v5u.win/%E4%BD%BF%E7%94%A8sublime-text-3-%E8%BF%9B%E8%A1%8Cpython3%E5%BC%80%E5%8F%91/</link>
-      <pubDate>Mon, 23 Jan 2017 07:22:20 +0000</pubDate>
+      <title>mac 如何使用wget</title>
+      <link>https://blog.v5u.win/posts/system-wget/</link>
+      <pubDate>Sat, 21 Jan 2017 23:38:52 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/%E4%BD%BF%E7%94%A8sublime-text-3-%E8%BF%9B%E8%A1%8Cpython3%E5%BC%80%E5%8F%91/</guid>
-      <description>痛点1：每次编写完Python文件后都要切到terminal下输入python fileName.py命令执行文件。 解决：mac版sublim</description>
+      <guid>https://blog.v5u.win/posts/system-wget/</guid>
+      <description>下载单个文件， 为什么不用mac原生自带的工具：curl &amp;ldquo;网址链接&amp;rdquo; -o &amp;ldquo;输出文件名&amp;rdquo; 解释一下，</description>
     </item>
     
     <item>
@@ -184,38 +175,56 @@
     
     <item>
       <title>抓包调试工具mitmproxy</title>
-      <link>https://blog.v5u.win/%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</link>
-      <pubDate>Tue, 27 Dec 2016 02:39:15 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/tools-%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</link>
+      <pubDate>Tue, 27 Dec 2016 10:39:15 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</guid>
+      <guid>https://blog.v5u.win/posts/tools-%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</guid>
       <description>安装：brew install mitmproxy 其他安装方式: http://docs.mitmproxy.org/en/latest/install.html 启动：mitmproxy -p 8080(监听端口号) 设置代理，具体设置方法请自行查找 抓取https：用 iPhone 打开 Safari</description>
     </item>
     
     <item>
-      <title>使用Xcode8创建Python项目</title>
-      <link>https://blog.v5u.win/%E4%BD%BF%E7%94%A8xcode8%E5%88%9B%E5%BB%BApython%E9%A1%B9%E7%9B%AE/</link>
-      <pubDate>Tue, 06 Dec 2016 02:44:31 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/%E4%BD%BF%E7%94%A8xcode8%E5%88%9B%E5%BB%BApython%E9%A1%B9%E7%9B%AE/</guid>
-      <description>今天想使用一个IDE来开发Python，省的每次写完后都要在terminal上敲命令。选来选去，既然已经安装了Xcode就先用他吧。 那么怎么</description>
-    </item>
-    
-    <item>
-      <title>Xcode8添加iOS7真机调试</title>
-      <link>https://blog.v5u.win/xcode8%E6%B7%BB%E5%8A%A0ios7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Mon, 19 Sep 2016 03:58:47 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/xcode8%E6%B7%BB%E5%8A%A0ios7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/</guid>
-      <description>打开Xcode8和Xcode7的app包内容 Contants/Developer/Platforms/iPhoneOS.platform/DeviceSupport 将Xcode7的iOS7的框架copy到Xcode8内</description>
-    </item>
-    
-    <item>
       <title>Sublime Text3 使用心得</title>
-      <link>https://blog.v5u.win/sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</link>
-      <pubDate>Fri, 09 Sep 2016 06:45:12 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/tools-sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Fri, 09 Sep 2016 14:45:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</guid>
+      <guid>https://blog.v5u.win/posts/tools-sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</guid>
       <description>build nodejs项目 sublime text 3自带build的系统，只需要在tools-&amp;gt;build system-&amp;gt; new build system&amp;amp;#8230; { &amp;quot;shell_cmd&amp;quot;: &amp;quot;node $file&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.js&amp;quot; } 保存为 node.sublime-b</description>
+    </item>
+    
+    <item>
+      <title>Sublime Texts使用tips</title>
+      <link>https://blog.v5u.win/posts/tools-sublime-tips/</link>
+      <pubDate>Sun, 04 Sep 2016 00:07:07 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/tools-sublime-tips/</guid>
+      <description>多行编辑：control + 点击各行编辑位置 全局修改所有单词：双击单词，comment+control+G 选中一个单词：Command + D 选中</description>
+    </item>
+    
+    <item>
+      <title>mac 文件如何校验</title>
+      <link>https://blog.v5u.win/posts/mac-%E6%96%87%E4%BB%B6%E5%A6%82%E4%BD%95%E6%A0%A1%E9%AA%8C/</link>
+      <pubDate>Thu, 17 Dec 2015 11:08:37 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/mac-%E6%96%87%E4%BB%B6%E5%A6%82%E4%BD%95%E6%A0%A1%E9%AA%8C/</guid>
+      <description>mac 自带文件校验工具，已经内置在终端(Terminal)下了 输入md5 空格后面加上要校验的文件路径（将文件拖到Terminal窗口就行）回车 或</description>
+    </item>
+    
+    <item>
+      <title>用 Xcode 编写 C/C&#43;&#43; 的 Hello World！</title>
+      <link>https://blog.v5u.win/posts/xcode-cc&#43;&#43;/</link>
+      <pubDate>Fri, 25 Sep 2015 12:24:51 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/xcode-cc&#43;&#43;/</guid>
+      <description>操作步骤： 打开Xcode，在欢迎界面点击Create a new Xcode project。 在左侧栏选择Mac OS X分类的Application，右侧选择Com</description>
+    </item>
+    
+    <item>
+      <title>vscode配置go开发环境</title>
+      <link>https://blog.v5u.win/posts/go-vscode%E9%85%8D%E7%BD%AEgo%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/go-vscode%E9%85%8D%E7%BD%AEgo%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>下载安装 vscode，安装Go插件。在商店中搜索安装。 配置 settings.json cmd+, ——&amp;gt; 用户设置/扩展 ——&amp;gt; Go configuration / 在 setting.json 中编辑。 参考 Sublime Text 中的 preferences.sublime-setting 很像。 在</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>lnmp on 为吾优</title>
@@ -13,11 +13,11 @@
     
     <item>
       <title>mac-nginx-php-mysql</title>
-      <link>https://blog.v5u.win/post/mac-nginx-php-mysql/</link>
+      <link>https://blog.v5u.win/posts/php-mac-nginx-php-mysql/</link>
       <pubDate>Tue, 25 Dec 2018 10:04:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-nginx-php-mysql/</guid>
-      <description>[TOC] 安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf server { location / { root /rootDocument/; index index.html index.htm index.php; autoindex on; # //开启目录浏览功</description>
+      <guid>https://blog.v5u.win/posts/php-mac-nginx-php-mysql/</guid>
+      <description>[TOC] 安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf php-fpm.conf</description>
     </item>
     
   </channel>

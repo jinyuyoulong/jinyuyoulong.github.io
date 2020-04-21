@@ -6,17 +6,17 @@
     <description>Recent content in Wireshark on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 18 May 2016 10:47:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 May 2016 18:47:09 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/wireshark/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>mac下wireshark的使用方法</title>
-      <link>https://blog.v5u.win/mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
-      <pubDate>Wed, 18 May 2016 10:47:09 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/system-mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 18 May 2016 18:47:09 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://blog.v5u.win/posts/system-mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
       <description>Wireshark是mac下一款非常好的抓包工具，安装我就不说了，下面我重点来说说如何使用。 1.打开终端 2.rvictl -s // 创建一个虚拟接口 3.打开Wir</description>
     </item>
     

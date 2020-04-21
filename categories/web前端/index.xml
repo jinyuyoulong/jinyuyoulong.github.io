@@ -6,73 +6,10 @@
     <description>Recent content in web前端 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 10 May 2019 03:18:37 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jan 2019 03:03:31 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>markdown 常用语法整理</title>
-      <link>https://blog.v5u.win/markdown-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/</link>
-      <pubDate>Fri, 10 May 2019 03:18:37 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/markdown-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/</guid>
-      <description>Text &amp;lt; h1&amp;gt; 1级标题 &amp;lt; h1&amp;gt; Text &amp;lt; h2&amp;gt; 2级标题 &amp;lt; h2&amp;gt; Text &amp;lt; h3&amp;gt; 3级标题 &amp;lt; h3&amp;gt; Text &amp;lt; h4&amp;gt; 4级标题 &amp;lt; h4&amp;gt; Text &amp;lt; h5&amp;gt; 5级标题 &amp;lt; h5&amp;gt; Text &amp;lt; h6&amp;gt; 6级标题 &amp;lt; h6&amp;gt; 有序列表 ul&amp;gt;li 有 序 无序列表 ol&amp;gt;li 无 序 任务</description>
-    </item>
-    
-    <item>
-      <title>markdown 流程图</title>
-      <link>https://blog.v5u.win/markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
-      <pubDate>Thu, 09 May 2019 05:31:31 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
-      <description>Sequence flow mermaid Gantt</description>
-    </item>
-    
-    <item>
-      <title>hexo</title>
-      <link>https://blog.v5u.win/hexo/</link>
-      <pubDate>Wed, 16 Jan 2019 05:52:02 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/hexo/</guid>
-      <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new “文章名” 创建好的”文件名.md” 文件</description>
-    </item>
-    
-    <item>
-      <title>如何进入ghostblog的管理面板</title>
-      <link>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E8%BF%9B%E5%85%A5ghostblog%E7%9A%84%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF-2/</link>
-      <pubDate>Wed, 16 Jan 2019 05:32:49 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E8%BF%9B%E5%85%A5ghostblog%E7%9A%84%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF-2/</guid>
-      <description>*title: 如何进入ghostblog的管理面板 id: 442 categories: – blog – ghostblog date: 2016-07-04 14:39:44tags: 在域名后面加上/ghost 进入网站空间下的ghost路径下就行</description>
-    </item>
-    
-    <item>
-      <title>chrome 调试</title>
-      <link>https://blog.v5u.win/chrome-%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Wed, 16 Jan 2019 03:43:41 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/chrome-%E8%B0%83%E8%AF%95/</guid>
-      <description>*title: chrome 调试 date: 2018-11-08 chrome 调试 keyword: workspace,breakpoints 将调试代码文件添加到Chrome 的Workspace中：Sources–&amp;gt;filesystem–&amp;gt;+Add</description>
-    </item>
-    
-    <item>
-      <title>scrapy</title>
-      <link>https://blog.v5u.win/scrapy/</link>
-      <pubDate>Wed, 16 Jan 2019 03:29:12 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/scrapy/</guid>
-      <description>scrapy 使用总结 scrapy crawl m530pcrawl会去搜搜cmd目录下的scrapy.cfg 有些Scrapy命令(比如 crawl)要求必须在Scrapy项目</description>
-    </item>
-    
-    <item>
-      <title>jekyll using standards 使用规范</title>
-      <link>https://blog.v5u.win/jekyll-using-standards-%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/</link>
-      <pubDate>Wed, 16 Jan 2019 03:11:57 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/jekyll-using-standards-%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/</guid>
-      <description>jekyll using standards 使用规范 file命名格式：文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必</description>
-    </item>
     
     <item>
       <title>个人网站是否需要备案</title>
@@ -90,15 +27,6 @@
       
       <guid>https://blog.v5u.win/react-js-style%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%80%BB%E7%BB%93/</guid>
       <description>const styles = StyleSheet.create({ style_0:{ flex:1, borderColor: &#39;red&#39;, borderWidth:1, }, &amp;lt;View style={styles.style_0}&amp;gt; &amp;lt;View style={[styles.view, styles.center]}&amp;gt;&amp;lt;Text&amp;gt;自由摆放&amp;lt;/Text&amp;gt;&amp;lt;/Vie</description>
-    </item>
-    
-    <item>
-      <title>flex属性</title>
-      <link>https://blog.v5u.win/flex%E5%B1%9E%E6%80%A7/</link>
-      <pubDate>Fri, 08 Apr 2016 02:56:38 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/flex%E5%B1%9E%E6%80%A7/</guid>
-      <description>流式布局 flex为可伸缩属性，当flex大于0时View可伸缩 当多个有flex属性的View时，根据flex值分配View的相对大小， 如&amp;l</description>
     </item>
     
   </channel>

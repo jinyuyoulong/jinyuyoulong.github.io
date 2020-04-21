@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ppspider on 为吾优</title>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Python_pyspider</title>
-      <link>https://blog.v5u.win/post/python-pyspider/</link>
+      <link>https://blog.v5u.win/posts/python-pyspider/</link>
       <pubDate>Wed, 02 Nov 2016 10:34:41 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/python-pyspider/</guid>
+      <guid>https://blog.v5u.win/posts/python-pyspider/</guid>
       <description>mac 下pyspider的安装 安装环境：OS X EI Capitan 版本 10.11.6 Python2.7 此文章书写原因：经过简单命令pip install pyspider安装失败后，各种解决问题不胜其烦，</description>
     </item>
     

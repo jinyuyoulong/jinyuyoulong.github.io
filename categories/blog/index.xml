@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>blog on 为吾优</title>
@@ -13,65 +13,65 @@
     
     <item>
       <title>Blog Wordpress Http Https</title>
-      <link>https://blog.v5u.win/post/blog-wordpress-http-https/</link>
+      <link>https://blog.v5u.win/posts/blog-wordpress-http-https/</link>
       <pubDate>Tue, 07 May 2019 17:58:56 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/post/blog-wordpress-http-https/</guid>
+      <guid>https://blog.v5u.win/posts/blog-wordpress-http-https/</guid>
       <description>wordpress http 升级HTTPS lnmp 添加ssl：lnmp ssl add wordpress 后台修改：主域名改为https:// ,固定链接改为id格式 (postname的URL格式无法找</description>
     </item>
     
     <item>
       <title>Hugo 开箱体验</title>
-      <link>https://blog.v5u.win/post/blog-hugo/</link>
+      <link>https://blog.v5u.win/posts/blog-hugo/</link>
       <pubDate>Tue, 16 Apr 2019 14:09:31 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/post/blog-hugo/</guid>
+      <guid>https://blog.v5u.win/posts/blog-hugo/</guid>
       <description>Hugo是Go写的静态网站生成器，生成速度快，性能开销小，正好也在学习Golang。我决定从 Hexo 切换到 Hugo。 以下是试用总结，基本可以实现从</description>
     </item>
     
     <item>
       <title>WordPress4.4之后原生支持REST API</title>
-      <link>https://blog.v5u.win/post/blog-wordpress4-4-suported-rest-api/</link>
+      <link>https://blog.v5u.win/posts/blog-wordpress4-4-suported-rest-api/</link>
       <pubDate>Tue, 10 Apr 2018 05:33:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/blog-wordpress4-4-suported-rest-api/</guid>
+      <guid>https://blog.v5u.win/posts/blog-wordpress4-4-suported-rest-api/</guid>
       <description>WordPress4.4之后REST API 格式:www.网址/wp-json/wp/v2,例：www.v5u.win/wp-json/wp/v2</description>
     </item>
     
     <item>
       <title>WordPress4 如何添加友情链接</title>
-      <link>https://blog.v5u.win/post/blog-wordpress4-add-links/</link>
+      <link>https://blog.v5u.win/posts/blog-wordpress4-add-links/</link>
       <pubDate>Tue, 10 Apr 2018 03:11:38 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/blog-wordpress4-add-links/</guid>
+      <guid>https://blog.v5u.win/posts/blog-wordpress4-add-links/</guid>
       <description>链接—&amp;gt;创建链接分类目录 —&amp;gt;添加链接 外观—&amp;gt;小工具—&amp;gt;链接—&amp;gt;选择链接分类目录 以前有用友链插件或者自定义菜单目</description>
     </item>
     
     <item>
       <title>如何进入ghostblog的管理面板</title>
-      <link>https://blog.v5u.win/post/blog-ghost/</link>
+      <link>https://blog.v5u.win/posts/blog-ghost/</link>
       <pubDate>Mon, 04 Jul 2016 14:39:44 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/blog-ghost/</guid>
+      <guid>https://blog.v5u.win/posts/blog-ghost/</guid>
       <description>在域名后面加上/ghost 进入网站空间下的ghost路径下就行</description>
     </item>
     
     <item>
       <title>使用hexo的第一篇文章</title>
-      <link>https://blog.v5u.win/post/blog-hexo/</link>
+      <link>https://blog.v5u.win/posts/blog-hexo/</link>
       <pubDate>Thu, 30 Jun 2016 17:40:48 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/blog-hexo/</guid>
-      <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new &amp;ldquo;文章名&amp;rdquo; 创建</description>
+      <guid>https://blog.v5u.win/posts/blog-hexo/</guid>
+      <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new “文章名” 创建好的”文件名.md” 文件</description>
     </item>
     
     <item>
       <title>jekyll using standards 使用规范</title>
-      <link>https://blog.v5u.win/post/blog-jekyll/</link>
+      <link>https://blog.v5u.win/posts/blog-jekyll/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/blog-jekyll/</guid>
-      <description>jekyll using standards 使用规范 文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必须为&amp;rdquo;</description>
+      <guid>https://blog.v5u.win/posts/blog-jekyll/</guid>
+      <description>jekyll using standards 使用规范 文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必须为&amp;quot;年</description>
     </item>
     
   </channel>

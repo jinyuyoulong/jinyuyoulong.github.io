@@ -6,36 +6,27 @@
     <description>Recent content in iOS on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 04 Apr 2018 08:24:46 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Jun 2019 10:37:16 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>xcode文档注释规则简要汇总</title>
-      <link>https://blog.v5u.win/xcode%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A%E8%A7%84%E5%88%99%E7%AE%80%E8%A6%81%E6%B1%87%E6%80%BB/</link>
-      <pubDate>Wed, 04 Apr 2018 08:24:46 +0000</pubDate>
+      <title>iOS SwiftUI</title>
+      <link>https://blog.v5u.win/posts/swift-%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</link>
+      <pubDate>Wed, 05 Jun 2019 10:37:16 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/xcode%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A%E8%A7%84%E5%88%99%E7%AE%80%E8%A6%81%E6%B1%87%E6%80%BB/</guid>
-      <description>xcode文档注释规则简要汇总 参考源 类与协议 /** 文档B. * * 文档B的详细描述. */ @interface DocB : NSObject /// 文档A. @interface DocA : NSObject 文本链接 /** * - [文档B](DocB)</description>
+      <guid>https://blog.v5u.win/posts/swift-%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</guid>
+      <description>[TOC] 什么是swiftUI？ Apple的解释： 更好的应用。更少的代码。 SwiftUI是一种创新的，非常简单的方法，可以通过Swift的强大功能在</description>
     </item>
     
     <item>
-      <title>swift 常见错误 class xxx has no initializers</title>
-      <link>https://blog.v5u.win/class-xxx-has-no-initializers/</link>
-      <pubDate>Mon, 25 Apr 2016 09:09:01 +0000</pubDate>
+      <title>mac下wireshark的使用方法</title>
+      <link>https://blog.v5u.win/posts/system-mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 18 May 2016 18:47:09 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/class-xxx-has-no-initializers/</guid>
-      <description>swift 常见错误 error: class xxx has no initializers 这是说变量没有初始化，比如 var label:UILabel 应该写成 var label:UILabel?</description>
-    </item>
-    
-    <item>
-      <title>GCD dispatch barrier</title>
-      <link>https://blog.v5u.win/gcd-dispatch-barrier/</link>
-      <pubDate>Fri, 15 Apr 2016 02:15:25 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/gcd-dispatch-barrier/</guid>
-      <description>需求： 两个线程并行执行，当两线程都执行完后，在执行另一个线程，然后在执行并行多线程 thread1 thread4 --&amp;gt; thread3 --&amp;gt; thread2 thread5 一个dispatch barrier 允许在一个并发队列中创</description>
+      <guid>https://blog.v5u.win/posts/system-mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <description>Wireshark是mac下一款非常好的抓包工具，安装我就不说了，下面我重点来说说如何使用。 1.打开终端 2.rvictl -s // 创建一个虚拟接口 3.打开Wir</description>
     </item>
     
     <item>
@@ -48,21 +39,21 @@
     </item>
     
     <item>
-      <title>NSDate和时间戳互转</title>
-      <link>https://blog.v5u.win/nsdate%E5%92%8C%E6%97%B6%E9%97%B4%E6%88%B3%E4%BA%92%E8%BD%AC/</link>
-      <pubDate>Fri, 28 Aug 2015 08:53:17 +0000</pubDate>
+      <title>iOS8.3发布了Swift 1.2带来哪些新变化</title>
+      <link>https://blog.v5u.win/posts/ios-ios8.3-swift-changed/</link>
+      <pubDate>Tue, 14 Apr 2015 14:59:50 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/nsdate%E5%92%8C%E6%97%B6%E9%97%B4%E6%88%B3%E4%BA%92%E8%BD%AC/</guid>
-      <description>对于将NSDate类型转换为时间戳，相信大家肯定都会，这样的示例代码，在百度等搜索引擎上面一搜索就是一大篇的东西，但是，大家有没有注意到的是</description>
+      <guid>https://blog.v5u.win/posts/ios-ios8.3-swift-changed/</guid>
+      <description>原文 http://www.cnblogs.com/yuyongjian/p/4371400.html 苹果前几日在面向开发者推送iOS 8.3 Beta的同时，还发布了版本号为6D520o的Xcode 6.3 Beta，其中便包含了iOS 8.3 Beta和O</description>
     </item>
     
     <item>
-      <title>NSTimer</title>
-      <link>https://blog.v5u.win/nstimer/</link>
-      <pubDate>Thu, 16 Jul 2015 03:03:51 +0000</pubDate>
+      <title>App Store 上架流程</title>
+      <link>https://blog.v5u.win/posts/ios-appstore-public/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/nstimer/</guid>
-      <description>&amp;lt; p style=”color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;”&amp;gt;NSTimer不是绝对准确的,而且中间耗时或阻塞错过下一个点,那么</description>
+      <guid>https://blog.v5u.win/posts/ios-appstore-public/</guid>
+      <description>App Store上架流程 申请开发者账号 登录开发者网站，注册cer APP ID， profile (xcode 只能解决测试证书配置) 登录iTunes connection网站，注册</description>
     </item>
     
   </channel>

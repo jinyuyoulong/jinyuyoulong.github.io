@@ -22,20 +22,11 @@
     
     <item>
       <title>mac下nvm 使用记录</title>
-      <link>https://blog.v5u.win/mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Tue, 02 May 2017 02:29:55 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 02 May 2017 10:29:55 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://blog.v5u.win/posts/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
       <description>mac下nvm 使用记录 断开连接 brew unlink nvm 安装 brew install nvm 环境变量 add to ~/.bash_profile export NVM_DIR=”$HOME/.nvm” . “$(brew –prefix nvm)</description>
-    </item>
-    
-    <item>
-      <title>mac下npm的使用方式</title>
-      <link>https://blog.v5u.win/mac%E4%B8%8Bnpm%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/</link>
-      <pubDate>Thu, 08 Sep 2016 06:30:11 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/mac%E4%B8%8Bnpm%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F/</guid>
-      <description>npm init #创建package.json文件 npm install xxx -g #全局安装 -g npm install xxx #没有package.json文件的时候使用，当前文件下安装 npm install xxx --save #添加到</description>
     </item>
     
   </channel>

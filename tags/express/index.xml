@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>express on 为吾优</title>
@@ -13,11 +13,11 @@
     
     <item>
       <title>Express</title>
-      <link>https://blog.v5u.win/post/nodejs-express/</link>
+      <link>https://blog.v5u.win/posts/nodejs-express/</link>
       <pubDate>Wed, 17 Aug 2016 11:05:24 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/nodejs-express/</guid>
-      <description>nodejs + express 学习记录 设置入口文件 app.use(express.static(__dirname + &#39;/public&#39;)); ###use方法 use是express注册中间件的方法，它返回一个函数。 中间件（middleware）就是处</description>
+      <guid>https://blog.v5u.win/posts/nodejs-express/</guid>
+      <description>*title: Express date: 2016-08-17 11:05:24 tags: express category: Expressid: 5 nodejs + express 学习记录 设置入口文件 app.use(express.static(__dirname + &#39;/public&#39;)); ###use方法 use是express注册中间件的方法，它返回一个函数。 中间件（midd</description>
     </item>
     
   </channel>

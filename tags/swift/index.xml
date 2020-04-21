@@ -6,36 +6,36 @@
     <description>Recent content in swift on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 16 Jul 2019 06:05:05 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Jun 2019 10:37:16 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>什么是swiftUI</title>
-      <link>https://blog.v5u.win/%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</link>
-      <pubDate>Tue, 16 Jul 2019 06:05:05 +0000</pubDate>
+      <title>iOS SwiftUI</title>
+      <link>https://blog.v5u.win/posts/swift-%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</link>
+      <pubDate>Wed, 05 Jun 2019 10:37:16 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</guid>
+      <guid>https://blog.v5u.win/posts/swift-%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</guid>
       <description>[TOC] 什么是swiftUI？ Apple的解释： 更好的应用。更少的代码。 SwiftUI是一种创新的，非常简单的方法，可以通过Swift的强大功能在</description>
     </item>
     
     <item>
-      <title>swift 关键字篇</title>
-      <link>https://blog.v5u.win/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/</link>
-      <pubDate>Tue, 13 Dec 2016 07:45:27 +0000</pubDate>
+      <title>weak-unowned</title>
+      <link>https://blog.v5u.win/posts/swift-weak-unowned/</link>
+      <pubDate>Mon, 19 Sep 2016 18:11:47 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/</guid>
-      <description>@noescape：no escape(没有逃脱) 用来修饰闭包，含义为非逃逸闭包。 当闭包作为参数传递进函数时，如果这个闭包只在函数中被使用，则</description>
+      <guid>https://blog.v5u.win/posts/swift-weak-unowned/</guid>
+      <description>swift weak和unowned 的区别 unowned 设置以后即使它原来引用的内容已经被释放了，它仍然会保持对被已经释放了的对象的一个 &amp;ldquo;无效的&amp;rd</description>
     </item>
     
     <item>
-      <title>swift 常见错误 class xxx has no initializers</title>
-      <link>https://blog.v5u.win/class-xxx-has-no-initializers/</link>
-      <pubDate>Mon, 25 Apr 2016 09:09:01 +0000</pubDate>
+      <title>class xxx has no initializers</title>
+      <link>https://blog.v5u.win/posts/swift-class-xxx-has-no-initializers/</link>
+      <pubDate>Mon, 25 Apr 2016 17:09:01 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/class-xxx-has-no-initializers/</guid>
-      <description>swift 常见错误 error: class xxx has no initializers 这是说变量没有初始化，比如 var label:UILabel 应该写成 var label:UILabel?</description>
+      <guid>https://blog.v5u.win/posts/swift-class-xxx-has-no-initializers/</guid>
+      <description>error: class xxx has no initializers 这是说变量没有初始化，比如 var label:UILabel 应该写成 var label:UILabel?</description>
     </item>
     
   </channel>

@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.66.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Go的数据结构 | 为吾优</title>
+    <meta property="og:title" content="Go的数据结构 - 为吾优">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-02-17T00:00:00&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-02-17T00:00:00&#43;08:00">
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="Go的数据结构">
+        
+    <meta name="author" content="金玉游龙">
+    <meta property="og:url" content="https://blog.v5u.win/posts/go-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://blog.v5u.win">首页</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Go的数据结构</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年2月17日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/go">Go</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            <p>[TOC]</p>
+<p>先来看看Golang关于类型设计的一些原则</p>
+<ul>
+<li>变量包括（type, value）两部分，理解这一点就知道为什么nil != nil了</li>
+<li>type 包括 static type和concrete type. 简单来说 static type是你在编码是看见的类型(如int、string)，concrete type是runtime系统看见的类型</li>
+<li>类型断言能否成功，取决于变量的concrete type，而不是static type. 因此，一个 reader变量如果它的concrete type也实现了write方法的话，它也可以被类型断言为writer.</li>
+</ul>
+<h4 id="变量声明">变量声明</h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>**注意变量作用域：**在Go语言中，我们对程序实体的访问权限控制只能通过它们的名字来实现。名字首字母为大写的程序实体可以被任何代码包中的代码访问到。而名字首字母为小写的程序实体则只能被同一个代码包中的代码所访问。</p>
+<h2 id="数据类型">数据类型</h2>
+<h3 id="基本数据类型">基本数据类型</h3>
+<h4 id="整型">整型</h4>
+<p>int8 int16 int32 int64, uint8 uint16 uint32 uint64</p>
+<p>byte 是 uint8 的别名</p>
+<p>rune 是 int32 的别名，用来表示Unicode。’A’: U+0041</p>
+<h4 id="浮点型">浮点型</h4>
+<p>float32,float64</p>
+<p>复数 complex64(3.7E+1+5.98E-2i),由两个浮点型组成分别表示实部和虚部</p>
+<h4 id="字符型-byte">字符型 byte</h4>
+<p>没有专门的字符型，使用byte 来保存单个字母字符</p>
+<h4 id="布尔型-bool">布尔型 bool</h4>
+<h4 id="字符串-string">字符串 string</h4>
+<p>从表象上来说是字符序列，但是在底层，一个字符串值却是由若干个字节来表现和存储的。一个字符串（也可以说字符序列）会被Go语言用Unicode编码规范中的UTF-8编码格式编码为字节数组。</p>
+<p><strong>注意</strong>，我们在一个字符串值或者一个字符串类型的变量之上应用Go语言的内置函数len将会得到代表它的那个字节数组的长度。这可能与我们看到的表象是不同的。字符串的表示法有两种，即：原生表示法和解释型表示法。若用原生表示法，需用反引号“`”把字符序列包裹起来。若用解释型表示法，则需用双引号“””包裹字符序列。</p>
+<p>二者的区别是，前者表示的值是所见即所得的（除了回车符）。在那对反引号之间的内容就是该字符串值本身。而后者所表示的值中的转义符会起作用并在程序编译期间被转义。所以，如此表示的字符串值的实际值可能会与我们看到的表象不相同。</p>
+<p>最后要注意，字符串值是不可变的。也就是说，我们一旦创建了一个此类型的值，就不可能再对它本身做任何修改。</p>
+<p><strong>字符串判空</strong></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Russ Cox 的观点就是哪种使得代码更清晰就用哪种。 就字符串是否为空这个语义而言，第一种语义更直接了当，应该是更推荐的。</p>
+<hr>
+<h3 id="复杂数据类型">复杂数据类型</h3>
+<h4 id="指针-pointer">指针 Pointer</h4>
+<h4 id="数组">数组</h4>
+<p>声明：type MyNumbers [3]int</p>
+<p>表示数组长度为 3 存储元素类型为 int 的容器，MyNumbers 为 [3]int 的别名类型</p>
+<p>声明并赋值：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>最后，要注意，如果我们只声明一个数组类型的变量而不为它赋值，那么该变量的值将会是指定长度的、其中各元素均为元素类型的零值（或称默认值）的数组值。例如，若有这样一个变量：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>则它的值会是</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>判空</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="slice-切片">Slice 切片</h4>
+<p>字面量表示：[]int 或 []string</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>注意，被“切下”的部分<strong>不包含</strong>元素上界索引指向的元素。</p>
+<p>如图所示，一个切片值的容量即为它的第一个元素值在其底层数组中的索引值与该数组长度的差值的绝对值。为了获取数组、切片或通道类型的值的容量，我们可以使用内建函数<code>cap</code>，如：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>最后，要注意，切片类型属于引用类型。它的零值即为<code>nil</code>，即空值。如果我们只声明一个切片类型的变量而不为它赋值，那么该变量的值将会是<code>nil</code>。例如，若有这样一个变量：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>则它的值会是 <code>nil</code></p>
+<hr>
+<h4 id="字典-map">字典 map</h4>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>然后运用索引表达式取出字典中的值，就像这样：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>在Go语言中有这样一项规定，即：对于字典值来说，如果其中不存在索引表达式欲取出的键值对，那么就以它的值类型的空值（或称默认值）作为该索引表达式的求值结果。</p>
+<p>引用类型，零值是nil</p>
+<hr>
+<h4 id="通道类型-channel">通道类型 channel</h4>
+<p>goroutine是一种函数的并发执行方式，而channel是用来在goroutine之间进行参数传递。main函数本身也运行在一个goroutine中，而go function则表示创建一个新的goroutine，并在这个新的goroutine中执行这个函数。</p>
+<p>通道（Channel）是Go语言中一种非常独特的数据结构。它可用于在不同Goroutine之间传递类型化的数据，并且是并发安全的。相比之下，我们之前介绍的那些数据类型都不是并发安全的。这一点需要特别注意。</p>
+<p>Goroutine（也称为Go程序）可以被看做是承载可被并发执行的代码块的载体。它们由Go语言的运行时系统调度，并依托操作系统线程（又称内核线程）来并发地执行其中的代码块。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>请注意，对通道值的重复关闭会引发运行时恐慌。这会使程序崩溃。所以一定要避免这种情况的发生。另外，在通道值有效的前提下，针对它的发送操作会在通道值已满（其中缓存的数据的个数已等于它的长度）时被阻塞。而向一个已被关闭的通道值发送数据会引发运行时恐慌。另一方面，针对有效通道值的接收操作会在它已空（其中没有缓存任何数据）时被阻塞。除此之外，还有几条与通道的发送和接收操作有关的规则。不过在这里我们记住上面这三条就可以了。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="struct-继承">struct 继承</h4>
+<p>一个结构体嵌到另一个结构体，称作组合</p>
+<p>匿名和组合的区别</p>
+<p>如果一个struct嵌套了另一个匿名结构体，那么这个结构可以直接访问匿名结构体的方法，从而实现<strong>继承</strong></p>
+<p>如果一个struct嵌套了另一个【有名】的结构体，那么这个模式叫做<strong>组合</strong></p>
+<p>如果一个struct嵌套了多个匿名结构体，那么这个结构可以直接访问多个匿名结构体的方法，从而实现<strong>多重继承</strong></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h4 id="interface-接口">interface 接口</h4>
+<p>接口</p>
+<h4 id="fanction-函数">fanction 函数</h4>
+<p>函数也是一种数据类型，可以作为参数传递</p>
+<h3 id="数据类型转换">数据类型转换</h3>
+<p>//string到int</p>
+<p>int,err:=strconv.Atoi(string)</p>
+<p>//string到int64</p>
+<p>int64, err := strconv.ParseInt(string, 10, 64)</p>
+<p>//int到string</p>
+<p>string:=strconv.Itoa(int)</p>
+<p>//int64到string
+&laquo;&laquo;&laquo;&lt; HEAD:posts/2019-02-17-go的数据结构.md</p>
+<p>string:=strconv.FormatInt(int64,10)</p>
+<p>// int64 to time</p>
+<p>nextTime := time.Now()</p>
+<p>=======
+string:=strconv.FormatInt(int64,10)
+// int64 to time
+nextTime := time.Now()</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>9b93207d813e2b213031f967612e37c68194cf37:post/Go-数据结构.md
+time.Unix(nextTime,0)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/go-%E5%91%BD%E4%BB%A4/">go 常用命令</a></li>
+        
+        <li><a href="/posts/go-vscode%E5%AE%89%E8%A3%85golang-org%E7%9A%84golint/">vscode安装golang.org的golint</a></li>
+        
+        <li><a href="/posts/go-%E4%BB%A3%E7%A0%81%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F/">go-代码组织方式</a></li>
+        
+        <li><a href="/posts/go-workspace-gopath/">工作区和GOPATH</a></li>
+        
+        <li><a href="/node-gyp%E6%98%AF%E4%BB%80%E4%B9%88/">node-gyp是什么</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/ios-cocoapod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/tools-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-http/" title="Linux版本使用总结">Linux版本使用总结</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-epoll/" title="epoll原理">epoll原理</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/goland-%E4%BD%BF%E7%94%A8/" title="Goland 使用">Goland 使用</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="System MQ消息队列">System MQ消息队列</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/go-cgo/" title="Go CGO">Go CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/go-gofmt/" title="Go Gofmt">Go Gofmt</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/archives/">archives(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/blog/">blog(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/docker/">docker(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/git/">git(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(52)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(84)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/it%E9%BB%91%E8%AF%9D/">it黑话(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(12)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/seo/">seo(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(13)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/system/">system(30)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web/">web(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%81%A5%E5%BA%B7/">健康(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">其他技术(16)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%8D%81%E4%B8%87%E4%B8%AA%E4%B8%BA%E4%BB%80%E4%B9%88/">十万个为什么(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(24)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/">开源(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(14)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%97%E6%96%87/">诗文(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(18)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/">软技能(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93/">道(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93%E6%B3%95/">道法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/">错误集锦(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%98%85%E8%AF%BB/">阅读(5)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/apple/">apple</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/autoclosure/">autoclosure</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/const/">const</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/define/">define</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/error/">error</a>
+    
+    <a href="https://blog.v5u.win/tags/escaping/">escaping</a>
+    
+    <a href="https://blog.v5u.win/tags/express/">express</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/git/">git</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/hexo/">hexo</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E8%80%83%E5%8F%A4/">it考古</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/jekyll/">jekyll</a>
+    
+    <a href="https://blog.v5u.win/tags/k8s/">k8s</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kubernetes/">kubernetes</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/linux/">linux</a>
+    
+    <a href="https://blog.v5u.win/tags/lnmp/">lnmp</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongodb/">mongodb</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/node/">node</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/noescape/">noescape</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/orm/">orm</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/ppspider/">ppspider</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/skecth/">skecth</a>
+    
+    <a href="https://blog.v5u.win/tags/sqlite/">sqlite</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/system/">system</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/xampp/">xampp</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%8C%BB/">中医</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%96%87/">文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%97%B6%E9%97%B4%E6%88%B3/">时间戳</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%97%E6%96%87/">诗文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/">进程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%81%93/">道</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IT黑话 on 为吾优</title>
@@ -13,20 +13,11 @@
     
     <item>
       <title>词法作用域</title>
-      <link>https://blog.v5u.win/post/itblack-%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/</link>
+      <link>https://blog.v5u.win/posts/design-%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/</link>
       <pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/itblack-%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/</guid>
+      <guid>https://blog.v5u.win/posts/design-%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/</guid>
       <description>首先你得明白程序设计中作用域这个概念：通常来说，一段程序代码中所用到的名字并不总是有效／可用的，而限定这个名字的可用性的代码范围就是这个名字</description>
-    </item>
-    
-    <item>
-      <title>专业术语，行业黑话</title>
-      <link>https://blog.v5u.win/post/itblack-profession-word/</link>
-      <pubDate>Thu, 09 Aug 2018 15:52:32 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/post/itblack-profession-word/</guid>
-      <description>专业术语，行业黑话总结，解释 软件开发 jQuery插件 两个问题：什么是jQuery插件？jQuery插件如何使用？ 第一个问题，jQuery插件</description>
     </item>
     
   </channel>

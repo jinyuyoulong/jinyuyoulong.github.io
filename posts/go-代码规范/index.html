@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.66.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Go 代码规范 | 为吾优</title>
+    <meta property="og:title" content="Go 代码规范 - 为吾优">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-04-29T11:37:14&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-04-29T11:37:14&#43;08:00">
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="Go 代码规范">
+        
+    <meta name="author" content="金玉游龙">
+    <meta property="og:url" content="https://blog.v5u.win/posts/go-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://blog.v5u.win">首页</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Go 代码规范</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年4月29日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/go">Go</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            <h2 id="golang代码规范">Golang代码规范</h2>
+<p>参考 <a href="https://golang.org/doc/effective_go.html">https://golang.org/doc/effective_go.html</a></p>
+<p>[本文参考blog][1]</p>
+<p>[TOC]</p>
+<h3 id="项目目录结构规范">项目目录结构规范</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">PROJECT_NAME
+├── README.md 介绍软件及文档入口
+├── bin 编译好的二进制文件,执行./build.sh自动生成，该目录也用于程序打包
+├── build.sh 自动编译的脚本
+├── doc 该项目的文档
+├── pack 打包后的程序放在此处
+├── pack.sh 自动打包的脚本，生成类似xxxx.20170713_14:45:35.tar.gz的文件，放在pack文件下
+├── public 公共文件/静态文件
+└── src 该项目的源代码
+    ├── main 项目主函数
+    ├── test 测试
+    ├── app 项目代码
+    ├── research 在实现该项目中探究的一些程序
+    └── vendor 存放go的库
+        ├── github.com/xxx 第三方库
+        └── xxx.com/abc 公司内部的公共库
+&lt;/code&gt;&lt;/pre&gt;
+
+项目的目录结构尽量做到简明、层次清楚。
+
+<span style="color:#e6db74">```</span>sh
+./app
+├── bootstrap	//入口引导文件
+├── cache
+├── config  //项目配置 项目配置文件简单，配置项少。大部分配置公司要用配置中心统一配置。
+├── controller  //request请求处理中心 ——&amp;gt; controller ——&amp;gt; Response / view
+├── library //项目工具库
+├── log         //日志
+├── middleware  //中间件
+├── model       //data model.xorm -——&amp;gt; 数据库表映射模型
+├── plugin  //插件--自己开发/自己找的 --delete
+├── route       //路由管理
+├── service //前端数据获取操作 service
+&lt;/code&gt;&lt;/pre&gt;
+* * *
+
+<span style="color:#75715e">#### 文件名命名规范</span>
+
+用小写，尽量见名思义，看见文件名就可以知道这个文件下的大概内容，对于源代码里的文件，文件名要很好的代表了一个模块实现的功能。
+
+<span style="color:#75715e">### 命名规范</span>
+
+<span style="color:#75715e">#### 包名</span>
+
+包名用小写,使用短命名,尽量和标准库不要冲突
+
+<span style="color:#75715e">#### 接口名</span>
+
+单个函数的接口名以”er”作为后缀，如Reader,Writer
+
+接口的实现则去掉“er”
+
+<span style="color:#e6db74">```</span>go
+type Reader interface <span style="color:#f92672">{</span>
+<span style="color:#f92672">}</span>
+&lt;/code&gt;&lt;/pre&gt;
+
+两个函数的接口名综合两个函数名
+
+<span style="color:#e6db74">```</span>go
+type WriteFlusher interface <span style="color:#f92672">{</span>
+    Write<span style="color:#f92672">([]</span>byte<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>int, error<span style="color:#f92672">)</span>
+    Flush<span style="color:#f92672">()</span> error
+<span style="color:#f92672">}</span>
+&lt;/code&gt;&lt;/pre&gt;
+
+三个以上函数的接口名，类似于结构体名
+
+<span style="color:#e6db74">```</span>go
+type Car interface <span style="color:#f92672">{</span>
+    Start<span style="color:#f92672">([]</span>byte<span style="color:#f92672">)</span> 
+    Stop<span style="color:#f92672">()</span> error
+    Recover<span style="color:#f92672">()</span>
+<span style="color:#f92672">}</span>
+&lt;/code&gt;&lt;/pre&gt;
+
+<span style="color:#75715e">#### 变量</span>
+
+全局变量：采用驼峰命名法，仅限在包内的全局变量，包外引用需要写接口，提供调用 局部变量：驼峰式，小写字母开头
+
+<span style="color:#75715e">#### 常量</span>
+
+常量：大写，采用下划线
+
+<span style="color:#75715e">### import 规范</span>
+
+import在多行的情况下，goimports会自动帮你格式化，在一个文件里面引入了一个package，建议采用如下格式：
+
+<span style="color:#e6db74">```</span>go
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+<span style="color:#f92672">)</span>
+&lt;/code&gt;&lt;/pre&gt;
+
+如果你的包引入了三种类型的包，标准库包，程序内部包，第三方包，建议采用如下方式进行组织你的包：
+
+<span style="color:#e6db74">```</span>go
+import <span style="color:#f92672">(</span>
+    <span style="color:#e6db74">&#34;encoding/json&#34;</span>
+    <span style="color:#e6db74">&#34;strings&#34;</span>
+    <span style="color:#e6db74">&#34;myproject/model&#34;</span>
+    <span style="color:#e6db74">&#34;myproject/controller&#34;</span>
+    <span style="color:#e6db74">&#34;git.obc.im/obc/utils&#34;</span>
+    <span style="color:#e6db74">&#34;git.obc.im/dep/beego&#34;</span>
+    <span style="color:#e6db74">&#34;git.obc.im/dep/mysql&#34;</span>
+    // 空白引入需要添加注释
+		// 空白导入应该只在主包或测试包中，或者有一个注释证明它是正确的
+		_ <span style="color:#e6db74">&#34;github.com/jinzhu/gorm/dialects/mysql&#34;</span>
+<span style="color:#f92672">)</span>  
+</code></pre></div><p>在项目中不要使用相对路径引入包：</p>
+<p>// 这是不好的导入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> <span style="color:#960050;background-color:#1e0010">“</span>..<span style="color:#f92672">/</span><span style="color:#a6e22e">net</span><span style="color:#960050;background-color:#1e0010">”</span>
+</code></pre></div><p>// 这是正确的做法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> <span style="color:#960050;background-color:#1e0010">“</span><span style="color:#a6e22e">xxxx</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proj</span><span style="color:#f92672">/</span><span style="color:#a6e22e">net</span><span style="color:#960050;background-color:#1e0010">”</span>
+</code></pre></div><h4 id="函数名">函数名</h4>
+<p>函数名采用驼峰命名法，尽量不要使用下划线</p>
+<h3 id="错误处理">错误处理</h3>
+<p>error作为函数的值返回,必须尽快对error进行处理</p>
+<p>采用独立的错误流进行处理</p>
+<p>不要采用这种方式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#75715e">// error handling
+</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
+        <span style="color:#75715e">// normal code
+</span><span style="color:#75715e"></span>    }
+&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+
+<span style="color:#a6e22e">而要采用下面的方式</span>
+<span style="color:#e6db74">```go
+</span><span style="color:#e6db74">    if err != nil {
+</span><span style="color:#e6db74">        // error handling
+</span><span style="color:#e6db74">        return // or continue, etc.
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">    // normal code
+</span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">如果返回值需要初始化，则采用下面的方式
+</span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">f</span>()
+<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+    <span style="color:#75715e">// error handling
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span>
+}
+<span style="color:#75715e">// use x
+</span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+
+<span style="color:#960050;background-color:#1e0010">####</span> <span style="color:#a6e22e">Panic</span>
+
+<span style="color:#a6e22e">在逻辑处理中禁用panic</span>
+
+<span style="color:#a6e22e">在main包中只有当实在不可运行的情况采用panic</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">例如文件无法打开</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">数据库无法连接导致程序无法</span> <span style="color:#a6e22e">正常运行</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">但是对于其他的package对外的接口不能有panic</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">只能在包内采用</span><span style="color:#960050;background-color:#1e0010">。</span> <span style="color:#a6e22e">建议在main包中使用log</span>.<span style="color:#a6e22e">Fatal来记录错误</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">这样就可以由log来结束程序</span><span style="color:#960050;background-color:#1e0010">。</span>
+
+<span style="color:#960050;background-color:#1e0010">####</span> <span style="color:#a6e22e">Recover</span>
+
+<span style="color:#a6e22e">recover用于捕获runtime的异常</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">禁止滥用recover</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">在开发测试阶段尽量不要用recover</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">recover一般放在你认为会有不可预期的异常的地方</span><span style="color:#960050;background-color:#1e0010">。</span>
+
+<span style="color:#e6db74">```go
+</span><span style="color:#e6db74">func server(workChan &lt;-chan *Work) {
+</span><span style="color:#e6db74">    for work := range workChan {
+</span><span style="color:#e6db74">        go safelyDo(work)
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">func safelyDo(work *Work) {
+</span><span style="color:#e6db74">    defer func() {
+</span><span style="color:#e6db74">        if err := recover(); err != nil {
+</span><span style="color:#e6db74">            log.Println(&#34;work failed:&#34;, err)
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">    }()
+</span><span style="color:#e6db74">    // do 函数可能会有不可预期的异常
+</span><span style="color:#e6db74">    do(work)
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">#### Defer
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">defer在函数return之前执行，对于一些资源的回收用defer是好的，但也禁止滥用defer，defer是需要消耗性能的,所以频繁调用的函数尽量不要使用defer。
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+<span style="color:#75715e">// Contents returns the file&#39;s contents as a string.
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Contents</span>(<span style="color:#a6e22e">filename</span> <span style="color:#66d9ef">string</span>) (<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">error</span>) {
+    <span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#a6e22e">filename</span>)
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">err</span>
+    }
+    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Close</span>()  <span style="color:#75715e">// f.Close will run when we&#39;re finished.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> []<span style="color:#66d9ef">byte</span>
+    <span style="color:#a6e22e">buf</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">100</span>)
+    <span style="color:#66d9ef">for</span> {
+        <span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Read</span>(<span style="color:#a6e22e">buf</span>[<span style="color:#ae81ff">0</span>:])
+        <span style="color:#a6e22e">result</span> = append(<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">buf</span>[<span style="color:#ae81ff">0</span>:<span style="color:#a6e22e">n</span>]<span style="color:#f92672">...</span>) <span style="color:#75715e">// append is discussed later.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">EOF</span> {
+                <span style="color:#66d9ef">break</span>
+            }
+            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">err</span>  <span style="color:#75715e">// f will be closed if we return here.
+</span><span style="color:#75715e"></span>        }
+    }
+    <span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">result</span>), <span style="color:#66d9ef">nil</span> <span style="color:#75715e">// f will be closed if we return here.
+</span><span style="color:#75715e"></span>}
+&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+
+<span style="color:#960050;background-color:#1e0010">###</span> <span style="color:#a6e22e">控制结构</span>
+
+<span style="color:#960050;background-color:#1e0010">####</span> <span style="color:#66d9ef">if</span>
+
+<span style="color:#a6e22e">if接受初始化语句</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">约定如下方式建立局部变量</span>
+
+
+<span style="color:#e6db74">```go
+</span><span style="color:#e6db74">if err := file.Chmod(0664); err != nil {
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    return err
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">#### for
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">采用短声明建立局部变量
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+
+    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">i</span>
+}
+&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+
+<span style="color:#960050;background-color:#1e0010">####</span> <span style="color:#66d9ef">range</span>
+
+<span style="color:#a6e22e">如果只需要第一项</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">key</span><span style="color:#960050;background-color:#1e0010">），</span><span style="color:#a6e22e">就丢弃第二个</span><span style="color:#960050;background-color:#1e0010">：</span>
+
+
+<span style="color:#e6db74">```go
+</span><span style="color:#e6db74">for key := range m {
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    if key.expired() {
+</span><span style="color:#e6db74">        delete(m, key)
+</span><span style="color:#e6db74">    }
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">如果只需要第二项，则把第一项置为下划线
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">value</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">array</span> {
+    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">value</span>
+}
+&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+
+<span style="color:#960050;background-color:#1e0010">####</span> <span style="color:#66d9ef">return</span>
+
+<span style="color:#a6e22e">尽早return</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">一旦有错误发生</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">马上返回</span>
+
+
+<span style="color:#e6db74">```go
+</span><span style="color:#e6db74">f, err := os.Open(name)
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">if err != nil {
+</span><span style="color:#e6db74">    return err
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">d, err := f.Stat()
+</span><span style="color:#e6db74">if err != nil {
+</span><span style="color:#e6db74">    f.Close()
+</span><span style="color:#e6db74">    return err
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">codeUsing(f, d)
+</span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">### 方法的接收器
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">名称 一般采用strcut的第一个字母且为小写，而不是this，me或者self
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+    <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">struct</span>{} 
+
+    <span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">T</span>)<span style="color:#a6e22e">Get</span>(){}
+&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+
+<span style="color:#a6e22e">如果接收者是map</span>,<span style="color:#a6e22e">slice或者chan</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">不要用指针传递</span>
+
+
+<span style="color:#e6db74">```go
+</span><span style="color:#e6db74">//Map
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">package main
+</span><span style="color:#e6db74">import (
+</span><span style="color:#e6db74">    &#34;fmt&#34;
+</span><span style="color:#e6db74">)
+</span><span style="color:#e6db74">type mp map[string]string
+</span><span style="color:#e6db74">func (m mp) Set(k, v string) {
+</span><span style="color:#e6db74">    m[k] = v
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">func main() {
+</span><span style="color:#e6db74">    m := make(mp)
+</span><span style="color:#e6db74">    m.Set(&#34;k&#34;, &#34;v&#34;)
+</span><span style="color:#e6db74">    fmt.Println(m)
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">//Channel
+</span><span style="color:#e6db74">package main
+</span><span style="color:#e6db74">import (
+</span><span style="color:#e6db74">    &#34;fmt&#34;
+</span><span style="color:#e6db74">)
+</span><span style="color:#e6db74">type ch chan interface{}
+</span><span style="color:#e6db74">func (c ch) Push(i interface{}) {
+</span><span style="color:#e6db74">    c &amp;lt;- i
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">func (c ch) Pop() interface{} {
+</span><span style="color:#e6db74">    return &amp;lt;-c
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">func main() {
+</span><span style="color:#e6db74">    c := make(ch, 1)
+</span><span style="color:#e6db74">    c.Push(&#34;i&#34;)
+</span><span style="color:#e6db74">    fmt.Println(c.Pop())
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">如果需要对slice进行修改，通过返回值的方式重新赋值
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+<span style="color:#75715e">//Slice
+</span><span style="color:#75715e"></span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+)
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">slice</span> []<span style="color:#66d9ef">byte</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> make(<span style="color:#a6e22e">slice</span>, <span style="color:#ae81ff">0</span>)
+    <span style="color:#a6e22e">s</span> = <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">addOne</span>(<span style="color:#ae81ff">42</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+}
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">slice</span>) <span style="color:#a6e22e">addOne</span>(<span style="color:#a6e22e">b</span> <span style="color:#66d9ef">byte</span>) []<span style="color:#66d9ef">byte</span> {
+    <span style="color:#66d9ef">return</span> append(<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">b</span>)
+}
+&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+
+<span style="color:#a6e22e">如果接收者是含有sync</span>.<span style="color:#a6e22e">Mutex或者类似同步字段的结构体</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">必须使用指针传递避免复制</span>
+
+
+<span style="color:#e6db74">```go
+</span><span style="color:#e6db74">package main
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">import (
+</span><span style="color:#e6db74">    &#34;sync&#34;
+</span><span style="color:#e6db74">)
+</span><span style="color:#e6db74">type T struct {
+</span><span style="color:#e6db74">    m sync.Mutex
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">func (t *T) lock() {
+</span><span style="color:#e6db74">    t.m.Lock()
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">/*
+</span><span style="color:#e6db74">Wrong !!!
+</span><span style="color:#e6db74">func (t T) lock() {
+</span><span style="color:#e6db74">    t.m.Lock()
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">*/
+</span><span style="color:#e6db74">func main() {
+</span><span style="color:#e6db74">    t := new(T)
+</span><span style="color:#e6db74">    t.lock()
+</span><span style="color:#e6db74">}
+</span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">如果接收者是大的结构体或者数组，使用指针传递会更有效率。
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;fmt&#34;</span>
+)
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">data</span> [<span style="color:#ae81ff">1024</span>]<span style="color:#66d9ef">byte</span>
+}
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">T</span>) <span style="color:#a6e22e">Get</span>() <span style="color:#66d9ef">byte</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">data</span>[<span style="color:#ae81ff">0</span>]
+}
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">T</span>)
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Get</span>())
+}
+&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+
+<span style="color:#960050;background-color:#1e0010">###</span> <span style="color:#a6e22e">注释</span>
+
+  <span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">所有的</span> <span style="color:#a6e22e">public</span> <span style="color:#a6e22e">方法和变量都要添加注释</span>
+  <span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">注释格式为</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">name</span> <span style="color:#a6e22e">describeContent</span>
+
+&lt;<span style="color:#a6e22e">pre</span>&gt;&lt;<span style="color:#a6e22e">code</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;language-go line-numbers&#34;</span>&gt;    <span style="color:#75715e">// TubeName1 channel 1
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">TubeName1</span> = <span style="color:#e6db74">&#34;通道一&#34;</span>
+&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+
+[<span style="color:#ae81ff">1</span>]: <span style="color:#a6e22e">https</span>:<span style="color:#f92672">//</span><span style="color:#a6e22e">sheepbao</span>.<span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">io</span><span style="color:#f92672">/</span><span style="color:#a6e22e">post</span><span style="color:#f92672">/</span><span style="color:#a6e22e">golang_code_specification</span><span style="color:#f92672">/</span><span style="color:#960050;background-color:#1e0010">?</span><span style="color:#a6e22e">hmsr</span>=<span style="color:#a6e22e">toutiao</span>.<span style="color:#a6e22e">io</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">utm_medium</span>=<span style="color:#a6e22e">toutiao</span>.<span style="color:#a6e22e">io</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">utm_source</span>=<span style="color:#a6e22e">toutiao</span>.<span style="color:#a6e22e">io</span></code></pre></div>
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/system-%E6%9C%80%E5%B0%8F%E5%A0%86/">System 最小堆</a></li>
+        
+        <li><a href="/posts/go-web%E6%8A%80%E6%9C%AF%E6%A0%88/">Go web技术栈</a></li>
+        
+        <li><a href="/go%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/">Go交叉编译</a></li>
+        
+        <li><a href="/posts/go-%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/">Go 交叉编译</a></li>
+        
+        <li><a href="/posts/blog-hugo/">Hugo 开箱体验</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/ios-cocoapod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/tools-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-http/" title="Linux版本使用总结">Linux版本使用总结</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-epoll/" title="epoll原理">epoll原理</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/goland-%E4%BD%BF%E7%94%A8/" title="Goland 使用">Goland 使用</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="System MQ消息队列">System MQ消息队列</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/go-cgo/" title="Go CGO">Go CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/go-gofmt/" title="Go Gofmt">Go Gofmt</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/archives/">archives(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/blog/">blog(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/docker/">docker(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/git/">git(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(52)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(84)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/it%E9%BB%91%E8%AF%9D/">it黑话(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(12)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/seo/">seo(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(13)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/system/">system(30)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web/">web(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%81%A5%E5%BA%B7/">健康(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">其他技术(16)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%8D%81%E4%B8%87%E4%B8%AA%E4%B8%BA%E4%BB%80%E4%B9%88/">十万个为什么(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(24)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/">开源(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(14)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%97%E6%96%87/">诗文(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(18)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/">软技能(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93/">道(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93%E6%B3%95/">道法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/">错误集锦(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%98%85%E8%AF%BB/">阅读(5)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/apple/">apple</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/autoclosure/">autoclosure</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/const/">const</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/define/">define</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/error/">error</a>
+    
+    <a href="https://blog.v5u.win/tags/escaping/">escaping</a>
+    
+    <a href="https://blog.v5u.win/tags/express/">express</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/git/">git</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/hexo/">hexo</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E8%80%83%E5%8F%A4/">it考古</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/jekyll/">jekyll</a>
+    
+    <a href="https://blog.v5u.win/tags/k8s/">k8s</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kubernetes/">kubernetes</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/linux/">linux</a>
+    
+    <a href="https://blog.v5u.win/tags/lnmp/">lnmp</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongodb/">mongodb</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/node/">node</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/noescape/">noescape</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/orm/">orm</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/ppspider/">ppspider</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/skecth/">skecth</a>
+    
+    <a href="https://blog.v5u.win/tags/sqlite/">sqlite</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/system/">system</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/xampp/">xampp</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%8C%BB/">中医</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%96%87/">文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%97%B6%E9%97%B4%E6%88%B3/">时间戳</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%97%E6%96%87/">诗文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/">进程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%81%93/">道</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+</body>
+</html>

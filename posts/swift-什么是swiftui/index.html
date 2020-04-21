@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.66.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>iOS SwiftUI | 为吾优</title>
+    <meta property="og:title" content="iOS SwiftUI - 为吾优">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2019-06-05T10:37:16&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-06-05T10:37:16&#43;08:00">
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="iOS SwiftUI">
+        
+    <meta name="author" content="金玉游龙">
+    <meta property="og:url" content="https://blog.v5u.win/posts/swift-%E4%BB%80%E4%B9%88%E6%98%AFswiftui/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://blog.v5u.win">首页</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">iOS SwiftUI</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年6月5日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/ios">iOS</a></span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/swift">swift</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            <p>[TOC]</p>
+<h1 id="什么是swiftui">什么是swiftUI？</h1>
+<p>Apple的解释：</p>
+<blockquote>
+<p>更好的应用。更少的代码。</p>
+</blockquote>
+<p>SwiftUI是一种创新的，非常简单的方法，可以通过Swift的强大功能在所有Apple平台上构建用户界面。仅使用一组工具和API为任何Apple设备构建用户界面。SwiftUI具有易于阅读和自然编写的声明式Swift语法，可与新的Xcode设计工具无缝协作，使您的代码和设计完美同步。自动支持动态类型，暗模式，本地化和可访问性意味着您的第一行SwiftUI代码已经是您编写过的最强大的UI代码。</p>
+<h2 id="声明性语法">声明性语法</h2>
+<p>SwiftUI使用声明性语法，因此您可以简单地说明您的用户界面应该做什么。例如，您可以编写需要包含文本字段的项目列表，然后描述每个字段的对齐方式，字体和颜色。您的代码比以前更简单，更易于阅读，从而节省您的时间和维护。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>这种声明式风格甚至适用于复杂的概念，如动画。轻松地将动画添加到几乎任何控件中，并选择只有几行代码的即用型效果集合。在运行时，系统会处理创建平滑移动所需的所有步骤，甚至可以处理中断以保持应用稳定。通过动画这么简单，您将寻找新的方法来让您的应用程序活跃起来。</p>
+<h2 id="设计工具">设计工具</h2>
+<p>Xcode 11包含直观的新设计工具，使得使用SwiftUI构建界面就像拖放一样简单。当您在设计画布中工作时，您编辑的所有内容都与相邻编辑器中的代码完全同步。在您键入时，代码会立即显示为预览，您对该预览所做的任何更改都会立即显示在您的代码中。Xcode会立即重新编译您的更改，并将其插入到应用程序的运行版本中，始终可见且可编辑。</p>
+<p>**拖放。**只需拖动画布上的控件即可在用户界面中排列组件。单击以打开检查器以选择字体，颜色，对齐方式和其他设计选项，并使用光标轻松重新排列控件。许多这些可视化编辑器也可以在代码编辑器中使用，因此您可以使用检查器为每个控件发现新的修改器，即使您更喜欢手动编码界面部分。您还可以从库中拖动控件并将其拖放到设计画布上或直接放在代码上。</p>
+<p>**动态更换。**Swift编译器和运行时完全嵌入到Xcode中，因此您的应用程序将不断构建和运行。您看到的设计画布不仅仅是您的用户界面的近似 – 它是您的实时应用程序。Xcode可以直接在您的实时应用程序中使用“动态替换”交换已编辑的代码，这是Swift中的一项新功能。</p>
+<p>**预览。**您现在可以创建任何SwiftUI视图的一个或多个预览以获取示例数据，并配置用户可能看到的几乎任何内容，例如大字体，本地化或暗模式。预览还可以在任何设备和任何方向上显示您的UI。</p>
+<h2 id="所有apple平台都是原生的">所有Apple平台都是原生的</h2>
+<p>SwiftUI建立在数十年创建世界上最具创新性和直观的用户界面的经验之上。用户喜欢Apple生态系统的所有内容，例如控件和特定于平台的体验，都会在您的代码中呈现出来。SwiftUI是真正的原生，因此您的应用程序可以通过少量代码和交互式设计画布直接访问每个平台的成熟技术。</p>
+<h2 id="对开发者和公司的影响">对开发者和公司的影响</h2>
+<p>通过swiftUI的发布可以看到，Apple 在逐步拜托对 Objective-C &amp; Cocoa 的依赖，将精力和资源倾斜到swift语言上，这一次是对UIKit的摆脱。以 Apple 一贯的强势政策，很有可能后期会逐步放弃对 Objective-C 的持续优化(事实上有证据表明已经开始了)和App Store 上的政策制裁。以到达逐步引导开发者加入到新的平台上，这是在之前有过先例的：比如Mac OS从 power-pc 架构转到 x86架构.这将会是一个逐步渐进的过程，但是不会太长最多一两年，并且改变不可逆。</p>
+<p>对于公司和开发者来说，最好的莫过于全面拥抱 swift，但是考虑到很多旧项目使用 OC ，已经形成了强大的路径依赖，越大的项目组转身会越困难。但是大项目组人力不缺，资源不缺，有强大的容错能力，我认为反而是大项目组会最早探索，转身稳中有快。而对于新项目和创业公司来说则没有任何技术债务，技术选型会更轻松一些，完全受开发人员的控制。而最尴尬的莫过于中型项目和团队。人手紧缺，业务变动剧烈，最关键的是技术leader如果没有技术前瞻性的话，担心在技术转型中影响业务发展，反而是最保守的。处在这个位置的开发人员是最痛苦的。</p>
+<p>解决办法就是：开发自己的项目，拥有完全独立自主的决定权。代价就是每年$99≈￥688。</p>
+<p>公司的解决方案就是：在新的项目中使用swift。不建议使用混合开发，编译速度慢，有想想不到的问题</p>
+<h2 id="版本要求">版本要求</h2>
+<p>SwiftUI 支持的设备要求版本较高，将在7月份开启公测，官方介绍如下：</p>
+<p>只支持</p>
+<p>Xcode 11+ Bata</p>
+<p>iOS 13.0+ Beta</p>
+<p>macOS 10.15+ Beta</p>
+<p>UIKit for Mac 13.0+ Beta</p>
+<p>tvOS 13.0+ Beta</p>
+<p>watchOS 6.0+ Beta</p>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/swift-weak-unowned/">weak-unowned</a></li>
+        
+        <li><a href="/posts/system-mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">mac下wireshark的使用方法</a></li>
+        
+        <li><a href="/posts/swift-class-xxx-has-no-initializers/">class xxx has no initializers</a></li>
+        
+        <li><a href="/%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BD%BF%E7%94%A8kvo/">正确的使用KVO</a></li>
+        
+        <li><a href="/posts/ios-ios8.3-swift-changed/">iOS8.3发布了Swift 1.2带来哪些新变化</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            <ul class="clearfix">
+                                
+                                <li><a href="https://blog.v5u.win/tags/ios">iOS</a></li>
+                                
+                                <li><a href="https://blog.v5u.win/tags/swift">swift</a></li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/ios-cocoapod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/tools-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-http/" title="Linux版本使用总结">Linux版本使用总结</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-epoll/" title="epoll原理">epoll原理</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/goland-%E4%BD%BF%E7%94%A8/" title="Goland 使用">Goland 使用</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="System MQ消息队列">System MQ消息队列</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/go-cgo/" title="Go CGO">Go CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/go-gofmt/" title="Go Gofmt">Go Gofmt</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/archives/">archives(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/blog/">blog(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/docker/">docker(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/git/">git(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(52)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(84)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/it%E9%BB%91%E8%AF%9D/">it黑话(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(12)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/seo/">seo(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(13)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/system/">system(30)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web/">web(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%81%A5%E5%BA%B7/">健康(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">其他技术(16)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%8D%81%E4%B8%87%E4%B8%AA%E4%B8%BA%E4%BB%80%E4%B9%88/">十万个为什么(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(24)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/">开源(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(14)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%97%E6%96%87/">诗文(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(18)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/">软技能(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93/">道(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93%E6%B3%95/">道法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/">错误集锦(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%98%85%E8%AF%BB/">阅读(5)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/apple/">apple</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/autoclosure/">autoclosure</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/const/">const</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/define/">define</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/error/">error</a>
+    
+    <a href="https://blog.v5u.win/tags/escaping/">escaping</a>
+    
+    <a href="https://blog.v5u.win/tags/express/">express</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/git/">git</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/hexo/">hexo</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E8%80%83%E5%8F%A4/">it考古</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/jekyll/">jekyll</a>
+    
+    <a href="https://blog.v5u.win/tags/k8s/">k8s</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kubernetes/">kubernetes</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/linux/">linux</a>
+    
+    <a href="https://blog.v5u.win/tags/lnmp/">lnmp</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongodb/">mongodb</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/node/">node</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/noescape/">noescape</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/orm/">orm</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/ppspider/">ppspider</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/skecth/">skecth</a>
+    
+    <a href="https://blog.v5u.win/tags/sqlite/">sqlite</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/system/">system</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/xampp/">xampp</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%8C%BB/">中医</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%96%87/">文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%97%B6%E9%97%B4%E6%88%B3/">时间戳</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%97%E6%96%87/">诗文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/">进程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%81%93/">道</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+</body>
+</html>

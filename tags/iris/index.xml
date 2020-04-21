@@ -20,5 +20,14 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Go-iris-template</title>
+      <link>https://blog.v5u.win/posts/go-iris-template/</link>
+      <pubDate>Fri, 08 Mar 2019 17:25:10 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/go-iris-template/</guid>
+      <description>Iris 支持五个开箱即用的模板引擎，所有这五个模板引擎都具有通用API的共同特征，如布局，模板功能，特定于派对的布局，部分渲染等。 标准的html,</description>
+    </item>
+    
   </channel>
 </rss>

@@ -6,37 +6,10 @@
     <description>Recent content in 操作系统 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 30 Oct 2019 06:13:55 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 02:37:18 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>epoll</title>
-      <link>https://blog.v5u.win/epoll/</link>
-      <pubDate>Wed, 30 Oct 2019 06:13:55 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/epoll/</guid>
-      <description>epoll原理 参考：https://my.oschina.net/editorial-story/blog/3052308 网卡DMA传来数据</description>
-    </item>
-    
-    <item>
-      <title>System 进程间通讯方式</title>
-      <link>https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/</link>
-      <pubDate>Wed, 30 Oct 2019 06:03:08 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/</guid>
-      <description>进程通信： 每个进程各自有不同的用户地址空间,任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核,在内核中开辟一</description>
-    </item>
-    
-    <item>
-      <title>Go Crontab v3</title>
-      <link>https://blog.v5u.win/go-crontab-v3/</link>
-      <pubDate>Thu, 12 Sep 2019 02:58:15 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/go-crontab-v3/</guid>
-      <description>[TOC] 关于cron更新 Cron V3已经发布！ 要下载特定的标记版本，请运行: go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中: import &amp;quot;github.com/robfig/cron/v3&amp;quot; 由于Go Modules的使用，它需要Go 1.1</description>
-    </item>
     
     <item>
       <title>进程间8种通讯方式</title>
@@ -48,57 +21,12 @@
     </item>
     
     <item>
-      <title>Go Crontab</title>
-      <link>https://blog.v5u.win/go-crontab/</link>
-      <pubDate>Fri, 19 Jul 2019 10:18:33 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/go-crontab/</guid>
-      <description>[TOC] 计划任务 from Godoc 包cron实现了cron规范解析器和作业运行器。 安装 要下载特定的标记版本，请运行: go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中: import “github.</description>
-    </item>
-    
-    <item>
-      <title>k8s在Mac上的安装和使用</title>
-      <link>https://blog.v5u.win/k8s%E5%9C%A8mac%E4%B8%8A%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Tue, 16 Jul 2019 06:06:32 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/k8s%E5%9C%A8mac%E4%B8%8A%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
-      <description>安装 在Mac下安装前提条件，已经安装好了docker desktop，并修改了代理源 https://registry.docker-cn.co</description>
-    </item>
-    
-    <item>
       <title>MAC OS X 背后的故事-读书笔记</title>
       <link>https://blog.v5u.win/mac-os-x-%E8%83%8C%E5%90%8E%E7%9A%84%E6%95%85%E4%BA%8B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Thu, 16 May 2019 06:39:13 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac-os-x-%E8%83%8C%E5%90%8E%E7%9A%84%E6%95%85%E4%BA%8B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
       <description>[TOC] 可视化编程 Xcode 3 以前，Interface Builder 使用一种名为 nib 格式的二进制文件格式。不过由于 nib 不能用肉眼读，也不方便使用版本管理工具来管理，所以 Xcode</description>
-    </item>
-    
-    <item>
-      <title>nginx 反向代理 go 服务</title>
-      <link>https://blog.v5u.win/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86-go-%E6%9C%8D%E5%8A%A1/</link>
-      <pubDate>Fri, 10 May 2019 08:04:08 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/nginx-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86-go-%E6%9C%8D%E5%8A%A1/</guid>
-      <description>当我们启动一个go 程序的时候，通常监听的是本地端口如 IP:port 。但是实际的线上环境，解析路径是：通过 DNS 解析 ——&amp;gt; nginx vhost ——&amp;gt; IP:port 这个。单纯的</description>
-    </item>
-    
-    <item>
-      <title>markdown 常用语法整理</title>
-      <link>https://blog.v5u.win/markdown-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/</link>
-      <pubDate>Fri, 10 May 2019 03:18:37 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/markdown-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/</guid>
-      <description>Text &amp;lt; h1&amp;gt; 1级标题 &amp;lt; h1&amp;gt; Text &amp;lt; h2&amp;gt; 2级标题 &amp;lt; h2&amp;gt; Text &amp;lt; h3&amp;gt; 3级标题 &amp;lt; h3&amp;gt; Text &amp;lt; h4&amp;gt; 4级标题 &amp;lt; h4&amp;gt; Text &amp;lt; h5&amp;gt; 5级标题 &amp;lt; h5&amp;gt; Text &amp;lt; h6&amp;gt; 6级标题 &amp;lt; h6&amp;gt; 有序列表 ul&amp;gt;li 有 序 无序列表 ol&amp;gt;li 无 序 任务</description>
-    </item>
-    
-    <item>
-      <title>Dockerfile最佳实践</title>
-      <link>https://blog.v5u.win/dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
-      <pubDate>Wed, 08 May 2019 02:12:20 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
-      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式： 只用 Dockerfile 管理镜像 &amp;lt;/ol&amp;gt; 一个</description>
     </item>
     
     <item>
@@ -174,21 +102,12 @@
     </item>
     
     <item>
-      <title>Linux版本使用总结</title>
-      <link>https://blog.v5u.win/linux%E7%89%88%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Wed, 16 Jan 2019 05:59:54 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/linux%E7%89%88%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
-      <description>*title: Linux版本使用总结 date: 2018-07-16 tags:– Linux Linux版本使用总结</description>
-    </item>
-    
-    <item>
       <title>Socket</title>
       <link>https://blog.v5u.win/socket/</link>
       <pubDate>Wed, 16 Jan 2019 05:57:22 +0000</pubDate>
       
       <guid>https://blog.v5u.win/socket/</guid>
-      <description>iOS socket能做什么? socket是TCP UDP IP HTTP 协议簇，封装为socket API 可以用来写 客户端，服务端模型，在两者之间进行数据交流 换句话说，</description>
+      <description>======= tags: [socket, HTTP] categories: [HTTP] &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 9b93207d813e2b213031f967612e37c68194cf37:post/iOS-Scoket.md iOS socket能做什么? socket是TCP UDP IP HTTP 协议簇，封装为socket API 可以用来写 客户端，服务端模型，在两者之间进行数</description>
     </item>
     
     <item>
@@ -201,84 +120,21 @@
     </item>
     
     <item>
-      <title>mac-nginx-php-mysql</title>
-      <link>https://blog.v5u.win/mac-nginx-php-mysql/</link>
-      <pubDate>Tue, 25 Dec 2018 02:22:42 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/mac-nginx-php-mysql/</guid>
-      <description>安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf php-fpm.conf</description>
-    </item>
-    
-    <item>
       <title>mac虚拟机上的centos 7实现ssh连接</title>
-      <link>https://blog.v5u.win/mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</link>
+      <link>https://blog.v5u.win/posts/system-mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</link>
       <pubDate>Sat, 30 Jun 2018 08:57:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</guid>
+      <guid>https://blog.v5u.win/posts/system-mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</guid>
       <description>mac虚拟机上的centos7实现ssh连接 查看是否安装ssh rpm -qa | grep ssh（一般都内置了） 配置sshd_config文件 /etc/ssh/sshd_config Port 22 ListenAddress 0.0.0.0 ListenAddress :: 防火</description>
     </item>
     
     <item>
-      <title>centos7 更改系统启动模式</title>
-      <link>https://blog.v5u.win/centos7-%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Tue, 26 Jun 2018 01:51:41 +0000</pubDate>
+      <title>docker 使用规则</title>
+      <link>https://blog.v5u.win/posts/docker-%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/centos7-%E6%9B%B4%E6%94%B9%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/</guid>
-      <description>centos7 更改系统启动模式 查看当前启动模式 systemctl get-default 查看配置文件 cat /etc/inittab 设置启动模式为命令行模式 systemctl set-target multi-user.target 重启 shutdown -r now</description>
-    </item>
-    
-    <item>
-      <title>centos7 PHP7环境配置</title>
-      <link>https://blog.v5u.win/centos7-php7%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Tue, 26 Jun 2018 01:50:27 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/centos7-php7%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
-      <description>centos7 PHP7环境配置 目录 1. 开启22端口2. 创建其他用户，使用其他用户ssh登录（root账户禁止登录）3. 关闭防火墙4. 关闭selinux5.</description>
-    </item>
-    
-    <item>
-      <title>docker 简介</title>
-      <link>https://blog.v5u.win/docker-%E7%AE%80%E4%BB%8B/</link>
-      <pubDate>Wed, 04 Apr 2018 09:39:10 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/docker-%E7%AE%80%E4%BB%8B/</guid>
+      <guid>https://blog.v5u.win/posts/docker-%E7%AE%80%E4%BB%8B/</guid>
       <description>[TOC] 硬件/操作系统 要求 Docker支持以下的发行版版本： Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版 CentOS 7 (64-bit)，要求内核版本不低于 3.10 。</description>
-    </item>
-    
-    <item>
-      <title>MYSQL 经常使用tips</title>
-      <link>https://blog.v5u.win/mysql-%E7%BB%8F%E5%B8%B8%E4%BD%BF%E7%94%A8tips/</link>
-      <pubDate>Wed, 04 Apr 2018 09:37:35 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/mysql-%E7%BB%8F%E5%B8%B8%E4%BD%BF%E7%94%A8tips/</guid>
-      <description>[TOC] MySQL三大基础 mysql-devel 开发用到的库以及包含文件 mysql mysql 客户端 mysql-server 数据库服务器 安装 使用yum list mysql_查看了一下我的机子上可用的mysql_安装</description>
-    </item>
-    
-    <item>
-      <title>vim</title>
-      <link>https://blog.v5u.win/vim%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Mon, 18 Apr 2016 09:26:21 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/vim%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
-      <description>Vim 自带教程 终端输入 vimtutor 两种模式状态 命令模式 编辑模式 命令模式下的操作 dd 删除一行;三行：3dd y复制 d()剪切 p(paste)粘贴 :wq 或 ZZ 或 保存退出</description>
-    </item>
-    
-    <item>
-      <title>ssh</title>
-      <link>https://blog.v5u.win/mac-%E7%94%9F%E6%88%90-ssh-keys/</link>
-      <pubDate>Wed, 24 Feb 2016 08:02:58 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/mac-%E7%94%9F%E6%88%90-ssh-keys/</guid>
-      <description>解释 Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。 SSH通过在网络</description>
-    </item>
-    
-    <item>
-      <title>gem 包管理器</title>
-      <link>https://blog.v5u.win/gem-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
-      <pubDate>Thu, 12 Nov 2015 07:33:43 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/gem-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</guid>
-      <description>gem 常用命令 查看软件源 gem source -l,不能翻墙的，建议改成国内的源 https://gems.ruby-china.com 移除某个源 gem sources --remove https://ruby.taobao.org/ 添加新的源 gem sources -a https://gems.ruby-china.com/ 安装 gem install [name] gem install cocoapods 卸载指定版本 sudo gem uninstall cocoapods --version=1.5.3 查看 gem</description>
     </item>
     
   </channel>

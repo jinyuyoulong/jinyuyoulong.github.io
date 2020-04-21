@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hexo on 为吾优</title>
@@ -13,11 +13,11 @@
     
     <item>
       <title>使用hexo的第一篇文章</title>
-      <link>https://blog.v5u.win/post/blog-hexo/</link>
+      <link>https://blog.v5u.win/posts/blog-hexo/</link>
       <pubDate>Thu, 30 Jun 2016 17:40:48 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/blog-hexo/</guid>
-      <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new &amp;ldquo;文章名&amp;rdquo; 创建</description>
+      <guid>https://blog.v5u.win/posts/blog-hexo/</guid>
+      <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new “文章名” 创建好的”文件名.md” 文件</description>
     </item>
     
   </channel>

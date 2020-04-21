@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>xampp on 为吾优</title>
@@ -13,11 +13,11 @@
     
     <item>
       <title>MAC系统XAMPP 中 MySQL命令行客户端配置使用</title>
-      <link>https://blog.v5u.win/post/mac-xampp/</link>
+      <link>https://blog.v5u.win/posts/php-xampp/</link>
       <pubDate>Fri, 07 Aug 2015 23:42:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/mac-xampp/</guid>
-      <description>MySQL客户端 &amp;nbsp; &amp;nbsp; &amp;nbsp;MySQL安装包里面，在一个名为bin的文件夹，放置了很多工具包，但是使用他们的方式是命令行（ps：最近上瘾</description>
+      <guid>https://blog.v5u.win/posts/php-xampp/</guid>
+      <description>MySQL客户端 MySQL安装包里面，在一个名为bin的文件夹，放置了很多工具包，但是使用他们的方式是命令行（ps：最近上瘾了）。在MAC系</description>
     </item>
     
   </channel>

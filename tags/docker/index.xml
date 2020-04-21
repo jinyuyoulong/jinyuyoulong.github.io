@@ -1,32 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker on 为吾优</title>
+    <title>Docker on 为吾优</title>
     <link>https://blog.v5u.win/tags/docker/</link>
-    <description>Recent content in docker on 为吾优</description>
+    <description>Recent content in Docker on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 08 May 2019 02:12:20 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Dockerfile最佳实践</title>
-      <link>https://blog.v5u.win/dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
-      <pubDate>Wed, 08 May 2019 02:12:20 +0000</pubDate>
+      <title>k8s在Mac上的安装和使用</title>
+      <link>https://blog.v5u.win/posts/docker-k8s/</link>
+      <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
-      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式： 只用 Dockerfile 管理镜像 &amp;lt;/ol&amp;gt; 一个</description>
+      <guid>https://blog.v5u.win/posts/docker-k8s/</guid>
+      <description>安装 在Mac下安装前提条件，已经安装好了docker desktop，并修改了代理源 https://registry.docker-cn.co</description>
     </item>
     
     <item>
-      <title>docker 简介</title>
-      <link>https://blog.v5u.win/docker-%E7%AE%80%E4%BB%8B/</link>
-      <pubDate>Wed, 04 Apr 2018 09:39:10 +0000</pubDate>
+      <title>docker 使用规则</title>
+      <link>https://blog.v5u.win/posts/docker-%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/docker-%E7%AE%80%E4%BB%8B/</guid>
+      <guid>https://blog.v5u.win/posts/docker-%E7%AE%80%E4%BB%8B/</guid>
       <description>[TOC] 硬件/操作系统 要求 Docker支持以下的发行版版本： Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版 CentOS 7 (64-bit)，要求内核版本不低于 3.10 。</description>
+    </item>
+    
+    <item>
+      <title>docker 安装并使用Redis</title>
+      <link>https://blog.v5u.win/posts/docker-redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/docker-redis/</guid>
+      <description>docker 安装并使用Redis docker search redis docker pull redis #获得的是lasted版本 redis:3.2 配置redis mkdir -p /root/redis/data mkdir -p /root/redis/conf vi redis.conf # redis.conf bind 127.0.0.1 protected-mode yes appendonly no//持久化 # requirepass foobared p.s. protected-mode 是在没有显</description>
     </item>
     
   </channel>

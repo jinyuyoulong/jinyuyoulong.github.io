@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>开源 on 为吾优</title>
@@ -13,11 +13,11 @@
     
     <item>
       <title>提问的智慧</title>
-      <link>https://blog.v5u.win/post/system-getquestion/</link>
+      <link>https://blog.v5u.win/posts/system-getquestion/</link>
       <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-getquestion/</guid>
-      <description>我不怕我&amp;rdquo;走&amp;rdquo;的很慢，因为我一直在移动。 说明 本文摘自learnku社区：https://learnku.com/do</description>
+      <guid>https://blog.v5u.win/posts/system-getquestion/</guid>
+      <description>我不怕我&amp;quot;走&amp;quot;的很慢，因为我一直在移动。 说明 本文摘自learnku社区：https://learnku.com/docs</description>
     </item>
     
   </channel>

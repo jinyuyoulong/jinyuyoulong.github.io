@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.66.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>使用Autolayout xib实现动态高度的TableViewCell | 为吾优</title>
+    <meta property="og:title" content="使用Autolayout xib实现动态高度的TableViewCell - 为吾优">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2015-06-03T15:27:18&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2015-06-03T15:27:18&#43;08:00">
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="使用Autolayout xib实现动态高度的TableViewCell">
+        
+    <meta name="author" content="金玉游龙">
+    <meta property="og:url" content="https://blog.v5u.win/posts/ios-autolayouttableviewcell/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://blog.v5u.win">首页</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">使用Autolayout xib实现动态高度的TableViewCell</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2015年6月3日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/ios">iOS</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            <p>文章来源于<a href="http://itony.me/381.html">http://itony.me/381.html</a></p>
+<h2 id="创建xib文件">创建Xib文件</h2>
+<p>首先将Cell做好布局，调整到满意的位置和宽度，然后开始做Autolayout设定。</p>
+<p>Autolayout操作方式有两种，一种是选择目标后，使用右下角的工具栏；另一种是直接使用右键拖拽目标，在弹出的菜单中选择限制项。当选择的目标比较小的时候，可以打开左侧的菜单，在这里做拖拽操作一样是可以的。个人感觉后者更方便一些。</p>
+<p>开始之前，先来介绍下使用的基本工具吧。</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>第一个按钮是和对齐有关的，就是控制多个元素（Lable, Button等）的统一约束。例如我们需要让标题和内容按照左，就选择标题和内容元素，选择Leading Edges设置为5即可。</p>
+<p><a href="http://itony.me/wp-content/uploads/2013/12/Autolayout_Align.png"><img src="http://itony.me/wp-content/uploads/2013/12/Autolayout_Align.png" alt="Autolayout_Align"></a></p>
+<p>第二个按钮是和元素位置固定有关的限制条件，直接看图吧：</p>
+<p><a href="http://itony.me/wp-content/uploads/2013/12/Autolayout_Pin.png"><img src="http://itony.me/wp-content/uploads/2013/12/Autolayout_Pin.png" alt="Autolayout_Pin"></a></p>
+<p>右侧能够看到当前选择元素限制条件的列表：</p>
+<p><a href="http://itony.me/wp-content/uploads/2013/12/Autolayout_Inspector_Constrainsts-list.png"><img src="http://itony.me/wp-content/uploads/2013/12/Autolayout_Inspector_Constrainsts-list.png" alt="Autolayout_Inspector_Constrainsts list"></a>
+这里有两个参数，“Content Hugging Priority”和“Content Compression Resistance Priority”，感觉不太好理解，栈爆上找到一篇解释，讲的挺好的：<a href="http://stackoverflow.com/questions/15850417/cocoa-autolayout-content-hugging-vs-content-compression-resistance-priority">Cocoa Autolayout: content hugging vs content compression resistance priority</a></p>
+<p>有时候想要一个元素的间距是一个动态值，例如距离右侧至少10pt（即&gt;=10pt），那么可以在上图中点击右侧按钮(齿轮)进入详细设置：</p>
+<p><a href="http://itony.me/wp-content/uploads/2013/12/Autolayout_Constraint_Relation-Config.png"><img src="http://itony.me/wp-content/uploads/2013/12/Autolayout_Constraint_Relation-Config.png" alt="Autolayout_Constraint_Relation Config"></a></p>
+<p>第三个按钮是有关清除限制条件、根据限制更新视图大小的工具。个人比较常用的是清除限制条件，有时候设置错了很麻烦，直接清除掉重新来就行了。</p>
+<p><a href="http://itony.me/wp-content/uploads/2013/12/Autolayout_Resolve-Auto-Layout-Issues.png"><img src="http://itony.me/wp-content/uploads/2013/12/Autolayout_Resolve-Auto-Layout-Issues.png" alt="Autolayout_Resolve Auto Layout Issues"></a></p>
+<p>上面这些就是常用到的一些限制条件了。个人觉得使用右键拖拽弹出的菜单选择更方便和直观一些，因为菜单中会根据拖拽内容动态显示可用项供我们选择，菜单如图</p>
+<p><a href="http://itony.me/wp-content/uploads/2013/12/Autolayout_ShortAction.png"><img src="http://itony.me/wp-content/uploads/2013/12/Autolayout_ShortAction.png" alt="Autolayout_ShortAction"></a></p>
+<p>大致就是这些了吧……</p>
+<p>我来谈谈自己的用法。总体上是从上到下，从左到右做约束限制。在这个例子中，就是设置标题-&gt;内容-&gt;发帖人这样的顺序。</p>
+<p><a href="http://itony.me/wp-content/uploads/2013/12/Autolayout_Example.png"><img src="http://itony.me/wp-content/uploads/2013/12/Autolayout_Example.png" alt="Autolayout_Example"></a></p>
+<ol>
+<li>
+<p>设置标题的顶部和左侧距离，以及宽度（防止超出边界）。</p>
+</li>
+<li>
+<p>设置内容的顶部（距离标题）和左侧距离，以及宽度。设置最大行数。</p>
+</li>
+<li>
+<p>设置发帖人的顶部和左侧距离，以及高度。</p>
+</li>
+<li>
+<p>设置发帖时间的顶部和左侧距离，距离右侧间距（防止内容过长）。</p>
+</li>
+<li>
+<p><strong>关键步骤，设置发帖人距离底部距离，如果不设置这个参数，那么下面代码计算的Cell高度会永远是0。</strong></p>
+</li>
+</ol>
+<p>多试一试，如果有错误或者缺少限制，XCode会有提示。它报出的错误一般都是必须修正的，但它给的自动修正建议有时并不是我们想要的（正确的），想清楚再添加。</p>
+<h2 id="代码部分">代码部分</h2>
+<p>使用了xib制作的Cell，那么在原来的项目代码中如何使用呢？看代码：</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+<p>10</p>
+<p>11</p>
+<p>12</p>
+<p>13</p>
+<p>14</p>
+<p>15</p>
+<p>16</p>
+<p>17</p>
+<p>18</p>
+<p>19</p>
+<p>20</p>
+<p>21</p>
+<p>22</p>
+<p>23</p>
+<p>24</p>
+<p>25</p>
+<p>26</p>
+<p>27</p>
+<p>28</p>
+<p>29</p>
+<p>30</p>
+<p>31</p>
+<p>32</p>
+<p>33</p>
+<p>34</p>
+<p>35</p>
+<p>36</p>
+<p>37</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->static<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->NSString<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->*CellIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->=<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->@&quot;CellIdentifier&quot;<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p> </p>
+<p><!-- raw HTML omitted -->-<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->void<!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->viewDidLoad<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->{<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->	<!-- raw HTML omitted --><!-- raw HTML omitted -->//注册TableView中用于复用的Cell<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->	<!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->self<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->tableView<!-- raw HTML omitted --><!-- raw HTML omitted --> registerNib<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->UINib<!-- raw HTML omitted --><!-- raw HTML omitted --> nibWithNibName<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->@&quot;BBSPostContentCell&quot;<!-- raw HTML omitted --><!-- raw HTML omitted --> bundle<!-- raw HTML omitted --><!-- raw HTML omitted -->:nil<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted --> forCellReuseIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted -->:CellIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->	<!-- raw HTML omitted --><!-- raw HTML omitted -->//&hellip;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->}<!-- raw HTML omitted --></p>
+<p> </p>
+<p><!-- raw HTML omitted -->//关键方法，获取复用的Cell后模拟赋值，然后取得Cell高度<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->-<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->CGFloat<!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->tableView<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->UITableView<!-- raw HTML omitted -->&lt;span class=&quot;crayon-h&rdquo; style=&quot;margin: 0px; padding: 0px; outline: 0px; border: 0px; vertical-align: baseline; font-style: inherit; height: inherit; font-size: inherit !important;</p>
+<p>line-height: inherit !important; color: rgb(0, 111, 224) !important;&ldquo;&gt; <!-- raw HTML omitted --><!-- raw HTML omitted --><em><!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->tableView<!-- raw HTML omitted --><!-- raw HTML omitted --> heightForRowAtIndexPath<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->NSIndexPath<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --></em><!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->indexPath<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->{<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->BBSPostContentCell<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->*cell<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->=<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->tableView<!-- raw HTML omitted --><!-- raw HTML omitted --> dequeueReusableCellWithIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted -->:CellIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->NSDictionary<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->*dataSourceItem<!-- raw HTML omitted -->&lt;span class=&quot;crayon-h&rdquo; style=&quot;m</p>
+<p>argin: 0px; padding: 0px; outline: 0px; border: 0px; vertical-align: baseline; font-style: inherit; height: inherit; font-size: inherit !important; line-height: inherit !important; color: rgb(0, 111, 224) !important;&ldquo;&gt; <!-- raw HTML omitted --><!-- raw HTML omitted -->=<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->self<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->dataSource<!-- raw HTML omitted --><!-- raw HTML omitted --> objectAtIndex<!-- raw HTML omitted --><!-- raw HTML omitted -->:indexPath<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->row<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->cell<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->titleLabel<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->text<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->=<!-- raw HTML omitted --><!-- raw HTML omitted -->  <!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->dataSourceItem<!-- raw HTML omitted --><!-- raw HTML omitted --> valueForKey<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->@&quot;title&quot;<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->cell<!-- raw HTML omitted -->&lt;span class=&quot;crayon-sy&rdquo; style=&quot;margin: 0px; padding: 0px; outline: 0px; border: 0px; vertical-align: baseline; font-style: in</p>
+<p>herit; height: inherit; font-size: inherit !important; line-height: inherit !important; color: rgb(51, 51, 51) !important;&ldquo;&gt;.<!-- raw HTML omitted --><!-- raw HTML omitted -->contentLabel<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->text<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->=<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->dataSourceItem<!-- raw HTML omitted --><!-- raw HTML omitted --> valueForKey<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->@&quot;body&quot;<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->   <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->cell <!-- raw HTML omitted --><!-- raw HTML omitted -->setNeedsUpdateConstraints<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->cell <!-- raw HTML omitted --><!-- raw HTML omitted -->updateConstraintsIfNeeded<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->CGFloat<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->&lt;span class=&quot;crayon-v&rdquo; style=&quot;margin: 0px; padding: 0px; outline: 0px; border: 0px; vertical-align: base</p>
+<p>line; font-style: inherit; height: inherit; font-size: inherit !important; line-height: inherit !important; color: rgb(0, 45, 122) !important;&ldquo;&gt;height<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->=<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->cell<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->contentView<!-- raw HTML omitted --><!-- raw HTML omitted --> systemLayoutSizeFittingSize<!-- raw HTML omitted --><!-- raw HTML omitted -->:UILayoutFittingCompressedSize<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->height<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->return<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->height<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->}<!-- raw HTML omitted --></p>
+<p> </p>
+<p><!-- raw HTML omitted -->//在cellForRowAtIndexPath中，按照常规方法做赋值就行了<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->-<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->UITableViewCell<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->*<!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->tableView<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted -->&lt;span class=&quot;cra</p>
+<p>yon-sy&rdquo; style=&quot;margin: 0px; padding: 0px; outline: 0px; border: 0px; vertical-align: baseline; font-style: inherit; height: inherit; font-size: inherit !important; line-height: inherit !important; color: rgb(51, 51, 51) !important;&ldquo;&gt;(<!-- raw HTML omitted --><!-- raw HTML omitted -->UITableView<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --><em><!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->tableView<!-- raw HTML omitted --><!-- raw HTML omitted --> cellForRowAtIndexPath<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->NSIndexPath<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --></em><!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->indexPath<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->{<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->	<!-- raw HTML omitted --><!-- raw HTML omitted -->BBSPostContentCell<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->*cell<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->=<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->tableView<!-- raw HTML omitted --><!-- raw HTML omitted --> dequeueReusableCellWithIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted -->:CellIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted -->&lt;span class=&quot;crayon-t&rdquo; style=&quot;margin: 0px; padding: 0px; outline: 0px; border: 0px; vertical-align: baseline; font-style: inherit; height: inherit; font-weight: bold</p>
+<p>!important; font-size: inherit !important; line-height: inherit !important; color: rgb(128, 0, 128) !important;&ldquo;&gt;NSDictionary<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->*dic<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->=<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->dataSource<!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->indexPath<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->row<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->cell<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->titleLabel<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->text<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->=<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->dic<!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->@&quot;title&quot;<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->cell<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->contentLabel<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->text<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->=<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->dic<!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->@&quot;body&quot;<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->return<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->cell<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->}<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>2014.1.2: 在测试时发现这部分的代码还存在一些性能问题（整个表视图在更新时会卡顿），我会稍后补上。</p>
+<p>我在使用Instruments分析发现，heightForRowAtIndexPath中调用dequeueReusableCellWithIdentifier会占用很多CPU资源，因此我试着不使用registerNib方法注册复用Cell，而在代码中手动处理，类似这样：</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->BBSPostContentCell<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->*cell&lt;/</p>
+<p>span&gt;<!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->=<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->tableView<!-- raw HTML omitted --><!-- raw HTML omitted --> dequeueReusableCellWithIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted -->:CellIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->if<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->cell<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->==<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->nil<!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->{<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->cell<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->=<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->NSBundle<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->mainBundle<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted -->&lt;span class=&quot;crayon-e &quot; style=&quot;margin: 0px; padding: 0px; outl</p>
+<p>ine: 0px; border: 0px; vertical-align: baseline; font-style: inherit; height: inherit; font-size: inherit !important; line-height: inherit !important; color: teal !important;&ldquo;&gt; loadNibNamed<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->@&quot;BBSPostContentCell&quot;<!-- raw HTML omitted --><!-- raw HTML omitted --> owner<!-- raw HTML omitted --><!-- raw HTML omitted -->:self<!-- raw HTML omitted --><!-- raw HTML omitted --> options<!-- raw HTML omitted --><!-- raw HTML omitted -->:NULL<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->0<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->NSLog<!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->@&quot;cell loadNibNamed&quot;<!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->}<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->else<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->{<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->	<!-- raw HTML omitted --><!-- raw HTML omitted -->NSLog<!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->@&quot;cell dequeueReusableCellWithIdentifier&quot;<!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->}<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>这时我发现这里的Cell调用dequeueReusableCellWithIdentifier方法总是返回nil，因此每次都是从xib中加载，从而耗费了大量的资源。问题的原因我还不清楚，目前我的解决方法是，单独生成一个Cell用于在heightForRowAtIndexPath方法中计算高度。</p>
+<p>其次，在[tableView reloadData]和[tableView insertRowsAtIndexPaths]时，底层会将所有行高重新计算，这个会占用大量的时间，因此我试着对行高做了缓存，暂时解决了这个问题。</p>
+<h2 id="关于兼容性问题">关于兼容性问题</h2>
+<p>由于Autolayout只能在iOS6.0以上版本使用，而根据友盟统计，目前6.0以下的用户大概还有8%左右（2013.12）。现在有两个办法解决：</p>
+<ol>
+<li>
+<p>哥不在乎，放弃这些用户！（好霸气=。=）把项目的部署版本修改为6.0以上即可。</p>
+</li>
+<li>
+<p>咳…咳…这个嘛，用户还是有必要支持的………恩，那我们来说说这个怎么兼容。</p>
+</li>
+</ol>
+<p>思路很简单，我们告诉XCode，6.0以上版本使用Autolayout，以下的旧版本不要使用这个就可以了。</p>
+<p>将原xib文件inspector中选择”Interface Builder Document”-&gt;”Build for”-&gt;”iOS 6.0 and Later”，告诉XCode，这个xib在6.0以上设备编译。</p>
+<p>将xib文件拷贝一份副本，命名为”xxx_iOS5.xib”，在inspector中选择”Project Deployment Target”，也就是说使用项目部署目标版本（即最低版本5.0），并取消”Use Autolayout”选项。</p>
+<p>在代码中根据系统版本加载不同的xib文件：</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+<p>10</p>
+<p>11</p>
+<p>12</p>
+<p>13</p>
+<p>14</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) <!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->(<!-- raw HTML omitted -->&lt;span class=&quot;crayon-sy&rdquo; style=&quot;margin: 0px; padding: 0px; outline: 0px; border: 0px; vertical-align: baseline; font-st</p>
+<p>yle: inherit; height: inherit; font-size: inherit !important; line-height: inherit !important; color: rgb(51, 51, 51) !important;&ldquo;&gt;[<!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->UIDevice<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->currentDevice<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted --> systemVersion<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted --> compare<!-- raw HTML omitted --><!-- raw HTML omitted -->:v<!-- raw HTML omitted --><!-- raw HTML omitted --> options<!-- raw HTML omitted --><!-- raw HTML omitted -->:NSNumericSearch<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->!=<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->NSOrderedAscending<!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --></p>
+<p> </p>
+<p><!-- raw HTML omitted -->#define IS_SUPPORT_AUTOLAYOUT   SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@&quot;6.0&quot;)<!-- raw HTML omitted --></p>
+<p> </p>
+<p><!-- raw HTML omitted -->-<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->void<!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->viewDidLoad<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->{<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->	<!-- raw HTML omitted --><!-- raw HTML omitted -->if<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted -->&lt;span class=&quot;crayon-o&rdquo; style=&quot;margin: 0px; paddin</p>
+<p>g: 0px; outline: 0px; border: 0px; vertical-align: baseline; font-style: inherit; height: inherit; font-size: inherit !important; line-height: inherit !important; color: rgb(0, 111, 224) !important;&ldquo;&gt;!<!-- raw HTML omitted --><!-- raw HTML omitted -->IS_SUPPORT_AUTOLAYOUT<!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->{<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->	    <!-- raw HTML omitted --><!-- raw HTML omitted -->//for iOS 5.x<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->	    <!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->self<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->tableView<!-- raw HTML omitted --><!-- raw HTML omitted --> registerNib<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->UINib<!-- raw HTML omitted --><!-- raw HTML omitted --> nibWithNibName<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->@&quot;BBSPostContentCell_iOS5&quot;<!-- raw HTML omitted --><!-- raw HTML omitted --> bundle<!-- raw HTML omitted --><!-- raw HTML omitted -->:nil<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted --> forCellReuseIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted -->:CellIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->	<!-- raw HTML omitted --><!-- raw HTML omitted -->}<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->else<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->&lt;span class=&quot;crayon-sy&rdquo; style=&quot;marg</p>
+<p>in: 0px; padding: 0px; outline: 0px; border: 0px; vertical-align: baseline; font-style: inherit; height: inherit; font-size: inherit !important; line-height: inherit !important; color: rgb(51, 51, 51) !important;&ldquo;&gt;{<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->	    <!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->self<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->tableView<!-- raw HTML omitted --><!-- raw HTML omitted --> registerNib<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->[<!-- raw HTML omitted --><!-- raw HTML omitted -->UINib<!-- raw HTML omitted --><!-- raw HTML omitted --> nibWithNibName<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->@&quot;BBSPostContentCell&quot;<!-- raw HTML omitted --><!-- raw HTML omitted --> bundle<!-- raw HTML omitted --><!-- raw HTML omitted -->:nil<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted --> forCellReuseIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted -->:CellIdentifier<!-- raw HTML omitted --><!-- raw HTML omitted -->]<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->	<!-- raw HTML omitted --><!-- raw HTML omitted -->}<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->}<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>最后别忘了在高度计算时，区分下代码：</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>x !important; border: none !important; vertical-align: top !important; background-position: 0px 50%;&ldquo;&gt;<!-- raw HTML omitted --></p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<p>8</p>
+<p>9</p>
+<p>10</p>
+<p>11</p>
+<p>12</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->-<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->CGFloat<!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->tableView<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->UITableView<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --><em><!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->tableView<!-- raw HTML omitted --><!-- raw HTML omitted --> heightForRowAtIndexPath<!-- raw HTML omitted --><!-- raw HTML omitted -->:<!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->NSIndexPath<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted --></em><!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted --><!-- raw HTML omitted -->indexPath<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->{<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->if<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->(<!-- raw HTML omitted --><!-- raw HTML omitted -->IS_SUPPORT_AUTOLAYOUT<!-- raw HTML omitted --><!-- raw HTML omitted -->)<!-- raw HTML omitted -->&lt;span class=&quot;c</p>
+<p>rayon-h&rdquo; style=&quot;margin: 0px; padding: 0px; outline: 0px; border: 0px; vertical-align: baseline; font-style: inherit; height: inherit; font-size: inherit !important; line-height: inherit !important; color: rgb(0, 111, 224) !important;&ldquo;&gt; <!-- raw HTML omitted --><!-- raw HTML omitted -->{<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->        <!-- raw HTML omitted --><!-- raw HTML omitted -->//Autolayout部分代码，同上<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->        <!-- raw HTML omitted --><!-- raw HTML omitted -->//&hellip;..<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->        <!-- raw HTML omitted --><!-- raw HTML omitted -->return<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->height<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->}<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->else<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->{<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    	<!-- raw HTML omitted --><!-- raw HTML omitted -->//for iOS 5.x<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    	<!-- raw HTML omitted --><!-- raw HTML omitted -->//为了简单起见，就直接使用固定值了，当然如果你要自己为iOS5用户手动计算动态高度，也是可以的。<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->        <!-- raw HTML omitted --><!-- raw HTML omitted -->return<!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted --><!-- raw HTML omitted -->81<!-- raw HTML omitted --><!-- raw HTML omitted -->;<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->    <!-- raw HTML omitted --><!-- raw HTML omitted -->}<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->}<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>完成了！</p>
+<p><!-- raw HTML omitted -->原创文章，采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> 进行许可。
+转载请注明：转载自 <a href="http://itony.me/">Tony's blog</a>，原文网址：<a href="http://itony.me/381.html">http://itony.me/381.html</a><!-- raw HTML omitted --></p>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/ios-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%9C%A8block%E9%87%8C%E7%94%A8self%E9%80%A0%E6%88%90%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/">如何避免在Block里用self造成循环引用</a></li>
+        
+        <li><a href="/posts/ios-nsdata%E8%BD%ACint/">NSData转int</a></li>
+        
+        <li><a href="/posts/web-seoer%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF/">SEOer的优化思路</a></li>
+        
+        <li><a href="/desc/ios-about/">关于iOS</a></li>
+        
+        <li><a href="/ios/">关于iOS</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/ios-cocoapod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/tools-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-http/" title="Linux版本使用总结">Linux版本使用总结</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-epoll/" title="epoll原理">epoll原理</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/goland-%E4%BD%BF%E7%94%A8/" title="Goland 使用">Goland 使用</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="System MQ消息队列">System MQ消息队列</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/go-cgo/" title="Go CGO">Go CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/go-gofmt/" title="Go Gofmt">Go Gofmt</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/archives/">archives(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/blog/">blog(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/docker/">docker(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/git/">git(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(52)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(84)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/it%E9%BB%91%E8%AF%9D/">it黑话(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(12)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/seo/">seo(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(13)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/system/">system(30)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web/">web(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%81%A5%E5%BA%B7/">健康(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">其他技术(16)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%8D%81%E4%B8%87%E4%B8%AA%E4%B8%BA%E4%BB%80%E4%B9%88/">十万个为什么(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(24)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/">开源(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(14)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%97%E6%96%87/">诗文(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(18)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/">软技能(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93/">道(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93%E6%B3%95/">道法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/">错误集锦(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%98%85%E8%AF%BB/">阅读(5)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/apple/">apple</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/autoclosure/">autoclosure</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/const/">const</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/define/">define</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/error/">error</a>
+    
+    <a href="https://blog.v5u.win/tags/escaping/">escaping</a>
+    
+    <a href="https://blog.v5u.win/tags/express/">express</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/git/">git</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/hexo/">hexo</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E8%80%83%E5%8F%A4/">it考古</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/jekyll/">jekyll</a>
+    
+    <a href="https://blog.v5u.win/tags/k8s/">k8s</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kubernetes/">kubernetes</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/linux/">linux</a>
+    
+    <a href="https://blog.v5u.win/tags/lnmp/">lnmp</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongodb/">mongodb</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/node/">node</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/noescape/">noescape</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/orm/">orm</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/ppspider/">ppspider</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/skecth/">skecth</a>
+    
+    <a href="https://blog.v5u.win/tags/sqlite/">sqlite</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/system/">system</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/xampp/">xampp</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%8C%BB/">中医</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%96%87/">文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%97%B6%E9%97%B4%E6%88%B3/">时间戳</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%97%E6%96%87/">诗文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/">进程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%81%93/">道</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+</body>
+</html>

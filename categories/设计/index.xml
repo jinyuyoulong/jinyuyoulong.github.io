@@ -13,10 +13,10 @@
     
     <item>
       <title>2020 04 21 元编程</title>
-      <link>https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/</link>
+      <link>https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Tue, 21 Apr 2020 13:09:22 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
       <description>元编程 meta programming 元编程是一种通过代码生成代码的思想，一般分为两种形式： macro宏展开 或者 模板 runtime 运行时 宏系统分为两种： 文本替换，比如 C 和 C++ 抽象语法</description>
     </item>
     
@@ -30,24 +30,6 @@
     </item>
     
     <item>
-      <title>markdown 常用语法整理</title>
-      <link>https://blog.v5u.win/markdown-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/</link>
-      <pubDate>Fri, 10 May 2019 03:18:37 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/markdown-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/</guid>
-      <description>Text &amp;lt; h1&amp;gt; 1级标题 &amp;lt; h1&amp;gt; Text &amp;lt; h2&amp;gt; 2级标题 &amp;lt; h2&amp;gt; Text &amp;lt; h3&amp;gt; 3级标题 &amp;lt; h3&amp;gt; Text &amp;lt; h4&amp;gt; 4级标题 &amp;lt; h4&amp;gt; Text &amp;lt; h5&amp;gt; 5级标题 &amp;lt; h5&amp;gt; Text &amp;lt; h6&amp;gt; 6级标题 &amp;lt; h6&amp;gt; 有序列表 ul&amp;gt;li 有 序 无序列表 ol&amp;gt;li 无 序 任务</description>
-    </item>
-    
-    <item>
-      <title>markdown 流程图</title>
-      <link>https://blog.v5u.win/markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
-      <pubDate>Thu, 09 May 2019 05:31:31 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
-      <description>Sequence flow mermaid Gantt</description>
-    </item>
-    
-    <item>
       <title>写代码原则整理之王垠</title>
       <link>https://blog.v5u.win/%E5%86%99%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%88%99%E6%95%B4%E7%90%86%E4%B9%8B%E7%8E%8B%E5%9E%A0/</link>
       <pubDate>Wed, 16 Jan 2019 03:34:22 +0000</pubDate>
@@ -58,10 +40,10 @@
     
     <item>
       <title>沙龙举办流程</title>
-      <link>https://blog.v5u.win/%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E%E6%B5%81%E7%A8%8B/</link>
-      <pubDate>Wed, 16 Jan 2019 03:32:55 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/design-%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E%E6%B5%81%E7%A8%8B/</guid>
+      <guid>https://blog.v5u.win/posts/design-%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E%E6%B5%81%E7%A8%8B/</guid>
       <description>*title: 沙龙举办流程 date: 2018-11-19 在开放的基础上，环境应当设置的尽可能的平等。比如尽可能的采用圆桌形式，而且参与人员尽量围成一个圈，避免层次上的区别， 主持人</description>
     </item>
     
@@ -85,10 +67,10 @@
     
     <item>
       <title>编程原则-参数处理</title>
-      <link>https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99-%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86/</link>
-      <pubDate>Sun, 14 Feb 2016 04:03:13 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/design-%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99-%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sun, 14 Feb 2016 12:03:13 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99-%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86/</guid>
+      <guid>https://blog.v5u.win/posts/design-%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99-%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86/</guid>
       <description>参数处理原则 软件开发过程当中，需要传递数据作为参数，很多时候我们需要的数据是要经过处理的，这时作为参数传递的部分尽量传递源数据，数据处理放在</description>
     </item>
     

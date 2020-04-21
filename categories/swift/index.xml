@@ -6,62 +6,71 @@
     <description>Recent content in swift on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 16 Jul 2019 06:05:05 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Jun 2019 10:37:16 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/swift/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>什么是swiftUI</title>
-      <link>https://blog.v5u.win/%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</link>
-      <pubDate>Tue, 16 Jul 2019 06:05:05 +0000</pubDate>
+      <title>iOS SwiftUI</title>
+      <link>https://blog.v5u.win/posts/swift-%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</link>
+      <pubDate>Wed, 05 Jun 2019 10:37:16 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</guid>
+      <guid>https://blog.v5u.win/posts/swift-%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</guid>
       <description>[TOC] 什么是swiftUI？ Apple的解释： 更好的应用。更少的代码。 SwiftUI是一种创新的，非常简单的方法，可以通过Swift的强大功能在</description>
     </item>
     
     <item>
-      <title>as as! as?</title>
-      <link>https://blog.v5u.win/as-as-as/</link>
-      <pubDate>Wed, 16 Jan 2019 03:40:02 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/as-as-as/</guid>
-      <description>*title: as as! as? date: 2016-10-26 13:52:46 tags: as categories: Swiftid: 2 Swift开发之 is、 as、as!、as?三种类型转换操作符 1，as使用场合 （1）从派生类转换为基类，向上转型（up</description>
-    </item>
-    
-    <item>
-      <title>swift中weak和unowned的区别</title>
-      <link>https://blog.v5u.win/swift%E4%B8%ADweak%E5%92%8Cunowned%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
-      <pubDate>Tue, 13 Dec 2016 08:34:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/swift%E4%B8%ADweak%E5%92%8Cunowned%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
-      <description>weak和unowned都是解决循环引用的关键字 区别： 如果您是一直写 Objective-C 过来的，那么从表面的行为上来说 unowned 更像以前的 unsafe_unretai</description>
-    </item>
-    
-    <item>
       <title>swift 关键字篇</title>
-      <link>https://blog.v5u.win/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/</link>
-      <pubDate>Tue, 13 Dec 2016 07:45:27 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/</link>
+      <pubDate>Tue, 13 Dec 2016 15:45:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/</guid>
+      <guid>https://blog.v5u.win/posts/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/</guid>
       <description>@noescape：no escape(没有逃脱) 用来修饰闭包，含义为非逃逸闭包。 当闭包作为参数传递进函数时，如果这个闭包只在函数中被使用，则</description>
     </item>
     
     <item>
-      <title>Xcode8添加iOS7真机调试</title>
-      <link>https://blog.v5u.win/xcode8%E6%B7%BB%E5%8A%A0ios7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/</link>
-      <pubDate>Mon, 19 Sep 2016 03:58:47 +0000</pubDate>
+      <title>AnyBidirectionalCollection</title>
+      <link>https://blog.v5u.win/posts/swift-anybidirectionalcollection/</link>
+      <pubDate>Thu, 27 Oct 2016 20:01:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/xcode8%E6%B7%BB%E5%8A%A0ios7%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/</guid>
-      <description>打开Xcode8和Xcode7的app包内容 Contants/Developer/Platforms/iPhoneOS.platform/DeviceSupport 将Xcode7的iOS7的框架copy到Xcode8内</description>
+      <guid>https://blog.v5u.win/posts/swift-anybidirectionalcollection/</guid>
+      <description>A type-erased wrapper over any collection with indices that support bidirectional traversal. 一种类型擦除的集合(索引支持双向遍历)</description>
+    </item>
+    
+    <item>
+      <title>as as! as?</title>
+      <link>https://blog.v5u.win/posts/swift-as/</link>
+      <pubDate>Wed, 26 Oct 2016 13:52:46 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/swift-as/</guid>
+      <description>*title: as as! as? date: 2016-10-26 13:52:46 tags: as categories: Swiftid: 2 Swift开发之 is、 as、as!、as?三种类型转换操作符 1，as使用场合 （1）从派生类转换为基类，向上转型（up</description>
+    </item>
+    
+    <item>
+      <title>swift Enum</title>
+      <link>https://blog.v5u.win/posts/swift-enum/</link>
+      <pubDate>Tue, 25 Oct 2016 19:50:02 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/swift-enum/</guid>
+      <description>普通创建 enum SomeEnum: NSInteger { case A case B case C } 可以在Objective-C中使用的（添加@objc 关键字） @objc enum Bear: Int { case Black, Grizzly, Polar }</description>
+    </item>
+    
+    <item>
+      <title>weak-unowned</title>
+      <link>https://blog.v5u.win/posts/swift-weak-unowned/</link>
+      <pubDate>Mon, 19 Sep 2016 18:11:47 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/swift-weak-unowned/</guid>
+      <description>swift weak和unowned 的区别 unowned 设置以后即使它原来引用的内容已经被释放了，它仍然会保持对被已经释放了的对象的一个 &amp;ldquo;无效的&amp;rd</description>
     </item>
     
     <item>
       <title>struct 和class的区别</title>
-      <link>https://blog.v5u.win/struct-%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
-      <pubDate>Mon, 15 Aug 2016 07:58:34 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/swift-struct-%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Mon, 15 Aug 2016 15:58:34 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/struct-%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <guid>https://blog.v5u.win/posts/swift-struct-%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
       <description>struct是值类型，值类型在传递和赋值时将进行复制。 class是`引用类型`，引用类型只会使用引用对象的一个『指向』&amp;lt;/p&amp;gt; c</description>
     </item>
     
@@ -75,6 +84,15 @@
     </item>
     
     <item>
+      <title>swiftError</title>
+      <link>https://blog.v5u.win/posts/swift-swifterror/</link>
+      <pubDate>Fri, 29 Jul 2016 11:46:10 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/swift-swifterror/</guid>
+      <description>value of type &amp;lsquo;UILable&amp;rsquo; has no member &amp;lsquo;then&amp;rsquo; UILable 没有扩展 then的协议 fix： extension UIView: Then{}</description>
+    </item>
+    
+    <item>
       <title>Swift与Objective-C的兼容方法:@objc和Dynamic</title>
       <link>https://blog.v5u.win/swift%E4%B8%8Eobjective-c%E7%9A%84%E5%85%BC%E5%AE%B9%E6%96%B9%E6%B3%95objc%E5%92%8Cdynamic/</link>
       <pubDate>Tue, 07 Jun 2016 02:02:09 +0000</pubDate>
@@ -85,28 +103,28 @@
     
     <item>
       <title>swift 中初始化ViewController</title>
-      <link>https://blog.v5u.win/swift-%E4%B8%AD%E5%88%9D%E5%A7%8B%E5%8C%96viewcontroller/</link>
-      <pubDate>Mon, 06 Jun 2016 10:25:00 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/swift-%E4%B8%AD%E5%88%9D%E5%A7%8B%E5%8C%96viewcontroller/</link>
+      <pubDate>Mon, 06 Jun 2016 18:25:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/swift-%E4%B8%AD%E5%88%9D%E5%A7%8B%E5%8C%96viewcontroller/</guid>
+      <guid>https://blog.v5u.win/posts/swift-%E4%B8%AD%E5%88%9D%E5%A7%8B%E5%8C%96viewcontroller/</guid>
       <description>let vc = NameVC() init(title: String){ super.init(nibName: nil, bundle: nil) self.title = title } required init?(coder aDecoder: NSCoder) { fatalError(&amp;quot;init(coder:) has not been implemented&amp;quot;) }</description>
     </item>
     
     <item>
-      <title>swift 常见错误 class xxx has no initializers</title>
-      <link>https://blog.v5u.win/class-xxx-has-no-initializers/</link>
-      <pubDate>Mon, 25 Apr 2016 09:09:01 +0000</pubDate>
+      <title>class xxx has no initializers</title>
+      <link>https://blog.v5u.win/posts/swift-class-xxx-has-no-initializers/</link>
+      <pubDate>Mon, 25 Apr 2016 17:09:01 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/class-xxx-has-no-initializers/</guid>
-      <description>swift 常见错误 error: class xxx has no initializers 这是说变量没有初始化，比如 var label:UILabel 应该写成 var label:UILabel?</description>
+      <guid>https://blog.v5u.win/posts/swift-class-xxx-has-no-initializers/</guid>
+      <description>error: class xxx has no initializers 这是说变量没有初始化，比如 var label:UILabel 应该写成 var label:UILabel?</description>
     </item>
     
     <item>
       <title>braced block of statements is an unused closure</title>
-      <link>https://blog.v5u.win/braced-block-of-statements-is-an-unused-closure/</link>
-      <pubDate>Tue, 01 Mar 2016 07:31:45 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/swift-braced-block-of-statements-is-an-unused-closure/</link>
+      <pubDate>Tue, 01 Mar 2016 15:31:45 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/braced-block-of-statements-is-an-unused-closure/</guid>
+      <guid>https://blog.v5u.win/posts/swift-braced-block-of-statements-is-an-unused-closure/</guid>
       <description>使用swift写dome时xcode报一下错误： braced block of statements is an unused closure 原因及收获： for循环的条件语句不能有空格，如：for i=0; i&amp;lt;3; i++ {} 其他控制语句也</description>
     </item>
     

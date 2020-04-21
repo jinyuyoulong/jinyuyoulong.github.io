@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kubernetes on 为吾优</title>
@@ -13,10 +13,10 @@
     
     <item>
       <title>k8s在Mac上的安装和使用</title>
-      <link>https://blog.v5u.win/post/docker-k8s/</link>
+      <link>https://blog.v5u.win/posts/docker-k8s/</link>
       <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/docker-k8s/</guid>
+      <guid>https://blog.v5u.win/posts/docker-k8s/</guid>
       <description>安装 在Mac下安装前提条件，已经安装好了docker desktop，并修改了代理源 https://registry.docker-cn.co</description>
     </item>
     

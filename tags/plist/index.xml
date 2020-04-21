@@ -6,17 +6,17 @@
     <description>Recent content in plist on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 07 Mar 2016 10:28:25 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Mar 2016 18:28:25 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/plist/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Xcode7 如何设置访问某些权限时的alert内容</title>
-      <link>https://blog.v5u.win/xcode7-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E8%AE%BF%E9%97%AE%E6%9F%90%E4%BA%9B%E6%9D%83%E9%99%90%E6%97%B6%E7%9A%84alert%E5%86%85%E5%AE%B9/</link>
-      <pubDate>Mon, 07 Mar 2016 10:28:25 +0000</pubDate>
+      <title>iOS权限使用说明</title>
+      <link>https://blog.v5u.win/posts/ios-rightalert/</link>
+      <pubDate>Mon, 07 Mar 2016 18:28:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/xcode7-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E8%AE%BF%E9%97%AE%E6%9F%90%E4%BA%9B%E6%9D%83%E9%99%90%E6%97%B6%E7%9A%84alert%E5%86%85%E5%AE%B9/</guid>
+      <guid>https://blog.v5u.win/posts/ios-rightalert/</guid>
       <description>举个栗子: 我想访问用户的照片，第一次时会弹出alert框询问用户是否将该权限开放给APP 这时为了增加用户友好度，我们有必要在询问的时候加一些</description>
     </item>
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>软技能 on 为吾优</title>
@@ -13,28 +13,28 @@
     
     <item>
       <title>开源贡献者盟约</title>
-      <link>https://blog.v5u.win/post/system-%E8%B4%A1%E7%8C%AE%E8%80%85%E7%9B%9F%E7%BA%A6/</link>
+      <link>https://blog.v5u.win/posts/system-%E5%BC%80%E6%BA%90%E8%B4%A1%E7%8C%AE%E8%80%85%E7%9B%9F%E7%BA%A6/</link>
       <pubDate>Tue, 25 Jun 2019 15:38:20 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-%E8%B4%A1%E7%8C%AE%E8%80%85%E7%9B%9F%E7%BA%A6/</guid>
+      <guid>https://blog.v5u.win/posts/system-%E5%BC%80%E6%BA%90%E8%B4%A1%E7%8C%AE%E8%80%85%E7%9B%9F%E7%BA%A6/</guid>
       <description>[TOC] 参与者公约 我们的保证 为了促进一个开放透明且友好的环境，我们作为贡献者和维护者保证：无论年龄、种族、民族、性别认同和表达（方式）、体型、身体</description>
     </item>
     
     <item>
       <title>沙龙举办流程</title>
-      <link>https://blog.v5u.win/post/read-%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E/</link>
+      <link>https://blog.v5u.win/posts/design-%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E%E6%B5%81%E7%A8%8B/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/read-%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E/</guid>
-      <description>在开放的基础上，环境应当设置的尽可能的平等。比如尽可能的采用圆桌形式，而且参与人员尽量围成一个圈，避免层次上的区别， 主持人的重点不是表达自己</description>
+      <guid>https://blog.v5u.win/posts/design-%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E%E6%B5%81%E7%A8%8B/</guid>
+      <description>*title: 沙龙举办流程 date: 2018-11-19 在开放的基础上，环境应当设置的尽可能的平等。比如尽可能的采用圆桌形式，而且参与人员尽量围成一个圈，避免层次上的区别， 主持人</description>
     </item>
     
     <item>
       <title>OpenShift的使用</title>
-      <link>https://blog.v5u.win/post/system-openshift/</link>
+      <link>https://blog.v5u.win/posts/web-openshift%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 14 Dec 2016 17:56:33 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/post/system-openshift/</guid>
+      <guid>https://blog.v5u.win/posts/web-openshift%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>注册完成后如何使用命令行连接服务器 登录OpenShift网站，进入app的详情页，找到隐藏的ssh连接，不是下载地址的ssh连接，拷贝后直接</description>
     </item>
     

@@ -13,6 +13,15 @@
     
     <item>
       <title>gitbook如何生成epub</title>
+      <link>https://blog.v5u.win/posts/system-gitbook-make-epub/</link>
+      <pubDate>Wed, 23 May 2018 15:44:43 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/system-gitbook-make-epub/</guid>
+      <description>全局安装gitbook ：npm install -g gitbook 下载calibre安装应用 将calibre中的执行文件ebook-convert链接到shall环境：$</description>
+    </item>
+    
+    <item>
+      <title>gitbook如何生成epub</title>
       <link>https://blog.v5u.win/gitbook%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90epub/</link>
       <pubDate>Wed, 23 May 2018 15:44:43 +0000</pubDate>
       

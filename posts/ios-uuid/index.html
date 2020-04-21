@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.66.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>iOS7之后如何获得APP唯一的身份标识 | 为吾优</title>
+    <meta property="og:title" content="iOS7之后如何获得APP唯一的身份标识 - 为吾优">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content="2015-08-09T11:24:34&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2015-08-09T11:24:34&#43;08:00">
+        
+    <meta name="Keywords" content="博客,Web,Go,iOS">
+    <meta name="description" content="iOS7之后如何获得APP唯一的身份标识">
+        
+    <meta name="author" content="金玉游龙">
+    <meta property="og:url" content="https://blog.v5u.win/posts/ios-uuid/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+        <link rel="stylesheet" href="/css/style.extra.css">
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://blog.v5u.win">
+                        为吾优
+                    </a>
+                
+                <p class="description">走在通往幸福的路上</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://blog.v5u.win">首页</a>
+                    
+                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
+                    
+                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">iOS7之后如何获得APP唯一的身份标识</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2015年8月9日
+                        </date>
+                        
+                        <div class="post-meta">
+                            <span>|</span>
+                            
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/ios">iOS</a></span>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="post-content">
+                            <p><strong>历史：</strong></p>
+<ol>
+<li>iOS 5.0以前，iOS 2.0版本以后UIDevice提供一个获取设备唯一标识符的方法uniqueIdentifier，因为该唯一标识符与手机一一对应，苹果觉得可能会泄露用户隐私，所以在 iOS 5.0之后该方法就被废弃掉了。</li>
+</ol>
+<p>2）iOS 6.0系统新增了两个用于替换uniqueIdentifier的接口，分别是：identifierForVendor，advertisingIdentifier。</p>
+<p>但是APP删除重装后会变化，所以使用WiFi的mac地址来取代已经废弃了的uniqueIdentifier方法。具体的方法晚上有很多，大家感兴趣的可以自己找找，这儿提供一个网址: <a href="http://stackoverflow.com/questions/677530/how-can-i-programmatically-get-the-mac-address-of-an-iphone">http://stackoverflow.com/questions/677530/how-can-i-programmatically-get-the-mac-address-of-an-iphone</a></p>
+<p>3）iOS 7中苹果再一次无情的封杀mac地址，使用之前的方法获取到的mac地址全部都变成了02:00:00:00:00:00。有问题总的解决啊，于是四处查资料，终于有了思路是否可以使用KeyChain来保存获取到的唯一标示符呢，这样以后即使APP删了再装回来，也可以从KeyChain中读取回来。</p>
+<p><strong>OK 正题来了。。。</strong></p>
+<p><strong>KeyChain介绍</strong></p>
+<p>　　我们搞iOS开发，一定都知道OS X里面的KeyChain(钥匙串)，通常要乡镇及调试的话，都得安装证书之类的，这些证书就是保存在KeyChain中，还有我们平时浏览网页记录的账号密码也都是记录在KeyChain中。iOS中的KeyChain相比OS X比较简单，整个系统只有一个KeyChain，每个程序都可以往KeyChain中记录数据，而且只能读取到自己程序记录在KeyChain中的数据。iOS中Security.framework框架提供了四个主要的方法来操作KeyChain:</p>
+<p><a href=""><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<pre><code>// 查询
+OSStatus SecItemCopyMatching(CFDictionaryRef query, CFTypeRef *result);
+
+// 添加
+OSStatus SecItemAdd(CFDictionaryRef attributes, CFTypeRef *result);
+
+// 更新KeyChain中的Item
+OSStatus SecItemUpdate(CFDictionaryRef query, CFDictionaryRef attributesToUpdate);
+
+// 删除KeyChain中的Item
+OSStatus SecItemDelete(CFDictionaryRef query)
+</code></pre><p><a href=""><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<p>　　这四个方法参数比较复杂，一旦传错就会导致操作KeyChain失败，这块儿文档中介绍的比较详细，大家可以查查官方文档<a href="https://developer.apple.com/library/ios/documentation/Security/Reference/keychainservices/Reference/reference.html#//apple_ref/doc/uid/TP30000898">Keychain Services Reference</a>。</p>
+<p>　　前面提到了每个APP只允许访问自己在KeyChain中记录的数据，那么是不是就没有别的办法访问其他APP存在KeyChain的数据了？</p>
+<p>　　苹果提供了一个方法允许同一个发商的多个APP访问各APP之间的途径，即在调SecItemAdd添加数据的时候指定AccessGroup，即访问组。一个APP可以属于同事属于多个分组，添加KeyChain数据访问组需要做一下两件事情:</p>
+<p>　　a、在APP target的bulibSetting里面设置Code Signing Entitlements，指向包含AceessGroup的分组信息的plist文件。该文件必须和工程文件在同一个目录下，我在添加访问分组的时候就因为plist文件位置问题，操作KeyChain失败，查找这个问题还花了好久的时间。</p>
+<p><img src="http://images.cnitblog.com/blog/302680/201308/30004633-f6d30ed8a07d4e5f909e24a94e0b298e.png" alt="img"></p>
+<p>　　b、在工程目录下新建一个KeychainAccessGroups.plist文件，该文件的结构中最顶层的节点必须是一个名为“keychain-access-groups”的Array，并且该Array中每一项都是一个描述分组的NSString。<strong>对于String的格式也有相应要求，格式为:&ldquo;AppIdentifier.com.*</strong>&quot;，其中APPIdentifier就是你的开发者帐号对应的ID。**</p>
+<p>　　c、在代码中往KeyChain中Add数据的时候，设置kSecAttrAccessGroup，代码如下:</p>
+<p><a href=""><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<pre><code>　　 NSString *accessGroup = [NSString stringWithUTF8String:&quot;APPIdentifier.com.cnblogs.smileEvday&quot;];
+    if (accessGroup != nil)
+    {
+#if TARGET_IPHONE_SIMULATOR
+        // Ignore the access group if running on the iPhone simulator.
+        //
+        // Apps that are built for the simulator aren't signed, so there's no keychain access group
+        // for the simulator to check. This means that all apps can see all keychain items when run
+        // on the simulator.
+        //
+        // If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the
+        // simulator will return -25243 (errSecNoAccessForItem).
+#else
+        [dictForQuery setObject:accessGroup forKey:(id)kSecAttrAccessGroup];
+#endif
+    }
+</code></pre><p><a href=""><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<p>　　这段代码是从官方的Demo中直接拷贝过来的，根据注释我们可以看到，模拟器是不支持AccessGroup的，所以才行了预编译宏来选择性添加。</p>
+<p>　　<strong>注：appIdentifer就是开发者帐号的那一串标识，如下图所示：</strong></p>
+<p>　　<img src="http://images.cnitblog.com/blog/302680/201310/09212447-ebd65550015647b788d6d6711b0bb90a.png" alt="img"></p>
+<p>　　打开xcode的Organizer，选择Device选项卡，连接设备就可以看到设备上安装的开发者账号描述文件列表，其中第五列最开始的10个字符即为App Identifier，这块儿前面写的不是很清楚，好多朋友加我qq问我，今天特地补上。</p>
+<p><strong>三、使用KeyChain保存和获取UDID</strong></p>
+<p>　　</p>
+<p>　　说了这么多终于进入正题了，如何在iOS 7上面获取到不变的UDID。我们将第二部分所讲的知识直接应用进来就可以了轻松达到我们要的效果了，下面我们先看看往如何将获取到的identifierForVendor添加到KeyChain中的代码。</p>
+<p><a href=""><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<pre><code>+ (BOOL)settUDIDToKeyChain:(NSString*)udid
+{
+    NSMutableDictionary *dictForAdd = [[NSMutableDictionary alloc] init];
+    
+    [dictForAdd setValue:(id)kSecClassGenericPassword forKey:(id)kSecClass];
+    [dictForAdd setValue:[NSString stringWithUTF8String:kKeychainUDIDItemIdentifier] forKey:kSecAttrDescription];
+    
+    [dictForAdd setValue:@&quot;UUID&quot; forKey:(id)kSecAttrGeneric];    
+    // Default attributes for keychain item.
+    [dictForAdd setObject:@&quot;&quot; forKey:(id)kSecAttrAccount];
+    [dictForAdd setObject:@&quot;&quot; forKey:(id)kSecAttrLabel];    
+    // The keychain access group attribute determines if this item can be shared    // amongst multiple apps whose code signing entitlements contain the same keychain access group.
+    NSString *accessGroup = [NSString stringWithUTF8String:kKeyChainUDIDAccessGroup];    if (accessGroup != nil)
+    {#if TARGET_IPHONE_SIMULATOR        // Ignore the access group if running on the iPhone simulator.        //
+        // Apps that are built for the simulator aren't signed, so there's no keychain access group        // for the simulator to check. This means that all apps can see all keychain items when run        // on the simulator.        //
+        // If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the        // simulator will return -25243 (errSecNoAccessForItem).#else
+        [dictForAdd setObject:accessGroup forKey:(id)kSecAttrAccessGroup];#endif
+    }    const char *udidStr = [udid UTF8String];
+    NSData *keyChainItemValue = [NSData dataWithBytes:udidStr length:strlen(udidStr)];
+    [dictForAdd setValue:keyChainItemValue forKey:(id)kSecValueData];
+    
+    OSStatus writeErr = noErr;    if ([SvUDIDTools getUDIDFromKeyChain]) {        // there is item in keychain        [SvUDIDTools updateUDIDInKeyChain:udid];
+        [dictForAdd release];        return YES;
+    }    else {          // add item to keychain
+        writeErr = SecItemAdd((CFDictionaryRef)dictForAdd, NULL);        if (writeErr != errSecSuccess) {
+            NSLog(@&quot;Add KeyChain Item Error!!! Error Code:%ld&quot;, writeErr);
+            
+            [dictForAdd release];            return NO;
+        }        else {
+            NSLog(@&quot;Add KeyChain Item Success!!!&quot;);
+            [dictForAdd release];            return YES;
+        }
+    }
+    
+    [dictForAdd release];    return NO;
+}
+</code></pre><p><a href=""><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<p>　　上面代码中，首先构建一个要添加到KeyChain中数据的Dictionary，包含一些基本的KeyChain Item的数据类型，描述，访问分组以及最重要的数据等信息，最后通过调用SecItemAdd方法将我们需要保存的UUID保存到KeyChain中。</p>
+<p>　　获取KeyChain中相应数据的代码如下:</p>
+<p><a href=""><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<pre><code>+ (NSString*)getUDIDFromKeyChain
+{
+    NSMutableDictionary *dictForQuery = [[NSMutableDictionary alloc] init];
+    [dictForQuery setValue:(id)kSecClassGenericPassword forKey:(id)kSecClass];    
+    // set Attr Description for query    [dictForQuery setValue:[NSString stringWithUTF8String:kKeychainUDIDItemIdentifier]
+                    forKey:kSecAttrDescription];    
+    // set Attr Identity for query
+    NSData *keychainItemID = [NSData dataWithBytes:kKeychainUDIDItemIdentifier
+                                            length:strlen(kKeychainUDIDItemIdentifier)];
+    [dictForQuery setObject:keychainItemID forKey:(id)kSecAttrGeneric];    
+    // The keychain access group attribute determines if this item can be shared    // amongst multiple apps whose code signing entitlements contain the same keychain access group.
+    NSString *accessGroup = [NSString stringWithUTF8String:kKeyChainUDIDAccessGroup];    if (accessGroup != nil)
+    {#if TARGET_IPHONE_SIMULATOR        // Ignore the access group if running on the iPhone simulator.        //
+        // Apps that are built for the simulator aren't signed, so there's no keychain access group        // for the simulator to check. This means that all apps can see all keychain items when run        // on the simulator.        //
+        // If a SecItem contains an access group attribute, SecItemAdd and SecItemUpdate on the        // simulator will return -25243 (errSecNoAccessForItem).#else
+        [dictForQuery setObject:accessGroup forKey:(id)kSecAttrAccessGroup];#endif
+    }
+    
+    [dictForQuery setValue:(id)kCFBooleanTrue forKey:(id)kSecMatchCaseInsensitive];
+    [dictForQuery setValue:(id)kSecMatchLimitOne forKey:(id)kSecMatchLimit];
+    [dictForQuery setValue:(id)kCFBooleanTrue forKey:(id)kSecReturnData];
+    
+    OSStatus queryErr   = noErr;
+    NSData   *udidValue = nil;
+    NSString *udid      = nil;
+    queryErr = SecItemCopyMatching((CFDictionaryRef)dictForQuery, (CFTypeRef*)&amp;udidValue);
+    
+    NSMutableDictionary *dict = nil;
+    [dictForQuery setValue:(id)kCFBooleanTrue forKey:(id)kSecReturnAttributes];
+    queryErr = SecItemCopyMatching((CFDictionaryRef)dictForQuery, (CFTypeRef*)&amp;dict);    
+    if (queryErr == errSecItemNotFound) {
+        NSLog(@&quot;KeyChain Item: %@ not found!!!&quot;, [NSString stringWithUTF8String:kKeychainUDIDItemIdentifier]);
+    }    else if (queryErr != errSecSuccess) {
+        NSLog(@&quot;KeyChain Item query Error!!! Error code:%ld&quot;, queryErr);
+    }    if (queryErr == errSecSuccess) {
+        NSLog(@&quot;KeyChain Item: %@&quot;, udidValue);        
+        if (udidValue) {
+            udid = [NSString stringWithUTF8String:udidValue.bytes];
+        }
+    }
+    
+    [dictForQuery release];    return udid;
+}
+</code></pre><p><a href=""><img src="http://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<p>　　上面代码的流程也差不多一样，首先创建一个Dictionary，其中设置一下查找条件，然后通过SecItemCopyMatching方法获取到我们之前保存到KeyChain中的数据。</p>
+<p>　　</p>
+<p><strong>四、总结</strong></p>
+<p>　　本文介绍了使用KeyChain实现APP删除后依然可以获取到相同的UDID信息的解决方法。</p>
+<p>　　你可能有疑问，如果系统升级以后，是否仍然可以获取到之前记录的UDID数据？</p>
+<p>　　答案是肯定的，这一点我专门做了测试。就算我们程序删除掉，系统经过升级以后再安装回来，依旧可以获取到与之前一致的UDID。但是当我们把整个系统还原以后是否还能获取到之前记录的UDID，这一点我觉得应该不行，不过手机里面数据太多，没有测试，如果大家有兴趣可以测试一下，验证一下我的猜想。</p>
+<p>　　</p>
+<p>　　完整代码地址: <a href="https://github.com/smileEvday/SvUDID">https://github.com/smileEvday/SvUDID</a></p>
+<p>　　大家如果要在真机运行时，需要替换两个地方:</p>
+<p>　　第一个地方是plist文件中的accessGroup中的APPIdentifier。</p>
+<p>　　第二个地方是SvUDIDTools.m中的kKeyChainUDIDAccessGroup的APPIdentity为你所使用的profile的APPIdentifier。</p>
+<p>　　文章和代码中如果有什么不对的地方，欢迎指正，在这儿先谢过了。</p>
+<p>文章由<a href="http://www.cnblogs.com/smileEvday/p/UDID.html#commentform">一片枫叶的博客</a>修改而来</p>
+
+                        </div>
+
+                        
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/posts/php-xampp/">MAC系统XAMPP 中 MySQL命令行客户端配置使用</a></li>
+        
+        <li><a href="/posts/system-sqlite3/">sqlite3的使用</a></li>
+        
+        <li><a href="/posts/ios-%E8%8E%B7%E5%8F%96tableviewcell%E5%9C%A8%E5%BD%93%E5%89%8D%E5%B1%8F%E5%B9%95%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E5%80%BC/">获取tableviewCell在当前屏幕中的坐标值</a></li>
+        
+        <li><a href="/posts/ios-backbutton-pop-interactive-gesture/">自定义back按钮无法使用系统pop interactive gesture 问题</a></li>
+        
+        <li><a href="/%E8%87%AA%E5%AE%9A%E4%B9%89back%E6%8C%89%E9%92%AE%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9Fpop-interactive-gesture-%E9%97%AE%E9%A2%98/">自定义back按钮无法使用系统pop interactive gesture 问题</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/ios-cocoapod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/tools-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-http/" title="Linux版本使用总结">Linux版本使用总结</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-epoll/" title="epoll原理">epoll原理</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/goland-%E4%BD%BF%E7%94%A8/" title="Goland 使用">Goland 使用</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="System MQ消息队列">System MQ消息队列</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/go-cgo/" title="Go CGO">Go CGO</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/go-gofmt/" title="Go Gofmt">Go Gofmt</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/archives/">archives(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/blog/">blog(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/docker/">docker(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/git/">git(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/go/">go(52)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/ios/">ios(84)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/it%E9%BB%91%E8%AF%9D/">it黑话(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/mac/">mac(12)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/php/">php(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/python/">python(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/seo/">seo(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/swift/">swift(13)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/system/">system(30)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web/">web(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/xcode/">xcode(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册(11)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%81%A5%E5%BA%B7/">健康(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">其他技术(16)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%8D%81%E4%B8%87%E4%B8%AA%E4%B8%BA%E4%BB%80%E4%B9%88/">十万个为什么(9)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(24)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/">开源(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(14)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(17)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(4)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%97%E6%96%87/">诗文(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(18)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/">软技能(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93/">道(3)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%81%93%E6%B3%95/">道法(2)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/">错误集锦(1)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E9%98%85%E8%AF%BB/">阅读(5)</a>
+    </li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://blog.v5u.win/tags/apache/">apache</a>
+    
+    <a href="https://blog.v5u.win/tags/apple/">apple</a>
+    
+    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
+    
+    <a href="https://blog.v5u.win/tags/autoclosure/">autoclosure</a>
+    
+    <a href="https://blog.v5u.win/tags/brew/">brew</a>
+    
+    <a href="https://blog.v5u.win/tags/centos/">centos</a>
+    
+    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
+    
+    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
+    
+    <a href="https://blog.v5u.win/tags/const/">const</a>
+    
+    <a href="https://blog.v5u.win/tags/css/">css</a>
+    
+    <a href="https://blog.v5u.win/tags/define/">define</a>
+    
+    <a href="https://blog.v5u.win/tags/docker/">docker</a>
+    
+    <a href="https://blog.v5u.win/tags/error/">error</a>
+    
+    <a href="https://blog.v5u.win/tags/escaping/">escaping</a>
+    
+    <a href="https://blog.v5u.win/tags/express/">express</a>
+    
+    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
+    
+    <a href="https://blog.v5u.win/tags/gem/">gem</a>
+    
+    <a href="https://blog.v5u.win/tags/git/">git</a>
+    
+    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
+    
+    <a href="https://blog.v5u.win/tags/go/">go</a>
+    
+    <a href="https://blog.v5u.win/tags/hexo/">hexo</a>
+    
+    <a href="https://blog.v5u.win/tags/html/">html</a>
+    
+    <a href="https://blog.v5u.win/tags/http/">http</a>
+    
+    <a href="https://blog.v5u.win/tags/ide/">ide</a>
+    
+    <a href="https://blog.v5u.win/tags/ios/">ios</a>
+    
+    <a href="https://blog.v5u.win/tags/iris/">iris</a>
+    
+    <a href="https://blog.v5u.win/tags/it%E8%80%83%E5%8F%A4/">it考古</a>
+    
+    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
+    
+    <a href="https://blog.v5u.win/tags/jekyll/">jekyll</a>
+    
+    <a href="https://blog.v5u.win/tags/k8s/">k8s</a>
+    
+    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
+    
+    <a href="https://blog.v5u.win/tags/kubernetes/">kubernetes</a>
+    
+    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
+    
+    <a href="https://blog.v5u.win/tags/linux/">linux</a>
+    
+    <a href="https://blog.v5u.win/tags/lnmp/">lnmp</a>
+    
+    <a href="https://blog.v5u.win/tags/mac/">mac</a>
+    
+    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
+    
+    <a href="https://blog.v5u.win/tags/mongodb/">mongodb</a>
+    
+    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
+    
+    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
+    
+    <a href="https://blog.v5u.win/tags/node/">node</a>
+    
+    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
+    
+    <a href="https://blog.v5u.win/tags/noescape/">noescape</a>
+    
+    <a href="https://blog.v5u.win/tags/npm/">npm</a>
+    
+    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
+    
+    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
+    
+    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
+    
+    <a href="https://blog.v5u.win/tags/orm/">orm</a>
+    
+    <a href="https://blog.v5u.win/tags/php/">php</a>
+    
+    <a href="https://blog.v5u.win/tags/pip/">pip</a>
+    
+    <a href="https://blog.v5u.win/tags/plist/">plist</a>
+    
+    <a href="https://blog.v5u.win/tags/ppspider/">ppspider</a>
+    
+    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
+    
+    <a href="https://blog.v5u.win/tags/python/">python</a>
+    
+    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
+    
+    <a href="https://blog.v5u.win/tags/skecth/">skecth</a>
+    
+    <a href="https://blog.v5u.win/tags/sqlite/">sqlite</a>
+    
+    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
+    
+    <a href="https://blog.v5u.win/tags/struct/">struct</a>
+    
+    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
+    
+    <a href="https://blog.v5u.win/tags/swift/">swift</a>
+    
+    <a href="https://blog.v5u.win/tags/system/">system</a>
+    
+    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
+    
+    <a href="https://blog.v5u.win/tags/vim/">vim</a>
+    
+    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
+    
+    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
+    
+    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
+    
+    <a href="https://blog.v5u.win/tags/xampp/">xampp</a>
+    
+    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%8C%BB/">中医</a>
+    
+    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
+    
+    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%96%87/">文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%97%B6%E9%97%B4%E6%88%B3/">时间戳</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
+    
+    <a href="https://blog.v5u.win/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+    
+    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%97%E6%96%87/">诗文</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
+    
+    <a href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/">进程</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%81%93/">道</a>
+    
+    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+
+
+
+    <script src="/js/app.extra.js"></script>
+
+</body>
+</html>

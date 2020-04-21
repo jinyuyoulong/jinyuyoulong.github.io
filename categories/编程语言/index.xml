@@ -13,20 +13,20 @@
     
     <item>
       <title>2020 04 21 元编程</title>
-      <link>https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/</link>
+      <link>https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Tue, 21 Apr 2020 13:09:22 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
       <description>元编程 meta programming 元编程是一种通过代码生成代码的思想，一般分为两种形式： macro宏展开 或者 模板 runtime 运行时 宏系统分为两种： 文本替换，比如 C 和 C++ 抽象语法</description>
     </item>
     
     <item>
-      <title>编程语言选择参考</title>
-      <link>https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E9%80%89%E6%8B%A9%E5%8F%82%E8%80%83/</link>
-      <pubDate>Thu, 21 Mar 2019 05:59:52 +0000</pubDate>
+      <title>如何学习一门新的编程语言</title>
+      <link>https://blog.v5u.win/posts/system-%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E6%96%B0%E7%9A%84%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E9%80%89%E6%8B%A9%E5%8F%82%E8%80%83/</guid>
-      <description>编程语言选择参考 [TOC] 包和模块管理 依赖包多版本管理 python 不能直接管理，需要利用 virtualenv来分割不同的环境 nodejs NPM 包管理，可以同时依赖不同版本的</description>
+      <guid>https://blog.v5u.win/posts/system-%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0%E4%B8%80%E9%97%A8%E6%96%B0%E7%9A%84%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
+      <description>安装开发环境 熟悉数据类型和函数声明 查看内置标准库，了解该语言的基础方法/标准功能 学习一个框架，实现一个具有完整功能的Demo</description>
     </item>
     
     <item>
@@ -36,6 +36,15 @@
       
       <guid>https://blog.v5u.win/%E4%B8%BA%E4%BB%80%E4%B9%88php%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E5%89%8D%E8%BE%B9%E8%A6%81%E5%8A%A0%E7%AC%A6%E5%8F%B7/</guid>
       <description>为什么PHP中的变量前边要加’$’符号 一直都特别好奇 PHP 中的变量前边都加 $ 符号。别的大众编程语言从没见过这种设定，比如：java,c#,c,c</description>
+    </item>
+    
+    <item>
+      <title>如何选择编程语言</title>
+      <link>https://blog.v5u.win/posts/system-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Wed, 19 Oct 2016 10:20:13 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/system-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</guid>
+      <description>学习某个技能，不是单纯为了哪个技能更有前途，而是因为以下几种原因： 解决问题需要用到他； 自己在这方面有天赋能很快的掌握它，技不压身； 学习他能获</description>
     </item>
     
   </channel>

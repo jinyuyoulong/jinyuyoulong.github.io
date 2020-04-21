@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sublime Text on 为吾优</title>
+    <title>sublime text on 为吾优</title>
     <link>https://blog.v5u.win/tags/sublime-text/</link>
-    <description>Recent content in Sublime Text on 为吾优</description>
+    <description>Recent content in sublime text on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 03 Mar 2017 15:18:23 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Nov 2017 17:29:24 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>python-sublime</title>
+      <link>https://blog.v5u.win/posts/python-sublime/</link>
+      <pubDate>Wed, 29 Nov 2017 17:29:24 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/python-sublime/</guid>
+      <description>sublime text 下的Python编译环境设置 file name : python3.sublime-build { &amp;quot;shell_cmd&amp;quot;: &amp;quot;Python编译器的路径 ${file}&amp;quot;, &amp;quot;selector&amp;quot; :&amp;quot;source.python&amp;quot;, &amp;quot;file_regex&amp;quot;:&amp;quot;^(...*?):[0-9]:?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;:&amp;quot;${file_path}&amp;quot;, &amp;quot;env&amp;quot;: {&amp;quot;PYTHONIOENCODING&amp;quot;: &amp;quot;utf8&amp;quot;}, }</description>
+    </item>
     
     <item>
       <title>sublime text3 配置nodejs build 环境</title>
@@ -21,29 +30,20 @@
     </item>
     
     <item>
-      <title>使用sublime text 3 进行Python3开发</title>
-      <link>https://blog.v5u.win/%E4%BD%BF%E7%94%A8sublime-text-3-%E8%BF%9B%E8%A1%8Cpython3%E5%BC%80%E5%8F%91/</link>
-      <pubDate>Mon, 23 Jan 2017 07:22:20 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/%E4%BD%BF%E7%94%A8sublime-text-3-%E8%BF%9B%E8%A1%8Cpython3%E5%BC%80%E5%8F%91/</guid>
-      <description>痛点1：每次编写完Python文件后都要切到terminal下输入python fileName.py命令执行文件。 解决：mac版sublim</description>
-    </item>
-    
-    <item>
       <title>Sublime Text3 使用心得</title>
-      <link>https://blog.v5u.win/sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</link>
-      <pubDate>Fri, 09 Sep 2016 06:45:12 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/tools-sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</link>
+      <pubDate>Fri, 09 Sep 2016 14:45:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</guid>
+      <guid>https://blog.v5u.win/posts/tools-sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</guid>
       <description>build nodejs项目 sublime text 3自带build的系统，只需要在tools-&amp;gt;build system-&amp;gt; new build system&amp;amp;#8230; { &amp;quot;shell_cmd&amp;quot;: &amp;quot;node $file&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.js&amp;quot; } 保存为 node.sublime-b</description>
     </item>
     
     <item>
       <title>Sublime Texts使用tips</title>
-      <link>https://blog.v5u.win/sublime-texts%E4%BD%BF%E7%94%A8tips/</link>
-      <pubDate>Sat, 03 Sep 2016 16:07:07 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/tools-sublime-tips/</link>
+      <pubDate>Sun, 04 Sep 2016 00:07:07 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/sublime-texts%E4%BD%BF%E7%94%A8tips/</guid>
+      <guid>https://blog.v5u.win/posts/tools-sublime-tips/</guid>
       <description>多行编辑：control + 点击各行编辑位置 全局修改所有单词：双击单词，comment+control+G 选中一个单词：Command + D 选中</description>
     </item>
     

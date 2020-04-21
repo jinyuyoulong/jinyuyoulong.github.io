@@ -6,18 +6,26 @@
     <description>Recent content in vscode on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 15 Feb 2019 07:44:23 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>vscode安装golang.org的golint</title>
-      <link>https://blog.v5u.win/vscode%E5%AE%89%E8%A3%85golang-org%E7%9A%84golint/</link>
-      <pubDate>Fri, 15 Feb 2019 07:44:23 +0000</pubDate>
+      <title>vscode远程开发</title>
+      <link>https://blog.v5u.win/posts/vscode-remote/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/vscode%E5%AE%89%E8%A3%85golang-org%E7%9A%84golint/</guid>
-      <description>vscode 安装了 go 插件后，一些 Extensions 无法通过 vscode 自动安装，此时可以手动从控制台安装。下面是一些基础标准库 其中 golint guru gorename 需要手动编译。 因为GitHub中的gol</description>
+      <guid>https://blog.v5u.win/posts/vscode-remote/</guid>
+      <description>vscode 远程编辑 安装插件 remote-ssh 配置.ssh/config 文件 Host 10.211.55.5 HostName 10.211.55.5 IdentityFile ~/.ssh/id_rsa User test 右侧显示显示器图标 点击远程server 新建文件夹（connet to host in new wi</description>
+    </item>
+    
+    <item>
+      <title>vscode配置go开发环境</title>
+      <link>https://blog.v5u.win/posts/go-vscode%E9%85%8D%E7%BD%AEgo%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/go-vscode%E9%85%8D%E7%BD%AEgo%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>下载安装 vscode，安装Go插件。在商店中搜索安装。 配置 settings.json cmd+, ——&amp;gt; 用户设置/扩展 ——&amp;gt; Go configuration / 在 setting.json 中编辑。 参考 Sublime Text 中的 preferences.sublime-setting 很像。 在</description>
     </item>
     
   </channel>
