@@ -1,0 +1,245 @@
+---
+title: Go的数据结构
+date: 2019-02-17
+categories: [Go]
+---
+[TOC]
+
+先来看看Golang关于类型设计的一些原则
+
+  * 变量包括（type, value）两部分，理解这一点就知道为什么nil != nil了
+  * type 包括 static type和concrete type. 简单来说 static type是你在编码是看见的类型(如int、string)，concrete type是runtime系统看见的类型
+  * 类型断言能否成功，取决于变量的concrete type，而不是static type. 因此，一个 reader变量如果它的concrete type也实现了write方法的话，它也可以被类型断言为writer.
+
+#### 变量声明
+
+<pre><code class="language-go line-numbers">var num int = 1     //变量
+const channle = "go"    //常量
+</code></pre>
+
+**注意变量作用域：**在Go语言中，我们对程序实体的访问权限控制只能通过它们的名字来实现。名字首字母为大写的程序实体可以被任何代码包中的代码访问到。而名字首字母为小写的程序实体则只能被同一个代码包中的代码所访问。
+
+## 数据类型
+
+### 基本数据类型
+
+#### 整型
+
+int8 int16 int32 int64, uint8 uint16 uint32 uint64
+
+byte 是 uint8 的别名
+
+rune 是 int32 的别名，用来表示Unicode。&#8217;A&#8217;: U+0041
+
+#### 浮点型
+
+float32,float64
+
+复数 complex64(3.7E+1+5.98E-2i),由两个浮点型组成分别表示实部和虚部
+
+#### 字符型 byte
+
+没有专门的字符型，使用byte 来保存单个字母字符
+
+#### 布尔型 bool
+
+#### 字符串 string
+
+ 从表象上来说是字符序列，但是在底层，一个字符串值却是由若干个字节来表现和存储的。一个字符串（也可以说字符序列）会被Go语言用Unicode编码规范中的UTF-8编码格式编码为字节数组。
+
+ **注意**，我们在一个字符串值或者一个字符串类型的变量之上应用Go语言的内置函数len将会得到代表它的那个字节数组的长度。这可能与我们看到的表象是不同的。字符串的表示法有两种，即：原生表示法和解释型表示法。若用原生表示法，需用反引号“\`”把字符序列包裹起来。若用解释型表示法，则需用双引号“&#8221;”包裹字符序列。
+
+ 二者的区别是，前者表示的值是所见即所得的（除了回车符）。在那对反引号之间的内容就是该字符串值本身。而后者所表示的值中的转义符会起作用并在程序编译期间被转义。所以，如此表示的字符串值的实际值可能会与我们看到的表象不相同。
+
+ 最后要注意，字符串值是不可变的。也就是说，我们一旦创建了一个此类型的值，就不可能再对它本身做任何修改。
+
+**字符串判空**
+
+<pre><code class="language-go line-numbers">var s string if s==""{ // 这种方式是被建议的 }
+if len(s)==0{ // 这种方式不被建议 }
+var byteStr := hex.EncodeToString(valueName.Sum(nil)) // []byte 转 string
+  number := binary.BigEndian.Uint16(hexBytes) // []byte to uint16
+</code></pre>
+
+Russ Cox 的观点就是哪种使得代码更清晰就用哪种。 就字符串是否为空这个语义而言，第一种语义更直接了当，应该是更推荐的。
+
+* * *
+
+### 复杂数据类型
+
+#### 指针 Pointer
+
+#### 数组
+
+声明：type MyNumbers [3]int
+
+表示数组长度为 3 存储元素类型为 int 的容器，MyNumbers 为 [3]int 的别名类型
+
+声明并赋值：
+
+<pre><code class="language-go line-numbers">// 两种声明方式
+var numbers = [3]int{1, 2, 3}
+var numbers = [...]int{1, 2, 3}
+numbers[1] = 4
+</code></pre>
+
+最后，要注意，如果我们只声明一个数组类型的变量而不为它赋值，那么该变量的值将会是指定长度的、其中各元素均为元素类型的零值（或称默认值）的数组值。例如，若有这样一个变量：
+
+<pre><code class="line-numbers">var numbers2 [5]int
+</code></pre>
+
+则它的值会是
+
+<pre><code class="language-go line-numbers">[5]int{0, 0, 0, 0, 0}
+</code></pre>
+
+判空
+
+<pre><code class="language-go line-numbers">&lt;br />if len(sourceArr) &gt; 0 {
+// 就出错了，空也执行了。
+// 因为数组空时也是长度为1
+}
+if sourceArr[0] != "" {
+  // 正确
+}
+</code></pre>
+
+#### Slice 切片
+
+字面量表示：[]int 或 []string
+
+<pre><code class="language-go line-numbers">var numbers3 = [5]int{1, 2, 3, 4, 5}
+var slice1 = numbers3[1:4]//切片表达式 []int{2, 3, 4} 取值范围为 (1:4]
+var slice1 = numbers3[1:4:4]// 第三个索引表示容量上界索引，这样切片数组不可越界访问到后边的数组元素
+</code></pre>
+
+注意，被“切下”的部分**不包含**元素上界索引指向的元素。
+
+如图所示，一个切片值的容量即为它的第一个元素值在其底层数组中的索引值与该数组长度的差值的绝对值。为了获取数组、切片或通道类型的值的容量，我们可以使用内建函数`cap`，如：
+
+<pre><code class="line-numbers">var capacity2 int = cap(slice2)
+</code></pre>
+
+ 最后，要注意，切片类型属于引用类型。它的零值即为`nil`，即空值。如果我们只声明一个切片类型的变量而不为它赋值，那么该变量的值将会是`nil`。例如，若有这样一个变量：
+
+<pre><code class="line-numbers">var slice3 []int
+</code></pre>
+
+则它的值会是 `nil`
+
+* * *
+
+#### 字典 map
+
+<pre><code class="line-numbers">字典类型：map[int]string  map[keyType]valueType
+</code></pre>
+
+<pre><code class="line-numbers">mm := map[int]string{1: "a", 2: "b", 3: "c"}
+</code></pre>
+
+ 然后运用索引表达式取出字典中的值，就像这样：
+
+<pre><code class="line-numbers">b := mm[2]
+e, ok := mm[3]// 因为无键和空值均返回 空值，所以，ok用来获取是否有键。return c ture
+</code></pre>
+
+在Go语言中有这样一项规定，即：对于字典值来说，如果其中不存在索引表达式欲取出的键值对，那么就以它的值类型的空值（或称默认值）作为该索引表达式的求值结果。
+
+引用类型，零值是nil
+
+* * *
+
+#### 通道类型 channel
+
+goroutine是一种函数的并发执行方式，而channel是用来在goroutine之间进行参数传递。main函数本身也运行在一个goroutine中，而go function则表示创建一个新的goroutine，并在这个新的goroutine中执行这个函数。
+
+通道（Channel）是Go语言中一种非常独特的数据结构。它可用于在不同Goroutine之间传递类型化的数据，并且是并发安全的。相比之下，我们之前介绍的那些数据类型都不是并发安全的。这一点需要特别注意。
+
+Goroutine（也称为Go程序）可以被看做是承载可被并发执行的代码块的载体。它们由Go语言的运行时系统调度，并依托操作系统线程（又称内核线程）来并发地执行其中的代码块。
+
+<pre><code class="language-go line-numbers">声明：chan T
+使用：make(chan int, 5)
+// 第一个参数是代表了将被初始化的值的类型的字面量（比如chan int）
+//而第二个参数则是值的长度。例,我们想要初始化一个长度为5且元素类型为int的通道值.
+</code></pre>
+
+<pre><code class="language-go line-numbers">ch1 = make(chan string, 5)
+ch1 &lt;- "value1" //为通道变量赋值
+value := &lt;- ch1 //接收到的 string 赋给变量
+value, ok := &lt;- ch1 // 有两个返回值，ok 代表通道的 bool 状态，开启(有效)还是关闭(无效)
+close(ch1) //关闭通道
+</code></pre>
+
+请注意，对通道值的重复关闭会引发运行时恐慌。这会使程序崩溃。所以一定要避免这种情况的发生。另外，在通道值有效的前提下，针对它的发送操作会在通道值已满（其中缓存的数据的个数已等于它的长度）时被阻塞。而向一个已被关闭的通道值发送数据会引发运行时恐慌。另一方面，针对有效通道值的接收操作会在它已空（其中没有缓存任何数据）时被阻塞。除此之外，还有几条与通道的发送和接收操作有关的规则。不过在这里我们记住上面这三条就可以了。
+
+<pre><code class="language-go line-numbers">make(chan int, 0)// 非缓冲通道，立即阻塞知道值被接收
+type Receiver &lt;-chan int // 单向接收通道类型 &lt;-chan
+//类型Receiver代表了一个只可从中接收数据的单向通道类型。这样的通道也被称为接收通道。
+type Sender chan&lt;- int  // 单向发送通道类型 chan&lt;-
+//单向通道的主要作用是约束程序对通道值的使用方式.
+var myChannel = make(chan int, 3)
+var sender Sender = myChannel
+var receiver Receiver = myChannel
+//编译通过
+var myChannel1 chan int = sender    //编译不通过
+</code></pre>
+
+#### struct 继承
+
+一个结构体嵌到另一个结构体，称作组合
+
+匿名和组合的区别
+
+如果一个struct嵌套了另一个匿名结构体，那么这个结构可以直接访问匿名结构体的方法，从而实现**继承**
+
+如果一个struct嵌套了另一个【有名】的结构体，那么这个模式叫做**组合**
+
+如果一个struct嵌套了多个匿名结构体，那么这个结构可以直接访问多个匿名结构体的方法，从而实现**多重继承**
+
+<pre><code class="language-go line-numbers">type A struct{
+  var name
+}
+type B struct{
+    *A // 继承
+  a *A // 组合
+}
+println(new(B).name)
+</code></pre>
+
+#### interface 接口
+
+接口
+
+#### fanction 函数
+
+函数也是一种数据类型，可以作为参数传递
+
+### 数据类型转换
+
+//string到int
+
+int,err:=strconv.Atoi(string)
+
+//string到int64
+
+int64, err := strconv.ParseInt(string, 10, 64)
+
+//int到string
+
+string:=strconv.Itoa(int)
+
+//int64到string
+<<<<<<< HEAD:posts/2019-02-17-go的数据结构.md
+
+string:=strconv.FormatInt(int64,10)
+
+// int64 to time
+
+nextTime := time.Now()
+
+=======
+string:=strconv.FormatInt(int64,10)
+// int64 to time
+nextTime := time.Now()
+>>>>>>> 9b93207d813e2b213031f967612e37c68194cf37:post/Go-数据结构.md
+time.Unix(nextTime,0)
