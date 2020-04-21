@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NSDate on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 28 Aug 2015 08:53:17 +0000</pubDate>
       
       <guid>https://blog.v5u.win/nsdate%E5%92%8C%E6%97%B6%E9%97%B4%E6%88%B3%E4%BA%92%E8%BD%AC/</guid>
-      <description>iOS 将时间NSDate转化为毫秒时间戳 对于将NSDate类型转换为时间戳，相信大家肯定都会，这样的示例代码，在百度等搜索引擎上面一搜索就是一大</description>
+      <description>对于将NSDate类型转换为时间戳，相信大家肯定都会，这样的示例代码，在百度等搜索引擎上面一搜索就是一大篇的东西，但是，大家有没有注意到的是</description>
     </item>
     
   </channel>

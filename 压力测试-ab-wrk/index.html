@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -94,16 +94,10 @@
                         
                         
                         <div class="post-content">
-                            
-
-<p>压力测试 ab wrk</p>
-
+                            <p>压力测试 ab wrk</p>
 <h4 id="ab为apache内置">ab为Apache内置</h4>
-
-<p>ab -n1000 -c10 <a href="http://localhost:8080/">http://localhost:8080/</a></p>
-
+<p>ab -n1000 -c10 http://localhost:8080/</p>
 <p>1000次请求 10个并发,分析 Requests per second 字段</p>
-
 <pre><code>Server Software:        Iris:
 Server Hostname:        localhost
 Server Port:            8080
@@ -136,30 +130,15 @@ Percentage of the requests served within a certain time (ms)
   99%     57
  100%    125 (longest request)
 </code></pre>
-
-<h4 id="wrk-brew-install-wrk">wrk：brew install wrk</h4>
-
-<p>wrk -c10 -t10 -d5 <a href="http://localhost:8080/">http://localhost:8080/</a></p>
-
+<h4 id="wrkbrew-install-wrk">wrk：brew install wrk</h4>
+<p>wrk -c10 -t10 -d5 http://localhost:8080/</p>
 <p>10个连接 10个线程，持续5秒，分析 Requests/sec 请求次数/秒</p>
-
-<pre><code class="line-numbers">Running 5s test @ http://localhost:8080
-  10 threads and 10 connections
-  Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     6.57ms   10.77ms 139.45ms   95.19%
-    Req/Sec   212.90     51.14   383.00     74.85%
-  10604 requests in 5.02s, 57.00MB read
-Requests/sec:   2114.45
-Transfer/sec:     11.37MB
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>简单高效，ab默认短连接(http1.0)，wrk默认长连接</p>
-
 <p>分析结果：</p>
-
-<p>&#8211; 减少数据库依赖</p>
-
-<p>&#8211; 模板尽量少使用动态数据</p>
+<p>– 减少数据库依赖</p>
+<p>– 模板尽量少使用动态数据</p>
 
                         </div>
 
@@ -214,6 +193,18 @@ Transfer/sec:     11.37MB
 <ul class="widget-list">
     
     <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-pod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
         <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
     </li>
     
@@ -241,18 +232,6 @@ Transfer/sec:     11.37MB
         <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
     </li>
     
-    <li>
-        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -271,7 +250,7 @@ Transfer/sec:     11.37MB
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+        <a href="https://blog.v5u.win/categories/ios/">ios(96)</a>
     </li>
     
     <li>
@@ -319,7 +298,7 @@ Transfer/sec:     11.37MB
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(3)</a>
     </li>
     
     <li>
@@ -327,11 +306,11 @@ Transfer/sec:     11.37MB
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(3)</a>
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(9)</a>
     </li>
     
     <li>
@@ -575,7 +554,7 @@ Transfer/sec:     11.37MB
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

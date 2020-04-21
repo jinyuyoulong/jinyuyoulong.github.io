@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Go on 为吾优</title>
@@ -170,7 +170,7 @@
       <pubDate>Fri, 22 Mar 2019 08:35:56 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go-modules-%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
-      <description>go modules [TOC] 环境配置 正确配置 GOROOT export GOPROXY=&amp;quot;https://athens.azurefd.net&amp;quot; # 微软提供的公共代理，解决golang/x/tools 下载失败 也可以以此技术建立自己的公共库 初始化 同时 确定了项目</description>
+      <description>go modules [TOC] 环境配置 1.13 以后 go env -w GOPROXY=https://goproxy.cn,direct 1.13以前 1. 正确配置 GOROOT&amp;lt;/p&amp;gt; 2. `export GOPROXY=&amp;quot;https://athens.azurefd.net&amp;quot; # 微软提供的公共代理，解决golang/x/tools 下载失败` 也可以以此技术建立</description>
     </item>
     
     <item>
@@ -179,7 +179,7 @@
       <pubDate>Thu, 21 Mar 2019 07:48:02 +0000</pubDate>
       
       <guid>https://blog.v5u.win/golang%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
-      <description>Golang代码规范 参考 https://golang.org/doc/effective_go.html 本文参考blog [TOC] 项目目录结构规范 PROJECT_NAME ├── README.md 介绍软件及文档入口 ├── bin 编译好的二进制文件,执行./build.sh</description>
+      <description>Golang代码规范 参考 https://golang.org/doc/effective_go.html 本文参考blog [TOC] 项目目录结构规范 项目的目录结构尽量做到简明、层次清楚。 文件名命名规范 用小写，尽量见名思义，看见文</description>
     </item>
     
     <item>
@@ -188,7 +188,7 @@
       <pubDate>Tue, 05 Mar 2019 09:47:46 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go-html-template/</guid>
-      <description>文档 go doc text/template $ go doc html/template 应用 &amp;lt;br /func main() { // 定义模板显示格式 const templ = `A: {{.A}} &amp;lt;p&amp;gt;B: {{.B}}&amp;lt;/p&amp;gt;` // 模板配置函数 t := template.Must(template.New(&#34;escape&#34;).Parse(templ)) var data struct { A string // untrusted plain text B template.HTML // trusted HTML } // A是一个普通字符串，B是</description>
+      <description>应用</description>
     </item>
     
     <item>
@@ -197,7 +197,7 @@
       <pubDate>Tue, 05 Mar 2019 09:45:57 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go-json/</guid>
-      <description>标准库 encoding/json、encoding/xml、encoding/asn1 Model type Movie struct { Title string Year int `json:&#34;released&#34;` Color bool `json:&#34;color,omitempty&#34;` Actors []string } // 赋值 var movies = []Movie{ {Title: &#34;Casablanca&#34;, Year: 1942,</description>
+      <description>标准库 Model 在编码时，默认使用Go语言结构体的成员名字作为JSON的对象（通过reflect反射技术，我们将在12.6节讨论）。只有导出的结构体</description>
     </item>
     
     <item>
@@ -215,7 +215,7 @@
       <pubDate>Tue, 19 Feb 2019 05:13:48 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go-%E6%BA%90%E7%A0%81%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F/</guid>
-      <description>Go源码文件以 .go 为后缀。 Go语言的代码通过包（package）组织，包类似于其它语言里的库（libraries）或者模块（modules）。</description>
+      <description>Go源码文件以 .go 为后缀。 // path 的相对路径 target 是 go 的 build or run 目录 例： var cpath string = “./config/config.toml” 配置文件使用 github.com/BurntSushi/toml 所有的stru</description>
     </item>
     
     <item>
@@ -224,7 +224,7 @@
       <pubDate>Fri, 15 Feb 2019 07:44:23 +0000</pubDate>
       
       <guid>https://blog.v5u.win/vscode%E5%AE%89%E8%A3%85golang-org%E7%9A%84golint/</guid>
-      <description>vscode 安装了 go 插件后，一些 Extensions 无法通过 vscode 自动安装，此时可以手动从控制台安装。下面是一些基础标准库 go get -u -v github.com/nsf/gocode go get -u -v github.com/rogpeppe/godef go get -u -v github.com/zmb3/gogetdoc go get -u -v github.com/golang/lint/golint go get -u -v github.com/lukehoban/go-outline</description>
+      <description>vscode 安装了 go 插件后，一些 Extensions 无法通过 vscode 自动安装，此时可以手动从控制台安装。下面是一些基础标准库 其中 golint guru gorename 需要手动编译。 因为GitHub中的gol</description>
     </item>
     
   </channel>

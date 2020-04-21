@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>设计 on 为吾优</title>
@@ -6,10 +6,19 @@
     <description>Recent content in 设计 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 29 May 2019 03:18:11 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2020 13:09:22 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020 04 21 元编程</title>
+      <link>https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Tue, 21 Apr 2020 13:09:22 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
+      <description>元编程 meta programming 元编程是一种通过代码生成代码的思想，一般分为两种形式： macro宏展开 或者 模板 runtime 运行时 宏系统分为两种： 文本替换，比如 C 和 C++ 抽象语法</description>
+    </item>
     
     <item>
       <title>Go DI LoC 依赖注入研究</title>
@@ -35,7 +44,7 @@
       <pubDate>Thu, 09 May 2019 05:31:31 +0000</pubDate>
       
       <guid>https://blog.v5u.win/markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
-      <description>Sequence Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks! flow st=&amp;gt;start: Start op=&amp;gt;operation: Your Operation cond=&amp;gt;condition: Yes or No? e=&amp;gt;end st-&amp;gt;op-&amp;gt;cond cond(yes)-&amp;gt;e cond(no)-&amp;gt;op mermaid Gantt</description>
+      <description>Sequence flow mermaid Gantt</description>
     </item>
     
     <item>
@@ -53,7 +62,7 @@
       <pubDate>Wed, 16 Jan 2019 03:32:55 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E%E6%B5%81%E7%A8%8B/</guid>
-      <description>* *title: 沙龙举办流程 date: 2018-11-19 在开放的基础上，环境应当设置的尽可能的平等。比如尽可能的采用圆桌形式，而且参与人员尽量围成一个圈，避免层次上的区别， 主持</description>
+      <description>*title: 沙龙举办流程 date: 2018-11-19 在开放的基础上，环境应当设置的尽可能的平等。比如尽可能的采用圆桌形式，而且参与人员尽量围成一个圈，避免层次上的区别， 主持人</description>
     </item>
     
     <item>
@@ -71,7 +80,7 @@
       <pubDate>Wed, 06 Apr 2016 11:20:55 +0000</pubDate>
       
       <guid>https://blog.v5u.win/sketch%E4%BD%BF%E7%94%A8tips/</guid>
-      <description>记录sketch使用心得 1. 打开设计模板：file&amp;#8211;&amp;gt; New from Template &amp;#8211;&amp;gt;选择需要的模板库（Android Icon Desi</description>
+      <description>记录sketch使用心得 1. 打开设计模板：file–&amp;gt; New from Template –&amp;gt;选择需要的模板库（Android Icon Design，iOS APP Icon，</description>
     </item>
     
     <item>

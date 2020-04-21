@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -94,88 +94,78 @@
                         
                         
                         <div class="post-content">
-                            
-
-<p>编程语言选择参考</p>
-
+                            <p>编程语言选择参考</p>
 <p>[TOC]</p>
-
 <h3 id="包和模块管理">包和模块管理</h3>
-
 <ul>
 <li>依赖包多版本管理
-
 <ul>
 <li>python 不能直接管理，需要利用 virtualenv来分割不同的环境</li>
 <li>nodejs NPM 包管理，可以同时依赖不同版本的第三方模块</li>
-</ul></li>
+</ul>
+</li>
 <li>引入模块
-
 <ul>
 <li>python 使用 from / import，不同模块同名不好区分</li>
 <li>nodejs 模块引入的其他模块在本模块内都有局部有效的名字</li>
-</ul></li>
-
-<li><p>导出模块</p>
-
-<ul>
-<li><p>python</p></li>
-
-<li><p>nodejs 直接向 exports 中添加属性，或向 module.exports 赋值即可，非语言级别，而是普通操作</p></li>
-</ul></li>
 </ul>
-
+</li>
+<li>导出模块
+<ul>
+<li>
+<p>python</p>
+</li>
+<li>
+<p>nodejs 直接向 exports 中添加属性，或向 module.exports 赋值即可，非语言级别，而是普通操作</p>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="语言本身">语言本身</h2>
-
 <ul>
 <li>版本统一性
-
 <ul>
 <li>python 2,3不兼容</li>
 <li>nodejs 版本兼容</li>
-</ul></li>
+</ul>
+</li>
 <li>语法
-
 <ul>
 <li>python 的确比较精炼清晰，丰富的数据结构，各种运算符代替函数，有丰富的语法糖</li>
 <li>nodejs 语言是 javascript，核心更为精简，数据结构和数据处理比较简陋。</li>
-</ul></li>
+</ul>
+</li>
 <li>灵活性
-
 <ul>
 <li>javascript 基于 prototype 的继承灵活</li>
 <li>nodejs 基于事件的处理使得处处是钩子和扩展点</li>
-</ul></li>
+</ul>
+</li>
 <li>可hack性
-
 <ul>
 <li>python 不容易 hack</li>
 <li>javascript 非常容易hack</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="性能">性能</h2>
-
 <ul>
 <li>都是解释性语言
-
 <ul>
 <li>python 无JIT</li>
 <li>nodejs v8 可以 JIT 执行 javascript，性能要更好</li>
-</ul></li>
+</ul>
+</li>
 <li>并发模型
-
 <ul>
 <li>python 需要多线程编程</li>
 <li>nodejs 异步I/O读磁盘数据，做非CPU(计算)密集型应用高效</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="开发质量和效率">开发质量和效率</h2>
-
 <ul>
 <li>都是解释性语言
-
 <ul>
 <li>都无法再编译期进行各种检查</li>
 <li>nodejs 有 javascript 语言的格式和语法检查器</li>
@@ -183,21 +173,17 @@
 <li>build system</li>
 <li>nodejs 有完整的build system(grunt/gulp)</li>
 <li>nodejs web 开发资源的高于 python</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="学习成本">学习成本</h2>
-
 <ul>
 <li>解释型语言都不难</li>
 </ul>
-
 <h2 id="异步编程框架比较">异步编程框架比较</h2>
-
 <ul>
 <li>javascript 的 nodejs 和 python 的 tornado 比较</li>
 </ul>
-
 <table>
 <thead>
 <tr>
@@ -206,26 +192,22 @@
 <th>tornado (python)</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>语言本身性能</td>
 <td>v8引擎性能很好</td>
 <td>python 解释器性能较差</td>
 </tr>
-
 <tr>
 <td>IO性能</td>
 <td>使用epoll等高效IO机制，性能好</td>
 <td>使用epoll等高效IO机制，性能好</td>
 </tr>
-
 <tr>
 <td>生态圈</td>
 <td>nodejs各个版本和外围模块版本匹配好</td>
 <td>python存在各种版本的兼容性问题， 也不易集成第三方模块</td>
 </tr>
-
 <tr>
 <td>跨平台</td>
 <td>nodejs在x86/arm/power/sparc都支持</td>
@@ -233,9 +215,7 @@
 </tr>
 </tbody>
 </table>
-
 <h2 id="其他类似点">其他类似点</h2>
-
 <table>
 <thead>
 <tr>
@@ -244,20 +224,17 @@
 <th>tornado (python)</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>包管理器</td>
 <td>npm</td>
 <td>pip</td>
 </tr>
-
 <tr>
 <td>平台多版本管理器</td>
 <td>n</td>
 <td>virtualenv</td>
 </tr>
-
 <tr>
 <td>进程监控器</td>
 <td>pm2</td>
@@ -319,6 +296,18 @@
 <ul class="widget-list">
     
     <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-pod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
         <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
     </li>
     
@@ -346,18 +335,6 @@
         <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
     </li>
     
-    <li>
-        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -376,7 +353,7 @@
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+        <a href="https://blog.v5u.win/categories/ios/">ios(96)</a>
     </li>
     
     <li>
@@ -424,7 +401,7 @@
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(3)</a>
     </li>
     
     <li>
@@ -432,11 +409,11 @@
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(3)</a>
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(9)</a>
     </li>
     
     <li>
@@ -680,7 +657,7 @@
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

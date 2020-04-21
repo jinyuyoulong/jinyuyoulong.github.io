@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 16 Jan 2019 06:18:33 +0000</pubDate>
       
       <guid>https://blog.v5u.win/python-pyspider/</guid>
-      <description>* *title: Python_pyspider date: 2016-11-02 10:34:41 tags: pyspider category: Python mac 下pyspider的安装 安装环境：OS X EI Capitan 版本 10.11.6 Python2.7 此文章书写原因：经过简单命令pip install pyspider安装失败后，各</description>
+      <description>*title: Python_pyspider date: 2016-11-02 10:34:41 tags: pyspidercategory: Python mac 下pyspider的安装 安装环境：OS X EI Capitan 版本 10.11.6 Python2.7 此文章书写原因：经过简单命令pip install pyspider安装失败后，各种解</description>
     </item>
     
     <item>

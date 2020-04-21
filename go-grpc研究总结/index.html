@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -92,55 +92,28 @@
                         
                         
                         <div class="post-content">
-                            
-
-<h3 id="什么是rpc">什么是RPC</h3>
-
+                            <h3 id="什么是rpc">什么是RPC</h3>
 <p>RPC（Remote Procedure Call）—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。——百度百科</p>
-
 <p>支持环境配置(Mac)</p>
-
 <p>安装protobuf 这是 Google 开源的一套成熟的结构数据序列化机制<a href="https://juejin.im/post/5b852d476fb9a019e4505873">protocol buffer</a></p>
-
-<pre><code class="language-protobuf line-numbers">brew info protobuf
-brew install protobuf
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>检验protobuf安装结果</p>
-
-<pre><code class="language-shell line-numbers">protoc --version
-libprotoc 3.5.1
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>安装第三方包</p>
-
-<pre><code class="language-go line-numbers">go mod download github.com/golang/protobuf/proto
-go mod download github.com/golang/protobuf/protoc-gen-go
-go mod download google.golang.org/grpc
-go install github.com/golang/protobuf/protoc-gen-go //编译 protoc-gen-go 可执行文件
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>创建 protobuf 文件</p>
-
-<pre><code class="language-shell line-numbers">vi add.proto
-add some date
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>生成 gRPC 代码</p>
-
-<pre><code class="language-shell line-numbers">protoc -I ./protos ./protos/helloworld.proto --go_out=plugins=grpc:helloworld
-或
-protoc -I . add.proto --go_out=plugins=grpc:.
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>这生成了 <code>helloworld.pb.go</code> ，包含了我们生成的客户端和服务端类，此外还有用于填充、序列化、提取 <code>HelloRequest</code> 和 <code>HelloResponse</code> 消息类型的类。</p>
-
 <p>在server.go 实现AddServiceServer 的接口方法</p>
-
 <p>实现server &amp; client</p>
-
 <p>打开两个终端，分别启动 serve &amp; client</p>
-
 <p>浏览器访问输出返回结果。</p>
 
                         </div>
@@ -200,6 +173,18 @@ protoc -I . add.proto --go_out=plugins=grpc:.
 <ul class="widget-list">
     
     <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-pod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
         <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
     </li>
     
@@ -227,18 +212,6 @@ protoc -I . add.proto --go_out=plugins=grpc:.
         <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
     </li>
     
-    <li>
-        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -257,7 +230,7 @@ protoc -I . add.proto --go_out=plugins=grpc:.
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+        <a href="https://blog.v5u.win/categories/ios/">ios(96)</a>
     </li>
     
     <li>
@@ -305,7 +278,7 @@ protoc -I . add.proto --go_out=plugins=grpc:.
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(3)</a>
     </li>
     
     <li>
@@ -313,11 +286,11 @@ protoc -I . add.proto --go_out=plugins=grpc:.
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(3)</a>
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(9)</a>
     </li>
     
     <li>
@@ -561,7 +534,7 @@ protoc -I . add.proto --go_out=plugins=grpc:.
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

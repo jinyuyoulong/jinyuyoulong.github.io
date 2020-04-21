@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>xcode on 为吾优</title>
@@ -35,7 +35,7 @@
       <pubDate>Thu, 12 Apr 2018 03:43:53 +0000</pubDate>
       
       <guid>https://blog.v5u.win/xcode-%E5%A4%B4%E6%96%87%E4%BB%B6%E5%BC%95%E7%94%A8/</guid>
-      <description>头文件引用 头文件引用主要由#inlude 和#import 两种。每种又分为尖括号(&amp;lt;&amp;gt;)引用和双引号(&amp;#8221; &amp;#8220;</description>
+      <description>头文件引用 头文件引用主要由#inlude 和#import 两种。每种又分为尖括号(&amp;lt;&amp;gt;)引用和双引号(” “)引用 。 #inlude 与 #import 的区别是:</description>
     </item>
     
     <item>
@@ -98,7 +98,7 @@
       <pubDate>Fri, 25 Sep 2015 04:24:51 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E7%94%A8-xcode-%E7%BC%96%E5%86%99-cc-%E7%9A%84-hello-world/</guid>
-      <description>操作步骤： 打开Xcode，在欢迎界面点击Create a new Xcode project。 在左侧栏选择Mac OS X分类的Application，右侧选择Com</description>
+      <description></description>
     </item>
     
     <item>

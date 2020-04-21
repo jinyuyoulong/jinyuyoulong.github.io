@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nodejs on 为吾优</title>
@@ -35,7 +35,7 @@
       <pubDate>Wed, 16 Jan 2019 06:02:32 +0000</pubDate>
       
       <guid>https://blog.v5u.win/express/</guid>
-      <description>* *title: Express date: 2016-08-17 11:05:24 tags: express category: Express id: 5 nodejs + express 学习记录 设置入口文件 app.use(express.static(__dirname + &#39;/public&#39;)); ###use方法 use是express注册中间件的方法，它返回一个函数。 中间件（mi</description>
+      <description>*title: Express date: 2016-08-17 11:05:24 tags: express category: Expressid: 5 nodejs + express 学习记录 设置入口文件 app.use(express.static(__dirname + &#39;/public&#39;)); ###use方法 use是express注册中间件的方法，它返回一个函数。 中间件（midd</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Tue, 02 May 2017 02:29:55 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
-      <description>mac下nvm 使用记录 断开连接 brew unlink nvm 安装 brew install nvm 环境变量 add to ~/.bash_profile export NVM_DIR=&amp;#8221;$HOME/.nvm&amp;#8221; . &amp;#8220;$(brew &amp;#8211;prefix nvm)/nvm.sh&amp;#8221; 配置国内镜像源 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist 配置npm镜像源 创建 ~/.npmrc 写入registry=htt</description>
+      <description>mac下nvm 使用记录 断开连接 brew unlink nvm 安装 brew install nvm 环境变量 add to ~/.bash_profile export NVM_DIR=”$HOME/.nvm” . “$(brew –prefix nvm)</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Fri, 03 Mar 2017 15:18:23 +0000</pubDate>
       
       <guid>https://blog.v5u.win/sublime-text3-%E9%85%8D%E7%BD%AEnodejs-build-%E7%8E%AF%E5%A2%83/</guid>
-      <description>可参考使用Sublime Text 3 进行Python3开发 Tools&amp;#8211;&amp;gt;Build System&amp;#8211;&amp;gt;New Build System 写入 { &amp;quot;shell_cmd&amp;quot;: &amp;quot;/usr/local/bin/node ${file}&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.javascript&amp;quot;, &amp;quot;file_regex&amp;quot;: &amp;quot;^(...*?):([0-9]*):?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;: &amp;quot;${file_path}&amp;quot;, } 保存为/Packages/User/node.subli</description>
+      <description>可参考使用Sublime Text 3 进行Python3开发 Tools–&amp;gt;Build System–&amp;gt;New Build System 写入 { &amp;quot;shell_cmd&amp;quot;: &amp;quot;/usr/local/bin/node ${file}&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.javascript&amp;quot;, &amp;quot;file_regex&amp;quot;: &amp;quot;^(...*?):([0-9]*):?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;: &amp;quot;${file_path}&amp;quot;, } 保</description>
     </item>
     
     <item>
@@ -107,7 +107,7 @@
       <pubDate>Thu, 30 Jun 2016 03:39:32 +0000</pubDate>
       
       <guid>https://blog.v5u.win/nodejs-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</guid>
-      <description>文件加载顺序： st=&amp;gt;start: 开始require isfc=&amp;gt;condition: 是否在文件缓冲区 isnf=&amp;gt;condition: 是否是原生模块 ff=&amp;gt;operation: 查找文件模块 lfm=&amp;gt;operation: 根据扩展名载入模块 cfm=&amp;gt;operation: 缓存文件模块 isnc=&amp;gt;condition: 是否在原生模块缓存区中</description>
+      <description>文件加载顺序： require方法接受以下几种参数的传递： http、fs、path等，原生模块。 ./mod或../mod，相对路径的文件模块。</description>
     </item>
     
   </channel>

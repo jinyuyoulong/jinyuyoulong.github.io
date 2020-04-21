@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>收藏 on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 09 Oct 2015 05:25:58 +0000</pubDate>
       
       <guid>https://blog.v5u.win/gitignore%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
-      <description>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，像是日志或者编译过程中创建的等等。我们可</description>
+      <description></description>
     </item>
     
   </channel>

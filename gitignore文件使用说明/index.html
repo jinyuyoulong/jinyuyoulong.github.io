@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -92,60 +92,20 @@
                         
                         
                         <div class="post-content">
-                            <p style="margin-top: 0px; margin-bottom: 1.625em; padding: 0px; border: 0px; list-style: none; word-wrap: normal; word-break: normal; line-height: 24px; white-space: normal; background-color: rgb(255, 255, 255); vertical-align: baseline; font-family: &#39;Helvetica neue&#39;, Helvetica, Arial, sans-serif; font-size: 15px; outline: 0px; color: rgb(55, 55, 55);">
-  一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，像是日志或者编译过程中创建的等等。我们可以创建一个名为&nbsp;<wbr /><code style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Monaco, Consolas, &#39;Andale Mono&#39;, &#39;DejaVu sans Mono&#39;, monospace; font-size: 13px; outline: 0px; line-height: normal;">.gitignore</code>&nbsp;<wbr />的文件，列出要忽略的文件模式，来看一个简单的例子：
-</p>
-
-<pre style="white-space: normal; background-color: rgb(247, 247, 247); border: 0px; margin-top: 0px; margin-bottom: 1.625em; padding: 0.75em 1.625em; vertical-align: baseline; font-family: &#39;Courier 10 pitch&#39;, Courier, monospace; color: rgb(55, 55, 55); line-height: 1.5; font-size: 13px; outline: 0px; overflow: auto;" class="brush:cpp;toolbar:false;">$&nbsp;cat&nbsp;.gitignore&nbsp;*.[oa]&nbsp;*~</pre>
-
-<p style="margin-top: 0px; margin-bottom: 1.625em; padding: 0px; border: 0px; list-style: none; word-wrap: normal; word-break: normal; line-height: 24px; white-space: normal; background-color: rgb(255, 255, 255); vertical-align: baseline; font-family: &#39;Helvetica neue&#39;, Helvetica, Arial, sans-serif; font-size: 15px; outline: 0px; color: rgb(55, 55, 55);">
-  第一行告诉 Git 忽略所有以 .o 或 .a 结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的，我们用不着跟踪它们的版本。第二行告诉 Git 忽略所有以波浪符（~）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副本。此外，你可能还需要忽略 log，tmp 或者 pid 目录，以及自动生成的文档等等。要养成一开始就设置好&nbsp;<wbr /><code style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Monaco, Consolas, &#39;Andale Mono&#39;, &#39;DejaVu sans Mono&#39;, monospace; font-size: 13px; outline: 0px; line-height: normal;">.gitignore</code>&nbsp;<wbr />文件的习惯，以免将来误提交这类无用的文件。
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1.625em; padding: 0px; border: 0px; list-style: none; word-wrap: normal; word-break: normal; line-height: 24px; white-space: normal; background-color: rgb(255, 255, 255); vertical-align: baseline; font-family: &#39;Helvetica neue&#39;, Helvetica, Arial, sans-serif; font-size: 15px; outline: 0px; color: rgb(55, 55, 55);">
-  文件&nbsp;<wbr /><code style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Monaco, Consolas, &#39;Andale Mono&#39;, &#39;DejaVu sans Mono&#39;, monospace; font-size: 13px; outline: 0px; line-height: normal;">.gitignore</code>&nbsp;<wbr />的格式规范如下：
-</p>
-
-<ul style="list-style-type: square;" class=" list-paddingleft-2">
-  <li>
-    <p>
-      所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。
-    </p>
-  </li>
-  
-  <li>
-    <p>
-      可以使用标准的 glob 模式匹配。
-    </p>
-  </li>
-  
-  <li>
-    <p>
-      匹配模式最后跟反斜杠（/）说明要忽略的是目录。
-    </p>
-  </li>
-  
-  <li>
-    <p>
-      要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。
-    </p>
-  </li>
-</ul>
-
-<p style="margin-top: 0px; margin-bottom: 1.625em; padding: 0px; border: 0px; list-style: none; word-wrap: normal; word-break: normal; line-height: 24px; white-space: normal; background-color: rgb(255, 255, 255); vertical-align: baseline; font-family: &#39;Helvetica neue&#39;, Helvetica, Arial, sans-serif; font-size: 15px; outline: 0px; color: rgb(55, 55, 55);">
-  所谓的 glob 模式是指 shell 所使用的简化了的正则表达式。星号（*）匹配零个或多个任意字符；[abc] 匹配任何一个列在方括号中的字符（这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）；问号（?）只匹配一个任意字符；如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配（比如 [0-9] 表示匹配所有 0 到 9 的数字）。
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1.625em; padding: 0px; border: 0px; list-style: none; word-wrap: normal; word-break: normal; line-height: 24px; white-space: normal; background-color: rgb(255, 255, 255); vertical-align: baseline; font-family: &#39;Helvetica neue&#39;, Helvetica, Arial, sans-serif; font-size: 15px; outline: 0px; color: rgb(55, 55, 55);">
-  我们再看一个&nbsp;<wbr /><code style="background-color: transparent; border: 0px; margin: 0px; padding: 0px; vertical-align: baseline; font-family: Monaco, Consolas, &#39;Andale Mono&#39;, &#39;DejaVu sans Mono&#39;, monospace; font-size: 13px; outline: 0px; line-height: normal;">.gitignore</code>&nbsp;<wbr />文件的例子：
-</p>
-
-<pre style="white-space: normal; background-color: rgb(247, 247, 247); border: 0px; margin-top: 0px; margin-bottom: 1.625em; padding: 0.75em 1.625em; vertical-align: baseline; font-family: &#39;Courier 10 pitch&#39;, Courier, monospace; color: rgb(55, 55, 55); line-height: 1.5; font-size: 13px; outline: 0px; overflow: auto;" class="brush:cpp;toolbar:false;">#&nbsp;此为注释&nbsp;–&nbsp;将被&nbsp;Git&nbsp;忽略&nbsp;
-*.a&nbsp;#&nbsp;忽略所有&nbsp;.a&nbsp;结尾的文件&nbsp;
-!lib.a&nbsp;#&nbsp;但&nbsp;lib.a&nbsp;除外&nbsp;
-/TODO&nbsp;#&nbsp;仅仅忽略项目根目录下的&nbsp;TODO&nbsp;文件，不包括&nbsp;subdir/TODO&nbsp;
-build/&nbsp;#&nbsp;忽略&nbsp;build/&nbsp;目录下的所有文件&nbsp;
-doc/*.txt&nbsp;#&nbsp;会忽略&nbsp;doc/notes.txt&nbsp;但不包括&nbsp;doc/server/arch.txt</pre>
+                            <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<blockquote>
+</blockquote>
 
                         </div>
 
@@ -204,6 +164,18 @@ doc/*.txt&nbsp;#&nbsp;会忽略&nbsp;doc/notes.txt&nbsp;但不包括&nbsp;doc/se
 <ul class="widget-list">
     
     <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-pod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
         <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
     </li>
     
@@ -231,18 +203,6 @@ doc/*.txt&nbsp;#&nbsp;会忽略&nbsp;doc/notes.txt&nbsp;但不包括&nbsp;doc/se
         <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
     </li>
     
-    <li>
-        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -261,7 +221,7 @@ doc/*.txt&nbsp;#&nbsp;会忽略&nbsp;doc/notes.txt&nbsp;但不包括&nbsp;doc/se
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+        <a href="https://blog.v5u.win/categories/ios/">ios(96)</a>
     </li>
     
     <li>
@@ -309,7 +269,7 @@ doc/*.txt&nbsp;#&nbsp;会忽略&nbsp;doc/notes.txt&nbsp;但不包括&nbsp;doc/se
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(3)</a>
     </li>
     
     <li>
@@ -317,11 +277,11 @@ doc/*.txt&nbsp;#&nbsp;会忽略&nbsp;doc/notes.txt&nbsp;但不包括&nbsp;doc/se
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(3)</a>
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(9)</a>
     </li>
     
     <li>
@@ -565,7 +525,7 @@ doc/*.txt&nbsp;#&nbsp;会忽略&nbsp;doc/notes.txt&nbsp;但不包括&nbsp;doc/se
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

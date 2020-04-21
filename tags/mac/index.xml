@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on 为吾优</title>
@@ -26,7 +26,7 @@
       <pubDate>Sat, 21 Jan 2017 15:38:52 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8wget/</guid>
-      <description>下载单个文件， 为什么不用mac原生自带的工具：curl &amp;#8220;网址链接&amp;#8221; -o &amp;#8220;输出文件名&amp;#8221; 解释一下，</description>
+      <description>下载单个文件， 为什么不用mac原生自带的工具：curl “网址链接” -o “输出文件名” 解释一下，wget是Linux下自带的文件下载工具非常好用</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Fri, 25 Sep 2015 04:24:51 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E7%94%A8-xcode-%E7%BC%96%E5%86%99-cc-%E7%9A%84-hello-world/</guid>
-      <description>操作步骤： 打开Xcode，在欢迎界面点击Create a new Xcode project。 在左侧栏选择Mac OS X分类的Application，右侧选择Com</description>
+      <description></description>
     </item>
     
   </channel>

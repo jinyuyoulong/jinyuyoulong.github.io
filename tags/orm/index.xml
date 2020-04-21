@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>orm on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Mon, 11 Mar 2019 07:12:34 +0000</pubDate>
       
       <guid>https://blog.v5u.win/xorm-%E5%A2%99%E5%86%85%E5%AE%89%E8%A3%85/</guid>
-      <description>xorm cmd 墙内安装 有两个库不能墙内访问 civil crypto.所以我们需要迂回一下安装。 可以直接用 git clone github.com 上的库。这两个库都可以在GitHub上找到。 go get github.com/go-xorm/cmd/xorm</description>
+      <description>xorm cmd 墙内安装 有两个库不能墙内访问 civil crypto.所以我们需要迂回一下安装。 可以直接用 git clone github.com 上的库。这两个库都可以在GitHub上找到。 使用 先</description>
     </item>
     
   </channel>

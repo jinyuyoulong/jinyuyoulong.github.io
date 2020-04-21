@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xcode7 on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Mon, 23 Nov 2015 03:25:15 +0000</pubDate>
       
       <guid>https://blog.v5u.win/xcode7-1-1%E6%9B%B4%E6%96%B0%E5%86%85%E5%AE%B9/</guid>
-      <description>Xcode 7.1.1 improves stability and fixes critical issues in interface Builder,debugging,and UI testing. Xcode 7.1 includes Swift2.1 and SDKs for iOS 9.1,watchOS 2,tvOS,and OS X 10.11 EI Capitan. Now you can go beyond the simulator to test your app on an iPad, iPhone, Apple TV, or Apple Watch &amp;#8211; for free. Simply enter your Apple ID into the Accounts preference pane,then attach a device to your Mac using a Lightning</description>
+      <description>Xcode 7.1.1 improves stability and fixes critical issues in interface Builder,debugging,and UI testing. Xcode 7.1 includes Swift2.1 and SDKs for iOS 9.1,watchOS 2,tvOS,and OS X 10.11 EI Capitan. Now you can go beyond the simulator to test your app on an iPad, iPhone, Apple TV, or Apple Watch – for free. Simply enter your Apple ID into the Accounts preference pane,then attach a device to your Mac using a Lightning</description>
     </item>
     
   </channel>

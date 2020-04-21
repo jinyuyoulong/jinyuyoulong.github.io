@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -71,6 +71,81 @@
                         <article class="post">
                             <header>
                                 <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/go-iris-template/" title="Go-如何选择合适的Web模板引擎" >Go-如何选择合适的Web模板引擎</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年3月8日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/go">Go</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                所谓模板引擎，则将模板和数据进行渲染的输出格式化后的字符程序。对于go，执行这个流程大概需要三步。 创建模板对象 加载模板字串 执行渲染模板 其中最……
+                            </div>
+                            <p class="readmore"><a href="https://blog.v5u.win/go-iris-template/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/go-iris-%E8%B7%AF%E7%94%B1/" title="Go Iris 路由" >Go Iris 路由</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年3月8日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/go">Go</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                路由配置规则 直接通过 function 绑定 controller，function name 映射到 路由的地址 function named rule： 通过控制器方法的输入参数访问动态路径参数，不……
+                            </div>
+                            <p class="readmore"><a href="https://blog.v5u.win/go-iris-%E8%B7%AF%E7%94%B1/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://blog.v5u.win/go-html-template/" title="Go HTML template" >Go HTML template</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年3月5日
+                            </date>
+                            
+                            <div class="post-meta">
+                                <span>|</span>
+                                
+                                <span class="meta-category"><a href="https://blog.v5u.win/categories/go">Go</a></span>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                应用……
+                            </div>
+                            <p class="readmore"><a href="https://blog.v5u.win/go-html-template/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
                                     <a href="https://blog.v5u.win/go-json/" title="Go JSON" >Go JSON</a>
                                 </h1>
                             </header>
@@ -86,7 +161,7 @@
                             </div>
                             
                             <div class="post-content">
-                                标准库 encoding/json、encoding/xml、encoding/asn1 Model type Movie struct { Title string Year int `json:"released"` Color bool `json:"color,omitempty"` Actors []string } // 赋值 var movies = []Movie{ {Title: "Casablanca", Year: 1942,……
+                                标准库 Model 在编码时，默认使用Go语言结构体的成员名字作为JSON的对象（通过reflect反射技术，我们将在12.6节讨论）。只有导出的结构体……
                             </div>
                             <p class="readmore"><a href="https://blog.v5u.win/go-json/">阅读全文</a></p>
                         </article>
@@ -136,7 +211,7 @@
                             </div>
                             
                             <div class="post-content">
-                                控制流： 在本章我们只介绍了if控制和for，但是没有提到switch多路选择。这里是一个简单的switch的例子： switch coinflip() { case "heads": heads++ case "tails": tails++ default: fmt.Println("landed on edge!")……
+                                控制流： 在本章我们只介绍了if控制和for，但是没有提到switch多路选择。这里是一个简单的switch的例子： 在翻转硬币的时候，例子里的……
                             </div>
                             <p class="readmore"><a href="https://blog.v5u.win/go%E8%AF%AD%E8%A8%80%E8%A6%81%E7%82%B9/">阅读全文</a></p>
                         </article>
@@ -165,7 +240,7 @@
                             </div>
                             
                             <div class="post-content">
-                                报错 expected &#8216;IDENT&#8217;, found &#8216;go&#8217; 运行go run 文件目录为 . ├── README.md ├── fetch │ ├── fetch.go │ ├── fetch1.7.go │ ├── fetchall.go │ ├── server1.go │ ├── server2.go │ └── server3.go └── go-demo ├── main.go ├── mgif.go └──……
+                                报错 expected ‘IDENT’, found ‘go’ 运行go run 文件目录为 ./go-demo/main.go 由于package 命名为go-demo，命名格式不规范，导致的这个问题。 解决办法：将g……
                             </div>
                             <p class="readmore"><a href="https://blog.v5u.win/expected-ident-found-go/">阅读全文</a></p>
                         </article>
@@ -192,7 +267,7 @@
                             </div>
                             
                             <div class="post-content">
-                                为什么PHP中的变量前边要加&#8217;$&#8217;符号 一直都特别好奇 PHP 中的变量前边都加 $ 符号。别的大众编程语言从没见过这种设定，比如……
+                                为什么PHP中的变量前边要加’$’符号 一直都特别好奇 PHP 中的变量前边都加 $ 符号。别的大众编程语言从没见过这种设定，比如：java,c#,c,c……
                             </div>
                             <p class="readmore"><a href="https://blog.v5u.win/%E4%B8%BA%E4%BB%80%E4%B9%88php%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E5%89%8D%E8%BE%B9%E8%A6%81%E5%8A%A0%E7%AC%A6%E5%8F%B7/">阅读全文</a></p>
                         </article>
@@ -292,7 +367,7 @@
                             </div>
                             
                             <div class="post-content">
-                                Go源码文件以 .go 为后缀。 Go语言的代码通过包（package）组织，包类似于其它语言里的库（libraries）或者模块（modules）。……
+                                Go源码文件以 .go 为后缀。 // path 的相对路径 target 是 go 的 build or run 目录 例： var cpath string = “./config/config.toml” 配置文件使用 github.com/BurntSushi/toml 所有的stru……
                             </div>
                             <p class="readmore"><a href="https://blog.v5u.win/go-%E6%BA%90%E7%A0%81%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F/">阅读全文</a></p>
                         </article>
@@ -342,7 +417,7 @@
                             </div>
                             
                             <div class="post-content">
-                                type error interface { Error() string } error的声明 创建一个error if path == "" { return nil, errors.New("The parameter is invalid!") } error的使用 func readFile(path string) ([]byte, error) { file, err := os.Open(path) if err != nil { return nil, err } defer file.Close() return ioutil.ReadAll(file) } 异常……
+                                error的声明 创建一个error error的使用 异常处理——panic 译为运行时恐慌 内建函数panic和recover是天生的一对。前者用……
                             </div>
                             <p class="readmore"><a href="https://blog.v5u.win/go%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">阅读全文</a></p>
                         </article>
@@ -367,7 +442,7 @@
                             </div>
                             
                             <div class="post-content">
-                                if if 100 &gt; number { number += 3 } else if 100 &lt; number { number -= 2 } else { fmt.Println("OK!") } //变量赋值 if number := 4; 100 &gt; number { number += 3 } // 标识符的重声明和标识符的遮蔽 var number int if number := 4; 100 &gt; number { number +=……
+                                if 标识符的重声明和标识符的遮蔽 上述代码被执行完毕之后，第二次声明的number变量的值会是7，而第一次声明的number变量的值仍会是``。……
                             </div>
                             <p class="readmore"><a href="https://blog.v5u.win/go-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">阅读全文</a></p>
                         </article>
@@ -392,7 +467,7 @@
                             </div>
                             
                             <div class="post-content">
-                                func(input1 string ,input2 string) string type MyFunc func(input1 string ,input2 string) string// 函数声明 函数实现 func myFunc(part1 string, part2 string) (result string) { result = part1 + part2 return } //如果结果声明是带名称的，那么它就相当于一个已被声明但未被显式赋值的……
+                                函数实现 或 结构体 与对象不同的是，结构体之间没有继承关系。 *接口 如果一个数据类型所拥有的方法集合中包含了某一个接口类型中的所有方法声明的实现，……
                             </div>
                             <p class="readmore"><a href="https://blog.v5u.win/go%E7%9A%84%E5%87%BD%E6%95%B0-%E7%BB%93%E6%9E%84%E4%BD%93/">阅读全文</a></p>
                         </article>
@@ -444,7 +519,7 @@
                             </div>
                             
                             <div class="post-content">
-                                vscode 安装了 go 插件后，一些 Extensions 无法通过 vscode 自动安装，此时可以手动从控制台安装。下面是一些基础标准库 go get -u -v github.com/nsf/gocode go get -u -v github.com/rogpeppe/godef go get -u -v github.com/zmb3/gogetdoc go get -u -v github.com/golang/lint/golint go get -u -v github.com/lukehoban/go-outline……
+                                vscode 安装了 go 插件后，一些 Extensions 无法通过 vscode 自动安装，此时可以手动从控制台安装。下面是一些基础标准库 其中 golint guru gorename 需要手动编译。 因为GitHub中的gol……
                             </div>
                             <p class="readmore"><a href="https://blog.v5u.win/vscode%E5%AE%89%E8%A3%85golang-org%E7%9A%84golint/">阅读全文</a></p>
                         </article>
@@ -501,81 +576,6 @@
                                 在官网下载pkg安装包,点击安装，安装完成后，资源被写入/usr/local/go 目录下 或者 brew install go 使用brew下载 （推荐） 设置profile……
                             </div>
                             <p class="readmore"><a href="https://blog.v5u.win/go-mac%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">阅读全文</a></p>
-                        </article>
-                    
-                    
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://blog.v5u.win/node-gyp%E6%98%AF%E4%BB%80%E4%B9%88/" title="node-gyp是什么" >node-gyp是什么</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年1月31日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://blog.v5u.win/categories/nodejs">Nodejs</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                GYP GYP是一种构建自动化工具。 GYP由Google创建，用于生成用于构建Chromium Web浏览器的本机IDE项目文件，并使用BSD软件许……
-                            </div>
-                            <p class="readmore"><a href="https://blog.v5u.win/node-gyp%E6%98%AF%E4%BB%80%E4%B9%88/">阅读全文</a></p>
-                        </article>
-                    
-                    
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://blog.v5u.win/%E8%AF%BB-%E5%A6%82%E4%BD%95%E5%92%8C%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%9B%B8%E5%A4%84/" title="读 如何和这个世界相处" >读 如何和这个世界相处</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年1月28日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0">读书笔记</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                读 如何和这个世界相处 研究领域：个体心理学 研究成果和结论：我们的处事方式和决策行为是由于我们对这个世界的解释决定的，也就是说是由于我们如何解释……
-                            </div>
-                            <p class="readmore"><a href="https://blog.v5u.win/%E8%AF%BB-%E5%A6%82%E4%BD%95%E5%92%8C%E8%BF%99%E4%B8%AA%E4%B8%96%E7%95%8C%E7%9B%B8%E5%A4%84/">阅读全文</a></p>
-                        </article>
-                    
-                    
-		    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://blog.v5u.win/%E6%92%9E%E8%BD%A6%E4%B9%8B%E5%90%8E%E6%8A%A5%E4%BF%9D%E9%99%A9%E4%B8%8D%E8%A6%81%E5%82%BB%E9%87%8C%E5%82%BB%E6%B0%94%E7%9A%84/" title="撞车之后，报保险不要傻里傻气的！" >撞车之后，报保险不要傻里傻气的！</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年1月16日
-                            </date>
-                            
-                            <div class="post-meta">
-                                <span>|</span>
-                                
-                                <span class="meta-category"><a href="https://blog.v5u.win/categories/ios">iOS</a></span>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                来自: 四闹铃先生 豆瓣 1，对方全责提出私了1500，你死活不干，要求走保险，又是吵又是闹又是折腾，定损2200，修理厂要求2400，自掏200……
-                            </div>
-                            <p class="readmore"><a href="https://blog.v5u.win/%E6%92%9E%E8%BD%A6%E4%B9%8B%E5%90%8E%E6%8A%A5%E4%BF%9D%E9%99%A9%E4%B8%8D%E8%A6%81%E5%82%BB%E9%87%8C%E5%82%BB%E6%B0%94%E7%9A%84/">阅读全文</a></p>
                         </article>
                     
                     
@@ -691,6 +691,18 @@
 <ul class="widget-list">
     
     <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-pod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
         <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
     </li>
     
@@ -718,18 +730,6 @@
         <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
     </li>
     
-    <li>
-        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -748,7 +748,7 @@
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+        <a href="https://blog.v5u.win/categories/ios/">ios(96)</a>
     </li>
     
     <li>
@@ -796,7 +796,7 @@
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(3)</a>
     </li>
     
     <li>
@@ -804,11 +804,11 @@
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(3)</a>
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(9)</a>
     </li>
     
     <li>
@@ -1052,7 +1052,7 @@
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

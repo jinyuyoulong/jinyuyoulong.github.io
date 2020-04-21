@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>错误集锦 on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 27 Feb 2019 09:10:11 +0000</pubDate>
       
       <guid>https://blog.v5u.win/expected-ident-found-go/</guid>
-      <description>报错 expected &amp;#8216;IDENT&amp;#8217;, found &amp;#8216;go&amp;#8217; 运行go run 文件目录为 . ├── README.md ├── fetch │ ├── fetch.go │ ├── fetch1.7.go │ ├── fetchall.go │ ├── server1.go │ ├── server2.go │ └── server3.go └── go-demo ├── main.go ├── mgif.go └──</description>
+      <description>报错 expected ‘IDENT’, found ‘go’ 运行go run 文件目录为 ./go-demo/main.go 由于package 命名为go-demo，命名格式不规范，导致的这个问题。 解决办法：将g</description>
     </item>
     
   </channel>

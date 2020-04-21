@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>其他技术 on 为吾优</title>
@@ -6,10 +6,19 @@
     <description>Recent content in 其他技术 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 16 Jul 2019 06:06:32 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Apr 2020 13:11:53 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>红米蓝牙Redmi AirDots，左右耳无法配对解决办法</title>
+      <link>https://blog.v5u.win/posts/2020-04-21-redmiairdots/</link>
+      <pubDate>Tue, 21 Apr 2020 13:11:53 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/2020-04-21-redmiairdots/</guid>
+      <description>红米蓝牙Redmi AirDots，左右耳无法配对解决办法 开机状态下，同时长按两个耳机5S，看到红灯亮2S，松手。此时耳机关机 同时长按两个耳机</description>
+    </item>
     
     <item>
       <title>k8s在Mac上的安装和使用</title>
@@ -35,7 +44,7 @@
       <pubDate>Wed, 20 Mar 2019 05:58:16 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mysql8/</guid>
-      <description>mysql5.7 —&amp;gt;mysql8 的升级 MySQL8的加密方式有变化 命令行查看MySQL8 账户的加密方式 use mysql; select user,plugin from user ; 在mysql8之前的版本使用的密</description>
+      <description>mysql5.7 —&amp;gt;mysql8 的升级 MySQL8的加密方式有变化 命令行查看MySQL8 账户的加密方式 在mysql8之前的版本使用的密码加密规则是m</description>
     </item>
     
     <item>
@@ -44,7 +53,7 @@
       <pubDate>Wed, 27 Feb 2019 09:10:11 +0000</pubDate>
       
       <guid>https://blog.v5u.win/expected-ident-found-go/</guid>
-      <description>报错 expected &amp;#8216;IDENT&amp;#8217;, found &amp;#8216;go&amp;#8217; 运行go run 文件目录为 . ├── README.md ├── fetch │ ├── fetch.go │ ├── fetch1.7.go │ ├── fetchall.go │ ├── server1.go │ ├── server2.go │ └── server3.go └── go-demo ├── main.go ├── mgif.go └──</description>
+      <description>报错 expected ‘IDENT’, found ‘go’ 运行go run 文件目录为 ./go-demo/main.go 由于package 命名为go-demo，命名格式不规范，导致的这个问题。 解决办法：将g</description>
     </item>
     
     <item>
@@ -62,7 +71,7 @@
       <pubDate>Wed, 16 Jan 2019 03:47:27 +0000</pubDate>
       
       <guid>https://blog.v5u.win/code-review/</guid>
-      <description>* *title: code review date: 2018-09-10 categories: 操作系统 Code Review的好处我觉得不用多说了，主要是让你的代码可以更好的组织起来，有更易读，有更高的维护性，同时可以达到知识共</description>
+      <description>*title: code review date: 2018-09-10categories: 操作系统 Code Review的好处我觉得不用多说了，主要是让你的代码可以更好的组织起来，有更易读，有更高的维护性，同时可以达到知识共享，</description>
     </item>
     
     <item>
@@ -71,7 +80,7 @@
       <pubDate>Wed, 16 Jan 2019 03:42:16 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E7%A8%8B%E5%BA%8F%E5%91%98%E6%88%90%E9%95%BF%E4%B9%A6%E5%BD%95/</guid>
-      <description>《程序员修炼之道》1 《人月神话》2 经验这个东西，往往并不能告诉我们什么一定对，但是可以告诉我们什么一定不对。这本书完全是经验凝成，没有大道理</description>
+      <description>《程序员修炼之道》1 《人月神话》2</description>
     </item>
     
     <item>
@@ -278,7 +287,7 @@
       <pubDate>Sun, 25 Oct 2015 09:48:49 +0000</pubDate>
       
       <guid>https://blog.v5u.win/htmlcss/</guid>
-      <description>paragragh 段落 emphasize 强调(显示为斜体) 样式 quote [kwot] 引用，引号(显示默认添加双引号，故不用再次添加“ ”) 引用块 ，长文本引用(显示默认为缩进，左右都缩进) break 换行</description>
+      <description>action 目标 ，添加超链接 例: &amp;lt;a href=&amp;quot;目标网址&amp;rdquo; title=&amp;quot;鼠标滑过显示的文本&amp;quot;&amp;gt;链接显示的</description>
     </item>
     
     <item>
@@ -287,7 +296,7 @@
       <pubDate>Fri, 09 Oct 2015 05:25:58 +0000</pubDate>
       
       <guid>https://blog.v5u.win/gitignore%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
-      <description>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，像是日志或者编译过程中创建的等等。我们可</description>
+      <description></description>
     </item>
     
     <item>
@@ -296,16 +305,7 @@
       <pubDate>Fri, 25 Sep 2015 04:24:51 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E7%94%A8-xcode-%E7%BC%96%E5%86%99-cc-%E7%9A%84-hello-world/</guid>
-      <description>操作步骤： 打开Xcode，在欢迎界面点击Create a new Xcode project。 在左侧栏选择Mac OS X分类的Application，右侧选择Com</description>
-    </item>
-    
-    <item>
-      <title>MAC系统XAMPP 中 MySQL命令行客户端配置使用</title>
-      <link>https://blog.v5u.win/mac%E7%B3%BB%E7%BB%9Fxampp-%E4%B8%AD-mysql%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Fri, 07 Aug 2015 15:42:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/mac%E7%B3%BB%E7%BB%9Fxampp-%E4%B8%AD-mysql%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/</guid>
-      <description>MySQL客户端 &amp;nbsp; &amp;nbsp; &amp;nbsp;MySQL安装包里面，在一个名为bin的文件夹，放置了很多工具包，但是使用他们的方式是命令行（ps：最近上瘾</description>
+      <description></description>
     </item>
     
     <item>
@@ -323,7 +323,7 @@
       <pubDate>Sun, 26 Apr 2015 09:56:07 +0000</pubDate>
       
       <guid>https://blog.v5u.win/seoer%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF/</guid>
-      <description>&amp;nbsp; SEO是一门复杂的学问，手法很多，提高权重可以从很多角度着手，但是，什么样的网站需要用到什么样的手法，网站的不同阶段，又需要怎么样提高排名</description>
+      <description>SEO是一门复杂的学问，手法很多，提高权重可以从很多角度着手，但是，什么样的网站需要用到什么样的手法，网站的不同阶段，又需要怎么样提高排名？</description>
     </item>
     
   </channel>

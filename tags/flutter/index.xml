@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>flutter on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 30 Oct 2019 06:00:04 +0000</pubDate>
       
       <guid>https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/</guid>
-      <description>flutter安装 git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc export PATH=/Users/fanjinlong/dev/flutter/flutter/bin:$PATH export ANDROID_HOME=/Users/fanjinlong/Library/Android/sdk export PATH=${PATH}:${ANDROID_HOME}/tools export PATH=${PATH}:${ANDROID_HOME}/platform-tools export PUB_HOSTED_URL=https://pub.flutter-io.cn export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn # 记得配置完了，执行下 source ~/.zshrc 更新环境变量 命令行执</description>
+      <description>flutter安装 git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc 命令行执行 flutter doctor 检查环境配置情况。 在 Android studio 中添加插件 flutter + dart 根据flutte</description>
     </item>
     
   </channel>

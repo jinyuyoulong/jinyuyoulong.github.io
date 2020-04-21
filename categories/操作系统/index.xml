@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>操作系统 on 为吾优</title>
@@ -98,7 +98,7 @@
       <pubDate>Wed, 08 May 2019 02:12:20 +0000</pubDate>
       
       <guid>https://blog.v5u.win/dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
-      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式： 只用 Dockerfile 管理镜像 使用d</description>
+      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式： 只用 Dockerfile 管理镜像 &amp;lt;/ol&amp;gt; 一个</description>
     </item>
     
     <item>
@@ -116,7 +116,7 @@
       <pubDate>Thu, 18 Apr 2019 09:25:29 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</guid>
-      <description>查看操作系统平台和内核版本：uname -a Mac 下编译 Linux 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go Linux 下编译 Mac 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows</description>
+      <description>查看操作系统平台和内核版本：uname -a Mac 下编译 Linux 和 Windows 64位可执行程序 Linux 下编译 Mac 和 Windows 64位可执行程序 Windows 下编译 Mac 和 Linux 64位可执行程序 Mac 编译 Linux 3</description>
     </item>
     
     <item>
@@ -134,7 +134,7 @@
       <pubDate>Wed, 20 Mar 2019 05:58:16 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mysql8/</guid>
-      <description>mysql5.7 —&amp;gt;mysql8 的升级 MySQL8的加密方式有变化 命令行查看MySQL8 账户的加密方式 use mysql; select user,plugin from user ; 在mysql8之前的版本使用的密</description>
+      <description>mysql5.7 —&amp;gt;mysql8 的升级 MySQL8的加密方式有变化 命令行查看MySQL8 账户的加密方式 在mysql8之前的版本使用的密码加密规则是m</description>
     </item>
     
     <item>
@@ -143,7 +143,7 @@
       <pubDate>Tue, 19 Mar 2019 07:00:08 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac%E4%B8%AD%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDpkg%E5%8C%85/</guid>
-      <description>mac中如何卸载pkg包 &amp;#8220;` pkgutil &amp;#8211;pkgs cd /private/var/db/receipts ls lsbom com.apple.pkg.JavaForMacOSX107.bom //查看所有关联文件。</description>
+      <description>mac中如何卸载pkg包 “` pkgutil –pkgs cd /private/var/db/receipts ls lsbom com.apple.pkg.JavaForMacOSX107.bom //查看所有关联文件。</description>
     </item>
     
     <item>
@@ -179,7 +179,7 @@
       <pubDate>Wed, 16 Jan 2019 05:59:54 +0000</pubDate>
       
       <guid>https://blog.v5u.win/linux%E7%89%88%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
-      <description>* *title: Linux版本使用总结 date: 2018-07-16 tags: &amp;#8211; Linux Linux版本使用总结 社区系 Debian9 没有中文系统，中文输入法。通病，没有内置Apache Ubuntu18 gnome3卡，虚拟</description>
+      <description>*title: Linux版本使用总结 date: 2018-07-16 tags:– Linux Linux版本使用总结</description>
     </item>
     
     <item>
@@ -188,7 +188,7 @@
       <pubDate>Wed, 16 Jan 2019 05:57:22 +0000</pubDate>
       
       <guid>https://blog.v5u.win/socket/</guid>
-      <description>title: Socket date: 2018-08-16 tags: socket, HTTP categories: HTTP iOS socket能做什么? socket是TCP UDP IP HTTP 协议簇，封装为socket API 可以用来写 客户端，服务端模型，在两者之间进行</description>
+      <description>iOS socket能做什么? socket是TCP UDP IP HTTP 协议簇，封装为socket API 可以用来写 客户端，服务端模型，在两者之间进行数据交流 换句话说，</description>
     </item>
     
     <item>
@@ -197,7 +197,7 @@
       <pubDate>Wed, 16 Jan 2019 03:47:27 +0000</pubDate>
       
       <guid>https://blog.v5u.win/code-review/</guid>
-      <description>* *title: code review date: 2018-09-10 categories: 操作系统 Code Review的好处我觉得不用多说了，主要是让你的代码可以更好的组织起来，有更易读，有更高的维护性，同时可以达到知识共</description>
+      <description>*title: code review date: 2018-09-10categories: 操作系统 Code Review的好处我觉得不用多说了，主要是让你的代码可以更好的组织起来，有更易读，有更高的维护性，同时可以达到知识共享，</description>
     </item>
     
     <item>
@@ -206,7 +206,7 @@
       <pubDate>Tue, 25 Dec 2018 02:22:42 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac-nginx-php-mysql/</guid>
-      <description>安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf server { location / { root /rootDocument/; index index.html index.htm index.php; autoindex on; # //开启目录浏览功能</description>
+      <description>安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf php-fpm.conf</description>
     </item>
     
     <item>

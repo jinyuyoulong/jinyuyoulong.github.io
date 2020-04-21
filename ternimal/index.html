@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -94,57 +94,47 @@
                         
                         
                         <div class="post-content">
-                            
-
-<p>暴力删除文件：输入 sudo rm -rf .Trash 再输入密码后 Enter 。</p>
-
-<p>mac 设置软件安装安全级别 sudo spctl &#8211;master-disable</p>
-
+                            <p>暴力删除文件：输入 sudo rm -rf .Trash 再输入密码后 Enter 。</p>
+<p>mac 设置软件安装安全级别 sudo spctl –master-disable</p>
 <p>文件权限修改</p>
-
 <ol>
-<li><p>文字设定法</p>
-
-<p>chmod [who] [+ | &#8211; | =] [mode] 文件名?</p>
-
-<p>2.mkdir code</p></li>
+<li>文字设定法</li>
 </ol>
+<pre><code>chmod \[who\] \[+ | &amp;#8211; | =\] [mode] 文件名?
 
+2.mkdir code
+</code></pre>
 <p>打开当前文件夹 open .</p>
-
 <p>打开当前文件用指定的软件 open -a Sublime\ Text Podfile (open -a app_name file_name)</p>
-
 <h3 id="mac-解压">mac 解压</h3>
-
 <p>.xz: xz -d filename 系统原生自带</p>
-
 <h3 id="zsh-shell">zsh shell</h3>
-
 <ol>
-<li><p>下载: git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</p></li>
-
-<li><p>备份原始zsh配置文件: cp ~/.zshrc ~/.zshrc.orig</p></li>
-
-<li><p>拷贝创建.zshrc: cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</p></li>
-
-<li><p>设置shell为zsh: chsh -s /bin/zsh</p></li>
-
-<li><p>重启terminal或打开新窗口</p></li>
+<li>
+<p>下载: git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</p>
+</li>
+<li>
+<p>备份原始zsh配置文件: cp ~/.zshrc ~/.zshrc.orig</p>
+</li>
+<li>
+<p>拷贝创建.zshrc: cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</p>
+</li>
+<li>
+<p>设置shell为zsh: chsh -s /bin/zsh</p>
+</li>
+<li>
+<p>重启terminal或打开新窗口</p>
+</li>
 </ol>
-
 <p>重新加载文件: source 文件名</p>
-
 <pre><code>source .bash_profile
 source .zshrc
 </code></pre>
-
 <h5 id="ntfs-硬盘读写权限管理">NTFS 硬盘读写权限管理</h5>
-
 <pre><code>因为专利，只能设置指定硬盘的访问权限
 sudo vim /etc/fstab
 copy下面的代码，UUID改为自己硬盘的ID
-UUID=5354F52A-152B-41B7-8F3C-6DAEE309B1BF none ntfs rw,auto,nobrowse
-</code></pre>
+UUID=5354F52A-152B-41B7-8F3C-6DAEE309B1BF none ntfs rw,auto,nobrowse</code></pre>
 
                         </div>
 
@@ -199,6 +189,18 @@ UUID=5354F52A-152B-41B7-8F3C-6DAEE309B1BF none ntfs rw,auto,nobrowse
 <ul class="widget-list">
     
     <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-pod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
         <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
     </li>
     
@@ -226,18 +228,6 @@ UUID=5354F52A-152B-41B7-8F3C-6DAEE309B1BF none ntfs rw,auto,nobrowse
         <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
     </li>
     
-    <li>
-        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -256,7 +246,7 @@ UUID=5354F52A-152B-41B7-8F3C-6DAEE309B1BF none ntfs rw,auto,nobrowse
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+        <a href="https://blog.v5u.win/categories/ios/">ios(96)</a>
     </li>
     
     <li>
@@ -304,7 +294,7 @@ UUID=5354F52A-152B-41B7-8F3C-6DAEE309B1BF none ntfs rw,auto,nobrowse
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(3)</a>
     </li>
     
     <li>
@@ -312,11 +302,11 @@ UUID=5354F52A-152B-41B7-8F3C-6DAEE309B1BF none ntfs rw,auto,nobrowse
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(3)</a>
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(9)</a>
     </li>
     
     <li>
@@ -560,7 +550,7 @@ UUID=5354F52A-152B-41B7-8F3C-6DAEE309B1BF none ntfs rw,auto,nobrowse
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

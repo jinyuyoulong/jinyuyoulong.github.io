@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docker on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 08 May 2019 02:12:20 +0000</pubDate>
       
       <guid>https://blog.v5u.win/dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
-      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式： 只用 Dockerfile 管理镜像 使用d</description>
+      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式： 只用 Dockerfile 管理镜像 &amp;lt;/ol&amp;gt; 一个</description>
     </item>
     
     <item>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>包管理 on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 22 Mar 2019 08:35:56 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go-modules-%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
-      <description>go modules [TOC] 环境配置 正确配置 GOROOT export GOPROXY=&amp;quot;https://athens.azurefd.net&amp;quot; # 微软提供的公共代理，解决golang/x/tools 下载失败 也可以以此技术建立自己的公共库 初始化 同时 确定了项目</description>
+      <description>go modules [TOC] 环境配置 1.13 以后 go env -w GOPROXY=https://goproxy.cn,direct 1.13以前 1. 正确配置 GOROOT&amp;lt;/p&amp;gt; 2. `export GOPROXY=&amp;quot;https://athens.azurefd.net&amp;quot; # 微软提供的公共代理，解决golang/x/tools 下载失败` 也可以以此技术建立</description>
     </item>
     
     <item>

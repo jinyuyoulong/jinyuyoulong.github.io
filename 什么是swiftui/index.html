@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -94,82 +94,38 @@
                         
                         
                         <div class="post-content">
-                            
-
-<p>[TOC]</p>
-
+                            <p>[TOC]</p>
 <h1 id="什么是swiftui">什么是swiftUI？</h1>
-
 <p>Apple的解释：</p>
-
 <blockquote>
 <p>更好的应用。更少的代码。</p>
 </blockquote>
-
 <p>SwiftUI是一种创新的，非常简单的方法，可以通过Swift的强大功能在所有Apple平台上构建用户界面。仅使用一组工具和API为任何Apple设备构建用户界面。SwiftUI具有易于阅读和自然编写的声明式Swift语法，可与新的Xcode设计工具无缝协作，使您的代码和设计完美同步。自动支持动态类型，暗模式，本地化和可访问性意味着您的第一行SwiftUI代码已经是您编写过的最强大的UI代码。</p>
-
 <h2 id="声明性语法">声明性语法</h2>
-
 <p>SwiftUI使用声明性语法，因此您可以简单地说明您的用户界面应该做什么。例如，您可以编写需要包含文本字段的项目列表，然后描述每个字段的对齐方式，字体和颜色。您的代码比以前更简单，更易于阅读，从而节省您的时间和维护。</p>
-
-<pre><code class="language-swift line-numbers">import SwiftUI
-struct Content : View {
-  @State var model = Themes.ListModel
-  var body: some View {
-    List(model.items,action: model.selectItem){ item in
-      Image(item.image)
-      VStack(alignment: .leading){
-        Text(item.title)
-        Text(item.subtitle)
-            .color(.gray)
-      }
-    }
-  }
-}
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>这种声明式风格甚至适用于复杂的概念，如动画。轻松地将动画添加到几乎任何控件中，并选择只有几行代码的即用型效果集合。在运行时，系统会处理创建平滑移动所需的所有步骤，甚至可以处理中断以保持应用稳定。通过动画这么简单，您将寻找新的方法来让您的应用程序活跃起来。</p>
-
 <h2 id="设计工具">设计工具</h2>
-
 <p>Xcode 11包含直观的新设计工具，使得使用SwiftUI构建界面就像拖放一样简单。当您在设计画布中工作时，您编辑的所有内容都与相邻编辑器中的代码完全同步。在您键入时，代码会立即显示为预览，您对该预览所做的任何更改都会立即显示在您的代码中。Xcode会立即重新编译您的更改，并将其插入到应用程序的运行版本中，始终可见且可编辑。</p>
-
-<p><strong>拖放。</strong>只需拖动画布上的控件即可在用户界面中排列组件。单击以打开检查器以选择字体，颜色，对齐方式和其他设计选项，并使用光标轻松重新排列控件。许多这些可视化编辑器也可以在代码编辑器中使用，因此您可以使用检查器为每个控件发现新的修改器，即使您更喜欢手动编码界面部分。您还可以从库中拖动控件并将其拖放到设计画布上或直接放在代码上。</p>
-
-<p><strong>动态更换。</strong>Swift编译器和运行时完全嵌入到Xcode中，因此您的应用程序将不断构建和运行。您看到的设计画布不仅仅是您的用户界面的近似 &#8211; 它是您的实时应用程序。Xcode可以直接在您的实时应用程序中使用“动态替换”交换已编辑的代码，这是Swift中的一项新功能。</p>
-
-<p><strong>预览。</strong>您现在可以创建任何SwiftUI视图的一个或多个预览以获取示例数据，并配置用户可能看到的几乎任何内容，例如大字体，本地化或暗模式。预览还可以在任何设备和任何方向上显示您的UI。</p>
-
+<p>**拖放。**只需拖动画布上的控件即可在用户界面中排列组件。单击以打开检查器以选择字体，颜色，对齐方式和其他设计选项，并使用光标轻松重新排列控件。许多这些可视化编辑器也可以在代码编辑器中使用，因此您可以使用检查器为每个控件发现新的修改器，即使您更喜欢手动编码界面部分。您还可以从库中拖动控件并将其拖放到设计画布上或直接放在代码上。</p>
+<p>**动态更换。**Swift编译器和运行时完全嵌入到Xcode中，因此您的应用程序将不断构建和运行。您看到的设计画布不仅仅是您的用户界面的近似 – 它是您的实时应用程序。Xcode可以直接在您的实时应用程序中使用“动态替换”交换已编辑的代码，这是Swift中的一项新功能。</p>
+<p>**预览。**您现在可以创建任何SwiftUI视图的一个或多个预览以获取示例数据，并配置用户可能看到的几乎任何内容，例如大字体，本地化或暗模式。预览还可以在任何设备和任何方向上显示您的UI。</p>
 <h2 id="所有apple平台都是原生的">所有Apple平台都是原生的</h2>
-
 <p>SwiftUI建立在数十年创建世界上最具创新性和直观的用户界面的经验之上。用户喜欢Apple生态系统的所有内容，例如控件和特定于平台的体验，都会在您的代码中呈现出来。SwiftUI是真正的原生，因此您的应用程序可以通过少量代码和交互式设计画布直接访问每个平台的成熟技术。</p>
-
 <h2 id="对开发者和公司的影响">对开发者和公司的影响</h2>
-
 <p>通过swiftUI的发布可以看到，Apple 在逐步拜托对 Objective-C &amp; Cocoa 的依赖，将精力和资源倾斜到swift语言上，这一次是对UIKit的摆脱。以 Apple 一贯的强势政策，很有可能后期会逐步放弃对 Objective-C 的持续优化(事实上有证据表明已经开始了)和App Store 上的政策制裁。以到达逐步引导开发者加入到新的平台上，这是在之前有过先例的：比如Mac OS从 power-pc 架构转到 x86架构.这将会是一个逐步渐进的过程，但是不会太长最多一两年，并且改变不可逆。</p>
-
 <p>对于公司和开发者来说，最好的莫过于全面拥抱 swift，但是考虑到很多旧项目使用 OC ，已经形成了强大的路径依赖，越大的项目组转身会越困难。但是大项目组人力不缺，资源不缺，有强大的容错能力，我认为反而是大项目组会最早探索，转身稳中有快。而对于新项目和创业公司来说则没有任何技术债务，技术选型会更轻松一些，完全受开发人员的控制。而最尴尬的莫过于中型项目和团队。人手紧缺，业务变动剧烈，最关键的是技术leader如果没有技术前瞻性的话，担心在技术转型中影响业务发展，反而是最保守的。处在这个位置的开发人员是最痛苦的。</p>
-
 <p>解决办法就是：开发自己的项目，拥有完全独立自主的决定权。代价就是每年$99≈￥688。</p>
-
 <p>公司的解决方案就是：在新的项目中使用swift。不建议使用混合开发，编译速度慢，有想想不到的问题</p>
-
 <h2 id="版本要求">版本要求</h2>
-
 <p>SwiftUI 支持的设备要求版本较高，将在7月份开启公测，官方介绍如下：</p>
-
 <p>只支持</p>
-
 <p>Xcode 11+ Bata</p>
-
 <p>iOS 13.0+ Beta</p>
-
 <p>macOS 10.15+ Beta</p>
-
 <p>UIKit for Mac 13.0+ Beta</p>
-
 <p>tvOS 13.0+ Beta</p>
-
 <p>watchOS 6.0+ Beta</p>
 
                         </div>
@@ -229,6 +185,18 @@ struct Content : View {
 <ul class="widget-list">
     
     <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-pod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
         <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
     </li>
     
@@ -256,18 +224,6 @@ struct Content : View {
         <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
     </li>
     
-    <li>
-        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -286,7 +242,7 @@ struct Content : View {
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+        <a href="https://blog.v5u.win/categories/ios/">ios(96)</a>
     </li>
     
     <li>
@@ -334,7 +290,7 @@ struct Content : View {
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(3)</a>
     </li>
     
     <li>
@@ -342,11 +298,11 @@ struct Content : View {
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(3)</a>
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(9)</a>
     </li>
     
     <li>
@@ -590,7 +546,7 @@ struct Content : View {
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

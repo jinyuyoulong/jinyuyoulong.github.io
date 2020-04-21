@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iris on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 13 Mar 2019 07:52:15 +0000</pubDate>
       
       <guid>https://blog.v5u.win/iris-mvc%E6%9E%B6%E6%9E%84%E7%9A%84%E7%9B%AE%E5%BD%95%E6%8B%86%E8%A7%A3/</guid>
-      <description>├── bootstrap │ └── bootstrapper.go 引导者。全局变量配置，模板、session、web socket、Error page ├── conf │ └── db.go 数据库配置模型。struct</description>
+      <description></description>
     </item>
     
   </channel>

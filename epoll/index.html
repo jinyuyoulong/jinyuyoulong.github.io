@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -92,12 +92,8 @@
                         
                         
                         <div class="post-content">
-                            
-
-<p>epoll原理</p>
-
-<p>参考：<a href="https://my.oschina.net/editorial-story/blog/3052308">https://my.oschina.net/editorial-story/blog/3052308</a></p>
-
+                            <p>epoll原理</p>
+<p>参考：https://my.oschina.net/editorial-story/blog/3052308</p>
 <ol>
 <li>网卡DMA传来数据，存入内存</li>
 <li>网卡向CPU发送中断信号，操作系统得知有新数据到来，通过网卡中断程序去处理数据</li>
@@ -105,80 +101,44 @@
 <li>唤醒对应进程</li>
 <li>将进程放入工作队列</li>
 </ol>
-
 <h1 id="内核接收网络数据全过程"><strong>内核接收网络数据全过程</strong></h1>
-
 <p>如下图所示，进程在 recv 阻塞期间，计算机收到了对端传送的数据（步骤①）——&gt;</p>
-
 <p>数据经由网卡传送到内存（步骤②），——&gt;</p>
-
 <p>然后网卡通过中断信号通知 CPU 有数据到达，CPU 执行中断程序（步骤③）。——&gt;</p>
-
 <p>此处的中断程序主要有两项功能，先将网络数据写入到对应 socket 的接收缓冲区里面（步骤④），——&gt;</p>
-
 <p>再唤醒进程 A（步骤⑤），——&gt;</p>
-
 <p>重新将进程 A 放入工作队列中。</p>
-
 <p>以上是内核接收数据全过程，这里我们可能会思考两个问题：</p>
-
 <ul>
 <li>其一，操作系统如何知道网络数据对应于哪个 socket？</li>
 <li>其二，如何同时监视多个 socket 的数据？</li>
 </ul>
-
 <p>第一个问题：因为一个 socket 对应着一个端口号，而网络数据包中包含了 ip 和端口的信息，内核可以通过端口号找到对应的 socket。当然，为了提高处理速度，操作系统会维护端口号到 socket 的索引结构，以快速读取。</p>
-
 <p>第二个问题是多路复用的重中之重，也正是本文后半部分的重点。</p>
-
 <p><strong>select</strong> 简单的方法往往有缺点，主要是：</p>
-
 <p>其一，每次调用 select 都需要将进程加入到所有监视 socket 的等待队列，每次唤醒都需要从每个队列中移除。这里涉及了两次遍历，而且每次都要将整个 fds 列表传递给内核，有一定的开销。正是因为遍历操作开销大，出于效率的考量，才会规定 select 的最大监视数量，默认只能监视 1024 个 socket。</p>
-
 <p>其二，进程被唤醒后，程序并不知道哪些 socket 收到数据，还需要遍历一次。</p>
-
 <p><strong>有没有减少遍历的方法？有没有保存就绪 socket 的方法？这两个问题便是 epoll 技术要解决的</strong>。</p>
-
 <p>epoll 通过以下一些措施来改进效率：</p>
-
 <p><strong>措施一：功能分离</strong></p>
-
 <p>select 低效的原因之一是将“维护等待队列”和“阻塞进程”两个步骤合二为一。</p>
-
 <p><strong>措施二：就绪列表</strong></p>
-
 <p>select 低效的另一个原因在于程序不知道哪些 socket 收到数据，只能一个个遍历。如果内核维护一个“就绪列表”，引用收到数据的 socket，就能避免遍历。如下图所示，计算机共有三个 socket，收到数据的 sock2 和 sock3 被就绪列表 rdlist 所引用。当进程被唤醒后，只要获取 rdlist 的内容，就能够知道哪些 socket 收到数据。</p>
-
 <h1 id="epoll-的原理与工作流程"><strong>epoll 的原理与工作流程</strong></h1>
-
 <p><strong>创建 epoll 对象</strong></p>
-
 <p><strong>维护监视列表</strong></p>
-
 <p><strong>接收数据</strong></p>
-
 <p><strong>阻塞和唤醒进程</strong></p>
-
 <h1 id="epoll-的实现细节"><strong>epoll 的实现细节</strong></h1>
-
 <p>相信读者对 epoll 的本质已经有一定的了解。但我们还需要知道 eventpoll 的数据结构是什么样子？</p>
-
 <p>此外，就绪队列应该应使用什么数据结构？eventpoll 应使用什么数据结构来管理通过 epoll_ctl 添加或删除的 socket？</p>
-
 <p>如下图所示，eventpoll 包含了 lock、mtx、wq（等待队列）与 rdlist 等成员，其中 rdlist 和 rbr 是我们所关心的。</p>
-
 <p><strong>就绪列表的数据结构</strong></p>
-
 <p>就绪列表引用着就绪的 socket，所以它应能够快速的插入数据。</p>
-
 <p>程序可能随时调用 epoll_ctl 添加监视 socket，也可能随时删除。当删除时，若该 socket 已经存放在就绪列表中，它也应该被移除。所以就绪列表应是一种能够快速插入和删除的数据结构。</p>
-
 <p>双向链表就是这样一种数据结构，epoll 使用双向链表来实现就绪队列（对应上图的 rdllist）。</p>
-
 <p><strong>索引结构</strong></p>
-
 <p>既然 epoll 将“维护监视队列”和“进程阻塞”分离，也意味着需要有个数据结构来保存监视的 socket，至少要方便地添加和移除，还要便于搜索，以避免重复添加。红黑树是一种自平衡二叉查找树，搜索、插入和删除时间复杂度都是O(log(N))，效率较好，epoll 使用了红黑树作为索引结构（对应上图的 rbr）。</p>
-
 <p>注：因为操作系统要兼顾多种功能，以及由更多需要保存的数据，rdlist 并非直接引用 socket，而是通过 epitem 间接引用，红黑树的节点也是 epitem 对象。同样，文件系统也并非直接引用着 socket。为方便理解，本文中省略了一些间接结构。</p>
 
                         </div>
@@ -234,6 +194,18 @@
 <ul class="widget-list">
     
     <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-pod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
         <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
     </li>
     
@@ -261,18 +233,6 @@
         <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
     </li>
     
-    <li>
-        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -291,7 +251,7 @@
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+        <a href="https://blog.v5u.win/categories/ios/">ios(96)</a>
     </li>
     
     <li>
@@ -339,7 +299,7 @@
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(3)</a>
     </li>
     
     <li>
@@ -347,11 +307,11 @@
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(3)</a>
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(9)</a>
     </li>
     
     <li>
@@ -595,7 +555,7 @@
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

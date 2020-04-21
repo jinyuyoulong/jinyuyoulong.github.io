@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>控件 on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Thu, 16 Jul 2015 03:03:51 +0000</pubDate>
       
       <guid>https://blog.v5u.win/nstimer/</guid>
-      <description>转载自 NSTimer的使用方法 1、初始化 + (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo; + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo; 注：不用scheduled方式初始化的，需要手动addTimer:for</description>
+      <description>&amp;lt; p style=”color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;”&amp;gt;NSTimer不是绝对准确的,而且中间耗时或阻塞错过下一个点,那么</description>
     </item>
     
   </channel>

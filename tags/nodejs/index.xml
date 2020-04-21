@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nodejs on 为吾优</title>
@@ -35,7 +35,7 @@
       <pubDate>Tue, 02 May 2017 02:29:55 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
-      <description>mac下nvm 使用记录 断开连接 brew unlink nvm 安装 brew install nvm 环境变量 add to ~/.bash_profile export NVM_DIR=&amp;#8221;$HOME/.nvm&amp;#8221; . &amp;#8220;$(brew &amp;#8211;prefix nvm)/nvm.sh&amp;#8221; 配置国内镜像源 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist 配置npm镜像源 创建 ~/.npmrc 写入registry=htt</description>
+      <description>mac下nvm 使用记录 断开连接 brew unlink nvm 安装 brew install nvm 环境变量 add to ~/.bash_profile export NVM_DIR=”$HOME/.nvm” . “$(brew –prefix nvm)</description>
     </item>
     
     <item>

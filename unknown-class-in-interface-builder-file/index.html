@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -92,61 +92,20 @@
                         
                         
                         <div class="post-content">
-                            <p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; clear: both; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  I added a UIView xib file using the root class of&nbsp;<code style="margin: 0px; padding: 1px 5px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &#39;Lucida Console&#39;, &#39;Liberation Mono&#39;, &#39;DejaVu Sans Mono&#39;, &#39;Bitstream Vera Sans Mono&#39;, &#39;Courier New&#39;, monospace, sans-serif; white-space: pre-wrap; background-color: rgb(238, 238, 238);">MyView</code>.
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; clear: both; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  I created it in the wrong place and so moved it in the project. Same project just a different folder/group.
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; clear: both; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  I then had a problem when running saying&#8230;
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; clear: both; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  <code style="margin: 0px; padding: 1px 5px; border: 0px; font-size: 13px; font-family: Consolas, Menlo, Monaco, &#39;Lucida Console&#39;, &#39;Liberation Mono&#39;, &#39;DejaVu Sans Mono&#39;, &#39;Bitstream Vera Sans Mono&#39;, &#39;Courier New&#39;, monospace, sans-serif; white-space: pre-wrap; background-color: rgb(238, 238, 238);">Unknown Class MyView in Interface Builder file</code>
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; clear: both; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  I couldn't work out what was wrong so I have now deleted the files both from the project and from the directory.
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; clear: both; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  I've done a search using SublimeText2 for the string "MyView" and it doesn't exist anywhere in the project.
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; clear: both; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  I've reset the simulator, cleaned the project and the build folder and deleted derived data.
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; clear: both; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  Still getting the same error.
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  Any ideas what I can do now?
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  范子遇到的问题也是这样的，这个问题的产生过程一模一样：
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  开始建了一个xib后来发现设计不行，就有删除了，啊啊啊，从此噩梦开始了。。。
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  只要一运行就崩溃，清楚缓存，不行，删除项目，不行；后来看到据说这是Xcode5的一个bug，但是大哥，我的Xcode版本是6啊，怎么还不解决！只能使用真机测试没问题，也就只能这样了。如此过了几日。
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  但是机智的我会被这点小困难打倒吗，终于有一天我决定解决这个问题（其实是因为，忘带数据线，没办法真机测试了*——*），于是到处Google，哈哈，功夫不负有心人，我从一篇答案中获得了灵感，触类旁通，忽然想到，我的ViewController当初常见的时候使用的是init方法，虽然一般系统默认调用init方法会检查有无nib有的话会调用nib但是希望不能寄托在Xcode身上，我断定就是这里出了问题，于是返回代码试验，将init方法改为initWithNibName方法，command+R 运行OK，
-</p>
-
-<p style="margin-top: 0px; margin-bottom: 1em; white-space: normal; padding: 0px; border: 0px; font-size: 15px; color: rgb(34, 34, 34); font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; line-height: 19.5px; background-color: rgb(255, 255, 255);">
-  至此问题解决，噢耶！
-</p>
+                            <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
                         </div>
 
@@ -201,6 +160,18 @@
 <ul class="widget-list">
     
     <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-pod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
         <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
     </li>
     
@@ -228,18 +199,6 @@
         <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
     </li>
     
-    <li>
-        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -258,7 +217,7 @@
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+        <a href="https://blog.v5u.win/categories/ios/">ios(96)</a>
     </li>
     
     <li>
@@ -306,7 +265,7 @@
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(3)</a>
     </li>
     
     <li>
@@ -314,11 +273,11 @@
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(3)</a>
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(9)</a>
     </li>
     
     <li>
@@ -562,7 +521,7 @@
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

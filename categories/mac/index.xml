@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 30 Oct 2019 06:00:04 +0000</pubDate>
       
       <guid>https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/</guid>
-      <description>flutter安装 git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc export PATH=/Users/fanjinlong/dev/flutter/flutter/bin:$PATH export ANDROID_HOME=/Users/fanjinlong/Library/Android/sdk export PATH=${PATH}:${ANDROID_HOME}/tools export PATH=${PATH}:${ANDROID_HOME}/platform-tools export PUB_HOSTED_URL=https://pub.flutter-io.cn export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn # 记得配置完了，执行下 source ~/.zshrc 更新环境变量 命令行执</description>
+      <description>flutter安装 git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc 命令行执行 flutter doctor 检查环境配置情况。 在 Android studio 中添加插件 flutter + dart 根据flutte</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Thu, 18 Apr 2019 09:25:29 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</guid>
-      <description>查看操作系统平台和内核版本：uname -a Mac 下编译 Linux 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go Linux 下编译 Mac 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows</description>
+      <description>查看操作系统平台和内核版本：uname -a Mac 下编译 Linux 和 Windows 64位可执行程序 Linux 下编译 Mac 和 Windows 64位可执行程序 Windows 下编译 Mac 和 Linux 64位可执行程序 Mac 编译 Linux 3</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Tue, 19 Mar 2019 07:00:08 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac%E4%B8%AD%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDpkg%E5%8C%85/</guid>
-      <description>mac中如何卸载pkg包 &amp;#8220;` pkgutil &amp;#8211;pkgs cd /private/var/db/receipts ls lsbom com.apple.pkg.JavaForMacOSX107.bom //查看所有关联文件。</description>
+      <description>mac中如何卸载pkg包 “` pkgutil –pkgs cd /private/var/db/receipts ls lsbom com.apple.pkg.JavaForMacOSX107.bom //查看所有关联文件。</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Wed, 16 Jan 2019 03:46:29 +0000</pubDate>
       
       <guid>https://blog.v5u.win/cocoapods/</guid>
-      <description>* *title: CocoaPods date: 2016-10-26 10:37:38 tags: Cocoapods category: iOS id: 3 .podspec文件是做什么的 .podspec文件描述了一个库将怎样被添加进工程中。.podspec文件可以标识该第</description>
+      <description>*title: CocoaPods date: 2016-10-26 10:37:38 tags: Cocoapods category: iOS id: 3 .podspec文件是做什么的 Podfile 文件的自述 ​</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Wed, 16 Jan 2019 03:45:07 +0000</pubDate>
       
       <guid>https://blog.v5u.win/cocoapods-library-create/</guid>
-      <description>* *title: cocoapods-library-create date: 2018-08-15 14:48:36 tags: cocoapods categories: cocoapods readme文件如何添加 这种说明 打开网站https://shields.io/#/examples/funding 选择f</description>
+      <description>*title: cocoapods-library-create date: 2018-08-15 14:48:36 tags: cocoapodscategories: cocoapods readme文件如何添加 这种说明 打开网站https://shields.io/#/examples/funding 选择fla</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Tue, 25 Dec 2018 02:22:42 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac-nginx-php-mysql/</guid>
-      <description>安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf server { location / { root /rootDocument/; index index.html index.htm index.php; autoindex on; # //开启目录浏览功能</description>
+      <description>安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf php-fpm.conf</description>
     </item>
     
     <item>
@@ -89,7 +89,7 @@
       <pubDate>Fri, 18 May 2018 08:53:16 +0000</pubDate>
       
       <guid>https://blog.v5u.win/ternimal/</guid>
-      <description>暴力删除文件：输入 sudo rm -rf .Trash 再输入密码后 Enter 。 mac 设置软件安装安全级别 sudo spctl &amp;#8211;master-disable 文件权限修改 文字设定法 chmod [who] [+ | &amp;#8211; | =] [mode] 文件名? 2.mkdir code 打开当前文件夹 open . 打</description>
+      <description>暴力删除文件：输入 sudo rm -rf .Trash 再输入密码后 Enter 。 mac 设置软件安装安全级别 sudo spctl –master-disable 文件权限修改 文字设定法 chmod \[who\] \[+ | &amp;amp;#8211; | =\] [mode] 文件</description>
     </item>
     
     <item>
@@ -125,7 +125,7 @@
       <pubDate>Fri, 09 Jun 2017 03:35:06 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac%E4%B8%8B%E5%AE%89%E8%A3%85composer/</guid>
-      <description>composer是PHP的包管理器 mac下如何安装呢？ 最简单的方法是通过brew工具 brew install composer 这时候可能会遇到这个问题： Searching for a previously deleted formula&amp;#8230; 所以我们检查</description>
+      <description>composer是PHP的包管理器 mac下如何安装呢？ 最简单的方法是通过brew工具 brew install composer 这时候可能会遇到这个问题：</description>
     </item>
     
     <item>
@@ -161,7 +161,7 @@
       <pubDate>Sat, 21 Jan 2017 15:38:52 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8wget/</guid>
-      <description>下载单个文件， 为什么不用mac原生自带的工具：curl &amp;#8220;网址链接&amp;#8221; -o &amp;#8220;输出文件名&amp;#8221; 解释一下，</description>
+      <description>下载单个文件， 为什么不用mac原生自带的工具：curl “网址链接” -o “输出文件名” 解释一下，wget是Linux下自带的文件下载工具非常好用</description>
     </item>
     
     <item>
@@ -179,7 +179,7 @@
       <pubDate>Fri, 27 May 2016 12:51:27 +0000</pubDate>
       
       <guid>https://blog.v5u.win/xcode%E6%8F%92%E4%BB%B6xcodecolors%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-      <description>安装： 在 管理器中搜索 下载 Xcodecolors 重启Xcode 选择load boundle 使用： 配置环境变量－&amp;gt; 打开Product -&amp;gt; Edit Scheme 选择Run-&amp;gt;&amp;#8221;</description>
+      <description>安装： 在 管理器中搜索 下载 Xcodecolors 重启Xcode 选择load boundle 使用： 配置环境变量－&amp;gt; 打开Product -&amp;gt; Edit Scheme 选择Run-&amp;gt;”Argume</description>
     </item>
     
     <item>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xcode on 为吾优</title>
@@ -26,7 +26,7 @@
       <pubDate>Wed, 16 Jan 2019 03:46:29 +0000</pubDate>
       
       <guid>https://blog.v5u.win/cocoapods/</guid>
-      <description>* *title: CocoaPods date: 2016-10-26 10:37:38 tags: Cocoapods category: iOS id: 3 .podspec文件是做什么的 .podspec文件描述了一个库将怎样被添加进工程中。.podspec文件可以标识该第</description>
+      <description>*title: CocoaPods date: 2016-10-26 10:37:38 tags: Cocoapods category: iOS id: 3 .podspec文件是做什么的 Podfile 文件的自述 ​</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Wed, 16 Jan 2019 03:45:07 +0000</pubDate>
       
       <guid>https://blog.v5u.win/cocoapods-library-create/</guid>
-      <description>* *title: cocoapods-library-create date: 2018-08-15 14:48:36 tags: cocoapods categories: cocoapods readme文件如何添加 这种说明 打开网站https://shields.io/#/examples/funding 选择f</description>
+      <description>*title: cocoapods-library-create date: 2018-08-15 14:48:36 tags: cocoapodscategories: cocoapods readme文件如何添加 这种说明 打开网站https://shields.io/#/examples/funding 选择fla</description>
     </item>
     
     <item>

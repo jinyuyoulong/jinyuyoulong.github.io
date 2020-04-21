@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>web前端 on 为吾优</title>
@@ -26,7 +26,7 @@
       <pubDate>Thu, 09 May 2019 05:31:31 +0000</pubDate>
       
       <guid>https://blog.v5u.win/markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
-      <description>Sequence Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks! flow st=&amp;gt;start: Start op=&amp;gt;operation: Your Operation cond=&amp;gt;condition: Yes or No? e=&amp;gt;end st-&amp;gt;op-&amp;gt;cond cond(yes)-&amp;gt;e cond(no)-&amp;gt;op mermaid Gantt</description>
+      <description>Sequence flow mermaid Gantt</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@
       <pubDate>Wed, 16 Jan 2019 05:52:02 +0000</pubDate>
       
       <guid>https://blog.v5u.win/hexo/</guid>
-      <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new &amp;#8220;文章名&amp;#8221; 创建</description>
+      <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new “文章名” 创建好的”文件名.md” 文件</description>
     </item>
     
     <item>
@@ -44,7 +44,7 @@
       <pubDate>Wed, 16 Jan 2019 05:32:49 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E8%BF%9B%E5%85%A5ghostblog%E7%9A%84%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF-2/</guid>
-      <description>* *title: 如何进入ghostblog的管理面板 id: 442 categories: &amp;#8211; blog &amp;#8211; ghostblog date: 2016-07-04 14:39:44 tags: 在域名后面加上/ghost 进入网站空间下的ghost路径下就行</description>
+      <description>*title: 如何进入ghostblog的管理面板 id: 442 categories: – blog – ghostblog date: 2016-07-04 14:39:44tags: 在域名后面加上/ghost 进入网站空间下的ghost路径下就行</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@
       <pubDate>Wed, 16 Jan 2019 03:43:41 +0000</pubDate>
       
       <guid>https://blog.v5u.win/chrome-%E8%B0%83%E8%AF%95/</guid>
-      <description>* *title: chrome 调试 date: 2018-11-08 chrome 调试 keyword: workspace,breakpoints 将调试代码文件添加到Chrome 的Workspace中：Sources&amp;#8211;&amp;gt;filesystem&amp;#</description>
+      <description>*title: chrome 调试 date: 2018-11-08 chrome 调试 keyword: workspace,breakpoints 将调试代码文件添加到Chrome 的Workspace中：Sources–&amp;gt;filesystem–&amp;gt;+Add</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Wed, 16 Jan 2019 03:11:57 +0000</pubDate>
       
       <guid>https://blog.v5u.win/jekyll-using-standards-%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/</guid>
-      <description>* *layout: default title: jekyll using standards 使用规范 categories: [jekyll github markdown rouge] date: 2016-9-3 15:47:05 excerpt: &amp;#8220;本文摘要&amp;#8221; # 覆盖清掉文章的摘要 pid: &amp;#8220;1&amp;#8221; # 新建一个pid的字符串变量 published: true #是否发</description>
+      <description>jekyll using standards 使用规范 file命名格式：文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必</description>
     </item>
     
     <item>

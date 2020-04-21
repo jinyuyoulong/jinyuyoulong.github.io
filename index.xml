@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>为吾优</title>
@@ -10,6 +10,33 @@
     
 	<atom:link href="https://blog.v5u.win/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>制作pod library 私有库</title>
+      <link>https://blog.v5u.win/posts/2020-04-21-pod_library%E7%A7%81%E6%9C%89%E5%BA%93/</link>
+      <pubDate>Tue, 21 Apr 2020 13:14:17 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/2020-04-21-pod_library%E7%A7%81%E6%9C%89%E5%BA%93/</guid>
+      <description>[TOC] iOS组件化之路——制作pod 私有库 详细教程点我 创建远程仓库 本地创建项目 pod lib create MyTest 添加文件到Classes/目录下 在example下执行po</description>
+    </item>
+    
+    <item>
+      <title>红米蓝牙Redmi AirDots，左右耳无法配对解决办法</title>
+      <link>https://blog.v5u.win/posts/2020-04-21-redmiairdots/</link>
+      <pubDate>Tue, 21 Apr 2020 13:11:53 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/2020-04-21-redmiairdots/</guid>
+      <description>红米蓝牙Redmi AirDots，左右耳无法配对解决办法 开机状态下，同时长按两个耳机5S，看到红灯亮2S，松手。此时耳机关机 同时长按两个耳机</description>
+    </item>
+    
+    <item>
+      <title>2020 04 21 元编程</title>
+      <link>https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Tue, 21 Apr 2020 13:09:22 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
+      <description>元编程 meta programming 元编程是一种通过代码生成代码的思想，一般分为两种形式： macro宏展开 或者 模板 runtime 运行时 宏系统分为两种： 文本替换，比如 C 和 C++ 抽象语法</description>
+    </item>
     
     <item>
       <title>归档</title>
@@ -107,7 +134,7 @@
       <pubDate>Wed, 30 Oct 2019 06:00:04 +0000</pubDate>
       
       <guid>https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/</guid>
-      <description>flutter安装 git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc export PATH=/Users/fanjinlong/dev/flutter/flutter/bin:$PATH export ANDROID_HOME=/Users/fanjinlong/Library/Android/sdk export PATH=${PATH}:${ANDROID_HOME}/tools export PATH=${PATH}:${ANDROID_HOME}/platform-tools export PUB_HOSTED_URL=https://pub.flutter-io.cn export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn # 记得配置完了，执行下 source ~/.zshrc 更新环境变量 命令行执</description>
+      <description>flutter安装 git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc 命令行执行 flutter doctor 检查环境配置情况。 在 Android studio 中添加插件 flutter + dart 根据flutte</description>
     </item>
     
     <item>
@@ -341,7 +368,7 @@
       <pubDate>Thu, 09 May 2019 05:31:31 +0000</pubDate>
       
       <guid>https://blog.v5u.win/markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
-      <description>Sequence Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks! flow st=&amp;gt;start: Start op=&amp;gt;operation: Your Operation cond=&amp;gt;condition: Yes or No? e=&amp;gt;end st-&amp;gt;op-&amp;gt;cond cond(yes)-&amp;gt;e cond(no)-&amp;gt;op mermaid Gantt</description>
+      <description>Sequence flow mermaid Gantt</description>
     </item>
     
     <item>
@@ -359,7 +386,7 @@
       <pubDate>Wed, 08 May 2019 02:12:20 +0000</pubDate>
       
       <guid>https://blog.v5u.win/dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
-      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式： 只用 Dockerfile 管理镜像 使用d</description>
+      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式： 只用 Dockerfile 管理镜像 &amp;lt;/ol&amp;gt; 一个</description>
     </item>
     
     <item>
@@ -377,7 +404,7 @@
       <pubDate>Thu, 18 Apr 2019 09:25:29 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</guid>
-      <description>查看操作系统平台和内核版本：uname -a Mac 下编译 Linux 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go Linux 下编译 Mac 和 Windows 64位可执行程序 CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build main.go CGO_ENABLED=0 GOOS=windows</description>
+      <description>查看操作系统平台和内核版本：uname -a Mac 下编译 Linux 和 Windows 64位可执行程序 Linux 下编译 Mac 和 Windows 64位可执行程序 Windows 下编译 Mac 和 Linux 64位可执行程序 Mac 编译 Linux 3</description>
     </item>
     
     <item>
@@ -396,11 +423,8 @@
       
       <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E9%80%89%E8%B4%AD%E9%BC%A0%E6%A0%87/</guid>
       <description>&lt;h3 id=&#34;三种握姿&#34;&gt;三种握姿&lt;/h3&gt;
-
 &lt;p&gt;趴式握鼠 =掌握&lt;/p&gt;
-
 &lt;p&gt;姿势特点：手掌掌心全部与鼠标背部贴合，大拇指、无名指与小拇指自然伸直共同操作鼠标。食中二指自然平放在鼠标按键上。点击按键时，指腹与按键接触。移动时，手腕随鼠标移动。此姿势由于鼠标活动范围大，手常自然放在鼠标上不易疲劳，适合于低SENS的FPS玩家长时间练习。&lt;/p&gt;
-
 &lt;p&gt;趴式握鼠依靠手腕做支点，整个手自然落在鼠标上，如果在右手型鼠标上第一感觉就是舒适，这也是大部分人采用的握姿。手部疲劳度低，依靠手腕运动，所以长时间操作及右手型鼠标用户推荐此种握法。&lt;/p&gt;</description>
     </item>
     
@@ -446,7 +470,7 @@
       <pubDate>Fri, 22 Mar 2019 08:35:56 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go-modules-%E5%8C%85%E7%AE%A1%E7%90%86/</guid>
-      <description>go modules [TOC] 环境配置 正确配置 GOROOT export GOPROXY=&amp;quot;https://athens.azurefd.net&amp;quot; # 微软提供的公共代理，解决golang/x/tools 下载失败 也可以以此技术建立自己的公共库 初始化 同时 确定了项目</description>
+      <description>go modules [TOC] 环境配置 1.13 以后 go env -w GOPROXY=https://goproxy.cn,direct 1.13以前 1. 正确配置 GOROOT&amp;lt;/p&amp;gt; 2. `export GOPROXY=&amp;quot;https://athens.azurefd.net&amp;quot; # 微软提供的公共代理，解决golang/x/tools 下载失败` 也可以以此技术建立</description>
     </item>
     
     <item>
@@ -455,7 +479,7 @@
       <pubDate>Thu, 21 Mar 2019 07:48:02 +0000</pubDate>
       
       <guid>https://blog.v5u.win/golang%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</guid>
-      <description>Golang代码规范 参考 https://golang.org/doc/effective_go.html 本文参考blog [TOC] 项目目录结构规范 PROJECT_NAME ├── README.md 介绍软件及文档入口 ├── bin 编译好的二进制文件,执行./build.sh</description>
+      <description>Golang代码规范 参考 https://golang.org/doc/effective_go.html 本文参考blog [TOC] 项目目录结构规范 项目的目录结构尽量做到简明、层次清楚。 文件名命名规范 用小写，尽量见名思义，看见文</description>
     </item>
     
     <item>
@@ -473,7 +497,7 @@
       <pubDate>Wed, 20 Mar 2019 05:58:16 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mysql8/</guid>
-      <description>mysql5.7 —&amp;gt;mysql8 的升级 MySQL8的加密方式有变化 命令行查看MySQL8 账户的加密方式 use mysql; select user,plugin from user ; 在mysql8之前的版本使用的密</description>
+      <description>mysql5.7 —&amp;gt;mysql8 的升级 MySQL8的加密方式有变化 命令行查看MySQL8 账户的加密方式 在mysql8之前的版本使用的密码加密规则是m</description>
     </item>
     
     <item>
@@ -482,7 +506,7 @@
       <pubDate>Tue, 19 Mar 2019 07:00:08 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac%E4%B8%AD%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BDpkg%E5%8C%85/</guid>
-      <description>mac中如何卸载pkg包 &amp;#8220;` pkgutil &amp;#8211;pkgs cd /private/var/db/receipts ls lsbom com.apple.pkg.JavaForMacOSX107.bom //查看所有关联文件。</description>
+      <description>mac中如何卸载pkg包 “` pkgutil –pkgs cd /private/var/db/receipts ls lsbom com.apple.pkg.JavaForMacOSX107.bom //查看所有关联文件。</description>
     </item>
     
     <item>
@@ -500,7 +524,7 @@
       <pubDate>Wed, 13 Mar 2019 07:52:15 +0000</pubDate>
       
       <guid>https://blog.v5u.win/iris-mvc%E6%9E%B6%E6%9E%84%E7%9A%84%E7%9B%AE%E5%BD%95%E6%8B%86%E8%A7%A3/</guid>
-      <description>├── bootstrap │ └── bootstrapper.go 引导者。全局变量配置，模板、session、web socket、Error page ├── conf │ └── db.go 数据库配置模型。struct</description>
+      <description></description>
     </item>
     
     <item>
@@ -527,7 +551,7 @@
       <pubDate>Mon, 11 Mar 2019 07:12:34 +0000</pubDate>
       
       <guid>https://blog.v5u.win/xorm-%E5%A2%99%E5%86%85%E5%AE%89%E8%A3%85/</guid>
-      <description>xorm cmd 墙内安装 有两个库不能墙内访问 civil crypto.所以我们需要迂回一下安装。 可以直接用 git clone github.com 上的库。这两个库都可以在GitHub上找到。 go get github.com/go-xorm/cmd/xorm</description>
+      <description>xorm cmd 墙内安装 有两个库不能墙内访问 civil crypto.所以我们需要迂回一下安装。 可以直接用 git clone github.com 上的库。这两个库都可以在GitHub上找到。 使用 先</description>
     </item>
     
     <item>
@@ -545,7 +569,7 @@
       <pubDate>Fri, 08 Mar 2019 09:27:20 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go-iris-%E8%B7%AF%E7%94%B1/</guid>
-      <description>路由配置规则 直接通过 function 绑定 controller，function name 映射到 路由的地址 function named rule： func(*Controller) GetLoginBy(id int64) 绑定的controller HTTP-method+routePath map to - GET:/user/login/{param:long} 通</description>
+      <description>路由配置规则 直接通过 function 绑定 controller，function name 映射到 路由的地址 function named rule： 通过控制器方法的输入参数访问动态路径参数，不</description>
     </item>
     
     <item>
@@ -554,7 +578,7 @@
       <pubDate>Tue, 05 Mar 2019 09:47:46 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go-html-template/</guid>
-      <description>文档 go doc text/template $ go doc html/template 应用 &amp;lt;br /func main() { // 定义模板显示格式 const templ = `A: {{.A}} &amp;lt;p&amp;gt;B: {{.B}}&amp;lt;/p&amp;gt;` // 模板配置函数 t := template.Must(template.New(&#34;escape&#34;).Parse(templ)) var data struct { A string // untrusted plain text B template.HTML // trusted HTML } // A是一个普通字符串，B是</description>
+      <description>应用</description>
     </item>
     
     <item>
@@ -563,7 +587,7 @@
       <pubDate>Tue, 05 Mar 2019 09:45:57 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go-json/</guid>
-      <description>标准库 encoding/json、encoding/xml、encoding/asn1 Model type Movie struct { Title string Year int `json:&#34;released&#34;` Color bool `json:&#34;color,omitempty&#34;` Actors []string } // 赋值 var movies = []Movie{ {Title: &#34;Casablanca&#34;, Year: 1942,</description>
+      <description>标准库 Model 在编码时，默认使用Go语言结构体的成员名字作为JSON的对象（通过reflect反射技术，我们将在12.6节讨论）。只有导出的结构体</description>
     </item>
     
     <item>
@@ -581,7 +605,7 @@
       <pubDate>Wed, 27 Feb 2019 09:50:32 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go%E8%AF%AD%E8%A8%80%E8%A6%81%E7%82%B9/</guid>
-      <description>控制流： 在本章我们只介绍了if控制和for，但是没有提到switch多路选择。这里是一个简单的switch的例子： switch coinflip() { case &#34;heads&#34;: heads++ case &#34;tails&#34;: tails++ default: fmt.Println(&#34;landed on edge!&#34;)</description>
+      <description>控制流： 在本章我们只介绍了if控制和for，但是没有提到switch多路选择。这里是一个简单的switch的例子： 在翻转硬币的时候，例子里的</description>
     </item>
     
     <item>
@@ -590,7 +614,7 @@
       <pubDate>Wed, 27 Feb 2019 09:10:11 +0000</pubDate>
       
       <guid>https://blog.v5u.win/expected-ident-found-go/</guid>
-      <description>报错 expected &amp;#8216;IDENT&amp;#8217;, found &amp;#8216;go&amp;#8217; 运行go run 文件目录为 . ├── README.md ├── fetch │ ├── fetch.go │ ├── fetch1.7.go │ ├── fetchall.go │ ├── server1.go │ ├── server2.go │ └── server3.go └── go-demo ├── main.go ├── mgif.go └──</description>
+      <description>报错 expected ‘IDENT’, found ‘go’ 运行go run 文件目录为 ./go-demo/main.go 由于package 命名为go-demo，命名格式不规范，导致的这个问题。 解决办法：将g</description>
     </item>
     
     <item>
@@ -599,7 +623,7 @@
       <pubDate>Sat, 23 Feb 2019 06:24:55 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E4%B8%BA%E4%BB%80%E4%B9%88php%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E5%89%8D%E8%BE%B9%E8%A6%81%E5%8A%A0%E7%AC%A6%E5%8F%B7/</guid>
-      <description>为什么PHP中的变量前边要加&amp;#8217;$&amp;#8217;符号 一直都特别好奇 PHP 中的变量前边都加 $ 符号。别的大众编程语言从没见过这种设定，比如</description>
+      <description>为什么PHP中的变量前边要加’$’符号 一直都特别好奇 PHP 中的变量前边都加 $ 符号。别的大众编程语言从没见过这种设定，比如：java,c#,c,c</description>
     </item>
     
     <item>
@@ -635,7 +659,7 @@
       <pubDate>Tue, 19 Feb 2019 05:13:48 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go-%E6%BA%90%E7%A0%81%E7%BB%84%E7%BB%87%E6%96%B9%E5%BC%8F/</guid>
-      <description>Go源码文件以 .go 为后缀。 Go语言的代码通过包（package）组织，包类似于其它语言里的库（libraries）或者模块（modules）。</description>
+      <description>Go源码文件以 .go 为后缀。 // path 的相对路径 target 是 go 的 build or run 目录 例： var cpath string = “./config/config.toml” 配置文件使用 github.com/BurntSushi/toml 所有的stru</description>
     </item>
     
     <item>
@@ -653,7 +677,7 @@
       <pubDate>Tue, 19 Feb 2019 05:09:32 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
-      <description>type error interface { Error() string } error的声明 创建一个error if path == &#34;&#34; { return nil, errors.New(&#34;The parameter is invalid!&#34;) } error的使用 func readFile(path string) ([]byte, error) { file, err := os.Open(path) if err != nil { return nil, err } defer file.Close() return ioutil.ReadAll(file) } 异常</description>
+      <description>error的声明 创建一个error error的使用 异常处理——panic 译为运行时恐慌 内建函数panic和recover是天生的一对。前者用</description>
     </item>
     
     <item>
@@ -662,7 +686,7 @@
       <pubDate>Tue, 19 Feb 2019 05:08:57 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</guid>
-      <description>if if 100 &amp;gt; number { number += 3 } else if 100 &amp;lt; number { number -= 2 } else { fmt.Println(&#34;OK!&#34;) } //变量赋值 if number := 4; 100 &amp;gt; number { number += 3 } // 标识符的重声明和标识符的遮蔽 var number int if number := 4; 100 &amp;gt; number { number +=</description>
+      <description>if 标识符的重声明和标识符的遮蔽 上述代码被执行完毕之后，第二次声明的number变量的值会是7，而第一次声明的number变量的值仍会是``。</description>
     </item>
     
     <item>
@@ -671,7 +695,7 @@
       <pubDate>Tue, 19 Feb 2019 05:07:33 +0000</pubDate>
       
       <guid>https://blog.v5u.win/go%E7%9A%84%E5%87%BD%E6%95%B0-%E7%BB%93%E6%9E%84%E4%BD%93/</guid>
-      <description>func(input1 string ,input2 string) string type MyFunc func(input1 string ,input2 string) string// 函数声明 函数实现 func myFunc(part1 string, part2 string) (result string) { result = part1 + part2 return } //如果结果声明是带名称的，那么它就相当于一个已被声明但未被显式赋值的</description>
+      <description>函数实现 或 结构体 与对象不同的是，结构体之间没有继承关系。 *接口 如果一个数据类型所拥有的方法集合中包含了某一个接口类型中的所有方法声明的实现，</description>
     </item>
     
     <item>
@@ -689,7 +713,7 @@
       <pubDate>Fri, 15 Feb 2019 07:44:23 +0000</pubDate>
       
       <guid>https://blog.v5u.win/vscode%E5%AE%89%E8%A3%85golang-org%E7%9A%84golint/</guid>
-      <description>vscode 安装了 go 插件后，一些 Extensions 无法通过 vscode 自动安装，此时可以手动从控制台安装。下面是一些基础标准库 go get -u -v github.com/nsf/gocode go get -u -v github.com/rogpeppe/godef go get -u -v github.com/zmb3/gogetdoc go get -u -v github.com/golang/lint/golint go get -u -v github.com/lukehoban/go-outline</description>
+      <description>vscode 安装了 go 插件后，一些 Extensions 无法通过 vscode 自动安装，此时可以手动从控制台安装。下面是一些基础标准库 其中 golint guru gorename 需要手动编译。 因为GitHub中的gol</description>
     </item>
     
     <item>
@@ -743,7 +767,7 @@
       <pubDate>Wed, 16 Jan 2019 06:18:33 +0000</pubDate>
       
       <guid>https://blog.v5u.win/python-pyspider/</guid>
-      <description>* *title: Python_pyspider date: 2016-11-02 10:34:41 tags: pyspider category: Python mac 下pyspider的安装 安装环境：OS X EI Capitan 版本 10.11.6 Python2.7 此文章书写原因：经过简单命令pip install pyspider安装失败后，各</description>
+      <description>*title: Python_pyspider date: 2016-11-02 10:34:41 tags: pyspidercategory: Python mac 下pyspider的安装 安装环境：OS X EI Capitan 版本 10.11.6 Python2.7 此文章书写原因：经过简单命令pip install pyspider安装失败后，各种解</description>
     </item>
     
     <item>
@@ -752,7 +776,7 @@
       <pubDate>Wed, 16 Jan 2019 06:16:21 +0000</pubDate>
       
       <guid>https://blog.v5u.win/php%E5%B7%A5%E7%A8%8B%E6%80%BB%E7%BB%93/</guid>
-      <description>* *title: PHP工程总结 date: 2018-07-02 PHP工程总结 使用session需要调用session_start()手动开启环境，session_start()调用</description>
+      <description>*title: PHP工程总结 date: 2018-07-02 PHP工程总结 使用session需要调用session_start()手动开启环境，session_start()调用之</description>
     </item>
     
     <item>
@@ -761,7 +785,7 @@
       <pubDate>Wed, 16 Jan 2019 06:15:18 +0000</pubDate>
       
       <guid>https://blog.v5u.win/php-session-%E4%B8%8D%E8%83%BD%E8%B7%A8%E9%A1%B5%E9%9D%A2%E4%BC%A0%E9%80%92/</guid>
-      <description>* *title: php session 不能跨页面传递 categories: PHP tags: PHP session错误 确认当前页面session有没有添加成功 debug可不可以讲session值跨页面传递 设置p</description>
+      <description>*title: php session 不能跨页面传递 categories: PHPtags: PHP session错误 确认当前页面session有没有添加成功 debug可不可以讲session值跨页面传递 设置php</description>
     </item>
     
     <item>
@@ -770,7 +794,7 @@
       <pubDate>Wed, 16 Jan 2019 06:12:30 +0000</pubDate>
       
       <guid>https://blog.v5u.win/php-%E7%BD%91%E7%AB%99%E6%95%88%E7%8E%87%E5%8E%9F%E7%90%86/</guid>
-      <description>* *title: php 网站效率原理 date: 2018-11-07 确实如你所言, 是我对php的认识不足. 刚刚补了一下这里的知识, 应该是这样的: php有三种工作模式. 其中是最常见的是ph</description>
+      <description>*title: php 网站效率原理 date: 2018-11-07 确实如你所言, 是我对php的认识不足. 刚刚补了一下这里的知识, 应该是这样的: php有三种工作模式. 其中是最常见的是php</description>
     </item>
     
     <item>
@@ -779,7 +803,7 @@
       <pubDate>Wed, 16 Jan 2019 06:06:12 +0000</pubDate>
       
       <guid>https://blog.v5u.win/php-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4-namespace/</guid>
-      <description>PHP 命名空间 namespace 声明： &amp;lt;?php // file1.php namespace MyProject; namespace MyProject\Sub\Level; //声明分层次的单个命名空间 namespace MyProject { const CONNECT_OK = 1; class Connection { /* &amp;hellip; / } function connect() { / &amp;hellip; */ } namespace Foo\Bar\subnamespace; const FOO = 1; function foo() {} class foo { static function staticmethod() {} } } ?&amp;gt;</description>
+      <description>PHP 命名空间 namespace 声明： &amp;lt;?php // file1.php namespace MyProject; namespace MyProject\Sub\Level; //声明分层次的单个命名空间 namespace MyProject { const CONNECT_OK = 1; class Connection { /* &amp;hellip; */ } function connect() { /* &amp;hellip; */ } namespace Foo\Bar\subnamespace; const FOO = 1; function foo() {} class foo { static function staticmethod() {} } } ?&amp;gt;</description>
     </item>
     
     <item>
@@ -788,7 +812,7 @@
       <pubDate>Wed, 16 Jan 2019 06:02:32 +0000</pubDate>
       
       <guid>https://blog.v5u.win/express/</guid>
-      <description>* *title: Express date: 2016-08-17 11:05:24 tags: express category: Express id: 5 nodejs + express 学习记录 设置入口文件 app.use(express.static(__dirname + &#39;/public&#39;)); ###use方法 use是express注册中间件的方法，它返回一个函数。 中间件（mi</description>
+      <description>*title: Express date: 2016-08-17 11:05:24 tags: express category: Expressid: 5 nodejs + express 学习记录 设置入口文件 app.use(express.static(__dirname + &#39;/public&#39;)); ###use方法 use是express注册中间件的方法，它返回一个函数。 中间件（midd</description>
     </item>
     
     <item>
@@ -797,7 +821,7 @@
       <pubDate>Wed, 16 Jan 2019 05:59:54 +0000</pubDate>
       
       <guid>https://blog.v5u.win/linux%E7%89%88%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
-      <description>* *title: Linux版本使用总结 date: 2018-07-16 tags: &amp;#8211; Linux Linux版本使用总结 社区系 Debian9 没有中文系统，中文输入法。通病，没有内置Apache Ubuntu18 gnome3卡，虚拟</description>
+      <description>*title: Linux版本使用总结 date: 2018-07-16 tags:– Linux Linux版本使用总结</description>
     </item>
     
     <item>
@@ -806,7 +830,7 @@
       <pubDate>Wed, 16 Jan 2019 05:57:22 +0000</pubDate>
       
       <guid>https://blog.v5u.win/socket/</guid>
-      <description>title: Socket date: 2018-08-16 tags: socket, HTTP categories: HTTP iOS socket能做什么? socket是TCP UDP IP HTTP 协议簇，封装为socket API 可以用来写 客户端，服务端模型，在两者之间进行</description>
+      <description>iOS socket能做什么? socket是TCP UDP IP HTTP 协议簇，封装为socket API 可以用来写 客户端，服务端模型，在两者之间进行数据交流 换句话说，</description>
     </item>
     
     <item>
@@ -824,7 +848,7 @@
       <pubDate>Wed, 16 Jan 2019 05:52:02 +0000</pubDate>
       
       <guid>https://blog.v5u.win/hexo/</guid>
-      <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new &amp;#8220;文章名&amp;#8221; 创建</description>
+      <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new “文章名” 创建好的”文件名.md” 文件</description>
     </item>
     
     <item>
@@ -842,7 +866,7 @@
       <pubDate>Wed, 16 Jan 2019 05:32:49 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E8%BF%9B%E5%85%A5ghostblog%E7%9A%84%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF-2/</guid>
-      <description>* *title: 如何进入ghostblog的管理面板 id: 442 categories: &amp;#8211; blog &amp;#8211; ghostblog date: 2016-07-04 14:39:44 tags: 在域名后面加上/ghost 进入网站空间下的ghost路径下就行</description>
+      <description>*title: 如何进入ghostblog的管理面板 id: 442 categories: – blog – ghostblog date: 2016-07-04 14:39:44tags: 在域名后面加上/ghost 进入网站空间下的ghost路径下就行</description>
     </item>
     
     <item>
@@ -851,7 +875,7 @@
       <pubDate>Wed, 16 Jan 2019 03:47:27 +0000</pubDate>
       
       <guid>https://blog.v5u.win/code-review/</guid>
-      <description>* *title: code review date: 2018-09-10 categories: 操作系统 Code Review的好处我觉得不用多说了，主要是让你的代码可以更好的组织起来，有更易读，有更高的维护性，同时可以达到知识共</description>
+      <description>*title: code review date: 2018-09-10categories: 操作系统 Code Review的好处我觉得不用多说了，主要是让你的代码可以更好的组织起来，有更易读，有更高的维护性，同时可以达到知识共享，</description>
     </item>
     
     <item>
@@ -860,7 +884,7 @@
       <pubDate>Wed, 16 Jan 2019 03:46:29 +0000</pubDate>
       
       <guid>https://blog.v5u.win/cocoapods/</guid>
-      <description>* *title: CocoaPods date: 2016-10-26 10:37:38 tags: Cocoapods category: iOS id: 3 .podspec文件是做什么的 .podspec文件描述了一个库将怎样被添加进工程中。.podspec文件可以标识该第</description>
+      <description>*title: CocoaPods date: 2016-10-26 10:37:38 tags: Cocoapods category: iOS id: 3 .podspec文件是做什么的 Podfile 文件的自述 ​</description>
     </item>
     
     <item>
@@ -869,7 +893,7 @@
       <pubDate>Wed, 16 Jan 2019 03:45:07 +0000</pubDate>
       
       <guid>https://blog.v5u.win/cocoapods-library-create/</guid>
-      <description>* *title: cocoapods-library-create date: 2018-08-15 14:48:36 tags: cocoapods categories: cocoapods readme文件如何添加 这种说明 打开网站https://shields.io/#/examples/funding 选择f</description>
+      <description>*title: cocoapods-library-create date: 2018-08-15 14:48:36 tags: cocoapodscategories: cocoapods readme文件如何添加 这种说明 打开网站https://shields.io/#/examples/funding 选择fla</description>
     </item>
     
     <item>
@@ -878,7 +902,7 @@
       <pubDate>Wed, 16 Jan 2019 03:43:41 +0000</pubDate>
       
       <guid>https://blog.v5u.win/chrome-%E8%B0%83%E8%AF%95/</guid>
-      <description>* *title: chrome 调试 date: 2018-11-08 chrome 调试 keyword: workspace,breakpoints 将调试代码文件添加到Chrome 的Workspace中：Sources&amp;#8211;&amp;gt;filesystem&amp;#</description>
+      <description>*title: chrome 调试 date: 2018-11-08 chrome 调试 keyword: workspace,breakpoints 将调试代码文件添加到Chrome 的Workspace中：Sources–&amp;gt;filesystem–&amp;gt;+Add</description>
     </item>
     
     <item>
@@ -887,7 +911,7 @@
       <pubDate>Wed, 16 Jan 2019 03:42:16 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E7%A8%8B%E5%BA%8F%E5%91%98%E6%88%90%E9%95%BF%E4%B9%A6%E5%BD%95/</guid>
-      <description>《程序员修炼之道》1 《人月神话》2 经验这个东西，往往并不能告诉我们什么一定对，但是可以告诉我们什么一定不对。这本书完全是经验凝成，没有大道理</description>
+      <description>《程序员修炼之道》1 《人月神话》2</description>
     </item>
     
     <item>
@@ -896,7 +920,7 @@
       <pubDate>Wed, 16 Jan 2019 03:40:02 +0000</pubDate>
       
       <guid>https://blog.v5u.win/as-as-as/</guid>
-      <description>* *title: as as! as? date: 2016-10-26 13:52:46 tags: as categories: Swift id: 2 Swift开发之 is、 as、as!、as?三种类型转换操作符 1，as使用场合 （1）从派生类转换为基类，向上转型（</description>
+      <description>*title: as as! as? date: 2016-10-26 13:52:46 tags: as categories: Swiftid: 2 Swift开发之 is、 as、as!、as?三种类型转换操作符 1，as使用场合 （1）从派生类转换为基类，向上转型（up</description>
     </item>
     
     <item>
@@ -905,7 +929,7 @@
       <pubDate>Wed, 16 Jan 2019 03:36:48 +0000</pubDate>
       
       <guid>https://blog.v5u.win/app-store-%E4%B8%8A%E6%9E%B6%E6%B5%81%E7%A8%8B/</guid>
-      <description>* *title: App Store 上架流程 tags: iOS categories: iOS App Store上架流程 申请开发者账号 登录开发者网站，注册cer APP ID， profile (xcode 只能解决测试证书配置) 登录iTunes con</description>
+      <description>*title: App Store 上架流程 tags: iOScategories: iOS App Store上架流程 申请开发者账号 登录开发者网站，注册cer APP ID， profile (xcode 只能解决测试证书配置) 登录iTunes conne</description>
     </item>
     
     <item>
@@ -923,7 +947,7 @@
       <pubDate>Wed, 16 Jan 2019 03:32:55 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E%E6%B5%81%E7%A8%8B/</guid>
-      <description>* *title: 沙龙举办流程 date: 2018-11-19 在开放的基础上，环境应当设置的尽可能的平等。比如尽可能的采用圆桌形式，而且参与人员尽量围成一个圈，避免层次上的区别， 主持</description>
+      <description>*title: 沙龙举办流程 date: 2018-11-19 在开放的基础上，环境应当设置的尽可能的平等。比如尽可能的采用圆桌形式，而且参与人员尽量围成一个圈，避免层次上的区别， 主持人</description>
     </item>
     
     <item>
@@ -950,7 +974,7 @@
       <pubDate>Wed, 16 Jan 2019 03:27:54 +0000</pubDate>
       
       <guid>https://blog.v5u.win/thinkphp5%E4%B9%8Bsql/</guid>
-      <description>* *title: tp5 date: 2018-12-18 # 表达式 不区分大小写， # EQ = # NEQ &amp;lt;&amp;gt; 不等于 # LT &amp;lt; # ELT &amp;lt;= # RT &amp;gt; # ELT &amp;gt;= # BETWEEN BETWEEN * AND * # NOTBETWEEN NOTBETWEEN * AND * # IN IN (*,*) # NOTIN NOT IN (*,*) $sql = $db-&amp;gt;where(&#39;id&#39;,&#39;between&#39;,&amp;quot;1,5&amp;quot;)-&amp;gt;buildSql();</description>
+      <description>*title: tp5 date: 2018-12-18 $sql = $db-&amp;gt;where(&#39;id&#39;,&#39;between&#39;,&amp;quot;1,5&amp;quot;)-&amp;gt;buildSql();</description>
     </item>
     
     <item>
@@ -959,7 +983,7 @@
       <pubDate>Wed, 16 Jan 2019 03:26:32 +0000</pubDate>
       
       <guid>https://blog.v5u.win/thinkphp5%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</guid>
-      <description>* *title: thinkphp5开发规范 date: 2018-11-09 目录结构 ./application ​ ./index ​ ./controller 控制层 ​ ./model 模型 ​ ./view ​ ./admin 后台模块 ​ command.php 控制台配置，命令行执行，读取该模块 ​ common.php 项目的公共文件，</description>
+      <description>*title: thinkphp5开发规范 date: 2018-11-09 目录结构 ./application ​ ./index ​ ./controller 控制层 ​ ./model 模型 ​ ./view ​ ./admin 后台模块 ​ command.php 控制台配置，命令行执行，读取该模块 ​ common.php 项目的公共文件，通</description>
     </item>
     
     <item>
@@ -977,7 +1001,7 @@
       <pubDate>Wed, 16 Jan 2019 03:15:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E9%A3%9F-%E5%AE%B6%E5%BA%AD/</guid>
-      <description>* *title: 食-家庭 layout: default date: 2018-10-18 [ 剩菜](#### 剩菜) 腌菜 腊肠熏肉 盐 酒 明确的致癌物 [TOC] ####剩菜 叶类蔬菜的硝酸盐比较高，特别是深绿色的叶菜。剩饭菜中，</description>
+      <description>*title: 食-家庭 layout: defaultdate: 2018-10-18 [ 剩菜](#### 剩菜) 腌菜 腊肠熏肉 盐 酒 明确的致癌物 [TOC] ####剩菜 叶类蔬菜的硝酸盐比较高，特别是深绿色的叶菜。剩饭菜中，一般</description>
     </item>
     
     <item>
@@ -1013,7 +1037,7 @@
       <pubDate>Wed, 16 Jan 2019 03:11:57 +0000</pubDate>
       
       <guid>https://blog.v5u.win/jekyll-using-standards-%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83/</guid>
-      <description>* *layout: default title: jekyll using standards 使用规范 categories: [jekyll github markdown rouge] date: 2016-9-3 15:47:05 excerpt: &amp;#8220;本文摘要&amp;#8221; # 覆盖清掉文章的摘要 pid: &amp;#8220;1&amp;#8221; # 新建一个pid的字符串变量 published: true #是否发</description>
+      <description>jekyll using standards 使用规范 file命名格式：文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必</description>
     </item>
     
     <item>
@@ -1022,7 +1046,7 @@
       <pubDate>Wed, 16 Jan 2019 03:09:49 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E5%9C%A8%E6%96%87%E7%AB%A0%E4%B8%AD-%E7%94%A8ps%E6%A0%87%E6%B3%A8-ps%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D/</guid>
-      <description>在文章中 用PS标注 PS什么意思？ P.S是postscript的缩写，中文意思就是附笔。最开始是指用在信尾的补充内容，现在用的也有些泛泛了，凡</description>
+      <description>在文章中 用PS标注 PS什么意思？</description>
     </item>
     
     <item>
@@ -1049,7 +1073,7 @@
       <pubDate>Wed, 16 Jan 2019 03:07:56 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E6%96%9C%E6%9D%A0%E9%9D%92%E5%B9%B4/</guid>
-      <description>斜杠青年 副业： 园林专业&amp;#8212;绿化养护 自己学习&amp;#8212;-退休瑜伽老师 出口工艺品销售，参加展会&amp;#8212;-代购，保险，影评员 学</description>
+      <description>斜杠青年 副业： 园林专业—绿化养护 自己学习—-退休瑜伽老师 出口工艺品销售，参加展会—-代购，保险，影评员 学生—lis主播，滴滴司机 不是每个人都</description>
     </item>
     
     <item>
@@ -1067,7 +1091,7 @@
       <pubDate>Wed, 16 Jan 2019 03:06:24 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E8%B5%9A%E9%92%B1/</guid>
-      <description>title: 如何赚钱 如何赚钱： 从消费者转换为生产者，创造自己的产品，多简单都行，只要开始了，后边水到渠成。 来源：不投简历，如何获得月薪2万的工作</description>
+      <description>title: 如何赚钱 如何赚钱： 从消费者转换为生产者，创造自己的产品，多简单都行，只要开始了，后边水到渠成。 来源：[不投简历，如何获得月薪2万的工作][</description>
     </item>
     
     <item>
@@ -1121,7 +1145,7 @@
       <pubDate>Sat, 29 Dec 2018 07:07:56 +0000</pubDate>
       
       <guid>https://blog.v5u.win/2018-%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
-      <description>做个复盘 TODO： &amp;#8211; 年初购买了齐俊杰的粉丝圈和读书圈，坚持读书和学习投资知识，持续时间半年，断续时间一年。 &amp;#8211; 今年的读完的书有：正书：《指数基</description>
+      <description>做个复盘 TODO： – 年初购买了齐俊杰的粉丝圈和读书圈，坚持读书和学习投资知识，持续时间半年，断续时间一年。 – 今年的读完的书有：正书：《指数基</description>
     </item>
     
     <item>
@@ -1130,7 +1154,7 @@
       <pubDate>Tue, 25 Dec 2018 02:22:42 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac-nginx-php-mysql/</guid>
-      <description>安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf server { location / { root /rootDocument/; index index.html index.htm index.php; autoindex on; # //开启目录浏览功能</description>
+      <description>安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf php-fpm.conf</description>
     </item>
     
     <item>
@@ -1139,7 +1163,7 @@
       <pubDate>Mon, 10 Dec 2018 06:20:40 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E8%A7%A3%E8%AF%BB%E4%B8%80%E5%AF%8C%E7%88%B8%E7%88%B8%E7%8E%B0%E9%87%91%E6%B5%81%E6%B8%B8%E6%88%8F/</guid>
-      <description>来自:&amp;nbsp;船长(富爸爸现金流俱乐部)&amp;nbsp;2012-04-13 21:13:58 首先，在开始现金流游戏之前，你要明确自己的目的。虽然这个产品被</description>
+      <description>来自: 船长(富爸爸现金流俱乐部) 2012-04-13 21:13:58 首先，在开始现金流游戏之前，你要明确自己的目的。虽然这个产品被称为游戏，但你要明白，这不仅仅是款游戏而已</description>
     </item>
     
     <item>
@@ -1148,7 +1172,7 @@
       <pubDate>Mon, 10 Dec 2018 06:14:20 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E5%AF%B9%E5%AF%8C%E7%88%B8%E7%88%B8%E7%B3%BB%E5%88%97%E7%9A%84%E6%89%B9%E5%88%A4%E6%80%A7%E9%98%85%E8%AF%BB/</guid>
-      <description>声明：本文由ydy135原创，请尊重作者劳动，如需转载，请注明作者和出处。&amp;nbsp; 来这里的朋友应该对富爸爸系列不会陌生，但真正把富爸爸系</description>
+      <description>声明：本文由ydy135原创，请尊重作者劳动，如需转载，请注明作者和出处。 来这里的朋友应该对富爸爸系列不会陌生，但真正把富爸爸系列看全的，并</description>
     </item>
     
     <item>
@@ -1175,7 +1199,7 @@
       <pubDate>Sat, 03 Nov 2018 07:43:24 +0000</pubDate>
       
       <guid>https://blog.v5u.win/854/</guid>
-      <description>随着香道的兴盛，如今除了在寺庙和祭祀场所集中烧香外，不少人也把燃香请进家中，或为礼佛，或为获取安神之类的健康功效。然而人们不知道，就在你尽情</description>
+      <description>我国的焚香文化颇有历史。早在上古时期，巫师便用艾叶、茱萸等植物熏香去疾，驱除瘟疫。其后，香的用途越来越广。皇家焚香，意在营造宫廷氛围；科考应</description>
     </item>
     
     <item>
@@ -1355,7 +1379,7 @@
       <pubDate>Fri, 18 May 2018 08:53:16 +0000</pubDate>
       
       <guid>https://blog.v5u.win/ternimal/</guid>
-      <description>暴力删除文件：输入 sudo rm -rf .Trash 再输入密码后 Enter 。 mac 设置软件安装安全级别 sudo spctl &amp;#8211;master-disable 文件权限修改 文字设定法 chmod [who] [+ | &amp;#8211; | =] [mode] 文件名? 2.mkdir code 打开当前文件夹 open . 打</description>
+      <description>暴力删除文件：输入 sudo rm -rf .Trash 再输入密码后 Enter 。 mac 设置软件安装安全级别 sudo spctl –master-disable 文件权限修改 文字设定法 chmod \[who\] \[+ | &amp;amp;#8211; | =\] [mode] 文件</description>
     </item>
     
     <item>
@@ -1409,7 +1433,7 @@
       <pubDate>Thu, 12 Apr 2018 03:43:53 +0000</pubDate>
       
       <guid>https://blog.v5u.win/xcode-%E5%A4%B4%E6%96%87%E4%BB%B6%E5%BC%95%E7%94%A8/</guid>
-      <description>头文件引用 头文件引用主要由#inlude 和#import 两种。每种又分为尖括号(&amp;lt;&amp;gt;)引用和双引号(&amp;#8221; &amp;#8220;</description>
+      <description>头文件引用 头文件引用主要由#inlude 和#import 两种。每种又分为尖括号(&amp;lt;&amp;gt;)引用和双引号(” “)引用 。 #inlude 与 #import 的区别是:</description>
     </item>
     
     <item>
@@ -1517,7 +1541,7 @@
       <pubDate>Mon, 02 Apr 2018 06:25:02 +0000</pubDate>
       
       <guid>https://blog.v5u.win/indexpath-item-vs-indexpath-row/</guid>
-      <description>Inside NSIndexPath, the indexes are stored in a simple c array called &amp;#8220;_indexes&amp;#8221; defined as NSUInteger* and the length of the array is stored in &amp;#8220;_length&amp;#8221; defined as NSUInteger. The accessor &amp;#8220;section&amp;#8221; is an alias to &amp;#8220;_indexes[0]&amp;#8221; and both &amp;#8220;item&amp;#8221; and &amp;#8220;row&amp;#8221; are aliases to &amp;#8220;_indexes[1]&amp;#8221;. Thus the two are functionally identical. In terms of programming style – and perhaps the definition chain – you would be better using &amp;#8220;row&amp;#8221;</description>
+      <description>Inside NSIndexPath, the indexes are stored in a simple c array called “_indexes” defined as NSUInteger* and the length of the array is stored in “_length” defined as NSUInteger. The accessor “section” is an alias to “_indexes</description>
     </item>
     
     <item>
@@ -1589,7 +1613,7 @@
       <pubDate>Fri, 09 Jun 2017 03:35:06 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac%E4%B8%8B%E5%AE%89%E8%A3%85composer/</guid>
-      <description>composer是PHP的包管理器 mac下如何安装呢？ 最简单的方法是通过brew工具 brew install composer 这时候可能会遇到这个问题： Searching for a previously deleted formula&amp;#8230; 所以我们检查</description>
+      <description>composer是PHP的包管理器 mac下如何安装呢？ 最简单的方法是通过brew工具 brew install composer 这时候可能会遇到这个问题：</description>
     </item>
     
     <item>
@@ -1598,7 +1622,7 @@
       <pubDate>Tue, 02 May 2017 02:29:55 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
-      <description>mac下nvm 使用记录 断开连接 brew unlink nvm 安装 brew install nvm 环境变量 add to ~/.bash_profile export NVM_DIR=&amp;#8221;$HOME/.nvm&amp;#8221; . &amp;#8220;$(brew &amp;#8211;prefix nvm)/nvm.sh&amp;#8221; 配置国内镜像源 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist 配置npm镜像源 创建 ~/.npmrc 写入registry=htt</description>
+      <description>mac下nvm 使用记录 断开连接 brew unlink nvm 安装 brew install nvm 环境变量 add to ~/.bash_profile export NVM_DIR=”$HOME/.nvm” . “$(brew –prefix nvm)</description>
     </item>
     
     <item>
@@ -1616,7 +1640,7 @@
       <pubDate>Fri, 03 Mar 2017 15:18:23 +0000</pubDate>
       
       <guid>https://blog.v5u.win/sublime-text3-%E9%85%8D%E7%BD%AEnodejs-build-%E7%8E%AF%E5%A2%83/</guid>
-      <description>可参考使用Sublime Text 3 进行Python3开发 Tools&amp;#8211;&amp;gt;Build System&amp;#8211;&amp;gt;New Build System 写入 { &amp;quot;shell_cmd&amp;quot;: &amp;quot;/usr/local/bin/node ${file}&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.javascript&amp;quot;, &amp;quot;file_regex&amp;quot;: &amp;quot;^(...*?):([0-9]*):?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;: &amp;quot;${file_path}&amp;quot;, } 保存为/Packages/User/node.subli</description>
+      <description>可参考使用Sublime Text 3 进行Python3开发 Tools–&amp;gt;Build System–&amp;gt;New Build System 写入 { &amp;quot;shell_cmd&amp;quot;: &amp;quot;/usr/local/bin/node ${file}&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.javascript&amp;quot;, &amp;quot;file_regex&amp;quot;: &amp;quot;^(...*?):([0-9]*):?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;: &amp;quot;${file_path}&amp;quot;, } 保</description>
     </item>
     
     <item>
@@ -1670,7 +1694,7 @@
       <pubDate>Sat, 21 Jan 2017 15:38:52 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8wget/</guid>
-      <description>下载单个文件， 为什么不用mac原生自带的工具：curl &amp;#8220;网址链接&amp;#8221; -o &amp;#8220;输出文件名&amp;#8221; 解释一下，</description>
+      <description>下载单个文件， 为什么不用mac原生自带的工具：curl “网址链接” -o “输出文件名” 解释一下，wget是Linux下自带的文件下载工具非常好用</description>
     </item>
     
     <item>
@@ -1796,7 +1820,7 @@
       <pubDate>Fri, 09 Sep 2016 06:45:12 +0000</pubDate>
       
       <guid>https://blog.v5u.win/sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</guid>
-      <description>build nodejs项目 sublime text 3自带build的系统，只需要在tools-&amp;gt;build system-&amp;gt; new build system&amp;#8230; { &amp;ldquo;shell_cmd&amp;rdquo;: &amp;ldquo;node $file&amp;rdquo;, &amp;ldquo;selector&amp;rdquo;: &amp;ldquo;source.js&amp;rdquo; } 保存为 node.sublime-b</description>
+      <description>build nodejs项目 sublime text 3自带build的系统，只需要在tools-&amp;gt;build system-&amp;gt; new build system&amp;amp;#8230; { &amp;quot;shell_cmd&amp;quot;: &amp;quot;node $file&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.js&amp;quot; } 保存为 node.sublime-b</description>
     </item>
     
     <item>
@@ -1832,7 +1856,7 @@
       <pubDate>Mon, 15 Aug 2016 07:58:34 +0000</pubDate>
       
       <guid>https://blog.v5u.win/struct-%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
-      <description>struct是值类型，值类型在传递和赋值时将进行复制。 class是引用类型，引用类型只会使用引用对象的一个『指向』 class有这几个功能st</description>
+      <description>struct是值类型，值类型在传递和赋值时将进行复制。 class是`引用类型`，引用类型只会使用引用对象的一个『指向』&amp;lt;/p&amp;gt; c</description>
     </item>
     
     <item>
@@ -1877,7 +1901,7 @@
       <pubDate>Thu, 30 Jun 2016 03:39:32 +0000</pubDate>
       
       <guid>https://blog.v5u.win/nodejs-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</guid>
-      <description>文件加载顺序： st=&amp;gt;start: 开始require isfc=&amp;gt;condition: 是否在文件缓冲区 isnf=&amp;gt;condition: 是否是原生模块 ff=&amp;gt;operation: 查找文件模块 lfm=&amp;gt;operation: 根据扩展名载入模块 cfm=&amp;gt;operation: 缓存文件模块 isnc=&amp;gt;condition: 是否在原生模块缓存区中</description>
+      <description>文件加载顺序： require方法接受以下几种参数的传递： http、fs、path等，原生模块。 ./mod或../mod，相对路径的文件模块。</description>
     </item>
     
     <item>
@@ -1904,7 +1928,7 @@
       <pubDate>Fri, 27 May 2016 12:51:27 +0000</pubDate>
       
       <guid>https://blog.v5u.win/xcode%E6%8F%92%E4%BB%B6xcodecolors%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-      <description>安装： 在 管理器中搜索 下载 Xcodecolors 重启Xcode 选择load boundle 使用： 配置环境变量－&amp;gt; 打开Product -&amp;gt; Edit Scheme 选择Run-&amp;gt;&amp;#8221;</description>
+      <description>安装： 在 管理器中搜索 下载 Xcodecolors 重启Xcode 选择load boundle 使用： 配置环境变量－&amp;gt; 打开Product -&amp;gt; Edit Scheme 选择Run-&amp;gt;”Argume</description>
     </item>
     
     <item>
@@ -1976,7 +2000,7 @@
       <pubDate>Fri, 08 Apr 2016 08:26:43 +0000</pubDate>
       
       <guid>https://blog.v5u.win/xcode7-3-cannot-create-__weak-reference-in-file-using/</guid>
-      <description>升级xcode7.3后项目编译不通过 error：cannot create __weak reference in file using manual reference counting 解决办法： Set Build Settings -&amp;gt; Apple LLVM 7.1 &amp;#8211; Language &amp;#8211; Objective C -&amp;gt; Weak References in Manual Retain Release to YES.</description>
+      <description>升级xcode7.3后项目编译不通过 error：cannot create __weak reference in file using manual reference counting 解决办法： Set Build Settings -&amp;gt; Apple LLVM 7.1 – Language – Objective C -&amp;gt; Weak References in Manual Retain Release to YES.</description>
     </item>
     
     <item>
@@ -2003,7 +2027,7 @@
       <pubDate>Wed, 06 Apr 2016 11:20:55 +0000</pubDate>
       
       <guid>https://blog.v5u.win/sketch%E4%BD%BF%E7%94%A8tips/</guid>
-      <description>记录sketch使用心得 1. 打开设计模板：file&amp;#8211;&amp;gt; New from Template &amp;#8211;&amp;gt;选择需要的模板库（Android Icon Desi</description>
+      <description>记录sketch使用心得 1. 打开设计模板：file–&amp;gt; New from Template –&amp;gt;选择需要的模板库（Android Icon Design，iOS APP Icon，</description>
     </item>
     
     <item>
@@ -2075,7 +2099,7 @@
       <pubDate>Tue, 15 Mar 2016 08:38:19 +0000</pubDate>
       
       <guid>https://blog.v5u.win/react-native-%E5%88%9D%E6%AC%A1%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/</guid>
-      <description>创建第一个项目后，打开xcode运行，terminal报错 Watchman: watchman&amp;#8211;no-pretty get-sockname returned with exit code null dyld: Library not loaded: /usr/local/opt/pcre/lib/libpcre.1.dylib 解决方案：终端输入 brew link pcre， 如果报错没有写入权限（C</description>
+      <description>创建第一个项目后，打开xcode运行，terminal报错 Watchman: watchman–no-pretty get-sockname returned with exit code null dyld: Library not loaded: /usr/local/opt/pcre/lib/libpcre.1.dylib 解决方案：终端输入 brew link</description>
     </item>
     
     <item>
@@ -2156,7 +2180,7 @@
       <pubDate>Fri, 26 Feb 2016 06:57:35 +0000</pubDate>
       
       <guid>https://blog.v5u.win/swift%E4%B8%AD%E7%9A%84%E6%89%93%E5%8D%B0/</guid>
-      <description>自从swift2.0后 println 合并到了print，默认print()方法换行 如果不想换行可以使用，print(&amp;#8220;print line&amp;#8221;,terminator:&amp;#8221;n&amp;#8221;)</description>
+      <description>自从swift2.0后 println 合并到了print，默认print()方法换行 如果不想换行可以使用，print(“print line”,termin</description>
     </item>
     
     <item>
@@ -2174,7 +2198,7 @@
       <pubDate>Wed, 24 Feb 2016 07:37:17 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E8%B5%84%E6%B7%B1%E7%A8%8B%E5%BA%8F%E5%91%98%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8%E4%BA%94%E5%B9%B4%E6%97%B6%E9%97%B4%E6%94%92%E5%A4%9F100%E4%B8%87%E7%9A%84-%E9%98%85%E5%90%8E%E6%80%BB%E7%BB%93/</guid>
-      <description>资深程序员是如何用五年时间攒够100万的&amp;#8211;阅后总结 做好职业规划，先选职位，再选行业，最后是公司 内省：职业已选 iOS开发，行业未选</description>
+      <description>资深程序员是如何用五年时间攒够100万的–阅后总结 做好职业规划，先选职位，再选行业，最后是公司 内省：职业已选 iOS开发，行业未选 目标：金融或</description>
     </item>
     
     <item>
@@ -2192,7 +2216,7 @@
       <pubDate>Mon, 22 Feb 2016 08:01:04 +0000</pubDate>
       
       <guid>https://blog.v5u.win/ios%E5%88%9B%E5%BB%BA-a%E9%9D%99%E6%80%81%E5%BA%93%E6%96%87%E4%BB%B6/</guid>
-      <description>步骤： 1.创建项目（选择Framework&amp;amp;Library） 2.删除无用文件，加入希望编译的文件 3.edit scheme &amp;#8211;&amp;gt;release 4.编译真机平台文件：选择io</description>
+      <description>步骤： 1.创建项目（选择Framework&amp;amp;Library） 2.删除无用文件，加入希望编译的文件 3.edit scheme –&amp;gt;release 4.编译</description>
     </item>
     
     <item>
@@ -2201,7 +2225,7 @@
       <pubDate>Tue, 16 Feb 2016 08:23:17 +0000</pubDate>
       
       <guid>https://blog.v5u.win/ios-%E5%90%84%E7%B1%BB%E4%BD%9C%E7%94%A8/</guid>
-      <description>UIMenuController &amp;#8212;&amp;#8211;定制剪切，复制，粘贴组件。 UILabel &amp;#8212;&amp;#8212;&amp;#8211;文本显示 UIButton &amp;#8212;&amp;#8212;&amp;</description>
+      <description>UIMenuController —–定制剪切，复制，粘贴组件。 UILabel ——–文本显示 UIButton ———按钮</description>
     </item>
     
     <item>
@@ -2210,7 +2234,7 @@
       <pubDate>Mon, 15 Feb 2016 03:51:02 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E5%9B%BD%E5%86%85%E4%B8%89%E5%A4%A7%E5%85%8D%E8%B4%B9%E7%A9%BA%E9%97%B4%E6%8F%90%E4%BE%9B%E5%95%86%E5%90%84%E8%87%AA%E7%9A%84%E7%89%B9%E7%82%B9/</guid>
-      <description>主机屋： 特点：主要面向国内市场 主机屋是北京爱迪通联科技有限公司旗下网络服务品牌，是中国领先的互联网服务提供 商。公司致力于为大众提供最优质的互</description>
+      <description>主机屋： 特点：主要面向国内市场 星空云： 特点：主要提供免费美国空间 星空云是由国人创立的主机供应商。主要提供免费美国空间，其用户增长迅速。 Hos</description>
     </item>
     
     <item>
@@ -2237,7 +2261,7 @@
       <pubDate>Fri, 15 Jan 2016 08:22:44 +0000</pubDate>
       
       <guid>https://blog.v5u.win/nsstring-%E4%BD%8D%E6%95%B0%E4%B8%8D%E8%B6%B3%E8%A1%A50/</guid>
-      <description>%0nd ，n是多少位。0表示补0 如果是%nd，就是不满n位，自动补充空格。 NSString* testStr; intf = 12; testStr = [NSString stringWithFormat:@&amp;#8221;%03d&amp;#8221;,f]; NSLog(@&amp;#8221;%@&amp;#8221;,testStr);</description>
+      <description></description>
     </item>
     
     <item>
@@ -2246,7 +2270,7 @@
       <pubDate>Mon, 11 Jan 2016 03:10:16 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98xcode-%E6%BA%90%E6%96%87%E4%BB%B6%E7%9A%84%E7%9B%AE%E5%BD%95%E4%BD%8D%E7%BD%AE/</guid>
-      <description>很多时候会遇到这样的问题，项目中的文件，需要改变目录路径，但是呢，如果仅仅是将本地的文件移到目标目录下，重新编译项目会发现有很多的warnn</description>
+      <description></description>
     </item>
     
     <item>
@@ -2255,7 +2279,7 @@
       <pubDate>Wed, 23 Dec 2015 04:15:29 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E5%AD%94%E6%9B%B0%E6%88%90%E4%BB%81%E5%AD%9F%E6%9B%B0%E5%8F%96%E4%B9%89%E5%87%BA%E5%A4%84/</guid>
-      <description>文天祥就义前的绝笔中写道： “孔曰成仁，孟曰取义，唯其义尽，所以仁至。读圣贤书，所学何事？而今而后，庶几无愧。”</description>
+      <description></description>
     </item>
     
     <item>
@@ -2291,7 +2315,7 @@
       <pubDate>Wed, 02 Dec 2015 06:54:36 +0000</pubDate>
       
       <guid>https://blog.v5u.win/ios%E9%94%AE%E7%9B%98%E9%AB%98%E5%BA%A6%E7%9A%84%E5%AE%98%E6%96%B9%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95/</guid>
-      <description>处理键盘事件的正确方法是这样的：（包括获取键盘的高度以及键盘弹出和消失动画的时间） 1）在要使用键盘的视图控制器中，接收键盘事件的通知： [[NSNotificationCenter defaultCenter] addObserver:self</description>
+      <description>处理键盘事件的正确方法是这样的：（包括获取键盘的高度以及键盘弹出和消失动画的时间） 1）在要使用键盘的视图控制器中，接收键盘事件的通知： 获取到</description>
     </item>
     
     <item>
@@ -2309,7 +2333,7 @@
       <pubDate>Mon, 23 Nov 2015 03:25:15 +0000</pubDate>
       
       <guid>https://blog.v5u.win/xcode7-1-1%E6%9B%B4%E6%96%B0%E5%86%85%E5%AE%B9/</guid>
-      <description>Xcode 7.1.1 improves stability and fixes critical issues in interface Builder,debugging,and UI testing. Xcode 7.1 includes Swift2.1 and SDKs for iOS 9.1,watchOS 2,tvOS,and OS X 10.11 EI Capitan. Now you can go beyond the simulator to test your app on an iPad, iPhone, Apple TV, or Apple Watch &amp;#8211; for free. Simply enter your Apple ID into the Accounts preference pane,then attach a device to your Mac using a Lightning</description>
+      <description>Xcode 7.1.1 improves stability and fixes critical issues in interface Builder,debugging,and UI testing. Xcode 7.1 includes Swift2.1 and SDKs for iOS 9.1,watchOS 2,tvOS,and OS X 10.11 EI Capitan. Now you can go beyond the simulator to test your app on an iPad, iPhone, Apple TV, or Apple Watch – for free. Simply enter your Apple ID into the Accounts preference pane,then attach a device to your Mac using a Lightning</description>
     </item>
     
     <item>
@@ -2327,7 +2351,7 @@
       <pubDate>Wed, 04 Nov 2015 03:09:43 +0000</pubDate>
       
       <guid>https://blog.v5u.win/sel%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98%E5%88%B0nsarray%E6%95%B0%E7%BB%84%E4%B8%AD/</guid>
-      <description>首先，SEL是不可以保存到array数组中去的。 其次，SEL有两种创建方法： SEL&amp;nbsp;s1&amp;nbsp;=&amp;nbsp;&amp;nbsp;@s</description>
+      <description>首先，SEL是不可以保存到array数组中去的。 其次，SEL有两种创建方法： NSArray无法保存SEL，但是可以保存NSString。 所以</description>
     </item>
     
     <item>
@@ -2336,7 +2360,7 @@
       <pubDate>Sun, 25 Oct 2015 09:48:49 +0000</pubDate>
       
       <guid>https://blog.v5u.win/htmlcss/</guid>
-      <description>paragragh 段落 emphasize 强调(显示为斜体) 样式 quote [kwot] 引用，引号(显示默认添加双引号，故不用再次添加“ ”) 引用块 ，长文本引用(显示默认为缩进，左右都缩进) break 换行</description>
+      <description>action 目标 ，添加超链接 例: &amp;lt;a href=&amp;quot;目标网址&amp;rdquo; title=&amp;quot;鼠标滑过显示的文本&amp;quot;&amp;gt;链接显示的</description>
     </item>
     
     <item>
@@ -2345,7 +2369,7 @@
       <pubDate>Sat, 24 Oct 2015 12:09:12 +0000</pubDate>
       
       <guid>https://blog.v5u.win/xcode-%E5%88%A0%E9%99%A4-provisioning-profile-%E8%AF%81%E4%B9%A6/</guid>
-      <description>xcode 删除 Provisioning profile 证书存放路径：/Users/fans/Library/MobileDevice/Provisioning Profiles &amp;nbsp;</description>
+      <description></description>
     </item>
     
     <item>
@@ -2363,7 +2387,7 @@
       <pubDate>Fri, 09 Oct 2015 05:25:58 +0000</pubDate>
       
       <guid>https://blog.v5u.win/gitignore%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
-      <description>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，像是日志或者编译过程中创建的等等。我们可</description>
+      <description></description>
     </item>
     
     <item>
@@ -2372,7 +2396,7 @@
       <pubDate>Fri, 25 Sep 2015 04:24:51 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E7%94%A8-xcode-%E7%BC%96%E5%86%99-cc-%E7%9A%84-hello-world/</guid>
-      <description>操作步骤： 打开Xcode，在欢迎界面点击Create a new Xcode project。 在左侧栏选择Mac OS X分类的Application，右侧选择Com</description>
+      <description></description>
     </item>
     
     <item>
@@ -2390,7 +2414,7 @@
       <pubDate>Fri, 18 Sep 2015 07:50:23 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E5%AE%8F%E5%AE%9A%E4%B9%89/</guid>
-      <description>#define DLOG( s, &amp;#8230; ) NSLog(@&#34;%@&#34;,[[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__]) 这个宏定义是用来在打印log的时候，调试使用，可以显示当前log所在的controller名字。 先写出来，原理以后查</description>
+      <description></description>
     </item>
     
     <item>
@@ -2399,7 +2423,7 @@
       <pubDate>Mon, 14 Sep 2015 03:58:58 +0000</pubDate>
       
       <guid>https://blog.v5u.win/objective-c-nsclassfromstring-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
-      <description>NSClassFromString 是一个很有用的东西，尤其在进行 iPhone toolchain 的开发上。 正常来说， id&amp;nbsp;myObj&amp;nbsp;=&amp;nbsp;[[NSClassFromString(@&#34;MySpecialClass&#34;)&amp;nbsp;alloc]&amp;nbsp;init]; 和 id&amp;nbsp;myObj&amp;nbsp;=&amp;nbsp;[[MySpecialClass&amp;nbsp;alloc]&amp;nbsp;init]; 是一样的。但是，如果你的程序中并不存在 MySpecialClass 这个类，下面的写法会出错，而上面的写法</description>
+      <description></description>
     </item>
     
     <item>
@@ -2408,7 +2432,7 @@
       <pubDate>Thu, 10 Sep 2015 07:22:12 +0000</pubDate>
       
       <guid>https://blog.v5u.win/app-%E4%B8%8A%E6%9E%B6%E5%89%8D%E7%9A%84%E6%89%93%E5%8C%85%E5%87%86%E5%A4%87/</guid>
-      <description>app 上架前的打包准备 1.检查是否是外网环境 2.更新info.plist文件版本号 3.product&amp;#8212;scheme&amp;#8212;-eidt scheme&amp;#8212; &amp;nbsp;&amp;nbsp; build configuration 改为 release 4.build setting&amp;#8212;architectures &amp;#8211;&amp;nbsp; &amp;nbsp;&amp;nbsp; build active architecture only 设置为NO 5.build setting&amp;#8212; code signing &amp;#8211; &amp;nbsp;&amp;nbsp; Provisioning&amp;nbsp; Profile 设置</description>
+      <description></description>
     </item>
     
     <item>
@@ -2426,7 +2450,7 @@
       <pubDate>Fri, 28 Aug 2015 08:53:17 +0000</pubDate>
       
       <guid>https://blog.v5u.win/nsdate%E5%92%8C%E6%97%B6%E9%97%B4%E6%88%B3%E4%BA%92%E8%BD%AC/</guid>
-      <description>iOS 将时间NSDate转化为毫秒时间戳 对于将NSDate类型转换为时间戳，相信大家肯定都会，这样的示例代码，在百度等搜索引擎上面一搜索就是一大</description>
+      <description>对于将NSDate类型转换为时间戳，相信大家肯定都会，这样的示例代码，在百度等搜索引擎上面一搜索就是一大篇的东西，但是，大家有没有注意到的是</description>
     </item>
     
     <item>
@@ -2435,7 +2459,7 @@
       <pubDate>Mon, 24 Aug 2015 02:44:12 +0000</pubDate>
       
       <guid>https://blog.v5u.win/unknown-class-in-interface-builder-file/</guid>
-      <description>I added a UIView xib file using the root class of&amp;nbsp;MyView. I created it in the wrong place and so moved it in the project. Same project just a different folder/group. I then had a problem when running saying&amp;#8230; Unknown Class MyView in Interface Builder file I couldn&#39;t work out what was wrong so I have now deleted the files both from the project and from the directory. I&#39;ve done</description>
+      <description></description>
     </item>
     
     <item>
@@ -2444,7 +2468,7 @@
       <pubDate>Fri, 21 Aug 2015 09:10:49 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E6%96%87%E5%AD%97%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E7%BA%BF/</guid>
-      <description>&amp;nbsp; &amp;nbsp;&amp;nbsp;NSString * str = @&#34;ABCDEFG HIJKLMN&#34;; &amp;nbsp; &amp;nbsp; UILabel * aLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 100, 300, 300)]; &amp;nbsp; &amp;nbsp; aLab.text = str; &amp;nbsp; &amp;nbsp; NSMutableAttributedString * testAttriString = [[NSMutableAttributedString alloc] initWithString:str]; &amp;nbsp;&amp;nbsp; [testAttriString addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleSingle] range:NSMakeRange(0, testAttriString.length)]; &amp;nbsp; &amp;nbsp; aLab.attributedText = testAttriString; &amp;nbsp; &amp;nbsp; [self.view addSubview:aLab];</description>
+      <description></description>
     </item>
     
     <item>
@@ -2462,7 +2486,7 @@
       <pubDate>Tue, 18 Aug 2015 03:19:22 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mac%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E5%86%85%E7%BD%AE%E7%9A%84-php/</guid>
-      <description>从 OS X 10.0.0 版本开始，PHP 作为 Mac 机的标准配置被提供。在默认的 web 服务器中启用 PHP，只需将 Apache 配置文件 httpd.conf 中的几行配置指令最前面的注释符号去掉，而 CGI</description>
+      <description>&amp;lt;p&amp;gt; &amp;lt;strong&amp;gt;Note&amp;lt;/strong&amp;gt;: 在Mac OS X 10.5之前的版本中捆绑的是旧版本的 PHP 和 Apache。因此在旧的计算机中 Apache 配置文件的位置可能是 &amp;lt;em&amp;gt;/etc/</description>
     </item>
     
     <item>
@@ -2471,7 +2495,7 @@
       <pubDate>Tue, 18 Aug 2015 02:10:38 +0000</pubDate>
       
       <guid>https://blog.v5u.win/wordpress%E4%B8%AD%E5%90%84%E4%B8%AA%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0%E7%9A%84%E5%90%AB%E4%B9%89%E5%92%8C%E5%BA%94%E7%94%A8/</guid>
-      <description>在wordpress插件和主题开发中经常需要获取各种URL路径，wordpress提供了以下集中方法获得URL路径： plugins_url() — 插件目录的 URL (例如：</description>
+      <description></description>
     </item>
     
     <item>
@@ -2480,7 +2504,7 @@
       <pubDate>Sun, 16 Aug 2015 04:33:07 +0000</pubDate>
       
       <guid>https://blog.v5u.win/ios%E8%87%AA%E5%8A%A8%E5%B8%83%E5%B1%80%E8%A7%A3%E5%86%B3%E8%AD%A6%E5%91%8Aautomatic-preferred-max-layout-width-is-not-available-on-ios-versions-prior-to-8-0/</guid>
-      <description>部署环境为iOS7.0可能会遇到 设置Label的 Preferred Width(自动换行最大宽度) &amp;nbsp;explicit &amp;nbsp;(明确的) &amp;nbsp; &amp;nbsp;即可</description>
+      <description></description>
     </item>
     
     <item>
@@ -2498,16 +2522,7 @@
       <pubDate>Sun, 09 Aug 2015 03:24:34 +0000</pubDate>
       
       <guid>https://blog.v5u.win/ios7%E4%B9%8B%E5%90%8E%E5%A6%82%E4%BD%95%E8%8E%B7%E5%BE%97app%E5%94%AF%E4%B8%80%E7%9A%84%E8%BA%AB%E4%BB%BD%E6%A0%87%E8%AF%86/</guid>
-      <description>历史： 1) iOS 5.0以前，iOS 2.0版本以后UIDevice提供一个获取设备唯一标识符的方法uniqueIdentifier，因为该唯一标识符</description>
-    </item>
-    
-    <item>
-      <title>MAC系统XAMPP 中 MySQL命令行客户端配置使用</title>
-      <link>https://blog.v5u.win/mac%E7%B3%BB%E7%BB%9Fxampp-%E4%B8%AD-mysql%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Fri, 07 Aug 2015 15:42:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/mac%E7%B3%BB%E7%BB%9Fxampp-%E4%B8%AD-mysql%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8/</guid>
-      <description>MySQL客户端 &amp;nbsp; &amp;nbsp; &amp;nbsp;MySQL安装包里面，在一个名为bin的文件夹，放置了很多工具包，但是使用他们的方式是命令行（ps：最近上瘾</description>
+      <description>文章由一片枫叶的博客修改而来</description>
     </item>
     
     <item>
@@ -2516,7 +2531,7 @@
       <pubDate>Fri, 07 Aug 2015 05:28:36 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E8%8E%B7%E5%8F%96tableviewcell%E5%9C%A8%E5%BD%93%E5%89%8D%E5%B1%8F%E5%B9%95%E4%B8%AD%E7%9A%84%E5%9D%90%E6%A0%87%E5%80%BC/</guid>
-      <description>获得当前cell对于当前屏幕的位置 CGRect&amp;nbsp;rectInTableView&amp;nbsp;=&amp;nbsp;[tableView&amp;nbsp;rectForRowAtIndexPath:indexPath]; &amp;nbsp;&amp;nbsp; CGRect&amp;nbsp;rect&amp;nbsp;=&amp;nbsp;[tableView&amp;nbsp;convertRect:rectInTableView&amp;nbsp;toView:[tableView&amp;nbsp;superview]];</description>
+      <description>获得当前cell对于当前屏幕的位置 CGRect rectInTableView = [tableViewrectForRowAtIndexPath:indexPath]; CGRect rect = [tableViewconvertRect:rectInTableViewtoView:[tableViewsuperview]];</description>
     </item>
     
     <item>
@@ -2525,7 +2540,7 @@
       <pubDate>Thu, 06 Aug 2015 10:50:01 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E8%87%AA%E5%AE%9A%E4%B9%89back%E6%8C%89%E9%92%AE%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%B3%BB%E7%BB%9Fpop-interactive-gesture-%E9%97%AE%E9%A2%98/</guid>
-      <description>两种解决办法： 方法一： A，我的应用是自定义的返回按钮图标(默认返回按钮样式不会出现问题3)，为了保险，写了这句代码[self.navigat</description>
+      <description>两种解决办法： 方法一：</description>
     </item>
     
     <item>
@@ -2561,7 +2576,7 @@
       <pubDate>Thu, 16 Jul 2015 03:03:51 +0000</pubDate>
       
       <guid>https://blog.v5u.win/nstimer/</guid>
-      <description>转载自 NSTimer的使用方法 1、初始化 + (NSTimer *)timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo; + (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(id)userInfo repeats:(BOOL)yesOrNo; 注：不用scheduled方式初始化的，需要手动addTimer:for</description>
+      <description>&amp;lt; p style=”color: rgb(51, 51, 51); font-family: Arial; font-size: 14px; line-height: 26px; white-space: normal;”&amp;gt;NSTimer不是绝对准确的,而且中间耗时或阻塞错过下一个点,那么</description>
     </item>
     
     <item>
@@ -2570,7 +2585,7 @@
       <pubDate>Tue, 14 Jul 2015 13:36:20 +0000</pubDate>
       
       <guid>https://blog.v5u.win/ios-%E5%BC%80%E5%8F%91errordebug/</guid>
-      <description>error:property with ‘retain(strong)’ attribute must be of object type&amp;nbsp; cause: 没有包含相应地头文件，造成变量引用错误，指针指向未知</description>
+      <description>error:property with ‘retain(strong)’ attribute must be of object type cause: 没有包含相应地头文件，造成变量引用错误，指针指向未知</description>
     </item>
     
     <item>
@@ -2579,7 +2594,7 @@
       <pubDate>Tue, 14 Jul 2015 09:45:49 +0000</pubDate>
       
       <guid>https://blog.v5u.win/ios%E7%AB%AFapp%E7%9A%84icon%E5%92%8Claunch-image%E8%A7%84%E6%A0%BC%E5%AE%9E%E6%97%B6%E6%9B%B4%E6%96%B0/</guid>
-      <description>启动影像 ：&amp;nbsp;iPhone&amp;nbsp;：320 x 480&amp;nbsp;640 x 960 640*1136&amp;nbsp;750*1334 1242*2208&amp;nbsp;&amp;nbsp;iPad&amp;nbsp;：768 x 1004&amp;nbsp;1536 x</description>
+      <description>&amp;lt;th scope=&amp;quot;col&amp;quot; class=&amp;quot;TableHeading_TableRow_TableCell&amp;quot; style=&amp;quot;background-color: rgb(249, 249, 249); border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-color: rgb(233, 233, 233); margin: 0px; outline: 0px; vertical-align: baseline; font-weight: 400;&amp;quot;&amp;gt; &amp;lt;p class=&amp;quot;para&amp;quot; style=&amp;quot;background-color: transparent; border: 0px; font-size: 1.4em; margin-top: 0px; margin-bottom: 0px; outline: 0px; padding-top: 0px; padding-bottom: 0px; vertical-align: baseline; color: rgb(65, 65, 65); line-height: 20.299999237060547px; word-break: break-word; min-width: 50px;&amp;quot;&amp;gt; iPhone 6 Plus (@3x) &amp;lt;/p&amp;gt; &amp;lt;/th&amp;gt; &amp;lt;th scope=&amp;quot;col&amp;quot; class=&amp;quot;TableHeading_TableRow_TableCell&amp;quot; style=&amp;quot;background-color: rgb(249, 249, 249); border-top-width: 0px;</description>
     </item>
     
     <item>
@@ -2597,7 +2612,7 @@
       <pubDate>Thu, 09 Jul 2015 07:05:28 +0000</pubDate>
       
       <guid>https://blog.v5u.win/jl%E7%9A%84git%E4%BD%BF%E7%94%A8%E7%9F%A5%E8%AF%86/</guid>
-      <description>创建 Git仓库命令：(进入将要管理的Git文件夹地址下) git init 查看当前Git管理状态 git status 添加Git文件 git add * 提交文件到仓库 git commit -m &amp;#8220;</description>
+      <description>创建 Git仓库命令：(进入将要管理的Git文件夹地址下) git init 查看当前Git管理状态 git status 添加Git文件 git add * 提交文件到仓库 git commit -m “加入注释” 推</description>
     </item>
     
     <item>
@@ -2606,7 +2621,7 @@
       <pubDate>Fri, 19 Jun 2015 03:25:28 +0000</pubDate>
       
       <guid>https://blog.v5u.win/ios%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E5%BA%94%E7%94%A8%E6%98%AF%E5%90%A6%E5%BC%80%E5%90%AF%E6%91%84%E5%83%8F%E5%A4%B4%E6%9D%83%E9%99%90/</guid>
-      <description>NSString * mediaType = AVMediaTypeVideo; &amp;nbsp; &amp;nbsp; AVAuthorizationStatus&amp;nbsp; authorizationStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType]; &amp;nbsp; &amp;nbsp; if (authorizationStatus == AVAuthorizationStatusRestricted || authorizationStatus == AVAuthorizationStatusDenied) { &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; UIAlertController* alertC = [UIAlertControlleralertControllerWithTit</description>
+      <description>}</description>
     </item>
     
     <item>
@@ -2615,7 +2630,7 @@
       <pubDate>Thu, 04 Jun 2015 09:33:36 +0000</pubDate>
       
       <guid>https://blog.v5u.win/ios-nsstring-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86%E6%88%AA%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%86%E9%9A%94/</guid>
-      <description>1.截取字符串NSString*string =@&amp;ldquo;sdfsfsfsAdfsdf&amp;rdquo;;string = [string&amp;nbsp;substringToIndex:7];//截取下标7之后的字符串</description>
+      <description>1.截取字符串NSStringstring =@&amp;ldquo;sdfsfsfsAdfsdf&amp;rdquo;;string = [string substringToIndex:7];//截取下标7之后的字符串NSLog(@&amp;ldquo</description>
     </item>
     
     <item>
@@ -2624,7 +2639,7 @@
       <pubDate>Wed, 03 Jun 2015 07:27:18 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E4%BD%BF%E7%94%A8autolayout-xib%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E9%AB%98%E5%BA%A6%E7%9A%84tableviewcell/</guid>
-      <description>文章来源于http://itony.me/381.html 创建Xib文件 首先将Cell做好布局，调整到满意的位置和宽度，然后开始做Autol</description>
+      <description>文章来源于http://itony.me/381.html &amp;lt;p&amp;gt; 2 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 3 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 4 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 5 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 6 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 7 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 8 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 9 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 10 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 11 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 12 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 13 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 14 &amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; 15</description>
     </item>
     
     <item>
@@ -2633,7 +2648,7 @@
       <pubDate>Tue, 26 May 2015 06:20:19 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E5%BE%AE%E4%BF%A1%E8%81%94%E9%80%9A%E5%85%AC%E4%BC%97%E5%8F%B7%E5%A6%82%E4%BD%95%E8%A7%A3%E7%BB%91/</guid>
-      <description>切换到输入框，输入“解绑&#34; 然后根据提示，回复Y即可。</description>
+      <description></description>
     </item>
     
     <item>
@@ -2642,7 +2657,7 @@
       <pubDate>Fri, 15 May 2015 08:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%9C%A8block%E9%87%8C%E7%94%A8self%E9%80%A0%E6%88%90%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8/</guid>
-      <description>本文原引于Bannings的专栏博客 一般来说我们总会在设置Block之后，在合适的时间回调Block，而不希望回调Block的时候Block</description>
+      <description>苹果官方文档里有两个例子来说明这两种情况： 上面第一种情况相当于用self.xxx来访问实例变量，所以强引用指向了self；第二种情况把实例变</description>
     </item>
     
     <item>
@@ -2651,7 +2666,7 @@
       <pubDate>Thu, 14 May 2015 08:53:26 +0000</pubDate>
       
       <guid>https://blog.v5u.win/uisegmentedcontrol%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</guid>
-      <description>NSArray* segMArr = [NSArray arrayWithObjects:@&#34;&#34;,@&#34;1&#34;, nil]; UISegmentedControl* segmentC = [[UISegmentedControlalloc]initWithItems:segMArr]; &amp;nbsp; &amp;nbsp; segmentC.frame = CGRectMake(0, 178, 320, 30); &amp;nbsp; &amp;nbsp; segmentC.segmentedControlStyle= UISegmentedControlStylePlain; &amp;nbsp; &amp;nbsp; segmentC.tintColor = [UIColor BlueColor]; &amp;nbsp; &amp;nbsp; segmentC.selectedSegmentIndex= ; &amp;nbsp; &amp;nbsp; [segmentC addTarget:selfaction:@selector(segmentedControlSelected:) forControlEvents:UIControlEventValueChanged]; &amp;nbsp; &amp;nbsp; [bgView addSubview:segmentC]; &amp;#8211; (void)segmentedControlSelected:(UISegmentedControl*)seg{ &amp;nbsp; &amp;nbsp; if(seg.selectedSegmentIndex== ) { &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }elseif(seg.selectedSegmentIndex== 1){ &amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; } }</description>
+      <description></description>
     </item>
     
     <item>
@@ -2660,7 +2675,7 @@
       <pubDate>Wed, 29 Apr 2015 06:03:07 +0000</pubDate>
       
       <guid>https://blog.v5u.win/nsdata%E8%BD%ACint/</guid>
-      <description>有一种借助string的方法，经验证不对，找了半天终于找到了一个合适的，可是没有看的太明白，特补充记录在此。 1.int&amp;nbsp;-&amp;gt;&amp;nbsp;data int&amp;nbsp;i&amp;nbsp;=&amp;nbsp;1; NSData&amp;nbsp;*d</description>
+      <description></description>
     </item>
     
     <item>
@@ -2669,7 +2684,7 @@
       <pubDate>Sun, 26 Apr 2015 09:56:07 +0000</pubDate>
       
       <guid>https://blog.v5u.win/seoer%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF/</guid>
-      <description>&amp;nbsp; SEO是一门复杂的学问，手法很多，提高权重可以从很多角度着手，但是，什么样的网站需要用到什么样的手法，网站的不同阶段，又需要怎么样提高排名</description>
+      <description>SEO是一门复杂的学问，手法很多，提高权重可以从很多角度着手，但是，什么样的网站需要用到什么样的手法，网站的不同阶段，又需要怎么样提高排名？</description>
     </item>
     
     <item>
@@ -2678,7 +2693,7 @@
       <pubDate>Thu, 23 Apr 2015 01:46:53 +0000</pubDate>
       
       <guid>https://blog.v5u.win/svn%E4%B8%8A%E4%BC%A0-a%E6%96%87%E4%BB%B6/</guid>
-      <description>在mac下很多svn管理工具默认都不能上传.a文件，这让人很苦恼。从网上扒了下，找到了两个方法。方法一： 打开终端，cd 进入到需要上传的.a文</description>
+      <description>在mac下很多svn管理工具默认都不能上传.a文件，这让人很苦恼。从网上扒了下，找到了两个方法。方法一：打开终端，cd 进入到需要上传的.a文</description>
     </item>
     
     <item>
@@ -2705,7 +2720,7 @@
       <pubDate>Tue, 14 Apr 2015 06:59:50 +0000</pubDate>
       
       <guid>https://blog.v5u.win/ios8-3%E5%8F%91%E5%B8%83%E4%BA%86swift-1-2%E5%B8%A6%E6%9D%A5%E5%93%AA%E4%BA%9B%E6%96%B0%E5%8F%98%E5%8C%96/</guid>
-      <description>原文&amp;nbsp;&amp;nbsp;http://www.cnblogs.com/yuyongjian/p/4371400.html 苹果前几日在面向</description>
+      <description>原文 http://www.cnblogs.com/yuyongjian/p/4371400.html 苹果前几日在面向开发者推送iOS 8.3 Beta的同时，还发布了版本号为6D520o的Xcode 6.3 Beta，其中便包含了iOS 8.3 Beta和O</description>
     </item>
     
     <item>

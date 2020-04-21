@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.58.3" />
+    <meta name="generator" content="Hugo 0.66.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -92,158 +92,58 @@
                         
                         
                         <div class="post-content">
-                            
-
-<p>[TOC]</p>
-
-<h1 id="golang-中调用-c-c-代码有三种方式">golang 中调用 c/c++ 代码有三种方式</h1>
-
+                            <p>[TOC]</p>
+<h1 id="golang-中调用-cc-代码有三种方式">golang 中调用 c/c++ 代码有三种方式</h1>
 <ul>
 <li>直接<code>嵌套</code>在go文件中使用，最简单直观的</li>
 <li>导入<code>动态库 .so 或 dll</code> 的形式，最安全但是很不爽也比较慢的</li>
 <li>直接引用 c/c++ 文件的形式，层次分明，容易随时修改看结果的</li>
 </ul>
-
 <h2 id="需要的环境支持">需要的环境支持</h2>
-
 <ul>
 <li>Linux 具备 gcc 与 g++ 即可</li>
 <li>Mac 参考 Linux</li>
-<li>Windows 需要安装 <a href="https://link.juejin.im/?target=http%3A%2F%2Fwww.mingw.org%2F" rel="noopener noreferrer">mingw</a>，否则编译时会有这类错：<code>cannot find -lmingwex</code></li>
+<li>Windows 需要安装 <!-- raw HTML omitted -->mingw<!-- raw HTML omitted -->，否则编译时会有这类错：<code>cannot find -lmingwex</code></li>
 </ul>
-
 <h2 id="嵌套">嵌套</h2>
-
-<pre><code class="language-go line-numbers">package main
-// 嵌入式 调用
-// #include &lt;stdio.h&gt;
-// #include &lt;stdlib.h&gt;
-/*
-void print(char *str) {
-    printf("%s\n", str);
-}
-*/
-import "C"//这里可看作封装的伪包C, 这条语句要紧挨着上面的注释块，不可在它俩之间间隔空行！
-import "unsafe"
-func main() {
-    s := "Hello Cgo"
-    cs := C.CString(s)
-    C.print(cs)
-    C.free(unsafe.Pointer(cs))
-}
-//参考来源：https://tonybai.com/2012/09/26/interoperability-between-go-and-c/
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="调用动态链接库-so">调用动态链接库 .so</h2>
-
 <p>目录结构</p>
-
-<pre><code class="language-sh line-numbers">├── hi.c
-├── hi.go
-├── hi.h
-├── hi.o
-└── libhi.so
-</code></pre>
-
-<pre><code class="language-c line-numbers">// hi.c
-#include &lt;stdio.h&gt;
-void hi() {
-    printf("Hello Cgo!\n");
-}
-</code></pre>
-
-<pre><code class="language-c line-numbers">void hi(); // file: hi.h
-</code></pre>
-
-<pre><code class="language-go line-numbers">package main
-// so 动态链接库调用
-// 参考 https://studygolang.com/articles/10163
-import "fmt"
-/*
-#cgo CFLAGS: -I./
-#cgo LDFLAGS: -L./ -lhi
-#include "hi.h" //非标准c头文件，所以用引号
-*/
-import "C"
-func main() {
-    C.hi()
-    fmt.Println("Hi, vim-go")
-}
-// 注：LDFLAGS 路径问题并未测试通过
-// CFLAGS: -I路径 这句话指明头文件所在路径
-// LDFLAGS: -L路径 -l名字 指明动态库的所在路径，-Llib -lhi，指明在 lib 下面以及它的名字 hi
-</code></pre>
-
-<pre><code class="language-sh line-numbers"># 编译生成 .so 动态库
-gcc hi.c -fPIC -shared -o libhi.so
-</code></pre>
-
-<h2 id="直接引用-c-c-文件的形式">直接引用 c/c++ 文件的形式</h2>
-
-<pre><code class="language-sh line-numbers">.
-├── main.go
-└── util
-    ├── util.go
-    └── utilc
-        ├── util.c
-        └── util.h
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="直接引用-cc-文件的形式">直接引用 c/c++ 文件的形式</h2>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>目录结构</p>
-
-<pre><code class="language-go line-numbers">// util.go
-package util
-/*
-#include "utilc/util.c"
-*/
-import "C"
-import "fmt"
-func GoSum(a, b int) {
-    s := C.sum(C.int(a), C.int(b))
-    fmt.Println(s)
-}
-</code></pre>
-
-<pre><code class="language-go line-numbers">// main.go
-package main
-// cgo 直接引用 c/c++ 文件的形式
-// 测试通过, .c .h 文件不能和 .go 文件在同一个目录下
-import (
-    "github.com/xxx/util"
-)
-func main() {
-    util.GoSum(4, 5)
-}
-</code></pre>
-
-<pre><code class="language-c line-numbers">// utilc/util.c
-#include "util.h"
-int sum(int a,int b){
-    return (a+b);
-}
-</code></pre>
-
-<pre><code class="language-c line-numbers">int sum(int a,int b);// utilc/util.h
-</code></pre>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>直接运行<code>go run main.go</code></p>
-
 <h2 id="注意事项">注意事项</h2>
-
 <ul>
 <li>但凡要引用与 c/c++ 相关的内容，写到 go 文件的头部<code>注释</code>里面</li>
 <li>嵌套的 c/c++ 代码必须符合其语法，不与 go 一样</li>
 <li><code>import &quot;C&quot;</code> 这句话要紧随，注释后，不要换行，否则报错</li>
 <li>go 代码中调用 c/c++ 的格式是: <code>C.xxx()</code>，例如 C.add(2, 1)</li>
 </ul>
-
-<hr />
-
+<hr>
 <p><code>CFLAGS: -I路径</code> 这句话指明头文件所在路径，-Iinclude 指明 当前项目根目录的 include 文件夹</p>
-
 <p><code>LDFLAGS: -L路径 -l名字</code> 指明动态库的所在路径，-Llib -llibvideo，指明在 lib 目录下面以及它的名字 video</p>
-
-<p>注：此处的 LDFLAGS 更改动态库的路径后，-L指明路径，无法验证通过</p></p>
+<p>注：此处的 LDFLAGS 更改动态库的路径后，-L指明路径，无法验证通过<!-- raw HTML omitted --></p>
 
                         </div>
 
@@ -302,6 +202,18 @@ int sum(int a,int b){
 <ul class="widget-list">
     
     <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-pod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/2020-04-21-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
+    </li>
+    
+    <li>
         <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
     </li>
     
@@ -329,18 +241,6 @@ int sum(int a,int b){
         <a href="https://blog.v5u.win/go2-2/" title="Go2">Go2</a>
     </li>
     
-    <li>
-        <a href="https://blog.v5u.win/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" title="System 进程间通讯方式">System 进程间通讯方式</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/liteide/" title="LiteIDE">LiteIDE</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/flutter%E5%AE%89%E8%A3%85/" title="flutter安装">flutter安装</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -359,7 +259,7 @@ int sum(int a,int b){
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/ios/">ios(95)</a>
+        <a href="https://blog.v5u.win/categories/ios/">ios(96)</a>
     </li>
     
     <li>
@@ -407,7 +307,7 @@ int sum(int a,int b){
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
+        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(3)</a>
     </li>
     
     <li>
@@ -415,11 +315,11 @@ int sum(int a,int b){
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(2)</a>
+        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(3)</a>
     </li>
     
     <li>
-        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(8)</a>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(9)</a>
     </li>
     
     <li>
@@ -663,7 +563,7 @@ int sum(int a,int b){
 </div>
 <footer id="footer">
     <div class="container">
-        &copy; 2019 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
+        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
         Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
         <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
         

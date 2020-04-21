@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>css on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Sun, 25 Oct 2015 09:48:49 +0000</pubDate>
       
       <guid>https://blog.v5u.win/htmlcss/</guid>
-      <description>paragragh 段落 emphasize 强调(显示为斜体) 样式 quote [kwot] 引用，引号(显示默认添加双引号，故不用再次添加“ ”) 引用块 ，长文本引用(显示默认为缩进，左右都缩进) break 换行</description>
+      <description>action 目标 ，添加超链接 例: &amp;lt;a href=&amp;quot;目标网址&amp;rdquo; title=&amp;quot;鼠标滑过显示的文本&amp;quot;&amp;gt;链接显示的</description>
     </item>
     
   </channel>

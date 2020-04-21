@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>node on 为吾优</title>
@@ -6,7 +6,7 @@
     <description>Recent content in node on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 03 Mar 2017 15:18:23 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 May 2018 15:44:43 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/tags/node/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +17,7 @@
       <pubDate>Fri, 03 Mar 2017 15:18:23 +0000</pubDate>
       
       <guid>https://blog.v5u.win/sublime-text3-%E9%85%8D%E7%BD%AEnodejs-build-%E7%8E%AF%E5%A2%83/</guid>
-      <description>可参考使用Sublime Text 3 进行Python3开发 Tools&amp;#8211;&amp;gt;Build System&amp;#8211;&amp;gt;New Build System 写入 { &amp;quot;shell_cmd&amp;quot;: &amp;quot;/usr/local/bin/node ${file}&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.javascript&amp;quot;, &amp;quot;file_regex&amp;quot;: &amp;quot;^(...*?):([0-9]*):?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;: &amp;quot;${file_path}&amp;quot;, } 保存为/Packages/User/node.subli</description>
+      <description>可参考使用Sublime Text 3 进行Python3开发 Tools–&amp;gt;Build System–&amp;gt;New Build System 写入 { &amp;quot;shell_cmd&amp;quot;: &amp;quot;/usr/local/bin/node ${file}&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.javascript&amp;quot;, &amp;quot;file_regex&amp;quot;: &amp;quot;^(...*?):([0-9]*):?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;: &amp;quot;${file_path}&amp;quot;, } 保</description>
     </item>
     
   </channel>

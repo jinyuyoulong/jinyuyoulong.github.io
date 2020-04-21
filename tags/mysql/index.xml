@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mysql on 为吾优</title>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 20 Mar 2019 05:58:16 +0000</pubDate>
       
       <guid>https://blog.v5u.win/mysql8/</guid>
-      <description>mysql5.7 —&amp;gt;mysql8 的升级 MySQL8的加密方式有变化 命令行查看MySQL8 账户的加密方式 use mysql; select user,plugin from user ; 在mysql8之前的版本使用的密</description>
+      <description>mysql5.7 —&amp;gt;mysql8 的升级 MySQL8的加密方式有变化 命令行查看MySQL8 账户的加密方式 在mysql8之前的版本使用的密码加密规则是m</description>
     </item>
     
     <item>
