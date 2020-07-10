@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>flutter on 为吾优</title>
+    <link>https://blog.v5u.win/categories/flutter/</link>
+    <description>Recent content in flutter on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 10 Jul 2020 16:24:30 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/categories/flutter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Flutter 总结</title>
+      <link>https://blog.v5u.win/posts/flutter-%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 10 Jul 2020 16:24:30 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/flutter-%E6%80%BB%E7%BB%93/</guid>
+      <description>flutter 使用总结 安装 测试安装环境 flutter doctor 创建项目 flutter create name 使用注意 热更新 原理是在本地搞了一个服务器，localhost所以真机测试是不行的。只能使用模拟器</description>
+    </item>
+    
+    <item>
+      <title>flutter安装</title>
+      <link>https://blog.v5u.win/posts/system-flutter%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/system-flutter%E5%AE%89%E8%A3%85/</guid>
+      <description>flutter安装 git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc export PATH=/Users/fanjinlong/dev/flutter/flutter/bin:$PATH export ANDROID_HOME=/Users/fanjinlong/Library/Android/sdk export PATH=${PATH}:${ANDROID_HOME}/tools export PATH=${PATH}:${ANDROID_HOME}/platform-tools export PUB_HOSTED_URL=https://pub.flutter-io.cn export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn # 记得配置完了，执行下 source ~/.zshrc 更新环境变量 命令行执</description>
+    </item>
+    
+  </channel>
+</rss>

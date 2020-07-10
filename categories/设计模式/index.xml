@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>设计模式 on 为吾优</title>
+    <link>https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+    <description>Recent content in 设计模式 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 21 Apr 2020 20:08:52 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Design 设计模式 装饰模式</title>
+      <link>https://blog.v5u.win/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Tue, 21 Apr 2020 20:08:52 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</guid>
+      <description>OC swift 中的装饰者模式实现：扩展和代理 装饰模式是指不通过继承的方式，实现为对象添加方法的方式。</description>
+    </item>
+    
+    <item>
+      <title>Design 设计模式 门面模式</title>
+      <link>https://blog.v5u.win/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Tue, 21 Apr 2020 20:08:17 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/</guid>
+      <description>门面模式的翻译不太好，不容易理解。来源单词：facade 架构如下： client1 client2 ↓ ↓ facade ↓ ↓ ↓ sub_system1 sub_system2 sub_system3 门面模式主要目的是提供唯一的对外接口，完全屏蔽内部的</description>
+    </item>
+    
+  </channel>
+</rss>

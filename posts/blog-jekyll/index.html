@@ -88,14 +88,14 @@
                         
                         
                         <div class="post-content">
-                            <h2 id="centerjekyll-using-standards-使用规范center"><!-- raw HTML omitted -->jekyll using standards 使用规范<!-- raw HTML omitted --></h2>
+                            <h2 id="jekyll-using-standards-使用规范">jekyll using standards 使用规范</h2>
 <ol>
 <li>
-<p>文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。
+<p>file命名格式：文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。
 (注意，文件名必须为&quot;年-月-日-文章标题.后缀名&quot;的格式。如果网页代码采用html格式，后缀名为html；如果采用markdown格式，后缀名为md。）</p>
 </li>
 <li>
-<p>在该文件中，填入以下内容：（注意，行首不能有空格）</p>
+<p>demo示例：在该文件中，填入以下内容：（注意，行首不能有空格）</p>
 </li>
 </ol>
 <pre><code>    ---
@@ -108,7 +108,7 @@
 　　
 </code></pre><ol start="3">
 <li>
-<p>每篇文章的头部，必须有一个yaml文件头，用来设置一些元数据。
+<p>元数据：每篇文章的头部，必须有一个yaml文件头，用来设置一些元数据。
 它用三根短划线&rdquo;&mdash;&quot;，标记开始和结束，里面每一行设置一种元数据。&ldquo;layout:default&rdquo;，表示该文章的模板使用_layouts目录下的default.html文件；&ldquo;title: 你好，世界&rdquo;，表示该文章的标题是&quot;你好，世界&rdquo;，
 如果不设置这个值，默认使用嵌入文件名的标题，即&quot;hello world&rdquo;。</p>
 <p>每个页面都可以有自己的头信息，可以覆盖Jekyll和_config.yml里面的值</p>
@@ -130,7 +130,17 @@ pid: &quot;&rdquo;       # 新建一个pid的字符串变量</h2>
 </code></pre>
 <pre><code>5. 发布
 
-   正常的git管理发布
+前置条件：本地已经安装了jekyll程序。
+
+</code></pre><p>本地安装jekyll
+sudo gem install jekyll
+本地预览：jekyll serve
+gh-pages分支push jekyll源文件
+master分支push <code>jekyll build</code> 后_site文件夹中的文件
+GitHub pages服务器并不会自动帮你发布，也不会额外处理什么。</p>
+<pre><code>
+注意
+config中baseurl根目录不要添加/，post.url解析出来的格式为 /2016/07/25/VPS.html
 
 `ps: 本地也需要安装builder工具，so 那为什么不用hexo？`
 
@@ -152,15 +162,15 @@ pid: &quot;&rdquo;       # 新建一个pid的字符串变量</h2>
     <h2>See Also</h2>
     <ul class="listing">
         
+        <li><a href="/posts/flutter-%E6%80%BB%E7%BB%93/">Flutter 总结</a></li>
+        
+        <li><a href="/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/">Design 设计模式 装饰模式</a></li>
+        
+        <li><a href="/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/">Design 设计模式 门面模式</a></li>
+        
         <li><a href="/posts/ios-cocoapod_library%E7%A7%81%E6%9C%89%E5%BA%93/">制作pod library 私有库</a></li>
         
         <li><a href="/posts/tools-redmiairdots/">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a></li>
-        
-        <li><a href="/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/">2020 04 21 元编程</a></li>
-        
-        <li><a href="/archives/">归档</a></li>
-        
-        <li><a href="/go%E8%B0%9A%E8%AF%AD/">go谚语</a></li>
         
     </ul>
 </div>
@@ -198,6 +208,18 @@ pid: &quot;&rdquo;       # 新建一个pid的字符串变量</h2>
 <ul class="widget-list">
     
     <li>
+        <a href="https://blog.v5u.win/posts/flutter-%E6%80%BB%E7%BB%93/" title="Flutter 总结">Flutter 总结</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/" title="Design 设计模式 装饰模式">Design 设计模式 装饰模式</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/" title="Design 设计模式 门面模式">Design 设计模式 门面模式</a>
+    </li>
+    
+    <li>
         <a href="https://blog.v5u.win/posts/ios-cocoapod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
     </li>
     
@@ -225,18 +247,6 @@ pid: &quot;&rdquo;       # 新建一个pid的字符串变量</h2>
         <a href="https://blog.v5u.win/goland-%E4%BD%BF%E7%94%A8/" title="Goland 使用">Goland 使用</a>
     </li>
     
-    <li>
-        <a href="https://blog.v5u.win/posts/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/" title="System MQ消息队列">System MQ消息队列</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/posts/go-cgo/" title="Go CGO">Go CGO</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/posts/go-gofmt/" title="Go Gofmt">Go Gofmt</a>
-    </li>
-    
 </ul>
     </section>
 
@@ -256,6 +266,10 @@ pid: &quot;&rdquo;       # 新建一个pid的字符串变量</h2>
     
     <li>
         <a href="https://blog.v5u.win/categories/docker/">docker(5)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/flutter/">flutter(2)</a>
     </li>
     
     <li>
@@ -364,6 +378,10 @@ pid: &quot;&rdquo;       # 新建一个pid的字符串变量</h2>
     
     <li>
         <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(7)</a>
+    </li>
+    
+    <li>
+        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式(2)</a>
     </li>
     
     <li>

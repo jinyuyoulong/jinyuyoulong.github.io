@@ -48,12 +48,12 @@
     </item>
     
     <item>
-      <title>如何进入ghostblog的管理面板</title>
+      <title>ghost是什么</title>
       <link>https://blog.v5u.win/posts/blog-ghost/</link>
       <pubDate>Mon, 04 Jul 2016 14:39:44 +0000</pubDate>
       
       <guid>https://blog.v5u.win/posts/blog-ghost/</guid>
-      <description>在域名后面加上/ghost 进入网站空间下的ghost路径下就行</description>
+      <description>ghost是什么？ ghost是WordPress前雇员跳槽出来，创业做的个人博客项目。开源，免费，nodejs技术栈，专注个人博客领域。有别</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/posts/blog-jekyll/</guid>
-      <description>jekyll using standards 使用规范 文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必须为&amp;quot;年</description>
+      <description>jekyll using standards 使用规范 file命名格式：文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必</description>
     </item>
     
   </channel>

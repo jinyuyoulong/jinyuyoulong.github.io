@@ -6,10 +6,37 @@
     <description>Recent content in Posts on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 21 Apr 2020 13:14:17 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2020 16:24:30 +0800</lastBuildDate>
     
 	<atom:link href="https://blog.v5u.win/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flutter 总结</title>
+      <link>https://blog.v5u.win/posts/flutter-%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 10 Jul 2020 16:24:30 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/flutter-%E6%80%BB%E7%BB%93/</guid>
+      <description>flutter 使用总结 安装 测试安装环境 flutter doctor 创建项目 flutter create name 使用注意 热更新 原理是在本地搞了一个服务器，localhost所以真机测试是不行的。只能使用模拟器</description>
+    </item>
+    
+    <item>
+      <title>Design 设计模式 装饰模式</title>
+      <link>https://blog.v5u.win/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Tue, 21 Apr 2020 20:08:52 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</guid>
+      <description>OC swift 中的装饰者模式实现：扩展和代理 装饰模式是指不通过继承的方式，实现为对象添加方法的方式。</description>
+    </item>
+    
+    <item>
+      <title>Design 设计模式 门面模式</title>
+      <link>https://blog.v5u.win/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Tue, 21 Apr 2020 20:08:17 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/</guid>
+      <description>门面模式的翻译不太好，不容易理解。来源单词：facade 架构如下： client1 client2 ↓ ↓ facade ↓ ↓ ↓ sub_system1 sub_system2 sub_system3 门面模式主要目的是提供唯一的对外接口，完全屏蔽内部的</description>
+    </item>
     
     <item>
       <title>制作pod library 私有库</title>
@@ -2148,12 +2175,12 @@
     </item>
     
     <item>
-      <title>如何进入ghostblog的管理面板</title>
+      <title>ghost是什么</title>
       <link>https://blog.v5u.win/posts/blog-ghost/</link>
       <pubDate>Mon, 04 Jul 2016 14:39:44 +0000</pubDate>
       
       <guid>https://blog.v5u.win/posts/blog-ghost/</guid>
-      <description>在域名后面加上/ghost 进入网站空间下的ghost路径下就行</description>
+      <description>ghost是什么？ ghost是WordPress前雇员跳槽出来，创业做的个人博客项目。开源，免费，nodejs技术栈，专注个人博客领域。有别</description>
     </item>
     
     <item>
@@ -3044,7 +3071,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.v5u.win/posts/blog-jekyll/</guid>
-      <description>jekyll using standards 使用规范 文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必须为&amp;quot;年</description>
+      <description>jekyll using standards 使用规范 file命名格式：文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必</description>
     </item>
     
     <item>
