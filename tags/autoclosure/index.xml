@@ -6,17 +6,14 @@
     <description>Recent content in @autoclosure on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 13 Dec 2016 15:45:27 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/autoclosure/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 13 Dec 2016 15:45:27 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/autoclosure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>swift 关键字篇</title>
-      <link>https://blog.v5u.win/posts/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/</link>
+      <link>https://blog.v5u.win/posts/swift/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/</link>
       <pubDate>Tue, 13 Dec 2016 15:45:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/</guid>
+      <guid>https://blog.v5u.win/posts/swift/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/</guid>
       <description>@noescape：no escape(没有逃脱) 用来修饰闭包，含义为非逃逸闭包。 当闭包作为参数传递进函数时，如果这个闭包只在函数中被使用，则</description>
     </item>
     

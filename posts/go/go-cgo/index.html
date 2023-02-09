@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Go CGO">
+<meta itemprop="description" content="[TOC] golang 中调用 c/c&#43;&#43; 代码有三种方式 直接嵌套在go文件中使用，最简单直观的 导入动态库 .so 或 dll 的形式，最安全但是很不爽也比较慢的 直接引用 c/c&#43;&#43; 文件的形式，层次"><meta itemprop="datePublished" content="2019-08-20T18:06:35+08:00" />
+<meta itemprop="dateModified" content="2019-08-20T18:06:35+08:00" />
+<meta itemprop="wordCount" content="843">
+<meta itemprop="keywords" content="Go," /><meta property="og:title" content="Go CGO" />
+<meta property="og:description" content="[TOC] golang 中调用 c/c&#43;&#43; 代码有三种方式 直接嵌套在go文件中使用，最简单直观的 导入动态库 .so 或 dll 的形式，最安全但是很不爽也比较慢的 直接引用 c/c&#43;&#43; 文件的形式，层次" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/go/go-cgo/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-08-20T18:06:35+08:00" />
+<meta property="article:modified_time" content="2019-08-20T18:06:35+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go CGO"/>
+<meta name="twitter:description" content="[TOC] golang 中调用 c/c&#43;&#43; 代码有三种方式 直接嵌套在go文件中使用，最简单直观的 导入动态库 .so 或 dll 的形式，最安全但是很不爽也比较慢的 直接引用 c/c&#43;&#43; 文件的形式，层次"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Go CGO</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Aug 20, 2019</span></div>
+				<h1>Go CGO</h1>
+			</header>
+			<div class="content">
+				<p>[TOC]</p>
+<h1 id="golang-中调用-cc-代码有三种方式">golang 中调用 c/c++ 代码有三种方式</h1>
+<ul>
+<li>直接<code>嵌套</code>在go文件中使用，最简单直观的</li>
+<li>导入<code>动态库 .so 或 dll</code> 的形式，最安全但是很不爽也比较慢的</li>
+<li>直接引用 c/c++ 文件的形式，层次分明，容易随时修改看结果的</li>
+</ul>
+<h2 id="需要的环境支持">需要的环境支持</h2>
+<ul>
+<li>Linux 具备 gcc 与 g++ 即可</li>
+<li>Mac 参考 Linux</li>
+<li>Windows 需要安装 <a href="https://link.juejin.im/?target=http%3A%2F%2Fwww.mingw.org%2F">mingw</a>，否则编译时会有这类错：<code>cannot find -lmingwex</code></li>
+</ul>
+<h2 id="嵌套">嵌套</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 嵌入式 调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// #include &lt;stdio.h&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// #include &lt;stdlib.h&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">void print(char *str) {
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    printf(&#34;%s\n&#34;, str);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;C&#34;</span><span style="color:#75715e">//这里可看作封装的伪包C, 这条语句要紧挨着上面的注释块，不可在它俩之间间隔空行！
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;unsafe&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;Hello Cgo&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cs</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">CString</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">C</span>.print(<span style="color:#a6e22e">cs</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">free</span>(<span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>(<span style="color:#a6e22e">cs</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//参考来源：https://tonybai.com/2012/09/26/interoperability-between-go-and-c/
+</span></span></span></code></pre></div><h2 id="调用动态链接库-so">调用动态链接库 .so</h2>
+<p>目录结构</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>├── hi.c
+</span></span><span style="display:flex;"><span>├── hi.go
+</span></span><span style="display:flex;"><span>├── hi.h
+</span></span><span style="display:flex;"><span>├── hi.o
+</span></span><span style="display:flex;"><span>└── libhi.so
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// hi.c
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">hi</span>() {
+</span></span><span style="display:flex;"><span>    printf(<span style="color:#e6db74">&#34;Hello Cgo!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">hi</span>(); <span style="color:#75715e">// file: hi.h
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// so 动态链接库调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 参考 https://studygolang.com/articles/10163
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#cgo CFLAGS: -I./
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#cgo LDFLAGS: -L./ -lhi
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include &#34;hi.h&#34; //非标准c头文件，所以用引号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;C&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">hi</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hi, vim-go&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 注：LDFLAGS 路径问题并未测试通过
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// CFLAGS: -I路径 这句话指明头文件所在路径
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// LDFLAGS: -L路径 -l名字 指明动态库的所在路径，-Llib -lhi，指明在 lib 下面以及它的名字 hi
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># 编译生成 .so 动态库</span>
+</span></span><span style="display:flex;"><span>gcc hi.c -fPIC -shared -o libhi.so
+</span></span></code></pre></div><h2 id="直接引用-cc-文件的形式">直接引用 c/c++ 文件的形式</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>.
+</span></span><span style="display:flex;"><span>├── main.go
+</span></span><span style="display:flex;"><span>└── util
+</span></span><span style="display:flex;"><span>    ├── util.go
+</span></span><span style="display:flex;"><span>    └── utilc
+</span></span><span style="display:flex;"><span>        ├── util.c
+</span></span><span style="display:flex;"><span>        └── util.h
+</span></span></code></pre></div><p>目录结构</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// util.go
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">util</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include &#34;utilc/util.c&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;C&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">GoSum</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">C</span>.<span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">C</span>.int(<span style="color:#a6e22e">a</span>), <span style="color:#a6e22e">C</span>.int(<span style="color:#a6e22e">b</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// main.go
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// cgo 直接引用 c/c++ 文件的形式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 测试通过, .c .h 文件不能和 .go 文件在同一个目录下
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;github.com/xxx/util&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">util</span>.<span style="color:#a6e22e">GoSum</span>(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">// utilc/util.c
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;util.h&#34;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span>(<span style="color:#66d9ef">int</span> a,<span style="color:#66d9ef">int</span> b){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (a<span style="color:#f92672">+</span>b);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">sum</span>(<span style="color:#66d9ef">int</span> a,<span style="color:#66d9ef">int</span> b);<span style="color:#75715e">// utilc/util.h
+</span></span></span></code></pre></div><p>直接运行<code>go run main.go</code></p>
+<h2 id="注意事项">注意事项</h2>
+<ul>
+<li>但凡要引用与 c/c++ 相关的内容，写到 go 文件的头部<code>注释</code>里面</li>
+<li>嵌套的 c/c++ 代码必须符合其语法，不与 go 一样</li>
+<li><code>import &quot;C&quot;</code> 这句话要紧随，注释后，不要换行，否则报错</li>
+<li>go 代码中调用 c/c++ 的格式是: <code>C.xxx()</code>，例如 C.add(2, 1)</li>
+</ul>
+<hr>
+<p><code>CFLAGS: -I路径</code> 这句话指明头文件所在路径，-Iinclude 指明 当前项目根目录的 include 文件夹</p>
+<p><code>LDFLAGS: -L路径 -l名字</code> 指明动态库的所在路径，-Llib -llibvideo，指明在 lib 目录下面以及它的名字 video</p>
+<p>注：此处的 LDFLAGS 更改动态库的路径后，-L指明路径，无法验证通过</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.v5u.win/tags/go">Go</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>843 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-08-20 18:06 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/system/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>System MQ消息队列</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/go/go-gofmt/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Go Gofmt</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

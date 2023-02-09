@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Go modules">
+<meta itemprop="description" content="go modules [TOC] go 1.13 的环境配置 删除.zshrc 中的大部分配置，只配置goroot其余配置用下列命令： go env -w GOSUMDB=&#34;sum.golang.google.cn&#34; # 更换为国内的校验源，默认sum.gola"><meta itemprop="datePublished" content="2019-04-03T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-04-03T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1167">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Go modules" />
+<meta property="og:description" content="go modules [TOC] go 1.13 的环境配置 删除.zshrc 中的大部分配置，只配置goroot其余配置用下列命令： go env -w GOSUMDB=&#34;sum.golang.google.cn&#34; # 更换为国内的校验源，默认sum.gola" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/go/go-modules/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-04-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-04-03T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go modules"/>
+<meta name="twitter:description" content="go modules [TOC] go 1.13 的环境配置 删除.zshrc 中的大部分配置，只配置goroot其余配置用下列命令： go env -w GOSUMDB=&#34;sum.golang.google.cn&#34; # 更换为国内的校验源，默认sum.gola"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Go modules</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 3, 2019</span></div>
+				<h1>Go modules</h1>
+			</header>
+			<div class="content">
+				<h3 id="go-modules">go modules</h3>
+<p>[TOC]</p>
+<h2 id="go-113-的环境配置">go 1.13 的环境配置</h2>
+<p>删除.zshrc 中的大部分配置，只配置goroot其余配置用下列命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>go env -w GOSUMDB<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sum.golang.google.cn&#34;</span> <span style="color:#75715e"># 更换为国内的校验源，默认sum.golang.org</span>
+</span></span><span style="display:flex;"><span>go env -w GOPROXY<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://goproxy.io,direct&#34;</span> <span style="color:#75715e"># 解决代理</span>
+</span></span><span style="display:flex;"><span>go env -w GO111MODULE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;on&#34;</span>
+</span></span><span style="display:flex;"><span>go env -w GOPRIVATE<span style="color:#f92672">=</span>*.gitlab.com,*.gitee.com <span style="color:#75715e"># 代理跳过私有库设置</span>
+</span></span></code></pre></div><hr>
+<h4 id="环境配置">环境配置</h4>
+<ol>
+<li>
+<p>正确配置 GOROOT</p>
+</li>
+<li>
+<p><code>export GOPROXY=&quot;https://goproxy.cn,direct&quot; # 七牛提供的公共代理，解决golang/x/tools 下载失败</code></p>
+</li>
+</ol>
+<h4 id="初始化-同时-确定了项目的绝对目录路径">初始化 同时 确定了项目的绝对目录路径</h4>
+<p>go mod init v5u.win/projectapi
+生成 go.mod
+导入包：<code>import &quot;v5u.win/projectapi/src/app/service&quot;</code></p>
+<h4 id="添加依赖">添加依赖</h4>
+<p>go mod tidy</p>
+<h4 id="生成-gosum-自动添加依赖关系到-gomod">生成 go.sum 自动添加依赖关系到 go.mod</h4>
+<p><code>go run main.go</code></p>
+<h4 id="下载依赖包">下载依赖包</h4>
+<p><code>go mod download github.com/pelletier/go-toml</code></p>
+<h4 id="tips">Tips:</h4>
+<ol>
+<li>不能在 golib/src 下创建项目</li>
+<li>在 Go1.11 版本下，GOPATH 目录中的项目默认是禁用 Go Module 的，需要手动开启</li>
+<li>export GOPROXY=&ldquo;<a href="https://goproxy.cn">https://goproxy.cn</a>,direct&rdquo; // 微软提供的公共代理,也可以以此技术建立自己的公共库</li>
+<li>export export GO111MODULE=on // 必须使用module依赖，在src/ 目录下可以使用module。 go1.13已经全面支持</li>
+</ol>
+<p>一条 <code>go env-w GOPROXY=https://goproxy.cn,direct</code>即可。之所以在后面拼接一个 <code>,direct</code>，是因为通过这样做我们可以在一定程度上解决私有库的问题（当然， goproxy.cn 无法访问你的私有库）</p>
+<h4 id="常用命令">常用命令</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>go mod tidy //拉取缺少的模块，移除不用的模块。
+</span></span><span style="display:flex;"><span>go mod download //下载依赖包
+</span></span><span style="display:flex;"><span>go mod graph //打印模块依赖图
+</span></span><span style="display:flex;"><span>go mod vendor //将依赖复制到 vendor 下
+</span></span><span style="display:flex;"><span>go mod verify //校验依赖
+</span></span><span style="display:flex;"><span>go mod why //解释为什么需要依赖
+</span></span><span style="display:flex;"><span>go list -m -json all //依赖详情
+</span></span></code></pre></div><h3 id="注">注：</h3>
+<p>module vgo 默认使用本地缓存的代码版本，如果想指定版本的话，最好显示声明一下，不要使用自动解析的方式。</p>
+<p>file go.mod</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">module</span> <span style="color:#a6e22e">giligili</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">go</span> <span style="color:#ae81ff">1.13</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">require</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gin</span><span style="color:#f92672">-</span><span style="color:#a6e22e">gonic</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gin</span> <span style="color:#a6e22e">v1</span><span style="color:#ae81ff">.4.0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#66d9ef">go</span><span style="color:#f92672">-</span><span style="color:#a6e22e">redis</span><span style="color:#f92672">/</span><span style="color:#a6e22e">redis</span> <span style="color:#a6e22e">v6</span><span style="color:#ae81ff">.15.5</span><span style="color:#f92672">+</span><span style="color:#a6e22e">incompatible</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">jinzhu</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gorm</span> <span style="color:#a6e22e">v1</span><span style="color:#ae81ff">.9.10</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h3 id="引入本地依赖包">引入本地依赖包</h3>
+<p>前面铺垫了这么多，接下来回到我们的主题，我该怎样使用我们自己开发的工具包呢？ 假设我们有一个新的项目 <code>testmod-demo</code>，现在想要在新的项目中使用 testmod 中的工具包，那么首先我们需要使用 <code>go mod</code> 初始化该项目：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd testmod-demo
+</span></span><span style="display:flex;"><span>go mod init gitee.com/rockyang/testmod-demo
+</span></span></code></pre></div><p>初始化之后会在当前项目根目录生成一个 <code>go.mod</code>，接下来我们有两种方式去引入 testmod 包，一种是直接修改 <code>go.mod</code> 文件，在 require 配置中添加上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>gitee.com/rockyang/testmod v0.0.0-20190610103414-4c55783279db
+</span></span></code></pre></div><p>或者使用 <code>go mod edit</code> 命令修改依赖</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>go mod edit -require<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;gitee.com/rockyang/testmod@v0.0.0-20190610103414-4c55783279db&#34;</span>
+</span></span><span style="display:flex;"><span>go mod tidy <span style="color:#75715e"># 整理依赖包</span>
+</span></span></code></pre></div><h3 id="使用-replace-将远程包替换为本地包服务">使用 replace 将远程包替换为本地包服务</h3>
+<p>这时如果你执行 <code>go build</code> 的时候会报错，提示找不到 <code>gitee.com/rockyang/testmod</code>，是因为你没有把仓库推送到远程，所以无法下载。 go module 提供了另外一个方案, 使用 replace, 编辑 go.mod 文件，在最后面添加： <code>replace gitee.com/rockyang/testmod =&gt; /gopath/src/gitee.com/rockyang/testmod</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>module gitee.com/rockyang/testmod-demo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>go 1.12
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>require <span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>    github.com/gin-gonic/gin v1.3.0
+</span></span><span style="display:flex;"><span>	gitee.com/rockyang/testmod@v0.0.0-20190610103414-4c55783279db
+</span></span><span style="display:flex;"><span>    golang.org/x/net v0.0.0-20190320064053-1272bf9dcd53 // indirect
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>replace gitee.com/rockyang/testmod <span style="color:#f92672">=</span>&gt; /gopath/src/gitee.com/rockyang/testmod
+</span></span></code></pre></div><blockquote>
+<p>这里的 /gopath/src/gitee.com/rockyang/testmod 是本地的包路径</p>
+</blockquote>
+<p>然后再执行 <code>go build</code> 你会看到你想要的结果。</p>
+<h2 id="私有库相关设置">私有库相关设置</h2>
+<p>首先私有服务器必须有一个域名，不能使用ip。</p>
+<p>这里使用 gitee 和 GitHub 作为测试服务器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>GOSUMDB<span style="color:#f92672">=</span>off <span style="color:#75715e">#解决私有库校验不过，放弃校验，大心脏者适用</span>
+</span></span><span style="display:flex;"><span>GOSUMDB<span style="color:#f92672">=</span>sum.golang.google.cn <span style="color:#75715e">#或者 更换校验源</span>
+</span></span><span style="display:flex;"><span>go env -w GOSUMDB<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sum.golang.google.cn&#34;</span> <span style="color:#75715e"># google 为我们提供了国内的校验源</span>
+</span></span></code></pre></div><p>配置 .gitconfig 将 http 改为 ssh 获取。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#f92672">[</span>http<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>	extraheader <span style="color:#f92672">=</span> PRIVATE-TOKEN: token
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>url <span style="color:#e6db74">&#34;git@gitee.com:fan.jinlong/go_module_lib.git&#34;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>	insteadOf <span style="color:#f92672">=</span> https://gitee.com/fan.jinlong/go_module_lib.git
+</span></span></code></pre></div><p>坑4:拉取私有模块</p>
+<p><img src="https://image.eddycjy.com/075bdc3d3552c000981c9d4fdd8d0f3f.jpg" alt="image"></p>
+<p>这里主要想涉及两块知识点，如下：</p>
+<p>- GOPROXY 是无权访问到任何人的私有模块的，所以你放心，安全性没问题。
+- GOPROXY 除了设置模块代理的地址以外，还需要增加 “direct” 特殊标识才可以成功拉取私有库。</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1167 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-04-03 08:00 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/go-web%E6%A1%86%E6%9E%B6%E9%80%89%E5%9E%8B/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Go Web框架选型</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/go/go-api-%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF%E6%96%87%E6%A1%A3/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Go-API 项目模板文档</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

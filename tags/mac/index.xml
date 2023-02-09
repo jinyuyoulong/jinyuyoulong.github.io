@@ -6,26 +6,32 @@
     <description>Recent content in Mac on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 30 Jun 2018 08:57:11 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/mac/index.xml" rel="self" type="application/rss+xml" />
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 19 Apr 2021 14:29:57 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brew的使用最佳实践</title>
+      <link>https://blog.v5u.win/posts/design/design-brew%E7%9A%84%E4%BD%BF%E7%94%A8%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 19 Apr 2021 14:29:57 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design/design-brew%E7%9A%84%E4%BD%BF%E7%94%A8%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>卸载包和依赖包 安装第三方卸载工具 brew tap beeftornado/rmtree &amp;amp;&amp;amp; brew install brew-rmtree 卸载其他软件 brew rmtree &amp;lt;package&amp;gt; 命令行删除文件使用 rmtrash，避免直接rm 无法找回 brew upate 更新所有的软件包 brew</description>
+    </item>
     
     <item>
       <title>mac虚拟机上的centos 7实现ssh连接</title>
-      <link>https://blog.v5u.win/posts/system-mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</link>
+      <link>https://blog.v5u.win/posts/system/system-mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</link>
       <pubDate>Sat, 30 Jun 2018 08:57:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</guid>
       <description>mac虚拟机上的centos7实现ssh连接 查看是否安装ssh rpm -qa | grep ssh（一般都内置了） 配置sshd_config文件 /etc/ssh/sshd_config Port 22 ListenAddress 0.0.0.0 ListenAddress :: 防火</description>
     </item>
     
     <item>
       <title>mac 如何使用wget</title>
-      <link>https://blog.v5u.win/posts/system-wget/</link>
+      <link>https://blog.v5u.win/posts/system/system-wget/</link>
       <pubDate>Sat, 21 Jan 2017 23:38:52 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-wget/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-wget/</guid>
       <description>下载单个文件， 为什么不用mac原生自带的工具：curl &amp;ldquo;网址链接&amp;rdquo; -o &amp;ldquo;输出文件名&amp;rdquo; 解释一下，</description>
     </item>
     
@@ -40,10 +46,10 @@
     
     <item>
       <title>用 Xcode 编写 C/C&#43;&#43; 的 Hello World！</title>
-      <link>https://blog.v5u.win/posts/xcode-cc&#43;&#43;/</link>
+      <link>https://blog.v5u.win/posts/xcode/xcode-cc&#43;&#43;/</link>
       <pubDate>Fri, 25 Sep 2015 12:24:51 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/xcode-cc&#43;&#43;/</guid>
+      <guid>https://blog.v5u.win/posts/xcode/xcode-cc&#43;&#43;/</guid>
       <description>操作步骤： 打开Xcode，在欢迎界面点击Create a new Xcode project。 在左侧栏选择Mac OS X分类的Application，右侧选择Com</description>
     </item>
     

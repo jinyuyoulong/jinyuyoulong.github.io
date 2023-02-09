@@ -6,17 +6,41 @@
     <description>Recent content in ReactNative on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 15 Mar 2016 16:38:19 +0000</lastBuildDate>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 24 May 2021 20:43:22 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/reactnative/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RN教程</title>
+      <link>https://blog.v5u.win/posts/reactnative/rn%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Mon, 24 May 2021 20:43:22 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/reactnative/rn%E6%95%99%E7%A8%8B/</guid>
+      <description>[TOC] 搭建开发环境 安装依赖 iOS 必须安装的依赖有：Node、Watchman、Xcode 和 CocoaPods。 安卓 必须安装的依赖有：Node、Wat</description>
+    </item>
     
-	<atom:link href="https://blog.v5u.win/tags/reactnative/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redux学习</title>
+      <link>https://blog.v5u.win/posts/reactnative/redux%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 24 May 2021 20:42:39 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/reactnative/redux%E5%AD%A6%E4%B9%A0/</guid>
+      <description>yarn global add create-react-app create-react-app demo0 yarn add antd yarn add redux mkdir src/store redux dev chrome插件 开发用，在GitHub上redux项目看开发环境配置方式 const store = createStore(reducer, // window.__REDUX_DEVTOOLS_EXTENSION__ &amp;amp;&amp;amp; window.__REDUX_DEVTOOLS_EXTENSION__() //如果浏览器有这个</description>
+    </item>
     
+    <item>
+      <title>React学习</title>
+      <link>https://blog.v5u.win/posts/reactnative/react%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 24 May 2021 20:37:25 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/reactnative/react%E5%AD%A6%E4%B9%A0/</guid>
+      <description>React学习 两个重要的概念：虚拟DOM，diff算法 虚拟DOM：用js对象模拟HTML的DOM树，为了方便比较，减少渲染 diff算法由3种</description>
+    </item>
     
     <item>
       <title>React-Native 初次安装环境报错及解决记录</title>
-      <link>https://blog.v5u.win/posts/react-native-%E5%88%9D%E6%AC%A1%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/</link>
+      <link>https://blog.v5u.win/posts/reactnative/react-native-%E5%88%9D%E6%AC%A1%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Tue, 15 Mar 2016 16:38:19 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/react-native-%E5%88%9D%E6%AC%A1%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://blog.v5u.win/posts/reactnative/react-native-%E5%88%9D%E6%AC%A1%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83%E6%8A%A5%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E8%AE%B0%E5%BD%95/</guid>
       <description>创建第一个项目后，打开xcode运行，terminal报错 Watchman: watchman–no-pretty get-sockname returned with exit code null dyld: Library not loaded: /usr/local/opt/pcre/lib/libpcre.1.dylib 解决方案：终端输入 brew link</description>
     </item>
     

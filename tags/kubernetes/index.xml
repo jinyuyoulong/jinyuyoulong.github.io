@@ -6,17 +6,14 @@
     <description>Recent content in kubernetes on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 08 Jul 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 08 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>k8s在Mac上的安装和使用</title>
-      <link>https://blog.v5u.win/posts/docker-k8s/</link>
+      <link>https://blog.v5u.win/posts/docker/docker-k8s/</link>
       <pubDate>Mon, 08 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/docker-k8s/</guid>
+      <guid>https://blog.v5u.win/posts/docker/docker-k8s/</guid>
       <description>安装 在Mac下安装前提条件，已经安装好了docker desktop，并修改了代理源 https://registry.docker-cn.co</description>
     </item>
     

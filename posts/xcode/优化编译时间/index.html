@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="xcode优化编译时间">
+<meta itemprop="description" content="[TOC] Xcode 优化编译时间设置 显示构建时间 首先，我们需要知道 Xcode 花了多少时间来构建我们的项目。默认情况下，Xcode 并不会显示构建时间，因此我们必须启用"><meta itemprop="datePublished" content="2021-05-24T20:17:55+08:00" />
+<meta itemprop="dateModified" content="2021-05-24T20:17:55+08:00" />
+<meta itemprop="wordCount" content="3152">
+<meta itemprop="keywords" content="xcode," /><meta property="og:title" content="xcode优化编译时间" />
+<meta property="og:description" content="[TOC] Xcode 优化编译时间设置 显示构建时间 首先，我们需要知道 Xcode 花了多少时间来构建我们的项目。默认情况下，Xcode 并不会显示构建时间，因此我们必须启用" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/xcode/%E4%BC%98%E5%8C%96%E7%BC%96%E8%AF%91%E6%97%B6%E9%97%B4/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-24T20:17:55+08:00" />
+<meta property="article:modified_time" content="2021-05-24T20:17:55+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="xcode优化编译时间"/>
+<meta name="twitter:description" content="[TOC] Xcode 优化编译时间设置 显示构建时间 首先，我们需要知道 Xcode 花了多少时间来构建我们的项目。默认情况下，Xcode 并不会显示构建时间，因此我们必须启用"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>xcode优化编译时间</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="toc-btn" class="hdr-btn desktop-only-ib" title="Table of Contents"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg></button><span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>May 24, 2021</span></div>
+				<h1>xcode优化编译时间</h1>
+			</header>
+			<div class="content">
+				<p>[TOC]</p>
+<p>Xcode 优化编译时间设置</p>
+<h5 id="显示构建时间">显示构建时间</h5>
+<p>首先，我们需要知道 Xcode 花了多少时间来构建我们的项目。默认情况下，Xcode 并不会显示构建时间，因此我们必须启用这项功能。</p>
+<p>1、在终端运行以下命令</p>
+<pre tabindex="0"><code>defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
+</code></pre><h5 id="构建系统-设置的地方没有找到">构建系统, 设置的地方没有找到</h5>
+<p>Xcode 9 在其预览版中引入了一个新的构建系统。而到了 Xcode 10，新的构建系统则成了默认设置。这个新的构建系统的主要目标就是要减少总体的构建时间。</p>
+<p><strong>Action Points</strong></p>
+<p>要使用新的构建系统，可以在 <strong>File -&gt; Workspace/Project Settings</strong> 中启用它。</p>
+<h5 id="架构影响-architecture">架构影响 Architecture</h5>
+<p>在开发过程中，我们更关注构建时间，这实际上会占用我们的大部分时间。当以调试模式来构建项目时，最好只针对特定的架构来构建。虽然这是 Xcode 的默认选项，但以防万一，最好先确认一下。</p>
+<p>设备和模拟器有不同的架构，但通常在开发过程中，我们希望 Xcode 或者在设备或者在模拟器上运行。所以，设置 <code>Build Active Architecture Only</code> 为 <code>Yes</code> ，来要求编译器仅生成一种架构的二进制文件。</p>
+<p><strong>Action Points</strong></p>
+<p>在项目的 <code>Build Settings</code> -&gt; <code>Build Active Architecture Only</code> 中，将 <code>Debug</code> 设置为 <code>Yes</code> ，将 <code>Release</code> 设置为 <code>No</code> 。</p>
+<h5 id="编译模式-compilation-mode">编译模式 Compilation Mode</h5>
+<p><code>Compilation Mode</code> 告诉编译器是构建项目中所有文件还是仅构建修改后的文件。 <code>Incremental</code> （增量）表示仅编译已修改的文件， <code>Whole Module</code> 表示不考虑修改而构建项目中所有文件。</p>
+<p>1、进行 <code>Build Settings</code> -&gt; <code>Compilation Mode</code> 。默认情况下，Xcode 10+ 是将其设置为 <code>Incremental(Debug)</code> 和 <code>Whole Module(Release)</code> 。</p>
+<h5 id="优化级别-optimization-level">优化级别 Optimization Level</h5>
+<p>告诉编译器将构建优化到某个级别。通常，Debug 的构建设置为 <code>No Optimization</code> ,这样可以调试通过 let/var 包含的值。这在调试阶段是非常有必要的。</p>
+<p>1、进入 <code>Build Settings</code> -&gt; <code>Optimization Level</code> ，然后查看设置的值</p>
+<p>2、如果不进行大量调度，最好将其设置为 <code>Optimize for Speed</code> ，由于编译器将省略将值附加到调试器线程的步骤，因此将减少构建时间。</p>
+<blockquote>
+<p>注意：还有另一个设置，即 <code>Optimize for Size</code> ，通常是指机器代码生成的整体大小，而不是应用程序的大小。鉴于此，我们主要关注减少本文讨论的“构建时间”，因此忽略这一项。</p>
+</blockquote>
+<h5 id="依赖管理">依赖管理</h5>
+<p>iOS有2个主要的依赖管理器：Carthage和Cocoapods。</p>
+<p>通常，在大多数项目中，一旦集成了依赖库 lib/module/framework，我们就希望不更改这些库的源码。即使要修改，将这些修改集中在独立的 repo/module/framework 中，然后将特定 module/framework 集成到项目中，始终是一种最佳实践。基本思想是在模块的情况下，尽可能地分离 module/framework。</p>
+<p>静态/动态 framework 在将任何第三方库集成到我们的 iOS 项目中时非常有用，因为一旦生成 framework，就不会在项目中重新编译。这可以节省大量时间，因此，这也是一些人选择 Carthage，而不是 Cocoapods 的原因之一。</p>
+<p>当使用 Cocoapods 来管理依赖项时，每次编译工程，所有的依赖项都会被编译。而如果使用 Carthage，在添加依赖项时，依赖库只被编译一次。它会生成一个 framework，并链接到工程，在构建工程时，不会再去编译依赖项。</p>
+<h5 id="让编译器并行执行构建">让编译器并行执行构建</h5>
+<h6 id="1-构建的机器内核数">1. 构建的机器内核数</h6>
+<p><strong>先决条件—查看Mac的内核数量</strong></p>
+<p>1、在终端运行以下命令：</p>
+<pre tabindex="0"><code>sysctl -n hw.ncpu
+</code></pre><p>2、它会输出一个整数，表示计算机的内核数：</p>
+<pre tabindex="0"><code>4 // 这是我的内核数
+</code></pre><p>有 12 个内核的 iMac 这样的机器运行相同构建的速度比我的快 3 倍。因此，计算机的内核数起着很大的作用，它与构建执行时间成正比。</p>
+<p>默认情况下，Xcode 使用与计算机 CPU 内核数相同的线程数。但是，调整线程数，使用更多的线程，可以显著减少构建时间（在某些情况下可以减少 30%）。这个过程利用了处理器处理多线程或模拟额外内核的能力。需要注意的是，你需要通过尝试来确定代码并行构建的收益情况，然后相应地调整线程数。</p>
+<p><strong>修改线程数</strong></p>
+<p>让我们尝试修改线程数。从终端运行以下命令：</p>
+<pre tabindex="0"><code>默认写入com.apple.Xcode PBXNumberOfParallelBuildSubtasks 8
+</code></pre><p>接下来是使并行构建执行更简单的方法。这是通过Xcode UI本身完成的，后者会自动执行此优化。</p>
+<h6 id="2-执行并行构建">2. 执行并行构建</h6>
+<p>我们将研究如何在Xcode中启用并行构建执行。</p>
+<p><strong>Action Points</strong></p>
+<p>导航到 <code>Edit Scheme -&gt; Build</code> ，确保勾选 <code>Parallelize Build</code> 和 <code>Find Implicit Dependencies</code> 。</p>
+<h6 id="build-hypothesis">Build Hypothesis</h6>
+<p>Xcode 编译器获取项目的源代码，并构建一个树状结构来定义模块的依赖关系。然后采用自下而上的方法进行编译，即首先编译最小依赖性的模块。</p>
+<p>通常，Xcode 项目会依赖于其它 framework 或 target。例如，当一个项目添加了 <code>Target Dependencies</code> 时，编译器首先要确保这边链接的目标 framework/module 先被编译。同时，在执行 test target 时，编译器首先确保 app target 被编译。因此，依赖关系在使编译器以最佳方式执行并行构建任务中起着重要的作用。在这里，我们可以做的是：</p>
+<p>• 按执行顺序列出所有依赖项</p>
+<p>• 按执行顺序列表项目中的所有 target</p>
+<p>• 减少依赖</p>
+<p>• 解耦或模块化代码库，以生成独立的模块</p>
+<p>尽管依赖关系始终由编译器在内部进行标识，但最好将它们按照执行顺序放置。这最终可以帮助编译器在构建过程中，减少内部重新排序依赖的时间。</p>
+<p>正确处理完后，这将让构建性能提高 2 ~ 3 倍，当然这取决于项目的复杂性。</p>
+<p><strong>Real-time Effect</strong></p>
+<p>对于没有或很少依赖项的小型业余项目来说，结果可能适得其反，即并行构建实际上会增加构建时间。我们可以在 SwiftBlog 项目上观察到这一点。</p>
+<p>但是，对于有大量依赖关系的实际项目，最佳做法是使用并行构建。</p>
+<p>关于依赖关系排序的另一个重要特征是链接框架，我们下面来讨论。</p>
+<h5 id="链接框架-link-frameworks">链接框架 Link Frameworks</h5>
+<p><code>Link Frameworks Automatically</code> 表示添加到项目中的任何 framework 都应自动链接并由编译器在构建过程中考虑使用。</p>
+<p>Xcode 默认将 <code>Link Frameworks Automatically</code> 设置为 <code>Yes</code> 。</p>
+<p>但是，苹果并不保证这一点，而是希望开发人员将任何外部 framework 链接到 <code>Build Phases -&gt; Link Binary With Libraries</code> 或 <code>Target Dependencies</code> 。我们不必对 <code>UIKit</code> 、 <code>Foundation</code> 这些隐式依赖项执行此步骤。</p>
+<p>因此，这里的总体目标是对于外部 framework 不要过多依赖 <code>Link Frameworks Automatically</code>。最好在构建阶段中手动链接依赖项。</p>
+<p><strong>所以怎么实现上面的目标：在构建阶段中手动链接依赖项。我还是没有找到办法！</strong></p>
+<h5 id="识别耗时的代码">识别耗时的代码</h5>
+<p>Xcode 允许我们识别导致编译时间严重滞后的代码块。你可以为代码块执行指定一个时间限制，交让 Xcode 对超出指定时间限制的代码给出警告。</p>
+<p><strong>Action Points</strong></p>
+<p>1、导航到 <code>Build Settings -&gt; Other Swift Flag</code> ，并添加以下标记：</p>
+<pre tabindex="0"><code>-warn-long-function-bodies=200
+
+-warn-long-expression-type-checking=200
+</code></pre><p>整数值 200 代表毫秒数。因此，在执行构建后，Xcode 将对任何执行时间超过 200 毫秒的函数或表达式给出警告。</p>
+<p>2、添加这些标志后，无论何时构建项目，Xcode 都应该显示警告。</p>
+<p>当你需要确定消耗比预期时间更多的那些函数或表达式时，这非常有用。</p>
+<h5 id="dsym的影响">dSYM的影响</h5>
+<p>dSYM 文件对崩溃报告文件的去符号化过程非常有用。编译器需要一些时间来生成 dSYM 文件。仅当没有附加 Xcode 调试器时，启用它才有意义。因此，最好在模拟器上运行时将其禁用。</p>
+<p><strong>Action Points</strong></p>
+<p>1、导航到 Xcode 的 <code>Build Settings</code> -&gt; <code>Build Options</code></p>
+<p>2、在 <code>Debug Information Format</code> 下，设置值 为 <code>DWARF(Debug)</code> 和 <code>DWARF with dSYM File(Release)</code>  注：xcode11默认就是这样。</p>
+<p>这个设置告诉编译器在调试模式下省略创建 dSYM 文件的过程。这在一定程序上能节省构建时间。</p>
+<h5 id="objective-cswift-互操作性-这个重点关注">Objective-C/Swift 互操作性 这个重点关注</h5>
+<p>随着 Swift 的到来，出现了混合开发，工具的一部分旧代码库已迁移到最新语言，而另一部分继续使用Objective-C。最终要求开发人员以某种方式处理互操作性。</p>
+<p>为了实现互操作性，我们必须处理两种类型的头文件：</p>
+<p>• Bridging Header &ndash; 包含应公开给 Swift 的所有 Objective-C 接口</p>
+<p>• Generated Header &ndash; 包含所有应公开给 Objective-C 的 Swift 接口</p>
+<p>这些头文件定义了两种语言编写的文件的依赖性。这两种语言的文件之间的互操作性是通过 Bridging/Generated Header 实现的。对头文件的更改将极大地影响构建时间。例如，Swift 接口文件中的微小变化会让编译器重新编译所有引用了该文件的Objective-C文件，反之亦然。</p>
+<p>所以，最好只在两种语言的文件中同时公开所需的接口。通过添加访问修饰符：private/protected，避免添加/导入不必要的文件。</p>
+<h5 id="减少-uitests-执行时间">减少 UITests 执行时间</h5>
+<p>这听起来有些怪异，因为从技术上讲这没有意义，但确实如此。</p>
+<p>在运行 UI 测试用例时，请尝试将模拟器的物理和像素窗口大小调整为尽可能最小。然后，可以看到 UITest 用例执行时间的一些改善。</p>
+<p>发生这种情况是因为 Xcode 运行 UI 测试用例时，通常会在模拟器上安装并运行实际的应用程序以执行任何给定的UI测试用例。这意味着它实际上就是使用该应用程序的真实用户。因此，就像使用该应用程序的真实用户一样，在运行UI测试用例时，会消耗系统内核/资源。</p>
+<p>因此，始终建议将模拟器设置降至最低，以减少对系统资源的使用。这最终将加快测试用例的执行速度，并减少总体执行时间。</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.v5u.win/tags/xcode">xcode</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>3152 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-05-24 20:17 &#43;0800</p>
+			</footer>
+		</article>
+		<aside id="toc">
+			<div class="toc-title">Table of Contents</div>
+			<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+		</aside>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/xcode/xcode%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Xcode项目文件格式</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/flutter/flutter%E9%97%AE%E9%A2%98%E7%82%B9%E6%94%B6%E9%9B%86/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Flutter问题点收集</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

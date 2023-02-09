@@ -6,17 +6,14 @@
     <description>Recent content in 爬虫 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 18 Nov 2016 10:08:22 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 18 Nov 2016 10:08:22 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>pyquery 解析网页乱码</title>
-      <link>https://blog.v5u.win/posts/python-pyquery-%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E4%B9%B1%E7%A0%81/</link>
+      <link>https://blog.v5u.win/posts/python/python-pyquery-%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E4%B9%B1%E7%A0%81/</link>
       <pubDate>Fri, 18 Nov 2016 10:08:22 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/python-pyquery-%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E4%B9%B1%E7%A0%81/</guid>
+      <guid>https://blog.v5u.win/posts/python/python-pyquery-%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E4%B9%B1%E7%A0%81/</guid>
       <description>pyquery 解析网页乱码 问题：使用pyquery直接请求的网页，解析中文出现一半乱码，一般正常的情况 花了半天的时间也没找到解决办法，第二天早上无意间点</description>
     </item>
     

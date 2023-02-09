@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="WKWebView">
+<meta itemprop="description" content="WKWebView是获取不到JSContext的，所以不能用JavaScriptCore进行交互。和js交互要用WKScriptMessag"><meta itemprop="datePublished" content="2021-04-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-04-16T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1975">
+<meta itemprop="keywords" content="iOS," /><meta property="og:title" content="WKWebView" />
+<meta property="og:description" content="WKWebView是获取不到JSContext的，所以不能用JavaScriptCore进行交互。和js交互要用WKScriptMessag" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/ios/ios-wkwebview/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-16T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="WKWebView"/>
+<meta name="twitter:description" content="WKWebView是获取不到JSContext的，所以不能用JavaScriptCore进行交互。和js交互要用WKScriptMessag"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>WKWebView</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 16, 2021</span></div>
+				<h1>WKWebView</h1>
+			</header>
+			<div class="content">
+				<p>WKWebView是获取不到JSContext的，所以不能用JavaScriptCore进行交互。和js交互要用WKScriptMessageHandler协议方法</p>
+<p>//MARK: - WKNavigationDelegate</p>
+<p>//该代理提供的方法，可以用来追踪加载过程（页面开始加载、加载完成、加载失败）、决定是否执行跳转</p>
+<p>// 页面跳转的代理方法有三种，分为（收到跳转与决定是否跳转两种）</p>
+<p>// 剩下三个代理方法全都是与界面弹出提示框相关的</p>
+<p>// 针对于web界面的三种提示框（警告框、确认框、输入框）分别对应三种代理方法。</p>
+<p>//MARK: - WKScriptMessageHandler</p>
+<p>//这个协议中包含一个必须实现的方法，这个方法是提高App与web端交互的关键，它可以直接将接收到的JS脚本转为OC或Swift对象。（当然，在UIWebView也可以通过“曲线救国”的方式与web进行交互，著名的Cordova框架就是这种机制</p>
+<p>// 处理来自js的方法调用</p>
+<p>// 从web界面中接收到一个脚本时调用 js端的写法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// postMessage 参数不能为空，必须传点什么
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 格式为 window.webkit.messageHandlers..postMessage(null);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 外部方法必须为 全局js方法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">scanClick</span>() {
+</span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">webkit</span>.<span style="color:#a6e22e">messageHandlers</span>.<span style="color:#a6e22e">ScanAction</span>.<span style="color:#a6e22e">postMessage</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>OC端的写法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objective-c" data-lang="objective-c"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 在某一个地方注册
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[self.webView.configuration.userContentController addScriptMessageHandler:self name:<span style="color:#e6db74">@&#34;ScanAction&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 在某一个地方移除
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[self.webView.configuration.userContentController removeScriptMessageHandlerForName:<span style="color:#e6db74">@&#34;ScanAction&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//MARK: - WKScriptMessageHandler 代理方法的实现
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">userContentController:</span>(WKUserContentController <span style="color:#f92672">*</span>)userContentController <span style="color:#a6e22e">didReceiveScriptMessage:</span>(WKScriptMessage <span style="color:#f92672">*</span>)message{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ([message.name isEqualToString:<span style="color:#e6db74">@&#34;ScanAction&#34;</span>]) {
+</span></span><span style="display:flex;"><span>           NSLog(<span style="color:#e6db74">@&#34;说吧，你想干点什么？&#34;</span>);
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objective-c" data-lang="objective-c"><span style="display:flex;"><span><span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  WKWebViewController.m
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  HTML_CSS_JS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  Created by 范金龙 on 2020/4/28.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  Copyright © 2020 FF. All rights reserved.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#import &#34;WKWebViewController.h&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#import 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#import 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#import &#34;WKDelegate.h&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">@interface</span> <span style="color:#a6e22e">WKWebViewController</span> ()
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>
+</span></span><span style="display:flex;"><span>WKNavigationDelegate,
+</span></span><span style="display:flex;"><span>WKUIDelegate,
+</span></span><span style="display:flex;"><span>WKScriptMessageHandler
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//WKDelegate
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">strong</span>)WKWebView <span style="color:#f92672">*</span>webView;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@implementation</span> <span style="color:#a6e22e">WKWebViewController</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> NSString <span style="color:#f92672">*</span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">@&#34;OCFunc&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 避免循环引用，内存管理，这是一个经典的大环引用问题。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 具体解决方案有好几种，比如：中间类，间接代理，提前手动删除打断。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// addScriptMessageHandler 会强引用self导致当前对象无法释放
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">viewWillAppear:</span>(<span style="color:#66d9ef">BOOL</span>)animated{
+</span></span><span style="display:flex;"><span>    [super viewWillAppear:animated];
+</span></span><span style="display:flex;"><span>    [self.webView.configuration.userContentController addScriptMessageHandler:self name:<span style="color:#e6db74">@&#34;toServer&#34;</span>];
+</span></span><span style="display:flex;"><span>    [self.webView.configuration.userContentController addScriptMessageHandler:self name:<span style="color:#e6db74">@&#34;ScanAction&#34;</span>];
+</span></span><span style="display:flex;"><span>    [self.webView.configuration.userContentController addScriptMessageHandler:self name:name];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">viewWillDisappear:</span>(<span style="color:#66d9ef">BOOL</span>)animated{
+</span></span><span style="display:flex;"><span>    [super viewWillDisappear:animated];
+</span></span><span style="display:flex;"><span>    [self.webView.configuration.userContentController removeScriptMessageHandlerForName:<span style="color:#e6db74">@&#34;toServer&#34;</span>];
+</span></span><span style="display:flex;"><span>    [self.webView.configuration.userContentController removeScriptMessageHandlerForName:<span style="color:#e6db74">@&#34;ScanAction&#34;</span>];
+</span></span><span style="display:flex;"><span>    [self.webView.configuration.userContentController removeScriptMessageHandlerForName:name];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">viewDidLoad</span> {
+</span></span><span style="display:flex;"><span>    [super viewDidLoad];
+</span></span><span style="display:flex;"><span>    [self.view setBackgroundColor:[UIColor whiteColor]];
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Do any additional setup after loading the view.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    [self initWKWebView];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">initWKWebView</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    WKWebViewConfiguration <span style="color:#f92672">*</span>configuration <span style="color:#f92672">=</span> [[WKWebViewConfiguration alloc] init];
+</span></span><span style="display:flex;"><span>    WKPreferences <span style="color:#f92672">*</span>preferences <span style="color:#f92672">=</span> [WKPreferences new];
+</span></span><span style="display:flex;"><span>    preferences.javaScriptCanOpenWindowsAutomatically <span style="color:#f92672">=</span> YES;
+</span></span><span style="display:flex;"><span>    preferences.minimumFontSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">10.0</span>;
+</span></span><span style="display:flex;"><span>    configuration.preferences <span style="color:#f92672">=</span> preferences;
+</span></span><span style="display:flex;"><span>    self.webView <span style="color:#f92672">=</span> [[WKWebView alloc] initWithFrame:self.view.frame configuration:configuration];
+</span></span><span style="display:flex;"><span>    NSString <span style="color:#f92672">*</span>urlStr <span style="color:#f92672">=</span> [[NSBundle mainBundle] pathForResource:<span style="color:#e6db74">@&#34;wkDemo.html&#34;</span> ofType:nil];
+</span></span><span style="display:flex;"><span>    NSURL <span style="color:#f92672">*</span>fileURL <span style="color:#f92672">=</span> [NSURL fileURLWithPath:urlStr];
+</span></span><span style="display:flex;"><span>    [self.webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
+</span></span><span style="display:flex;"><span>    self.webView.UIDelegate <span style="color:#f92672">=</span> self;
+</span></span><span style="display:flex;"><span>    [self.view addSubview:self.webView];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//MARK: WKNavigationDelegate
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//该代理提供的方法，可以用来追踪加载过程（页面开始加载、加载完成、加载失败）、决定是否执行跳转
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 页面开始加载时调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">webView:</span>(WKWebView <span style="color:#f92672">*</span>)webView <span style="color:#a6e22e">didStartProvisionalNavigation:</span>(WKNavigation <span style="color:#f92672">*</span>)navigation{
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 当内容开始返回时调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">webView:</span>(WKWebView <span style="color:#f92672">*</span>)webView <span style="color:#a6e22e">didCommitNavigation:</span>(WKNavigation <span style="color:#f92672">*</span>)navigation{
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 页面加载完成之后调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">webView:</span>(WKWebView <span style="color:#f92672">*</span>)webView <span style="color:#a6e22e">didFinishNavigation:</span>(WKNavigation <span style="color:#f92672">*</span>)navigation{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//向js注入关闭按钮事件监听
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    NSString <span style="color:#f92672">*</span>script <span style="color:#f92672">=</span> <span style="color:#e6db74">@&#34;document.querySelector(&#39;.close-btn&#39;).addEventListener(&#39;click&#39;,function() {window.webkit.messageHandlers.toServer.postMessage(&#39;close&#39;)},false)&#34;</span>;
+</span></span><span style="display:flex;"><span>    [webView evaluateJavaScript:script completionHandler:<span style="color:#f92672">^</span>(<span style="color:#66d9ef">id</span> object, NSError <span style="color:#f92672">*</span> _Nullable error) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(error){
+</span></span><span style="display:flex;"><span>            NSLog(<span style="color:#e6db74">@&#34;evaluateJavaScript error : %@&#34;</span>,error);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 页面加载失败时调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">webView:</span>(WKWebView <span style="color:#f92672">*</span>)webView <span style="color:#a6e22e">didFailProvisionalNavigation:</span>(WKNavigation <span style="color:#f92672">*</span>)navigation{
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// MARK:-
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 页面跳转的代理方法有三种，分为（收到跳转与决定是否跳转两种）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 接收到服务器跳转请求之后调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">webView:</span>(WKWebView <span style="color:#f92672">*</span>)webView <span style="color:#a6e22e">didReceiveServerRedirectForProvisionalNavigation:</span>(WKNavigation <span style="color:#f92672">*</span>)navigation{
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 在收到响应后，决定是否跳转
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">webView:</span>(WKWebView <span style="color:#f92672">*</span>)webView <span style="color:#a6e22e">decidePolicyForNavigationResponse:</span>(WKNavigationResponse <span style="color:#f92672">*</span>)navigationResponse <span style="color:#a6e22e">decisionHandler:</span>(<span style="color:#66d9ef">void</span> (<span style="color:#f92672">^</span>)(WKNavigationResponsePolicy))decisionHandler{
+</span></span><span style="display:flex;"><span>    decisionHandler(WKNavigationResponsePolicyAllow);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 在发送请求之前，决定是否跳转
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">webView:</span>(WKWebView <span style="color:#f92672">*</span>)webView <span style="color:#a6e22e">decidePolicyForNavigationAction:</span>(nonnull WKNavigationAction <span style="color:#f92672">*</span>)navigationAction <span style="color:#a6e22e">decisionHandler:</span>(nonnull <span style="color:#66d9ef">void</span> (<span style="color:#f92672">^</span>)(WKNavigationActionPolicy))decisionHandler{
+</span></span><span style="display:flex;"><span>    decisionHandler(WKNavigationActionPolicyAllow);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//MARK: WKUIDelegate
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 创建一个新的WebView 待研究
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>- (WKWebView <span style="color:#f92672">*</span>)<span style="color:#a6e22e">webView:</span>(WKWebView <span style="color:#f92672">*</span>)webView <span style="color:#a6e22e">createWebViewWithConfiguration:</span>(WKWebViewConfiguration <span style="color:#f92672">*</span>)configuration <span style="color:#a6e22e">forNavigationAction:</span>(WKNavigationAction <span style="color:#f92672">*</span>)navigationAction <span style="color:#a6e22e">windowFeatures:</span>(WKWindowFeatures <span style="color:#f92672">*</span>)windowFeatures{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> self.webView;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//MARK:- 剩下三个代理方法全都是与界面弹出提示框相关的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//针对于web界面的三种提示框（警告框、确认框、输入框）分别对应三种代理方法。下面只举了警告框的例子。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">/**
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *  web界面中有弹出警告框时调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *  @param webView           实现该代理的webview
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *  @param message           警告框中的内容
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *  @param frame             主窗口
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> *  @param completionHandler 警告框消失调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">webView:</span>(WKWebView <span style="color:#f92672">*</span>)webView <span style="color:#a6e22e">runJavaScriptAlertPanelWithMessage:</span>(nonnull NSString <span style="color:#f92672">*</span>)message <span style="color:#a6e22e">initiatedByFrame:</span>(nonnull WKFrameInfo <span style="color:#f92672">*</span>)frame <span style="color:#a6e22e">completionHandler:</span>(nonnull <span style="color:#66d9ef">void</span> (<span style="color:#f92672">^</span>)(<span style="color:#66d9ef">void</span>))completionHandler
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//    js 调用的alert方法，被wk拦截，在此处执行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    completionHandler();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">webView:</span>(WKWebView <span style="color:#f92672">*</span>)webView <span style="color:#a6e22e">runJavaScriptConfirmPanelWithMessage:</span>(NSString <span style="color:#f92672">*</span>)message <span style="color:#a6e22e">initiatedByFrame:</span>(WKFrameInfo <span style="color:#f92672">*</span>)frame <span style="color:#a6e22e">completionHandler:</span>(<span style="color:#66d9ef">void</span> (<span style="color:#f92672">^</span>)(<span style="color:#66d9ef">BOOL</span>))completionHandler{completionHandler(true);}
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">webView:</span>(WKWebView <span style="color:#f92672">*</span>)webView <span style="color:#a6e22e">runJavaScriptTextInputPanelWithPrompt:</span>(NSString <span style="color:#f92672">*</span>)prompt <span style="color:#a6e22e">defaultText:</span>(NSString <span style="color:#f92672">*</span>)defaultText <span style="color:#a6e22e">initiatedByFrame:</span>(WKFrameInfo <span style="color:#f92672">*</span>)frame <span style="color:#a6e22e">completionHandler:</span>(<span style="color:#66d9ef">void</span> (<span style="color:#f92672">^</span>)(NSString <span style="color:#f92672">*</span> _Nullable))completionHandler{    completionHandler(<span style="color:#e6db74">@&#34;输入&#34;</span>);}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//MARK: WKScriptMessageHandler
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//这个协议中包含一个必须实现的方法，这个方法是提高App与web端交互的关键，它可以直接将接收到的JS脚本转为OC或Swift对象。（当然，在UIWebView也可以通过“曲线救国”的方式与web进行交互，著名的Cordova框架就是这种机制
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 处理来自js的方法调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 从web界面中接收到一个脚本时调用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">userContentController:</span>(WKUserContentController <span style="color:#f92672">*</span>)userContentController <span style="color:#a6e22e">didReceiveScriptMessage:</span>(WKScriptMessage <span style="color:#f92672">*</span>)message{
+</span></span><span style="display:flex;"><span>    NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>,message.name);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ([message.name isEqualToString:<span style="color:#e6db74">@&#34;ScanAction&#34;</span>]) {
+</span></span><span style="display:flex;"><span>           NSLog(<span style="color:#e6db74">@&#34;扫一扫&#34;</span>);
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> ([message.name isEqualToString:<span style="color:#e6db74">@&#34;OCFunc&#34;</span>]){<span style="color:#75715e">//此处name为JS传出信息打包的标志
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">//用message.body获得JS传出的参数体
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">//handle coding..
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">/*获得传出的字符串参数*/</span>
+</span></span><span style="display:flex;"><span>        NSString <span style="color:#f92672">*</span> dataString <span style="color:#f92672">=</span> message.body;
+</span></span><span style="display:flex;"><span>        NSLog(<span style="color:#e6db74">@&#34;wkwebview 获取js传出的数据%@&#34;</span>,dataString);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 在需要调用JS的地方执行如下代码
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// 有参数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        [self.webView evaluateJavaScript:<span style="color:#e6db74">@&#34;postInfo(&#39;参数1,参数2&#39;)&#34;</span>completionHandler:nil];
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 无参数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        [self.webView evaluateJavaScript:<span style="color:#e6db74">@&#34;postInfo()&#34;</span>completionHandler:nil];
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 此处的 &#39;postInfo()&#39; 是前端的方法，需要前端告诉你
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">dealloc</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    NSLog(<span style="color:#e6db74">@&#34;%s&#34;</span>,__FUNCTION__);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@end</span>
+</span></span></code></pre></div><p>wkDemo.html 实例HTML的代码如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span>            function scanClick() {
+</span></span><span style="display:flex;"><span>                window.webkit.messageHandlers.ScanAction.postMessage(null);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// &lt;!-- 错误处理 --&gt;</span>
+</span></span><span style="display:flex;"><span>            window.onerror = function(err) {
+</span></span><span style="display:flex;"><span>                log(<span style="color:#960050;background-color:#1e0010">&#39;</span>window.onerror: <span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#f92672">+</span> err)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            function log(message, data) {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">var</span> log = document.getElementById(<span style="color:#960050;background-color:#1e0010">&#39;</span>log<span style="color:#960050;background-color:#1e0010">&#39;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">var</span> el = document.createElement(<span style="color:#960050;background-color:#1e0010">&#39;</span>p<span style="color:#960050;background-color:#1e0010">&#39;</span>)
+</span></span><span style="display:flex;"><span>                el.className = <span style="color:#960050;background-color:#1e0010">&#39;</span>logLine<span style="color:#960050;background-color:#1e0010">&#39;</span>
+</span></span><span style="display:flex;"><span>                el.innerHTML = <span style="color:#e6db74">&#34;message: &#34;</span> <span style="color:#f92672">+</span> message <span style="color:#f92672">+</span><span style="color:#960050;background-color:#1e0010">&#39;</span>:&lt;br<span style="color:#f92672">/&gt;</span><span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#f92672">+</span> (data ? <span style="color:#960050;background-color:#1e0010">&#39;</span>:&lt;br<span style="color:#f92672">/&gt;</span><span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#f92672">+</span> JSON.stringify(data) : <span style="color:#960050;background-color:#1e0010">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (log.children.length) { log.insertBefore(el, log.children[<span style="color:#ae81ff">0</span>]) }
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">else</span> { log.appendChild(el) }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// function buttonOnClick = function (e) {} // 这种写法有问题,WKWebView 捕获的js方法必须为全局方法，也不可以是方法变量。</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 下面这种形式正确</span>
+</span></span><span style="display:flex;"><span>            function buttonOnClick(e) {
+</span></span><span style="display:flex;"><span>                window.webkit.messageHandlers.OCFunc.postMessage(<span style="color:#960050;background-color:#1e0010">&#39;</span>close<span style="color:#960050;background-color:#1e0010">&#39;</span>)<span style="color:#75715e">//调用原生代码</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            function postInfo(name) {
+</span></span><span style="display:flex;"><span>                log(name)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            html { font<span style="color:#f92672">-</span>family:Helvetica; color:#ddd; }
+</span></span><span style="display:flex;"><span>            h1 { color:steelblue; font<span style="color:#f92672">-</span>size:<span style="color:#ae81ff">24</span>pm; margin<span style="color:#f92672">-</span>top:<span style="color:#ae81ff">24</span>px; }
+</span></span><span style="display:flex;"><span>            button { margin:<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">3</span>px <span style="color:#ae81ff">10</span>px; font<span style="color:#f92672">-</span>size:<span style="color:#ae81ff">2</span>pm; }
+</span></span><span style="display:flex;"><span>            .logLine { border<span style="color:#f92672">-</span>bottom:<span style="color:#ae81ff">1</span>px solid #ccc; padding:<span style="color:#ae81ff">4</span>px <span style="color:#ae81ff">2</span>px; font<span style="color:#f92672">-</span>family:courier; font<span style="color:#f92672">-</span>size:<span style="color:#ae81ff">11</span>pm; }
+</span></span><span style="display:flex;"><span>            div{color: black;line<span style="color:#f92672">-</span>height:<span style="color:#ae81ff">100</span><span style="color:#f92672">%</span>;border<span style="color:#f92672">-</span>color: #ccc; border<span style="color:#f92672">-</span>width:<span style="color:#ae81ff">1</span>px;}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        WebViewJavascriptBridge Demo
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        buttons
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            alert
+</span></span><span style="display:flex;"><span>            OC注入
+</span></span><span style="display:flex;"><span>            js <span style="color:#960050;background-color:#1e0010">调用</span>Native方法
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        log
+</span></span></code></pre></div>
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.v5u.win/tags/ios">iOS</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1975 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-04-16 08:00 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/flutter/flutter-%E7%BB%84%E4%BB%B6/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Flutter 组件</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/read/%E5%B2%B3%E7%BE%8E%E4%B8%AD%E8%AE%BA%E5%8C%BB%E9%9B%86/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>岳美中论医集</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

@@ -6,17 +6,14 @@
     <description>Recent content in 抓包 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 27 Dec 2016 10:39:15 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 27 Dec 2016 10:39:15 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>抓包调试工具mitmproxy</title>
-      <link>https://blog.v5u.win/posts/tools-%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</link>
+      <link>https://blog.v5u.win/posts/tools/tools-%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</link>
       <pubDate>Tue, 27 Dec 2016 10:39:15 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/tools-%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</guid>
+      <guid>https://blog.v5u.win/posts/tools/tools-%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7mitmproxy/</guid>
       <description>安装：brew install mitmproxy 其他安装方式: http://docs.mitmproxy.org/en/latest/install.html 启动：mitmproxy -p 8080(监听端口号) 设置代理，具体设置方法请自行查找 抓取https：用 iPhone 打开 Safari</description>
     </item>
     

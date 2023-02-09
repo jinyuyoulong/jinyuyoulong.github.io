@@ -6,11 +6,8 @@
     <description>Recent content in 操作系统 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 12 Aug 2019 02:37:18 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 12 Aug 2019 02:37:18 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>进程间8种通讯方式</title>
       <link>https://blog.v5u.win/%E8%BF%9B%E7%A8%8B%E9%97%B48%E7%A7%8D%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/</link>
@@ -99,42 +96,6 @@
       
       <guid>https://blog.v5u.win/%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95-ab-wrk/</guid>
       <description>压力测试 ab wrk ab为Apache内置 ab -n1000 -c10 http://localhost:8080/ 1000次请求 10个并发,分析 Requests per second 字段 Server Software: Iris: Server Hostname: localhost Server Port: 8080 Document Path: / Document Length: 5368 bytes Concurrency Level: 10 Time taken for tests: 0.758 seconds Complete requests: 1000 Failed</description>
-    </item>
-    
-    <item>
-      <title>Socket</title>
-      <link>https://blog.v5u.win/socket/</link>
-      <pubDate>Wed, 16 Jan 2019 05:57:22 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/socket/</guid>
-      <description>======= tags: [socket, HTTP] categories: [HTTP] &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 9b93207d813e2b213031f967612e37c68194cf37:post/iOS-Scoket.md iOS socket能做什么? socket是TCP UDP IP HTTP 协议簇，封装为socket API 可以用来写 客户端，服务端模型，在两者之间进行数</description>
-    </item>
-    
-    <item>
-      <title>code review</title>
-      <link>https://blog.v5u.win/code-review/</link>
-      <pubDate>Wed, 16 Jan 2019 03:47:27 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/code-review/</guid>
-      <description>*title: code review date: 2018-09-10categories: 操作系统 Code Review的好处我觉得不用多说了，主要是让你的代码可以更好的组织起来，有更易读，有更高的维护性，同时可以达到知识共享，</description>
-    </item>
-    
-    <item>
-      <title>mac虚拟机上的centos 7实现ssh连接</title>
-      <link>https://blog.v5u.win/posts/system-mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</link>
-      <pubDate>Sat, 30 Jun 2018 08:57:11 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-mac%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E7%9A%84centos-7%E5%AE%9E%E7%8E%B0ssh%E8%BF%9E%E6%8E%A5/</guid>
-      <description>mac虚拟机上的centos7实现ssh连接 查看是否安装ssh rpm -qa | grep ssh（一般都内置了） 配置sshd_config文件 /etc/ssh/sshd_config Port 22 ListenAddress 0.0.0.0 ListenAddress :: 防火</description>
-    </item>
-    
-    <item>
-      <title>docker 使用规则</title>
-      <link>https://blog.v5u.win/posts/docker-%E7%AE%80%E4%BB%8B/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/docker-%E7%AE%80%E4%BB%8B/</guid>
-      <description>[TOC] 硬件/操作系统 要求 Docker支持以下的发行版版本： Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版 CentOS 7 (64-bit)，要求内核版本不低于 3.10 。</description>
     </item>
     
   </channel>

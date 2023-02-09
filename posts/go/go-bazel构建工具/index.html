@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Go Bazel构建工具">
+<meta itemprop="description" content="[TOC] 为什么要了解Bazel 这段时间搞到了bilibili的一部分源码，那个事件你知道的，就不说了。怀着对大牛的向往，打算研究一下，之前听说主程"><meta itemprop="datePublished" content="2019-08-16T16:02:29+08:00" />
+<meta itemprop="dateModified" content="2019-08-16T16:02:29+08:00" />
+<meta itemprop="wordCount" content="2425">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Go Bazel构建工具" />
+<meta property="og:description" content="[TOC] 为什么要了解Bazel 这段时间搞到了bilibili的一部分源码，那个事件你知道的，就不说了。怀着对大牛的向往，打算研究一下，之前听说主程" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/go/go-bazel%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-08-16T16:02:29+08:00" />
+<meta property="article:modified_time" content="2019-08-16T16:02:29+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Bazel构建工具"/>
+<meta name="twitter:description" content="[TOC] 为什么要了解Bazel 这段时间搞到了bilibili的一部分源码，那个事件你知道的，就不说了。怀着对大牛的向往，打算研究一下，之前听说主程"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Go Bazel构建工具</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Aug 16, 2019</span></div>
+				<h1>Go Bazel构建工具</h1>
+			</header>
+			<div class="content">
+				<p>[TOC]</p>
+<h2 id="为什么要了解bazel">为什么要了解Bazel</h2>
+<p>这段时间搞到了bilibili的一部分源码，那个事件你知道的，就不说了。怀着对大牛的向往，打算研究一下，之前听说主程做的这个架构很牛逼，就算是代码泄露也不会对服务器造成影响，而且模块化做的非常好，小弟们码好代码，主程一键做个合并打包发布就行。自动化做的很好。就想知道到底是怎么做的，于是我了解到了他——Bazel。</p>
+<p>原文链接 <a href="https://filipnikolovski.com/managing-go-monorepo-with-bazel/">https://filipnikolovski.com/managing-go-monorepo-with-bazel/</a></p>
+<h1 id="使用bazel管理go-monorepo">使用Bazel管理Go monorepo</h1>
+<p>在<a href="https://inplayer.com/">InPlayer中</a>，我们有一个使用<em>微服务</em>架构风格构建的平台，它基本上将应用程序构建为许多不同服务的集合。在这篇文章中，我将讨论如何建构(structure)，构建(build)和部署(deploy)Go应用程序。</p>
+<p>我们编写的每一段Go代码都驻留在一个Git存储库中 - 一个monorepo。由于每个库和服务都在一个项目中，因此它允许我们进行交叉更改，而无需使用某些外部包管理工具。基本上，代码不可能不同步，我们所做的每个更改都可以视为一个单元。</p>
+<p>虽然好处很明显，但使用Go monorepo的挑战是如何有效地构建和测试每个包。答案 - <a href="https://bazel.build/">Bazel</a>。</p>
+<h3 id="bazel是什么">Bazel是什么？</h3>
+<p>Bazel是一款速度极快的构建工具。它只重建必要的东西，它利用高级缓存机制和并行执行，使您的构建非常，非常快。除了这些功能外，它还可以管理您的代码依赖项，调用外部工具和插件，还可以从二进制可执行文件构建Docker镜像。它使用<code>go build</code>引擎盖，但它也可以支持许多不同的语言，而不仅仅是Go。您可以将它用于Java，C ++，Android，iOS和各种其他语言平台。您可以在三个主要操作系统上运行Bazel - Windows，macOS和Linux。</p>
+<h3 id="项目结构">项目结构</h3>
+<p>在我们深入了解Bazel之前，首先让我们讨论一下我们的项目结构：</p>
+<pre tabindex="0"><code>    platform
+    |-- src
+    |    |-- foo
+    |    |   |--cmd
+    |    |   |  `--bar
+    |    |   |     |--BUILD
+    |    |   |     `--main.go
+    |    |   `--pkg
+    |    |-- utils
+    |    |-- vendor
+    |    |-- Gopkg.lock
+    |    |-- Gopkg.toml
+    |    |-- BUILD
+    |    `-- WORKSPACE
+    |-- README.md
+    `-- gitlab-ci.yml
+</code></pre><p>该<code>platform</code>目录是我们的根本，一切从这里开始。在该文件夹中，我们有CI配置和<code>src</code>保存所有代码的目录。每个服务都是<code>src</code>文件夹中的子目录，在每个服务中我们都有两个顶级目录，即<code>cmd</code>和<code>pkg</code>文件夹。在下面<code>cmd</code>我们有我们的二进制文件（我们的主程序）的<code>pkg</code>目录，该目录用于我们的服务库。</p>
+<p>Bazel从名为<em>workspace</em>的目录中组织的代码构建软件，该目录基本上是我们的src目录。在这里，我们的工作空间目录必须包含一个名为的文件<code>WORKSPACE</code>，该文件可能引用了构建输出所需的外部依赖关系以及构建规则。</p>
+<p>这是一个示例WORKSPACE文件：</p>
+<pre tabindex="0"><code>http_archive(
+    name = &#34;io_bazel_rules_go&#34;,
+    url = &#34;https://github.com/bazelbuild/rules_go/releases/download/0.9.0/rules_go-0.9.0.tar.gz&#34;,
+    sha256 = &#34;4d8d6244320dd751590f9100cf39fd7a4b75cd901e1f3ffdfd6f048328883695&#34;,
+)
+http_archive(
+    name = &#34;bazel_gazelle&#34;,
+    url = &#34;https://github.com/bazelbuild/bazel-gazelle/releases/download/0.9/bazel-gazelle-0.9.tar.gz&#34;,
+    sha256 = &#34;0103991d994db55b3b5d7b06336f8ae355739635e0c2379dea16b8213ea5a223&#34;,
+)
+git_repository(
+    name = &#34;io_bazel_rules_docker&#34;,
+    remote = &#34;https://github.com/bazelbuild/rules_docker.git&#34;,
+    tag = &#34;v0.3.0&#34;,
+)
+
+load(&#34;@io_bazel_rules_go//go:def.bzl&#34;, &#34;go_rules_dependencies&#34;, &#34;go_register_toolchains&#34;)
+go_rules_dependencies()
+go_register_toolchains()
+load(&#34;@bazel_gazelle//:deps.bzl&#34;, &#34;gazelle_dependencies&#34;)
+gazelle_dependencies()
+
+load(
+    &#34;@io_bazel_rules_docker//go:image.bzl&#34;,
+    _go_image_repos = &#34;repositories&#34;,
+)
+
+_go_image_repos()
+</code></pre><p>在此文件中，有几个依赖项添加到工作区。我们特别声明我们将使用<a href="https://github.com/bazelbuild/rules_go">rules_go</a>和<a href="https://github.com/bazelbuild/rules_docker">rules_docker</a>依赖项以及<a href="https://github.com/bazelbuild/bazel-gazelle">Gazelle</a>，这将帮助我们生成Bazel所需的一些文件。不要担心，如果您不熟悉这种语法，需要一些时间来适应它。</p>
+<h3 id="build文件">BUILD文件</h3>
+<p>Bazel有一个关于<em>包</em>的概念，它被定义为相关文件的集合以及它们之间依赖关系的规范。如果Bazel工作空间内的目录包含名为的文件<code>BUILD</code>，则会将该目录视为包。包中包含其目录中的所有文件，以及其下的所有子目录，除了那些本身包含BUILD文件的文件。</p>
+<p>BUILD文件包含构建规则，这些规则定义了我们应该如何构建包。您可以<a href="https://docs.bazel.build/versions/master/build-ref.html">在此处</a>阅读有关概念和术语的更多信息。</p>
+<p>在开始一个新项目时，我们需要做的第一件事是在根目录中添加一个BUILD文件，这将加载稍后用于运行<a href="https://github.com/bazelbuild/bazel-gazelle">Gazelle</a> with Bazel 的瞪羚规则。</p>
+<pre tabindex="0"><code>package(default_visibility = [&#34;//visibility:public&#34;])
+
+load(&#34;@io_bazel_rules_docker//container:container.bzl&#34;)
+load(&#34;@io_bazel_rules_go//go:def.bzl&#34;, &#34;go_prefix&#34;, &#34;gazelle&#34;)
+
+go_prefix(&#34;github.com/example/project&#34;)
+gazelle(
+  prefix = &#34;github.com/example/project/src&#34;,
+  name = &#34;gazelle&#34;,
+  command = &#34;fix&#34;,
+  external = &#34;vendored&#34;
+)
+</code></pre><p>添加此文件后，我们可以使用以下命令运行Gazelle：</p>
+<pre tabindex="0"><code>bazel run //:gazelle
+</code></pre><p>这将根据项目中的go文件生成新的BUILD文件。稍后添加新程序和库时，应使用相同的命令更新现有的BUILD文件，否则构建可能会失败。</p>
+<p>作为一个例子（基于我们之前显示的项目结构），gazelle将为我们的<code>bar</code>程序生成一个BUILD文件，该文件位于<code>foo</code>包中，如下所示：</p>
+<pre tabindex="0"><code>load(&#34;@io_bazel_rules_go//go:def.bzl&#34;, &#34;go_binary&#34;, &#34;go_library&#34;)
+
+package(default_visibility = [&#34;//visibility:public&#34;])
+
+go_library(
+    name = &#34;go_default_library&#34;,
+    srcs = [&#34;main.go&#34;],
+    importpath = &#34;github.com/example/project/src/foo/cmd/bar&#34;,
+    visibility = [&#34;//visibility:private&#34;],
+    deps = [
+        #Any dependencies that our library has will be loaded here
+    ],
+)
+
+go_binary(
+    name = &#34;bar&#34;,
+    embed = [&#34;:go_default_library&#34;],
+    importpath = &#34;github.com/example/project/src/foo/cmd/bar&#34;,
+    visibility = [&#34;//visibility:public&#34;],
+)
+</code></pre><p>现在通过运行命令<code>bazel build //foo/...</code>bazel将构建我们的Go程序并将二进制文件保存在输出目录中。如果要构建整个项目，只需<code>bazel build //...</code>在根文件夹中运行即可。</p>
+<p>如果您为您的库和程序（您应该）编写测试，gazelle将为<code>go_test</code>它们生成规则，然后您可以运行<code>bazel test //...</code>将运行所有测试。</p>
+<p>Bazel的高级缓存，使运行<code>build</code>和<code>test</code>命令对整个工作区超级快，因为它只会建造或测试您已更改的文件，以及依赖于这些修改过的文件的文件。</p>
+<p>⚠️注意：确保将CI服务器设置为缓存输出目录，否则运行bazel不会带来太多好处。</p>
+<h3 id="docker镜像">Docker镜像</h3>
+<p>在我们想要将二进制文件构建和部署为docker图像的情况下，bazel有一套很好的规则可以做到这一点。更为重要的是，Bazel<strong>并不</strong>需要Docker拉取，构建或推送镜像。这意味着您可以使用这些规则在Windows / OSX上构建Docker镜像而无需使用<code>docker-machine</code>或者<code>boot2docker</code>也不需要在笔记本电脑上进行<em>root</em>访问。</p>
+<p>我们<code>bar</code>程序的BUILD文件的完整示例如下所示：</p>
+<pre tabindex="0"><code>load(&#34;@io_bazel_rules_go//go:def.bzl&#34;, &#34;go_binary&#34;, &#34;go_library&#34;)
+
+# First we load the go_image and container_push rules
+load(&#34;@io_bazel_rules_docker//go:image.bzl&#34;, &#34;go_image&#34;)
+
+package(default_visibility = [&#34;//visibility:public&#34;])
+
+go_library(
+    name = &#34;go_default_library&#34;,
+    srcs = [&#34;main.go&#34;],
+    importpath = &#34;github.com/example/project/src/foo/cmd/bar&#34;,
+    visibility = [&#34;//visibility:private&#34;],
+    deps = [
+        #Any dependencies that our library has will be loaded here
+    ],
+)
+
+go_binary(
+    name = &#34;bar&#34;,
+    embed = [&#34;:go_default_library&#34;],
+    importpath = &#34;github.com/example/project/src/foo/cmd/bar&#34;,
+    visibility = [&#34;//visibility:public&#34;],
+)
+
+go_image(
+    name = &#34;docker&#34;,
+    binary = &#34;:bar&#34;,
+)
+</code></pre><p>该<code>go_image</code>规则使用<a href="https://github.com/GoogleCloudPlatform/distroless">distroless</a>镜像作为基础，只添加二进制文件作为要运行的命令。<code>container_push</code>如果要将映像推送到远程存储库，也可以使用该规则。</p>
+<p>要将二进制文件作为docker镜像运行，只需键入<code>bazel run //foo/cmd/bar:docker</code>命令即可。您还可以构建一个tar包，然后可以使用以下命令手动将其加载到docker中：</p>
+<ul>
+<li><code>bazel build //foo/cmd/bar:docker.tar</code></li>
+<li><code>docker load -i bazel-output/foo/cmd/bar/docker.tar</code></li>
+</ul>
+<p>您可以在<a href="https://github.com/bazelbuild/rules_docker">此处</a>找到有关规则的更多信息。</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2425 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-08-16 16:02 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/go/go-gofmt/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Go Gofmt</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/docker/docker-etcd/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Docker Etcd</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

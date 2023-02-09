@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>翻墙 on 为吾优</title>
+    <link>https://blog.v5u.win/tags/%E7%BF%BB%E5%A2%99/</link>
+    <description>Recent content in 翻墙 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 24 May 2021 19:04:35 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/%E7%BF%BB%E5%A2%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>V2ray记录</title>
+      <link>https://blog.v5u.win/posts/system/v2ray%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Mon, 24 May 2021 19:04:35 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/system/v2ray%E8%AE%B0%E5%BD%95/</guid>
+      <description>[TOC] v2ray是什么？ v2是继小飞机ss之后的下一个技术方案。（不能明说） v2 的优点：转发容易，匿名性高，可多级代理转发。 v2的缺点：配置相对复</description>
+    </item>
+    
+  </channel>
+</rss>

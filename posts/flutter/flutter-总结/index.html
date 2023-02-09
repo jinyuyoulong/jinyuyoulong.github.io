@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Flutter 总结">
+<meta itemprop="description" content="[TOC] flutter 使用总结 安装 参考之前的环境安装一文 测试安装环境 flutter doctor 环境问题，工具问题，版本问题 flutter环境变量，使用stable分支 工具，创建项目"><meta itemprop="datePublished" content="2020-07-10T16:24:30+08:00" />
+<meta itemprop="dateModified" content="2020-07-10T16:24:30+08:00" />
+<meta itemprop="wordCount" content="4267">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Flutter 总结" />
+<meta property="og:description" content="[TOC] flutter 使用总结 安装 参考之前的环境安装一文 测试安装环境 flutter doctor 环境问题，工具问题，版本问题 flutter环境变量，使用stable分支 工具，创建项目" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/flutter/flutter-%E6%80%BB%E7%BB%93/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-07-10T16:24:30+08:00" />
+<meta property="article:modified_time" content="2020-07-10T16:24:30+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flutter 总结"/>
+<meta name="twitter:description" content="[TOC] flutter 使用总结 安装 参考之前的环境安装一文 测试安装环境 flutter doctor 环境问题，工具问题，版本问题 flutter环境变量，使用stable分支 工具，创建项目"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Flutter 总结</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Jul 10, 2020</span></div>
+				<h1>Flutter 总结</h1>
+			</header>
+			<div class="content">
+				<p>[TOC]</p>
+<p>flutter 使用总结</p>
+<h2 id="安装">安装</h2>
+<p>参考之前的环境安装一文</p>
+<h2 id="测试安装环境">测试安装环境</h2>
+<p><code>flutter doctor</code></p>
+<h3 id="环境问题工具问题版本问题">环境问题，工具问题，版本问题</h3>
+<ul>
+<li>flutter环境变量，使用stable分支</li>
+<li>工具，创建项目，测试一下是否OK</li>
+<li>SDK，android studio 搜索sdk，edit可以初始化SDK</li>
+<li>xcode，创建demo，运行一下检测</li>
+<li>VPN与镜像，各平台镜像，网上搜索</li>
+<li>扩展工具dev tools 在浏览器查看flutterUI布局结构<code>pub global activate devtools</code> <code>export PATH=&quot;$PATH&quot;:&quot;$HOME/.pub-cache/bin&quot;</code></li>
+<li>镜像源替换  packages/flutter_tools/gradle/flutter.gradle</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#75715e">// private static final String DEFAULT_MAVEN_HOST = &#34;https://storage.googleapis.com&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String DEFAULT_MAVEN_HOST <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://storage.flutter-io.cn/download.flutter.io&#34;</span><span style="color:#f92672">;</span>
+</span></span></code></pre></div><h2 id="ide">IDE</h2>
+<h3 id="androidstudio">androidStudio</h3>
+<p>安装插件：Dart+Flutter</p>
+<p>hot reload 主要是执行main 中的 build方法，非build内的方法不被执行，比如：计数。</p>
+<p>hot restart 会执行所有的方法</p>
+<h3 id="vscode">vsCode</h3>
+<p>安装插件：Dart+Flutter</p>
+<p>配置测试机：cmd+p 输入&gt;flutter 选择Flutter Select Device或点击右下角，选择目标设备。
+等待右下角的配置生效，点击右上角，小的start三角按钮，编译运行程序</p>
+<h3 id="materialui">MaterialUI</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/cupertino.dart&#39;</span>;
+</span></span><span style="display:flex;"><span>ios设计风格
+</span></span></code></pre></div><p>runAPP =&gt; MaterialApp =&gt; scaffold 脚手架 =&gt; 自动以小部件</p>
+<p>Scaffold脚手架类似UIViewController 或 Activity</p>
+<h2 id="声明式ui">声明式UI</h2>
+<p>声明式UI对应的是命令式。在win32到web，Android，iOS。UI的变更都是用的命令式。手动构建全功能的UI实体（View），然后在UI更改时用方法进行变更。Flutter让开发者描述当前UI状态，不需要关心它是如何过渡到框架。需要UI布局思维方式的转变。</p>
+<pre tabindex="0"><code>命令式UI更改 Imperative style
+
+b.setColor(red)
+b.clearChildren()
+View c3 = new View()
+b.add(c3)
+</code></pre><pre tabindex="0"><code>声明式UI写法 Declarative style
+return ViewB(
+	color: red,
+	child: View(...),
+)
+</code></pre><p>由于视图配置widget是不可变的，更改UI的话，会引发自身重绘。flutter构建新的实例，而不是改变旧实例b。所以可以实现声明式UI。
+flutter框架使用 renderObject管理传统UI对象的许多职能（如维护布局的状态）RenderObjects在帧之间保持不变，widgets告诉框架在状态之间改变RenderObjects，接下来Flutter框架会处理其余部分。</p>
+<p>Android/ios中是命令式开发，不说状态，属性=数据</p>
+<p>react-Vue-angular 是声明式编程，管好状态，让框架负责渲染</p>
+<p><strong>注意：在flutter中所有的Widget都不能定义状态。</strong></p>
+<p>StatefulWidget创建一个类，负责维护状态。setState。</p>
+<h2 id="flutter项目">Flutter项目</h2>
+<h3 id="如何创建flutter项目">如何创建flutter项目？</h3>
+<p><code>flutter create name</code></p>
+<h3 id="如何运行flutter项目">如何运行flutter项目</h3>
+<p><code>flutter run -d 'iPhone X'</code></p>
+<p>配置iOS真机运行的环境</p>
+<pre tabindex="0"><code>brew update
+brew install --HEAD libimobiledevice
+brew install ideviceinstaller ios-deploy cocoapods
+pod setup
+// -- 
+配置证书，信任设备
+flutter run 运行
+</code></pre><h3 id="如何导入widget">如何导入widget</h3>
+<p><code>import 'dart:convert';</code></p>
+<h3 id="如何写一个helloworld">如何写一个helloworld</h3>
+<h3 id="如何使用widget并将其嵌套形成widget树">如何使用widget并将其嵌套，形成widget树</h3>
+<p>widget树就是组件化开发的思想。</p>
+<p>widget 最最基本的控件结构。</p>
+<p>widget可以定义：</p>
+<ul>
+<li>
+<p>结构元素：如按钮或菜单</p>
+</li>
+<li>
+<p>文体元素：像字体或颜色主题</p>
+</li>
+<li>
+<p>类似布局的填充或对其的方式</p>
+</li>
+</ul>
+<h3 id="如何创建可重用widget">如何创建可重用widget</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyHomePage</span> <span style="color:#66d9ef">extends</span> StatefulWidget {
+</span></span><span style="display:flex;"><span>  MyHomePage({<span style="color:#960050;background-color:#1e0010">@</span>required Key key, <span style="color:#66d9ef">this</span>.title}) <span style="color:#f92672">:</span> <span style="color:#66d9ef">super</span>(key: key);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">注意：参数为大括号，默认可选，@</span>required注解为必填<span style="color:#960050;background-color:#1e0010">。</span>
+</span></span></code></pre></div><h2 id="项目结构静态资源本地化">项目结构，静态资源，本地化</h2>
+<ul>
+<li>项目文件结构是怎样的？</li>
+<li>在哪里归档图片资源以及处理不同分辨率？</li>
+<li>如果归档strings资源，以及国际化</li>
+<li>如何添加flutter依赖</li>
+</ul>
+<pre tabindex="0"><code>./ projectname
+├── README.md
+├── android 安卓工程文件
+├── build 项目构建输出目录
+├── helloFlutter.iml
+├── ios iOS部分工程文件
+├── lib
+│   └── src 	包含其他源文件
+│   └── main.dart	自动生成的项目入口文件，类似RN的index.js
+├── pubspec.yaml 	- 项目依赖配置文件，类似RN的package.json
+└── test			- 测试相关文件
+</code></pre><p>Assets可以被放置到任何属性文件夹中&ndash;flutter并没有预先定义的文件结构。</p>
+<p>assets 中可以放任意文件，需要在yaml中声明assets的位置，flutter会识别。</p>
+<pre tabindex="0"><code>assets:
+ - my-assets/data.json
+</code></pre><p>然后用AssetBundle访问</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;dart:async&#39;</span> <span style="color:#66d9ef">show</span> Future;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/services.dart&#39;</span> <span style="color:#66d9ef">show</span> rootBundle;
+</span></span><span style="display:flex;"><span>Future<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">String</span><span style="color:#f92672">&gt;</span> loadAsset() <span style="color:#66d9ef">async</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> rootBundle.loadString(<span style="color:#e6db74">&#39;my-assets/data.json&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>图片命名格式类似iOS，遵循 1.0x 2.0x 3.0x 倍数。</p>
+<p>Android不同像素密度和flutter像素比例对应关系</p>
+<pre tabindex="0"><code>ldpi 		0.75x
+mdpi		1.0x
+hdpi		1.5x
+xhdpi		2.0x
+xxhdpi	3.0x
+xxxhdpi	4.0x
+</code></pre><p>例：将my_icon.png 的图片放到flutter工程中</p>
+<pre tabindex="0"><code>放置:
+images/my_icon.png // 1.0x
+images/2.0x/my_icon.png // 2.0x
+images/3.0x/my_icon.png // 3.0x
+
+yaml声明:
+assets:
+ - images/my_icon.png
+
+使用:
+return AssetImage(&#34;images/my_icon.png&#34;)
+</code></pre><p>不像iOS 拥有 Localizable.strings 文件，flutter目前没有专门的字符串资源系统。最佳做法是将strings资源作为静态字段保存在类中。例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Strings</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">String</span> welcomeMessage <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Welcome To Flutter&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">使用</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter_localizations/flutter_localizations.dart&#39;</span>;
+</span></span><span style="display:flex;"><span>Text(Strings.welcomeMessage);
+</span></span></code></pre></div><p>flutter 默认支持美式英语，需要引入 flutter_localizations 包。和intl 包支持其他 i10n 机制，比如日期/时间格式化。</p>
+<pre tabindex="0"><code>dependencies:
+ flutter_localizations:
+ 	sdk: flutter
+ intl: &#34;^0.16.1&#34;
+</code></pre><h3 id="widget">Widget</h3>
+<blockquote>
+<p>请记住一下规则：如果Widget在build之外更改（例如：用于运行时用户交互）则他是有状态的。如果Widget永远不会改变，一旦构建，他就是无状态的。但是，即使Widget是有状态的，如果包含他的父窗口小部件本身不对这些更改（或输入）做出反应，父Widget仍然可以是无状态的。</p>
+</blockquote>
+<p>Widget更像是配置文件。</p>
+<p>Widget 有@immutable注解，说明是不可变的</p>
+<p>如何设置Widget的动画？</p>
+<p>animosity</p>
+<p>如何设置Widget的绘图？</p>
+<p>如何设置Widget的透明度？</p>
+<pre tabindex="0"><code>Opacity(
+	opacity: 0.5,
+	child: Text(&#39;透明度50%&#39;)
+)
+</code></pre><p>StatelessWidget</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* 为什么flutter在设计的时候StatefulWidget的build方法放在State中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* 1. build出来的Widget是需要依赖State中的变量（状态/数据)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* 2. 在Flutter的运行过程中：
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*     Widget是不断地额销毁和创建的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*     当我们自己的状态发生改变时，并不希望重新创建一个新的State
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* */</span>
+</span></span></code></pre></div><p>StatefulWidget</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JLContentBody</span> <span style="color:#66d9ef">extends</span> StatefulWidget{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  State<span style="color:#f92672">&lt;</span>StatefulWidget<span style="color:#f92672">&gt;</span> createState() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> JLContentBodyState();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JLContentBodyState</span> <span style="color:#66d9ef">extends</span> State<span style="color:#f92672">&lt;</span>JLContentBody<span style="color:#f92672">&gt;</span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> flag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Center(
+</span></span><span style="display:flex;"><span>      child: Row(
+</span></span><span style="display:flex;"><span>        mainAxisAlignment: MainAxisAlignment.center,<span style="color:#75715e">//主轴
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        children: <span style="color:#f92672">&lt;</span>Widget<span style="color:#f92672">&gt;</span>[
+</span></span><span style="display:flex;"><span>          Checkbox(
+</span></span><span style="display:flex;"><span>              value: flag,
+</span></span><span style="display:flex;"><span>              onChanged: (value){
+</span></span><span style="display:flex;"><span>                setState(() {
+</span></span><span style="display:flex;"><span>                  flag <span style="color:#f92672">=</span> value;
+</span></span><span style="display:flex;"><span>                });
+</span></span><span style="display:flex;"><span>                print(flag);
+</span></span><span style="display:flex;"><span>              }),
+</span></span><span style="display:flex;"><span>          Text(<span style="color:#e6db74">&#34;同意协议&#34;</span>)
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      ),
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="管理状态">管理状态</h3>
+<h4 id="内部状态-参考rn的状态管理">内部状态 参考RN的状态管理</h4>
+<p>在setState中更新状态</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">_JLHomeContentState</span> <span style="color:#66d9ef">extends</span> State<span style="color:#f92672">&lt;</span>JLHomeContent<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> _counter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;<span style="color:#75715e">// 内部状态
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Center(
+</span></span><span style="display:flex;"><span>      child: Column(
+</span></span><span style="display:flex;"><span>        mainAxisAlignment: MainAxisAlignment.center,<span style="color:#75715e">//主轴居中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        children: <span style="color:#f92672">&lt;</span>Widget<span style="color:#f92672">&gt;</span>[
+</span></span><span style="display:flex;"><span>          _getButtons(),
+</span></span><span style="display:flex;"><span>          Text(<span style="color:#e6db74">&#34;当前计数:</span><span style="color:#e6db74">$</span>_counter<span style="color:#e6db74">&#34;</span>,style: TextStyle(fontSize: <span style="color:#ae81ff">25</span>),),
+</span></span><span style="display:flex;"><span>          Text(<span style="color:#e6db74">&#34;传过来的信息:</span><span style="color:#e6db74">${</span>widget.message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>,)
+</span></span><span style="display:flex;"><span>        ],
+</span></span><span style="display:flex;"><span>      ),
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Widget _getButtons(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Row(
+</span></span><span style="display:flex;"><span>      mainAxisAlignment: MainAxisAlignment.center,
+</span></span><span style="display:flex;"><span>      children: <span style="color:#f92672">&lt;</span>Widget<span style="color:#f92672">&gt;</span>[
+</span></span><span style="display:flex;"><span>        RaisedButton(
+</span></span><span style="display:flex;"><span>            child: Text(<span style="color:#e6db74">&#34;+&#34;</span>, style: TextStyle(fontSize: <span style="color:#ae81ff">20</span>, color: Colors.white),),
+</span></span><span style="display:flex;"><span>            color: Colors.red,
+</span></span><span style="display:flex;"><span>            onPressed: (){
+</span></span><span style="display:flex;"><span>              setState(() {
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//                相当于匿名函数，这里，外边设置++也可以
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                _counter <span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>              });
+</span></span><span style="display:flex;"><span>            }),
+</span></span><span style="display:flex;"><span>      ],
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="外部状态-参考rn的状态管理">外部状态 参考RN的状态管理</h4>
+<p>state类中有绑定widget变量和Widget类对应。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JLHomePage</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Scaffold(
+</span></span><span style="display:flex;"><span>      appBar: AppBar(
+</span></span><span style="display:flex;"><span>        title: Text( <span style="color:#e6db74">&#34;商品列表&#34;</span>),
+</span></span><span style="display:flex;"><span>      ),
+</span></span><span style="display:flex;"><span>      body: JLHomeContent(<span style="color:#e6db74">&#34;haha&#34;</span>),
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Widget 不加下划线，一般暴露给外部使用。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//State 是加下划线，状态类，只给Widget内部使用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JLHomeContent</span> <span style="color:#66d9ef">extends</span> StatefulWidget {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">String</span> message;
+</span></span><span style="display:flex;"><span>  JLHomeContent(<span style="color:#66d9ef">this</span>.message);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  _JLHomeContentState createState() <span style="color:#f92672">=&gt;</span> _JLHomeContentState();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">_JLHomeContentState</span> <span style="color:#66d9ef">extends</span> State<span style="color:#f92672">&lt;</span>JLHomeContent<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> _counter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Center(
+</span></span><span style="display:flex;"><span>      child: Column(
+</span></span><span style="display:flex;"><span>        mainAxisAlignment: MainAxisAlignment.center,<span style="color:#75715e">//主轴居中
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        children: <span style="color:#f92672">&lt;</span>Widget<span style="color:#f92672">&gt;</span>[
+</span></span><span style="display:flex;"><span>          _getButtons(),
+</span></span><span style="display:flex;"><span>          Text(<span style="color:#e6db74">&#34;当前计数:</span><span style="color:#e6db74">$</span>_counter<span style="color:#e6db74">&#34;</span>,style: TextStyle(fontSize: <span style="color:#ae81ff">25</span>),),
+</span></span><span style="display:flex;"><span>          Text(<span style="color:#e6db74">&#34;传过来的信息:</span><span style="color:#e6db74">${</span>widget.message<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>,)<span style="color:#75715e">// 使用外部的状态
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        ],
+</span></span><span style="display:flex;"><span>      ),
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="布局">布局</h2>
+<p>flutter使用row和Colum进行水平和垂直布局</p>
+<p>flex 布局</p>
+<p>对于Colum 纵轴是主轴</p>
+<p>对于Row 横轴是主轴</p>
+<p>他们都有交叉轴</p>
+<pre tabindex="0"><code>return row(
+mainAxisAlignment: MainAxisAlignment.center,
+children: &lt;Widget&gt;[
+Text(Row one),
+Text(Row two),
+],
+);
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>Widget build(BuildContext context){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> Colum(
+</span></span><span style="display:flex;"><span>		mainAxisAlignment:MainAxisAlignment.center,
+</span></span><span style="display:flex;"><span>		children: <span style="color:#f92672">&lt;</span>Widget<span style="color:#f92672">&gt;</span>[
+</span></span><span style="display:flex;"><span>			Text(Column one),
+</span></span><span style="display:flex;"><span>			Text(Column two),
+</span></span><span style="display:flex;"><span>		],
+</span></span><span style="display:flex;"><span>	);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>RelativeLayout 在flutter中等价于什么？</p>
+<p>RelativeLayout用于使Widget相对于彼此位置排列。在Flutter中，有几种方法可以实现相同的效果：Column、row和Stack组合实现RelativeLayout的效果</p>
+<h2 id="生命周期">生命周期</h2>
+<p>flutter 中只需要监听widget的生命周期就行。iOS中需要监听Controller和View的声明周期</p>
+<h3 id="statelesswidget-的生命周期">statelessWidget 的生命周期</h3>
+<pre tabindex="0"><code>构造函数
+build
+class JLHomeContent extends StatelessWidget {
+  final String message;
+  JLHomeContent(this.message){
+    print(&#34;构造函数被调用&#34;);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print(&#34;调用build方法&#34;);
+    return Text(message);
+  }
+}
+</code></pre><h3 id="statefulwidget的生命周期">statefulWidget的生命周期</h3>
+<p>分为两部分</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> Stateful Widget
+</span></span><span style="display:flex;"><span>Constructor <span style="color:#f92672">-&gt;</span> Widget_createState()
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> State_object
+</span></span><span style="display:flex;"><span>Constructor <span style="color:#f92672">-&gt;</span> mounted <span style="color:#f92672">-&gt;</span> initState <span style="color:#f92672">-&gt;</span> dirty state <span style="color:#f92672">-&gt;</span>build <span style="color:#f92672">-&gt;</span> clean state <span style="color:#f92672">-&gt;</span> dispose
+</span></span><span style="display:flex;"><span>															<span style="color:#960050;background-color:#1e0010">↓</span>						<span style="color:#960050;background-color:#1e0010">↑</span>			<span style="color:#960050;background-color:#1e0010">↑</span>									<span style="color:#960050;background-color:#1e0010">↓</span>
+</span></span><span style="display:flex;"><span>																					   		<span style="color:#960050;background-color:#1e0010">↑</span>	setState			 <span style="color:#960050;background-color:#1e0010">←↓</span>
+</span></span><span style="display:flex;"><span>											didChangeDependencies			<span style="color:#960050;background-color:#1e0010">↑</span>didUpdateWidget <span style="color:#960050;background-color:#1e0010">←↓</span>
+</span></span></code></pre></div><p><img src="./src/img/statefulWidget%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="statefulWidget生命周期"></p>
+<p>didUpdateWidget</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JLHomeContent</span> <span style="color:#66d9ef">extends</span> StatefulWidget {
+</span></span><span style="display:flex;"><span>  JLHomeContent(){
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;1.调用JLHomeContent的constructor&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  _JLHomeContentState createState() {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;2.调用JLHomeContent的createState方法&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> _JLHomeContentState();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">_JLHomeContentState</span> <span style="color:#66d9ef">extends</span> State<span style="color:#f92672">&lt;</span>JLHomeContent<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>  _JLHomeContentState(){
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;3.调用_JLHomeContentState的constructor方法&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> initState() {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;4. 调用State的initState方法&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 这里必须调super
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">super</span>.initState();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context) {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;5. 调用build &#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Text(<span style="color:#e6db74">&#34;data&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> dispose() {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;6.调用State的dispose方法&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>.dispose();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="控件">控件</h2>
+<p>styles Widget 样式小部件。</p>
+<p>ListView = ScrollView+ListView</p>
+<p>参数是一个widgets的数组</p>
+<p>如何更新ListView？</p>
+<p>简单方法是：在setState中创建一个新的list，并把旧list的数据拷贝给新的list。但是不推荐。</p>
+<p>推荐做法：ListView.builder(itemBuilder:())</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>body: ListView.builder(
+</span></span><span style="display:flex;"><span>	itemCount: widgets.length,
+</span></span><span style="display:flex;"><span>	itemBuilder: (BuilderContext context,<span style="color:#66d9ef">int</span> position){
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> getRow(position)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Widget getRow(<span style="color:#66d9ef">int</span> i){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> GestureDetector(
+</span></span><span style="display:flex;"><span>		child: Padding(
+</span></span><span style="display:flex;"><span>			padding: EdgeInsets.all(<span style="color:#ae81ff">10.0</span>),
+</span></span><span style="display:flex;"><span>			child: Text(<span style="color:#e6db74">&#34;Row </span><span style="color:#e6db74">$</span>i<span style="color:#e6db74">&#34;</span>),
+</span></span><span style="display:flex;"><span>		),
+</span></span><span style="display:flex;"><span>		onTap: (){
+</span></span><span style="display:flex;"><span>			setState((){
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 当点击时 动态添加一个元素，而不是创建一个list。高明的地方
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>       <span style="color:#75715e">// 不会导致整个列表被渲染，只会渲染部分，所以效率比较高。 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>				widgets.add(getRow(widgets.length<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span>				print(<span style="color:#e6db74">&#39;row </span><span style="color:#e6db74">$</span>i<span style="color:#e6db74">&#39;</span>);
+</span></span><span style="display:flex;"><span>			});
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>	);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="编程范式">编程范式</h2>
+<p>编程范式对于初学者来说感受不深刻，但是在日常中随处可见。比如面向对象编程 就是一种编程范式，与之对应的事面向过程编程，函数式编程，面向协议编程。</p>
+<p>还有两种编程范式：命令式编程 和 声明式编程</p>
+<ul>
+<li>命令式编程：就是一步步给计算机命令，告诉他我们想做什么事情。</li>
+<li>声明式编程：是描述目标的性质，你应该是什么样的，依赖哪些状态，并且当以来的状态发生改变时，我们通过某些方式通知目标作出相应的</li>
+</ul>
+<h2 id="使用注意">使用注意</h2>
+<h3 id="热更新">热更新</h3>
+<p>原理是在本地搞了一个服务器，localhost所以真机测试是不行的。只能使用模拟器，才能热更新。</p>
+<p>命令行 flutter run  然后执行 r 更新UI</p>
+<p>AS run 保存就可以，右上角有热更新按钮，⚡️</p>
+<h3 id="包管理">包管理</h3>
+<p>flutter packages get 更新一定要在终端执行更新，as中无法中断进程导致进程锁死 。我的问题是包名写错了，一直更新失败。as无法中断该进程。在中断更新就很容易退出进程了。</p>
+<p>如果进程锁死解决：</p>
+<p>删除文件 flutter/bin/cache/lockfile,可以解放进程</p>
+<h3 id="快捷键">快捷键</h3>
+<p>stl 创建StatelessWidget类</p>
+<p>alt+enter 包一层部件</p>
+<p>cmd+alt+B 查看抽象类的子类。</p>
+<p>alt+enter 将statelessWidget 转换为StatefulWidget</p>
+<p>alt+cmd+M 抽取组件代码生产组件方法</p>
+<p>alt+cmd+W 抽取组件代码生成组件类 快捷键冲突，可以右键重构选项。</p>
+<p>cmd+alt+L 格式化代码</p>
+<h3 id="辅助工具">辅助工具</h3>
+<p>Dev Tools查看UI结构</p>
+<p>pub全局安装插件，配置环境变量，在AS中点击右下方的OpenDevTools。会启动一个server，打开浏览器，显示UI结构</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>4267 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-07-10 16:24 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/read/%E5%B2%B3%E7%BE%8E%E4%B8%AD%E8%AE%BA%E5%8C%BB%E9%9B%86/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>岳美中论医集</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/design/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Design 设计模式 装饰模式</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

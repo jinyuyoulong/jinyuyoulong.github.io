@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>flutter-Dart on 为吾优</title>
+    <link>https://blog.v5u.win/categories/flutter-dart/</link>
+    <description>Recent content in flutter-Dart on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 16 Apr 2021 15:21:29 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/categories/flutter-dart/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flutter Dart</title>
+      <link>https://blog.v5u.win/posts/flutter/flutter-dart/</link>
+      <pubDate>Fri, 16 Apr 2021 15:21:29 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/flutter/flutter-dart/</guid>
+      <description>[TOC] 语法： 关键字 external 将方法的声明和实现分离 @patch(补丁)，好处是可以针对不同的平台做实现。 变量声明：1. 明确声明 2. 类型推导 main(List&amp;lt;String&amp;gt; args) { // 1. 明确的</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,17 +6,14 @@
     <description>Recent content in GCD on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 15 Apr 2016 10:15:25 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/gcd/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 15 Apr 2016 10:15:25 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/gcd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iOS GCD dispatch barrier</title>
-      <link>https://blog.v5u.win/posts/ios-gcd-dispatch-barrier/</link>
+      <link>https://blog.v5u.win/posts/ios/ios-gcd-dispatch-barrier/</link>
       <pubDate>Fri, 15 Apr 2016 10:15:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/ios-gcd-dispatch-barrier/</guid>
+      <guid>https://blog.v5u.win/posts/ios/ios-gcd-dispatch-barrier/</guid>
       <description>需求： 两个线程并行执行，当两线程都执行完后，在执行另一个线程，然后在执行并行多线程 thread1 thread4 --&amp;gt; thread3 --&amp;gt; thread2 thread5 一个dispatch barrier 允许在一个并发队列中创</description>
     </item>
     

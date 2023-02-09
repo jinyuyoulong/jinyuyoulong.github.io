@@ -6,10 +6,16 @@
     <description>Recent content in brew on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 20 Apr 2018 05:00:32 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/brew/index.xml" rel="self" type="application/rss+xml" />
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 19 Apr 2021 14:29:57 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/brew/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brew的使用最佳实践</title>
+      <link>https://blog.v5u.win/posts/design/design-brew%E7%9A%84%E4%BD%BF%E7%94%A8%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 19 Apr 2021 14:29:57 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design/design-brew%E7%9A%84%E4%BD%BF%E7%94%A8%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>卸载包和依赖包 安装第三方卸载工具 brew tap beeftornado/rmtree &amp;amp;&amp;amp; brew install brew-rmtree 卸载其他软件 brew rmtree &amp;lt;package&amp;gt; 命令行删除文件使用 rmtrash，避免直接rm 无法找回 brew upate 更新所有的软件包 brew</description>
+    </item>
     
     <item>
       <title>brew gem npm cocoapods</title>
@@ -22,10 +28,10 @@
     
     <item>
       <title>brew 安装</title>
-      <link>https://blog.v5u.win/posts/system-brew-%E5%AE%89%E8%A3%85/</link>
+      <link>https://blog.v5u.win/posts/system/system-brew-%E5%AE%89%E8%A3%85/</link>
       <pubDate>Sat, 25 Feb 2017 22:54:49 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-brew-%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-brew-%E5%AE%89%E8%A3%85/</guid>
       <description>Mac自带ruby 安装brew ruby -e &amp;quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&amp;quot; 已经安装了可以输入这个命令 ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot; 如何使用brew 举个栗子: wget 这个工具 输入命令: brew install wget 输入命令 brew uninstall</description>
     </item>
     

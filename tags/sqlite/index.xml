@@ -6,11 +6,8 @@
     <description>Recent content in sqlite on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 09 Oct 2018 04:29:10 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 09 Oct 2018 04:29:10 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/sqlite/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sqlite3使用总结</title>
       <link>https://blog.v5u.win/sqlite3%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</link>

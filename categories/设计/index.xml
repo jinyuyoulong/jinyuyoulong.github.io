@@ -6,17 +6,50 @@
     <description>Recent content in 设计 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 21 Apr 2020 20:08:52 +0800</lastBuildDate>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 16 Apr 2021 15:34:54 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS NSNotificationCenter自管理内存</title>
+      <link>https://blog.v5u.win/posts/ios/ios-nsnotificationcenter%E8%87%AA%E7%AE%A1%E7%90%86%E5%86%85%E5%AD%98/</link>
+      <pubDate>Fri, 16 Apr 2021 15:34:54 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/ios/ios-nsnotificationcenter%E8%87%AA%E7%AE%A1%E7%90%86%E5%86%85%E5%AD%98/</guid>
+      <description>我找到解决NSNotificationCenter通知中心自管理内存的方案了 我们知道OC中 使用观察者模式 会对观察者进行强引用，导致循环引用，</description>
+    </item>
     
-	<atom:link href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Design 对设计模式的思考</title>
+      <link>https://blog.v5u.win/posts/design/design-%E5%AF%B9%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%80%9D%E8%80%83/</link>
+      <pubDate>Fri, 16 Apr 2021 15:29:22 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design/design-%E5%AF%B9%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%80%9D%E8%80%83/</guid>
+      <description>最是真情留不住，总是套路得人心。 大家好，我是笨笨的程序员饭饭，今天我想和大家聊一下设计模式。 在我还是一个菜鸟小白的时候，曾经遇到过一个让我一</description>
+    </item>
     
+    <item>
+      <title>Design 面向切面编程的思考</title>
+      <link>https://blog.v5u.win/posts/design/design-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B%E7%9A%84%E6%80%9D%E8%80%83/</link>
+      <pubDate>Fri, 16 Apr 2021 15:27:52 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design/design-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B%E7%9A%84%E6%80%9D%E8%80%83/</guid>
+      <description>面向切面编程的前提是要形成一个切面。不管是通过基类的方式还是通过runtime的方式，其实本质上runtime也是用的基类的方式，所有的类都</description>
+    </item>
+    
+    <item>
+      <title>IOS 对oc中内存管理的思考</title>
+      <link>https://blog.v5u.win/posts/design/design-%E5%AF%B9oc%E4%B8%AD%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E6%80%9D%E8%80%83/</link>
+      <pubDate>Fri, 16 Apr 2021 15:23:32 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design/design-%E5%AF%B9oc%E4%B8%AD%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E6%80%9D%E8%80%83/</guid>
+      <description>一直以来我对内存管理的第一反应是对自动引用技术和处理，而对自动引用计数的第一反应就是release释放的处理，那妥妥的本质是autorele</description>
+    </item>
     
     <item>
       <title>2020 04 21 元编程</title>
-      <link>https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/</link>
+      <link>https://blog.v5u.win/posts/design/design-%E5%85%83%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Tue, 21 Apr 2020 13:09:22 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://blog.v5u.win/posts/design/design-%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
       <description>元编程 meta programming 元编程是一种通过代码生成代码的思想，一般分为两种形式： macro宏展开 或者 模板 runtime 运行时 宏系统分为两种： 文本替换，比如 C 和 C++ 抽象语法</description>
     </item>
     
@@ -40,19 +73,19 @@
     
     <item>
       <title>沙龙举办流程</title>
-      <link>https://blog.v5u.win/posts/design-%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E%E6%B5%81%E7%A8%8B/</link>
+      <link>https://blog.v5u.win/posts/design/design-%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E%E6%B5%81%E7%A8%8B/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/design-%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E%E6%B5%81%E7%A8%8B/</guid>
+      <guid>https://blog.v5u.win/posts/design/design-%E6%B2%99%E9%BE%99%E4%B8%BE%E5%8A%9E%E6%B5%81%E7%A8%8B/</guid>
       <description>*title: 沙龙举办流程 date: 2018-11-19 在开放的基础上，环境应当设置的尽可能的平等。比如尽可能的采用圆桌形式，而且参与人员尽量围成一个圈，避免层次上的区别， 主持人</description>
     </item>
     
     <item>
       <title>编程难在哪里？一个美国实习生的故事</title>
-      <link>https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E9%9A%BE%E5%9C%A8%E5%93%AA%E9%87%8C%E4%B8%80%E4%B8%AA%E7%BE%8E%E5%9B%BD%E5%AE%9E%E4%B9%A0%E7%94%9F%E7%9A%84%E6%95%85%E4%BA%8B/</link>
+      <link>https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E9%9A%BE%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F%E4%B8%80%E4%B8%AA%E7%BE%8E%E5%9B%BD%E5%AE%9E%E4%B9%A0%E7%94%9F%E7%9A%84%E6%95%85%E4%BA%8B/</link>
       <pubDate>Tue, 21 Aug 2018 12:03:55 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E9%9A%BE%E5%9C%A8%E5%93%AA%E9%87%8C%E4%B8%80%E4%B8%AA%E7%BE%8E%E5%9B%BD%E5%AE%9E%E4%B9%A0%E7%94%9F%E7%9A%84%E6%95%85%E4%BA%8B/</guid>
+      <guid>https://blog.v5u.win/%E7%BC%96%E7%A8%8B%E9%9A%BE%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F%E4%B8%80%E4%B8%AA%E7%BE%8E%E5%9B%BD%E5%AE%9E%E4%B9%A0%E7%94%9F%E7%9A%84%E6%95%85%E4%BA%8B/</guid>
       <description>记得之前组里来了一个美国实习生小伙子，很geek的那种，干活快，一天能给你写2000行代码(我code review的速度跟不上他写的速度)，</description>
     </item>
     
@@ -63,15 +96,6 @@
       
       <guid>https://blog.v5u.win/sketch%E4%BD%BF%E7%94%A8tips/</guid>
       <description>记录sketch使用心得 1. 打开设计模板：file–&amp;gt; New from Template –&amp;gt;选择需要的模板库（Android Icon Design，iOS APP Icon，</description>
-    </item>
-    
-    <item>
-      <title>编程原则-参数处理</title>
-      <link>https://blog.v5u.win/posts/design-%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99-%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86/</link>
-      <pubDate>Sun, 14 Feb 2016 12:03:13 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/design-%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99-%E5%8F%82%E6%95%B0%E5%A4%84%E7%90%86/</guid>
-      <description>参数处理原则 软件开发过程当中，需要传递数据作为参数，很多时候我们需要的数据是要经过处理的，这时作为参数传递的部分尽量传递源数据，数据处理放在</description>
     </item>
     
   </channel>

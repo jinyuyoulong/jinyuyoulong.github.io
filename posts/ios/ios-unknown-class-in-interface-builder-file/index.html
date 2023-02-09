@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Unknown Class **** in Interface Builder file">
+<meta itemprop="description" content="I added a UIView xib file using the root class of MyView. I created it in the wrong place and so moved it in the project. Same project just a different folder/group. I then had a problem when running saying&hellip; Unknown Class MyView in Interface Builder file I couldn&#39;t work out what was wrong so I have now deleted the files both from the project and from the directory. I&#39;ve"><meta itemprop="datePublished" content="2015-08-24T10:44:12+00:00" />
+<meta itemprop="dateModified" content="2015-08-24T10:44:12+00:00" />
+<meta itemprop="wordCount" content="536">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Unknown Class **** in Interface Builder file" />
+<meta property="og:description" content="I added a UIView xib file using the root class of MyView. I created it in the wrong place and so moved it in the project. Same project just a different folder/group. I then had a problem when running saying&hellip; Unknown Class MyView in Interface Builder file I couldn&#39;t work out what was wrong so I have now deleted the files both from the project and from the directory. I&#39;ve" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/ios/ios-unknown-class-in-interface-builder-file/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-08-24T10:44:12+00:00" />
+<meta property="article:modified_time" content="2015-08-24T10:44:12+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Unknown Class **** in Interface Builder file"/>
+<meta name="twitter:description" content="I added a UIView xib file using the root class of MyView. I created it in the wrong place and so moved it in the project. Same project just a different folder/group. I then had a problem when running saying&hellip; Unknown Class MyView in Interface Builder file I couldn&#39;t work out what was wrong so I have now deleted the files both from the project and from the directory. I&#39;ve"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Unknown Class **** in Interface Builder file</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Aug 24, 2015</span></div>
+				<h1>Unknown Class **** in Interface Builder file</h1>
+			</header>
+			<div class="content">
+				<p>I added a UIView xib file using the root class of <code>MyView</code>.</p>
+<p>I created it in the wrong place and so moved it in the project. Same project just a different folder/group.</p>
+<p>I then had a problem when running saying&hellip;</p>
+<p><code>Unknown Class MyView in Interface Builder file</code></p>
+<p>I couldn't work out what was wrong so I have now deleted the files both from the project and from the directory.</p>
+<p>I've done a search using SublimeText2 for the string &quot;MyView&quot; and it doesn't exist anywhere in the project.</p>
+<p>I've reset the simulator, cleaned the project and the build folder and deleted derived data.</p>
+<p>Still getting the same error.</p>
+<p>Any ideas what I can do now?</p>
+<p>范子遇到的问题也是这样的，这个问题的产生过程一模一样：</p>
+<p>开始建了一个xib后来发现设计不行，就有删除了，啊啊啊，从此噩梦开始了。。。</p>
+<p>只要一运行就崩溃，清楚缓存，不行，删除项目，不行；后来看到据说这是Xcode5的一个bug，但是大哥，我的Xcode版本是6啊，怎么还不解决！只能使用真机测试没问题，也就只能这样了。如此过了几日。</p>
+<p>但是机智的我会被这点小困难打倒吗，终于有一天我决定解决这个问题（其实是因为，忘带数据线，没办法真机测试了*——*），于是到处Google，哈哈，功夫不负有心人，我从一篇答案中获得了灵感，触类旁通，忽然想到，我的ViewController当初常见的时候使用的是init方法，虽然一般系统默认调用init方法会检查有无nib有的话会调用nib但是希望不能寄托在Xcode身上，我断定就是这里出了问题，于是返回代码试验，将init方法改为initWithNibName方法，command+R 运行OK，</p>
+<p>至此问题解决，噢耶！</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>536 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2015-08-24 18:44 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/ios/ios-nsdate2timenumber/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>NSDate和时间戳互转</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/ios/ios-%E6%96%87%E5%AD%97%E4%B8%8A%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E7%BA%BF/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>文字上添加删除线</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

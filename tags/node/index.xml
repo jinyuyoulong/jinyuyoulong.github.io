@@ -6,11 +6,8 @@
     <description>Recent content in node on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 17 Jul 2018 16:47:27 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/node/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 03 Mar 2017 15:18:23 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/node/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sublime text3 配置nodejs build 环境</title>
       <link>https://blog.v5u.win/sublime-text3-%E9%85%8D%E7%BD%AEnodejs-build-%E7%8E%AF%E5%A2%83/</link>

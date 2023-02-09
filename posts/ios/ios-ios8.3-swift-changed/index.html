@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="iOS8.3发布了Swift 1.2带来哪些新变化">
+<meta itemprop="description" content="原文 http://www.cnblogs.com/yuyongjian/p/4371400.html 苹果前几日在面向开发者推送iOS 8.3 Beta的同时，还发布了版本号为6D520o的Xcode 6.3 Beta，其中便包含了iOS 8.3 Beta和O"><meta itemprop="datePublished" content="2015-04-14T14:59:50+00:00" />
+<meta itemprop="dateModified" content="2015-04-14T14:59:50+00:00" />
+<meta itemprop="wordCount" content="5629">
+<meta itemprop="keywords" content="iOS," /><meta property="og:title" content="iOS8.3发布了Swift 1.2带来哪些新变化" />
+<meta property="og:description" content="原文 http://www.cnblogs.com/yuyongjian/p/4371400.html 苹果前几日在面向开发者推送iOS 8.3 Beta的同时，还发布了版本号为6D520o的Xcode 6.3 Beta，其中便包含了iOS 8.3 Beta和O" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/ios/ios-ios8.3-swift-changed/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-04-14T14:59:50+00:00" />
+<meta property="article:modified_time" content="2015-04-14T14:59:50+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="iOS8.3发布了Swift 1.2带来哪些新变化"/>
+<meta name="twitter:description" content="原文 http://www.cnblogs.com/yuyongjian/p/4371400.html 苹果前几日在面向开发者推送iOS 8.3 Beta的同时，还发布了版本号为6D520o的Xcode 6.3 Beta，其中便包含了iOS 8.3 Beta和O"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>iOS8.3发布了Swift 1.2带来哪些新变化</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 14, 2015</span></div>
+				<h1>iOS8.3发布了Swift 1.2带来哪些新变化</h1>
+			</header>
+			<div class="content">
+				<p>原文  <a href="http://www.cnblogs.com/yuyongjian/p/4371400.html?utm_source=tuicool">http://www.cnblogs.com/yuyongjian/p/4371400.html</a></p>
+<p><img src="http://img2.tuicool.com/2EjEfe.jpg" alt="" title="1423710600589982.jpg"></p>
+<p>苹果前几日在面向开发者推送iOS 8.3 Beta的同时，还发布了版本号为6D520o的Xcode 6.3 Beta，其中便包含了iOS 8.3 Beta和OS X v10.10 SDK，并进一步提升了Swift与Objective-C代码的交互性，而Swift业已更新至1.2版本。@未来眼之老码团队第一时间翻译了完整的Release Note。共计50多处改动，同时修改了Objective-c的语法，足见苹果对Swift语言的重视。</p>
+<p><img src="http://img2.tuicool.com/MBZzA3.jpg" alt="" title="1423710718209509.jpg"></p>
+<p>从 <a href="https://developer.apple.com/unauthorized/">Xcode 6.3 Beta Release Notes</a> 看出，Xcode 6.3 Beta包含了很多颇为值得开发者期待的改变，共计50多处改动，同时修改了Objective-C的语法，足见苹果对Swift语言的重视。而其代码迁移工具可以帮助开发者将其代码从Swift 1.1（Xcode 6.1）升级至Swift 1.2（Xcode 6.3），具体执行编辑菜单（Edit）-&gt;转换（Convert）-至（To）Swift1.2即可。 具体更新如下：</p>
+<p>Swift语言的增强</p>
+<ul>
+<li>
+<p>Swift现在支持目标增量编译，例如当一个文件改变时不会重新编译Target中的每一个文件。这个基于固有依赖分析。所以你依然会看到有很多文件在必要情况下被重编。如果你发现需要重编但没有重编的情况，请报一个Bug出来。清理Target后再编，会按照往常的流程进行。</p>
+</li>
+<li>
+<p>增加了一个新的Set数据类型，它提供了元素唯一化，且有完整语义的通用数据类型集合。它和NSSet类型桥接，提供和Array和Dictionary相类似的功能。</p>
+</li>
+<li>
+<p>if let语句现在被扩展为可以支持多条条件判断：<!-- raw HTML omitted -->if let a = foo(), b = bar() where a &lt; b,  
+let c = baz() {  
+ }<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<p>它允许你测试多种选择，并且包含一个bool判断。当然这种情况不包含嵌套判断。</p>
+<p>let常量现在生成时不需要立即初始化，新的规则是let常量必须在被首次使用前初始化即可（和var一样）。或者说它只能被初始化，也就是说在初始化后它不能再被改变或者重新赋值，可用的模式如下：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>这个正常的来说需要var变量用法，尽管这里没有任何修改的操作。</p>
+<ul>
+<li>
+<p>“Static”静态方法和属性现在允许在class中使用(作为“class final”的别名)。你现在可以在类中声明一个静态存储属性，它享有全局存储空间和首次使用再初始化的惰性构造功能。协议Protocal现在会声明一个static的类型要求而不是声明一个class的要求。</p>
+</li>
+<li>
+<p>对于表达式闭包的类型引用有了几点改进：</p>
+</li>
+</ul>
+<ol>
+<li>
+<p>含有单返回语句的闭包现在类型检查时以单表达式闭包处理。</p>
+</li>
+<li>
+<p>匿名的且含有非空返回类型的单表达式现在可以用在Void上下文中。</p>
+</li>
+<li>
+<p>多表达式的闭包类型的情况可能无法被类型推断出来，这归功于缺乏返回类型的情况能被正确的推断出来。</p>
+</li>
+</ol>
+<ul>
+<li>Swift中的枚举类型现在可以通过@objc关键字导出到Objective-C中。@objc的枚举类型必须定义一个整型的原始类型，并且该枚举不能泛型化或者不能使用关联值。由于Objective-C中的枚举类型没有命名空间，所以导出到Objective-C中的枚举类型以枚举名字和case项目名字的组合的方式使用。 比如在Swift中的声明：<!-- raw HTML omitted -->@objc  
+ enum Bear: Int {  
+ case Black, Grizzly, Polar  
+ }<!-- raw HTML omitted --></li>
+</ul>
+<p>导出到Objective-C：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Objective-C语言的扩展语法现在可以判断出Objective-C API中指针或者block的是否为空，同时允许不带ImplicitlyUnwrappedOptional协议地导出Objective-C API函数。</p>
+</li>
+<li>
+<p>Swift现在可以部分支持导入C的联合类型，包括unions、bitfileds、SIMD vector类型以及其他Swift的不支持的C特性。这些不被支持的元素不能在Swift中的直接访问，但是在Swift中，Objective-C或者C可以以参数或者返回类型的方式使用。这包括Foundation NSDecimal类型、GLKit GLKVector和GLKMatrix类型，以及其他一些类型。</p>
+</li>
+<li>
+<p>被导入的C结构体现在在Swift中有一个默认的构造器，它会将结构体中的所有的元素初始化为0，例如：<!-- raw HTML omitted -->import Darwin  
+ var devNullStat = stat()  
+ stat(&quot;/dev/null&quot;, &amp;devNullStat)<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<p>如果一个结构体的元素不能被正确的初始化为0（比如被标记为新的_nonnull标示符时），这个默认的构造器将会终止。</p>
+<ul>
+<li>
+<p>String的索引类型间新的转换API现在可以用了，如String、String.UnicodeScalarView、String.UTF16View以及String.UTF8View， 同时每个String View转换为String的函数也可使用。</p>
+</li>
+<li>
+<p>类型值在println函数或者字符串内插算法中现在可以打印完整的类型名称了：<!-- raw HTML omitted -->toString(Int.self) // 打印 “Swift.Int&quot;  
+ println([Float].self) // 打印 &quot;Swift.Array”  
+ println((Int, String).self) // 打印 &quot;(Swift.Int, Swift.String)&quot;<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>一个新的“@noescape”属性可以用在函数的闭包参数上，这意味着这个参数是唯一可被调用的（或者用在函数调用时以参数的方式出现），其意思是它的生命周期比函数调用的周期短，这有助于一些小小的性能优化，但最重要的是它屏蔽了闭包中对self.的需求。这使得函数的控制流比其他更加透明。在未来的beta版本中，标准库函数将普遍采用这种特性，比如autoreleasepool()：<!-- raw HTML omitted -->func autoreleasepool(@noescape code: () -&gt; ()) {  
+   pushAutoreleasePool()  
+   code()  
+   popAutoreleasePool()  
+ }<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>相比Swift 1.1，Swift 1.2在很多方面的性能上有本质的提高，比如多维数组算法更快，未优化的代码更加快速。</p>
+</li>
+<li>
+<p>表达式类型的错误诊断有了很大的提高。</p>
+</li>
+<li>
+<p>很多通用表达式的检查效率有很大提高，这个有助于降低编译时间和减少“expression too complex”的错误。</p>
+</li>
+</ul>
+<p>Swift语言的改变</p>
+<ul>
+<li>
+<p>“确保转换”和“可失败转换”的概念现在被分为两个操作符。可失败转换现在使用as!运算符，这个！感叹号可以让代码的读者更清晰的明白本次转换可能失败并触发一个运行时错误。“as”操作符会保持向上转换（比如“someDerivedValue转换为Base”）或者类型标注（“0 转换为Int8”），它保证了转换不会失败。</p>
+</li>
+<li>
+<p>结构体和类构造器中的let不可变属性现在被规范为更加标准的通用模型：lets类型初始化后将永不会被改变或重新赋值。以前的实现是，可以在构造器中任意修改，而现在它们只允许被初始化和提供值操作。如果一个属性在声明时已经赋值，那么它会被所有的构造器认为已经含有初始值。</p>
+</li>
+<li>
+<p>从桥接Objective-C类 (NSString/NSArray/NSDictionary）到它Swift中值类型的隐式转化被移除。这将是Swift的类型系统更加简单和可预测。这意味着：<!-- raw HTML omitted -->import Foundation  
+func log(s: String) { println(x) }  
+let ns: NSString = &quot;some NSString&quot; // Okay  
+log(ns) // 错误  
+// &quot;'NSString' 不能转换为 'String'&quot;<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<p>为了完成桥接转换，需要用显式转化符标注：</p>
+<!-- raw HTML omitted -->
+<p>从Swift类型到Objective-C类型的桥接隐式转换依然被允许，比如：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>@autoclosure现在标注在参数上，而不是标注在参数的类型上。比如：<!-- raw HTML omitted -->//以前我们这样写：  
+ func assert(predicate : @autoclosure () -&gt; Bool) {… }  
+//现在需要这样写：  
+ func assert(@autoclosure predicate : () -&gt; Bool) {… }<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>使用在函数参数上的 @autoclosure属性现在含有@noescape新属性的功能，这个改进限制了@autoclosure作为控制流程以及惰性计算的能力。</p>
+</li>
+<li>
+<p>柯里化函数现在可以指定参数标签了：<!-- raw HTML omitted -->func curryUnnamed(a: Int)(_ b: Int) { return a + b }  
+curryUnnamed(1)(2)  
+func curryNamed(first a: Int)(second b: Int) -&gt; Int { return a + b }  
+curryNamed(first: 1)(second: 2)<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>Swift现在可以检测在Swift类型系统中覆盖和重写的差异以及通过Objective-C运行时可见的影响。比如，下面Objective-C类中对属性的setter和类扩展中对方法的“setProperty”它们之间的冲突现在可以被诊断：<!-- raw HTML omitted -->class A : NSObject {  
+ var property: String = &quot;Hello&quot; // 注意: Objective-C 方法 'setProperty:’  
+ // 以前这里“属性”这里是通过setter声明  
+ }  
+ extension A {  
+ func setProperty(str: String) { } // 错误：方法&quot;setProperty&quot;  
+ // 重复声明了Objective-C方法  
+ //'setProperty:'  
+ }<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<p>同样地检查在Objective-C中重写：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>和协议的适配性一样：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Swift语言Bug修复</p>
+<ul>
+<li>
+<p>动态转换符(“as!”, “as?“和“is”)现在可以用在Swift的协议类型上，只要该协议类型没有关联类型。</p>
+</li>
+<li>
+<p>在Playground增加的一致性需求现在可以按照预期工作了，比如：<!-- raw HTML omitted -->struct Point {  
+ var x, y: Double  
+ }  
+ extension Point : Printable {  
+ var description: String {  
+ return &quot;((x), (y))&quot;
+ }  
+ }  
+ var p1 = Point(x: 1.5, y: 2.5)  
+ println(p1) // prints &quot;(1.5, 2.5)”<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>导入的没有文档化的NS_ENUM类型，比如UIViewAnimationCurve，现在可以通过init(rawValue:) 构造器从它的原始整型类型转换出来而不会重设为nil，为解决这个问题而用替代方法unsafeBitCast编写的代码现在可以使用原始值构造器编写了。比如：<!-- raw HTML omitted -->let animationCurve =  
+nsafeBitCast(userInfo[UIKeyboardAnimationCurveUserInfoKey].integerValue,  
+UIViewAnimationCurve.self)<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<p>现在可以写为：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>在枚举类型中负浮点数可以用作原始值了。</p>
+</li>
+<li>
+<p>指向Objective-C类，或者Swift中继承自Objective-C对象的无主引用，在该无主引用指向的对象释放后无主引用被重新赋值时不会再Crash。</p>
+</li>
+<li>
+<p>含有观察访问器的变量或者属性如果它可以从初始值表达式中推断出类型就无需显式指定类型。</p>
+</li>
+<li>
+<p>NSClassFromString函数搜索失败时其结果和nil的比较现在工作正常。</p>
+</li>
+<li>
+<p>子类中的重写基类含有可选类型的方法时，如果涉及到可选类型的转换将不会导致Crash。<!-- raw HTML omitted -->class Base {  
+ func foo(x: String) -&gt; String? { return x }  
+ }  
+ class Derived: Base {  
+ override func foo(x: String?) -&gt; String { return x! }  
+ }<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<p>关于Objective-C语言的增强</p>
+<p>Objective-C API中可以表示参数，返回值，属性，变量等等的“nullability”属性。比如，下面是表达很多UITableView API的为空特性：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>这个nullability标示符影响了Objective-C API在Swift的可选类型值，nonnull标示符标示的类型将会以非可选的类型的导入，这个用来替代隐式解封可选类型如(e.g., UINib!）。而nullable标示符标示的类型则会以可选类型导入（如UITableViewCell?），所以下面的API在Swift中表现如下：</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>可空特性标示符也可以用在指针类型，包括C指针，block指针和C++成员指针，使用双下划线方式，比如：</p>
+<!-- raw HTML omitted -->
+<p>这里，它自身的回调函数是nullable的，但是它的回调函数的返回类型为nonnull，所以这个API在Swift以如下方式使用：</p>
+<!-- raw HTML omitted -->
+<p>总的来说，可空特性标示符有三种，可以用双下划线（用在任何指针类型），或者没有下划线的（用在Objective-C属性，方法结果类型或者方法参数类型）。</p>
+<p><img src="http://img0.tuicool.com/MjeInmR.jpg" alt="" title="1423711358267173.jpg"></p>
+<ul>
+<li>
+<p>特别是在Objective-C API中，很多指针倾向于nonnull，因此Objective-C提供了“audited”域（通过新的#pragma），它会认为未被标注的指针为nonnull，比如下面的例子等同于上面第一个例子，但是它用的是“audited”域来简化语句表达：<!-- raw HTML omitted -->#pragma clang assume_nonnull begin  
+ // …  
+ -(void)registerNib:(UINib *)nib forCellReuseIdentifier:(NSString  
+<em>)identifier;  
+ -(nullable UITableViewCell </em>)cellForRowAtIndexPath:(NSIndexPath)indexPath;  
+ @property (nonatomic, readwrite, retain, nullable) UIView *backgroundView;  
+ // …  
+ #pragma clang assume_nonnull end<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>为了保证代码的连续性，我们强烈建议你在所有的Objective-C头文件使用“audited”域来表述其api的可空性，同时避免null_unspecified情况，建议使用在将可空性引入到现有的头文件时采用该功能作为过渡工具。</p>
+</li>
+<li>
+<p>Objective-C增加的nullability注解不会影响它的向后兼容性也不会影响代码的编译。比如nonnull在有些情况下依然可以以nil结束，诸如消息路由到一个为nil的接收器，但是，nullability注解只是提高Swift的编程体验，它会在Objective-C中产生一个新的警告，诸如朝一个nonnull的参数赋一个nil的话，这使得Objective-c API更加高效以及使用的正确。</p>
+</li>
+<li>
+<p>Objective-C可以通过null_resettable来表达属性的空属性，该属性setter访问器允许将其设置为nil（设置该属性为默认值），但是它的getter访问器不会提供一个nil值（因为它提供了默认值），有一个这样的属性如UIView’s tintColor，如果没有tint颜色指定时它会提供一个默认的tint颜色值，如：<!-- raw HTML omitted -->@property (nonatomic, retain, null_resettable) UIColor *tintColor;<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<p>这样的API在Swift使用隐式强制解封的方法使用：</p>
+<!-- raw HTML omitted -->
+<p>C指针类型的参数或者Block指针类型可以使用noescape新属性标志，它用来标明这个指针参数不会离开这个函数或者方法而使用。这种情况下，可以安全的传递一个局部变量地址，noescape block指针在Swift中将会被映射为@noescape参数：</p>
+<!-- raw HTML omitted -->
+<p>将被影射到Swift为：</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>LLDB现在包含了一个printf()函数去计算C/C++/Objective-C表达式，这个将在arm64设备上提升表达式计算的体验，但是可能和用户在.lldbinit定义的表达式前缀冲突，如果你发现在表达式计算时出现错误，这可能就是root cause。</p>
+</li>
+<li>
+<p>XCode 6.3将Apple LLVM编译器更新为6.1.0，这个新的编译器版本包含了对C++14标准的全部支持，包括大量的增强的警告诊断和新的优化，对于arm64架构的支持进行了有效的重构来支持ARM的实现， 这个将明显影响矩阵内联函数计算。</p>
+</li>
+<li>
+<p>为arm64 vfma/vfms内联函数预定的参数被移除，虽然这个改变不会产生一个编译时错误，但是它会中断代码运行时操作，我们需要明确这个变化来减少风险。默认的，编译器现在会对使用这种内联属性提供警告并维持固有的行为，在尽可能的情况下，你需要接受这个变化并且定义USE_CORRECT_VFMA_INTRINSICS宏为1告诉编译器接收警告，当然你也可以可以USE_CORRECT_VFMA_INTRINSICS宏为0来屏蔽警告并保持固有行为。但是请不要保留这样的代码太久，因为我们计划在未来的版本中移除对这种旧行为的支持。</p>
+</li>
+<li>
+<p>含有自动尺寸标志的视图以及包含在UITableView、UICollectionView或NSScrollView的视图在打开文档时不会再出现对齐错误。</p>
+</li>
+<li></li>
+</ul>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.v5u.win/tags/ios">iOS</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>5629 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2015-04-14 22:59 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/web/web-seoer%E7%9A%84%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>SEOer的优化思路</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/%E5%85%A5%E5%AE%9A%E6%B3%95%E9%97%A8/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>入定法门</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="System 进程间通讯方式">
+<meta itemprop="description" content="进程通信： 每个进程各自有不同的用户地址空间,任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核,在内核中开辟一"><meta itemprop="datePublished" content="2019-08-12T10:46:26+08:00" />
+<meta itemprop="dateModified" content="2019-08-12T10:46:26+08:00" />
+<meta itemprop="wordCount" content="3084">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="System 进程间通讯方式" />
+<meta property="og:description" content="进程通信： 每个进程各自有不同的用户地址空间,任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核,在内核中开辟一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/system/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-08-12T10:46:26+08:00" />
+<meta property="article:modified_time" content="2019-08-12T10:46:26+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="System 进程间通讯方式"/>
+<meta name="twitter:description" content="进程通信： 每个进程各自有不同的用户地址空间,任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核,在内核中开辟一"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>System 进程间通讯方式</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Aug 12, 2019</span></div>
+				<h1>System 进程间通讯方式</h1>
+			</header>
+			<div class="content">
+				<p>进程通信：
+每个进程各自有不同的用户地址空间,任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核,在内核中开辟一块缓冲区,进程A把数据从用户空间拷到内核缓冲区,进程B再从内核缓冲区把数据读走,内核提供的这种机制称为进程间通信。</p>
+<p>[TOC]</p>
+<h1 id="进程间8种通讯方式">进程间8种通讯方式</h1>
+<h2 id="匿名管道通信">匿名管道通信</h2>
+<p>匿名管道( pipe )：管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。</p>
+<pre tabindex="0"><code>// 需要的头文件
+#include &lt;unistd.h&gt;
+
+// 通过pipe()函数来创建匿名管道
+// 返回值：成功返回0，失败返回-1
+// fd参数返回两个文件描述符
+// fd[0]指向管道的读端，fd[1]指向管道的写端
+// fd[1]的输出是fd[0]的输入。
+int pipe (int fd[2]);
+</code></pre><p>通过匿名管道实现进程间通信的步骤如下：</p>
+<p>父进程创建管道，得到两个⽂件描述符指向管道的两端
+父进程fork出子进程，⼦进程也有两个⽂件描述符指向同⼀管道。
+父进程关闭fd[0],子进程关闭fd[1]，即⽗进程关闭管道读端,⼦进程关闭管道写端（因为管道只支持单向通信）。⽗进程可以往管道⾥写,⼦进程可以从管道⾥读,管道是⽤环形队列实现的,数据从写端流⼊从读端流出,这样就实现了进程间通信。
+详细可参考文章：进程间的通信方式——pipe（管道）</p>
+<h2 id="高级管道通信">高级管道通信</h2>
+<p>高级管道(popen)：将另一个程序当做一个新的进程在当前程序进程中启动，则它算是当前程序的子进程，这种方式我们成为高级管道方式。</p>
+<h2 id="有名管道通信">有名管道通信</h2>
+<p>有名管道 (named pipe) ： 有名管道也是半双工的通信方式，但是它允许无亲缘关系进程间的通信。</p>
+<h2 id="消息队列通信">消息队列通信</h2>
+<p>消息队列( message queue ) ： 消息队列是由消息的链表，存放在内核中并由消息队列标识符标识。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点。</p>
+<h2 id="信号量通信">信号量通信</h2>
+<p>信号量( semophore ) ： 信号量是一个计数器，可以用来控制多个进程对共享资源的访问。它常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程内不同线程之间的同步手段。</p>
+<h2 id="信号">信号</h2>
+<p>信号 ( sinal ) ： 信号是一种比较复杂的通信方式，用于通知接收进程某个事件已经发生。</p>
+<h2 id="共享内存通信">共享内存通信</h2>
+<p>共享内存( shared memory ) ：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。共享内存是最快的 IPC 方式，它是针对其他进程间通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号两，配合使用，来实现进程间的同步和通信。</p>
+<h2 id="套接字通信">套接字通信</h2>
+<p>套接字( socket ) ： 套接口也是一种进程间通信机制，与其他通信机制不同的是，它可用于不同机器间的进程通信。</p>
+<p>之前写过一个课程设计：基于Internet的Linux客户机/服务器系统通讯设计与实现</p>
+<p>是利用sock通信实现的，可以参考一下。</p>
+<p>通信过程如下：</p>
+<h3 id="命名socket">命名socket</h3>
+<p>SOCK_STREAM 式本地套接字的通信双方均需要具有本地地址，其中服务器端的本地地址需要明确指定，指定方法是使用 struct sockaddr_un 类型的变量。</p>
+<h3 id="绑定">绑定</h3>
+<p>SOCK_STREAM 式本地套接字的通信双方均需要具有本地地址，其中服务器端的本地地址需要明确指定，指定方法是使用 struct sockaddr_un 类型的变量，将相应字段赋值，再将其绑定在创建的服务器套接字上，绑定要使用 bind 系统调用，其原形如下：</p>
+<p>int bind(int socket, const struct sockaddr *address, size_t address_len);
+1
+其中 socket表示服务器端的套接字描述符，address 表示需要绑定的本地地址，是一个 struct sockaddr_un 类型的变量，address_len 表示该本地地址的字节长度。</p>
+<h3 id="监听">监听</h3>
+<p>服务器端套接字创建完毕并赋予本地地址值（名称，本例中为Server Socket）后，需要进行监听，等待客户端连接并处理请求，监听使用 listen 系统调用，接受客户端连接使用accept系统调用，它们的原形如下：</p>
+<pre tabindex="0"><code>int listen(int socket, int backlog);
+
+int accept(int socket, struct sockaddr *address, size_t *address_len);
+</code></pre><p>其中 socket 表示服务器端的套接字描述符；backlog 表示排队连接队列的长度（若有多个客户端同时连接，则需要进行排队）；address 表示当前连接客户端的本地地址，该参数为输出参数，是客户端传递过来的关于自身的信息；address_len 表示当前连接客户端本地地址的字节长度，这个参数既是输入参数，又是输出参数。</p>
+<h3 id="连接服务器">连接服务器</h3>
+<p>客户端套接字创建完毕并赋予本地地址值后，需要连接到服务器端进行通信，让服务器端为其提供处理服务。</p>
+<p>对于SOCK_STREAM类型的流式套接字，需要客户端与服务器之间进行连接方可使用。连接要使用 connect 系统调用，其原形为</p>
+<pre tabindex="0"><code>int connect(int socket, const struct sockaddr *address, size_t address_len);
+</code></pre><p>其中socket为客户端的套接字描述符，address表示当前客户端的本地地址，是一个 struct sockaddr_un 类型的变量，address_len 表示本地地址的字节长度。实现连接的代码如下：</p>
+<pre tabindex="0"><code>connect(client_sockfd, (struct sockaddr*)&amp;client_address, sizeof(client_address));
+</code></pre><h3 id="相互发送接收数据">相互发送接收数据</h3>
+<p>无论客户端还是服务器，都要和对方进行数据上的交互，这种交互也正是我们进程通信的主题。一个进程扮演客户端的角色，另外一个进程扮演服务器的角色，两个进程之间相互发送接收数据，这就是基于本地套接字的进程通信。发送和接收数据要使用 write 和 read 系统调用，它们的原形为：</p>
+<pre tabindex="0"><code>int read(int socket, char *buffer, size_t len);
+int write(int socket, char *buffer, size_t len);
+</code></pre><p>其中 socket 为套接字描述符；len 为需要发送或需要接收的数据长度；</p>
+<p>对于 read 系统调用，buffer 是用来存放接收数据的缓冲区，即接收来的数据存入其中，是一个输出参数；</p>
+<p>对于 write 系统调用，buffer 用来存放需要发送出去的数据，即 buffer 内的数据被发送出去，是一个输入参数；返回值为已经发送或接收的数据长度。</p>
+<h3 id="断开连接">断开连接</h3>
+<p>交互完成后，需要将连接断开以节省资源，使用close系统调用，其原形为：</p>
+<pre tabindex="0"><code>int close(int socket);
+</code></pre><hr>
+<p>版权声明：本文为CSDN博主「Violet-Guo」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/violet_echo_0908/article/details/51201278</p>
+<hr>
+<p>注：</p>
+<p>通讯方式的选择：
+PIPE和FIFO用来实现进程间相互发送非常短小的、频率很高的消息；这两种方式通常适用于两个进程间的通信。</p>
+<p>共享内存用来实现进程间共享的、非常庞大的、读写操作频率很高的数据（配合信号量使用）；这种方式通常适用于多进程间通信。</p>
+<p>其他考虑用socket。这里的“其他情况”，其实是今天主要会碰到的情况：<strong>分布式开发</strong>。
+在多进程、多线程、多模块所构成的今天最常见的分布式系统开发中，socket是第一选择。</p>
+<p>消息队列，现在建议不要使用了 &mdash;- 因为找不到使用它们的理由。</p>
+<p>从易用性，可扩展性等方面考虑，只使用socket就行了。性能不够，加块CPU。
+理论来源：https://www.zhihu.com/question/23995948</p>
+<h2 id="关于消息队列">关于消息队列</h2>
+<p>这里主要说一下关于消息队列的缺点。消息队列是在系统范围内起作用的，没有引用计数。当消息队列终止而队列中还存有消息的时候，该消息队列及其内容不会被删除，将一直保留至系统中发生的一些动作为止：</p>
+<ul>
+<li>某个进程调用msgrcv或msgctl读消息或删除消息队列；</li>
+<li>某个进程执行ipcrm命令删除消息队列；</li>
+<li>正在自举的系统删除消息队列。对于匿名管道，最后一个引用管道的进程终止，管道就被删除；对于有名管道，最后一个引用 FIFO 的进程终止，虽然 FIFO 名字保留在系统中，但留在 FIFO 的数据已经被删除</li>
+</ul>
+<p>《APUE》一书指出，消息队列原来主要是提供高于一般速度的IPC，但现在与其他形式的IPC相比，速度上已没有太多的优势，因此，考虑消息队列遇到的问题，在新的应用程序中，不应再考虑使用它来实现 IPC。</p>
+<p>作者：Zyoung
+链接：https://www.zhihu.com/question/23995948/answer/538348089
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>3084 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-08-12 10:46 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/go/go-go2/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Go2</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/%E8%BF%9B%E7%A8%8B%E9%97%B48%E7%A7%8D%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>进程间8种通讯方式</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

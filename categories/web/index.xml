@@ -6,35 +6,32 @@
     <description>Recent content in web on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 16 Jan 2019 03:03:31 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/categories/web/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 08 Apr 2016 10:56:38 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/categories/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>flex属性</title>
-      <link>https://blog.v5u.win/posts/web-flex/</link>
+      <link>https://blog.v5u.win/posts/web/web-flex/</link>
       <pubDate>Fri, 08 Apr 2016 10:56:38 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/web-flex/</guid>
+      <guid>https://blog.v5u.win/posts/web/web-flex/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML&amp;CSS</title>
-      <link>https://blog.v5u.win/posts/web-html-css/</link>
+      <link>https://blog.v5u.win/posts/web/web-html-css/</link>
       <pubDate>Sun, 25 Oct 2015 17:48:49 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/web-html-css/</guid>
+      <guid>https://blog.v5u.win/posts/web/web-html-css/</guid>
       <description>&amp;lt;p&amp;gt; paragragh 段落 &amp;lt;em&amp;gt; emphasize 强调(显示为斜体) &amp;lt;span&amp;gt; 样式 &amp;lt;q&amp;gt; quote [kwot] 引用，引号(显示默认添加双引号，故不用再次添加“ ”) &amp;lt;blockquote&amp;gt; 引用块 ，长文本引用(显示默认为缩进，左右都缩</description>
     </item>
     
     <item>
       <title>text/html &amp; text/plain的区别</title>
-      <link>https://blog.v5u.win/posts/web-texthtml-textplain%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <link>https://blog.v5u.win/posts/web/web-texthtml-textplain%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
       <pubDate>Fri, 24 Jul 2015 16:55:05 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/web-texthtml-textplain%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <guid>https://blog.v5u.win/posts/web/web-texthtml-textplain%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
       <description>需要了解的概念 Content-Type：用于定义用户的浏览器或相关设备如何显示将要加载的数据，或者如何处理将要加载的数据 MIME：MIME类</description>
     </item>
     

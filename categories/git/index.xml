@@ -6,36 +6,33 @@
     <description>Recent content in Git on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 05 Jul 2016 14:47:35 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/categories/git/index.xml" rel="self" type="application/rss+xml" />
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 21 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git 仓库</title>
+      <link>https://blog.v5u.win/posts/system/system-git_server/</link>
+      <pubDate>Tue, 21 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/system/system-git_server/</guid>
+      <description>git 仓库的创建流程： 命令行模式创建 参考 创建裸仓库 git init --bare gitserver.git，表明允许其副本push操作。 使用 git init --bare &amp;lt;repo&amp;gt; 可以创建一个裸仓库，</description>
+    </item>
     
     <item>
       <title>FF的Git使用整理</title>
-      <link>https://blog.v5u.win/posts/system-git_use/</link>
+      <link>https://blog.v5u.win/posts/system/system-git_use/</link>
       <pubDate>Tue, 05 Jul 2016 14:47:35 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-git_use/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-git_use/</guid>
       <description>创建 Git仓库命令：(进入将要管理的Git文件夹地址下) git init 查看当前Git管理状态 git status 添加Git文件 git add * 提交文件到仓库 git commit -m &amp;ldquo;</description>
     </item>
     
     <item>
       <title>.gitignore文件使用说明</title>
-      <link>https://blog.v5u.win/posts/system-git-gitignore/</link>
+      <link>https://blog.v5u.win/posts/system/system-git-gitignore/</link>
       <pubDate>Fri, 09 Oct 2015 13:25:58 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-git-gitignore/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-git-gitignore/</guid>
       <description>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，像是日志或者编译过程中创建的等等。我们可</description>
-    </item>
-    
-    <item>
-      <title>Git 仓库</title>
-      <link>https://blog.v5u.win/posts/system-git_server/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-git_server/</guid>
-      <description>git 仓库的创建流程： 命令行模式创建 参考 创建裸仓库 git init --bare gitserver.git，表明允许其副本push操作。 使用 git init --bare &amp;lt;repo&amp;gt; 可以创建一个裸仓库，</description>
     </item>
     
   </channel>

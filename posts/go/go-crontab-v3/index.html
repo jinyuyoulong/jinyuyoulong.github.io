@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Go Crontab v3">
+<meta itemprop="description" content="[TOC] 关于cron更新 Cron V3已经发布！ 要下载特定的标记版本，请运行: go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中: import &quot;github.com/robfig/cron/v3&quot; 由于Go Modules的使用，它需要Go 1.1"><meta itemprop="datePublished" content="2019-07-19T16:51:27+08:00" />
+<meta itemprop="dateModified" content="2019-07-19T16:51:27+08:00" />
+<meta itemprop="wordCount" content="1652">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Go Crontab v3" />
+<meta property="og:description" content="[TOC] 关于cron更新 Cron V3已经发布！ 要下载特定的标记版本，请运行: go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中: import &quot;github.com/robfig/cron/v3&quot; 由于Go Modules的使用，它需要Go 1.1" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/go/go-crontab-v3/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-07-19T16:51:27+08:00" />
+<meta property="article:modified_time" content="2019-07-19T16:51:27+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Crontab v3"/>
+<meta name="twitter:description" content="[TOC] 关于cron更新 Cron V3已经发布！ 要下载特定的标记版本，请运行: go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中: import &quot;github.com/robfig/cron/v3&quot; 由于Go Modules的使用，它需要Go 1.1"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Go Crontab v3</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Jul 19, 2019</span></div>
+				<h1>Go Crontab v3</h1>
+			</header>
+			<div class="content">
+				<p>[TOC]</p>
+<hr>
+<h2 id="关于cron更新">关于cron更新</h2>
+<h3 id="cron-v3已经发布">Cron V3已经发布！</h3>
+<p>要下载特定的标记版本，请运行:</p>
+<p><code>go get github.com/robfig/cron/v3@v3.0.0</code>
+将其导入您的程序中:</p>
+<p><code>import &quot;github.com/robfig/cron/v3&quot;</code>
+由于Go Modules的使用，它需要Go 1.11或更高版本。</p>
+<p>请参阅此处的文档：http://godoc.org/github.com/robfig/cron</p>
+<p>本文档的其余部分介绍了v3的进展以及希望从早期版本升级的用户的重大更改列表。</p>
+<p>升级到v3(2019年6月)
+cron v3是对库的重大升级，可以解决所有未解决的错误，功能请求和粗糙边缘。它基于master的合并，其中包含对多年来发现的问题的各种修复，以及v2分支，其中包含一些向后兼容的功能，例如删除cron作业的功能。此外，v3增加了对Go Modules的支持，清除了时区支持等粗糙边缘，并修复了许多错误。</p>
+<h3 id="新功能">新功能:</h3>
+<p><strong>支持Go模块。调用者现在必须导入此库 github.com/robfig/cron/v3，而不是gopkg.in/&hellip;</strong></p>
+<p>修正了错误:</p>
+<p>0f01e6b 解析器: 修复Dow和Dom的组合(＃70)
+dbf3220 在向前滚动时钟时调整时间以处理不存在的午夜(＃157)
+eeecf15 spec_test.go：确保在0增量处返回错误(＃144)
+70971dc cron.Entries(): 更新快照请求以包含回复通道(＃97)
+1cba5e6 cron：修复: 删除作业导致下一个预定作业运行得太晚(＃206)
+标准cron规范默认解析(第一个字段是“分钟”)，可以轻松选择进入秒字段(石英兼容)。虽然，请注意不支持年份字段(Quartz中的可选)。</p>
+<p>通过符合https://github.com/go-logr/logr项目的接口进行可扩展的键/值记录。</p>
+<p>新的Chain＆JobWrapper类型允许您安装“拦截器”以添加如下所示的横切行为:</p>
+<p>从工作中恢复任何恐慌
+如果先前的运行尚未完成，则延迟作业的执行
+如果先前的运行尚未完成，则跳过作业的执行
+记录每个作业的调用
+作业完成时的通知
+它向后与v1和v2不兼容。这些更新是必需的:</p>
+<p><strong>v1分支在cron规范的开头接受了一个可选的秒字段。这是非标准的，并导致了很多混乱。新的默认解析器符合Cron维基百科页面所描述的标准。</strong></p>
+<p>更新: 要保留旧行为，请使用自定义解析器构建您的Cron：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// Seconds field, required
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">WithSeconds</span>())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Seconds field, optional
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">New</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">WithParser</span>(
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">SecondOptional</span> | <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">Minute</span> | <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">Hour</span> | <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">Dom</span> | <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">Month</span> | <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">Dow</span> | <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">Descriptor</span>))
+</span></span></code></pre></div><p>最常见的改造是添加秒，v3为我们提供了内置的方法实现：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">WithSeconds</span>())
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 此处space 多了一个 seconds 的解析符
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">space</span> <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#34;*/1 * * * * *&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">AddFunc</span>(<span style="color:#a6e22e">space</span>, <span style="color:#66d9ef">func</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Every seconds action&#34;</span>)
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Start</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">select</span> {}
+</span></span></code></pre></div><p>Cron类型现在接受构造上的功能选项而不是先前的特殊行为修改机制(设置字段，调用setter)。</p>
+<p>更新: 必须更新设置Cron.ErrorLogger或调用Cron.SetLocation的代码以在构造时提供这些值。</p>
+<p><strong>CRON_TZ现在是指定单个计划的时区的推荐方法，该计划由规范批准。遗留的“TZ =”前缀将继续得到支持，因为它是明确且易于执行的。</strong></p>
+<p>更新: 无需更新。</p>
+<p>**默认情况下，cron将不再恢复其运行的作业中的恐慌。**恢复可能会令人惊讶(参见问题＃192)，似乎与图书馆的典型行为不一致。相关地，该cron.WithPanicLogger选项已被删除以适应更通用的JobWrapper类型。</p>
+<p>更新: 选择进行恐慌恢复并配置恐慌记录器:</p>
+<p>cron.New(cron.WithChain(
+cron.Recover(logger),  // or use cron.DefaultLogger
+))
+在添加对https://github.com/go-logr/logr的支持时，cron.WithVerboseLogger已删除，因为它与级别日志记录重复。</p>
+<p>更新: 调用者应使用WithLogger并指定不丢弃Info日志的记录器。为方便起见，提供了一个包装*log.Logger：</p>
+<p>cron.New(
+cron.WithLogger(cron.VerbosePrintfLogger(logger)))</p>
+<h3 id="背景---cron-spec格式">背景 - Cron spec格式</h3>
+<p>**常用的有两种cron规范格式: **</p>
+<p><strong>“标准”cron格式，在Cron维基百科页面上描述，由cron Linux系统实用程序使用。</strong> 格式为5位，没有秒级</p>
+<p><strong>Quartz Scheduler使用的cron格式，通常用于Java软件中的预定作业</strong></p>
+<p><code>CronExpression cexp = new CronExpression(&quot;0/5 * * * * ?&quot;);</code> Quartz格式为6位，和v1版本一样。</p>
+<p>该软件包的原始版本包含一个可选的“秒”字段，这使得它与这两种格式都不兼容。现在，“标准”格式是接受的默认格式，Quartz格式是选择加入的。</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1652 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-07-19 16:51 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/go/go-crontab/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Go Crontab</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/go/go-%E6%8B%92%E7%BB%9D%E4%BA%86try%E6%8F%90%E6%A1%88/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>go社区拒绝了try提案</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

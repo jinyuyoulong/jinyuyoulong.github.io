@@ -6,11 +6,8 @@
     <description>Recent content in Xcode on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 16 May 2019 01:45:17 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/categories/xcode/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 16 May 2019 01:45:17 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/categories/xcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Objective-C 内存管理</title>
       <link>https://blog.v5u.win/objective-c-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
@@ -40,10 +37,10 @@
     
     <item>
       <title>Xcode插件XcodeColors的使用</title>
-      <link>https://blog.v5u.win/posts/xcode-%E6%8F%92%E4%BB%B6xcodecolors%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <link>https://blog.v5u.win/posts/xcode/xcode-%E6%8F%92%E4%BB%B6xcodecolors%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 27 May 2016 12:51:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/xcode-%E6%8F%92%E4%BB%B6xcodecolors%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://blog.v5u.win/posts/xcode/xcode-%E6%8F%92%E4%BB%B6xcodecolors%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>安装： 在 管理器中搜索 下载 Xcodecolors 重启Xcode 选择load boundle 使用： 配置环境变量－&amp;gt; 打开Product -&amp;gt; Edit Scheme 选择Run-&amp;gt;”Argume</description>
     </item>
     

@@ -6,11 +6,8 @@
     <description>Recent content in Nodejs on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 31 Jan 2019 02:57:56 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/categories/nodejs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 31 Jan 2019 02:57:56 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/categories/nodejs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>node-gyp是什么</title>
       <link>https://blog.v5u.win/node-gyp%E6%98%AF%E4%BB%80%E4%B9%88/</link>
@@ -22,10 +19,10 @@
     
     <item>
       <title>gitbook如何生成epub</title>
-      <link>https://blog.v5u.win/posts/system-gitbook-make-epub/</link>
+      <link>https://blog.v5u.win/posts/system/system-gitbook-make-epub/</link>
       <pubDate>Wed, 23 May 2018 15:44:43 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-gitbook-make-epub/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-gitbook-make-epub/</guid>
       <description>全局安装gitbook ：npm install -g gitbook 下载calibre安装应用 将calibre中的执行文件ebook-convert链接到shall环境：$</description>
     </item>
     
@@ -49,10 +46,10 @@
     
     <item>
       <title>mac下nvm 使用记录</title>
-      <link>https://blog.v5u.win/posts/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
+      <link>https://blog.v5u.win/posts/system/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Tue, 02 May 2017 10:29:55 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
       <description>mac下nvm 使用记录 断开连接 brew unlink nvm 安装 brew install nvm 环境变量 add to ~/.bash_profile export NVM_DIR=”$HOME/.nvm” . “$(brew –prefix nvm)</description>
     </item>
     
@@ -67,47 +64,38 @@
     
     <item>
       <title>nvm管理不同的node版本</title>
-      <link>https://blog.v5u.win/posts/node-nvm%E7%AE%A1%E7%90%86%E4%B8%8D%E5%90%8C%E7%9A%84node%E7%89%88%E6%9C%AC/</link>
+      <link>https://blog.v5u.win/posts/nodejs/nodejs-nvm%E7%AE%A1%E7%90%86%E4%B8%8D%E5%90%8C%E7%9A%84node%E7%89%88%E6%9C%AC/</link>
       <pubDate>Fri, 24 Feb 2017 09:59:52 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/node-nvm%E7%AE%A1%E7%90%86%E4%B8%8D%E5%90%8C%E7%9A%84node%E7%89%88%E6%9C%AC/</guid>
+      <guid>https://blog.v5u.win/posts/nodejs/nodejs-nvm%E7%AE%A1%E7%90%86%E4%B8%8D%E5%90%8C%E7%9A%84node%E7%89%88%E6%9C%AC/</guid>
       <description>前任栽树后人乘凉 ：http://www.cnblogs.com/kongxianghai/p/5660101.html 安装多版本node 安装</description>
     </item>
     
     <item>
       <title>Express</title>
-      <link>https://blog.v5u.win/posts/nodejs-express/</link>
+      <link>https://blog.v5u.win/posts/nodejs/nodejs-express/</link>
       <pubDate>Wed, 17 Aug 2016 11:05:24 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/nodejs-express/</guid>
+      <guid>https://blog.v5u.win/posts/nodejs/nodejs-express/</guid>
       <description>*title: Express date: 2016-08-17 11:05:24 tags: express category: Expressid: 5 nodejs + express 学习记录 设置入口文件 app.use(express.static(__dirname + &#39;/public&#39;)); ###use方法 use是express注册中间件的方法，它返回一个函数。 中间件（midd</description>
     </item>
     
     <item>
       <title>mac下MongoDB</title>
-      <link>https://blog.v5u.win/posts/db-mongodb/</link>
+      <link>https://blog.v5u.win/posts/database/db-mongodb/</link>
       <pubDate>Mon, 18 Jul 2016 18:16:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/db-mongodb/</guid>
+      <guid>https://blog.v5u.win/posts/database/db-mongodb/</guid>
       <description>1. 安装 1.1 解压缩mongo文件，将解压缩后的文件移动到自己喜欢的目录下 1.2 由于没有配置环境变量，先测试使用。 终端进入mongodb的安装路径，在</description>
     </item>
     
     <item>
       <title>NodeJS 文件系统</title>
-      <link>https://blog.v5u.win/posts/nodejs-filesystem/</link>
+      <link>https://blog.v5u.win/posts/nodejs/nodejs-filesystem/</link>
       <pubDate>Thu, 30 Jun 2016 11:39:32 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/nodejs-filesystem/</guid>
+      <guid>https://blog.v5u.win/posts/nodejs/nodejs-filesystem/</guid>
       <description>文件加载顺序： st=&amp;amp;gt;start: 开始require isfc=&amp;amp;gt;condition: 是否在文件缓冲区 isnf=&amp;amp;gt;condition: 是否是原生模块 ff=&amp;amp;gt;operation: 查找文件模块 lfm=&amp;amp;gt;operation: 根据扩展名载入模块 cfm=&amp;amp;gt;operation: 缓存文件模块 isnc=&amp;amp;gt;condition: 是否在原生模块缓存区中</description>
-    </item>
-    
-    <item>
-      <title>NodeJS 文件系统</title>
-      <link>https://blog.v5u.win/nodejs-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</link>
-      <pubDate>Thu, 30 Jun 2016 03:39:32 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/nodejs-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</guid>
-      <description>文件加载顺序： require方法接受以下几种参数的传递： http、fs、path等，原生模块。 ./mod或../mod，相对路径的文件模块。</description>
     </item>
     
   </channel>

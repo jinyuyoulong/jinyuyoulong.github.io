@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Go Crontab">
+<meta itemprop="description" content="[TOC] 计划任务 from Godoc 包cron实现了cron规范解析器和作业运行器。 安装 要下载特定的标记版本，请运行: go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中: import “github."><meta itemprop="datePublished" content="2019-07-19T16:51:27+08:00" />
+<meta itemprop="dateModified" content="2019-07-19T16:51:27+08:00" />
+<meta itemprop="wordCount" content="2803">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Go Crontab" />
+<meta property="og:description" content="[TOC] 计划任务 from Godoc 包cron实现了cron规范解析器和作业运行器。 安装 要下载特定的标记版本，请运行: go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中: import “github." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/go/go-crontab/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-07-19T16:51:27+08:00" />
+<meta property="article:modified_time" content="2019-07-19T16:51:27+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go Crontab"/>
+<meta name="twitter:description" content="[TOC] 计划任务 from Godoc 包cron实现了cron规范解析器和作业运行器。 安装 要下载特定的标记版本，请运行: go get github.com/robfig/cron/v3@v3.0.0 将其导入您的程序中: import “github."/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Go Crontab</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Jul 19, 2019</span></div>
+				<h1>Go Crontab</h1>
+			</header>
+			<div class="content">
+				<p>[TOC]</p>
+<h1 id="计划任务">计划任务</h1>
+<p>from Godoc</p>
+<p>包cron实现了cron规范解析器和作业运行器。</p>
+<p>安装
+要下载特定的标记版本，请运行:</p>
+<p><code>go get github.com/robfig/cron/v3@v3.0.0</code>
+将其导入您的程序中:</p>
+<p><code>import “github.com/robfig/cron/v3”</code>
+由于Go Modules的使用，它需要Go 1.11或更高版本。</p>
+<p>用法
+呼叫者可以在给定的时间表上注册要调用的Func。Cron将在他们自己的goroutines中运行它们。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">New</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">AddFunc</span>(<span style="color:#e6db74">&#34;30 * * * *&#34;</span>, <span style="color:#66d9ef">func</span>() { <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Every hour on the half hour&#34;</span>) })
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">AddFunc</span>(<span style="color:#e6db74">&#34;30 3-6,20-23 * * *&#34;</span>, <span style="color:#66d9ef">func</span>() { <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;.. in the range 3-6am, 8-11pm&#34;</span>) })
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">AddFunc</span>(<span style="color:#e6db74">&#34;CRON_TZ=Asia/Tokyo 30 04 * * * *&#34;</span>, <span style="color:#66d9ef">func</span>() { <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Runs at 04:30 Tokyo time every day&#34;</span>) })
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">AddFunc</span>(<span style="color:#e6db74">&#34;@hourly&#34;</span>,      <span style="color:#66d9ef">func</span>() { <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Every hour, starting an hour from now&#34;</span>) })
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">AddFunc</span>(<span style="color:#e6db74">&#34;@every 1h30m&#34;</span>, <span style="color:#66d9ef">func</span>() { <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Every hour thirty, starting an hour thirty from now&#34;</span>) })
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Start</span>()
+</span></span><span style="display:flex;"><span>..
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Funcs are invoked in their own goroutine, asynchronously.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Funcs may also be added to a running Cron
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">AddFunc</span>(<span style="color:#e6db74">&#34;@daily&#34;</span>, <span style="color:#66d9ef">func</span>() { <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Every day&#34;</span>) })
+</span></span><span style="display:flex;"><span>..
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Inspect the cron job entries&#39; next and previous run times.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Entries</span>())
+</span></span><span style="display:flex;"><span>..
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Stop</span>()  <span style="color:#75715e">// Stop the scheduler (does not stop any jobs already running).
+</span></span></span></code></pre></div><h3 id="cron表达格式">CRON表达格式</h3>
+<p>cron表达式表示一组时间，使用5个以空格分隔的字段。</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>强制性？</th>
+<th>允许值</th>
+<th>允许特殊字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分钟</td>
+<td>是的</td>
+<td>0-59</td>
+<td>* /， -</td>
+</tr>
+<tr>
+<td>小时</td>
+<td>是的</td>
+<td>0-23</td>
+<td>* /， -</td>
+</tr>
+<tr>
+<td>一个月的某一天</td>
+<td>是的</td>
+<td>1-31</td>
+<td>* /， - ？</td>
+</tr>
+<tr>
+<td>月</td>
+<td>是的</td>
+<td>1-12或JAN-DEC</td>
+<td>* /， -</td>
+</tr>
+<tr>
+<td>星期几</td>
+<td>是的</td>
+<td>0-6或SUN-SAT</td>
+<td>* /， - ？</td>
+</tr>
+<tr>
+<td>月份和星期几字段值不区分大小写。“SUN”，“Sun”和“sun”同样被接受。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>该格式的具体解释基于Cron维基百科页面：https://en.wikipedia.org/wiki/Cron</p>
+<h3 id="替代格式">替代格式</h3>
+<p><strong>备用Cron表达式格式支持其他字段，如秒。您可以通过创建自定义Parser来实现，如下所示。</strong></p>
+<p>cron.New（
+cron.WithParser（
+cron.NewParser（
+cron.SecondOptional | cron.Minute | cron.Hour | cron.Dom | cron.Month | cron.Dow | cron.Descriptor）））
+**由于添加Seconds是对标准cron规范的最常见修改，cron提供了一个内置函数来执行此操作，这相当于您之前看到的自定义解析器，除了它的秒字段是必需的: **</p>
+<p>cron.New（cron.WithSeconds（））
+这模仿Quartz，最流行的替代Cron计划格式：http://www.quartz-scheduler.org/documentation/2.4.0-SNAPSHOT/tutorials/tutorial-lesson-06.html</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> <span style="color:#75715e"># ┌───────────── min (0 - 59)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># │ ┌────────────── hour (0 - 23)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># │ │ ┌─────────────── day of month (1 - 31)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># │ │ │ ┌──────────────── month (1 - 12)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># │ │ │ │ ┌───────────────── day of week (0 - 6) (0 to 6 are Sunday to</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># │ │ │ │ │                  Saturday, or use names; 7 is also Sunday)</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># │ │ │ │ │</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># │ │ │ │ │</span>
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># * * * * *  command to execute</span>
+</span></span></code></pre></div><h2 id="cron特定字符说明">cron特定字符说明</h2>
+<p>特殊字符
+星号（*）</p>
+<p>星号表示cron表达式将匹配该字段的所有值; 例如，在第5个字段（月）中使用星号表示每个月。</p>
+<p>斜线（/）</p>
+<p>斜杠用于描述范围的增量。例如，第1场（分钟）中的3-59 / 15表示小时的第3分钟，之后每15分钟。形式“* \ / &hellip;”等同于“first-last / &hellip;”形式，即在该字段的最大可能范围内的增量。形式“N / &hellip;”被接受为“N-MAX / &hellip;”，即从N开始，使用增量直到该特定范围的结束。它没有环绕。</p>
+<p>逗号（，）</p>
+<p>逗号用于分隔列表的项目。例如，在第5个字段（星期几）中使用“MON，WED，FRI”将表示星期一，星期三和星期五。</p>
+<p>连字符（ - ）</p>
+<p>连字符用于定义范围。例如，9-17表示每天上午9点到下午5点之间的每小时。</p>
+<p>问号（？）</p>
+<p>可以使用问号而不是&rsquo;*&lsquo;来留下日期或星期几的空白。</p>
+<h4 id="预定义的时间表">预定义的时间表</h4>
+<p>您可以使用几个预定义的计划之一来代替cron表达式。</p>
+<p>进入| 说明| 相当于
+&mdash;&ndash; | &mdash;&mdash;&mdash;&ndash; &mdash;&mdash;&mdash;&mdash;-
+@yearly（或@annually）| 每年一次，午夜，1月1日| 0 0 1 1 *
+@monthly | 每月运行一次，午夜，月初| 0 0 1 * *
+@weekly | 每周一次，午睡/周日午夜| 0 0 * * 0
+@daily（或@midnight）| 每天运行一次，午夜| 0 0 * * *
+@hourly | 每小时运行一次，小时开始| 0 * * * *</p>
+<h4 id="间隔">间隔</h4>
+<p>您还可以安排作业以固定的时间间隔执行，从添加或运行cron开始。这可以通过格式化cron规范来支持，如下所示:</p>
+<p>@every <!-- raw HTML omitted -->
+其中“duration”是time.ParseDuration（http://golang.org/pkg/time/#ParseDuration）接受的字符串。</p>
+<p>例如，“@ every 1h30m10s”表示在1小时30分10秒之后激活的计划，然后是之后的每个间隔。</p>
+<p>注意: 间隔不会考虑作业运行时。例如，如果作业需要3分钟才能运行，并且计划每5分钟运行一次，则每次运行之间只有2分钟的空闲时间。</p>
+<h3 id="cron举例说明">cron举例说明</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">每隔1分钟执行一次</span>:  <span style="color:#f92672">*/</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#960050;background-color:#1e0010">?</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">每天23点执行一次</span>:  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">23</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#960050;background-color:#1e0010">?</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">每天凌晨1点执行一次</span>:  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#960050;background-color:#1e0010">?</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">每月1号凌晨1点执行一次</span>:  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> <span style="color:#960050;background-color:#1e0010">?</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">在26分</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#ae81ff">29</span><span style="color:#a6e22e">分</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#ae81ff">33</span><span style="color:#a6e22e">分执行一次</span>:  <span style="color:#ae81ff">26</span>,<span style="color:#ae81ff">29</span>,<span style="color:#ae81ff">33</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#960050;background-color:#1e0010">?</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">每天的0点</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#ae81ff">13</span><span style="color:#a6e22e">点</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#ae81ff">18</span><span style="color:#a6e22e">点</span><span style="color:#960050;background-color:#1e0010">、</span><span style="color:#ae81ff">21</span><span style="color:#a6e22e">点都执行一次</span>:  <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">13</span>,<span style="color:#ae81ff">18</span>,<span style="color:#ae81ff">21</span> <span style="color:#f92672">*</span> <span style="color:#f92672">*</span> <span style="color:#960050;background-color:#1e0010">?</span>
+</span></span></code></pre></div><h4 id="时区">时区</h4>
+<p>默认情况下，所有解释和计划都在计算机的本地时区（time.Local）中完成。您可以在构造中指定不同的时区:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">New</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">WithLocation</span>(<span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">UTC</span>))
+</span></span></code></pre></div><p>单个cron调度还可以通过在cron规范的开头提供<code>CRON_TZ=Asia/Tokyo</code>.覆盖它们将被解释的时区。</p>
+<p>例如:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Runs</span> <span style="color:#a6e22e">at</span> <span style="color:#ae81ff">6</span><span style="color:#a6e22e">am</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Local</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">New</span>().<span style="color:#a6e22e">AddFunc</span>(<span style="color:#e6db74">&#34;0 6 * * ?&#34;</span>, <span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Runs</span> <span style="color:#a6e22e">at</span> <span style="color:#ae81ff">6</span><span style="color:#a6e22e">am</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">America</span><span style="color:#f92672">/</span><span style="color:#a6e22e">New_York</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">nyc</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">LoadLocation</span>(<span style="color:#e6db74">&#34;America/New_York&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">WithLocation</span>(<span style="color:#a6e22e">nyc</span>))
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">AddFunc</span>(<span style="color:#e6db74">&#34;0 6 * * ?&#34;</span>, <span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Runs</span> <span style="color:#a6e22e">at</span> <span style="color:#ae81ff">6</span><span style="color:#a6e22e">am</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">Asia</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Tokyo</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">New</span>().<span style="color:#a6e22e">AddFunc</span>(<span style="color:#e6db74">&#34;CRON_TZ=Asia/Tokyo 0 6 * * ?&#34;</span>, <span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Runs</span> <span style="color:#a6e22e">at</span> <span style="color:#ae81ff">6</span><span style="color:#a6e22e">am</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">Asia</span><span style="color:#f92672">/</span><span style="color:#a6e22e">Tokyo</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">WithLocation</span>(<span style="color:#a6e22e">nyc</span>))
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">SetLocation</span>(<span style="color:#e6db74">&#34;America/New_York&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">AddFunc</span>(<span style="color:#e6db74">&#34;CRON_TZ=Asia/Tokyo 0 6 * * ?&#34;</span>, <span style="color:#f92672">...</span>)
+</span></span></code></pre></div><p>传统兼容性还支持前缀“TZ =(TIME ZONE)”。</p>
+<p>请注意，在夏令时跨越式过渡期间安排的作业将无法运行！</p>
+<p>作业包装机/链条</p>
+<p>Cron运行器可以配置一系列作业包装器，以便为所有提交的作业添加横切功能。例如，它们可用于实现以下效果:</p>
+<ul>
+<li>从作业中恢复任何恐慌（默认激活）</li>
+<li>如果先前的运行尚未完成，则延迟作业的执行</li>
+<li>如果之前的运行尚未完成，则跳过作业的执行</li>
+<li>记录每个作业的调用
+使用<code>cron.WithChain</code>选项为添加到cron的所有作业安装包装器:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">WithChain</span>(
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">SkipIfStillRunning</span>(<span style="color:#a6e22e">logger</span>),
+</span></span><span style="display:flex;"><span>))
+</span></span></code></pre></div><p>通过显式包装它们来为各个作业安装包装器:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">job</span> = <span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">NewChain</span>(
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">SkipIfStillRunning</span>(<span style="color:#a6e22e">logger</span>),
+</span></span><span style="display:flex;"><span>).<span style="color:#a6e22e">Then</span>(<span style="color:#a6e22e">job</span>)
+</span></span></code></pre></div><p>线程安全
+由于Cron服务与调用代码同时运行，因此必须采取一些措施以确保正确同步。</p>
+<p>只要调用者确保调用在它们之间进行排序之前有明确的发生，所有cron方法都被设计为正确同步。</p>
+<p>记录
+Cron定义了一个Logger接口，它是github.com/go-logr/logr中定义的接口的一个子集。它有两个日志记录级别（信息和错误），参数是键/值对。这使得cron日志记录可以插入结构化日志记录系统。提供了一个适配器[Verbose] PrintfLogger来包装标准库* log.Logger。</p>
+<p>为了进一步了解Cron操作，可以激活详细日志记录，这将记录作业运行，调度决策以及添加或删除的作业。使用一次性记录器激活它，如下所示:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">New</span>(
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">WithLogger</span>(
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">cron</span>.<span style="color:#a6e22e">VerbosePrintfLogger</span>(<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Stdout</span>, <span style="color:#e6db74">&#34;cron: &#34;</span>, <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">LstdFlags</span>))))
+</span></span></code></pre></div><p>履行
+Cron条目存储在一个数组中，按其下一个激活时间排序。Cron睡着，直到下一份工作开始运行。</p>
+<p>醒来后:</p>
+<ul>
+<li>它运行在该秒钟上处于活动状态的每个条目</li>
+<li>它计算运行的作业的下一个运行时间</li>
+<li>它按下一个激活时间重新排序条目数组。</li>
+<li>它会一直睡到最快的工作。</li>
+</ul>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2803 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-07-19 16:51 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/system/system-flutter%E5%AE%89%E8%A3%85/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>flutter安装</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/go/go-crontab-v3/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Go Crontab v3</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

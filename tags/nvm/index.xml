@@ -6,26 +6,23 @@
     <description>Recent content in nvm on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 02 May 2017 10:29:55 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/nvm/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 02 May 2017 10:29:55 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/nvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mac下nvm 使用记录</title>
-      <link>https://blog.v5u.win/posts/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
+      <link>https://blog.v5u.win/posts/system/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Tue, 02 May 2017 10:29:55 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
       <description>mac下nvm 使用记录 断开连接 brew unlink nvm 安装 brew install nvm 环境变量 add to ~/.bash_profile export NVM_DIR=”$HOME/.nvm” . “$(brew –prefix nvm)</description>
     </item>
     
     <item>
       <title>nvm管理不同的node版本</title>
-      <link>https://blog.v5u.win/posts/node-nvm%E7%AE%A1%E7%90%86%E4%B8%8D%E5%90%8C%E7%9A%84node%E7%89%88%E6%9C%AC/</link>
+      <link>https://blog.v5u.win/posts/nodejs/nodejs-nvm%E7%AE%A1%E7%90%86%E4%B8%8D%E5%90%8C%E7%9A%84node%E7%89%88%E6%9C%AC/</link>
       <pubDate>Fri, 24 Feb 2017 09:59:52 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/node-nvm%E7%AE%A1%E7%90%86%E4%B8%8D%E5%90%8C%E7%9A%84node%E7%89%88%E6%9C%AC/</guid>
+      <guid>https://blog.v5u.win/posts/nodejs/nodejs-nvm%E7%AE%A1%E7%90%86%E4%B8%8D%E5%90%8C%E7%9A%84node%E7%89%88%E6%9C%AC/</guid>
       <description>前任栽树后人乘凉 ：http://www.cnblogs.com/kongxianghai/p/5660101.html 安装多版本node 安装</description>
     </item>
     

@@ -6,16 +6,14 @@
     <description>Recent content in jekyll on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    
-	<atom:link href="https://blog.v5u.win/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 03 Sep 2016 15:47:05 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>jekyll using standards 使用规范</title>
-      <link>https://blog.v5u.win/posts/blog-jekyll/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://blog.v5u.win/posts/blog/blog-jekyll/</link>
+      <pubDate>Sat, 03 Sep 2016 15:47:05 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/blog-jekyll/</guid>
+      <guid>https://blog.v5u.win/posts/blog/blog-jekyll/</guid>
       <description>jekyll using standards 使用规范 file命名格式：文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必</description>
     </item>
     

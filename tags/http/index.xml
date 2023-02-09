@@ -6,26 +6,23 @@
     <description>Recent content in HTTP on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 15 Oct 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/http/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 15 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTTP 响应码</title>
-      <link>https://blog.v5u.win/posts/system-http/</link>
+      <link>https://blog.v5u.win/posts/system/system-http/</link>
       <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-http/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-http/</guid>
       <description>作者：zhaoyanan HTTP 400 – 请求无效 HTTP 401.1 – 未授权：登录失败 HTTP 401.2 – 未授权：服务器配置问题导致登录失败 HTTP 401.3 – ACL 禁止访问资源 HTTP 401.4 – 未授权：授权被</description>
     </item>
     
     <item>
       <title>xcode设置允许访问http请求</title>
-      <link>https://blog.v5u.win/posts/xcode-http/</link>
+      <link>https://blog.v5u.win/posts/xcode/xcode-http/</link>
       <pubDate>Sun, 03 Apr 2016 14:30:54 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/xcode-http/</guid>
+      <guid>https://blog.v5u.win/posts/xcode/xcode-http/</guid>
       <description>项目的info.plist文件添加一下值： App Transport Security Settings Allow Arbitrary Loads 设为YES</description>
     </item>
     

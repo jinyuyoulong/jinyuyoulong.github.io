@@ -6,17 +6,14 @@
     <description>Recent content in appledoc on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 04 Apr 2018 07:00:34 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/appledoc/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 04 Apr 2018 07:00:34 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/appledoc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>appledoc使用说明</title>
-      <link>https://blog.v5u.win/posts/ios-appledoc%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link>
+      <link>https://blog.v5u.win/posts/ios/ios-appledoc%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link>
       <pubDate>Wed, 04 Apr 2018 07:00:34 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/ios-appledoc%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
+      <guid>https://blog.v5u.win/posts/ios/ios-appledoc%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
       <description>appledoc使用说明 安装命令行： git clone git://github.com/tomaz/appledoc.git cd ./appledoc sudo sh install-appledoc.sh appledoc —version //检查successed 使用 生成HTML 当需要html文档时，可以加</description>
     </item>
     

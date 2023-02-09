@@ -6,26 +6,23 @@
     <description>Recent content in WordPress on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 10 Apr 2018 05:33:11 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 10 Apr 2018 05:33:11 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WordPress4.4之后原生支持REST API</title>
-      <link>https://blog.v5u.win/posts/blog-wordpress4-4-suported-rest-api/</link>
+      <link>https://blog.v5u.win/posts/blog/blog-wordpress4-4-suported-rest-api/</link>
       <pubDate>Tue, 10 Apr 2018 05:33:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/blog-wordpress4-4-suported-rest-api/</guid>
+      <guid>https://blog.v5u.win/posts/blog/blog-wordpress4-4-suported-rest-api/</guid>
       <description>WordPress4.4之后REST API 格式:www.网址/wp-json/wp/v2,例：www.v5u.win/wp-json/wp/v2</description>
     </item>
     
     <item>
       <title>WordPress4 如何添加友情链接</title>
-      <link>https://blog.v5u.win/posts/blog-wordpress4-add-links/</link>
+      <link>https://blog.v5u.win/posts/blog/blog-wordpress4-add-links/</link>
       <pubDate>Tue, 10 Apr 2018 03:11:38 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/blog-wordpress4-add-links/</guid>
+      <guid>https://blog.v5u.win/posts/blog/blog-wordpress4-add-links/</guid>
       <description>链接—&amp;gt;创建链接分类目录 —&amp;gt;添加链接 外观—&amp;gt;小工具—&amp;gt;链接—&amp;gt;选择链接分类目录 以前有用友链插件或者自定义菜单目</description>
     </item>
     

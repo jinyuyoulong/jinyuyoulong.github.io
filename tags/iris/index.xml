@@ -6,11 +6,8 @@
     <description>Recent content in iris on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 13 Mar 2019 07:52:15 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/iris/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 13 Mar 2019 07:52:15 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/iris/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iris-mvc架构的目录拆解</title>
       <link>https://blog.v5u.win/iris-mvc%E6%9E%B6%E6%9E%84%E7%9A%84%E7%9B%AE%E5%BD%95%E6%8B%86%E8%A7%A3/</link>
@@ -22,10 +19,10 @@
     
     <item>
       <title>Go-iris-template</title>
-      <link>https://blog.v5u.win/posts/go-iris-template/</link>
+      <link>https://blog.v5u.win/posts/go/go-iris-template/</link>
       <pubDate>Fri, 08 Mar 2019 17:25:10 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/go-iris-template/</guid>
+      <guid>https://blog.v5u.win/posts/go/go-iris-template/</guid>
       <description>Iris 支持五个开箱即用的模板引擎，所有这五个模板引擎都具有通用API的共同特征，如布局，模板功能，特定于派对的布局，部分渲染等。 标准的html,</description>
     </item>
     

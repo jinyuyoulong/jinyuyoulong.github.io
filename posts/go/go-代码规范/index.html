@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Go 代码规范">
+<meta itemprop="description" content="Golang代码规范 参考 https://golang.org/doc/effective_go.html [本文参考blog][1] [TOC] 项目目录结构规范 PROJECT_NAME ├── README.md 介绍软件及文档入口 ├── bin 编译好的二进制文件,执行./bui"><meta itemprop="datePublished" content="2019-04-29T11:37:14+08:00" />
+<meta itemprop="dateModified" content="2019-04-29T11:37:14+08:00" />
+<meta itemprop="wordCount" content="2261">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Go 代码规范" />
+<meta property="og:description" content="Golang代码规范 参考 https://golang.org/doc/effective_go.html [本文参考blog][1] [TOC] 项目目录结构规范 PROJECT_NAME ├── README.md 介绍软件及文档入口 ├── bin 编译好的二进制文件,执行./bui" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/go/go-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-04-29T11:37:14+08:00" />
+<meta property="article:modified_time" content="2019-04-29T11:37:14+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Go 代码规范"/>
+<meta name="twitter:description" content="Golang代码规范 参考 https://golang.org/doc/effective_go.html [本文参考blog][1] [TOC] 项目目录结构规范 PROJECT_NAME ├── README.md 介绍软件及文档入口 ├── bin 编译好的二进制文件,执行./bui"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Go 代码规范</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 29, 2019</span></div>
+				<h1>Go 代码规范</h1>
+			</header>
+			<div class="content">
+				<h2 id="golang代码规范">Golang代码规范</h2>
+<p>参考 <a href="https://golang.org/doc/effective_go.html">https://golang.org/doc/effective_go.html</a></p>
+<p>[本文参考blog][1]</p>
+<p>[TOC]</p>
+<h3 id="项目目录结构规范">项目目录结构规范</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>PROJECT_NAME
+</span></span><span style="display:flex;"><span>├── README.md 介绍软件及文档入口
+</span></span><span style="display:flex;"><span>├── bin 编译好的二进制文件,执行./build.sh自动生成，该目录也用于程序打包
+</span></span><span style="display:flex;"><span>├── build.sh 自动编译的脚本
+</span></span><span style="display:flex;"><span>├── doc 该项目的文档
+</span></span><span style="display:flex;"><span>├── pack 打包后的程序放在此处
+</span></span><span style="display:flex;"><span>├── pack.sh 自动打包的脚本，生成类似xxxx.20170713_14:45:35.tar.gz的文件，放在pack文件下
+</span></span><span style="display:flex;"><span>├── public 公共文件/静态文件
+</span></span><span style="display:flex;"><span>└── src 该项目的源代码
+</span></span><span style="display:flex;"><span>    ├── main 项目主函数
+</span></span><span style="display:flex;"><span>    ├── test 测试
+</span></span><span style="display:flex;"><span>    ├── app 项目代码
+</span></span><span style="display:flex;"><span>    ├── research 在实现该项目中探究的一些程序
+</span></span><span style="display:flex;"><span>    └── vendor 存放go的库
+</span></span><span style="display:flex;"><span>        ├── github.com/xxx 第三方库
+</span></span><span style="display:flex;"><span>        └── xxx.com/abc 公司内部的公共库
+</span></span><span style="display:flex;"><span>&lt;/code&gt;&lt;/pre&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>项目的目录结构尽量做到简明、层次清楚。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>sh
+</span></span><span style="display:flex;"><span>./app
+</span></span><span style="display:flex;"><span>├── bootstrap	//入口引导文件
+</span></span><span style="display:flex;"><span>├── cache
+</span></span><span style="display:flex;"><span>├── config  //项目配置 项目配置文件简单，配置项少。大部分配置公司要用配置中心统一配置。
+</span></span><span style="display:flex;"><span>├── controller  //request请求处理中心 ——&amp;gt; controller ——&amp;gt; Response / view
+</span></span><span style="display:flex;"><span>├── library //项目工具库
+</span></span><span style="display:flex;"><span>├── log         //日志
+</span></span><span style="display:flex;"><span>├── middleware  //中间件
+</span></span><span style="display:flex;"><span>├── model       //data model.xorm -——&amp;gt; 数据库表映射模型
+</span></span><span style="display:flex;"><span>├── plugin  //插件--自己开发/自己找的 --delete
+</span></span><span style="display:flex;"><span>├── route       //路由管理
+</span></span><span style="display:flex;"><span>├── service //前端数据获取操作 service
+</span></span><span style="display:flex;"><span>&lt;/code&gt;&lt;/pre&gt;
+</span></span><span style="display:flex;"><span>* * *
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#### 文件名命名规范</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>用小写，尽量见名思义，看见文件名就可以知道这个文件下的大概内容，对于源代码里的文件，文件名要很好的代表了一个模块实现的功能。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### 命名规范</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#### 包名</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>包名用小写,使用短命名,尽量和标准库不要冲突
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#### 接口名</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>单个函数的接口名以”er”作为后缀，如Reader,Writer
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>接口的实现则去掉“er”
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>go
+</span></span><span style="display:flex;"><span>type Reader interface <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>&lt;/code&gt;&lt;/pre&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>两个函数的接口名综合两个函数名
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>go
+</span></span><span style="display:flex;"><span>type WriteFlusher interface <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Write<span style="color:#f92672">([]</span>byte<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>int, error<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    Flush<span style="color:#f92672">()</span> error
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>&lt;/code&gt;&lt;/pre&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>三个以上函数的接口名，类似于结构体名
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>go
+</span></span><span style="display:flex;"><span>type Car interface <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    Start<span style="color:#f92672">([]</span>byte<span style="color:#f92672">)</span> 
+</span></span><span style="display:flex;"><span>    Stop<span style="color:#f92672">()</span> error
+</span></span><span style="display:flex;"><span>    Recover<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>&lt;/code&gt;&lt;/pre&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#### 变量</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>全局变量：采用驼峰命名法，仅限在包内的全局变量，包外引用需要写接口，提供调用 局部变量：驼峰式，小写字母开头
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#### 常量</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>常量：大写，采用下划线
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### import 规范</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>import在多行的情况下，goimports会自动帮你格式化，在一个文件里面引入了一个package，建议采用如下格式：
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>go
+</span></span><span style="display:flex;"><span>import <span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>&lt;/code&gt;&lt;/pre&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>如果你的包引入了三种类型的包，标准库包，程序内部包，第三方包，建议采用如下方式进行组织你的包：
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>go
+</span></span><span style="display:flex;"><span>import <span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;encoding/json&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;strings&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;myproject/model&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;myproject/controller&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;git.obc.im/obc/utils&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;git.obc.im/dep/beego&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;git.obc.im/dep/mysql&#34;</span>
+</span></span><span style="display:flex;"><span>    // 空白引入需要添加注释
+</span></span><span style="display:flex;"><span>		// 空白导入应该只在主包或测试包中，或者有一个注释证明它是正确的
+</span></span><span style="display:flex;"><span>		_ <span style="color:#e6db74">&#34;github.com/jinzhu/gorm/dialects/mysql&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">)</span>  
+</span></span></code></pre></div><p>在项目中不要使用相对路径引入包：</p>
+<p>// 这是不好的导入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#960050;background-color:#1e0010">“</span>..<span style="color:#f92672">/</span><span style="color:#a6e22e">net</span><span style="color:#960050;background-color:#1e0010">”</span>
+</span></span></code></pre></div><p>// 这是正确的做法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#960050;background-color:#1e0010">“</span><span style="color:#a6e22e">xxxx</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">proj</span><span style="color:#f92672">/</span><span style="color:#a6e22e">net</span><span style="color:#960050;background-color:#1e0010">”</span>
+</span></span></code></pre></div><h4 id="函数名">函数名</h4>
+<p>函数名采用驼峰命名法，尽量不要使用下划线</p>
+<h3 id="错误处理">错误处理</h3>
+<p>error作为函数的值返回,必须尽快对error进行处理</p>
+<p>采用独立的错误流进行处理</p>
+<p>不要采用这种方式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// error handling
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// normal code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">而要采用下面的方式</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```go
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    if err != nil {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        // error handling
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        return // or continue, etc.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    // normal code
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">如果返回值需要初始化，则采用下面的方式
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">f</span>()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// error handling
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// use x
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">####</span> <span style="color:#a6e22e">Panic</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">在逻辑处理中禁用panic</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">在main包中只有当实在不可运行的情况采用panic</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">例如文件无法打开</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">数据库无法连接导致程序无法</span> <span style="color:#a6e22e">正常运行</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">但是对于其他的package对外的接口不能有panic</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">只能在包内采用</span><span style="color:#960050;background-color:#1e0010">。</span> <span style="color:#a6e22e">建议在main包中使用log</span>.<span style="color:#a6e22e">Fatal来记录错误</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">这样就可以由log来结束程序</span><span style="color:#960050;background-color:#1e0010">。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">####</span> <span style="color:#a6e22e">Recover</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">recover用于捕获runtime的异常</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">禁止滥用recover</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">在开发测试阶段尽量不要用recover</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">recover一般放在你认为会有不可预期的异常的地方</span><span style="color:#960050;background-color:#1e0010">。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```go
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">func server(workChan &lt;-chan *Work) {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    for work := range workChan {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        go safelyDo(work)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">func safelyDo(work *Work) {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    defer func() {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        if err := recover(); err != nil {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            log.Println(&#34;work failed:&#34;, err)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }()
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    // do 函数可能会有不可预期的异常
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    do(work)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#### Defer
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">defer在函数return之前执行，对于一些资源的回收用defer是好的，但也禁止滥用defer，defer是需要消耗性能的,所以频繁调用的函数尽量不要使用defer。
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Contents returns the file&#39;s contents as a string.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Contents</span>(<span style="color:#a6e22e">filename</span> <span style="color:#66d9ef">string</span>) (<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#a6e22e">filename</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Close</span>()  <span style="color:#75715e">// f.Close will run when we&#39;re finished.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> []<span style="color:#66d9ef">byte</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">buf</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">byte</span>, <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Read</span>(<span style="color:#a6e22e">buf</span>[<span style="color:#ae81ff">0</span>:])
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">result</span> = append(<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">buf</span>[<span style="color:#ae81ff">0</span>:<span style="color:#a6e22e">n</span>]<span style="color:#f92672">...</span>) <span style="color:#75715e">// append is discussed later.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">EOF</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;</span>, <span style="color:#a6e22e">err</span>  <span style="color:#75715e">// f will be closed if we return here.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> string(<span style="color:#a6e22e">result</span>), <span style="color:#66d9ef">nil</span> <span style="color:#75715e">// f will be closed if we return here.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">###</span> <span style="color:#a6e22e">控制结构</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">####</span> <span style="color:#66d9ef">if</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">if接受初始化语句</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">约定如下方式建立局部变量</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```go
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">if err := file.Chmod(0664); err != nil {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    return err
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">#### for
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">采用短声明建立局部变量
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">####</span> <span style="color:#66d9ef">range</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">如果只需要第一项</span><span style="color:#960050;background-color:#1e0010">（</span><span style="color:#a6e22e">key</span><span style="color:#960050;background-color:#1e0010">），</span><span style="color:#a6e22e">就丢弃第二个</span><span style="color:#960050;background-color:#1e0010">：</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```go
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">for key := range m {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    if key.expired() {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        delete(m, key)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">如果只需要第二项，则把第一项置为下划线
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">value</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">array</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">value</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">####</span> <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">尽早return</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">一旦有错误发生</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">马上返回</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```go
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">f, err := os.Open(name)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">if err != nil {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    return err
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">d, err := f.Stat()
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">if err != nil {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    f.Close()
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    return err
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">codeUsing(f, d)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">### 方法的接收器
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">名称 一般采用strcut的第一个字母且为小写，而不是this，me或者self
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">struct</span>{} 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">T</span>)<span style="color:#a6e22e">Get</span>(){}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">如果接收者是map</span>,<span style="color:#a6e22e">slice或者chan</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">不要用指针传递</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```go
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//Map
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">package main
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">import (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;fmt&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">type mp map[string]string
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">func (m mp) Set(k, v string) {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    m[k] = v
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">func main() {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    m := make(mp)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    m.Set(&#34;k&#34;, &#34;v&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    fmt.Println(m)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//Channel
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">package main
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">import (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;fmt&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">type ch chan interface{}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">func (c ch) Push(i interface{}) {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    c &amp;lt;- i
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">func (c ch) Pop() interface{} {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    return &amp;lt;-c
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">func main() {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    c := make(ch, 1)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    c.Push(&#34;i&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    fmt.Println(c.Pop())
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">如果需要对slice进行修改，通过返回值的方式重新赋值
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Slice
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">slice</span> []<span style="color:#66d9ef">byte</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> make(<span style="color:#a6e22e">slice</span>, <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">s</span> = <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">addOne</span>(<span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">slice</span>) <span style="color:#a6e22e">addOne</span>(<span style="color:#a6e22e">b</span> <span style="color:#66d9ef">byte</span>) []<span style="color:#66d9ef">byte</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> append(<span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">b</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">如果接收者是含有sync</span>.<span style="color:#a6e22e">Mutex或者类似同步字段的结构体</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">必须使用指针传递避免复制</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```go
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">package main
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">import (
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;sync&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">type T struct {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    m sync.Mutex
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">func (t *T) lock() {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    t.m.Lock()
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Wrong !!!
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">func (t T) lock() {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    t.m.Lock()
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">*/
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">func main() {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    t := new(T)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    t.lock()
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/code&gt;&lt;/pre&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">如果接收者是大的结构体或者数组，使用指针传递会更有效率。
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span><span style="color:#66d9ef">go</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">data</span> [<span style="color:#ae81ff">1024</span>]<span style="color:#66d9ef">byte</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">T</span>) <span style="color:#a6e22e">Get</span>() <span style="color:#66d9ef">byte</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">data</span>[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">T</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Get</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">###</span> <span style="color:#a6e22e">注释</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">1.</span> <span style="color:#a6e22e">所有的</span> <span style="color:#a6e22e">public</span> <span style="color:#a6e22e">方法和变量都要添加注释</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">2.</span> <span style="color:#a6e22e">注释格式为</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">name</span> <span style="color:#a6e22e">describeContent</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#a6e22e">pre</span>&gt;&lt;<span style="color:#a6e22e">code</span> <span style="color:#a6e22e">class</span>=<span style="color:#e6db74">&#34;language-go line-numbers&#34;</span>&gt;    <span style="color:#75715e">// TubeName1 channel 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">TubeName1</span> = <span style="color:#e6db74">&#34;通道一&#34;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">code</span>&gt;&lt;<span style="color:#f92672">/</span><span style="color:#a6e22e">pre</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#ae81ff">1</span>]: <span style="color:#a6e22e">https</span>:<span style="color:#75715e">//sheepbao.github.io/post/golang_code_specification/?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io
+</span></span></span></code></pre></div>
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2261 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-04-29 11:37 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/docker/docker-dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Dockerfile最佳实践</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/system/system-%E6%9C%80%E5%B0%8F%E5%A0%86/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>System 最小堆</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

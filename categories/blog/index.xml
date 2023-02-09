@@ -6,72 +6,69 @@
     <description>Recent content in blog on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 07 May 2019 17:58:56 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/categories/blog/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 07 May 2019 17:58:56 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog Wordpress Http Https</title>
-      <link>https://blog.v5u.win/posts/blog-wordpress-http-https/</link>
+      <link>https://blog.v5u.win/posts/blog/blog-wordpress-http-https/</link>
       <pubDate>Tue, 07 May 2019 17:58:56 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/blog-wordpress-http-https/</guid>
+      <guid>https://blog.v5u.win/posts/blog/blog-wordpress-http-https/</guid>
       <description>wordpress http 升级HTTPS lnmp 添加ssl：lnmp ssl add wordpress 后台修改：主域名改为https:// ,固定链接改为id格式 (postname的URL格式无法找</description>
     </item>
     
     <item>
       <title>Hugo 开箱体验</title>
-      <link>https://blog.v5u.win/posts/blog-hugo/</link>
+      <link>https://blog.v5u.win/posts/blog/blog-hugo/</link>
       <pubDate>Tue, 16 Apr 2019 14:09:31 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/blog-hugo/</guid>
+      <guid>https://blog.v5u.win/posts/blog/blog-hugo/</guid>
       <description>Hugo是Go写的静态网站生成器，生成速度快，性能开销小，正好也在学习Golang。我决定从 Hexo 切换到 Hugo。 以下是试用总结，基本可以实现从</description>
     </item>
     
     <item>
       <title>WordPress4.4之后原生支持REST API</title>
-      <link>https://blog.v5u.win/posts/blog-wordpress4-4-suported-rest-api/</link>
+      <link>https://blog.v5u.win/posts/blog/blog-wordpress4-4-suported-rest-api/</link>
       <pubDate>Tue, 10 Apr 2018 05:33:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/blog-wordpress4-4-suported-rest-api/</guid>
+      <guid>https://blog.v5u.win/posts/blog/blog-wordpress4-4-suported-rest-api/</guid>
       <description>WordPress4.4之后REST API 格式:www.网址/wp-json/wp/v2,例：www.v5u.win/wp-json/wp/v2</description>
     </item>
     
     <item>
       <title>WordPress4 如何添加友情链接</title>
-      <link>https://blog.v5u.win/posts/blog-wordpress4-add-links/</link>
+      <link>https://blog.v5u.win/posts/blog/blog-wordpress4-add-links/</link>
       <pubDate>Tue, 10 Apr 2018 03:11:38 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/blog-wordpress4-add-links/</guid>
+      <guid>https://blog.v5u.win/posts/blog/blog-wordpress4-add-links/</guid>
       <description>链接—&amp;gt;创建链接分类目录 —&amp;gt;添加链接 外观—&amp;gt;小工具—&amp;gt;链接—&amp;gt;选择链接分类目录 以前有用友链插件或者自定义菜单目</description>
     </item>
     
     <item>
+      <title>jekyll using standards 使用规范</title>
+      <link>https://blog.v5u.win/posts/blog/blog-jekyll/</link>
+      <pubDate>Sat, 03 Sep 2016 15:47:05 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/blog/blog-jekyll/</guid>
+      <description>jekyll using standards 使用规范 file命名格式：文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必</description>
+    </item>
+    
+    <item>
       <title>ghost是什么</title>
-      <link>https://blog.v5u.win/posts/blog-ghost/</link>
+      <link>https://blog.v5u.win/posts/blog/blog-ghost/</link>
       <pubDate>Mon, 04 Jul 2016 14:39:44 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/blog-ghost/</guid>
+      <guid>https://blog.v5u.win/posts/blog/blog-ghost/</guid>
       <description>ghost是什么？ ghost是WordPress前雇员跳槽出来，创业做的个人博客项目。开源，免费，nodejs技术栈，专注个人博客领域。有别</description>
     </item>
     
     <item>
       <title>使用hexo的第一篇文章</title>
-      <link>https://blog.v5u.win/posts/blog-hexo/</link>
+      <link>https://blog.v5u.win/posts/blog/blog-hexo/</link>
       <pubDate>Thu, 30 Jun 2016 17:40:48 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/blog-hexo/</guid>
+      <guid>https://blog.v5u.win/posts/blog/blog-hexo/</guid>
       <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new “文章名” 创建好的”文件名.md” 文件</description>
-    </item>
-    
-    <item>
-      <title>jekyll using standards 使用规范</title>
-      <link>https://blog.v5u.win/posts/blog-jekyll/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/blog-jekyll/</guid>
-      <description>jekyll using standards 使用规范 file命名格式：文章就是普通的文本文件，文件名假定为2012-08-25-hello-world.html。 (注意，文件名必</description>
     </item>
     
   </channel>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on 为吾优</title>
+    <link>https://blog.v5u.win/tags/react/</link>
+    <description>Recent content in React on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 24 May 2021 20:42:39 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redux学习</title>
+      <link>https://blog.v5u.win/posts/reactnative/redux%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 24 May 2021 20:42:39 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/reactnative/redux%E5%AD%A6%E4%B9%A0/</guid>
+      <description>yarn global add create-react-app create-react-app demo0 yarn add antd yarn add redux mkdir src/store redux dev chrome插件 开发用，在GitHub上redux项目看开发环境配置方式 const store = createStore(reducer, // window.__REDUX_DEVTOOLS_EXTENSION__ &amp;amp;&amp;amp; window.__REDUX_DEVTOOLS_EXTENSION__() //如果浏览器有这个</description>
+    </item>
+    
+    <item>
+      <title>React学习</title>
+      <link>https://blog.v5u.win/posts/reactnative/react%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 24 May 2021 20:37:25 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/reactnative/react%E5%AD%A6%E4%B9%A0/</guid>
+      <description>React学习 两个重要的概念：虚拟DOM，diff算法 虚拟DOM：用js对象模拟HTML的DOM树，为了方便比较，减少渲染 diff算法由3种</description>
+    </item>
+    
+  </channel>
+</rss>

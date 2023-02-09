@@ -6,17 +6,14 @@
     <description>Recent content in vim on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 18 Apr 2016 17:26:21 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/vim/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 18 Apr 2016 17:26:21 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vim</title>
-      <link>https://blog.v5u.win/posts/system-vim/</link>
+      <link>https://blog.v5u.win/posts/system/system-vim/</link>
       <pubDate>Mon, 18 Apr 2016 17:26:21 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-vim/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-vim/</guid>
       <description>Vim 自带教程 终端输入 vimtutor 两种模式状态 命令模式 编辑模式 命令模式下的操作 dd 删除一行;三行：3dd y复制 d()剪切 p(paste)粘贴 :wq 或 ZZ 或 保存退出</description>
     </item>
     

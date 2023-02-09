@@ -6,11 +6,8 @@
     <description>Recent content in pip on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 19 Oct 2017 07:18:14 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/pip/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 19 Oct 2017 07:18:14 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/pip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mac下 pip 设置豆瓣源</title>
       <link>https://blog.v5u.win/mac%E4%B8%8B-pip-%E8%AE%BE%E7%BD%AE%E8%B1%86%E7%93%A3%E6%BA%90/</link>
@@ -22,10 +19,10 @@
     
     <item>
       <title>mac下 pip 设置豆瓣源</title>
-      <link>https://blog.v5u.win/posts/system-pip/</link>
+      <link>https://blog.v5u.win/posts/system/system-pip/</link>
       <pubDate>Thu, 19 Oct 2017 07:18:14 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-pip/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-pip/</guid>
       <description>在用户目录下创建文件夹.pip，在.pip下创建pip.conf pip.conf填入内容 [global] index-url = https://pypi.douban.com/simple [list] format=columns</description>
     </item>
     

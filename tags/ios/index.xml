@@ -6,26 +6,50 @@
     <description>Recent content in iOS on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 05 Jun 2019 10:37:16 +0800</lastBuildDate>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 24 May 2021 19:15:35 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>制作framework总结</title>
+      <link>https://blog.v5u.win/posts/ios/%E5%88%B6%E4%BD%9Cframework%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 24 May 2021 19:15:35 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/ios/%E5%88%B6%E4%BD%9Cframework%E6%80%BB%E7%BB%93/</guid>
+      <description>ios frameworks 制作总结 前提，默认项目已经创建好，代码都有了。 更改设置变量 TARGETS —&amp;gt; Build Settings 中设置相关项 （1).Build Active Architecture Only 设置为NO的意思是当前打包</description>
+    </item>
     
-	<atom:link href="https://blog.v5u.win/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WKWebView</title>
+      <link>https://blog.v5u.win/posts/ios/ios-wkwebview/</link>
+      <pubDate>Fri, 16 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/ios/ios-wkwebview/</guid>
+      <description>WKWebView是获取不到JSContext的，所以不能用JavaScriptCore进行交互。和js交互要用WKScriptMessag</description>
+    </item>
     
+    <item>
+      <title>App Store 上架流程</title>
+      <link>https://blog.v5u.win/posts/ios/ios-appstore-public/</link>
+      <pubDate>Tue, 21 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/ios/ios-appstore-public/</guid>
+      <description>App Store上架流程 申请开发者账号 登录开发者网站，注册cer APP ID， profile (xcode 只能解决测试证书配置) 登录iTunes connection网站，注册</description>
+    </item>
     
     <item>
       <title>iOS SwiftUI</title>
-      <link>https://blog.v5u.win/posts/swift-%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</link>
+      <link>https://blog.v5u.win/posts/swift/swift-%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</link>
       <pubDate>Wed, 05 Jun 2019 10:37:16 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/swift-%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</guid>
+      <guid>https://blog.v5u.win/posts/swift/swift-%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</guid>
       <description>[TOC] 什么是swiftUI？ Apple的解释： 更好的应用。更少的代码。 SwiftUI是一种创新的，非常简单的方法，可以通过Swift的强大功能在</description>
     </item>
     
     <item>
       <title>mac下wireshark的使用方法</title>
-      <link>https://blog.v5u.win/posts/system-mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <link>https://blog.v5u.win/posts/system/system-mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 18 May 2016 18:47:09 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
       <description>Wireshark是mac下一款非常好的抓包工具，安装我就不说了，下面我重点来说说如何使用。 1.打开终端 2.rvictl -s // 创建一个虚拟接口 3.打开Wir</description>
     </item>
     
@@ -40,20 +64,11 @@
     
     <item>
       <title>iOS8.3发布了Swift 1.2带来哪些新变化</title>
-      <link>https://blog.v5u.win/posts/ios-ios8.3-swift-changed/</link>
+      <link>https://blog.v5u.win/posts/ios/ios-ios8.3-swift-changed/</link>
       <pubDate>Tue, 14 Apr 2015 14:59:50 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/ios-ios8.3-swift-changed/</guid>
+      <guid>https://blog.v5u.win/posts/ios/ios-ios8.3-swift-changed/</guid>
       <description>原文 http://www.cnblogs.com/yuyongjian/p/4371400.html 苹果前几日在面向开发者推送iOS 8.3 Beta的同时，还发布了版本号为6D520o的Xcode 6.3 Beta，其中便包含了iOS 8.3 Beta和O</description>
-    </item>
-    
-    <item>
-      <title>App Store 上架流程</title>
-      <link>https://blog.v5u.win/posts/ios-appstore-public/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/ios-appstore-public/</guid>
-      <description>App Store上架流程 申请开发者账号 登录开发者网站，注册cer APP ID， profile (xcode 只能解决测试证书配置) 登录iTunes connection网站，注册</description>
     </item>
     
   </channel>

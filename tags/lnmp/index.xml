@@ -6,17 +6,14 @@
     <description>Recent content in lnmp on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 25 Dec 2018 10:04:25 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/lnmp/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 25 Dec 2018 10:04:25 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/lnmp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mac-nginx-php-mysql</title>
-      <link>https://blog.v5u.win/posts/php-mac-nginx-php-mysql/</link>
+      <link>https://blog.v5u.win/posts/php/php-mac-nginx-php-mysql/</link>
       <pubDate>Tue, 25 Dec 2018 10:04:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/php-mac-nginx-php-mysql/</guid>
+      <guid>https://blog.v5u.win/posts/php/php-mac-nginx-php-mysql/</guid>
       <description>[TOC] 安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf php-fpm.conf</description>
     </item>
     

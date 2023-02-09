@@ -6,17 +6,14 @@
     <description>Recent content in pycharm on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 30 Mar 2018 03:20:02 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/pycharm/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 30 Mar 2018 03:20:02 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/pycharm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>pycharm如何添加 local venv</title>
-      <link>https://blog.v5u.win/posts/python-pycharm-local-venv/</link>
+      <link>https://blog.v5u.win/posts/python/python-pycharm-local-venv/</link>
       <pubDate>Fri, 30 Mar 2018 03:20:02 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/python-pycharm-local-venv/</guid>
+      <guid>https://blog.v5u.win/posts/python/python-pycharm-local-venv/</guid>
       <description>需求：pycharm为项目添加已经存在的venv虚拟环境 前几天学习Django，开始是terminal + sublime text。后来学的差不多了，想想做</description>
     </item>
     

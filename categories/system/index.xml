@@ -6,279 +6,96 @@
     <description>Recent content in system on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 15 Oct 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/categories/system/index.xml" rel="self" type="application/rss+xml" />
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 21 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/categories/system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git 仓库</title>
+      <link>https://blog.v5u.win/posts/system/system-git_server/</link>
+      <pubDate>Tue, 21 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/system/system-git_server/</guid>
+      <description>git 仓库的创建流程： 命令行模式创建 参考 创建裸仓库 git init --bare gitserver.git，表明允许其副本push操作。 使用 git init --bare &amp;lt;repo&amp;gt; 可以创建一个裸仓库，</description>
+    </item>
     
     <item>
       <title>HTTP 响应码</title>
-      <link>https://blog.v5u.win/posts/system-http/</link>
+      <link>https://blog.v5u.win/posts/system/system-http/</link>
       <pubDate>Tue, 15 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-http/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-http/</guid>
       <description>作者：zhaoyanan HTTP 400 – 请求无效 HTTP 401.1 – 未授权：登录失败 HTTP 401.2 – 未授权：服务器配置问题导致登录失败 HTTP 401.3 – ACL 禁止访问资源 HTTP 401.4 – 未授权：授权被</description>
     </item>
     
     <item>
+      <title>vscode远程开发</title>
+      <link>https://blog.v5u.win/posts/tools/vscode-remote/</link>
+      <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/tools/vscode-remote/</guid>
+      <description>vscode 远程编辑 安装插件 remote-ssh 配置.ssh/config 文件 Host 10.211.55.5 HostName 10.211.55.5 IdentityFile ~/.ssh/id_rsa User test 右侧显示显示器图标 点击远程server 新建文件夹（connet to host in new wi</description>
+    </item>
+    
+    <item>
       <title>epoll原理</title>
-      <link>https://blog.v5u.win/posts/system-epoll/</link>
+      <link>https://blog.v5u.win/posts/system/system-epoll/</link>
       <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-epoll/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-epoll/</guid>
       <description>epoll原理 参考：https://my.oschina.net/editorial-story/blog/3052308 网卡DMA传来数据</description>
     </item>
     
     <item>
       <title>System MQ消息队列</title>
-      <link>https://blog.v5u.win/posts/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</link>
+      <link>https://blog.v5u.win/posts/system/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</link>
       <pubDate>Fri, 23 Aug 2019 09:39:55 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-mq%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/</guid>
       <description>[TOC] 消息队列 MQ 能随便讲个应用场景嘛 发短信，发邮件 大量的定时任务 支付回调也经常用 你付款之后有很多步骤 主要是付款是异步过程。 你打钱，支付宝服务器通</description>
     </item>
     
     <item>
       <title>System 进程间通讯方式</title>
-      <link>https://blog.v5u.win/posts/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/</link>
+      <link>https://blog.v5u.win/posts/system/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Mon, 12 Aug 2019 10:46:26 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F/</guid>
       <description>进程通信： 每个进程各自有不同的用户地址空间,任何一个进程的全局变量在另一个进程中都看不到，所以进程之间要交换数据必须通过内核,在内核中开辟一</description>
     </item>
     
     <item>
       <title>flutter安装</title>
-      <link>https://blog.v5u.win/posts/system-flutter%E5%AE%89%E8%A3%85/</link>
+      <link>https://blog.v5u.win/posts/system/system-flutter%E5%AE%89%E8%A3%85/</link>
       <pubDate>Fri, 26 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-flutter%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-flutter%E5%AE%89%E8%A3%85/</guid>
       <description>flutter安装 git 下载 flutter：git clone -b stable https://github.com/flutter/flutter.git 配置.zshrc export PATH=/Users/fanjinlong/dev/flutter/flutter/bin:$PATH export ANDROID_HOME=/Users/fanjinlong/Library/Android/sdk export PATH=${PATH}:${ANDROID_HOME}/tools export PATH=${PATH}:${ANDROID_HOME}/platform-tools export PUB_HOSTED_URL=https://pub.flutter-io.cn export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn # 记得配置完了，执行下 source ~/.zshrc 更新环境变量 命令行执</description>
     </item>
     
     <item>
       <title>Nginx 动态生成缩略图</title>
-      <link>https://blog.v5u.win/posts/system-nginx/</link>
+      <link>https://blog.v5u.win/posts/system/system-nginx/</link>
       <pubDate>Mon, 01 Jul 2019 15:05:09 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-nginx/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-nginx/</guid>
       <description>[TOC] 有的时候要生成大量尺寸的缩图，事先不知道有哪些尺寸，所以可以用php动态生成； 1.在nginx中配置 location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.)/(.*)(\d+)(\d+).(gif|jpg|jpeg|png|bmp) /ImageTransferController.php?s=1/2_3_4.5; } expires 30d; } 完善 ImageTransferController.php</description>
     </item>
     
     <item>
       <title>markdown 常用语法整理</title>
-      <link>https://blog.v5u.win/posts/system-markdown%E5%8E%9F%E7%90%86/</link>
+      <link>https://blog.v5u.win/posts/system/system-markdown%E5%8E%9F%E7%90%86/</link>
       <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-markdown%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-markdown%E5%8E%9F%E7%90%86/</guid>
       <description>Text 1级标题 Text 2级标题 Text 3级标题 Text 4级标题 Text 5级标题 Text 6级标题 有序列表 ul&amp;gt;li 有 序 无序列表 ol&amp;gt;li 无 序 任务列表 ul&amp;gt;li&amp;gt;input 任务 列表 代码修饰 短代码 &amp;lt;code&amp;gt; var name = 代码块 div&amp;gt;pre&amp;gt;span &amp;lt;div&amp;gt; &amp;lt;pre&amp;gt;</description>
     </item>
     
     <item>
       <title>System 最小堆</title>
-      <link>https://blog.v5u.win/posts/system-%E6%9C%80%E5%B0%8F%E5%A0%86/</link>
+      <link>https://blog.v5u.win/posts/system/system-%E6%9C%80%E5%B0%8F%E5%A0%86/</link>
       <pubDate>Thu, 25 Apr 2019 17:38:44 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-%E6%9C%80%E5%B0%8F%E5%A0%86/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-%E6%9C%80%E5%B0%8F%E5%A0%86/</guid>
       <description>最大—最小堆是最大层和最小层交替出现的二叉树，即最大层结点的子节点属于最小层，最小层结点的子节点属于最大层。 以最大（小）层结n点为根结点的子</description>
-    </item>
-    
-    <item>
-      <title>markdown 流程图</title>
-      <link>https://blog.v5u.win/posts/system-markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
-      <pubDate>Mon, 15 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
-      <description>Sequence Alice-&amp;gt;Bob: Hello Bob, how are you? Note right of Bob: Bob thinks Bob--&amp;gt;Alice: I am good thanks! flow st=&amp;gt;start: Start op=&amp;gt;operation: Your Operation cond=&amp;gt;condition: Yes or No? e=&amp;gt;end st-&amp;gt;op-&amp;gt;cond cond(yes)-&amp;gt;e cond(no)-&amp;gt;op mermaid graph LR A[Hard edge] --&amp;gt;B(Round edge) B --&amp;gt; C{Decision} C --&amp;gt;|One| D[Result one] C --&amp;gt;|Two| E[Result two] Gantt %% Example with selection of syntaxes gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to mermaid section A section</description>
-    </item>
-    
-    <item>
-      <title>Centos7 添加 桌面运行环境</title>
-      <link>https://blog.v5u.win/posts/system-centos7-%E6%B7%BB%E5%8A%A0-%E6%A1%8C%E9%9D%A2%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/</link>
-      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-centos7-%E6%B7%BB%E5%8A%A0-%E6%A1%8C%E9%9D%A2%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83/</guid>
-      <description>Centos7 添加 桌面运行环境 root 权限执行 yum groupinstall &amp;quot;X Window System&amp;quot; 检查安装情况 yum grouplist</description>
-    </item>
-    
-    <item>
-      <title>vagrant&amp;homestead的使用</title>
-      <link>https://blog.v5u.win/posts/system-vagranthomestead%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-vagranthomestead%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-      <description>~/Homestead 目录下执行下面的命令 初始化虚拟机vagrant up 登录vagrant ssh 退出虚拟机exit 关闭 Homesteadvagrant halt</description>
-    </item>
-    
-    <item>
-      <title>数据结构与算法1-复杂度分析1</title>
-      <link>https://blog.v5u.win/posts/system-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%951-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/</link>
-      <pubDate>Mon, 08 Oct 2018 10:53:57 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%951-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/</guid>
-      <description>为什么需要复杂度分析？ 有两种估算方法：1.事后统计法 2.大O复杂度表示法 事后统计法: 把代码跑一遍，通过统计、监控，就能得到算法执行的时间和占</description>
-    </item>
-    
-    <item>
-      <title>code review</title>
-      <link>https://blog.v5u.win/posts/system-codereview/</link>
-      <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-codereview/</guid>
-      <description>Code Review的好处我觉得不用多说了，主要是让你的代码可以更好的组织起来，有更易读，有更高的维护性，同时可以达到知识共享，找到bug只是其中</description>
-    </item>
-    
-    <item>
-      <title>Linux版本使用总结</title>
-      <link>https://blog.v5u.win/posts/system-linux%E7%89%88%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Mon, 16 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-linux%E7%89%88%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</guid>
-      <description>Linux版本使用总结</description>
-    </item>
-    
-    <item>
-      <title>写代码原则整理</title>
-      <link>https://blog.v5u.win/posts/system-%E5%86%99%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%88%99%E6%95%B4%E7%90%86/</link>
-      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-%E5%86%99%E4%BB%A3%E7%A0%81%E5%8E%9F%E5%88%99%E6%95%B4%E7%90%86/</guid>
-      <description>写代码原则整理： 写直观的代码 我写代码有一条重要的原则：如果有更加直接，更加清晰的写法，就选择它，即使它看起来更长，更笨，也一样选择它。 防止过</description>
-    </item>
-    
-    <item>
-      <title>数据库选型</title>
-      <link>https://blog.v5u.win/posts/system-%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
-      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
-      <description>作者：大宽宽 在整个行业发展过程中，一些需求催生了各种各样的的优化的机会。有人抓住机会去提出新的数据模型和查询接口。比如： 想内存数据库，上re</description>
-    </item>
-    
-    <item>
-      <title>语言特性汇总</title>
-      <link>https://blog.v5u.win/posts/system-%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B1%87%E6%80%BB/</link>
-      <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E6%B1%87%E6%80%BB/</guid>
-      <description>语言特性汇总： 类型推导， 类型检查， 惰性求值 currying 闭包 OO lambda</description>
-    </item>
-    
-    <item>
-      <title>centos7 更改系统启动模式</title>
-      <link>https://blog.v5u.win/posts/system-centos7-boot-type/</link>
-      <pubDate>Tue, 26 Jun 2018 01:51:41 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-centos7-boot-type/</guid>
-      <description>centos7 更改系统启动模式 查看当前启动模式 systemctl get-default 查看配置文件 cat /etc/inittab 设置启动模式为命令行模式 systemctl set-target multi-user.target 重启 shutdown -r now</description>
-    </item>
-    
-    <item>
-      <title>centos7 PHP7环境配置</title>
-      <link>https://blog.v5u.win/posts/system-centos7-php7/</link>
-      <pubDate>Tue, 26 Jun 2018 01:50:27 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-centos7-php7/</guid>
-      <description>centos7 PHP7环境配置 目录 1. 开启22端口2. 创建其他用户，使用其他用户ssh登录（root账户禁止登录）3. 关闭防火墙4. 关闭selinux5.</description>
-    </item>
-    
-    <item>
-      <title>Apache不能访问directory 目录</title>
-      <link>https://blog.v5u.win/posts/system-apache-directory/</link>
-      <pubDate>Mon, 28 May 2018 06:14:25 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-apache-directory/</guid>
-      <description>Mac升级了系统，发现启动了Apache，可以访问index.php文件。 当目录下找不到文件的时候，应该显示Indexes目录， 此时报错Fo</description>
-    </item>
-    
-    <item>
-      <title>mac文件权限修改</title>
-      <link>https://blog.v5u.win/posts/system-mac%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%BF%AE%E6%94%B9/</link>
-      <pubDate>Mon, 13 Mar 2017 17:20:42 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-mac%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%BF%AE%E6%94%B9/</guid>
-      <description>文件或目录的访问权限分为只读，只写和可执行三种。 文件被创建时，文件所有者自动拥有对该文件的读、写和可执行权限，以便于对文件的阅读和修改。 有三</description>
-    </item>
-    
-    <item>
-      <title>数据结构</title>
-      <link>https://blog.v5u.win/posts/system-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
-      <pubDate>Mon, 07 Nov 2016 22:13:26 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
-      <description>顺序表 链表 栈和队列 散列表 树结构 适合表述层次关系 图结构</description>
-    </item>
-    
-    <item>
-      <title>函数式编程</title>
-      <link>https://blog.v5u.win/posts/system-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</link>
-      <pubDate>Fri, 05 Aug 2016 10:46:42 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
-      <description>函数式编程的三大特性： •immutable data 不可变数据： 像Clojure一样，默认上变量是不可变的，如果你要改变变量，你需要把变量copy出</description>
-    </item>
-    
-    <item>
-      <title>mac下wireshark的使用方法</title>
-      <link>https://blog.v5u.win/posts/system-mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
-      <pubDate>Wed, 18 May 2016 18:47:09 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-mac%E4%B8%8Bwireshark%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
-      <description>Wireshark是mac下一款非常好的抓包工具，安装我就不说了，下面我重点来说说如何使用。 1.打开终端 2.rvictl -s // 创建一个虚拟接口 3.打开Wir</description>
-    </item>
-    
-    <item>
-      <title>vim</title>
-      <link>https://blog.v5u.win/posts/system-vim/</link>
-      <pubDate>Mon, 18 Apr 2016 17:26:21 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-vim/</guid>
-      <description>Vim 自带教程 终端输入 vimtutor 两种模式状态 命令模式 编辑模式 命令模式下的操作 dd 删除一行;三行：3dd y复制 d()剪切 p(paste)粘贴 :wq 或 ZZ 或 保存退出</description>
-    </item>
-    
-    <item>
-      <title>八大算法思想</title>
-      <link>https://blog.v5u.win/posts/system-%E5%85%AB%E5%A4%A7%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/</link>
-      <pubDate>Wed, 23 Mar 2016 10:31:32 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-%E5%85%AB%E5%A4%A7%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3/</guid>
-      <description>枚举 递推 递归 分治 贪心 试探 动态迭代 模拟</description>
-    </item>
-    
-    <item>
-      <title>SSH</title>
-      <link>https://blog.v5u.win/posts/system-ssh/</link>
-      <pubDate>Wed, 24 Feb 2016 16:02:58 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-ssh/</guid>
-      <description>[TOC] 解释 Secure Shell（安全外壳协议，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境[1]。 SSH通过在网</description>
-    </item>
-    
-    <item>
-      <title>MAC系统XAMPP 中 MySQL命令行客户端配置使用</title>
-      <link>https://blog.v5u.win/posts/php-xampp/</link>
-      <pubDate>Fri, 07 Aug 2015 23:42:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/php-xampp/</guid>
-      <description>MySQL客户端 MySQL安装包里面，在一个名为bin的文件夹，放置了很多工具包，但是使用他们的方式是命令行（ps：最近上瘾了）。在MAC系</description>
-    </item>
-    
-    <item>
-      <title>Git 仓库</title>
-      <link>https://blog.v5u.win/posts/system-git_server/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system-git_server/</guid>
-      <description>git 仓库的创建流程： 命令行模式创建 参考 创建裸仓库 git init --bare gitserver.git，表明允许其副本push操作。 使用 git init --bare &amp;lt;repo&amp;gt; 可以创建一个裸仓库，</description>
-    </item>
-    
-    <item>
-      <title>vscode远程开发</title>
-      <link>https://blog.v5u.win/posts/vscode-remote/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/vscode-remote/</guid>
-      <description>vscode 远程编辑 安装插件 remote-ssh 配置.ssh/config 文件 Host 10.211.55.5 HostName 10.211.55.5 IdentityFile ~/.ssh/id_rsa User test 右侧显示显示器图标 点击远程server 新建文件夹（connet to host in new wi</description>
     </item>
     
   </channel>

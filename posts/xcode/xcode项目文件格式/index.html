@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Xcode项目文件格式">
+<meta itemprop="description" content="原文：http://www.monobjc.net/xcode-project-file-format.html 译者：chai2010 译文："><meta itemprop="datePublished" content="2021-05-24T20:19:16+08:00" />
+<meta itemprop="dateModified" content="2021-05-24T20:19:16+08:00" />
+<meta itemprop="wordCount" content="2960">
+<meta itemprop="keywords" content="Xcode," /><meta property="og:title" content="Xcode项目文件格式" />
+<meta property="og:description" content="原文：http://www.monobjc.net/xcode-project-file-format.html 译者：chai2010 译文：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/xcode/xcode%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-24T20:19:16+08:00" />
+<meta property="article:modified_time" content="2021-05-24T20:19:16+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Xcode项目文件格式"/>
+<meta name="twitter:description" content="原文：http://www.monobjc.net/xcode-project-file-format.html 译者：chai2010 译文："/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Xcode项目文件格式</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="toc-btn" class="hdr-btn desktop-only-ib" title="Table of Contents"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg></button><span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>May 24, 2021</span></div>
+				<h1>Xcode项目文件格式</h1>
+			</header>
+			<div class="content">
+				<p>原文：http://www.monobjc.net/xcode-project-file-format.html</p>
+<p>译者：chai2010</p>
+<p>译文：https://www.jianshu.com/p/bd4e3c1a7276</p>
+<h4 id="简介-xxxxcodeproj---projectpbxproj">简介 xxx.xcodeproj -&gt; project.pbxproj</h4>
+<blockquote>
+<p>Xcode工程文件采用的是老式风格的plist文件（Next公司采用的格式，现在新的plist文件采用xml格式），它使用花括弧来组织结构化的数据。文件的开头是一个显式的编码信息，通常是采用utf8编码。这意味着它不支持带bom(Byte Ordering Mark)头的utf8格式文件，因为在开头的bom部分解析时就会失败。</p>
+</blockquote>
+<p>注意： 文档以下的部分只是基于 <code>*.pbxproj </code></p>
+<p>文件和元素推断的结果。本文并不是对真实的代码做逆向的分析，因此可能有不准确的地方。</p>
+<h4 id="唯一标识码">唯一标识码</h4>
+<p>文件中的每个元素均由一个24个字符，每个字符对应十六进制的4bit，共96bit的唯一标识码表示。即使是不同的文档之间，唯一标识码依然是唯一的（和UUID的原理类似）。</p>
+<p>Xcode生成唯一标识码的算法可能引入了日期、序列和其它一些预定义的值，但是并没有确切的文档说明具体的生成过程。一个合理的推测，跨文档的唯一标识码也基本是唯一的（应该不会出现两个不同元素对应相同唯一标识码的情绪）。</p>
+<p>下面的链接是关于CMake对Xcode的支持的讨论（还有其它一些文章），或许可以提供一些信息：</p>
+<pre tabindex="0"><code>CMake Apple XCode support A brief look at the Xcode project format More on the Xcode project format Xcode project object UUIDs
+</code></pre><h4 id="元素">元素</h4>
+<p>以下这些是工程文件中包含的元素类型：</p>
+<p>根节点</p>
+<pre tabindex="0"><code>PBXBuildFile
+PBXBuildPhase
+PBXAppleScriptBuildPhase
+PBXCopyFilesBuildPhase
+PBXFrameworksBuildPhase
+PBXHeadersBuildPhase
+PBXResourcesBuildPhase
+PBXShellScriptBuildPhase
+PBXSourcesBuildPhase
+PBXContainerItemProxy
+PBXFileElement
+PBXFileReference
+PBXGroup
+PBXVariantGroup
+PBXTarget
+PBXAggregateTarget
+PBXLegacyTarget
+PBXNativeTarget
+PBXProject
+PBXTargetDependency
+XCBuildConfiguration
+XCConfigurationList
+</code></pre><p>根节点 根节点包含通用的信息。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+archiveVersion  数字  1   默认值
+classes 列表  空
+objectVersion   数字  参考 XcodeCompatibilityVersion 枚举值
+objects 字典  字典  字典的key是前面讲到的唯一标识码
+rootObject  引用  一个元素的引用 每个 object 对应一个 PBXProject 元素的引用
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>// !$&lt;em&gt;UTF8&lt;/em&gt;$!
+{
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 45;
+    objects = {
+	...
+};
+rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
+</code></pre><p>PBXAggregateTarget 不同构建目标的集合（含依赖关系）。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXAggregateTarget  空
+buildConfigurationList  引用  元素的引用   对应 XCConfigurationList 类型
+buildPhases 列表  元素引用的列表 列表元素对应 PBXBuildPhase 类型
+dependencies    列表  元素引用的列表 列表元素对应 PBXTargetDependency 类型
+name    字符串 目标的名字
+productName 字符串 产品的名字   ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>4DA521A6115A00AF007C19C3 /* documentation &lt;em&gt;/ = {
+    isa = PBXAggregateTarget;
+    buildConfigurationList = 4DA521AE115A00ED007C19C3 /&lt;/em&gt; Build configuration list for PBXAggregateTarget &#34;documentation&#34; &lt;em&gt;/;
+    buildPhases = (
+        4DA521A5115A00AF007C19C3 /&lt;/em&gt; ShellScript &lt;em&gt;/,
+    );
+    dependencies = (
+        4DA521AA115A00BC007C19C3 /&lt;/em&gt; PBXTargetDependency */,
+    );
+    name = documentation;
+    productName = documentation;
+};
+</code></pre><p>PBXBuildFile 文件元素，被PBXBuildPhase等作为文件包含或被引用的资源。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXBuildFile    空
+fileRef 引用  元素引用    对应PBXFileReferenc元素
+settings    字典  扩展的配置信息，对应 key/value 字典 ?
+</code></pre><pre tabindex="0"><code>例子:
+4D05CA6B1193055000125045 /* xxx.c in Sources &lt;em&gt;/ = {
+    isa = PBXBuildFile;
+    fileRef = 4D05CA411193055000125045 /&lt;/em&gt; xxx.c */;
+};
+</code></pre><p>PBXBuildPhase 一个抽象的构建阶段，最终需有对应到具体化的构建对象。</p>
+<p>PBXContainerItemProxy 目标对象的容器。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXContainerItemProxy   空
+containerPortal 引用  元素的引用   引用 PBXProject 元素
+proxyType   数字  1
+remoteGlobalIDString    引用  元素的引用   使用全局唯一的ID引用
+remoteInfo  字符串     ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>4D22DC0C1167C992007AF714 /* PBXContainerItemProxy &lt;em&gt;/ = {
+    isa = PBXContainerItemProxy;
+    containerPortal = 08FB7793FE84155DC02AAC07 /&lt;/em&gt; Project object */;
+    proxyType = 1;
+    remoteGlobalIDString = 87293EBF1153C114007AFD45;
+    remoteInfo = xxx;
+};
+</code></pre><p>PBXCopyFilesBuildPhase 构建阶段复制文件信息。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXCopyFilesBuildPhase  空
+buildActionMask 数字  2^32-1
+dstPath 字符串 目标文件的路径
+dstSubfolderSpec    数字
+files   列表  元素引用的列表 对应 PBXBuildFile 元素
+runOnlyForDeploymentPostprocessing  数字  0   ?
+</code></pre><p>例子:</p>
+<p>MISSING</p>
+<p>PBXFileElement 抽象类型，对应具体化的文件和group组元素。</p>
+<p>PBXFileReference 用于跟踪项目引用的每一个外部文件，比如源代码文件、资源文件、库文件、生成目标文件等。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXFileReference    空
+fileEncoding    数字  参考 PBXFileEncoding
+explicitFileType    字符串 参考 the PBXFileType
+lastKnownFileType   字符串 参考 PBXFileType
+name    字符串 文件名
+path    字符串 文件名路径
+sourceTree  字符串 参考 PBXSourceTree    ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>87293F901153D870007AFD45 /* monobjc.mm */ = {
+    isa = PBXFileReference;
+    fileEncoding = 4;
+    lastKnownFileType = sourcecode.cpp.objcpp;
+    name = monobjc.mm;
+    path = sources/monobjc.mm;
+    sourceTree = &#34;&#34;;
+};
+</code></pre><p>PBXFrameworksBuildPhase 用于framewrok构建的链接阶段。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXFrameworksBuildPhase 空
+buildActionMask 数字  2^32-1
+files   列表  元素引用的列表 对应 PBXBuildFile 类型
+runOnlyForDeploymentPostprocessing  数字  0   ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>4D05CA2C119304BD00125045 /* Frameworks */ = {
+    isa = PBXFrameworksBuildPhase;
+    buildActionMask = 2147483647;
+    files = (
+    );
+    runOnlyForDeploymentPostprocessing = 0;
+};
+</code></pre><p>PBXGroup 用于打组文件，或者嵌套组。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXGroup    空
+children    列表  元素引用的列表 对应 PBXFileElement 元素类型
+name    字符串 The filename.
+sourceTree  字符串 参考 PBXSourceTree    ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>4DA521A2115A003E007C19C3 /* scripts &lt;em&gt;/ = {
+    isa = PBXGroup;
+    children = (
+    4D22DBAF116742DE007AF714 /&lt;/em&gt; fix_references.sh &lt;em&gt;/,
+    4DA521A1115A0032007C19C3 /&lt;/em&gt; generate_descriptors.sh */,
+    );
+    name = scripts;
+    sourceTree = &#34;&#34;;
+};
+</code></pre><p>PBXHeadersBuildPhase 用于framewrok构建的链接阶段。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXHeadersBuildPhase    空
+buildActionMask 数字  2^32-1
+files   列表  元素引用的列表 对应 PBXBuildFile 元素类型
+runOnlyForDeploymentPostprocessing  数字  0   ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>87293EBC1153C114007AFD45 /* Headers */ = {
+    isa = PBXHeadersBuildPhase;
+    buildActionMask = 2147483647;
+    files = (
+    );
+    runOnlyForDeploymentPostprocessing = 0;
+};
+</code></pre><p>PBXLegacyTarget MISSING</p>
+<p>PBXNativeTarget 对应生成可执行的二进制程序或库文件的本地构建目标对象。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXNativeTarget 空
+buildConfigurationList  引用  元素引用    对应 XCConfigurationList 类型
+buildPhases 列表  元素引用的列表 对应 PBXBuildPhase 元素类型
+dependencies    列表  元素引用的列表 对应 PBXTargetDependency 元素类型
+name    字符串 目标的名字
+productInstallPath  字符串 产品的安装路径
+productName 字符串 产品的名字
+productReference    引用  元素的引用   对应 PBXFileReference 元素类型
+productType 字符串 参考 PBXProductType   ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>8D1107260486CEB800E47090 /* XXX &lt;em&gt;/ = {
+    isa = PBXNativeTarget;
+    buildConfigurationList = C01FCF4A08A954540054247B /&lt;/em&gt; Build configuration list for PBXNativeTarget &#34;XXX&#34; &lt;em&gt;/;
+    buildPhases = (
+        8D1107290486CEB800E47090 /&lt;/em&gt; Resources &lt;em&gt;/,
+        8D11072C0486CEB800E47090 /&lt;/em&gt; Sources &lt;em&gt;/,
+        8D11072E0486CEB800E47090 /&lt;/em&gt; Frameworks &lt;em&gt;/,
+    );
+    buildRules = (
+    );
+    dependencies = (
+    );
+    name = XXX;
+    productInstallPath = &#34;$(HOME)/Applications&#34;;
+    productName = TrackIt;
+    productReference = 8D1107320486CEB800E47090 /&lt;/em&gt; XXX.app */;
+    productType = &#34;com.apple.product-type.application&#34;;
+};
+</code></pre><p>PBXProject 工程，对应构建可执行的二进制目标程序或库。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXProject  空
+buildConfigurationList  引用  元素的引用   对应 XCConfigurationList 类型
+compatibilityVersion    字符串 XcodeCompatibilityVersion 对应的字符串表示
+developmentRegion   字符串 开发者所在区域
+hasScannedForEncodings  数字  0 or 1  是否已经扫描了文件编码信息
+knownRegions    列表  字符串列表   不同区域的本地资源文件列表
+mainGroup   引用  元素的引用   对应 PBXGroup 类型
+productRefGroup 引用  元素的引用   对应 PBXGroup 类型
+projectDirPath  字符串 相对工程的相对路径
+projectReferences   字典列表    列表中的每个字典元素包含 ProductGroup和ProjectRef两个成员
+projectRoot 字符串 根目录路径（相对路径）
+targets 列表  元素引用的列表 对应 PBXTarget 元素类型
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>29B97313FDCFA39411CA2CEA /* Project object &lt;em&gt;/ = {
+        isa = PBXProject;
+        buildConfigurationList = C01FCF4E08A954540054247B /&lt;/em&gt; Build configuration list for PBXProject &#34;XXX&#34; &lt;em&gt;/;
+        compatibilityVersion = &#34;Xcode 2.4&#34;;
+        developmentRegion = English;
+        hasScannedForEncodings = 1;
+        knownRegions = (
+                English,
+                Japanese,
+                French,
+                German,
+                en,
+        );
+        mainGroup = 29B97314FDCFA39411CA2CEA /&lt;/em&gt; XXX&lt;em&gt;/;
+        projectDirPath = &#34;&#34;;
+        projectRoot = &#34;&#34;;
+        targets = (
+             8D1107260486CEB800E47090 /&lt;/em&gt; XXX*/,
+        );
+};
+</code></pre><p>PBXResourcesBuildPhase 构建阶段需要复制的资源文件。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXResourcesBuildPhase  空
+buildActionMask 数字  2^32-1
+files   列表  元素引用的列表 对应 PBXBuildFile 元素类型
+runOnlyForDeploymentPostprocessing  数字  0   ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>8D1107290486CEB800E47090 /* Resources &lt;em&gt;/ = {
+        isa = PBXResourcesBuildPhase;
+        buildActionMask = 2147483647;
+        files = (
+                535C1E1B10AB6B6300F50231 /&lt;/em&gt; ReadMe.txt in Resources &lt;em&gt;/,
+                533B968312721D05005E617D /&lt;/em&gt; Credits.rtf in Resources &lt;em&gt;/,
+                533B968412721D05005E617D /&lt;/em&gt; InfoPlist.strings in Resources &lt;em&gt;/,
+                533B968512721D05005E617D /&lt;/em&gt; MainMenu.nib in Resources &lt;em&gt;/,
+                533B968612721D05005E617D /&lt;/em&gt; TableEdit.nib in Resources &lt;em&gt;/,
+                533B968712721D05005E617D /&lt;/em&gt; TestWindow.nib in Resources */,
+        );
+        runOnlyForDeploymentPostprocessing = 0;
+};
+</code></pre><p>PBXShellScriptBuildPhase 用于构建阶段复制资源文件的shell脚本。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXShellScriptBuildPhase    空
+buildActionMask 数字  2^32-1
+files   列表  元素引用的列表 对应 PBXBuildFile 类型
+inputPaths  列表  字符串列表   输入的路径列表
+outputPaths 列表  字符串列表   输出的路径列表
+runOnlyForDeploymentPostprocessing  数字  0
+shellPath   字符串 shell解释器程序的路径
+shellScript 字符串 shell脚本程序的内容    ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>4D22DBAE11674009007AF714 /* ShellScript */ = {
+        isa = PBXShellScriptBuildPhase;
+        buildActionMask = 2147483647;
+        files = (
+        );
+        inputPaths = (
+        );
+        outputPaths = (
+        );
+        runOnlyForDeploymentPostprocessing = 0;
+        shellPath = /bin/sh;
+        shellScript = &#34;./fix_references.sh&#34;;
+};
+</code></pre><p>PBXSourcesBuildPhase 构建阶段中编译源文件。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXSourcesBuildPhase    空
+buildActionMask 数字  2^32-1
+files   列表  元素引用的列表 对应 PBXBuildFile 类型
+runOnlyForDeploymentPostprocessing  数字  0   ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>4DF8B22D1171CFBF0081C1DD /* Sources &lt;em&gt;/ = {
+        isa = PBXSourcesBuildPhase;
+        buildActionMask = 2147483647;
+        files = (
+                4DF8B23E1171D0310081C1DD /&lt;/em&gt; test.mm in Sources */,
+        );
+        runOnlyForDeploymentPostprocessing = 0;
+};
+</code></pre><p>PBXTarget 抽象对象，对应具体化的构建目标。</p>
+<p>PBXTargetDependency 目标的外部依赖管理。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXTargetDependency 空
+target  引用  元素引用    对应 PBXNativeTarget 类型
+targetProxy 引用  元素引用    对应 PBXContainerItemProxy 类型
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>4D22DC0D1167C992007AF714 /* PBXTargetDependency &lt;em&gt;/ = {
+        isa = PBXTargetDependency;
+        target = 87293EBF1153C114007AFD45 /&lt;/em&gt; libXXX &lt;em&gt;/;
+        targetProxy = 4D22DC0C1167C992007AF714 /&lt;/em&gt; PBXContainerItemProxy */;
+};
+</code></pre><p>PBXVariantGroup 对不同地区资源文件的引用管理。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa PBXVariantGroup 空
+children    列表  元素引用的列表 对应 PBXFileElement 类型
+name    字符串 文件名
+sourceTree  字符串 参考 PBXSourceTree    ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>870C88031338A77600A69309 /* MainMenu.xib &lt;em&gt;/ = {
+        isa = PBXVariantGroup;
+        children = (
+                870C88041338A77600A69309 /&lt;/em&gt; en */,
+        );
+        name = MainMenu.xib;
+        sourceTree = &#34;&#34;;
+};
+</code></pre><p>XCBuildConfiguration 构建配置元素。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa XCBuildConfiguration    空
+baseConfigurationReference  字符串 xcconfig文件的路径
+buildSettings   字典  构建配置信息的字典
+name    字符串 配置名 ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>870C88151338ABB600A69309 /* Debug &lt;em&gt;/ = {
+        isa = XCBuildConfiguration;
+        buildSettings = {
+                PRODUCT_NAME = &#34;$(TARGET_NAME)&#34;;
+        };
+        name = Debug;
+};
+870C88161338ABB600A69309 /&lt;/em&gt; Release */ = {
+        isa = XCBuildConfiguration;
+        buildSettings = {
+                PRODUCT_NAME = &#34;$(TARGET_NAME)&#34;;
+        };
+        name = Release;
+};
+</code></pre><p>XCConfigurationList 构建配置相关元素的列表。</p>
+<pre tabindex="0"><code>属性  类型  值   注释
+reference   UUID    96bit的表示码
+isa XCConfigurationList 空
+buildConfigurations 列表  引用对象的列表 每个引用对象对应一个 XCBuildConfiguration 元素
+defaultConfigurationIsVisible   数字  0
+defaultConfigurationName    字符串 配置文件的默认名称   ?
+</code></pre><p>例子:</p>
+<pre tabindex="0"><code>870C87E41338A77600A69309 /* Build configuration list for PBXProject &#34;CocoaApp&#34; &lt;em&gt;/ = {
+        isa = XCConfigurationList;
+        buildConfigurations = (
+                870C88061338A77600A69309 /&lt;/em&gt; Debug &lt;em&gt;/,
+                870C88071338A77600A69309 /&lt;/em&gt; Release */,
+        );
+        defaultConfigurationIsVisible = 0;
+        defaultConfigurationName = Release;
+};
+</code></pre>
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.v5u.win/tags/xcode">Xcode</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2960 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-05-24 20:19 &#43;0800</p>
+			</footer>
+		</article>
+		<aside id="toc">
+			<div class="toc-title">Table of Contents</div>
+			<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+		</aside>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/reactnative/react%E5%AD%A6%E4%B9%A0/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>React学习</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/xcode/%E4%BC%98%E5%8C%96%E7%BC%96%E8%AF%91%E6%97%B6%E9%97%B4/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>xcode优化编译时间</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

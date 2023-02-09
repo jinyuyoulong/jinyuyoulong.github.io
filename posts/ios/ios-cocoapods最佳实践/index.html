@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Cocoapods最佳实践">
+<meta itemprop="description" content="对于cocoapods的最佳实践有这么几个问题需要回答： cocoapods使用过程中有什么问题 如何解决，基于什么原理 cocoapods使用过"><meta itemprop="datePublished" content="2021-04-19T15:49:24+08:00" />
+<meta itemprop="dateModified" content="2021-04-19T15:49:24+08:00" />
+<meta itemprop="wordCount" content="746">
+<meta itemprop="keywords" content="Cocoapods," /><meta property="og:title" content="Cocoapods最佳实践" />
+<meta property="og:description" content="对于cocoapods的最佳实践有这么几个问题需要回答： cocoapods使用过程中有什么问题 如何解决，基于什么原理 cocoapods使用过" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/ios/ios-cocoapods%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-19T15:49:24+08:00" />
+<meta property="article:modified_time" content="2021-04-19T15:49:24+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cocoapods最佳实践"/>
+<meta name="twitter:description" content="对于cocoapods的最佳实践有这么几个问题需要回答： cocoapods使用过程中有什么问题 如何解决，基于什么原理 cocoapods使用过"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Cocoapods最佳实践</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="toc-btn" class="hdr-btn desktop-only-ib" title="Table of Contents"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg></button><span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 19, 2021</span></div>
+				<h1>Cocoapods最佳实践</h1>
+			</header>
+			<div class="content">
+				<p>对于cocoapods的最佳实践有这么几个问题需要回答：</p>
+<ol>
+<li>cocoapods使用过程中有什么问题</li>
+<li>如何解决，基于什么原理</li>
+</ol>
+<h3 id="cocoapods使用过程中有什么问题">cocoapods使用过程中有什么问题？</h3>
+<p>主要是遇到多人协作和多项目协作时，每个人的本地Ruby版本和cocoapod版本不一致，有可能会导致一些无法预料的问题，和沟通上的成本。比如：对同一个问题的描述，看到的问题不一样，原因是pod版本不同导致的。</p>
+<h3 id="如何解决基于什么原理">如何解决，基于什么原理？</h3>
+<p>cocoapods实际上是一个Ruby的第三方包，基于Ruby的包管理，我们可以管理cocoapods，然后我们基于cocoapods管理iOS上的第三方包。
+使用 gem gvm 进行版本管理</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>brew install rbenv
+</span></span><span style="display:flex;"><span>rbenv install 2.7.0 <span style="color:#75715e"># 安装ruby版本</span>
+</span></span><span style="display:flex;"><span>rbenv shell 2.7.0 <span style="color:#75715e"># 使版本生效</span>
+</span></span><span style="display:flex;"><span>gem pristine --all <span style="color:#75715e"># 切换ruby版本后 执行，不然有些库bundle找不到</span>
+</span></span><span style="display:flex;"><span>ruby --version <span style="color:#75715e"># 检查版本</span>
+</span></span><span style="display:flex;"><span>ruby 2.7.0p0 <span style="color:#f92672">(</span>2019-12-25 revision 647ee6f091<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>x86_64-darwin19<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>which ruby <span style="color:#75715e"># 查看 ruby 位置</span>
+</span></span><span style="display:flex;"><span>/Users/gua/.rbenv/shims/ruby
+</span></span><span style="display:flex;"><span>which gem <span style="color:#75715e"># 查看 gem 位置</span>
+</span></span><span style="display:flex;"><span>/Users/bytedance/.rbenv/shims/gem
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>file<span style="color:#960050;background-color:#1e0010">：</span><span style="color:#66d9ef">Gemfile</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># frozen_string_literal: true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source <span style="color:#e6db74">&#34;https://rubygems.org&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git_source(<span style="color:#e6db74">:github</span>) {<span style="color:#f92672">|</span>repo_name<span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;https://github.com/</span><span style="color:#e6db74">#{</span>repo_name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># gem &#34;rails&#34;</span>
+</span></span><span style="display:flex;"><span>gem <span style="color:#e6db74">&#34;cocoapods&#34;</span>, <span style="color:#e6db74">&#34;1.9.3&#34;</span>
+</span></span></code></pre></div><p>Bundler 能够跟踪并安装所需的特定版本的 gem，以此来为 Ruby 项目提供一致的运行环境。</p>
+<p>Bundler 是 Ruby 依赖管理的一根救命稻草，它可以保证你所要依赖的 gem 如你所愿地出现 在开发、测试和生产环境中。 利用 Bundler 启动项目简单到只用一条命令：<code>bundle install</code>。</p>
+<blockquote>
+<p>Bundler provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed.</p>
+</blockquote>
+<blockquote>
+<p>Bundler is an exit from dependency hell, and ensures that the gems you need are present in development, staging, and production. Starting work on a project is as simple as <code>bundle install</code>.</p>
+</blockquote>
+<p>开始一个项目的工作很简单bundle install。
+bundle exec pod install
+bundle exec gem list
+执行 bundle install 拿到别人的项目，执行这个，下载好依赖的ruby库
+新项目使用顺序：</p>
+<ol start="0">
+<li>创建一个xcode项目</li>
+<li>bundle init
+首先先来初始化一个 Bundler 环境（其实就是自动创建一个 Gemfile 文件）：请参考上文Gemfile</li>
+<li>bundle exec pod init 创建Podfile文件</li>
+<li>bundle exec pod install 配置完pod依赖库后执行pod 初始化</li>
+<li>over</li>
+</ol>
+<p>本文参考：<a href="https://mp.weixin.qq.com/s/fo5MNM9WpknvvehYo4V1Qw">知识小集</a> 以及自己使用过程中遇到的问题</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.v5u.win/tags/cocoapods">Cocoapods</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>746 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-04-19 15:49 &#43;0800</p>
+			</footer>
+		</article>
+		<aside id="toc">
+			<div class="toc-title">Table of Contents</div>
+			<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#cocoapods使用过程中有什么问题">cocoapods使用过程中有什么问题？</a></li>
+        <li><a href="#如何解决基于什么原理">如何解决，基于什么原理？</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+		</aside>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/system/v2ray%E8%AE%B0%E5%BD%95/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>V2ray记录</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/system/system-%E8%B4%9F%E6%95%B0%E5%BC%BA%E8%BD%AC%E6%88%90%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E4%B8%80%E5%AE%9A%E6%AF%94%E6%89%80%E6%9C%89%E6%9C%89%E7%AC%A6%E5%8F%B7%E6%95%B0%E5%A4%A7/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>负数强转成无符号数，一定比所有有符号数大？</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

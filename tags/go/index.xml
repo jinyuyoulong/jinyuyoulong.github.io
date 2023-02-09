@@ -6,11 +6,8 @@
     <description>Recent content in Go on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 01 Sep 2019 11:45:59 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/go/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 01 Sep 2019 11:45:59 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Goland 使用</title>
       <link>https://blog.v5u.win/goland-%E4%BD%BF%E7%94%A8/</link>
@@ -22,10 +19,10 @@
     
     <item>
       <title>Go CGO</title>
-      <link>https://blog.v5u.win/posts/go-cgo/</link>
+      <link>https://blog.v5u.win/posts/go/go-cgo/</link>
       <pubDate>Tue, 20 Aug 2019 18:06:35 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/go-cgo/</guid>
+      <guid>https://blog.v5u.win/posts/go/go-cgo/</guid>
       <description>[TOC] golang 中调用 c/c++ 代码有三种方式 直接嵌套在go文件中使用，最简单直观的 导入动态库 .so 或 dll 的形式，最安全但是很不爽也比较慢的 直接引用 c/c++ 文件的形式，层次</description>
     </item>
     
@@ -40,10 +37,10 @@
     
     <item>
       <title>Go-Authorization</title>
-      <link>https://blog.v5u.win/posts/go-authorization/</link>
+      <link>https://blog.v5u.win/posts/go/go-authorization/</link>
       <pubDate>Mon, 15 Apr 2019 14:52:48 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/go-authorization/</guid>
+      <guid>https://blog.v5u.win/posts/go/go-authorization/</guid>
       <description>接口认证 一般接口开发中有以下常用的几种安全机制： 用户认证 数字签名 接口加密 用户认证 一般的接口测试工具都会提供一个User Auth/Author</description>
     </item>
     
@@ -67,10 +64,10 @@
     
     <item>
       <title>Go-iris-template</title>
-      <link>https://blog.v5u.win/posts/go-iris-template/</link>
+      <link>https://blog.v5u.win/posts/go/go-iris-template/</link>
       <pubDate>Fri, 08 Mar 2019 17:25:10 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/go-iris-template/</guid>
+      <guid>https://blog.v5u.win/posts/go/go-iris-template/</guid>
       <description>Iris 支持五个开箱即用的模板引擎，所有这五个模板引擎都具有通用API的共同特征，如布局，模板功能，特定于派对的布局，部分渲染等。 标准的html,</description>
     </item>
     

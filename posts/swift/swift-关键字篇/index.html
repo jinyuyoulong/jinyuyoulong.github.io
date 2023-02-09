@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="swift 关键字篇">
+<meta itemprop="description" content="@noescape：no escape(没有逃脱) 用来修饰闭包，含义为非逃逸闭包。 当闭包作为参数传递进函数时，如果这个闭包只在函数中被使用，则"><meta itemprop="datePublished" content="2016-12-13T15:45:27+00:00" />
+<meta itemprop="dateModified" content="2016-12-13T15:45:27+00:00" />
+<meta itemprop="wordCount" content="848">
+<meta itemprop="keywords" content="@autoclosure,@escaping,@noescape," /><meta property="og:title" content="swift 关键字篇" />
+<meta property="og:description" content="@noescape：no escape(没有逃脱) 用来修饰闭包，含义为非逃逸闭包。 当闭包作为参数传递进函数时，如果这个闭包只在函数中被使用，则" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/swift/swift-%E5%85%B3%E9%94%AE%E5%AD%97%E7%AF%87/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-12-13T15:45:27+00:00" />
+<meta property="article:modified_time" content="2016-12-13T15:45:27+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="swift 关键字篇"/>
+<meta name="twitter:description" content="@noescape：no escape(没有逃脱) 用来修饰闭包，含义为非逃逸闭包。 当闭包作为参数传递进函数时，如果这个闭包只在函数中被使用，则"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>swift 关键字篇</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Dec 13, 2016</span></div>
+				<h1>swift 关键字篇</h1>
+			</header>
+			<div class="content">
+				<p>@noescape：no escape(没有逃脱)</p>
+<p>用来修饰闭包，含义为非逃逸闭包。</p>
+<p>当闭包作为参数传递进函数时，如果这个闭包只在函数中被使用，则开发者可以将这个闭包声明成非逃逸的，即告诉系统当此函数结束后，这个闭包的生命周期也将结束，这样做的好处是可以提高代码性能，将闭包声明成非逃逸的类型使用@noescape关键字。</p>
+<p>(1) 默认，swift 3.0 弃用，函数结束后，这个闭包的生命周期也将结束。</p>
+<p>(2) 在其内部如果需要使用self这个关键字，self可以被省略。</p>
+<p>@escaping 逃逸闭包</p>
+<p>逃逸的闭包常用于异步的操作，这类函数会在异步操作开始之后立刻返回，但是闭包直到异步操作结束后才会被调用。例如这个闭包是异步处理一个网络请求，只有当请求结束后，闭包的生命周期才结束。当闭包作为函数的参数传入时，很有可能这个闭包在函数返回之后才会被执行。</p>
+<p>@autoclosure 自动闭包</p>
+<p>(1)默认非逃逸</p>
+<p>(2)闭包也可以被自动的生成，这种闭包被称为自动闭包，自动闭包自动将表达式封装成闭包。</p>
+<p>(3)自动闭包不接收任何参数，被调用时会返回被包装在其中的表达式的值。</p>
+<p>(4)当闭包作为函数参数时，可以将参数标记 @autoclosure 来接收自动闭包。</p>
+<p>(5)自动闭包能够延迟求值,因为代码段不会被执行直到你调用这个闭包。</p>
+<p>(6)自动闭包默认是非逃逸的，如果要使用逃逸的闭包，需要手动声明: @autoclosure @escaping 旧版本：@autoclosure(escaping)</p>
+<p>//(a)自动闭包演示</p>
+<p>var students = [“A”,”B”,”C”]</p>
+<p>let studentsProvider = { students.remove(at: 0) } //自动闭包自动将表达式封装成闭包</p>
+<p>studentsProvider()//(b)自动闭包演示</p>
+<p>var list = [1,2,3,4,5,6]</p>
+<p>//创建一个显式闭包</p>
+<p>let closures = {</p>
+<p>list.append(7)</p>
+<p>}</p>
+<p>print(list)//将打印[1,2,3,4,5,6]</p>
+<p>closures()</p>
+<p>print(list)//引用传递，将打印[1,2,3,4,5,6,7]</p>
+<p>func func1(closure: ()-&gt;Void) -&gt; Void {</p>
+<p>//执行显式的闭包</p>
+<p>closures()</p>
+<p>}</p>
+<p>func func2(auto: @autoclosure ()-&gt;Void) -&gt; Void {</p>
+<p>//执行自动闭包</p>
+<p>auto()</p>
+<p>}</p>
+<p>//显式闭包</p>
+<p>func1(closure: closures)</p>
+<p>print(list) //将打印[1,2,3,4,5,6,7,7]</p>
+<p>//将表达式自动生成闭包</p>
+<p>func2(auto: list.append(8))</p>
+<p>print(list)//将打印[1,2,3,4,5,6,7,7,8]</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.v5u.win/tags/autoclosure">@autoclosure</a></span><span class="tag"><a href="https://blog.v5u.win/tags/escaping">@escaping</a></span><span class="tag"><a href="https://blog.v5u.win/tags/noescape">@noescape</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>848 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2016-12-13 23:45 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/web/web-openshift%E7%9A%84%E4%BD%BF%E7%94%A8/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>OpenShift的使用</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/life/life-%E5%A6%82%E4%BD%95%E5%AF%B92%E5%9E%8B%E7%B3%96%E5%B0%BF%E7%97%85%E8%BF%9B%E8%A1%8C%E4%B8%AD%E5%8C%BB%E7%9A%84%E8%BE%A8%E8%AF%81%E8%AE%BA%E6%B2%BB%E5%91%A2/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>如何对2型糖尿病进行中医的辨证论治呢？</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

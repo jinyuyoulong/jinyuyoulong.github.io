@@ -6,26 +6,23 @@
     <description>Recent content in nginx on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 01 Jul 2019 15:05:09 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 01 Jul 2019 15:05:09 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx 动态生成缩略图</title>
-      <link>https://blog.v5u.win/posts/system-nginx/</link>
+      <link>https://blog.v5u.win/posts/system/system-nginx/</link>
       <pubDate>Mon, 01 Jul 2019 15:05:09 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-nginx/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-nginx/</guid>
       <description>[TOC] 有的时候要生成大量尺寸的缩图，事先不知道有哪些尺寸，所以可以用php动态生成； 1.在nginx中配置 location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.)/(.*)(\d+)(\d+).(gif|jpg|jpeg|png|bmp) /ImageTransferController.php?s=1/2_3_4.5; } expires 30d; } 完善 ImageTransferController.php</description>
     </item>
     
     <item>
       <title>mac-nginx-php-mysql</title>
-      <link>https://blog.v5u.win/posts/php-mac-nginx-php-mysql/</link>
+      <link>https://blog.v5u.win/posts/php/php-mac-nginx-php-mysql/</link>
       <pubDate>Tue, 25 Dec 2018 10:04:25 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/php-mac-nginx-php-mysql/</guid>
+      <guid>https://blog.v5u.win/posts/php/php-mac-nginx-php-mysql/</guid>
       <description>[TOC] 安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf php-fpm.conf</description>
     </item>
     

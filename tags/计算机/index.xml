@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机 on 为吾优</title>
+    <link>https://blog.v5u.win/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</link>
+    <description>Recent content in 计算机 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 19 Apr 2021 15:21:47 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>负数强转成无符号数，一定比所有有符号数大？</title>
+      <link>https://blog.v5u.win/posts/system/system-%E8%B4%9F%E6%95%B0%E5%BC%BA%E8%BD%AC%E6%88%90%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E4%B8%80%E5%AE%9A%E6%AF%94%E6%89%80%E6%9C%89%E6%9C%89%E7%AC%A6%E5%8F%B7%E6%95%B0%E5%A4%A7/</link>
+      <pubDate>Mon, 19 Apr 2021 15:21:47 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/system/system-%E8%B4%9F%E6%95%B0%E5%BC%BA%E8%BD%AC%E6%88%90%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E4%B8%80%E5%AE%9A%E6%AF%94%E6%89%80%E6%9C%89%E6%9C%89%E7%AC%A6%E5%8F%B7%E6%95%B0%E5%A4%A7/</guid>
+      <description>今天看到一个结论：负数强转成无符号数，一定比所有有符号数大 我们来看这个结论是怎么来的： 首先搞清楚负数在二进制中是怎么存储的 其次搞清楚负数强转</description>
+    </item>
+    
+  </channel>
+</rss>

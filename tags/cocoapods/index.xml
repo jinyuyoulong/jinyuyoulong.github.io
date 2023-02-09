@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cocoapods on 为吾优</title>
+    <title>Cocoapods on 为吾优</title>
     <link>https://blog.v5u.win/tags/cocoapods/</link>
-    <description>Recent content in cocoapods on 为吾优</description>
+    <description>Recent content in Cocoapods on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 20 Apr 2018 05:00:32 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/cocoapods/index.xml" rel="self" type="application/rss+xml" />
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 19 Apr 2021 15:49:24 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/cocoapods/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cocoapods最佳实践</title>
+      <link>https://blog.v5u.win/posts/ios/ios-cocoapods%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 19 Apr 2021 15:49:24 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/ios/ios-cocoapods%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>对于cocoapods的最佳实践有这么几个问题需要回答： cocoapods使用过程中有什么问题 如何解决，基于什么原理 cocoapods使用过</description>
+    </item>
     
     <item>
       <title>brew gem npm cocoapods</title>

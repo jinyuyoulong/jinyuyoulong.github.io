@@ -6,18 +6,15 @@
     <description>Recent content in sublime text on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 29 Nov 2017 17:29:24 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 29 Nov 2017 17:29:24 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python-sublime</title>
-      <link>https://blog.v5u.win/posts/python-sublime/</link>
+      <link>https://blog.v5u.win/posts/python/python-sublime/</link>
       <pubDate>Wed, 29 Nov 2017 17:29:24 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/python-sublime/</guid>
-      <description>sublime text 下的Python编译环境设置 file name : python3.sublime-build { &amp;quot;shell_cmd&amp;quot;: &amp;quot;Python编译器的路径 ${file}&amp;quot;, &amp;quot;selector&amp;quot; :&amp;quot;source.python&amp;quot;, &amp;quot;file_regex&amp;quot;:&amp;quot;^(...*?):[0-9]:?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;:&amp;quot;${file_path}&amp;quot;, &amp;quot;env&amp;quot;: {&amp;quot;PYTHONIOENCODING&amp;quot;: &amp;quot;utf8&amp;quot;}, }</description>
+      <guid>https://blog.v5u.win/posts/python/python-sublime/</guid>
+      <description>sublime text 下的Python编译环境设置 file name : python3.sublime-build { &amp;#34;shell_cmd&amp;#34;: &amp;#34;Python编译器的路径 ${file}&amp;#34;, &amp;#34;selector&amp;#34; :&amp;#34;source.python&amp;#34;, &amp;#34;file_regex&amp;#34;:&amp;#34;^(...*?):[0-9]:?([0-9]*)&amp;#34;, &amp;#34;working_dir&amp;#34;:&amp;#34;${file_path}&amp;#34;, &amp;#34;env&amp;#34;: {&amp;#34;PYTHONIOENCODING&amp;#34;: &amp;#34;utf8&amp;#34;}, }</description>
     </item>
     
     <item>
@@ -31,19 +28,19 @@
     
     <item>
       <title>Sublime Text3 使用心得</title>
-      <link>https://blog.v5u.win/posts/tools-sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</link>
+      <link>https://blog.v5u.win/posts/tools/tools-sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</link>
       <pubDate>Fri, 09 Sep 2016 14:45:12 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/tools-sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</guid>
+      <guid>https://blog.v5u.win/posts/tools/tools-sublime-text3-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</guid>
       <description>build nodejs项目 sublime text 3自带build的系统，只需要在tools-&amp;gt;build system-&amp;gt; new build system&amp;amp;#8230; { &amp;quot;shell_cmd&amp;quot;: &amp;quot;node $file&amp;quot;, &amp;quot;selector&amp;quot;: &amp;quot;source.js&amp;quot; } 保存为 node.sublime-b</description>
     </item>
     
     <item>
       <title>Sublime Texts使用tips</title>
-      <link>https://blog.v5u.win/posts/tools-sublime-tips/</link>
+      <link>https://blog.v5u.win/posts/tools/tools-sublime-tips/</link>
       <pubDate>Sun, 04 Sep 2016 00:07:07 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/tools-sublime-tips/</guid>
+      <guid>https://blog.v5u.win/posts/tools/tools-sublime-tips/</guid>
       <description>多行编辑：control + 点击各行编辑位置 全局修改所有单词：双击单词，comment+control+G 选中一个单词：Command + D 选中</description>
     </item>
     

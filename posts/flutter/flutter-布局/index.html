@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Flutter 布局">
+<meta itemprop="description" content="[TOC] flutter 有三层树结构：Widget、Element、RenderObject import &#39;package:flutter/material.dart&#39;; main()=&gt;runApp(MyApp()); class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( title: &#34;app title&#34;, home: JLHomePage(), ); } } class JLHomePage extends StatelessWidget { @override Widget build(BuildContext context) { return"><meta itemprop="datePublished" content="2021-04-16T15:19:58+08:00" />
+<meta itemprop="dateModified" content="2021-04-16T15:19:58+08:00" />
+<meta itemprop="wordCount" content="1326">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Flutter 布局" />
+<meta property="og:description" content="[TOC] flutter 有三层树结构：Widget、Element、RenderObject import &#39;package:flutter/material.dart&#39;; main()=&gt;runApp(MyApp()); class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( title: &#34;app title&#34;, home: JLHomePage(), ); } } class JLHomePage extends StatelessWidget { @override Widget build(BuildContext context) { return" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/flutter/flutter-%E5%B8%83%E5%B1%80/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-16T15:19:58+08:00" />
+<meta property="article:modified_time" content="2021-04-16T15:19:58+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flutter 布局"/>
+<meta name="twitter:description" content="[TOC] flutter 有三层树结构：Widget、Element、RenderObject import &#39;package:flutter/material.dart&#39;; main()=&gt;runApp(MyApp()); class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( title: &#34;app title&#34;, home: JLHomePage(), ); } } class JLHomePage extends StatelessWidget { @override Widget build(BuildContext context) { return"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Flutter 布局</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 16, 2021</span></div>
+				<h1>Flutter 布局</h1>
+			</header>
+			<div class="content">
+				<p>[TOC]</p>
+<p>flutter 有三层树结构：Widget、Element、RenderObject</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;package:flutter/material.dart&#39;</span>;
+</span></span><span style="display:flex;"><span>main()<span style="color:#f92672">=&gt;</span>runApp(MyApp());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyApp</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> MaterialApp(
+</span></span><span style="display:flex;"><span>      title: <span style="color:#e6db74">&#34;app title&#34;</span>,
+</span></span><span style="display:flex;"><span>      home: JLHomePage(),
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JLHomePage</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Scaffold(
+</span></span><span style="display:flex;"><span>      appBar: AppBar(
+</span></span><span style="display:flex;"><span>        title: Text(<span style="color:#e6db74">&#34;基础Widget&#34;</span>),
+</span></span><span style="display:flex;"><span>      ),
+</span></span><span style="display:flex;"><span>      body: JLHomeContent(),
+</span></span><span style="display:flex;"><span>      floatingActionButton: FloatingActionButton(
+</span></span><span style="display:flex;"><span>        child: Icon(Icons.add),
+</span></span><span style="display:flex;"><span>        onPressed: ()<span style="color:#f92672">=&gt;</span>print(<span style="color:#e6db74">&#34;浮动按钮&#34;</span>),
+</span></span><span style="display:flex;"><span>      ),
+</span></span><span style="display:flex;"><span>      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JLHomeContent</span> <span style="color:#66d9ef">extends</span> StatefulWidget {
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  _JLHomeContentState createState() <span style="color:#f92672">=&gt;</span> _JLHomeContentState();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">_JLHomeContentState</span> <span style="color:#66d9ef">extends</span> State<span style="color:#f92672">&lt;</span>JLHomeContent<span style="color:#f92672">&gt;</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">final</span> imgURL <span style="color:#f92672">=</span>  <span style="color:#e6db74">&#34;https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=116882428,1733900798&amp;fm=26&amp;gp=0.jpg&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Text(<span style="color:#e6db74">&#34;dd&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ImageExtensionDemo</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//    1. 占位图的问题
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  2. 图片缓存：flutter默认给图片做缓存，最多1000张，最大100M。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> ImageExtensionDemo({
+</span></span><span style="display:flex;"><span>    Key key,
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">@</span>required <span style="color:#66d9ef">this</span>.imgURL,
+</span></span><span style="display:flex;"><span>  }) <span style="color:#f92672">:</span> <span style="color:#66d9ef">super</span>(key: key);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">String</span> imgURL;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> FadeInImage(
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//      设置过渡动画时间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        fadeOutDuration: Duration(milliseconds: <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>        fadeInDuration: Duration(milliseconds: <span style="color:#ae81ff">1</span>),
+</span></span><span style="display:flex;"><span>        placeholder: AssetImage(<span style="color:#e6db74">&#34;assets/images/a_dot_ham.png&#34;</span>),
+</span></span><span style="display:flex;"><span>        image: NetworkImage(imgURL));
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ButtonExtensionDemo</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> ButtonExtensionDemo({
+</span></span><span style="display:flex;"><span>    Key key,
+</span></span><span style="display:flex;"><span>  }) <span style="color:#f92672">:</span> <span style="color:#66d9ef">super</span>(key: key);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> Column(
+</span></span><span style="display:flex;"><span>      children: <span style="color:#f92672">&lt;</span>Widget<span style="color:#f92672">&gt;</span>[
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//       1. button 上下有一定的间距 padding
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//        2. 默认button有默认的宽高 88*36
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//        3. 去除button的内边距
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        ButtonTheme(<span style="color:#75715e">// 处理默认的最小宽高
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          minWidth: <span style="color:#ae81ff">30</span>,
+</span></span><span style="display:flex;"><span>          height: <span style="color:#ae81ff">10</span>,
+</span></span><span style="display:flex;"><span>          child: FlatButton(
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//            清除内边距
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>              padding: EdgeInsets.all(<span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//              清除外边距
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+</span></span><span style="display:flex;"><span>              color: Colors.red,
+</span></span><span style="display:flex;"><span>              onPressed: (){},
+</span></span><span style="display:flex;"><span>              child: Text(<span style="color:#e6db74">&#34;FaltBtn1&#34;</span>)
+</span></span><span style="display:flex;"><span>          ),
+</span></span><span style="display:flex;"><span>        ),
+</span></span><span style="display:flex;"><span>        FlatButton(
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          onPressed: (){},
+</span></span><span style="display:flex;"><span>          color: Colors.red,
+</span></span><span style="display:flex;"><span>          child: Text(<span style="color:#e6db74">&#34;FaltB  tn2&#34;</span>),
+</span></span><span style="display:flex;"><span>        ),
+</span></span><span style="display:flex;"><span>        SizedBox(height: <span style="color:#ae81ff">10</span>,),<span style="color:#75715e">// 设置间距
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          Container(
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 给button设置宽高，不能直接给btn设置，需要包裹一层Container，然后用btn填充
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// double.infinity 代表最大，能填充多大填多大
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            width: <span style="color:#66d9ef">double</span>.infinity,
+</span></span><span style="display:flex;"><span>            height: <span style="color:#ae81ff">40</span>,
+</span></span><span style="display:flex;"><span>            child: FlatButton(
+</span></span><span style="display:flex;"><span>                onPressed: (){},
+</span></span><span style="display:flex;"><span>              	color: Colors.blue,
+</span></span><span style="display:flex;"><span>                child: Text(<span style="color:#e6db74">&#34;登 录&#34;</span>,
+</span></span><span style="display:flex;"><span>                     style: TextStyle(fontSize: <span style="color:#ae81ff">20</span>,color: Colors.white),),
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>      ],
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">IconExtensionDemo</span> <span style="color:#66d9ef">extends</span> StatelessWidget {
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  Widget build(BuildContext context) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//Icon 是字体图标
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//1. 字体图标是矢量图，放大不会失真
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//2. 可以设置颜色
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//3. 图标很多是，占据控件更小
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//    return Icon(Icons.pets, size: 300,color: Colors.orange,);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//    return Icon(IconData(0xe91d,fontFamily: &#39;MaterialIcons&#39;) , size: 300,color: Colors.orange,);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//  1. Text 中不能直接使用编码，需要转换 0xe91d-&gt; unicode编码
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> Text(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\ue91d</span><span style="color:#e6db74">&#34;</span>,style: TextStyle(fontSize: <span style="color:#ae81ff">100</span>,color: Colors.orange,fontFamily: <span style="color:#e6db74">&#39;MaterialIcons&#39;</span>),);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	
+</span></span></code></pre></div><h2 id="单子布局">单子布局</h2>
+<p><strong>Align -&gt; Center，Container，Padding</strong></p>
+<p>flutter 中的坐标系为: (0, 0)  是中心点。极值(-1, 1)</p>
+<pre tabindex="0"><code>				-1
+				|
+				|
+-1------0-------&gt;1
+				|
+				|
+				↓
+				1
+</code></pre><p>Container layout</p>
+<p>RenderWidget -&gt; RenderObject -&gt;</p>
+<p>{constraints 约束</p>
+<p>BoxConstraint</p>
+<p>minWidth minHeight</p>
+<p>maxWidth maxHeight}</p>
+<p>子组件在父组件的范围内调整Size 大小，子组件超出会报错超出安全区域。</p>
+<p>不同的子组件对于同样的约束，表现可能不同。</p>
+<h2 id="多子布局">多子布局</h2>
+<p>Row Column Stack</p>
+<p>Row和Column都是继承自Flex组件,类似CSS中的Flex布局</p>
+<h2 id="row的特点水平方向尽可能大的占领空间水平方向也是希望包裹内容">Row的特点：水平方向尽可能大的占领空间，水平方向也是希望包裹内容，</h2>
+<p>垂直方向包裹内容。</p>
+<pre tabindex="0"><code> /*
+    * Flex(direction: Axis.horizontal); = Row
+    * Flex(direction: Axis.vertical); = Column
+    * 实际开发中不常用Flex
+    * */
+/*
+* MainAxisAlignment:
+* - start 主轴开始位置挨个摆放元素
+* - end 主轴结束位置挨个摆放元素
+* - center 主轴中心位置挨个摆放元素(默认值）
+* - spaceBetween  左右两边为0，其他平分间距
+* - spaceAround 左右两边间距为其他间距的一半
+* - spaceEvenly 所有间距平分
+*
+* CrossAxisAlignment:
+* - start 交叉轴开始位置挨个摆放元素
+* - end 交叉轴结束位置挨个摆放元素
+* - center 交叉轴中心位置挨个摆放元素(默认值）
+* - baseline  基线对齐 CSS，文字排版，四线三格，基线：X下边的线,有文本才有效果
+* - stretch 先让交叉轴row占据较大的空间，将所有的子Widget交叉轴的高度，拉升到最大
+* */
+</code></pre><h2 id="column">Column：</h2>
+<p>收缩+拉伸</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          * 拉伸
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          * Flexible 将屏幕剩余空间集中分配,设置拉伸
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          * - flex:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          * Expended -&gt; Flexible(fit: FlexFit.tight) 通常工程中，用这个更多，很少用Flexible
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          * 空间分配问题：flex 设置了之后，宽度就失效了，之后和flex比例相关了，
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          * 和css不一样，css有一套公式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          * 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          * 收缩 也是用Expanded
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">          * */</span>
+</span></span><span style="display:flex;"><span>          Expanded(
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//              flex: 1,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>              child: Container(width: <span style="color:#ae81ff">160</span>,height: <span style="color:#ae81ff">80</span>, color: Colors.red,)
+</span></span><span style="display:flex;"><span>          ),
+</span></span></code></pre></div><h2 id="stack-层叠组件">Stack 层叠组件</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Stack 层叠布局组件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* 根据 alignment: AlignmentDirectional.center, 为原点，按数组顺序叠放
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* 默认大小是包裹内容
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* fit: expand 将子元素拉伸到尽可能大
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* - overflow: 超出部分如何处理 overflow: Overflow.visible,查出部分依然可见，默认不可见
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Positioned 定位
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* */</span>
+</span></span><span style="display:flex;"><span>Positioned(
+</span></span><span style="display:flex;"><span>              left: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>              right: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>              bottom: <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>              child: Container()
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div>
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1326 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-04-16 15:19 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/flutter/flutter-%E5%B8%83%E5%B1%80-%E6%BB%9A%E5%8A%A8widget/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Flutter 布局 滚动Widget</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/flutter/flutter-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Flutter 第三方库</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

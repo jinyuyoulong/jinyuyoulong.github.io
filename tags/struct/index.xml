@@ -6,17 +6,14 @@
     <description>Recent content in struct on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 15 Aug 2016 15:58:34 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/struct/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 15 Aug 2016 15:58:34 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/struct/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>struct 和class的区别</title>
-      <link>https://blog.v5u.win/posts/swift-struct-%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <link>https://blog.v5u.win/posts/swift/swift-struct-%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
       <pubDate>Mon, 15 Aug 2016 15:58:34 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/swift-struct-%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <guid>https://blog.v5u.win/posts/swift/swift-struct-%E5%92%8Cclass%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
       <description>struct是值类型，值类型在传递和赋值时将进行复制。 class是`引用类型`，引用类型只会使用引用对象的一个『指向』&amp;lt;/p&amp;gt; c</description>
     </item>
     

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="docker 使用规则">
+<meta itemprop="description" content="[TOC] 硬件/操作系统 要求 Docker支持以下的发行版版本： Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版 CentOS 7 (64-bit)，要求内核版本不低于 3.10 。"><meta itemprop="datePublished" content="2018-04-04T09:39:10+00:00" />
+<meta itemprop="dateModified" content="2018-04-04T09:39:10+00:00" />
+<meta itemprop="wordCount" content="3106">
+<meta itemprop="keywords" content="Docker," /><meta property="og:title" content="docker 使用规则" />
+<meta property="og:description" content="[TOC] 硬件/操作系统 要求 Docker支持以下的发行版版本： Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版 CentOS 7 (64-bit)，要求内核版本不低于 3.10 。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/docker/docker-%E7%AE%80%E4%BB%8B/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-04-04T09:39:10+00:00" />
+<meta property="article:modified_time" content="2018-04-04T09:39:10+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="docker 使用规则"/>
+<meta name="twitter:description" content="[TOC] 硬件/操作系统 要求 Docker支持以下的发行版版本： Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版 CentOS 7 (64-bit)，要求内核版本不低于 3.10 。"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>docker 使用规则</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 4, 2018</span></div>
+				<h1>docker 使用规则</h1>
+			</header>
+			<div class="content">
+				<p>[TOC]</p>
+<h2 id="硬件操作系统-要求">硬件/操作系统 要求</h2>
+<p>Docker支持以下的发行版版本：</p>
+<ul>
+<li>
+<p>Ubuntu18.04 LTS 是目前对docker兼容性最好的发行版</p>
+</li>
+<li>
+<p>CentOS 7 (64-bit)，要求内核版本不低于 3.10 。CentOS 7 满足最低内核的要求，但由于内核版本比较低，部分功能（如 <code>overlay2</code> 存储层驱动）无法使用，并且部分功能可能不太稳定。</p>
+</li>
+<li>
+<p>Debain 9</p>
+</li>
+</ul>
+<hr>
+<h2 id="前提条件">前提条件</h2>
+<p>目前，CentOS 仅发行版本中的内核支持 Docker。</p>
+<p>Docker 运行在 CentOS 7 上，要求系统为64位、系统内核版本为 3.10 以上。</p>
+<p>Docker 运行在 CentOS-6.5 或更高的版本的 CentOS 上，要求系统为64位、系统内核版本为 2.6.32-431 或者更高版本。</p>
+<h3 id="docker-的组件结构">docker 的组件结构</h3>
+<p>Docker 由镜像(Image)、容器(Container)、仓库(Repository) 三部分组成。</p>
+<p>docker-machine, docker, docker-compose (docker环境)</p>
+<p>docker container 容器(运行实例)</p>
+<p>docker image 镜像(安装实例)</p>
+<p>Dockerfile(用于生成image)</p>
+<h3 id="docker配置使用">docker配置+使用</h3>
+<p>预先安装docker的相关库</p>
+<pre tabindex="0"><code>brew install 
+docker
+docker-compose
+docker-machine
+</code></pre><h4 id="关于-docker-machine">关于 docker-machine</h4>
+<p><a href="https://docs.docker.com/machine/overview/">Docker Machine</a> 是 Docker 官方提供的一个工具，它可以帮助我们在远程的机器上安装 Docker，或者在虚拟机 host 上直接安装虚拟机并在虚拟机中安装 Docker。我们还可以通过 docker-machine 命令来管理这些虚拟机和 Docker。</p>
+<p>Mac 命令行安装 docker的话需要首先安装 docker-machine,默认启动的虚拟机对外IP：192.168.99.100</p>
+<p><code>tcp://192.168.99.100:2376</code></p>
+<h4 id="启动docker-machine">启动docker-machine</h4>
+<p>To have launchd start docker-machine now and restart at login:
+<code>brew services start docker-machine</code></p>
+<p>Or, if you don&rsquo;t want/need a background service you can just run:
+<code>docker-machine start</code></p>
+<h3 id="利用docker-machine-使-docker从创建到启动步骤">利用docker-machine 使 docker从创建到启动步骤</h3>
+<hr>
+<ol>
+<li>
+<p>docker-machine ls 	//检查docker-machine 是否启动了,如果查看的URL为空，则启动docker-machine</p>
+</li>
+<li>
+<p>docker-machine start 或 docker-machine create default // 启动或创建docker虚拟主机。每一次启动都要重新创建，默认为 default。</p>
+</li>
+<li>
+<p>docker-machine env	//配置docker 虚拟主机环境变量</p>
+</li>
+<li>
+<p>eval $(docker-machine env)	// 使default环境变量生效</p>
+</li>
+</ol>
+<hr>
+<p>docker操作
+5. docker image pull ubuntu // 拉取镜像库</p>
+<ol start="6">
+<li>
+<p>docker image ls // 查看 已经安装的 image 镜像</p>
+</li>
+<li>
+<p>docker container run ubuntu //命令会从 image 文件，生成一个正在运行的容器实例。</p>
+</li>
+<li>
+<p>docker exec -it [容器ID] bash //进入已运行的容器，进行bash操作</p>
+</li>
+</ol>
+<h3 id="docker-使用规则">docker 使用规则</h3>
+<p>镜像源：https://www.docker-cn.com/registry-mirror
+在docker或网易蜂巢的镜像库中找到需要的image
+docker pull hub.c.163.com/library/mysql:latest
+docker images
+//启动容器,端口映射8888:8080
+docker run -b -p 8888:8080 hub.c.163.com/library/mysql</p>
+<p><code>docker container run hello-world</code></p>
+<p>输出这段提示以后，<code>hello world</code>就会停止运行，容器自动终止。</p>
+<p>有些容器不会自动终止，因为提供的是服务。比如，安装运行 Ubuntu 的 image，就可以在命令行体验 Ubuntu 系统。</p>
+<p><code>docker container run -it ubuntu bash</code></p>
+<h3 id="编写-dockerfile-文件生成image">编写 Dockerfile 文件生成image</h3>
+<ol>
+<li>新建 .dockerignore 文件
+写入要忽略的目录/文件</li>
+</ol>
+<pre tabindex="0"><code>.git
+node_modules
+npm-debug.log
+</code></pre><ol start="2">
+<li>新建文本文件 Dockerfile</li>
+</ol>
+<p>Dockerfile 是一个文本文件，其内包含了一条条的 <strong>指令(Instruction)</strong>，每一条指令构建一层，因此每一条指令的内容，就是描述该层应当如何构建。</p>
+<p>写入环境配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> node:8.4 //该 image 文件继承官方的 node image，冒号表示标签，这里标签是8.4，即8.4版本的 node。</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . /app	//将当前目录下的所有文件（除了.dockerignore排除的路径），都拷贝进入 image 文件的/app目录。<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /app	//指定接下来的工作路径为/app。</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> npm install --registry<span style="color:#f92672">=</span>https://registry.npm.taobao.org	//在/app目录下，运行npm install命令安装依赖。注意，安装后所有的依赖，都将打包进入 image 文件。<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 3000	//将容器 3000 端口暴露出来， 允许外部连接这个端口。</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> node demos/01.js	//容器启动后自动执行node demos/01.js。<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><ol start="3">
+<li>创建 image 文件</li>
+</ol>
+<p><code>docker image build -t koa-demo .</code> 或<code> docker image build -t koa-demo:0.0.1 .</code></p>
+<p><code>docker build</code> 命令最后有一个 <code>.</code>。<code>.</code> 表示当前目录，而 <code>Dockerfile</code> 就在当前目录，因此不少初学者以为这个路径是在指定 <code>Dockerfile</code> 所在路径，这么理解其实是不准确的。如果对应上面的命令格式，你可能会发现，这是在指定 <strong>上下文路径</strong>。</p>
+<ol start="4">
+<li>生成容器</li>
+</ol>
+<p><code>docker container run -p 8000:3000 -it koa-demo /bin/bash</code></p>
+<h3 id="发布-image-文件">发布 image 文件</h3>
+<p>去 hub.docker.com 或 cloud.docker.com 注册一个账户.</p>
+<ol>
+<li>docker login</li>
+<li>为本地的 image 标注用户名和版本。</li>
+<li>重新构建一下 image 文件。</li>
+<li>发布 image 文件。</li>
+<li>发布成功以后，登录 hub.docker.com，查看已经发布的 image 文件。</li>
+</ol>
+<h3 id="其他docker命令">其他docker命令</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker-machine env 	// 查看环境变量：IP
+</span></span><span style="display:flex;"><span>docker ps 					//查看运行的docker
+</span></span><span style="display:flex;"><span>netstat -na|grep <span style="color:#ae81ff">8888</span> // 查看端口监听情况
+</span></span><span style="display:flex;"><span>docker exec -it <span style="color:#f92672">[</span>容器ID<span style="color:#f92672">]</span> bash //进入容器，进行bash操作 -it：这是两个参数，一个是 -i 表示交互式操作，一个是 -t 为终端。
+</span></span><span style="display:flex;"><span>docker run -ti -d --name my-nginx -p 8088:80 docker.io/nginx // 端口映射
+</span></span><span style="display:flex;"><span>docker rm containerId // 删除 容器文件
+</span></span><span style="display:flex;"><span>docker rmi imageId 		// 删除 image文件
+</span></span><span style="display:flex;"><span>docker stop 1f 				// 停止运行的容器
+</span></span><span style="display:flex;"><span>docker start 					//启动一个或多个已经被停止的容器
+</span></span><span style="display:flex;"><span>docker stop 					//停止一个运行中的容器
+</span></span><span style="display:flex;"><span>docker restart b0				//重启容器
+</span></span><span style="display:flex;"><span>docker container kill <span style="color:#f92672">[</span>containID<span style="color:#f92672">]</span> // 手动终止 运行的 容器
+</span></span><span style="display:flex;"><span>docker container ls 	// 列出本机正在运行的容器
+</span></span><span style="display:flex;"><span>docker container ls --all //列出本机所有容器，包括终止运行的容器
+</span></span><span style="display:flex;"><span>docker volume create portainer_data
+</span></span></code></pre></div><p>docker-machine create default // 创建docker虚拟主机，每一次启动都要重新创建，默认创建环境名为 default。如果报错，boot2docker.iso 无法下载可以在GitHub上单独下载后放到 /Users/$username/.docker/machine/cache/ 下</p>
+<p>在容器的命令行，按下 Ctrl + c 停止 Node 进程，然后按下 Ctrl + d （或者输入 exit）退出容器。</p>
+<h4 id="docker的数据持久化主要有两种方式">Docker的数据持久化主要有两种方式：</h4>
+<ul>
+<li>bind mount</li>
+<li>volume</li>
+</ul>
+<p><strong>使用volume</strong></p>
+<p>volume也是绕过container的文件系统，直接将数据写到host机器上，只是volume是被docker管理的，docker下所有的volume都在host机器上的指定目录下/var/lib/docker/volumes。</p>
+<p>将my-volume挂载到container中的/mydata目录：</p>
+<pre tabindex="0"><code>docker run -it -v my-volume:/mydata alpine sh
+</code></pre><h4 id="varrundockersock文件">/var/run/docker.sock文件</h4>
+<p>这个文件是什么呢？为什么有些容器需要使用它？简单地说，它是Docker守护进程(Docker daemon)默认监听的Unix域套接字(Unix domain socket)，容器中的进程可以通过它与Docker守护进程进行通信。</p>
+<p>Portainer镜像通过绑定的/var/run/docker.sock文件与<strong>Docker守护进程</strong>通信，执行各种管理操作。</p>
+<h4 id="一些使用原则">一些使用原则</h4>
+<ol>
+<li>
+<p><em>在创建 Docker Image 的时候使用 <strong>-t</strong> 参数对 Image 打上 Tag</em></p>
+</li>
+<li>
+<p><em>不要在 Dockerfile 中进行端口映射</em></p>
+</li>
+</ol>
+<p>如果 Image 的使用者关心 Container 应该将自己的什么端口和 host 的端口进行映射，那就会显式地在创建 Container 的时候使用 <strong>-p</strong> 参数进行设置，否则，Docker 会自动给 Container 分配一个 host 上的端口进行映射。</p>
+<ol start="3">
+<li>在使用 <strong>CMD</strong> 和 <strong>ENTRYPOINT</strong> 指示的时候使用数组传入参数 <code>CMD [&quot;/bin/echo&quot;]</code></li>
+<li>**CMD **和 <strong>ENTRYPOINT</strong> 最好配合使用</li>
+</ol>
+<p><strong>注意</strong></p>
+<p>docker是运行在Linux上的，在Windows/Mac中运行docker，实际上还是在Windows/Mac下先安装了一个Linux环境，然后在这个系统中运行的docker。也就是说，服务中使用的localhost指的是这个Linux环境的地址，而不是我们的宿主环境Windows/Mac。我们可以通过命令：<code>docker-machine ip default</code></p>
+<p><strong>找到这个Linux的ip地址，一般情况下这个地址是192.168.99.100，然后在 Windows/Mac 的浏览器中，输入这个地址，加上服务的端口即可启用了。</strong> <code>http://192.168.99.100:8080</code></p>
+<h3 id="docker-compose-编排项目">docker-compose 编排项目</h3>
+<p>docker-compose build 	//编排 image</p>
+<p>docker-compose run my-gin //创建并启动容器</p>
+<p>docker-compose.yml	//配置文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">gili-api</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">gili-api:latest</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">MYSQL_DSN</span>: <span style="color:#e6db74">&#34;root:K3b4XRqsmVpW@tcp(172.20.0.2)/giligili?charset=utf8&amp;parseTime=True&amp;loc=Local&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">REDIS_ADDR</span>: <span style="color:#e6db74">&#34;172.21.0.2:6379&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">REDIS_PW</span>: <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">REDIS_DB</span>: <span style="color:#e6db74">&#34;0&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">SESSION_SECRE</span>: <span style="color:#e6db74">&#34;K3b4XRqsmVpW&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">GIN_MODE</span>: <span style="color:#e6db74">&#34;release&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">3002</span>:<span style="color:#ae81ff">3000</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">mysql</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mysql:5.6</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">MYSQL_ROOT_PASSWORD</span>: <span style="color:#ae81ff">K3b4XRqsmVpW</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">mysql_data:/var/lib/mysql/data</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">3306</span>:<span style="color:#ae81ff">3306</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">redis</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">redis</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">redis</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">6379</span>:<span style="color:#ae81ff">6379</span>
+</span></span></code></pre></div><p><strong>在docker容器里localhost并不是指宿主机的localhost</strong></p>
+<p>由此原因，并不能在容器中通过localhost:3306访问到宿主机的mysql</p>
+<p><strong>docker在运行时就建立了虚拟网卡，并命名为docker0</strong></p>
+<p>我们可以在宿主机上运行ifconfig看到它，这就是宿主机建立的网桥，用于与各个容器之间通信</p>
+<p><strong>宿主机在与容器同一局域网的IP地址一般是docker0对应的IP地址段的首个地址（如172.0.17.1）</strong></p>
+<p>我们可以在容器里通过172.0.17.1:3306访问到宿主机的mysql服务器</p>
+<p>ip 查询命令：<code>ip addr show</code></p>
+<p><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker 入门教程</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html">Docker 微服务教程</a></p>
+<p><a href="https://studygolang.com/articles/4219">Dockerfile 最佳实践</a></p>
+<p><a href="https://registry.docker-cn.com">https://registry.docker-cn.com</a></p>
+<p><a href="https://yeasy.gitbooks.io/docker_practice/">https://yeasy.gitbooks.io/docker_practice/</a></p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.v5u.win/tags/docker">Docker</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>3106 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2018-04-04 17:39 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/system/system-terminal%E7%9A%84%E6%98%BE%E7%A4%BA%E5%A2%9E%E5%8A%A0%E8%89%B2%E5%BD%A9/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>terminal的显示增加色彩</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/ios/ios-appledoc%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>appledoc使用说明</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

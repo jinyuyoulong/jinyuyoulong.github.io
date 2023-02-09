@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="React学习">
+<meta itemprop="description" content="React学习 两个重要的概念：虚拟DOM，diff算法 虚拟DOM：用js对象模拟HTML的DOM树，为了方便比较，减少渲染 diff算法由3种"><meta itemprop="datePublished" content="2021-05-24T20:37:25+08:00" />
+<meta itemprop="dateModified" content="2021-05-24T20:37:25+08:00" />
+<meta itemprop="wordCount" content="2069">
+<meta itemprop="keywords" content="React,ReactNative," /><meta property="og:title" content="React学习" />
+<meta property="og:description" content="React学习 两个重要的概念：虚拟DOM，diff算法 虚拟DOM：用js对象模拟HTML的DOM树，为了方便比较，减少渲染 diff算法由3种" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/reactnative/react%E5%AD%A6%E4%B9%A0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-24T20:37:25+08:00" />
+<meta property="article:modified_time" content="2021-05-24T20:37:25+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="React学习"/>
+<meta name="twitter:description" content="React学习 两个重要的概念：虚拟DOM，diff算法 虚拟DOM：用js对象模拟HTML的DOM树，为了方便比较，减少渲染 diff算法由3种"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>React学习</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="toc-btn" class="hdr-btn desktop-only-ib" title="Table of Contents"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg></button><span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>May 24, 2021</span></div>
+				<h1>React学习</h1>
+			</header>
+			<div class="content">
+				<p>React学习</p>
+<h2 id="两个重要的概念虚拟domdiff算法">两个重要的概念：虚拟DOM，diff算法</h2>
+<p>虚拟DOM：用js对象模拟HTML的DOM树，为了方便比较，减少渲染</p>
+<p>diff算法由3种组成：</p>
+<p>tree diff DOM树按层对比</p>
+<p>component diff 在每层里按组件对比</p>
+<p>element diff：在每个组件中 按元素进行对比</p>
+<h2 id="工程启动流程">工程启动流程：</h2>
+<p>创建webpack：npm init -y 创建dist 和 src文件夹，创建文件src/index.html src/main.js</p>
+<p>安装webpack：<code>npm -i webpack -D</code></p>
+<p><code>yarn add web-dev-server --dev</code> 自动编译js</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;webpack-dev-server --port 8080 --hot --host&#34;</span><span style="color:#75715e">// 最佳实践
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  },
+</span></span></code></pre></div><p>html-webpack-plugin 将页面生成到内存中去</p>
+<p>webpack.config.js文件中的配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 向外暴露一个打包的对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">mode</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;development&#39;</span>,<span style="color:#75715e">// production develoment 设置压缩文件的方式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// webpack 4.0 中约定大于配置，默认 src/index.js 是入口文件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<p><strong>react</strong> 专门用来创建组件和虚拟DOM，同时组件的生命周期都在这个包里</p>
+<p><strong>react-dom</strong> 专门进行DOM操作，最主要的应用场景，就是ReactDOM.rander()</p>
+<p>实例代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 1. 导入
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 2. 创建虚拟DOM元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 3. 使用ReactDOM把虚拟DOM渲染到屏幕上
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 导入react的别名必须这么写
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span>  <span style="color:#a6e22e">React</span>  <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span>  <span style="color:#a6e22e">ReactDOM</span>  <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react-dom&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 参数1 创建的元素的类型，字符串，表示元素名称
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 参数2 一个对象或者null，表示这个DOM的属性
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 参数3 子节点 包括其他虚拟DOM获取文本子节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 参数n 其他子节点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// &lt;h1 id=&#34;myh&#34; title=&#34;这是一个h1&#34;&gt;这是一个没有感情的h1&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myh1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;h1&#39;</span>, {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;myh1&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;这是一个h1&#39;</span>
+</span></span><span style="display:flex;"><span>}, <span style="color:#e6db74">&#34;这是一个没有感情的h1&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mdiv</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>,<span style="color:#66d9ef">null</span>,<span style="color:#e6db74">&#39;这是一个div&#39;</span>,<span style="color:#a6e22e">myh1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 参数1 目标虚拟DOM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 参数2 指定页面的容器,一个DOM元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">ReactDOM</span>.<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">mdiv</span>, document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;app&#39;</span>))
+</span></span></code></pre></div><h3 id="jsx--js--xml">JSX = js + xml</h3>
+<p>JSX 语法本质是通过babel转换成 React.createElement()形式</p>
+<p>依赖包：babel-core babel-loader babel-plugin-transform-runtime &ndash;dev</p>
+<p>关于语法解析的：babel-preset-env babel-preset-stage-0 babel-preset-react &ndash;dev</p>
+<p>@babel/core、@babel/preset-env、@babel/runtime、@babel/plugin-transform-runtime、@babel/plugin-proposal-class-properties、@babel/preset-react这几个包安装一下，然后在.babelrc文件中添加{&ldquo;presets&rdquo;:[&quot;@babel/preset-env&quot;,&quot;@babel/preset-react&quot;], &ldquo;plugins&rdquo;:[&quot;@babel/transform-runtime&quot;,&quot;@babel/plugin-proposal-class-properties&quot;]}</p>
+<p>注：react中需要把key添加给被 foreach 或map 或 for循环直接没控制的那些元素（也就是最外层的元素）</p>
+<p>jsx 注释：jsx的{}中可以写任何合法的js代码，包括注释</p>
+<pre tabindex="0"><code>{/* 注释单行 */}
+{
+// 注释多行
+}
+</code></pre><p>为jsx添加类名，需要用className代替class；htmlFor代替label的for属性</p>
+<h3 id="组件创建和使用">组件创建和使用</h3>
+<p>为组件传递数据</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#75715e">// 第一种创建组件方式，组件名称首字母必须大写
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Hello</span>(<span style="color:#a6e22e">props</span>) {<span style="color:#75715e">// 在Props 上获取dog对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// react 和Vue 中的 props 对象所有属性都是 只读 read only的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 返回一个 虚拟DOM
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span>&gt;<span style="color:#a6e22e">这是Hello组件</span> <span style="color:#f92672">--</span> {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">name</span>}<span style="color:#f92672">--</span> {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">age</span>} <span style="color:#f92672">--</span> {<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">gander</span>}&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{<span style="color:#75715e">/* 直接将组件名称以标签的形式，丢到页面上 */</span>}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">Hello</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">dog</span>.<span style="color:#a6e22e">name</span>} <span style="color:#a6e22e">age</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">dog</span>.<span style="color:#a6e22e">age</span>} <span style="color:#a6e22e">gander</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">dog</span>.<span style="color:#a6e22e">gander</span>}&gt;&lt;/<span style="color:#f92672">Hello</span>&gt;
+</span></span></code></pre></div><p>react chrome开发插件 react developer tools</p>
+<p><strong>注：组件名称首字母必须大写</strong></p>
+<p>默认不做单独的配置的话，不能省略后缀名
+可以配置webpack.config.js 省略后缀名</p>
+<p>@代表src目录 配置webpack的alias 字段</p>
+<pre tabindex="0"><code>import Hello from &#39;@/components/Hello&#39;
+</code></pre><h3 id="class-属性">class 属性</h3>
+<p>this.props 只读</p>
+<p>this.state 可读可写</p>
+<p>class 有私有属性state 和生命周期</p>
+<h3 id="jsx-style-样式">JSX style 样式</h3>
+<p>{<em>/* jsx中的样式写法{{color: &lsquo;red&rsquo;}} */</em>}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">css文件</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">title</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">red</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-----</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">webpack</span> <span style="color:#a6e22e">配置</span> <span style="color:#a6e22e">解析css</span> <span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">依赖包</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">-</span><span style="color:#a6e22e">loader</span> <span style="color:#a6e22e">css</span><span style="color:#f92672">-</span><span style="color:#a6e22e">loader</span>
+</span></span><span style="display:flex;"><span>{<span style="color:#a6e22e">test</span><span style="color:#f92672">:</span> <span style="color:#e6db74">/\.css$/</span>,<span style="color:#a6e22e">use</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;style-loader&#39;</span>,<span style="color:#e6db74">&#39;css-loader?modules&#39;</span>]}<span style="color:#75715e">// 打包处理css样式表，从右向左 处理，css处理完交给style处理 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#75715e">// style-loader loader不嫩省略，webpack 1.0 用的是 style，后边都加-loader了，搜blog不要被误导
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">自定义</span> <span style="color:#a6e22e">样式对象的名称</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">css</span><span style="color:#f92672">-</span><span style="color:#a6e22e">loader</span><span style="color:#f92672">?</span><span style="color:#a6e22e">modules</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">localIdentName</span><span style="color:#f92672">=</span>[<span style="color:#a6e22e">path</span>][<span style="color:#a6e22e">name</span>]<span style="color:#f92672">-</span>[<span style="color:#a6e22e">local</span>]<span style="color:#f92672">-</span>[<span style="color:#a6e22e">hash</span><span style="color:#f92672">:</span><span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">path</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">-</span><span style="color:#a6e22e">css</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span> <span style="color:#a6e22e">文件name</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">local</span> <span style="color:#a6e22e">css中的样式名称</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">hash</span> <span style="color:#a6e22e">默认全length</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-----</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">使用</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">cssObj</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;@/css/cssList.css&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">这是评论列表组件</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">cssObj是全局的</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">整个项目都生效</span>
+</span></span></code></pre></div><p>解决样式冲突：vue <code>&lt;style scoped&gt;</code></p>
+<p>css 模块化只针对 class和id 不作用于标签</p>
+<p>:global 全局，不模块化</p>
+<p>自己的样式用scss结尾</p>
+<p>第三方的用css结尾，这样就区分了个人和其他</p>
+<p><code>sass-loader node-sass</code></p>
+<h3 id="绑定事件">绑定事件</h3>
+<p>最佳实践</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span>{()=&gt;{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">myClickHandler</span>()}}<span style="color:#f92672">&gt;</span><span style="color:#a6e22e">按钮</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/button&gt;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">myClickHandler</span> <span style="color:#f92672">=</span> ()=&gt;{        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;点击事件&#39;</span>);       }
+</span></span></code></pre></div><p>箭头函数本身是一个匿名函数，和匿名函数不同的是会改变this指针的指向，它会根据环境选择箭头外部的那个对象。</p>
+<p>修改数据使用this.setState({msg:&lsquo;改&rsquo;}), 是异步执行的</p>
+<h3 id="jsx注释折叠">JSX注释折叠</h3>
+<pre tabindex="0"><code>//#region
+// 我是JSX注释
+//#endregion
+</code></pre><h3 id="实现双向数据绑定"><em>实现双向数据绑定</em></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span> &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">msg</span>} <span style="color:#a6e22e">onChange</span><span style="color:#f92672">=</span> {(<span style="color:#a6e22e">e</span>)=&gt;<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">txtChanged</span>(<span style="color:#a6e22e">e</span>)} /&gt;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">txtChanged</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">e</span>)=&gt;{
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// console.log(this.refs.txt.value);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// console.log(e.target.value);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//  实现双向数据绑定
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newValue</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">value</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">msg</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">newValue</span>
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><h2 id="第三方库使用-ant">第三方库使用 ant</h2>
+<p>插件 react-app-rewired 替换 react-scripts 实现按需加载css</p>
+<p>babel-plugin-import</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.v5u.win/tags/react">React</a></span><span class="tag"><a href="https://blog.v5u.win/tags/reactnative">ReactNative</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2069 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-05-24 20:37 &#43;0800</p>
+			</footer>
+		</article>
+		<aside id="toc">
+			<div class="toc-title">Table of Contents</div>
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#两个重要的概念虚拟domdiff算法">两个重要的概念：虚拟DOM，diff算法</a></li>
+    <li><a href="#工程启动流程">工程启动流程：</a>
+      <ul>
+        <li><a href="#jsx--js--xml">JSX = js + xml</a></li>
+        <li><a href="#组件创建和使用">组件创建和使用</a></li>
+        <li><a href="#class-属性">class 属性</a></li>
+        <li><a href="#jsx-style-样式">JSX style 样式</a></li>
+        <li><a href="#绑定事件">绑定事件</a></li>
+        <li><a href="#jsx注释折叠">JSX注释折叠</a></li>
+        <li><a href="#实现双向数据绑定"><em>实现双向数据绑定</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#第三方库使用-ant">第三方库使用 ant</a></li>
+  </ul>
+</nav>
+		</aside>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/reactnative/redux%E5%AD%A6%E4%B9%A0/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Redux学习</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/xcode/xcode%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Xcode项目文件格式</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

@@ -6,17 +6,14 @@
     <description>Recent content in MongoDB on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 18 Jul 2016 18:16:11 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 18 Jul 2016 18:16:11 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>mac下MongoDB</title>
-      <link>https://blog.v5u.win/posts/db-mongodb/</link>
+      <link>https://blog.v5u.win/posts/database/db-mongodb/</link>
       <pubDate>Mon, 18 Jul 2016 18:16:11 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/db-mongodb/</guid>
+      <guid>https://blog.v5u.win/posts/database/db-mongodb/</guid>
       <description>1. 安装 1.1 解压缩mongo文件，将解压缩后的文件移动到自己喜欢的目录下 1.2 由于没有配置环境变量，先测试使用。 终端进入mongodb的安装路径，在</description>
     </item>
     

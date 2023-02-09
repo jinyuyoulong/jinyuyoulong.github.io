@@ -6,17 +6,14 @@
     <description>Recent content in hexo on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 30 Jun 2016 17:40:48 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 30 Jun 2016 17:40:48 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用hexo的第一篇文章</title>
-      <link>https://blog.v5u.win/posts/blog-hexo/</link>
+      <link>https://blog.v5u.win/posts/blog/blog-hexo/</link>
       <pubDate>Thu, 30 Jun 2016 17:40:48 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/blog-hexo/</guid>
+      <guid>https://blog.v5u.win/posts/blog/blog-hexo/</guid>
       <description>hexo建站之后如何使用 1.如何写文章 hexo 需要配合git使用 创建文章：需要在terminal 输入命令 hexo new “文章名” 创建好的”文件名.md” 文件</description>
     </item>
     

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="nvm管理不同的node版本">
+<meta itemprop="description" content="前任栽树后人乘凉 ：http://www.cnblogs.com/kongxianghai/p/5660101.html 安装多版本node 安装"><meta itemprop="datePublished" content="2017-02-24T09:59:52+00:00" />
+<meta itemprop="dateModified" content="2017-02-24T09:59:52+00:00" />
+<meta itemprop="wordCount" content="714">
+<meta itemprop="keywords" content="nodejs,nvm," /><meta property="og:title" content="nvm管理不同的node版本" />
+<meta property="og:description" content="前任栽树后人乘凉 ：http://www.cnblogs.com/kongxianghai/p/5660101.html 安装多版本node 安装" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/nodejs/nodejs-nvm%E7%AE%A1%E7%90%86%E4%B8%8D%E5%90%8C%E7%9A%84node%E7%89%88%E6%9C%AC/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-02-24T09:59:52+00:00" />
+<meta property="article:modified_time" content="2017-02-24T09:59:52+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="nvm管理不同的node版本"/>
+<meta name="twitter:description" content="前任栽树后人乘凉 ：http://www.cnblogs.com/kongxianghai/p/5660101.html 安装多版本node 安装"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>nvm管理不同的node版本</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Feb 24, 2017</span></div>
+				<h1>nvm管理不同的node版本</h1>
+			</header>
+			<div class="content">
+				<p>前任栽树后人乘凉 ：http://www.cnblogs.com/kongxianghai/p/5660101.html</p>
+<h3 id="安装多版本node">安装多版本node</h3>
+<ul>
+<li>
+<p>安装nvm</p>
+<p>通过下面的命令可进行一步到位的安装，下面两种方式可二选一。</p>
+<p>curl -o- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh">https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh</a> | bash</p>
+<p>或者:</p>
+<p>wget -qO- <a href="https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh">https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh</a> | bash</p>
+</li>
+</ul>
+<h4 id="安装">安装</h4>
+<ul>
+<li>在命令行中运行命令，安装当前最新的稳定版。
+<code>nvm install stable</code></li>
+<li>运行命令，指明版本，安装早期的版本0.12.4。
+<code>nvm install 0.12.4</code></li>
+<li>安装后，当前使用的node版本默认为最后一次安装的版本，在命令行中运行命令可查看当前版本。
+<code>nvm current</code></li>
+<li>切换node版本
+<code>nvm use 6</code></li>
+<li>显示所有安装的版本
+<code>nvm ls</code></li>
+<li>设置默认使用的版本
+<code>nvm alias default version</code></li>
+</ul>
+<h4 id="卸载">卸载</h4>
+<ul>
+<li>
+<p>删除引用</p>
+<p><code>nvm deactivate</code></p>
+</li>
+<li>
+<p>卸载</p>
+<p><code>nvm uninstall 7</code></p>
+</li>
+<li>
+<ul>
+<li>*安装全局组件</li>
+</ul>
+</li>
+</ul>
+<p>非nvm管理的情况下，全局组件是安装到/usr/local/lib/node_modules下，然后通过软连接的方式把包中bin目录下的可执行文件链接到/usr/local/bin。不管用什么版本都装到这些目录下，多版本就没法玩了。</p>
+<p>在nvm管理下，以沙箱的方式，全局组件会装到.nvm目录的当前版本node下，也就是装在nvm这个沙箱里，跟在指定版本的node下，当前有什么版本的node，就有对应的全局组件。这是nvm强大的地方，在多运行环境的管理和切换极为好用。</p>
+<p>使用.nvmrc文件运行</p>
+<p>在服务器上很多时候会运行多个应用系统，每个应用系统使用的node版本是不一样的，老系统用0.12.x甚至0.10.x，新系统用了新特新所以用最新的node版本，都很实际很正常。</p>
+<p>为了让不同的应用系统使用各自所需的node版本运行，我们只需在各应用系统内的根目录里生成一个.nvmrc文件，在其内写一个版本号，利用nvm run &lt;系统启动文件&gt;的方式运行系统，即可完成要求。<strong>详情请看文章开头链接。</strong><!-- raw HTML omitted --></p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.v5u.win/tags/nodejs">nodejs</a></span><span class="tag"><a href="https://blog.v5u.win/tags/nvm">nvm</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>714 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2017-02-24 17:59 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/mac-%E5%AE%89%E8%A3%85nginx/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>mac 安装nginx</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/life/life-24-logic-error/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>二十四种常见的逻辑谬误</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>最佳实践 on 为吾优</title>
+    <link>https://blog.v5u.win/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+    <description>Recent content in 最佳实践 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 24 May 2021 20:45:38 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>软件项目开发最佳实践</title>
+      <link>https://blog.v5u.win/posts/design/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 24 May 2021 20:45:38 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design/%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>软件项目开发最佳实践 项目开发流程包括这几个方面，我先说一下，让各位有个全局的印象： 项目立项 (CEO) 需求收集 (市场) 产品原型 (产品) UI设计 (设计)</description>
+    </item>
+    
+    <item>
+      <title>电子书格式的最佳实践</title>
+      <link>https://blog.v5u.win/posts/design/design-%E7%94%B5%E5%AD%90%E4%B9%A6%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 19 Apr 2021 14:56:20 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design/design-%E7%94%B5%E5%AD%90%E4%B9%A6%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>电子书格式我知道的有 epub txt mobie 三种格式 txt 是最早的纯文本格式。 mobie是亚马逊kindle电子书的使用格式。 阅读体验和应用范围最广的是epub格</description>
+    </item>
+    
+    <item>
+      <title>关于最佳实践</title>
+      <link>https://blog.v5u.win/posts/design/design-%E5%85%B3%E4%BA%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 19 Apr 2021 14:37:30 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design/design-%E5%85%B3%E4%BA%8E%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>关于最佳实践 第一次听到这个词是和一个Java的朋友聊天的过程中知道的。后来才发现Java不愧是工业级最好的编程语言。 最佳实践思想表现在方方面</description>
+    </item>
+    
+    <item>
+      <title>Brew的使用最佳实践</title>
+      <link>https://blog.v5u.win/posts/design/design-brew%E7%9A%84%E4%BD%BF%E7%94%A8%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 19 Apr 2021 14:29:57 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design/design-brew%E7%9A%84%E4%BD%BF%E7%94%A8%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>卸载包和依赖包 安装第三方卸载工具 brew tap beeftornado/rmtree &amp;amp;&amp;amp; brew install brew-rmtree 卸载其他软件 brew rmtree &amp;lt;package&amp;gt; 命令行删除文件使用 rmtrash，避免直接rm 无法找回 brew upate 更新所有的软件包 brew</description>
+    </item>
+    
+    <item>
+      <title>Mac下PHP环境搭建最佳实践</title>
+      <link>https://blog.v5u.win/posts/design/design-macphp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 19 Apr 2021 14:12:39 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design/design-macphp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>##Mac下PHP环境搭建最佳实践 brew 安装 php nginx mysql@5.7 请放弃使用系统自带的PHP环境和Apache环境 也不推荐xampp集成环境</description>
+    </item>
+    
+    <item>
+      <title>Dockerfile最佳实践</title>
+      <link>https://blog.v5u.win/posts/docker/docker-dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Sun, 05 May 2019 13:44:44 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/docker/docker-dockerfile%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>Dockerfile入门之后面临一个问题：如何在实际的开发过程中正确配置 Dockerfile？ Dockerfile 有两个方向上的使用方式： 只用 Dockerfile 管理镜像 使用d</description>
+    </item>
+    
+  </channel>
+</rss>

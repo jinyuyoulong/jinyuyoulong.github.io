@@ -6,17 +6,23 @@
     <description>Recent content in system on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 26 Jun 2018 01:50:27 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/system/index.xml" rel="self" type="application/rss+xml" />
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 19 Apr 2021 15:15:50 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机领域知识的结构化</title>
+      <link>https://blog.v5u.win/posts/system/system-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%A2%86%E5%9F%9F%E7%9F%A5%E8%AF%86%E7%9A%84%E7%BB%93%E6%9E%84%E5%8C%96/</link>
+      <pubDate>Mon, 19 Apr 2021 15:15:50 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/system/system-%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%A2%86%E5%9F%9F%E7%9F%A5%E8%AF%86%E7%9A%84%E7%BB%93%E6%9E%84%E5%8C%96/</guid>
+      <description>最近对结构化知识特别有感悟，看到这个回答决定非常不错，记录下来： 首先说说我大学四年的专业课程，接触过哪些编程语言：c、c++，java，An</description>
+    </item>
     
     <item>
       <title>centos7 PHP7环境配置</title>
-      <link>https://blog.v5u.win/posts/system-centos7-php7/</link>
+      <link>https://blog.v5u.win/posts/system/system-centos7-php7/</link>
       <pubDate>Tue, 26 Jun 2018 01:50:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-centos7-php7/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-centos7-php7/</guid>
       <description>centos7 PHP7环境配置 目录 1. 开启22端口2. 创建其他用户，使用其他用户ssh登录（root账户禁止登录）3. 关闭防火墙4. 关闭selinux5.</description>
     </item>
     

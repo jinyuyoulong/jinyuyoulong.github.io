@@ -6,18 +6,33 @@
     <description>Recent content in PHP on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 01 Jul 2019 15:05:09 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/tags/php/index.xml" rel="self" type="application/rss+xml" />
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Mon, 19 Apr 2021 14:12:39 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac下PHP环境搭建最佳实践</title>
+      <link>https://blog.v5u.win/posts/design/design-macphp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 19 Apr 2021 14:12:39 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/design/design-macphp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>##Mac下PHP环境搭建最佳实践 brew 安装 php nginx mysql@5.7 请放弃使用系统自带的PHP环境和Apache环境 也不推荐xampp集成环境</description>
+    </item>
     
     <item>
       <title>Nginx 动态生成缩略图</title>
-      <link>https://blog.v5u.win/posts/system-nginx/</link>
+      <link>https://blog.v5u.win/posts/system/system-nginx/</link>
       <pubDate>Mon, 01 Jul 2019 15:05:09 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-nginx/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-nginx/</guid>
       <description>[TOC] 有的时候要生成大量尺寸的缩图，事先不知道有哪些尺寸，所以可以用php动态生成； 1.在nginx中配置 location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.)/(.*)(\d+)(\d+).(gif|jpg|jpeg|png|bmp) /ImageTransferController.php?s=1/2_3_4.5; } expires 30d; } 完善 ImageTransferController.php</description>
+    </item>
+    
+    <item>
+      <title>php session 不能跨页面传递</title>
+      <link>https://blog.v5u.win/php-session-%E4%B8%8D%E8%83%BD%E8%B7%A8%E9%A1%B5%E9%9D%A2%E4%BC%A0%E9%80%92/</link>
+      <pubDate>Wed, 16 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.v5u.win/php-session-%E4%B8%8D%E8%83%BD%E8%B7%A8%E9%A1%B5%E9%9D%A2%E4%BC%A0%E9%80%92/</guid>
+      <description>session错误 确认当前页面session有没有添加成功 debug可不可以讲session值跨页面传递 设置php.ini文件session</description>
     </item>
     
     <item>
@@ -31,29 +46,20 @@
     
     <item>
       <title>Apache使用总结</title>
-      <link>https://blog.v5u.win/posts/system-apache%E6%80%BB%E7%BB%93/</link>
+      <link>https://blog.v5u.win/posts/system/system-apache%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-apache%E6%80%BB%E7%BB%93/</guid>
-      <description>Apache总结 http.conf配置 开启/关闭目录索引 &amp;lt;Directory &amp;quot;D:/Apache/blog.phpha.com&amp;quot;&amp;gt; Options Indexes FollowSymLinks # 修改为: Options FollowSymLinks #Indexes 的作用就是当该目录下没有 index.html 文件时，就显示目录结构，去掉 Indexes ，</description>
+      <guid>https://blog.v5u.win/posts/system/system-apache%E6%80%BB%E7%BB%93/</guid>
+      <description>Apache总结 http.conf配置 开启/关闭目录索引 &amp;lt;Directory &amp;#34;D:/Apache/blog.phpha.com&amp;#34;&amp;gt; Options Indexes FollowSymLinks # 修改为: Options FollowSymLinks #Indexes 的作用就是当该目录下没有 index.html 文件时，就显示目录结构，去掉 Indexes ，</description>
     </item>
     
     <item>
       <title>centos7 PHP7环境配置</title>
-      <link>https://blog.v5u.win/posts/system-centos7-php7/</link>
+      <link>https://blog.v5u.win/posts/system/system-centos7-php7/</link>
       <pubDate>Tue, 26 Jun 2018 01:50:27 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-centos7-php7/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-centos7-php7/</guid>
       <description>centos7 PHP7环境配置 目录 1. 开启22端口2. 创建其他用户，使用其他用户ssh登录（root账户禁止登录）3. 关闭防火墙4. 关闭selinux5.</description>
-    </item>
-    
-    <item>
-      <title>php session 不能跨页面传递</title>
-      <link>https://blog.v5u.win/posts/php-session-error/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/php-session-error/</guid>
-      <description>session错误 确认当前页面session有没有添加成功 debug可不可以讲session值跨页面传递 设置php.ini文件session</description>
     </item>
     
   </channel>

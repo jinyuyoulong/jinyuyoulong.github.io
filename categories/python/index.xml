@@ -6,26 +6,23 @@
     <description>Recent content in Python on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 18 Dec 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/categories/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 18 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>scrapy</title>
-      <link>https://blog.v5u.win/posts/python-scrapy/</link>
+      <link>https://blog.v5u.win/posts/python/python-scrapy/</link>
       <pubDate>Tue, 18 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/python-scrapy/</guid>
+      <guid>https://blog.v5u.win/posts/python/python-scrapy/</guid>
       <description>scrapy crawl m530pcrawl会去搜搜cmd目录下的scrapy.cfg 有些Scrapy命令(比如 crawl)要求必须在Scrapy项目中运行。 您</description>
     </item>
     
     <item>
       <title>pycharm如何添加 local venv</title>
-      <link>https://blog.v5u.win/posts/python-pycharm-local-venv/</link>
+      <link>https://blog.v5u.win/posts/python/python-pycharm-local-venv/</link>
       <pubDate>Fri, 30 Mar 2018 03:20:02 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/python-pycharm-local-venv/</guid>
+      <guid>https://blog.v5u.win/posts/python/python-pycharm-local-venv/</guid>
       <description>需求：pycharm为项目添加已经存在的venv虚拟环境 前几天学习Django，开始是terminal + sublime text。后来学的差不多了，想想做</description>
     </item>
     
@@ -40,11 +37,11 @@
     
     <item>
       <title>python-sublime</title>
-      <link>https://blog.v5u.win/posts/python-sublime/</link>
+      <link>https://blog.v5u.win/posts/python/python-sublime/</link>
       <pubDate>Wed, 29 Nov 2017 17:29:24 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/python-sublime/</guid>
-      <description>sublime text 下的Python编译环境设置 file name : python3.sublime-build { &amp;quot;shell_cmd&amp;quot;: &amp;quot;Python编译器的路径 ${file}&amp;quot;, &amp;quot;selector&amp;quot; :&amp;quot;source.python&amp;quot;, &amp;quot;file_regex&amp;quot;:&amp;quot;^(...*?):[0-9]:?([0-9]*)&amp;quot;, &amp;quot;working_dir&amp;quot;:&amp;quot;${file_path}&amp;quot;, &amp;quot;env&amp;quot;: {&amp;quot;PYTHONIOENCODING&amp;quot;: &amp;quot;utf8&amp;quot;}, }</description>
+      <guid>https://blog.v5u.win/posts/python/python-sublime/</guid>
+      <description>sublime text 下的Python编译环境设置 file name : python3.sublime-build { &amp;#34;shell_cmd&amp;#34;: &amp;#34;Python编译器的路径 ${file}&amp;#34;, &amp;#34;selector&amp;#34; :&amp;#34;source.python&amp;#34;, &amp;#34;file_regex&amp;#34;:&amp;#34;^(...*?):[0-9]:?([0-9]*)&amp;#34;, &amp;#34;working_dir&amp;#34;:&amp;#34;${file_path}&amp;#34;, &amp;#34;env&amp;#34;: {&amp;#34;PYTHONIOENCODING&amp;#34;: &amp;#34;utf8&amp;#34;}, }</description>
     </item>
     
     <item>
@@ -58,37 +55,37 @@
     
     <item>
       <title>mac下 pip 设置豆瓣源</title>
-      <link>https://blog.v5u.win/posts/system-pip/</link>
+      <link>https://blog.v5u.win/posts/system/system-pip/</link>
       <pubDate>Thu, 19 Oct 2017 07:18:14 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-pip/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-pip/</guid>
       <description>在用户目录下创建文件夹.pip，在.pip下创建pip.conf pip.conf填入内容 [global] index-url = https://pypi.douban.com/simple [list] format=columns</description>
     </item>
     
     <item>
       <title>python venv 虚拟环境使用</title>
-      <link>https://blog.v5u.win/posts/system-python-venv-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E4%BD%BF%E7%94%A8/</link>
+      <link>https://blog.v5u.win/posts/system/system-python-venv-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Tue, 04 Jul 2017 09:53:23 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system-python-venv-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-python-venv-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E4%BD%BF%E7%94%A8/</guid>
       <description>virtualenv就是用来为一个应用创建一套“隔离”的Python运行环境。 Python3.3以上的版本通过venv模块原生支持虚拟环境，</description>
     </item>
     
     <item>
       <title>pyquery 解析网页乱码</title>
-      <link>https://blog.v5u.win/posts/python-pyquery-%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E4%B9%B1%E7%A0%81/</link>
+      <link>https://blog.v5u.win/posts/python/python-pyquery-%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E4%B9%B1%E7%A0%81/</link>
       <pubDate>Fri, 18 Nov 2016 10:08:22 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/python-pyquery-%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E4%B9%B1%E7%A0%81/</guid>
+      <guid>https://blog.v5u.win/posts/python/python-pyquery-%E8%A7%A3%E6%9E%90%E7%BD%91%E9%A1%B5%E4%B9%B1%E7%A0%81/</guid>
       <description>pyquery 解析网页乱码 问题：使用pyquery直接请求的网页，解析中文出现一半乱码，一般正常的情况 花了半天的时间也没找到解决办法，第二天早上无意间点</description>
     </item>
     
     <item>
       <title>Python_pyspider</title>
-      <link>https://blog.v5u.win/posts/python-pyspider/</link>
+      <link>https://blog.v5u.win/posts/python/python-pyspider/</link>
       <pubDate>Wed, 02 Nov 2016 10:34:41 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/python-pyspider/</guid>
+      <guid>https://blog.v5u.win/posts/python/python-pyspider/</guid>
       <description>mac 下pyspider的安装 安装环境：OS X EI Capitan 版本 10.11.6 Python2.7 此文章书写原因：经过简单命令pip install pyspider安装失败后，各种解决问题不胜其烦，</description>
     </item>
     

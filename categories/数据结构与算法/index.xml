@@ -6,17 +6,14 @@
     <description>Recent content in 数据结构与算法 on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 21 Apr 2020 13:09:22 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 21 Apr 2020 13:09:22 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2020 04 21 元编程</title>
-      <link>https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/</link>
+      <link>https://blog.v5u.win/posts/design/design-%E5%85%83%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Tue, 21 Apr 2020 13:09:22 +0800</pubDate>
       
-      <guid>https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://blog.v5u.win/posts/design/design-%E5%85%83%E7%BC%96%E7%A8%8B/</guid>
       <description>元编程 meta programming 元编程是一种通过代码生成代码的思想，一般分为两种形式： macro宏展开 或者 模板 runtime 运行时 宏系统分为两种： 文本替换，比如 C 和 C++ 抽象语法</description>
     </item>
     

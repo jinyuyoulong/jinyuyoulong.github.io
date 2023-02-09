@@ -1,622 +1,108 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="nginx">
+<meta itemprop="description" content="走在通往幸福的路上"><meta property="og:title" content="nginx" />
+<meta property="og:description" content="走在通往幸福的路上" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blog.v5u.win/tags/nginx/" />
 
-    <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.66.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="nginx"/>
+<meta name="twitter:description" content="走在通往幸福的路上"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
 
-    <title>nginx | 为吾优</title>
-    <meta property="og:title" content="nginx - 为吾优">
-    <meta property="og:type" content="article">
-        
-        
-    <meta name="Keywords" content="博客,Web,Go,iOS">
-    <meta name="description" content="nginx">
-        
-    <meta name="author" content="金玉游龙">
-    <meta property="og:url" content="https://blog.v5u.win/tags/nginx/">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="/css/normalize.css">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="alternate" type="application/rss+xml+xml" href="https://blog.v5u.win/tags/nginx/index.xml" title="为吾优" />
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    
-
-
-    
-    
-        <link rel="stylesheet" href="/css/style.extra.css">
-    
+	<title>nginx</title>
+	<link rel="alternate" type="application/rss+xml+https://blog.v5u.win/tags/nginx/index.xml" href="为吾优" title="%!s(MISSING)" />
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
 </head>
 
-
-<body>
-<header id="header" class="clearfix">
-    <div class="container">
-        <div class="col-group">
-            <div class="site-name ">
-                
-                    <a id="logo" href="https://blog.v5u.win">
-                        为吾优
-                    </a>
-                
-                <p class="description">走在通往幸福的路上</p>
-            </div>
-            <div>
-                <nav id="nav-menu" class="clearfix">
-                    <a class="" href="https://blog.v5u.win">首页</a>
-                    
-                    <a  href="https://blog.v5u.win/archives/" title="存档">存档</a>
-                    
-                    <a  href="https://blog.v5u.win/about/" title="关于">关于</a>
-                    
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-<div id="body">
-    <div class="container">
-        <div class="col-group">
-
-            <div class="col-8" id="main">
-                <div class="res-cons">
-                    
-                    <h3 class="archive-title">
-                        包含标签
-                        <span class="keyword">nginx</span>
-                        的文章
-                    </h3>
-                    
-
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://blog.v5u.win/posts/system-nginx/">Nginx 动态生成缩略图</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2019年7月1日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://blog.v5u.win/categories/system">system</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                [TOC] 有的时候要生成大量尺寸的缩图，事先不知道有哪些尺寸，所以可以用php动态生成； 1.在nginx中配置 location ~ ..(gif|jpg|jpeg|png|bmp)$ { if ( !-f $request_filename) { rewrite ^(.)/(.*)(\d+)(\d+).(gif|jpg|jpeg|png|bmp) /ImageTransferController.php?s=1/2_3_4.5; } expires 30d; } 完善 ImageTransferController.php……
-                                <p class="readmore"><a href="https://blog.v5u.win/posts/system-nginx/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://blog.v5u.win/posts/php-mac-nginx-php-mysql/">mac-nginx-php-mysql</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2018年12月25日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://blog.v5u.win/categories/php">PHP</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                [TOC] 安装环境 brew install nginx brew install php brew install mysql 配置环境 /usr/local/homebrew/etc/nginx/nginx.conf /etc/php-fpm.conf 启动环境 brew services start nginx php-fpm（启动php-fpm） nginx.conf php-fpm.conf……
-                                <p class="readmore"><a href="https://blog.v5u.win/posts/php-mac-nginx-php-mysql/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
-                        <article class="post">
-                            <header>
-                                <h1 class="post-title">
-                                    <a href="https://blog.v5u.win/mac-%E5%AE%89%E8%A3%85nginx/">mac 安装nginx</a>
-                                </h1>
-                            </header>
-                            <date class="post-meta meta-date">
-                                2017年2月25日
-                            </date>
-                            
-                            <div class="post-meta meta-category">
-                                |
-                                
-                                    <a href="https://blog.v5u.win/categories/mac">Mac</a>
-                                
-                            </div>
-                            
-                            <div class="post-content">
-                                安装 brew install nginx 启动 sudo nginx 重新启动 sudo nginx -s reload 停止 sudo nginx -s stop ps 查看80端口占用情况 sudo lsof -P -itcp:80……
-                                <p class="readmore"><a href="https://blog.v5u.win/mac-%E5%AE%89%E8%A3%85nginx/">阅读全文</a></p>
-                            </div>
-                        </article>
-                    
-
-                    
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
 
 
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>nginx</h1>
+		<div class="posts-group">
+			<div class="post-year">2019</div>
+			<ul class="posts-list">
+				<li class="post-item">
+					<a href="https://blog.v5u.win/posts/system/system-nginx/">
+						<span class="post-title">Nginx 动态生成缩略图</span>
+						<span class="post-day">Jul 1</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="posts-group">
+			<div class="post-year">2018</div>
+			<ul class="posts-list">
+				<li class="post-item">
+					<a href="https://blog.v5u.win/posts/php/php-mac-nginx-php-mysql/">
+						<span class="post-title">mac-nginx-php-mysql</span>
+						<span class="post-day">Dec 25</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="posts-group">
+			<div class="post-year">2017</div>
+			<ul class="posts-list">
+				<li class="post-item">
+					<a href="https://blog.v5u.win/mac-%E5%AE%89%E8%A3%85nginx/">
+						<span class="post-title">mac 安装nginx</span>
+						<span class="post-day">Feb 25</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
 
 
-
-                </div>
-            </div>
-
-            <div id="secondary">
-    <section class="widget">
-        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
-      
-      <input type="text" name="q" maxlength="20" placeholder="Search">
-      <input type="hidden" name="sitesearch" value="https://blog.v5u.win">
-      <button type="submit" class="submit icon-search"></button>
-</form>
-    </section>
-    
-    <section class="widget">
-        <h3 class="widget-title">最近文章</h3>
-<ul class="widget-list">
-    
-    <li>
-        <a href="https://blog.v5u.win/posts/flutter-%E6%80%BB%E7%BB%93/" title="Flutter 总结">Flutter 总结</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/" title="Design 设计模式 装饰模式">Design 设计模式 装饰模式</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/posts/design-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/" title="Design 设计模式 门面模式">Design 设计模式 门面模式</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/posts/ios-cocoapod_library%E7%A7%81%E6%9C%89%E5%BA%93/" title="制作pod library 私有库">制作pod library 私有库</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/posts/tools-redmiairdots/" title="红米蓝牙Redmi AirDots，左右耳无法配对解决办法">红米蓝牙Redmi AirDots，左右耳无法配对解决办法</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/posts/design-%E5%85%83%E7%BC%96%E7%A8%8B/" title="2020 04 21 元编程">2020 04 21 元编程</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/go%E8%B0%9A%E8%AF%AD/" title="go谚语">go谚语</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/posts/system-http/" title="HTTP 响应码">HTTP 响应码</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/posts/system-epoll/" title="epoll原理">epoll原理</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/goland-%E4%BD%BF%E7%94%A8/" title="Goland 使用">Goland 使用</a>
-    </li>
-    
-</ul>
-    </section>
-
-    
-
-    <section class="widget">
-        <h3 class="widget-title">分类</h3>
-<ul class="widget-list">
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/archives/">archives(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/blog/">blog(7)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/docker/">docker(5)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/flutter/">flutter(2)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/git/">git(3)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/go/">go(52)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/ios/">ios(84)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/it%E9%BB%91%E8%AF%9D/">it黑话(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/mac/">mac(12)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/nodejs/">nodejs(11)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/php/">php(17)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/python/">python(9)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/seo/">seo(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/swift/">swift(13)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/system/">system(30)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/web/">web(3)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/web%E5%89%8D%E7%AB%AF/">web前端(2)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/xcode/">xcode(4)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册(11)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E5%81%A5%E5%BA%B7/">健康(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/">其他技术(16)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E5%8D%81%E4%B8%87%E4%B8%AA%E4%B8%BA%E4%BB%80%E4%B9%88/">十万个为什么(9)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E5%B7%A5%E5%85%B7/">工具(24)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E5%BC%80%E6%BA%90/">开源(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统(14)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库(4)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法(2)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E6%97%A5%E8%AF%BE/">日课(17)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/">编程技巧(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言(4)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/">设计(7)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式(2)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E8%AF%97%E6%96%87/">诗文(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记(18)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/">软技能(3)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E9%81%93/">道(3)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E9%81%93%E6%B3%95/">道法(2)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E9%94%99%E8%AF%AF%E9%9B%86%E9%94%A6/">错误集锦(1)</a>
-    </li>
-    
-    <li>
-        <a href="https://blog.v5u.win/categories/%E9%98%85%E8%AF%BB/">阅读(5)</a>
-    </li>
-    
-</ul>
-    </section>
-
-    <section class="widget">
-        <h3 class="widget-title">标签</h3>
-<div class="tagcloud">
-    
-    <a href="https://blog.v5u.win/tags/apache/">apache</a>
-    
-    <a href="https://blog.v5u.win/tags/apple/">apple</a>
-    
-    <a href="https://blog.v5u.win/tags/appledoc/">appledoc</a>
-    
-    <a href="https://blog.v5u.win/tags/autoclosure/">autoclosure</a>
-    
-    <a href="https://blog.v5u.win/tags/brew/">brew</a>
-    
-    <a href="https://blog.v5u.win/tags/centos/">centos</a>
-    
-    <a href="https://blog.v5u.win/tags/chmod/">chmod</a>
-    
-    <a href="https://blog.v5u.win/tags/cocoapods/">cocoapods</a>
-    
-    <a href="https://blog.v5u.win/tags/const/">const</a>
-    
-    <a href="https://blog.v5u.win/tags/css/">css</a>
-    
-    <a href="https://blog.v5u.win/tags/define/">define</a>
-    
-    <a href="https://blog.v5u.win/tags/docker/">docker</a>
-    
-    <a href="https://blog.v5u.win/tags/error/">error</a>
-    
-    <a href="https://blog.v5u.win/tags/escaping/">escaping</a>
-    
-    <a href="https://blog.v5u.win/tags/express/">express</a>
-    
-    <a href="https://blog.v5u.win/tags/gcd/">gcd</a>
-    
-    <a href="https://blog.v5u.win/tags/gem/">gem</a>
-    
-    <a href="https://blog.v5u.win/tags/git/">git</a>
-    
-    <a href="https://blog.v5u.win/tags/gitbook/">gitbook</a>
-    
-    <a href="https://blog.v5u.win/tags/go/">go</a>
-    
-    <a href="https://blog.v5u.win/tags/hexo/">hexo</a>
-    
-    <a href="https://blog.v5u.win/tags/html/">html</a>
-    
-    <a href="https://blog.v5u.win/tags/http/">http</a>
-    
-    <a href="https://blog.v5u.win/tags/ide/">ide</a>
-    
-    <a href="https://blog.v5u.win/tags/ios/">ios</a>
-    
-    <a href="https://blog.v5u.win/tags/iris/">iris</a>
-    
-    <a href="https://blog.v5u.win/tags/it%E8%80%83%E5%8F%A4/">it考古</a>
-    
-    <a href="https://blog.v5u.win/tags/javascriptcore/">javascriptcore</a>
-    
-    <a href="https://blog.v5u.win/tags/jekyll/">jekyll</a>
-    
-    <a href="https://blog.v5u.win/tags/k8s/">k8s</a>
-    
-    <a href="https://blog.v5u.win/tags/keyboard/">keyboard</a>
-    
-    <a href="https://blog.v5u.win/tags/kubernetes/">kubernetes</a>
-    
-    <a href="https://blog.v5u.win/tags/kvo/">kvo</a>
-    
-    <a href="https://blog.v5u.win/tags/linux/">linux</a>
-    
-    <a href="https://blog.v5u.win/tags/lnmp/">lnmp</a>
-    
-    <a href="https://blog.v5u.win/tags/mac/">mac</a>
-    
-    <a href="https://blog.v5u.win/tags/markdown/">markdown</a>
-    
-    <a href="https://blog.v5u.win/tags/mongodb/">mongodb</a>
-    
-    <a href="https://blog.v5u.win/tags/mysql/">mysql</a>
-    
-    <a href="https://blog.v5u.win/tags/nginx/">nginx</a>
-    
-    <a href="https://blog.v5u.win/tags/node/">node</a>
-    
-    <a href="https://blog.v5u.win/tags/nodejs/">nodejs</a>
-    
-    <a href="https://blog.v5u.win/tags/noescape/">noescape</a>
-    
-    <a href="https://blog.v5u.win/tags/npm/">npm</a>
-    
-    <a href="https://blog.v5u.win/tags/nsdate/">nsdate</a>
-    
-    <a href="https://blog.v5u.win/tags/nvm/">nvm</a>
-    
-    <a href="https://blog.v5u.win/tags/openshift/">openshift</a>
-    
-    <a href="https://blog.v5u.win/tags/orm/">orm</a>
-    
-    <a href="https://blog.v5u.win/tags/php/">php</a>
-    
-    <a href="https://blog.v5u.win/tags/pip/">pip</a>
-    
-    <a href="https://blog.v5u.win/tags/plist/">plist</a>
-    
-    <a href="https://blog.v5u.win/tags/ppspider/">ppspider</a>
-    
-    <a href="https://blog.v5u.win/tags/pycharm/">pycharm</a>
-    
-    <a href="https://blog.v5u.win/tags/python/">python</a>
-    
-    <a href="https://blog.v5u.win/tags/reactnative/">reactnative</a>
-    
-    <a href="https://blog.v5u.win/tags/skecth/">skecth</a>
-    
-    <a href="https://blog.v5u.win/tags/sqlite/">sqlite</a>
-    
-    <a href="https://blog.v5u.win/tags/ssh/">ssh</a>
-    
-    <a href="https://blog.v5u.win/tags/struct/">struct</a>
-    
-    <a href="https://blog.v5u.win/tags/sublime-text/">sublime-text</a>
-    
-    <a href="https://blog.v5u.win/tags/swift/">swift</a>
-    
-    <a href="https://blog.v5u.win/tags/system/">system</a>
-    
-    <a href="https://blog.v5u.win/tags/terminal/">terminal</a>
-    
-    <a href="https://blog.v5u.win/tags/vim/">vim</a>
-    
-    <a href="https://blog.v5u.win/tags/vscode/">vscode</a>
-    
-    <a href="https://blog.v5u.win/tags/wireshark/">wireshark</a>
-    
-    <a href="https://blog.v5u.win/tags/wordpress/">wordpress</a>
-    
-    <a href="https://blog.v5u.win/tags/xampp/">xampp</a>
-    
-    <a href="https://blog.v5u.win/tags/xcode/">xcode</a>
-    
-    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%8C%BB/">中医</a>
-    
-    <a href="https://blog.v5u.win/tags/%E4%B8%AD%E5%9B%BD%E7%94%9F%E5%AD%98%E6%89%8B%E5%86%8C/">中国生存手册</a>
-    
-    <a href="https://blog.v5u.win/tags/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理</a>
-    
-    <a href="https://blog.v5u.win/tags/%E5%9F%BA%E9%87%91/">基金</a>
-    
-    <a href="https://blog.v5u.win/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
-    
-    <a href="https://blog.v5u.win/tags/%E5%AE%8F%E5%AE%9A%E4%B9%89/">宏定义</a>
-    
-    <a href="https://blog.v5u.win/tags/%E5%B7%A5%E5%85%B7/">工具</a>
-    
-    <a href="https://blog.v5u.win/tags/%E6%8A%93%E5%8C%85/">抓包</a>
-    
-    <a href="https://blog.v5u.win/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-    
-    <a href="https://blog.v5u.win/tags/%E6%96%87/">文</a>
-    
-    <a href="https://blog.v5u.win/tags/%E6%97%B6%E9%97%B4%E6%88%B3/">时间戳</a>
-    
-    <a href="https://blog.v5u.win/tags/%E6%A6%9C%E6%A0%B7/">榜样</a>
-    
-    <a href="https://blog.v5u.win/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
-    
-    <a href="https://blog.v5u.win/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
-    
-    <a href="https://blog.v5u.win/tags/%E7%AE%97%E6%B3%95/">算法</a>
-    
-    <a href="https://blog.v5u.win/tags/%E8%8C%83%E8%A0%A1/">范蠡</a>
-    
-    <a href="https://blog.v5u.win/tags/%E8%A7%84%E8%8C%83/">规范</a>
-    
-    <a href="https://blog.v5u.win/tags/%E8%AF%97%E6%96%87/">诗文</a>
-    
-    <a href="https://blog.v5u.win/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-    
-    <a href="https://blog.v5u.win/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/">身份证</a>
-    
-    <a href="https://blog.v5u.win/tags/%E8%BF%9B%E7%A8%8B/">进程</a>
-    
-    <a href="https://blog.v5u.win/tags/%E9%81%93/">道</a>
-    
-    <a href="https://blog.v5u.win/tags/%E9%A1%B9%E7%9B%AE/">项目</a>
-    
-</div>
-    </section>
-
-    
-<section class="widget">
-    <h3 class="widget-title">友情链接</h3>
-    <ul class="widget-list">
-        
-        <li>
-            <a target="_blank" href="https://v2it.win/" title="代码如诗，人生无限。">海之飞燕 博客</a>
-        </li>
-        
-        <li>
-            <a target="_blank" href="https://blog.v5u.win/navigations/navigate.html" title="人生迷茫，我有导航">为吾优导航</a>
-        </li>
-        
-    </ul>
-</section>
-
-
-    <section class="widget">
-        <h3 class="widget-title">其它</h3>
-        <ul class="widget-list">
-            <li><a href="https://blog.v5u.win/index.xml">文章 RSS</a></li>
-        </ul>
-    </section>
-</div>
-        </div>
-    </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        &copy; 2020 <a href="https://blog.v5u.win">为吾优 By 金玉游龙</a>.
-        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
-        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
-        
-    </div>
-</footer>
-
-
-
-<a id="rocket" href="#top"></a>
-<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
-
-
-
-
-
-
-    <script src="/js/app.extra.js"></script>
-
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
 
 </body>
+
 </html>

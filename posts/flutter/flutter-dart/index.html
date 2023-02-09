@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Flutter Dart">
+<meta itemprop="description" content="[TOC] 语法： 关键字 external 将方法的声明和实现分离 @patch(补丁)，好处是可以针对不同的平台做实现。 变量声明：1. 明确声明 2. 类型推导 main(List&lt;String&gt; args) { // 1. 明确的"><meta itemprop="datePublished" content="2021-04-16T15:21:29+08:00" />
+<meta itemprop="dateModified" content="2021-04-16T15:21:29+08:00" />
+<meta itemprop="wordCount" content="1859">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Flutter Dart" />
+<meta property="og:description" content="[TOC] 语法： 关键字 external 将方法的声明和实现分离 @patch(补丁)，好处是可以针对不同的平台做实现。 变量声明：1. 明确声明 2. 类型推导 main(List&lt;String&gt; args) { // 1. 明确的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.v5u.win/posts/flutter/flutter-dart/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-16T15:21:29+08:00" />
+<meta property="article:modified_time" content="2021-04-16T15:21:29+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flutter Dart"/>
+<meta name="twitter:description" content="[TOC] 语法： 关键字 external 将方法的声明和实现分离 @patch(补丁)，好处是可以针对不同的平台做实现。 变量声明：1. 明确声明 2. 类型推导 main(List&lt;String&gt; args) { // 1. 明确的"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Flutter Dart</title>
+	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
+	
+	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://blog.v5u.win">为吾优</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://blog.v5u.win/archives/">存档</a>
+					<a href="https://blog.v5u.win/about/">关于</a>
+					<a href="https://blog.v5u.win/posts/">文章</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
+			<li><a href="https://blog.v5u.win/about/">关于</a></li>
+			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 16, 2021</span></div>
+				<h1>Flutter Dart</h1>
+			</header>
+			<div class="content">
+				<p>[TOC]</p>
+<p>语法：</p>
+<h2 id="关键字">关键字</h2>
+<p>external 将方法的声明和实现分离 @patch(补丁)，好处是可以针对不同的平台做实现。</p>
+<p>变量声明：1. 明确声明 2. 类型推导</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>main(List<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">String</span><span style="color:#f92672">&gt;</span> args) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 1. 明确的变量声明
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">String</span> name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fan&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 2. 类型推导（var/final/const)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 2.1 var 声明变量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> age <span style="color:#f92672">=</span> <span style="color:#ae81ff">29</span>;
+</span></span><span style="display:flex;"><span>  age <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 2.2 final 声明常量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">final</span> forever <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;永恒&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 2.3 const 声明常量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> jingtai <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;静态&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 2.4 final const 的区别
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// const必须赋值 常量值（编译期间需要有一个确定的值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// final可以通过计算、函数获取一个值（运行期间确定一个值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// const date1 = DateTime.now(); x
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">final</span> date1 <span style="color:#f92672">=</span> DateTime.now();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// final p1 = Person(&#39;fan&#39;);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// final p2 = Person(&#39;fan&#39;);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// print(identical(p1, p2)); // 判断 p1 ！= p2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 希望相同的参数看做同一个对象,严格来说不算 单例模式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> p1 <span style="color:#f92672">=</span> Person(<span style="color:#e6db74">&#39;fan&#39;</span>); <span style="color:#75715e">// ==&gt;  const p1 = const Person(&#39;fan&#39;);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> p2 <span style="color:#f92672">=</span> Person(<span style="color:#e6db74">&#39;fan&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> p3 <span style="color:#f92672">=</span> Person(<span style="color:#e6db74">&#39;jin&#39;</span>);
+</span></span><span style="display:flex;"><span>  print(identical(p1, p2));
+</span></span><span style="display:flex;"><span>  print(identical(p3, p2));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="数据类型">数据类型</h3>
+<p>// Object 和dynamic</p>
+<p>// dynamic 是明确声明，和var不一样</p>
+<p>// Object调用方法时，编译时会报错</p>
+<p>// dynamic调用方法时，编译时不会报错，但是运行时存在安全隐患</p>
+<h3 id="非零即真">非零即真</h3>
+<p>在js中1或任何非null对象的值被视为true</p>
+<p>在dart中，只有bool值为true被视为true</p>
+<h3 id="字符串">字符串</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> str1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;单引号&#39;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> str2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;双引号&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> str3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  模板
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  字符串
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 字符串和表达式进行拼接，和ES6一样
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fan&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> age <span style="color:#f92672">=</span> <span style="color:#ae81ff">19</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> height <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.88</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 强调：${变量} 那么{} 可以省略
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> message1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my name is </span><span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">, </span><span style="color:#e6db74">$</span>age<span style="color:#e6db74">, </span><span style="color:#e6db74">$</span>height<span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> message2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;my name is </span><span style="color:#e6db74">${</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">, </span><span style="color:#e6db74">${</span>name.runtimeType<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>;
+</span></span></code></pre></div><h3 id="集合类型">集合类型</h3>
+<pre tabindex="0"><code>  // 1. 列表 数组 list
+  // 2. 集合 set
+  // 3. 映射 对象 字典 map
+
+  var names = [&#34;1&#34;, &#34;2&#34;, &#34;3&#34;];
+  var movies = {&#34;星际穿越&#34;, &#34;xiyou&#34;, &#34;道明空间&#34;};
+  var info = {&#34;name&#34;: &#34;fan&#34;, &#34;age&#34;: 18}; // key 必须可hash
+</code></pre><h3 id="可选值-null-检查最佳实践">可选值 null 检查最佳实践</h3>
+<pre tabindex="0"><code>bool isConnected(a,b){
+	bool outConn=outgoing[a]?.contains(b) ?? false;
+	bool inConn = incoming[a]?.contains(b) ?? false;
+	return outConn || inConn;
+}
+</code></pre><p><code>?.</code>运算符在左边为null的情况下会阻断右边的调用，<code>??</code> 运算符主要作用是在左侧表达式为null时为其设置默认值。</p>
+<p>对于表达式：</p>
+<pre tabindex="0"><code>outgoing[a]?.contains(b)
+</code></pre><p>如果outgoing为null 或 outgoing[a]为null或contains(b)的值为null，都会导致表达式为null</p>
+<h2 id="function-函数是一等公民">function 函数是一等公民</h2>
+<p>面向对象语言中，对象是一等公民。一等公民可以做参数，返回值，传递。</p>
+<pre tabindex="0"><code>JS
+function demo(){}
+Dart
+demo(){}
+
+// 必选参数
+// 可选参数：1. 位置可选，2. 命名可选
+// 位置可选参数：[int age,double height]
+// 实参和形参在进行匹配时，是根据位置的匹配
+// 注意 ，只有可选参数可以有默认值
+void sayHello1(String name) {
+  print(name);
+}
+
+//位置可选参数
+void sayHello2(String name, [int age, double height]) {
+  print(name);
+}
+
+// 命名可选参数
+void sayHello3(String name, {int age, double height = 0}) {
+  print(name);
+}
+//三种函数传入方式
+ // 1. 直接传方法名，对函数没有任何限制（参数，返回值）
+  test(bar);
+//2.  匿名函数 （参数列表){函数体}
+  test(() {
+    print(&#34;匿名函数被调用&#34;);
+  });
+
+  //3.  箭头函数：条件，函数体只有一行代码
+  test(() =&gt; print(&#34;箭头函数被调用&#34;));
+</code></pre><h2 id="运算符">运算符</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span> <span style="color:#75715e">// 赋值操作 ??= 当变量有值时，??= 不执行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 变量为null，将值赋值给变量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fan&#34;</span>;
+</span></span><span style="display:flex;"><span>  name <span style="color:#f92672">??=</span> <span style="color:#e6db74">&#34;jin&#34;</span>;
+</span></span><span style="display:flex;"><span>  print(name);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ??
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 前面变量有值，使用变量的值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 前面变量无值，返回?? 后边的值。可以理解为三目运算符的简写
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> temp <span style="color:#f92672">=</span> name <span style="color:#f92672">??</span> <span style="color:#e6db74">&#34;is&#34;</span>;
+</span></span><span style="display:flex;"><span>  print(temp);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 级联运算符
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> p <span style="color:#f92672">=</span> Person()
+</span></span><span style="display:flex;"><span>    ..name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ming&#34;</span>
+</span></span><span style="display:flex;"><span>    ..eat()
+</span></span><span style="display:flex;"><span>    ..run();
+</span></span></code></pre></div><h2 id="流程控制">流程控制</h2>
+<h2 id="异步编程">异步编程</h2>
+<h3 id="future--promise">future == promise</h3>
+<p>JS中Promise对象表示异步操作的最终完成（或失败）及其结果值，Dart中使用Future来表示异步操作。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;dart:convert&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#39;dart:html&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>main(List<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">String</span><span style="color:#f92672">&gt;</span> args) {
+</span></span><span style="display:flex;"><span>  _getIPAddress() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">final</span> url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://httpbin.org/ip&#34;</span>;
+</span></span><span style="display:flex;"><span>    Future<span style="color:#f92672">&lt;</span>HttpRequest<span style="color:#f92672">&gt;</span> request <span style="color:#f92672">=</span> HttpRequest.request(url);
+</span></span><span style="display:flex;"><span>    request.then((value) {
+</span></span><span style="display:flex;"><span>      print(jsonDecode(value.responseText)[<span style="color:#e6db74">&#39;origin&#39;</span>]);
+</span></span><span style="display:flex;"><span>    }).catchError((error) <span style="color:#f92672">=&gt;</span> print(error));
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  _getIPAddress();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="async-和-await">async 和 await</h3>
+<h2 id="类">类</h2>
+<p>单继承，使用混合方式实现多继承mixin</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dart" data-lang="dart"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 如果用const 修饰 构造器，类也必须用 final修饰
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">String</span> name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> Person(<span style="color:#66d9ef">this</span>.name);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">String</span> name;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 源自C++中的初始化列表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 如下常用方式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 这种初始化方法可以使用表达式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 另外一种命名可选参数的初始化方式只能使用直接赋值
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  Person(<span style="color:#66d9ef">this</span>.name, {<span style="color:#66d9ef">int</span> age}) <span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.age <span style="color:#f92672">=</span> age <span style="color:#f92672">??</span> <span style="color:#ae81ff">10</span> {}
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Person(this.name,{int age = 10})
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person1</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">String</span> name;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 同名方法为构造函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  Person(<span style="color:#66d9ef">int</span> age, <span style="color:#66d9ef">String</span> name) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.age <span style="color:#f92672">=</span> age;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.name <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> sayHello() {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;my name is </span><span style="color:#e6db74">$</span>name<span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Eat</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> eat() {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;eat&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Sleep</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> sleep() {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;sleeep&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 抽象类 不能被实例化，通常用于架构师来设计编码格式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> run(); <span style="color:#75715e">// 抽象方法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// 抽象类的用处：我有一个想法，但是不知道怎么实现，提醒继承者去实现
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 多继承 混合
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person2</span> <span style="color:#66d9ef">extends</span> Animal <span style="color:#66d9ef">with</span> Eat, Sleep {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">String</span> name;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 同名方法为构造函数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  Person2(<span style="color:#66d9ef">int</span> age, <span style="color:#66d9ef">String</span> name) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.age <span style="color:#f92672">=</span> age;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.name <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> sayHello() {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;my name is </span><span style="color:#e6db74">$</span>name<span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">@</span>override
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> run() {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;haha run&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>混合的菱形继承问题：编译后，最近原则调用方法。先找自身的，再找with后面，从后往前以此调用。</p>
+<h3 id="多核cpu的利用">多核CPU的利用</h3>
+<p>Isolate概念 隔离
+Dart是单线程的，线程所在的空间被称为Isolate。比如Flutter中有一个Root
+Isolate，负责运行Flutter代码，例如UI渲染，用户交互等。
+在Isolate中，资源隔离做的非常好，每个Isolate有自己的Event Loop和Queue。</p>
+<ul>
+<li>Isolate之间不共享任何资源，只能依靠消息机制通信，因此也就没有资源抢占问题。
+这不就是多进程方案！</li>
+</ul>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1859 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-04-16 15:21 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://blog.v5u.win/posts/design/design-%E5%AF%B9oc%E4%B8%AD%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E6%80%9D%E8%80%83/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>IOS 对oc中内存管理的思考</span>
+			</a>
+			<a class="prev-post" href="https://blog.v5u.win/posts/flutter/flutter-%E5%B8%83%E5%B1%80-%E6%BB%9A%E5%8A%A8widget/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Flutter 布局 滚动Widget</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
+
+</body>
+
+</html>
