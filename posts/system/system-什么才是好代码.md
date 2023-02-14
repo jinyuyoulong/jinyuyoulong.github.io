@@ -5,7 +5,7 @@ draft: false
 toc: true
 images:
 tags: 
-  - untagged
+  - system
 ---
 
 刷知乎的时候发现了一个好代码的评价标准，觉得答主说的非常好。备份一下，试试鞭策自己。
