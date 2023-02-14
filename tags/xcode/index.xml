@@ -14,7 +14,7 @@
       <pubDate>Thu, 08 Jul 2021 10:56:53 +0800</pubDate>
       
       <guid>https://blog.v5u.win/posts/xcode/xcode%E6%B8%85%E7%BC%93%E5%AD%98/</guid>
-      <description>文章引自-Clean up Xcode cache files on your Mac less than 1 minute read There is no side effect. I got 100Gb! Target: unused devicePermalink Path: ~/Library/Developer/CoreSimulator/Devices How: execute command on terminal xcrun simctl delete unavailable Path: ~/Library/Developer/Xcode/iOS DeviceSupport How: delete directorys like ‘9.0.0’ Target: unnecessary filesPermalink Path: ~/Library/Developer/CoreSimulator/Caches/dyld/.. How: delete each directory Target: builded App</description>
+      <description>列出所有的xcode 模拟器 xcrun simctl list devices xcrun simctl list devices 或 xcrun simctl list --json 列出所有模拟器 xcrun simctl delete 删除特定设备 xcrun simctl delete unavailable 删除不再支持的运行时的旧设备 xcrun可以执行更</description>
     </item>
     
     <item>

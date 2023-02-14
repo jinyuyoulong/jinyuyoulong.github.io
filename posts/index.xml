@@ -39,27 +39,45 @@
 			<pubDate>Thu, 08 Jul 2021 10:56:53 +0800</pubDate>
 			
 			<guid>https://blog.v5u.win/posts/xcode/xcode%E6%B8%85%E7%BC%93%E5%AD%98/</guid>
-			<description>文章引自-Clean up Xcode cache files on your Mac less than 1 minute read There is no side effect. I got 100Gb! Target: unused devicePermalink Path: ~/Library/Developer/CoreSimulator/Devices How: execute command on terminal xcrun simctl delete unavailable Path: ~/Library/Developer/Xcode/iOS DeviceSupport How: delete directorys like ‘9.0.0’ Target: unnecessary filesPermalink Path: ~/Library/Developer/CoreSimulator/Caches/dyld/.. How: delete each directory Target: builded App</description>
-			<content type="html"><![CDATA[<p>文章引自-<a href="https://lovemewithoutall.github.io/it/xcode-clean-up/">  Clean up Xcode cache files on your Mac</a></p>
-<p>less than 1 minute read
-There is no side effect. I got 100Gb!</p>
-<h2 id="target-unused-devicepermalink">Target: unused devicePermalink</h2>
-<p>Path: ~/Library/Developer/CoreSimulator/Devices
-How: execute command on terminal xcrun simctl delete unavailable
-Path: ~/Library/Developer/Xcode/iOS DeviceSupport
-How: delete directorys like ‘9.0.0’</p>
-<h2 id="target-unnecessary-filespermalink">Target: unnecessary filesPermalink</h2>
-<p>Path: ~/Library/Developer/CoreSimulator/Caches/dyld/..
-How: delete each directory</p>
-<h2 id="target-builded-app-cachespermalink">Target: builded App cachesPermalink</h2>
-<p>Path: ~/Library/Developer/Xcode/DerivedData
-How: delete each directory</p>
-<h2 id="target-unnecessary-archivespermalink">Target: unnecessary ArchivesPermalink</h2>
-<p>Path: ~/Library/Developer/Xcode/Archives
-How: delete each directory</p>
-<h2 id="target-logspermalink">Target: logsPermalink</h2>
-<p>Path: ~/Library/Developer/Xcode/iOS Device Logs
-How: delete each directory</p>
+			<description>列出所有的xcode 模拟器 xcrun simctl list devices xcrun simctl list devices 或 xcrun simctl list --json 列出所有模拟器 xcrun simctl delete 删除特定设备 xcrun simctl delete unavailable 删除不再支持的运行时的旧设备 xcrun可以执行更</description>
+			<content type="html"><![CDATA[<p>列出所有的xcode 模拟器</p>
+<p><code>xcrun simctl list devices</code></p>
+<p><code>xcrun simctl list devices</code></p>
+<p>或</p>
+<p><code>xcrun simctl list --json</code>
+列出所有模拟器</p>
+<p><code>xcrun simctl delete </code></p>
+<p>删除特定设备</p>
+<p><code>xcrun simctl delete unavailable</code></p>
+<p>删除不再支持的运行时的旧设备</p>
+<p>xcrun可以执行更多操作(请参见代码段)</p>
+<p>删除完重启xcode
+Xcode清理缓存</p>
+<h5 id="模拟器">模拟器</h5>
+<p><code>~/Library/Developer/CoreSimulator</code></p>
+<h5 id="caches-清空">Caches 清空</h5>
+<p>Devices 保留device_set.plist文件，其余可清空，运行时候可生成</p>
+<h5 id="xcode">Xcode</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>~/Library/Developer/Xcode
+</span></span><span style="display:flex;"><span>Archives 这是项目的打包文件，要在移动硬盘做备份，方便后续定位bug用到。
+</span></span><span style="display:flex;"><span>DerivedData 编译的中间文件，可以删除后，重新生成
+</span></span><span style="display:flex;"><span>DocumentationCache 可删除
+</span></span><span style="display:flex;"><span>iOS Device Logs 设备日志，可删除
+</span></span><span style="display:flex;"><span>iOS DeviceSupport 存放的是真机调试的内容
+</span></span></code></pre></div><p>测试机</p>
+<blockquote>
+<p>~/Library/Developer/XCTestDevices
+可清空文件夹
+Playground
+XCPGDevices playground 的项目缓存，可删除</p>
+</blockquote>
+<p>删除Xcode无用的模拟器和架构</p>
+<blockquote>
+<p>Add and remove simulators only through Xcode &gt; Settings &gt; Components</p>
+</blockquote>
+<h5 id="真机缓存">真机缓存</h5>
+<p><code>private/var/folders/(xx/xx)/com.apple.DeveleperTools/All/Xcode/EmbeddedAppDeltas /private/var/folders/zt/55wjgcps3qn_mc_3ymr88d5r0000gn/C/com.apple.DeveloperTools/All/Xcode/EmbeddedAppDeltas</code></p>
+<p>这个文件夹中是真机测试时安装程序的详情，程序猿的Mac如果长期不清理这个文件夹，它能把硬盘的空间吃光。作者：梁间链接：https://www.jianshu.com/p/aad276dc1739来源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 <h2 id="target-other-unnecessary-filespermalink">Target: Other unnecessary filesPermalink</h2>
 <p>Path: ~/Library/Caches/..
 How: delete each directory</p>
