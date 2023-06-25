@@ -37,4 +37,4 @@ level 2
 | 指定分支克隆        | git clone -b dev https://github.com/jinyuyoulong/Go-learn.git |
 | 查询所有分支        | git branch -a                                                |
 | 移除Git对文件的管理 | git rm -rf –cached public                                    |
-
+| 可视化log           | git log --oneline --graph --decorate --all                  |
