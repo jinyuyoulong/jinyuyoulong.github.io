@@ -1,0 +1,47 @@
+baseURL = "https://blog.mynook.info"
+languageCode = "zh-CN"
+title = "My Nook"
+hasCJKLanguage = true
+theme = "maupassant-hugo"
+enableRobotsTXT = true
+PaginatePath = "page"
+
+[author]
+    name = "Joker Qyou"
+    homepage = "https://mynook.info"
+
+[params]
+    subtitle = "What else did you expect me to say?"
+    description = "A nook preserved in Cyberspace where I can be myself."
+    keywords = "MyNook,博客,Web,软件,Python"
+
+    customCSS = ["style.extra.css"]
+    customJS = ["app.extra.js"]
+
+[params.utteranc]
+    repo = "JokerQyou/comments"
+    issueTerm = "url"
+    theme = "github-light"
+
+[[params.links]]
+    name = "比尔盖子 博客"
+    url = "https://tomli.blog/"
+    title = "代码如诗，人生无限。"
+
+[[menu.main]]
+    identifier = "gpg"
+    name = "GPG"
+    url = "/gpg-public-key/"
+    weight = 1
+
+[[menu.main]]
+    identifier = "archives"
+    name = "存档"
+    url = "/archives/"
+    weight = 3
+
+[[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 4
