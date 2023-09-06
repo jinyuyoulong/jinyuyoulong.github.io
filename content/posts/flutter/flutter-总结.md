@@ -1,7 +1,8 @@
 ---
 title: "Flutter 总结"
-date: 2020-07-10T16:24:30+08:00
+date: 2021-04-10T16:24:30+08:00
 categories: [flutter]
+tags: [Flutter]
 ---
 [TOC]
 
@@ -45,7 +46,32 @@ hot restart 会执行所有的方法
 
 配置测试机：cmd+p 输入>flutter 选择Flutter Select Device或点击右下角，选择目标设备。
 等待右下角的配置生效，点击右上角，小的start三角按钮，编译运行程序
+### 命令行
+```sh
+# 查看包的依赖关系
+flutter pub deps
+# 更新包版本 获取pubspec.yaml文件中列出的所有依赖包的最新版本
+flutter packages upgrade
+# 获取pubspec.yaml文件中列出的所有依赖包
+flutter packages get
+# 打包脚本工具
+flutter_distributor  release --name dev
+flutter以module的方式引入，pod install 之前需要在example目录下用flutter build ios --release 编译一次
+然后进入下一级的ios目录执行，pod install
 
+# 打包
+1.flutter clean
+2.flutter pub get
+3.flutter build apk --target-platform android-arm,android-arm64  --no-shrink
+
+flutter module 集成进原生项目
+// 创建module
+flutter create --template module xxxName
+//执行
+flutter build ios --release 
+flutter build ios-framework // 选项 B 在 Xcode 中集成 frameworks 生成 xx
+flutter create . 创建配置文件
+```
 ### MaterialUI 
 
 ```dart
