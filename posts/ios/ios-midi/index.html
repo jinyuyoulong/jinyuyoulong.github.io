@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.98.0" />
+
+  
+  <meta name="description" content="走在通往幸福的路上">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://blog.v5u.win/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://blog.v5u.win/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://blog.v5u.win/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://blog.v5u.win/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://blog.v5u.win/safari-pinned-tab.svg" color="">
+
+  <meta name="msapplication-TileColor" content="">
+
+  <meta name="theme-color" content="">
+
+  
+  <link rel="stylesheet" href="https://blog.v5u.win/css/bootstrap.min.css" />
+
+  
+  <title>IOS Midi播放 | 为吾优</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255,255,255,.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255,255,255,1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>IOS Midi播放</h1>
+<h3 id="前言">前言</h3>
+<blockquote>
+<p>MIDI 文件是在做音乐应用时，很可能会遇到的一种文件格式。Github上面有相关的类库，可以用来解析MIDI，因为不想满足于仅仅能够拿来能用就好，还是希望能够了解MIDI到底是怎么解析，所以自己找了一下资料看了一下，但是发现在网上还没有找到一篇讲MIDI比较详细的，可以让人看一遍，就知道还MIDI是怎么一回事。因此我尝试自己写一篇，个人的水平有限，可能有一些说不清楚的地方。如果大家有啥意思或者问题，可以留言讨论。</p>
+</blockquote>
+<h3 id="什么是midi">什么是MIDI</h3>
+<blockquote>
+<p>MIDI(Musical Instrument Digital Interface)乐器数字接口 ，是20 世纪80 年代初为解决电声乐器之间的通信问题而提出的。MIDI是编曲界最广泛的音乐标准格式，可称为计算机能理解的乐谱。MIDI是电子乐器和计算机使用的标准语言，是一套消息（即指令）的约定，它不产生声音信号，而是在电缆传送各种消息，由接收消息的设备或其它电子装置产生声音或执行某个动作。</p>
+</blockquote>
+<h3 id="midi的文件格式">MIDI的文件格式</h3>
+<blockquote>
+<p>在开始说明之前，我们先来看看一份MIDI文件是怎么样子的。如下所示：</p>
+</blockquote>
+<pre tabindex="0"><code>4D 54 68 64 00 00 00 06 00 01 00 03 01 E0 4D 54
+72 6B 00 00 00 1A 00 FF 03 03 31 32 33 00 FF 51
+03 08 7A 23 00 FF 58 04 04 02 18 08 00 FF 2F 00
+4D 54 72 6B 00 00 00 67 00 FF 03 13 5B 47 4D 20
+30 35 34 5D 20 56 6F 69 63 65 20 4F 6F 68 73 8F
+00 90 3C 64 8C 18 80 3C 40 82 68 90 3E 64 8C 18
+80 3E 40 82 68 90 40 64 86 48 80 40 40 78 90 41
+64 86 48 80 41 40 78 90 43 64 86 48 80 43 40 78
+90 45 64 86 48 80 45 40 78 90 47 64 87 40 80 47
+40 87 40 90 48 64 8F 00 80 48 40 00 FF 2F 00 4D
+54 72 6B 00 00 00 0E 00 FF 03 06 4D 61 72 6B 65
+72 00 FF 2F 00
+</code></pre><blockquote>
+<p>一串16进制的数字，看不懂对不对，那就好了。如果能够看懂了，本文可能就不太适合你，可以关了页面，去干别的事了。<br>
+然后我们用Mac自带GarageBand（中文名字为库乐队）来打开这份MIDI文件（可以把这些数据写到文件，保存为文件后缀是midi就可以了）。</p>
+</blockquote>
+<p><img src="//upload-images.jianshu.io/upload_images/224515-b6c9af0f449e8f71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt=""></p>
+<p>Midi内容在GarageBand中的展示</p>
+<blockquote>
+<p>这份MIDI文件其中是包含了3条音轨，但是演奏的主音轨只有一条。而图中两条绿线的区域就是这个演奏音轨的内容，里面每一段绿色的长条就是一个音符的演奏信息。我们先记下来第一个音符的信息，它的音高是C3，力度是100。</p>
+</blockquote>
+<blockquote>
+<p>OK，目前为止，我们已经通过GarageBand看到一个MIDI信息是怎么的。接下来，我们就要来讲讲怎么从上面的那串十六进制的数据，也懂出这些信息。<br>
+MIDI文件基本由两块组成</p>
+</blockquote>
+<p><code>&lt;文件头块&gt; + &lt;音轨块数据&gt;</code></p>
+<blockquote>
+<p>其中音轨块数据就是由若干个格式相同的子数据构成。<br>
+先来看看文件头块，头块主要有三块：</p>
+</blockquote>
+<pre tabindex="0"><code>&lt;标志符串&gt;(4字节) + &lt;头块数据区长度&gt;(4字节) + &lt;头块数据区&gt;(6字节)
+</code></pre><ul>
+<li>
+<p>标志符串，指的是&quot;MThd&quot;或&quot;MTrk&quot;，MThd是头块类型，MTrk是音轨类型。所以头块标志就是MThd的ASCII码，用十六进制表示就是4d 54 68 64。</p>
+</li>
+<li>
+<p>头块数据区长度，指的是后面接着的头块数据区长度，因为长度是6字节，所以固定显示为00 00 00 06。</p>
+</li>
+<li>
+<p>头块数据区，共有6字节，分别为ff ff nn nn dd dd。</p>
+<ul>
+<li>
+<p>前两个字节ff ff 指定midi文件格式，一般有3种：</p>
+<ol>
+<li>
+<p>00 00 表示只含一个音轨</p>
+</li>
+<li>
+<p>00 01 表示含有多个同步音轨</p>
+</li>
+<li>
+<p>00 10 表示含有多个独立音轨</p>
+<pre tabindex="0"><code>(大多数的midi文件都是第二种情况，也就是00 01)
+</code></pre></li>
+</ol>
+</li>
+<li>
+<p>nn nn 指定轨道数，一般都会大于1，因为除了演播主音轨外，还会有全局音轨。</p>
+</li>
+<li>
+<p>dd dd 指定基本时间格式，dd dd 的最高位为标记位，0为采用ticks计时，后面的数据为一个4分音符的ticks；1为SMPTE格式计时，后面的数值则是定义每秒中SMTPE帧的数量及每个SMTPE帧的tick。用我们举例的midi来看看，dd dd 的数据为01 E0，表示采用ticks计时，1E0转十进制为480，也就是每个4分音符，包含480ticks。后面事件时间都是以ticks为单位。</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>如果细心的同学可能会想到，那一个4分音符时长是多少呢？如果不能确定一个4分音符时长，就不能确定每单位ticks的具体时长，后面的逻辑也就走不通了。而4分音符在不同的节拍下是不同时长，那么midi是怎么解决这个问题的。之前我也困惑过，不过现在我们先保留这个问题，后面会讲到。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>总结一下，每个midi文件都会有一段相似的开头，用十六进制表示为4d 54 68 64 00 00 00 06 ff ff nn nn dd dd，这就是头块信息。</p>
+</blockquote>
+<h3 id="动态字节">动态字节</h3>
+<blockquote>
+<p>在讲<code>音轨块数据</code>之前，必须先讲讲动态字节，因为音轨块数据中的数值是用到了动态字节来表示。在前面，我们讲文件头块的时候，说到会用4个字节来表示头块数据的长度，这样就是用固定字节表示。用固定字节表示，有两个缺点：</p>
+</blockquote>
+<ol>
+<li>可能造成空间浪费，比如我们用4个字节表示头块数据长度，为 00 00 00 06，其实前面的3个字节是用不到的，浪费空间。</li>
+<li>可能出现最大值不够用，比如我们用固定4个字节表示长度，然后它的范围 0 ~~ 2^64 - 1 。如果我们要指定更大的数值，就没有办法了。当然可以使用更大的固定字节，比如6字节或者8字节，但是这样缺点1可能造成浪费也就更大了。</li>
+</ol>
+<blockquote>
+<p>说了这么多，正式来讲讲动态字节~~~~~<br>
+一个字节有8块，除了最高位用作标志位，还有7位，可以表示的范围为0 ~~ 2^7 - 1 （即为127）。如果要表示的数是在这个范围之内，那么标志位为0，然后用其余7位表示就好了。比如120，可以表示为<code>0111 1000</code>（<code>0x78</code>）。<br>
+如果要表示的数值超过这个范围，那么先记录低7位为一个字节，超过7位的数值移交给前面的字节，而这个前字节的标志位必须为1，表示它是进位的。如果前字节还是超过127，继续同样的步骤。举个栗子：我们要表示500这个数，二进制为：<code>1 1111 0100</code> 一共有9位。先记录下低7位在一个字节为<code>0111 0100</code>。高位还有11 ，存在一个字节为<code>1000 0011</code>。所以500这个数值用动态字节表示为<code>1000 0011 0111 0100</code> （<code>0x8374</code>）。<br>
+在举一个例子：，解析一个动态字节（<code>0x83FF7F</code>），先读取第一个字节<code>83</code>，因为最高标志位为1，所以它是进位的，不是最终字节，表示的数值为<code>3 R</code>。读取第二个字节<code>FF</code>，同理因为最高标志位为1，也是进位的，不是最终字节，表示的数值为<code>127 R</code>。读取第三个字节<code>7F</code>，因为最高标志位为0，表示是最终字节，动态字节取值结束，该字节表示的数值为<code>127 R</code>。<br>
+所以动态字节（<code>0x83FF7F</code>）表示的值为 3 _ 128^2 + 127 _ 128^1 + 127 * 128^0 = 65535.</p>
+</blockquote>
+<h3 id="音轨块">音轨块</h3>
+<blockquote>
+<p>midi文件，在头块之后，剩余是一个或者多个音轨块。每个音轨块的结构如下所示也是包含3部分。</p>
+</blockquote>
+<pre tabindex="0"><code>&lt;标志符串&gt;(4字节) + &lt;音轨块数据区长度&gt;(4字节) + &lt;音轨块数据区&gt;(多个MIDI事件构成)
+</code></pre><blockquote>
+<p>上面说过，音轨块的标志符串为&quot;MTrk&quot;，也是记录ASCII码，用十六进制表示就是4d 54 72 6b。音轨块数据区长度也为固定4字节，指定后面的数据区长度。</p>
+</blockquote>
+<blockquote>
+<p>其中MIDI事件的构成是</p>
+</blockquote>
+<pre tabindex="0"><code>&lt;delta time&gt; + &lt;MIDI 消息&gt;
+</code></pre><blockquote>
+<p>其中delta time 就是采用动态字节来表示，单位就是tick。<br>
+MIDI 消息，由一个状态字节 + 多个数据字节 构成。状态字节可以理解为<code>方法</code>，数据字节可以理解为这个方法的<code>参数</code>。状态字节的最高位永远为1，因为它的范围介于128~ 255之间，而数据字节最高位永远为0，所以的它的范围介于0 ~ 127 之间。消息根据性质可分成通道消息和系统消息两大类。<br>
+通道消息是对单一的MIDI Channel起作用，其Channel是利用状态字节的低 4 位来表示，从0~F共有16个。<br>
+下表为通道消息的同类，其中X为0~16.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>状态字节</th>
+<th>功能描述</th>
+<th>数据字节描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8X</td>
+<td>松开音符</td>
+<td>1字节:音符号(00~7F) / 2字节:力度(00~7F)</td>
+</tr>
+<tr>
+<td>9X</td>
+<td>按下音符</td>
+<td>1字节:音符号(00~7F) / 2字节:力度(00~7F)</td>
+</tr>
+<tr>
+<td>AX</td>
+<td>触后音符</td>
+<td>1字节:音符号(00~7F) / 2字节:力度(00~7F)</td>
+</tr>
+<tr>
+<td>BX</td>
+<td>控制器变化</td>
+<td>1字节:控制器号码(00~79) / 2字节:控制器参数(00~7F)</td>
+</tr>
+<tr>
+<td>CX</td>
+<td>改变乐器</td>
+<td>1字节:乐器号码(00~7F)</td>
+</tr>
+<tr>
+<td>DX</td>
+<td>通道触动压力</td>
+<td>1字节:压力(00~7F)</td>
+</tr>
+<tr>
+<td>EX</td>
+<td>弯音轮变换</td>
+<td>1字节:弯音轮变换值的低字节 / 2字节:弯音轮变换值的高字节</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>还有一种特殊的状态字节<code>FF</code>,表示非MIDI事件(Non- MIDI events)，也叫meta-event（元事件）。元事件的语法定于如下：</p>
+</blockquote>
+<pre tabindex="0"><code>FF + &lt;种类字节&gt;(1字节) + &lt;数据字节长度&gt; + &lt;数据字节&gt;
+</code></pre><blockquote>
+<p><code>FF</code>的部分功能，其他如果数据字节数不是固定，而是有前面的动态字节制定，则用<code>--</code>表示</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>种类</th>
+<th>功能描述</th>
+<th>数据字节长度</th>
+<th>数据字节描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>设置轨道音序</td>
+<td>2</td>
+<td>音序号 00 00-FF FF</td>
+</tr>
+<tr>
+<td>01</td>
+<td>文字事件</td>
+<td>&ndash;</td>
+<td>文本信息</td>
+</tr>
+<tr>
+<td>02</td>
+<td>版权公告</td>
+<td>&ndash;</td>
+<td>版权信息</td>
+</tr>
+<tr>
+<td>03</td>
+<td>指定歌曲/音轨的名称</td>
+<td>&ndash;</td>
+<td>歌曲名称(用于全局音轨时)/音轨的名称</td>
+</tr>
+<tr>
+<td>04</td>
+<td>指定乐器</td>
+<td>&ndash;</td>
+<td>乐器名称</td>
+</tr>
+<tr>
+<td>05</td>
+<td>歌词</td>
+<td>&ndash;</td>
+<td>歌词</td>
+</tr>
+<tr>
+<td>06</td>
+<td>标记</td>
+<td>&ndash;</td>
+<td>标记(通常在一个格式0的音轨，或在格式1的第一个音轨。)</td>
+</tr>
+<tr>
+<td>07</td>
+<td>注释</td>
+<td>&ndash;</td>
+<td>描述一些在这一点上发生的动作或事件</td>
+</tr>
+<tr>
+<td>2F</td>
+<td>音轨终止</td>
+<td>&ndash;</td>
+<td>音轨结束标志(必须有的)</td>
+</tr>
+<tr>
+<td>51</td>
+<td>指定速度</td>
+<td>&ndash;</td>
+<td>设定速度，以微妙为单位，是四分音符的时值</td>
+</tr>
+<tr>
+<td>58</td>
+<td>指定节拍</td>
+<td>&ndash;</td>
+<td>略</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>上面两个表是常见消息的状态字节，还有一些其他消息没有列举出来，但是这两个表已经够用了。</p>
+</blockquote>
+<h3 id="开始看midi">开始看midi</h3>
+<blockquote>
+<p>上面讲了那么多，现在我们再看看上面的midi文件：</p>
+</blockquote>
+<pre tabindex="0"><code>4D 54 68 64 00 00 00 06 00 01 00 03 01 E0 4D 54
+72 6B 00 00 00 1A 00 FF 03 03 31 32 33 00 FF 51
+03 08 7A 23 00 FF 58 04 04 02 18 08 00 FF 2F 00
+4D 54 72 6B 00 00 00 67 00 FF 03 13 5B 47 4D 20
+30 35 34 5D 20 56 6F 69 63 65 20 4F 6F 68 73 8F
+00 90 3C 64 8C 18 80 3C 40 82 68 90 3E 64 8C 18
+80 3E 40 82 68 90 40 64 86 48 80 40 40 78 90 41
+64 86 48 80 41 40 78 90 43 64 86 48 80 43 40 78
+90 45 64 86 48 80 45 40 78 90 47 64 87 40 80 47
+40 87 40 90 48 64 8F 00 80 48 40 00 FF 2F 00 4D
+54 72 6B 00 00 00 0E 00 FF 03 06 4D 61 72 6B 65
+72 00 FF 2F 00
+</code></pre><blockquote>
+<pre tabindex="0"><code>4D 54 68 64 00 00 00 06 00 01 00 03 01 E0
+</code></pre></blockquote>
+<pre tabindex="0"><code>
+头块数据，然后就是`4D 54 72 6B` 转为字符就是`MTrk`，说明这是一个音轨块信息。接下来4个固定字节表示数据长度`00 00 00 1A`,所以接下来需要读取26个字节的数据。
+接下来就是读取事件，根据语法第一个事件是`00 FF 03 03 31 32 33`。其中`00`表示时间间隔为0ticks；`FF` 说明是元事件；`03` 是状态字节，说明指定歌曲名称；下面的`03`指定下面还有3个字节作为文本信息；`31 32 33` 就是文本信息。
+第二个事件为`00 FF 51 03 08 7A 23`，这里不一个一个字节解释了，整个事件就是指定演奏速度，则每拍的时间555555微秒。用每拍所占的时间而不是单位时间内的拍数表示速度，使得依据一个基于时间的（例如SMPTE时间代码或MIDI时间代码）实现时间的绝对同步成为可能。
+每个音轨最后肯定是以00 FF 2F 00结束，因为这是一个音轨结束事件。
+其他事件就不说明，通过事件的类型，我们可以得知这是一个全局事件。
+
+&gt; 我们找到下一个`4D 54 72 6B` ，一直到`00 FF 2F 00`为止，把下一个音轨的数据截取出来。
+</code></pre><p>4D 54 72 6B 00 00 00 67 00 FF 03 13 5B 47 4D 20
+30 35 34 5D 20 56 6F 69 63 65 20 4F 6F 68 73 8F
+00 90 3C 64 8C 18 80 3C 40 82 68 90 3E 64 8C 18
+80 3E 40 82 68 90 40 64 86 48 80 40 40 78 90 41
+64 86 48 80 41 40 78 90 43 64 86 48 80 43 40 78
+90 45 64 86 48 80 45 40 78 90 47 64 87 40 80 47
+40 87 40 90 48 64 8F 00 80 48 40 00 FF 2F 00</p>
+<pre tabindex="0"><code>
+&gt; 除去音轨头块数据，第一个事件就是`FF 03`指定音轨的名称。
+重点来了，第二个事件就是`00 90 3C 64`，`90`说明是个按下音符，也就是发出音符。`3C`是音符号，`64`是力度。大家还记得我们从GarageBand观察时候，记下第一个音符是C3，力度是100。
+`3C` 表示为第60号音符。从MIDI音符号表可以找到第60号的音符为C4。
+等等为什么是C4，这个问题，我也疑惑过。其实，这是对中央C的标号不同导致，在GarageBand，钢琴弹音域中央C为C3，其他乐器还是C4。只要降低一个八度，做个转换就好了。
+力度`64`，即为`100 R`，所以力度为100。跟我们在GarageBand看到是一致的。
+需要注意，`90`事件是个note_on事件就是发音事件，但是如果参数力度为0 ，它实际上就是一个note_off事件，不会发音。
+
+&gt; 第二个事件就是`8C 18 80 3C 40`，整个事件就是经过1560ticks之后，松开音符`3C`，力度为60。两个事件串联起来就是，音符C4发出声音时长为1560ticks。
+
+&gt; 其他事件和音轨就不看，大概读的方法是一样的思路。
+
+### 怎么计算时间
+
+&gt; 我们还留着一个问题没回答，那就是怎么确定时间单位ticks。
+我们从头块信息，可以得知到一个4分音符的ticks数为`480`，然后从全局音轨得到播放速度为，每个节拍`555555`微秒。1个4分音符为1节拍，也就是说1tick为
+</code></pre><p>555555 / 480 = 1140625</p>
+<pre tabindex="0"><code>
+微秒。
+上面我们说过第一个字符时长为`1560`ticks，也就是
+</code></pre><p>1560 * 1140625 / 1000 / 1000 = 8056</p>
+<pre tabindex="0"><code>
+秒。
+
+### The End?
+
+&gt; 实际应用的MIDI文件可能比我举个例子复杂很多，因为还可能出现多音轨，还有上面没有描述的消息，比如模式消息、实时消息、公共消息等等。但是解析方式都是同一个套路，只是可能消息的作用不同而已。所以希望本文，可以帮助到你理解MIDI就满足了。
+</code></pre>
+    </article>
+  </div>
+
+  
+  
+  
+
+  
+</body>
+
+</html>

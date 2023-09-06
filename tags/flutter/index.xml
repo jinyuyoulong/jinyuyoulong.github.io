@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>flutter on 为吾优</title>
+    <title>Flutter on 为吾优</title>
     <link>https://blog.v5u.win/tags/flutter/</link>
-    <description>Recent content in flutter on 为吾优</description>
+    <description>Recent content in Flutter on 为吾优</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
@@ -15,6 +15,60 @@
       
       <guid>https://blog.v5u.win/posts/flutter/flutter%E9%97%AE%E9%A2%98%E7%82%B9%E6%94%B6%E9%9B%86/</guid>
       <description>前言：本质上来说flutter是一个基于2D渲染引擎的UI开发框架。 所以它具有一般的游戏引擎+原生混和开发所具有的问题。正好我现在在做U3D</description>
+    </item>
+    
+    <item>
+      <title>Flutter Dart</title>
+      <link>https://blog.v5u.win/posts/flutter/flutter-dart/</link>
+      <pubDate>Fri, 16 Apr 2021 15:21:29 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/flutter/flutter-dart/</guid>
+      <description>[TOC] 语法： 关键字 external 将方法的声明和实现分离 @patch(补丁)，好处是可以针对不同的平台做实现。 变量声明：1. 明确声明 2. 类型推导 main(List&amp;lt;String&amp;gt; args) { // 1. 明确的</description>
+    </item>
+    
+    <item>
+      <title>Flutter 布局 滚动Widget</title>
+      <link>https://blog.v5u.win/posts/flutter/flutter-%E5%B8%83%E5%B1%80-%E6%BB%9A%E5%8A%A8widget/</link>
+      <pubDate>Fri, 16 Apr 2021 15:20:52 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/flutter/flutter-%E5%B8%83%E5%B1%80-%E6%BB%9A%E5%8A%A8widget/</guid>
+      <description>ListView：tableView GridView ：collectionView sliver: 本质是这个sliver ListView构造函数： ListView.separated ListView.builder ListView.custom GridView</description>
+    </item>
+    
+    <item>
+      <title>Flutter 布局</title>
+      <link>https://blog.v5u.win/posts/flutter/flutter-%E5%B8%83%E5%B1%80/</link>
+      <pubDate>Fri, 16 Apr 2021 15:19:58 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/flutter/flutter-%E5%B8%83%E5%B1%80/</guid>
+      <description>[TOC] flutter 有三层树结构：Widget、Element、RenderObject import &amp;#39;package:flutter/material.dart&amp;#39;; main()=&amp;gt;runApp(MyApp()); class MyApp extends StatelessWidget { @override Widget build(BuildContext context) { return MaterialApp( title: &amp;#34;app title&amp;#34;, home: JLHomePage(), ); } } class JLHomePage extends StatelessWidget { @override Widget build(BuildContext context) { return</description>
+    </item>
+    
+    <item>
+      <title>Flutter 第三方库</title>
+      <link>https://blog.v5u.win/posts/flutter/flutter-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</link>
+      <pubDate>Fri, 16 Apr 2021 15:19:01 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/flutter/flutter-%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</guid>
+      <description>网络请求 Dio dio是一个强大的Dart Http请求库，支持Restful API、FormData、拦截器、请求取消、Cookie管理、文件上传</description>
+    </item>
+    
+    <item>
+      <title>Flutter 组件</title>
+      <link>https://blog.v5u.win/posts/flutter/flutter-%E7%BB%84%E4%BB%B6/</link>
+      <pubDate>Fri, 16 Apr 2021 15:18:02 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/flutter/flutter-%E7%BB%84%E4%BB%B6/</guid>
+      <description>[TOC] - 基础组件 - Widget 与 Element - StatelessWidget - StatefulWidget - Text - Image - Button - AppBar - AlertDialog - Icon - TextField - Form - Switch - Checkbox - 布局组件 - 线性 Row - 线性 Column - 弹性 Flex - 弹性 Expanded - 层叠 Stack - 层叠 IndexedStack - 层叠 Positioned - 流式</description>
+    </item>
+    
+    <item>
+      <title>Flutter 总结</title>
+      <link>https://blog.v5u.win/posts/flutter/flutter-%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sat, 10 Apr 2021 16:24:30 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/flutter/flutter-%E6%80%BB%E7%BB%93/</guid>
+      <description>[TOC] flutter 使用总结 安装 参考之前的环境安装一文 测试安装环境 flutter doctor 环境问题，工具问题，版本问题 flutter环境变量，使用stable分支 工具，创建项目</description>
     </item>
     
   </channel>

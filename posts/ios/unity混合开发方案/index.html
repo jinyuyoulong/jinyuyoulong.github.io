@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.98.0" />
+
+  
+  <meta name="description" content="走在通往幸福的路上">
+  
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://blog.v5u.win/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://blog.v5u.win/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://blog.v5u.win/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://blog.v5u.win/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://blog.v5u.win/safari-pinned-tab.svg" color="">
+
+  <meta name="msapplication-TileColor" content="">
+
+  <meta name="theme-color" content="">
+
+  
+  <link rel="stylesheet" href="https://blog.v5u.win/css/bootstrap.min.css" />
+
+  
+  <title>Unity iOS 混合开发模式调研 | 为吾优</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255,255,255,.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255,255,255,1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+
+
+</style>
+</head>
+
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Unity iOS 混合开发模式调研</h1>
+<h2 id="unity-ios-混合开发">Unity iOS 混合开发</h2>
+<p>unity+原生开发 有四种开发模式：</p>
+<ol>
+<li>以unity c#工程为主，由unity封装原生端的库为c# 第三方库，直接提供给unity工程，以plugin的方式使用。比如 iOS提供framework，安卓提供 aar</li>
+<li>以unity 导出的 原生工程为主。原生端在此基础上进行增量开发，原生端以原生第三方库的方式集成进导出工程。</li>
+<li>以原生工程为主。unity导出的工程可以编译成unity库。将此unity库集成进各端原生工程。比如：iOS 以unity.framework的方式引入使用 安卓引入 libunity.so。</li>
+<li>以原生工程为主，unity导出工程作为子工程依赖加入原生工程。此为第三种方式的变种。</li>
+<li>在4的基础上，unity window 和 native window 各自交互展示，此方案应用的场景为unity和原生的UI无任何重叠的现象</li>
+<li>在4的基础上, unity view 作为普通view加到 原生的view中，此方案应用的场景为有unity和原生UI重叠展示的情况</li>
+</ol>
+<p>目前决定使用方案6，因为超级星球2.0UI改版后，业务重点大部分改到原生侧。由游戏化风格改为APP风格。</p>
+<p>福清的Demo 工程是 flutter+unity的方式，本质是第四种。</p>
+<p>混合开发代码示例如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Objective-C" data-lang="Objective-C"><span style="display:flex;"><span><span style="color:#75715e">// unity plugin 导出的接口文件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// [!] important set UnityFramework in Target Membership for this file
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [!]           and set Public header visibility
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#import &lt;Foundation/Foundation.h&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">// unity call 原生 的 接口
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// NativeCallsProtocol defines protocol with methods you want to be called from managed
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">@protocol</span> <span style="color:#a6e22e">NativeCallsProtocol</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@required</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span> (<span style="color:#66d9ef">void</span>) exitFromUnity;
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">void</span>) <span style="color:#a6e22e">getPhotos</span>;
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">getUserWorkList:</span>(<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span>)date;
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">Boolean</span>) <span style="color:#a6e22e">isSupportDevice</span>;
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">void</span>) <span style="color:#a6e22e">callFromUnity</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// other methods
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">@end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>__attribute__ ((visibility(<span style="color:#e6db74">&#34;default&#34;</span>)))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@interface</span> <span style="color:#a6e22e">FrameworkLibAPI</span> : <span style="color:#a6e22e">NSObject</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 原生 call unity 的 接口 例如： [NSClassFromString(@&#34;FrameworkLibAPI&#34;) reOpenCamera];
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// call it any time after UnityFrameworkLoad to set object implementing NativeCallsProtocol methods
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>+(<span style="color:#66d9ef">void</span>) <span style="color:#a6e22e">registerAPIforNativeCalls:</span>(<span style="color:#66d9ef">id</span><span style="color:#f92672">&lt;</span>NativeCallsProtocol<span style="color:#f92672">&gt;</span>) aApi;
+</span></span><span style="display:flex;"><span>+ (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">reOpenCamera</span>;
+</span></span><span style="display:flex;"><span>+ (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">arDoor</span>;
+</span></span><span style="display:flex;"><span>+ (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">arCamera</span>;
+</span></span><span style="display:flex;"><span>+ (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">unitySendPhotoFilePath:</span>(NSString <span style="color:#f92672">*</span>)fileStr;
+</span></span><span style="display:flex;"><span>+ (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">unitySendMonthWorkList:</span>(NSString <span style="color:#f92672">*</span>)workStr;
+</span></span><span style="display:flex;"><span>+ (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">unitySendUserInfo:</span>(NSString <span style="color:#f92672">*</span>)userInfo;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// unity call 原生 的 接口 例：原生实现c方法
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 获取相册作品信息
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">-</span> (<span style="color:#66d9ef">void</span>)getUserWorkList:(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)date {
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="unity-call-原生">unity call 原生</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cs" data-lang="cs"><span style="display:flex;"><span><span style="color:#75715e">// cs代码</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NativeAPI</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">#if UNITY_IOS &amp;&amp; !UNITY_EDITOR</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">    	[DllImport(&#34;__Internal&#34;)]</span>
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">void</span> OnUnityMessage(<span style="color:#66d9ef">string</span> message);
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">#</span>endif
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> SendMessageToFlutter(<span style="color:#66d9ef">string</span> message)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">#if UNITY_ANDROID</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            AndroidJavaClass jc = <span style="color:#66d9ef">new</span> AndroidJavaClass(<span style="color:#e6db74">&#34;com.xraph.plugin.flutter_unity_widget.UnityPlayerUtils&#34;</span>);
+</span></span><span style="display:flex;"><span>            jc.CallStatic(<span style="color:#e6db74">&#34;onUnityMessage&#34;</span>, message);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">catch</span> (Exception e)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            Debug.Log(e.Message);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">#elif UNITY_IOS &amp;&amp; !UNITY_EDITOR</span>
+</span></span><span style="display:flex;"><span>        OnUnityMessage(message);
+</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">#</span>endif
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// cs 使用</span>
+</span></span><span style="display:flex;"><span>NativeAPI.SendMessageToFlutter(message);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#75715e">// 原生工程 .mm 文件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// System.Void NativeAPI::OnUnityMessage(System.String)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">NativeAPI_OnUnityMessage_m1CF7151340955DF0256F5C6AD708DBE71F45AFB5</span> (String_t<span style="color:#f92672">*</span> ___message0, <span style="color:#66d9ef">const</span> RuntimeMethod<span style="color:#f92672">*</span> method)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">void</span> (DEFAULT_CALL <span style="color:#f92672">*</span>PInvokeFunc) (<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Marshaling of parameter &#39;___message0&#39; to native representation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> ____message0_marshaled <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>	____message0_marshaled <span style="color:#f92672">=</span> il2cpp_codegen_marshal_string(___message0);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Native function invocation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">reinterpret_cast</span><span style="color:#f92672">&lt;</span>PInvokeFunc<span style="color:#f92672">&gt;</span>(OnUnityMessage)(____message0_marshaled);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Marshaling cleanup of parameter &#39;___message0&#39; native representation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	il2cpp_codegen_marshal_free(____message0_marshaled);
+</span></span><span style="display:flex;"><span>	____message0_marshaled <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Objective-C" data-lang="Objective-C"><span style="display:flex;"><span><span style="color:#75715e">// unity IL2CPP 文件
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">extern</span> <span style="color:#e6db74">&#34;C&#34;</span> <span style="color:#66d9ef">void</span> ModulePlatformInfo_deviceLevelModel_m2113780681 ();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">extern</span> <span style="color:#e6db74">&#34;C&#34;</span> <span style="color:#66d9ef">void</span> CrossPlatform_arCaptureFacePoint_m2135327796 ();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">extern</span> <span style="color:#e6db74">&#34;C&#34;</span> <span style="color:#66d9ef">void</span> ModuleAudioMusical_parseMusicXML_m2975407064 ();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// file UnityAppController.mm
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Added by https://github.com/juicycleff/flutter-unity-view-widget
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">extern</span> <span style="color:#e6db74">&#34;C&#34;</span> <span style="color:#66d9ef">void</span> OnUnityMessage(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> message)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (GetAppController().unityMessageHandler) {
+</span></span><span style="display:flex;"><span>        GetAppController().unityMessageHandler(message);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 原生 call unity
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>UnitySendMessage(<span style="color:#e6db74">&#34;CrossPlatform&#34;</span>, <span style="color:#e6db74">&#34;arCaptureFacePoint&#34;</span>, data);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// flutter 和 unity交互的接口
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// UnityAppController.h
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Added by https://github.com/juicycleff/flutter-unity-view-widget
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#a6e22e">void</span>(<span style="color:#f92672">^</span>unitySceneLoadedCallbackType)(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> name, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">*</span> buildIndex, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">bool</span><span style="color:#f92672">*</span> isLoaded, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">bool</span><span style="color:#f92672">*</span> IsValid);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#a6e22e">void</span>(<span style="color:#f92672">^</span>unityMessageCallbackType)(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> message);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Added by https://github.com/juicycleff/flutter-unity-view-widget
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">@protocol</span> <span style="color:#a6e22e">UnityEventListener</span> <span style="color:#f92672">&lt;</span>NSObject<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span> (<span style="color:#66d9ef">void</span>)onSceneLoaded:(NSString <span style="color:#f92672">*</span>)name buildIndex:(NSInteger <span style="color:#f92672">*</span>)bIndex loaded:(<span style="color:#66d9ef">bool</span> <span style="color:#f92672">*</span>)isLoaded valid:(<span style="color:#66d9ef">bool</span> <span style="color:#f92672">*</span>)IsValid;
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">onMessage:</span>(NSString <span style="color:#f92672">*</span>)message;
+</span></span></code></pre></div><h4 id="unit-call-flutter">unit call flutter</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Swift" data-lang="Swift"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> <span style="color:#960050;background-color:#1e0010">实现</span>unity framework回调
+</span></span><span style="display:flex;"><span>controller = <span style="color:#66d9ef">self</span>.ufw?.appController()
+</span></span><span style="display:flex;"><span>controller?.unityMessageHandler = <span style="color:#66d9ef">self</span>.unityMessageHandlers
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> <span style="color:#960050;background-color:#1e0010">通过回调方法，参数的字符串名称</span> <span style="color:#960050;background-color:#1e0010">进行分发原生方法调用</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@objc</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">unityMessageHandlers</span>(<span style="color:#66d9ef">_</span> message: UnsafePointer&lt;Int8&gt;?) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#66d9ef">let</span> strMsg = message {
+</span></span><span style="display:flex;"><span>        globalChannel?.invokeMethod(<span style="color:#e6db74">&#34;events#onUnityMessage&#34;</span>, arguments: String(utf8String: strMsg))
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        globalChannel?.invokeMethod(<span style="color:#e6db74">&#34;events#onUnityMessage&#34;</span>, arguments: <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> <span style="color:#960050;background-color:#1e0010">通过</span>channel <span style="color:#960050;background-color:#1e0010">的字符串信息</span> <span style="color:#960050;background-color:#1e0010">进行</span> <span style="color:#960050;background-color:#1e0010">原生到</span>flutter的方法调用分发
+</span></span><span style="display:flex;"><span>unity_page.dart
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Communication from Unity to Flutter</span>
+</span></span><span style="display:flex;"><span>  void onUnityMessage(message) {
+</span></span><span style="display:flex;"><span>    print(<span style="color:#960050;background-color:#1e0010">&#39;</span>Received message from unity: <span style="color:#960050;background-color:#1e0010">$</span>{message.toString()}<span style="color:#960050;background-color:#1e0010">&#39;</span>);
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;================================================&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> messageJson = json.decode(message);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">switch</span> (messageJson[<span style="color:#960050;background-color:#1e0010">&#39;</span>operate<span style="color:#960050;background-color:#1e0010">&#39;</span>]) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;openAlbum&#34;</span>:
+</span></span><span style="display:flex;"><span>        openAlbum();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>@end
+</span></span></code></pre></div>
+    </article>
+  </div>
+
+  
+  
+  
+
+  
+</body>
+
+</html>

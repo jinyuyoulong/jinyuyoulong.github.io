@@ -1,70 +1,161 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#494f5c">
-	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Swift与Objective-C的兼容方法:@objc和Dynamic">
-<meta itemprop="description" content="Swift必须考虑与Objective-C的兼容。 首先通过添加{product-module-name}-Bridging-Header.h"><meta itemprop="datePublished" content="2016-06-07T02:02:09+00:00" />
-<meta itemprop="dateModified" content="2016-06-07T02:02:09+00:00" />
-<meta itemprop="wordCount" content="2014">
-<meta itemprop="keywords" content="" /><meta property="og:title" content="Swift与Objective-C的兼容方法:@objc和Dynamic" />
-<meta property="og:description" content="Swift必须考虑与Objective-C的兼容。 首先通过添加{product-module-name}-Bridging-Header.h" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.v5u.win/swift%E4%B8%8Eobjective-c%E7%9A%84%E5%85%BC%E5%AE%B9%E6%96%B9%E6%B3%95objc%E5%92%8Cdynamic/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2016-06-07T02:02:09+00:00" />
-<meta property="article:modified_time" content="2016-06-07T02:02:09+00:00" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.98.0" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Swift与Objective-C的兼容方法:@objc和Dynamic"/>
-<meta name="twitter:description" content="Swift必须考虑与Objective-C的兼容。 首先通过添加{product-module-name}-Bridging-Header.h"/>
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-	<link rel="shortcut icon" href="/favicon.ico">
+  
+  <meta name="description" content="走在通往幸福的路上">
+  
 
-	<title>Swift与Objective-C的兼容方法:@objc和Dynamic</title>
-	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
-	
-	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://blog.v5u.win/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://blog.v5u.win/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://blog.v5u.win/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://blog.v5u.win/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://blog.v5u.win/safari-pinned-tab.svg" color="">
+
+  <meta name="msapplication-TileColor" content="">
+
+  <meta name="theme-color" content="">
+
+  
+  <link rel="stylesheet" href="https://blog.v5u.win/css/bootstrap.min.css" />
+
+  
+  <title>Swift与Objective-C的兼容方法:@objc和Dynamic | 为吾优</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255,255,255,.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255,255,255,1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+
+
+</style>
 </head>
 
-<body id="page">
-	
-	<header id="site-header" class="animated slideInUp faster">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="https://blog.v5u.win">为吾优</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-					<a href="https://blog.v5u.win/archives/">存档</a>
-					<a href="https://blog.v5u.win/about/">关于</a>
-					<a href="https://blog.v5u.win/posts/">文章</a>
-				</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
-			</div>
-		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
-			<li><a href="https://blog.v5u.win/about/">关于</a></li>
-			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
-		</ul>
-	</div>
-
-
-	<main class="site-main section-inner thin animated fadeIn faster">
-		<h1>Swift与Objective-C的兼容方法:@objc和Dynamic</h1>
-		<div class="content">
-			<p>Swift必须考虑与Objective-C的兼容。</p>
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Swift与Objective-C的兼容方法:@objc和Dynamic</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  June 7, 2016
+  </small>
+  
+</p>
+<p>Swift必须考虑与Objective-C的兼容。</p>
 <p>首先通过添加{product-module-name}-Bridging-Header.h文件，并在其中填写想要使用的头文件名称，我们就可以很容易地在Swift中使用Objective-C代码了。Xcode为了简化这个设定，甚至在Swift项目中第一次导入Objective-C文件时会主动弹框进行询问是否要自动创建这个文件，可以说是非常方便。</p>
 <p>但是如果想要在Objective-C中使用Swift的类型的时候，事情就复杂一些。如果是来自外部的框架，那么这个框架与Objective-C项目肯定不是处在同一个target中的，我们需要对外部的Swift module进行导入。这个其实和使用Objective-C的原来的Framework是一样的，对于一个项目来说，外界框架是由Swift写的还是Objective-C写的，两者并没有太大区别。我们通过使用2013年新引入的@import来引入module：</p>
 <p>[cpp] view plaincopy在CODE上查看代码片派生到我的代码片</p>
@@ -95,19 +186,14 @@
 <p>这样，我们在Objective-C里就能调用 [[MyClass new] greeting:@”XiaoMing”] 这样的代码了（虽然比起原来一点都不好玩了）。另外，正如上面所说的以及在Selector一节中所提到的，即使是NSObject的子类，Swift也不会在被标记为private的方法或成员上自动加@objc。如果我们需要使用这些内容的动态特性的话，我们需要手动给它们加上@objc修饰。</p>
 <p>添加@objc修饰符并不意味着这个方法或者属性会变成动态派发，Swift依然可能会将其优化为静态调用。如果你需要和Objective-C里动态调用时相同的运行时特性的话，你需要使用的修饰符是dynamic。一般情况下在做App开发时应该用不上，但是在施展一些像动态替换方法或者运行时再决定实现这样的 “黑魔法” 的时候，我们就需要用到dynamic修饰符了。在之后的KVO一节中，我们还会提到一个关于使用dynamic的实例。</p>
 
-		</div>
-	</main>
+    </article>
+  </div>
 
-	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
-		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
-		</p>
-	</footer>
+  
+  
+  
 
-
-	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
-
+  
 </body>
 
 </html>

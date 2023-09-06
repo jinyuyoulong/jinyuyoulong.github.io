@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iOS-midi on 为吾优</title>
+    <link>https://blog.v5u.win/categories/ios-midi/</link>
+    <description>Recent content in iOS-midi on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 04 Sep 2021 17:12:47 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/categories/ios-midi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IOS Midi播放</title>
+      <link>https://blog.v5u.win/posts/ios/ios-midi/</link>
+      <pubDate>Sat, 04 Sep 2021 17:12:47 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/ios/ios-midi/</guid>
+      <description>前言 MIDI 文件是在做音乐应用时，很可能会遇到的一种文件格式。Github上面有相关的类库，可以用来解析MIDI，因为不想满足于仅仅能够拿来能用就</description>
+    </item>
+    
+  </channel>
+</rss>

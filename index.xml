@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 08 Feb 2023 20:25:33 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Sep 2023 16:29:54 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安卓手机使用 SD 卡扩展存储空间</title>
+      <link>https://blog.v5u.win/posts/android/tf%E5%8D%A1/</link>
+      <pubDate>Tue, 05 Sep 2023 16:29:54 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/android/tf%E5%8D%A1/</guid>
+      <description>安卓手机安装了 TF 卡后无法正常安装 APP。因为从某一个版本后 系统不在支持sd 卡，尤其是国内厂商阉割了 sd 卡格式化功能 不能格式化为内部存储。那么怎</description>
+    </item>
+    
     <item>
       <title>System 什么才是好代码</title>
       <link>https://blog.v5u.win/posts/system/system-%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E5%A5%BD%E4%BB%A3%E7%A0%81/</link>
@@ -15,6 +24,24 @@
       
       <guid>https://blog.v5u.win/posts/system/system-%E4%BB%80%E4%B9%88%E6%89%8D%E6%98%AF%E5%A5%BD%E4%BB%A3%E7%A0%81/</guid>
       <description>刷知乎的时候发现了一个好代码的评价标准，觉得答主说的非常好。备份一下，试试鞭策自己。 什么才是好的代码？ level1：它是正确的 level2：</description>
+    </item>
+    
+    <item>
+      <title>Unity iOS 混合开发模式调研</title>
+      <link>https://blog.v5u.win/posts/ios/unity%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Fri, 06 May 2022 10:05:24 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/ios/unity%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E6%96%B9%E6%A1%88/</guid>
+      <description>Unity iOS 混合开发 unity+原生开发 有四种开发模式： 以unity c#工程为主，由unity封装原生端的库为c# 第三方库，直接提供给unity工程</description>
+    </item>
+    
+    <item>
+      <title>IOS Midi播放</title>
+      <link>https://blog.v5u.win/posts/ios/ios-midi/</link>
+      <pubDate>Sat, 04 Sep 2021 17:12:47 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/ios/ios-midi/</guid>
+      <description>前言 MIDI 文件是在做音乐应用时，很可能会遇到的一种文件格式。Github上面有相关的类库，可以用来解析MIDI，因为不想满足于仅仅能够拿来能用就</description>
     </item>
     
     <item>
@@ -69,33 +96,6 @@
       
       <guid>https://blog.v5u.win/posts/xcode/xcode%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/</guid>
       <description>原文：http://www.monobjc.net/xcode-project-file-format.html 译者：chai2010 译文：</description>
-    </item>
-    
-    <item>
-      <title>xcode优化编译时间</title>
-      <link>https://blog.v5u.win/posts/xcode/%E4%BC%98%E5%8C%96%E7%BC%96%E8%AF%91%E6%97%B6%E9%97%B4/</link>
-      <pubDate>Mon, 24 May 2021 20:17:55 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/xcode/%E4%BC%98%E5%8C%96%E7%BC%96%E8%AF%91%E6%97%B6%E9%97%B4/</guid>
-      <description>[TOC] Xcode 优化编译时间设置 显示构建时间 首先，我们需要知道 Xcode 花了多少时间来构建我们的项目。默认情况下，Xcode 并不会显示构建时间，因此我们必须启用</description>
-    </item>
-    
-    <item>
-      <title>Flutter问题点收集</title>
-      <link>https://blog.v5u.win/posts/flutter/flutter%E9%97%AE%E9%A2%98%E7%82%B9%E6%94%B6%E9%9B%86/</link>
-      <pubDate>Mon, 24 May 2021 20:09:00 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/flutter/flutter%E9%97%AE%E9%A2%98%E7%82%B9%E6%94%B6%E9%9B%86/</guid>
-      <description>前言：本质上来说flutter是一个基于2D渲染引擎的UI开发框架。 所以它具有一般的游戏引擎+原生混和开发所具有的问题。正好我现在在做U3D</description>
-    </item>
-    
-    <item>
-      <title>制作framework总结</title>
-      <link>https://blog.v5u.win/posts/ios/%E5%88%B6%E4%BD%9Cframework%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Mon, 24 May 2021 19:15:35 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/ios/%E5%88%B6%E4%BD%9Cframework%E6%80%BB%E7%BB%93/</guid>
-      <description>ios frameworks 制作总结 前提，默认项目已经创建好，代码都有了。 更改设置变量 TARGETS —&amp;gt; Build Settings 中设置相关项 （1).Build Active Architecture Only 设置为NO的意思是当前打包</description>
     </item>
     
   </channel>

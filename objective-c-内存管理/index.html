@@ -1,88 +1,174 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#494f5c">
-	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="Objective-C 内存管理">
-<meta itemprop="description" content="在 2011 年 WWDC（苹果全球开发者大会）的一场与 Objective-C 相关的讲座上，开发者的人生观被颠覆了。 作为一个开发者，管理好自己程序所使用的内存是天经地义的事"><meta itemprop="datePublished" content="2019-05-16T01:45:17+00:00" />
-<meta itemprop="dateModified" content="2019-05-16T01:45:17+00:00" />
-<meta itemprop="wordCount" content="982">
-<meta itemprop="keywords" content="" /><meta property="og:title" content="Objective-C 内存管理" />
-<meta property="og:description" content="在 2011 年 WWDC（苹果全球开发者大会）的一场与 Objective-C 相关的讲座上，开发者的人生观被颠覆了。 作为一个开发者，管理好自己程序所使用的内存是天经地义的事" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.v5u.win/objective-c-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2019-05-16T01:45:17+00:00" />
-<meta property="article:modified_time" content="2019-05-16T01:45:17+00:00" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.98.0" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Objective-C 内存管理"/>
-<meta name="twitter:description" content="在 2011 年 WWDC（苹果全球开发者大会）的一场与 Objective-C 相关的讲座上，开发者的人生观被颠覆了。 作为一个开发者，管理好自己程序所使用的内存是天经地义的事"/>
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-	<link rel="shortcut icon" href="/favicon.ico">
+  
+  <meta name="description" content="走在通往幸福的路上">
+  
 
-	<title>Objective-C 内存管理</title>
-	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
-	
-	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://blog.v5u.win/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://blog.v5u.win/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://blog.v5u.win/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://blog.v5u.win/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://blog.v5u.win/safari-pinned-tab.svg" color="">
+
+  <meta name="msapplication-TileColor" content="">
+
+  <meta name="theme-color" content="">
+
+  
+  <link rel="stylesheet" href="https://blog.v5u.win/css/bootstrap.min.css" />
+
+  
+  <title>Objective-C 内存管理 | 为吾优</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255,255,255,.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255,255,255,1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+
+
+</style>
 </head>
 
-<body id="page">
-	
-	<header id="site-header" class="animated slideInUp faster">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="https://blog.v5u.win">为吾优</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-					<a href="https://blog.v5u.win/archives/">存档</a>
-					<a href="https://blog.v5u.win/about/">关于</a>
-					<a href="https://blog.v5u.win/posts/">文章</a>
-				</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
-			</div>
-		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
-			<li><a href="https://blog.v5u.win/about/">关于</a></li>
-			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
-		</ul>
-	</div>
-
-
-	<main class="site-main section-inner thin animated fadeIn faster">
-		<h1>Objective-C 内存管理</h1>
-		<div class="content">
-			<p>在 2011 年 WWDC（苹果全球开发者大会）的一场与 Objective-C 相关的讲座上，开发者的人生观被颠覆了。</p>
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>Objective-C 内存管理</h1>
+<p>
+  <small class="text-secondary">
+  
+  
+  May 16, 2019
+  </small>
+  
+</p>
+<p>在 2011 年 WWDC（苹果全球开发者大会）的一场与 Objective-C 相关的讲座上，开发者的人生观被颠覆了。</p>
 <p>作为一个开发者，管理好自己程序所使用的内存是天经地义的事，好比人们在溜狗时必须清理狗的排泄物一样（美国随处可见“Clean up after your dogs”的标志）。在本科阶段上 C 语言的课程时，教授们会向学生反复强调：如果使用 malloc 函数申请了一块内存，使用完后必须再使用 free 函数把申请的内存还给系统——如果不还，会造成“内存泄漏”的结果。这对于 Hello World 可能还不算严重，但对于庞大的程序或是长时间运行的服务器程序，泄内存是致命的。如果没记住，自己还清理了两次，造成的结果则严重得多——直接导致程序崩溃。</p>
 <p>Objective-C 有类似 malloc/free 的对子，叫 alloc/dealloc，这种原始的方式如同管理C内存一样困难。所以 Objective-C 中的内存管理又增加了“引用计数”的方法，也就是如果一个物件被别的物件引用一次，则引用计数加一；如果不再被该物件引用，则引用计数减一；当引用计数减至零时，则系统自动清掉该物件所占的内存。具体来说，如果我们有一个字符串，当建立时，需要使用 alloc 方法来申请内存，引用计数则变成了一；然后被其他物件引用时，需要用 retain 方法去增加它的引用计数，变成二。当它和刚才引用的物件脱离关联时，需使 release 方法减少引用计数，又变回了一；最后，使用完这个字符串时，再用 release 方法减少其引用计数，这时，运行库发现其引用计数变为零了，则回收走它的内存。这是手动的方式。</p>
 <p>这种方式自然很麻烦，所以又设计出一种叫做 autorelease 的机制（不是类似 Java 的自动垃圾回收）。在 Objective-C 中，设计了一个叫做 NSAutoReleasePool 的池，当开发者需要完成一个任务时（比如每开启一个线程，或者开始一个函数），可以手动创立一个这样的池子， 然后通过显式声明把物件扔进自动回收池中。NSAutoReleasePool 内有一个数组来保存声明为 autorelease 的所有对象。如果一个对象声明为 autorelease，则会自动加到池子里。如果完成了一个任务（结束线程了，或者退出那个函数），则开发者需对这个池子发送一个 drain 消息。这时，NSAutoReleasePool 会对池子中所有的物件发送 release 消息，把它们的引用计数都减一 ——这就好比游泳池关门时通知所有客人都“滚蛋”一样。所以开发者无需显式声明 release，所有的物件也会在池子清空时自动呼叫 release 函数，如果引用计数变成零了，系统才回收那块内存。所以这是个半自动、半手动的方式。</p>
 <p>—《Mac OS X 背后的故事》</p>
 
-		</div>
-	</main>
+    </article>
+  </div>
 
-	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
-		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
-		</p>
-	</footer>
+  
+  
+  
 
-
-	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
-
+  
 </body>
 
 </html>

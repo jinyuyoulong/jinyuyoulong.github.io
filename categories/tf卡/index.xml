@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tf卡 on 为吾优</title>
+    <link>https://blog.v5u.win/categories/tf%E5%8D%A1/</link>
+    <description>Recent content in tf卡 on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 05 Sep 2023 16:29:54 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/categories/tf%E5%8D%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安卓手机使用 SD 卡扩展存储空间</title>
+      <link>https://blog.v5u.win/posts/android/tf%E5%8D%A1/</link>
+      <pubDate>Tue, 05 Sep 2023 16:29:54 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/android/tf%E5%8D%A1/</guid>
+      <description>安卓手机安装了 TF 卡后无法正常安装 APP。因为从某一个版本后 系统不在支持sd 卡，尤其是国内厂商阉割了 sd 卡格式化功能 不能格式化为内部存储。那么怎</description>
+    </item>
+    
+  </channel>
+</rss>

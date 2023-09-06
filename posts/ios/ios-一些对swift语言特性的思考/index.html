@@ -1,74 +1,153 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#494f5c">
-	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="一些对swift语言特性的思考">
-<meta itemprop="description" content="数据访问权限 访问控制权限从高到低依次为Open，Public，Internal，File-private，Private。 swift中的访问"><meta itemprop="datePublished" content="2021-04-16T15:39:12+08:00" />
-<meta itemprop="dateModified" content="2021-04-16T15:39:12+08:00" />
-<meta itemprop="wordCount" content="751">
-<meta itemprop="keywords" content="" /><meta property="og:title" content="一些对swift语言特性的思考" />
-<meta property="og:description" content="数据访问权限 访问控制权限从高到低依次为Open，Public，Internal，File-private，Private。 swift中的访问" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.v5u.win/posts/ios/ios-%E4%B8%80%E4%BA%9B%E5%AF%B9swift%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E7%9A%84%E6%80%9D%E8%80%83/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-04-16T15:39:12+08:00" />
-<meta property="article:modified_time" content="2021-04-16T15:39:12+08:00" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.98.0" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="一些对swift语言特性的思考"/>
-<meta name="twitter:description" content="数据访问权限 访问控制权限从高到低依次为Open，Public，Internal，File-private，Private。 swift中的访问"/>
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-	<link rel="shortcut icon" href="/favicon.ico">
+  
+  <meta name="description" content="走在通往幸福的路上">
+  
 
-	<title>一些对swift语言特性的思考</title>
-	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
-	
-	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://blog.v5u.win/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://blog.v5u.win/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://blog.v5u.win/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://blog.v5u.win/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://blog.v5u.win/safari-pinned-tab.svg" color="">
+
+  <meta name="msapplication-TileColor" content="">
+
+  <meta name="theme-color" content="">
+
+  
+  <link rel="stylesheet" href="https://blog.v5u.win/css/bootstrap.min.css" />
+
+  
+  <title>一些对swift语言特性的思考 | 为吾优</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255,255,255,.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255,255,255,1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+
+
+</style>
 </head>
 
-<body id="page">
-	
-	<header id="site-header" class="animated slideInUp faster">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="https://blog.v5u.win">为吾优</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-					<a href="https://blog.v5u.win/archives/">存档</a>
-					<a href="https://blog.v5u.win/about/">关于</a>
-					<a href="https://blog.v5u.win/posts/">文章</a>
-				</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
-			</div>
-		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
-			<li><a href="https://blog.v5u.win/about/">关于</a></li>
-			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
-		</ul>
-	</div>
-
-
-	<main class="site-main section-inner animated fadeIn faster">
-		<article class="thin">
-			<header class="post-header">
-				<div class="post-meta"><span>Apr 16, 2021</span></div>
-				<h1>一些对swift语言特性的思考</h1>
-			</header>
-			<div class="content">
-				<h3 id="数据访问权限">数据访问权限</h3>
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>一些对swift语言特性的思考</h1>
+<h3 id="数据访问权限">数据访问权限</h3>
 <p>访问控制权限从高到低依次为Open，Public，Internal，File-private，Private。 swift中的访问权限有3层：module层，file层 ，class层 open public internal 对应module层，区别是否可以重写和继承，直接访问。一个APP或一个target可以理解为一个module fileprivate 针对的是file层，对属性和方法的访问权限 private 针对 class层，对子类和extension扩展的访问权限管理 open 可以被任何人使用，包括override重写和继承。 public 可以被任何人访问。但其他module中不可以被override和继承，而在module内可以被override和继承。 internal 默认访问权限，整个App项目内都是可以访问的。 fileprivate所修饰的属性或方法在当前的Swift源文件里可以访问。其他跟private一样。 private所修饰的属性或方法只能在当前类里访问，包括extension。继承的话子类也不能访问。</p>
 <h3 id="let和var的区别">let和var的区别</h3>
 <p>let 是对对象指针的不可变声明，注：对象属性的指针和对象指针没有关系。 var 是对对象指针的可变声明</p>
@@ -91,35 +170,14 @@ closure() // Prints &quot;I love airplanes&quot;
 <h4 id="在objective-c中一个常量可以这样定义const-int-number--0类似的swift是这样定义的let-number--0-两者之间有什么不同吗如果有请说明原因">在Objective-C中，一个常量可以这样定义：const int number = 0;类似的Swift是这样定义的：let number = 0 两者之间有什么不同吗？如果有，请说明原因。</h4>
 <p>答案：OC 中 const常量是一个在编译时或者编译解析时被初始化的变量。 通过let创建的是一个运行时常量，是不可变得。他的不可变更多的是c++实现的规则，保证地址内的内容不可更改。 它可以使用static 或者dynamic关键字来初始化。</p>
 
-			</div>
-			<hr class="post-end">
-			<footer class="post-info">
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>751 Words</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-04-16 15:39 &#43;0800</p>
-			</footer>
-		</article>
-		<div class="post-nav thin">
-			<a class="next-post" href="https://blog.v5u.win/posts/design/design-macphp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
-				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Mac下PHP环境搭建最佳实践</span>
-			</a>
-			<a class="prev-post" href="https://blog.v5u.win/posts/ios/ios-nsnotificationcenter%E8%87%AA%E7%AE%A1%E7%90%86%E5%86%85%E5%AD%98/">
-				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>iOS NSNotificationCenter自管理内存</span>
-			</a>
-		</div>
-		<div id="comments" class="thin">
-</div>
-	</main>
+    </article>
+  </div>
 
-	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
-		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
-		</p>
-	</footer>
+  
+  
+  
 
-
-	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
-
+  
 </body>
 
 </html>

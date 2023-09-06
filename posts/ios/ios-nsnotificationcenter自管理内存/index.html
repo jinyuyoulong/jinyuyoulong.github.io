@@ -1,109 +1,167 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#494f5c">
-	<meta name="msapplication-TileColor" content="#494f5c"><meta itemprop="name" content="iOS NSNotificationCenter自管理内存">
-<meta itemprop="description" content="我找到解决NSNotificationCenter通知中心自管理内存的方案了 我们知道OC中 使用观察者模式 会对观察者进行强引用，导致循环引用，"><meta itemprop="datePublished" content="2021-04-16T15:34:54+08:00" />
-<meta itemprop="dateModified" content="2021-04-16T15:34:54+08:00" />
-<meta itemprop="wordCount" content="727">
-<meta itemprop="keywords" content="" /><meta property="og:title" content="iOS NSNotificationCenter自管理内存" />
-<meta property="og:description" content="我找到解决NSNotificationCenter通知中心自管理内存的方案了 我们知道OC中 使用观察者模式 会对观察者进行强引用，导致循环引用，" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.v5u.win/posts/ios/ios-nsnotificationcenter%E8%87%AA%E7%AE%A1%E7%90%86%E5%86%85%E5%AD%98/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-04-16T15:34:54+08:00" />
-<meta property="article:modified_time" content="2021-04-16T15:34:54+08:00" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <meta name="generator" content="Hugo 0.98.0" />
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="iOS NSNotificationCenter自管理内存"/>
-<meta name="twitter:description" content="我找到解决NSNotificationCenter通知中心自管理内存的方案了 我们知道OC中 使用观察者模式 会对观察者进行强引用，导致循环引用，"/>
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-	<link rel="shortcut icon" href="/favicon.ico">
+  
+  <meta name="description" content="走在通往幸福的路上">
+  
 
-	<title>iOS NSNotificationCenter自管理内存</title>
-	<link rel="stylesheet" href="https://blog.v5u.win/css/style.min.2662a42a3a62cc53bc5d14444663d4fea78d6c52b0c4f2f7a3224bac59aaced7.css" integrity="sha256-JmKkKjpizFO8XRRERmPU/qeNbFKwxPL3oyJLrFmqztc=">
-	
-	<link rel="stylesheet" href="https://blog.v5u.win/style.extra.css">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://blog.v5u.win/apple-touch-icon.png">
+
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="https://blog.v5u.win/favicon-32x32.png">
+
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="https://blog.v5u.win/favicon-16x16.png">
+
+  
+  <link rel="manifest" href="https://blog.v5u.win/site.webmanifest">
+
+  
+  <link rel="mask-icon" href="https://blog.v5u.win/safari-pinned-tab.svg" color="">
+
+  <meta name="msapplication-TileColor" content="">
+
+  <meta name="theme-color" content="">
+
+  
+  <link rel="stylesheet" href="https://blog.v5u.win/css/bootstrap.min.css" />
+
+  
+  <title>iOS NSNotificationCenter自管理内存 | 为吾优</title>
+  
+
+  <style>
+body {
+  min-width: 300px;
+}
+
+.custom-navbar {
+  margin-bottom: 1em;
+  height: 60px;
+}
+
+.custom-navbar a {
+  display: inline-block; 
+  padding: 18px 0;
+  margin-right: 1em; 
+  font-weight: bold; 
+}
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  text-decoration: none; 
+}
+
+@media print {
+  .custom-navbar {
+    display: none;
+  }
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+
+
+body {
+  color: #212529;
+}
+
+
+
+a {
+  color: #007bff;
+}
+
+
+
+a:hover,
+a:focus {
+  color: #0056b3;
+}
+
+
+
+.custom-navbar {
+  background-color: #212529;
+}
+
+
+
+.custom-navbar a {
+  color: rgba(255,255,255,.75);
+}
+
+
+
+.custom-navbar a:hover,
+.custom-navbar a:focus {
+  color: rgba(255,255,255,1);
+}
+
+
+
+.container {
+  max-width: 800px;
+}
+
+
+
+
+
+</style>
 </head>
 
-<body id="page">
-	
-	<header id="site-header" class="animated slideInUp faster">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="https://blog.v5u.win">为吾优</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-					<a href="https://blog.v5u.win/archives/">存档</a>
-					<a href="https://blog.v5u.win/about/">关于</a>
-					<a href="https://blog.v5u.win/posts/">文章</a>
-				</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://github.com/jinyuyoulong" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://blog.v5u.win/desc/about/" target="_blank" rel="noopener" title="About"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
-			</div>
-		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="https://blog.v5u.win/archives/">存档</a></li>
-			<li><a href="https://blog.v5u.win/about/">关于</a></li>
-			<li><a href="https://blog.v5u.win/posts/">文章</a></li>
-		</ul>
-	</div>
-
-
-	<main class="site-main section-inner animated fadeIn faster">
-		<article class="thin">
-			<header class="post-header">
-				<div class="post-meta"><span>Apr 16, 2021</span></div>
-				<h1>iOS NSNotificationCenter自管理内存</h1>
-			</header>
-			<div class="content">
-				<h3 id="我找到解决nsnotificationcenter通知中心自管理内存的方案了">我找到解决NSNotificationCenter通知中心自管理内存的方案了</h3>
+<body>
+  <nav class="custom-navbar">
+  <div class="container">
+    
+    <a href="/">Posts</a>
+    
+    <a href="/tags/">Tags</a>
+    
+    <a href="/about/">About</a>
+    
+    <a href="/index.xml">RSS</a>
+    
+  </div>
+</nav>
+  
+  <div class="container">
+    <article>
+      <h1>iOS NSNotificationCenter自管理内存</h1>
+<h3 id="我找到解决nsnotificationcenter通知中心自管理内存的方案了">我找到解决NSNotificationCenter通知中心自管理内存的方案了</h3>
 <p>我们知道OC中 使用观察者模式 会对观察者进行强引用，导致循环引用，内存无法释放，也就是对象无法走到dealloc这一步。</p>
 <h4 id="那么如何实现一个可以自己管理自己生命周期的的通知中心呢">那么如何实现一个可以自己管理自己生命周期的的通知中心呢？</h4>
 <p>要解决这个问题，就需要做到两步：1. 拿到观察者数组 2. 找到一个合适的时机对Observer进行释放。</p>
 <p>我想了几天，找到了一个思路，这还是前几天领悟适配器模式后带来的启发。我们知道通知中心是通过维护一个观察者数组来进行广播的，如果要解决通知中心自己释放观察者的行为。我们就需要拿到通知中心管理的观察者数组。可是我查了一下NSNotificationCenter的API，苹果并没有对外暴露可以拿到观察者数组的接口。这个时候有用到适配器模式了，其实想来，对原生类的所有扩展方法，适配器模式都是一个很好的方案，这个方案具有最通用的迁移性。我们可以新建一个类，对NSNotificationCenter进行管理，每次添加观察者的时候addObserver就同时将对象也保持在新类中一个管理数组中，而这个数组使我们可以拿到的。 至于释放时机，其实对于Controller来说还是很好找到的，虽然因为循环引用导致代码不能执行到Dealloc方法，但是页面的退出是不受影响的，所以viewDidDisappear是会执行到的。那么这里就是一个很好的释放时机。为了减少依赖，减少侵入性。最好是以面向切面的方式找到这个释放时机，进行释放。所以可以使用BaseController也可以使用runtime的方法交换的方式，找到viewDidDisappear方法。</p>
 <p>至此一个完整的解决方案就出来了，通过适配器模式+面向切面编程解决。</p>
 
-			</div>
-			<hr class="post-end">
-			<footer class="post-info">
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>727 Words</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2021-04-16 15:34 &#43;0800</p>
-			</footer>
-		</article>
-		<div class="post-nav thin">
-			<a class="next-post" href="https://blog.v5u.win/posts/ios/ios-%E4%B8%80%E4%BA%9B%E5%AF%B9swift%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E7%9A%84%E6%80%9D%E8%80%83/">
-				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>一些对swift语言特性的思考</span>
-			</a>
-			<a class="prev-post" href="https://blog.v5u.win/posts/design/design-%E5%AF%B9%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%80%9D%E8%80%83/">
-				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Design 对设计模式的思考</span>
-			</a>
-		</div>
-		<div id="comments" class="thin">
-</div>
-	</main>
+    </article>
+  </div>
 
-	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2023 <a href="https://blog.v5u.win">金玉游龙</a></p>
-		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://blog.v5u.win/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
-		</p>
-	</footer>
+  
+  
+  
 
-
-	<script src="https://blog.v5u.win/js/main.min.17d74807d860815985fea50c0164a0c132f23813ff704cf899739c92249d91e1.js" integrity="sha256-F9dIB9hggVmF/qUMAWSgwTLyOBP/cEz4mXOckiSdkeE="></script>
-
+  
 </body>
 
 </html>
