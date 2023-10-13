@@ -1,6 +1,6 @@
 baseURL = "https://blog.v5u.win"
 languageCode = "zh-CN"
-defaultContentLanguage = "en"
+defaultContentLanguage = "zh"
 title = "为吾优"
 subtitle = "世界很大，思想无边"
 enableRobotsTXT = true
@@ -10,7 +10,8 @@ hasCJKLanguage = true
 PaginatePath = "page"
 paginate = 20
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
-enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
+# Shorthand emojis in content files - https://gohugo.io/functions/emojify/
+enableEmoji = true
 #googleAnalytics = "UA-166045776-1"
 
 [author]
@@ -23,6 +24,7 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   dateformShort   = "01-02"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04 -0700"
+  customDateFormat = "2006-01-02"
 
   author = "范金龙"
   description = "走在通往幸福的路上"
@@ -31,7 +33,8 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   customCSS = ["style.extra.css"]
   customJS = ["app.extra.js"]
   themeColor = "#494f5c"
-
+  [[params.meta]]
+    favicon = false
 
   [[params.social]]
     name = "github"
@@ -55,25 +58,19 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
       title = "人生迷茫，我有导航"
 
 [menu]
-  [[menu.main]]
-    identifier = "books"
-    name = "新书"
-    url = "/books/"
-    weight = 5
-
   [[menu.nav]]
     identifier = "post"
-    name = "Posts"
+    name = "文章"
     url = "/"
     weight = 1
   [[menu.nav]]
     identifier = "tags"
-    name = "Tags"
+    name = "标签"
     url = "/tags/"
     weight = 2
   [[menu.nav]]
     identifier = "about"
-    name = "About"
+    name = "关于"
     url = "/about/"
     weight = 3
   [[menu.nav]]
