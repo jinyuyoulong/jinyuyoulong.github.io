@@ -1,9 +1,9 @@
----
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-categories:
-  - {{replace .Name "-*" ""}}
----
-
-[TOC]
-
++++
+title='{{ replace .Name "-" " " | title }}'
+tags=[]
+categories=[]
+date="{{ .Date }}"
+toc=true
+draft=true
+hiddenFromHomePage= false
++++

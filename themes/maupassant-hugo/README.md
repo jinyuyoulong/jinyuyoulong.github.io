@@ -1,7 +1,5 @@
 # Maupassant
 
-[![阿里云 2019双11 ALL IN CLoud 低至1折](./aliyun_2019.jpg "阿里云 2019双11 ALL IN CLoud 低至1折")](https://www.aliyun.com/1111/2019/group-buying-share?ptCode=E3C92908C4DF2D2DBD47C05EA86015AD647C88CF896EF535&userCode=jdg9oj97&share_source=copy_link)
-
 Maupassant theme, ported to Hugo.
 
 1. 预览效果:[飞雪无情的博客](http://www.flysnow.org)
@@ -15,41 +13,45 @@ Maupassant theme, ported to Hugo.
 
 ## 功能特性
 
-1. 最近发表的文章支持，显示最近的10篇 
-2. 分类支持，并且可以显示分类内的文章数量
-3. 标签云支持
-4. 文章目录支持
-4. 一键回到页面顶部
+1. 支持Local Search 站内搜索
+2. 最近发表的文章支持，显示最近的10篇 
+3. 分类支持，并且可以显示分类内的文章数量
+4. 标签云支持
+5. 文章目录支持
+6. 一键回到页面顶部
 13. 支持关键字SEO优化
 6. 自定义菜单支持，不限个数，自定义排序
 7. 自定义友情链接支持
 8. 支持文章按年份日期进行归档
 9. 支持GA分析统计
 17. 不蒜子页面计数器支持
-11. 代码高亮、代码行号
-    * markup、css、clike、javascript、c、csharp、bash、cpp
-    * aspnet、dart、docker、markup-templating、erlang
-    * go、groovy、java、json、kotlin、markdown、lua、objectivec
-    * php、python、r、yaml、toml
+11. 代码高亮、代码行号、代码拷贝
 10. sitemap站点地图
 5. RSS支持，并且可以自动发现RSS
 14. Google站内搜索
 15. See Also 支持
 16. Disqus评论支持
 18. 自定义css、js
-19. utteranc评论
+19. utteranc和[waline](https://waline.js.org)评论
 20. 部分自定义的shortcode
 21. 文章自定义摘要
 22. 自定义广告支持
+23. 自定义备案信息
+24. 自定义图片CDN
+25. 图片点击放大
 
 ## 下载安装
 
 ```bash
 cd <YOUR Bolg Root Dir>
-git clone https://github.com/rujews/maupassant-hugo themes/maupassant
+git clone https://github.com/flysnow-org/maupassant-hugo themes/maupassant
 ```
 
 ## 配置
+
+#### 依赖要求
+
+Hugo Version >= v 0.60.0
 
 #### 应用主题
 
@@ -57,25 +59,29 @@ git clone https://github.com/rujews/maupassant-hugo themes/maupassant
 theme = "maupassant"
 ```
 
-#### 基本配置
+#### 快速开始
 
+在主题的 [exampleSite](exampleSite/) 示例目录下有`config.toml `文件，把`config.toml `文件复制到你的站点目录下，然后根据自己的需求修改即可
+
+#### 代码高亮
+
+从Hugo v0.60.0开始，默认使用`Goldmark`渲染MD文件，并且默认开启了代码高亮，所以该主题原来的代码高亮兼容出现问题，
+经过取舍，最终还是选用了Hugo原生的代码高亮方式，去掉了原来主题自带的基于JS的代码高亮。
+
+新的Hugo内置的代码高亮使用非常代码，默认不用任何配置就可以，如果你需要开启行号、或者更换代码样式，可以参考如下配置：
+
+*config.toml*
 ```toml
-baseURL = "http://www.flysnow.org"
-languageCode = "zh-CN"
-title = "飞雪无情的博客"
-theme = "maupassant"
-
-[author]
-  name = "飞雪无情"
-
-[params]
-  author = "飞雪无情"
-  subtitle = "专注于Android、Java、Go语言(golang)、移动互联网、项目管理、软件架构"
-  keywords = "golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序"
-  description = "专注于IT互联网，包括但不限于Go语言(golang)、Java、Android、Python、项目管理、抖音分析、软件架构等"
+[markup]
+  [markup.highlight]
+    lineNos = true
+    style = "github"
 ```
 
-基本配置大家都比较熟悉，这是我的博客的配置，仅供参考。
+更多配合和样式参考:
+
+[Configure Markup](https://gohugo.io/getting-started/configuration-markup)
+[Syntax Highlighting](https://gohugo.io/content-management/syntax-highlighting/)
 
 #### 自定义菜单
 
@@ -112,6 +118,26 @@ theme = "maupassant"
 toc = true
 ```
 当左侧空白空间宽度超过100px时，则显示悬浮目录。
+
+#### Local Search 站内搜索
+
+站内搜索默认是关闭的，如果需要使用需要以下步骤开启。
+
+1. 检查`config.toml`的`disableKinds`配置项,是否禁用了RSS，如果禁用需要开启。
+2. 在`config.toml`中找到`[params]`配置段落，增加`localSearch = true`开启站内搜索
+3. 在`content`目录下新建`search`目录,并且在`search`目录中新建`index.md`文件，内容如下
+
+```
+---
+title: "搜索"
+description: "搜索页面"
+type: "search"
+---
+```
+
+然后`hugo server`启动，打开你的站点，就可以在右上角的搜索框里输入关键字进行站内搜索了。
+
+
 #### 友情链接
 
 ```toml
@@ -171,6 +197,47 @@ type: archives
 
 `content/archives/index.md`表示在`content/archives/`目录下的`index.md`文件
 
+#### 添加备案信息
+
+现在网站要求添加备案信息，本主题也进行了支持，使用方式非常简单，在`config.toml`的`params`配置中添加如下设置：
+
+```toml
+[params]
+  beian = "粤ICP备XXXXXXX号-1"
+```
+
+以上配置中的备案信息要换成自己的
+
+#### 图片点击放大
+
+将会引入jquery.js 和 fancybox 的css和js
+
+```toml
+[params]
+  fancybox = true
+```
+
+#### 图片CDN
+
+将会在mark中引入的图片src前面加上设置的host, 有http前缀的路径不会在前面加入host
+注意: 路径后面不要带/ 
+> 可直接使用jsdelivr加速 后面跟上github仓库即可 
+
+```toml
+[params.image_cdn]
+    enable = true
+    Host = "https://cdn.jsdelivr.net/gh/user/user.github.io"
+```
+
+#### JS CDN
+
+国内建议换成：cdn.bootcdn.net
+
+```toml
+[params]
+  cdnJsSite = "cdn.bootcdn.net" # 默认：cdnjs.cloudflare.com
+```
+
 #### Disqus
 
 该主题支持Disqus评论，如果要启用Disqus，可以在`config.toml`里添加如下配置即可.
@@ -220,6 +287,18 @@ summaryLength = 140
 3. `title` 按页面title标题的方式。
 
 其他还有几个不常用，这里就不再赘述了。
+#### Waline 评论系统
+Waline一款从 Valine 衍生的带后端评论系统。快速、安全、免费部署、支持评论通知。详见[https://waline.js.org/](https://waline.js.org/)
+
+将```enable```值改为```true```即可启用
+
+```serverURL```可根据官网部署教程获取
+```toml
+[params.waline]
+    enable = false
+    placeholder = "说点什么吧..."
+    serverURL = "Your waline serverURL" #换成你的serverURL
+```
 
 #### 不蒜子页面计数器支持
 
@@ -230,15 +309,11 @@ summaryLength = 140
   busuanzi = true
 ```
 
-#### 禁止分类的名称转为小写
+#### 关于分类的名称转为小写的问题
 
-我们在写文章的时候，会给文章进行分类，比如Golang，但是默认情况下，Hugo会把这个Golang转为小写，
-这就我们一直用原始字符的造成困扰，为了解决这个问题，Hugo提供了`preserveTaxonomyNames`配置，把它设置为`true`就可以了保持原来分类的名字了。
-
-```toml
-## 保持分类的原始名字（false会做转小写处理）
-preserveTaxonomyNames = true
-```
+`Hugo 0.55` 版本之前, 会有分类转成小写的问题，Hugo提供了`preserveTaxonomyNames`配置，把它设置为`true`就可以了保持原来分类的名字了。
+在 `Hugo 0.55` 这个版本，[hugo 移除了 preserveTaxonomyNames 配置](https://gohugo.io/content-management/taxonomies/#example-removing-default-taxonomies)，
+模板已经默认获取 tag 和 categories 的原始字符用来展示, 大小写的问题已经优雅的解决了。
 
 #### 禁止URL路径小写
 
@@ -271,7 +346,9 @@ disablePathToLower = true
 ```
 
 * youku（youku.html）
+
 #### 绘图支持
+
 - 序列图(使用[js-sequence](https://bramp.github.io/js-sequence-diagrams/))
   1. 全局使用，在`config.toml`中添加如下配置
   
@@ -291,7 +368,7 @@ disablePathToLower = true
    将代码块的语言标识符设置为`sequence`。例如
   
   ```
-  ​```sequence
+  ```sequence
   Alice->Bob: Hello Bob, how are you?
   Note right of Bob: Bob thinks
   Bob-->Alice: I am good thanks!
@@ -318,7 +395,7 @@ disablePathToLower = true
    将代码块的语言标识符设置为`flowchat`或者`flow`。例如
   
    ```
-  ​```flow
+  ```flow
   st=>start: Start
   op=>operation: Your Operation
   cond=>condition: Yes or No?
@@ -342,7 +419,7 @@ disablePathToLower = true
   将代码块的语言标识符设置为`viz-<engin>`， engin是选用的graphviz绘图引擎的名称，包括`circo`、`dot`、`fdp`、`neato` 、`osage`和`twopi`。例如
   
   ```
-  ​```viz-dot
+  ```viz-dot
   digraph G {
   
   	subgraph cluster_0 {
@@ -372,6 +449,24 @@ disablePathToLower = true
   }
   ​```
   ```
+#### 支持在首页上隐藏某篇文章
+
+将 front matter 中的```hiddenFromHomePage```设置为```true``` 即可
+
+ *默认为```false```*
+
+```toml
++++
+title = '{{ replace .Name "-" " " | title }}'
+tags = []
+categories = []
+date = "{{ .Date }}"
+toc = true
+draft = true
+hiddenFromHomePage = false
++++
+
+```
 
 ## 贡献
 
@@ -385,7 +480,7 @@ disablePathToLower = true
 + Wordpress：https://github.com/iMuFeng/maupassant/
 + Ghost: https://github.com/LjxPrime/maupassant/
 + Hexo: https://github.com/tufu9441/maupassant-hexo
-+ Hugo: https://github.com/rujews/maupassant-hugo
++ Hugo: https://github.com/flysnow-org/maupassant-hugo
 
 ```
 

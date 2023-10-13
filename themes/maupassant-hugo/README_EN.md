@@ -12,11 +12,15 @@ A simple Hugo template with great performance on different devices, ported from 
 
 ## Features
 
+#### Requirements
+
+Hugo Version >= v 0.60.0
+
 ## Installation
 
 ```bash
 cd <YOUR Bolg Root Dir>
-git clone https://github.com/rujews/maupassant-hugo themes/maupassant
+git clone https://github.com/flysnow-org/maupassant-hugo themes/maupassant
 ```
 
 ## Configuration
@@ -27,23 +31,9 @@ git clone https://github.com/rujews/maupassant-hugo themes/maupassant
 theme = "maupassant"
 ```
 
-#### Basic Configuration
+#### Quick Start
 
-```toml
-baseURL = "http://www.flysnow.org"
-languageCode = "zh-CN"
-title = "飞雪无情的博客"
-theme = "maupassant"
-
-[author]
-  name = "飞雪无情"
-
-[params]
-  author = "飞雪无情"
-  subtitle = "专注于Android、Java、Go语言(golang)、移动互联网、项目管理、软件架构"
-  keywords = "golang,go语言,go语言笔记,飞雪无情,java,android,博客,项目管理,python,软件架构,公众号,小程序"
-  description = "专注于IT互联网，包括但不限于Go语言(golang)、Java、Android、Python、项目管理、抖音分析、软件架构等"
-```
+See [exampleSite](exampleSite/) folder,  copy the`config.toml` in the root folder of your Hugo site and change it to your needs.
 
 #### Menus
 
@@ -89,7 +79,27 @@ TOC support in Front Matter .
 ```toml
 toc = true
 ```
- If the left blank space more than 100px, it will display Floating TOC. here is preview [https://kkua.github.io/post/java-util-code-snippet/](https://kkua.github.io/post/java-util-code-snippet/)
+ If the left blank space more than 100px, it will display Floating TOC. 
+
+
+#### Local Search
+
+If you want to use local search , please following steps:
+
+1. enabled rss,you can visit `http://127.0.0.1:1313/index.xml` check it.
+2. edit `config.toml` file,add `localSearch = true` under the `[params]`.
+3. new `index.md` file in your `content/search/` dir,and write content for:
+
+```
+---
+title: "搜索"
+description: "搜索页面"
+type: "search"
+---
+```
+
+Now ,run `hugo server` and try local search.
+
 #### Ads
 
 ```toml
@@ -128,6 +138,32 @@ summaryLength = 140
 
 ```toml
 disqusShortname = "yourdiscussshortname"
+```
+#### Waline comment system
+See [https://waline.js.org/](https://waline.js.org/)
+
+```toml
+[params.waline]
+    enable = false
+    placeholder = "说点什么吧..."
+    serverURL = "Your waline serverURL" 
+```
+
+#### Hide some articles on the homepage
+
+Change the value of ```hiddenFromHomePage``` to ```true``` to enable
+
+```toml
++++
+title = '{{ replace .Name "-" " " | title }}'
+tags = []
+categories = []
+date = "{{ .Date }}"
+toc = true
+draft = true
+hiddenFromHomePage = false
++++
+
 ```
 
 #### Page View Support
@@ -252,4 +288,4 @@ Looking forward to your pull request.
 + Wordpress：https://github.com/iMuFeng/maupassant/
 + Ghost: https://github.com/LjxPrime/maupassant/
 + Hexo: https://github.com/tufu9441/maupassant-hexo
-+ Hugo: https://github.com/rujews/maupassant-hugo
++ Hugo: https://github.com/flysnow-org/maupassant-hugo

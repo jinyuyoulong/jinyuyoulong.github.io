@@ -5,7 +5,7 @@ title = "为吾优"
 subtitle = "世界很大，思想无边"
 enableRobotsTXT = true
 rssLimit = 10  # Maximum number of items in the RSS feed.
-theme =  "minimal"
+theme =  "minimal-fans"
 hasCJKLanguage = true
 PaginatePath = "page"
 paginate = 20
@@ -55,19 +55,29 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
       title = "人生迷茫，我有导航"
 
 [menu]
+  [[menu.main]]
+    identifier = "books"
+    name = "新书"
+    url = "/books/"
+    weight = 5
+
   [[menu.nav]]
-  name = "Posts"
-  url = "/"
-  weight = 1
+    identifier = "post"
+    name = "Posts"
+    url = "/"
+    weight = 1
   [[menu.nav]]
-  name = "Tags"
-  url = "/tags/"
-  weight = 2
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
   [[menu.nav]]
-  name = "About"
-  url = "/about/"
-  weight = 3
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3
   [[menu.nav]]
-  name = "RSS"
-  url = "/index.xml"
-  weight = 4
+    identifier = "RSS"
+    name = "RSS"
+    url = "/index.xml"
+    weight = 4
