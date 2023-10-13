@@ -1,9 +1,10 @@
 ---
-title: mac下nvm 使用记录
-tags: [nodejs,npm,nvm]
-categories: [Nodejs]
+title: nvm 使用记录
+tags: [nodejs, npm, nvm]
+categories: [Nodejs, System]
 date: 2017-05-02 10:29:55
 ---
+
 mac下nvm 使用记录
 
 断开连接 brew unlink nvm
@@ -16,7 +17,7 @@ export NVM_DIR=&#8221;$HOME/.nvm&#8221;
 
 . &#8220;$(brew &#8211;prefix nvm)/nvm.sh&#8221;
 
-配置国内镜像源 export NVM\_NODEJS\_ORG_MIRROR=https://npm.taobao.org/dist
+配置国内镜像源 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist
 
 配置npm镜像源
 
