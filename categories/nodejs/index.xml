@@ -45,11 +45,11 @@
     </item>
     
     <item>
-      <title>mac下nvm 使用记录</title>
-      <link>https://blog.v5u.win/posts/system/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</link>
+      <title>nvm 使用记录</title>
+      <link>https://blog.v5u.win/posts/system/system-nodejs-nvm/</link>
       <pubDate>Tue, 02 May 2017 10:29:55 +0000</pubDate>
       
-      <guid>https://blog.v5u.win/posts/system/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://blog.v5u.win/posts/system/system-nodejs-nvm/</guid>
       <description>mac下nvm 使用记录 断开连接 brew unlink nvm 安装 brew install nvm 环境变量 add to ~/.bash_profile export NVM_DIR=”$HOME/.nvm” . “$(brew –prefix nvm)</description>
     </item>
     

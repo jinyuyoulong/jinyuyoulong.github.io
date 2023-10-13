@@ -2,22 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.v5u.win/categories/</loc>
+    <lastmod>2023-10-13T11:25:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.v5u.win/tags/ffi/</loc>
+    <lastmod>2023-10-13T11:25:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.v5u.win/posts/</loc>
+    <lastmod>2023-10-13T11:25:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.v5u.win/tags/swift/</loc>
+    <lastmod>2023-10-13T11:25:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.v5u.win/categories/swift/</loc>
+    <lastmod>2023-10-13T11:25:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.v5u.win/posts/swift/swift-ffi/</loc>
+    <lastmod>2023-10-13T11:25:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.v5u.win/tags/</loc>
+    <lastmod>2023-10-13T11:25:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.v5u.win/</loc>
+    <lastmod>2023-10-13T11:25:21+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.v5u.win/categories/system/</loc>
+    <lastmod>2023-10-12T10:32:29+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.v5u.win/posts/system/system-vim-nvim/</loc>
+    <lastmod>2023-10-12T10:32:29+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.v5u.win/tags/vim/</loc>
+    <lastmod>2023-10-12T10:32:29+08:00</lastmod>
+  </url><url>
     <loc>https://blog.v5u.win/tags/android/</loc>
     <lastmod>2023-09-05T16:29:54+08:00</lastmod>
   </url><url>
-    <loc>https://blog.v5u.win/categories/</loc>
-    <lastmod>2023-09-05T16:29:54+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.v5u.win/posts/</loc>
-    <lastmod>2023-09-05T16:29:54+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.v5u.win/tags/</loc>
-    <lastmod>2023-09-05T16:29:54+08:00</lastmod>
-  </url><url>
     <loc>https://blog.v5u.win/categories/tf%E5%8D%A1/</loc>
-    <lastmod>2023-09-05T16:29:54+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.v5u.win/</loc>
     <lastmod>2023-09-05T16:29:54+08:00</lastmod>
   </url><url>
     <loc>https://blog.v5u.win/posts/android/tf%E5%8D%A1/</loc>
@@ -149,9 +170,6 @@
     <loc>https://blog.v5u.win/categories/ios/</loc>
     <lastmod>2021-04-16T15:39:12+08:00</lastmod>
   </url><url>
-    <loc>https://blog.v5u.win/categories/swift/</loc>
-    <lastmod>2021-04-16T15:39:12+08:00</lastmod>
-  </url><url>
     <loc>https://blog.v5u.win/posts/ios/ios-%E4%B8%80%E4%BA%9B%E5%AF%B9swift%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E7%9A%84%E6%80%9D%E8%80%83/</loc>
     <lastmod>2021-04-16T15:39:12+08:00</lastmod>
   </url><url>
@@ -234,9 +252,6 @@
     <lastmod>2020-04-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.v5u.win/posts/system/system-git_server/</loc>
-    <lastmod>2020-04-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.v5u.win/categories/system/</loc>
     <lastmod>2020-04-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.v5u.win/categories/archives/</loc>
@@ -408,9 +423,6 @@
     <lastmod>2019-06-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.v5u.win/posts/swift/swift-%E4%BB%80%E4%B9%88%E6%98%AFswiftui/</loc>
-    <lastmod>2019-06-05T10:37:16+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.v5u.win/tags/swift/</loc>
     <lastmod>2019-06-05T10:37:16+08:00</lastmod>
   </url><url>
     <loc>https://blog.v5u.win/go-di-loc-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E7%A0%94%E7%A9%B6/</loc>
@@ -1046,10 +1058,10 @@
     <loc>https://blog.v5u.win/posts/system/system-python-venv-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2017-07-04T09:53:23+00:00</lastmod>
   </url><url>
-    <loc>https://blog.v5u.win/posts/system/system-mac%E4%B8%8Bnvm-%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://blog.v5u.win/tags/nvm/</loc>
     <lastmod>2017-05-02T10:29:55+00:00</lastmod>
   </url><url>
-    <loc>https://blog.v5u.win/tags/nvm/</loc>
+    <loc>https://blog.v5u.win/posts/system/system-nodejs-nvm/</loc>
     <lastmod>2017-05-02T10:29:55+00:00</lastmod>
   </url><url>
     <loc>https://blog.v5u.win/tags/chmod/</loc>
@@ -1282,9 +1294,6 @@
   </url><url>
     <loc>https://blog.v5u.win/tags/error/</loc>
     <lastmod>2016-04-25T17:09:01+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.v5u.win/tags/vim/</loc>
-    <lastmod>2016-04-18T17:26:21+00:00</lastmod>
   </url><url>
     <loc>https://blog.v5u.win/posts/system/system-vim/</loc>
     <lastmod>2016-04-18T17:26:21+00:00</lastmod>

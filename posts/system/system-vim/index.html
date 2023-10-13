@@ -154,27 +154,109 @@ a:focus {
 <li>命令模式</li>
 <li>编辑模式</li>
 </ol>
-<h3 id="命令模式下的操作">命令模式下的操作</h3>
+<p>命令模式下的操作</p>
+<h2 id="命令">命令</h2>
+<ul>
+<li>:vsplit 垂直分割窗口</li>
+<li>:e file 打开文件</li>
+<li>:quite 关闭最后一个窗口 :close 也是关闭窗口</li>
+<li>ctl+w 切换窗口 ctl+w+v 垂直分屏 ctl+w+s 水平分屏</li>
+</ul>
+<h2 id="快捷键">快捷键</h2>
 <ul>
 <li>dd 删除一行;三行：3dd</li>
-<li>y复制</li>
+<li>y(yard 提取) 复制</li>
 <li>d()剪切</li>
 <li>p(paste)粘贴</li>
 <li>:wq 或 ZZ 或 保存退出 :q! 强制退出</li>
-<li>/ 搜索   命令模式下 <code>/user</code> 搜索 user 关键字</li>
+<li>/ 搜索 命令模式下 /user 搜索 user 关键字 shift+n 或 n 定位下一个</li>
 <li>i 所有非hjkl的字符 进入编辑模式</li>
+<li>0 或 shift+6 回到行首</li>
+<li>$ 回到行尾</li>
+<li>数字+回车 下移n行</li>
+<li>shift+g</li>
+<li>shift+e</li>
+<li>ctl+f ctl+b 翻页</li>
+<li>u undo 撤回操作 ctl+r 反向撤销</li>
+<li>ctl+w 切换窗口</li>
+</ul>
+<h2 id="剪切板">剪切板</h2>
+<ul>
+<li>在需要选取的起始点，cmd模式输入v进入 选择模式</li>
+<li>光标选中后输入&quot;+yy 复制到系统剪切板</li>
+<li>&ldquo;+y 选取到默认的vim 剪切版</li>
+<li>y(yard 提取) 复制整行</li>
+<li>d()剪切</li>
+<li>p(paste)粘贴</li>
+<li>复制 10 行，命令是： y10j (复制光标下面 10 行) 10jP(粘贴在 10 行后面)</li>
 </ul>
 <h3 id="编辑模式">编辑模式</h3>
 <p>文字编辑器</p>
-<p>分屏操作
-:vsp 垂直分屏
-:sp 水平分屏
-:close Ctrl-w c 关闭当前窗口
-:only 只保留当前窗口
-ctrl+w + 当前窗口增高一行
-ctrl+w &gt; 当前窗口增宽一列
-ctrl+w 切换到下一个窗</p>
+<h3 id="配置">配置</h3>
+<p>.vimrc vim配置文件
+.vim/colors/solarized.vim</p>
+<pre tabindex="0"><code>syntax enable
+set background=dark
+colorscheme solarized
 
+&#34; Indentation &amp; Tabs
+
+set autoindent
+
+set smartindent
+
+set tabstop=4
+
+set shiftwidth=4
+
+set expandtab
+
+set smarttab
+
+&#34; Display &amp; format
+
+set number
+
+set textwidth=80
+
+set wrapmargin=2
+
+set showmatch
+
+&#34; Search
+
+set hlsearch
+
+set incsearch
+
+set ignorecase
+
+set smartcase
+
+&#34; Browse &amp; Scroll
+
+set scrolloff=5
+
+set laststatus=2
+
+&#34; Spell
+
+set spell spelllang=en_us
+
+&#34; Miscellaneous
+
+set nobackup
+
+set noswapfile
+
+set autochdir
+
+set noundofile
+
+set visualbell
+
+set errorbells
+</code></pre>
     </article>
   </div>
 

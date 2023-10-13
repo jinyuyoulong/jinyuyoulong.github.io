@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 16 Apr 2021 15:39:12 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/categories/swift/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Oct 2023 11:25:21 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/categories/swift/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swift FFI 互操作</title>
+      <link>https://blog.v5u.win/posts/swift/swift-ffi/</link>
+      <pubDate>Fri, 13 Oct 2023 11:25:21 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/swift/swift-ffi/</guid>
+      <description>问题一：Swift 可以与那些语言直接互操作？ 答：Objective-C，C， C++(注: Swift 5.9 之后支持) 问题：Swift 如何与 Objective-C 互操作? 答：S</description>
+    </item>
+    
     <item>
       <title>一些对swift语言特性的思考</title>
       <link>https://blog.v5u.win/posts/ios/ios-%E4%B8%80%E4%BA%9B%E5%AF%B9swift%E8%AF%AD%E8%A8%80%E7%89%B9%E6%80%A7%E7%9A%84%E6%80%9D%E8%80%83/</link>
@@ -87,15 +96,6 @@
       
       <guid>https://blog.v5u.win/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
       <description>避免使用程序状态和可变对象,是降低程序复杂度的有效方式之一,而这也正是函数式编程的精髓。 函数式编程强调执行的结果,而非执行的过程。 我们先构建</description>
-    </item>
-    
-    <item>
-      <title>swiftError</title>
-      <link>https://blog.v5u.win/posts/swift/swift-swifterror/</link>
-      <pubDate>Fri, 29 Jul 2016 11:46:10 +0000</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/swift/swift-swifterror/</guid>
-      <description>value of type &amp;lsquo;UILable&amp;rsquo; has no member &amp;rsquo;then&amp;rsquo; UILable 没有扩展 then的协议 fix： extension UIView: Then{}</description>
     </item>
     
   </channel>

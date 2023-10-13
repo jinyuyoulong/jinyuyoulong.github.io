@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 21 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/categories/system/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Oct 2023 10:32:29 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/categories/system/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>System Vim Nvim</title>
+      <link>https://blog.v5u.win/posts/system/system-vim-nvim/</link>
+      <pubDate>Thu, 12 Oct 2023 10:32:29 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/system/system-vim-nvim/</guid>
+      <description>nvim 的使用探索 介绍 nvim 是 vim 的现代改进版，目的是成为一个键盘友好的编辑器 我的插件管理器 vim-plug 我安装的插件: .vimrc call plug#begin(&amp;#39;~/.vim/plugged&amp;#39;) Plug &amp;#39;mhinz/vim-startify&amp;#39; Plug &amp;#39;lfv89/vim-interestingwords&amp;#39; Plug &amp;#39;tpope/vim-fugitive&amp;#39; Plug &amp;#39;godlygeek/tabular&amp;#39; Plug &amp;#39;SirVer/ultisnips&amp;#39;,{&amp;#39;for&amp;#39;:&amp;#39;markdown&amp;#39;} Plug &amp;#39;mzlogin/vim-markdown-toc&amp;#39; Plug &amp;#39;plasticboy/vim-markdown&amp;#39; Plug &amp;#39;iamcco/markdown-preview.nvim&amp;#39; call plug#end() `</description>
+    </item>
+    
     <item>
       <title>Git 仓库</title>
       <link>https://blog.v5u.win/posts/system/system-git_server/</link>
@@ -87,15 +96,6 @@
       
       <guid>https://blog.v5u.win/posts/system/system-markdown%E5%8E%9F%E7%90%86/</guid>
       <description>Text 1级标题 Text 2级标题 Text 3级标题 Text 4级标题 Text 5级标题 Text 6级标题 有序列表 ul&amp;gt;li 有 序 无序列表 ol&amp;gt;li 无 序 任务列表 ul&amp;gt;li&amp;gt;input 任务 列表 代码修饰 短代码 &amp;lt;code&amp;gt; var name = 代码块 div&amp;gt;pre&amp;gt;span &amp;lt;div&amp;gt; &amp;lt;pre&amp;gt;</description>
-    </item>
-    
-    <item>
-      <title>System 最小堆</title>
-      <link>https://blog.v5u.win/posts/system/system-%E6%9C%80%E5%B0%8F%E5%A0%86/</link>
-      <pubDate>Thu, 25 Apr 2019 17:38:44 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/system/system-%E6%9C%80%E5%B0%8F%E5%A0%86/</guid>
-      <description>最大—最小堆是最大层和最小层交替出现的二叉树，即最大层结点的子节点属于最小层，最小层结点的子节点属于最大层。 以最大（小）层结n点为根结点的子</description>
     </item>
     
   </channel>

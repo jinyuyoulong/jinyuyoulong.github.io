@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FFI on 为吾优</title>
+    <link>https://blog.v5u.win/tags/ffi/</link>
+    <description>Recent content in FFI on 为吾优</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 13 Oct 2023 11:25:21 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/ffi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swift FFI 互操作</title>
+      <link>https://blog.v5u.win/posts/swift/swift-ffi/</link>
+      <pubDate>Fri, 13 Oct 2023 11:25:21 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/swift/swift-ffi/</guid>
+      <description>问题一：Swift 可以与那些语言直接互操作？ 答：Objective-C，C， C++(注: Swift 5.9 之后支持) 问题：Swift 如何与 Objective-C 互操作? 答：S</description>
+    </item>
+    
+  </channel>
+</rss>

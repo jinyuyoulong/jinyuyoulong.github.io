@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 05 Sep 2023 16:29:54 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Oct 2023 11:25:21 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>swift</title>
+      <link>https://blog.v5u.win/categories/swift/</link>
+      <pubDate>Fri, 13 Oct 2023 11:25:21 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/categories/swift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>system</title>
+      <link>https://blog.v5u.win/categories/system/</link>
+      <pubDate>Thu, 12 Oct 2023 10:32:29 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/categories/system/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>tf卡</title>
       <link>https://blog.v5u.win/categories/tf%E5%8D%A1/</link>
@@ -63,15 +81,6 @@
     </item>
     
     <item>
-      <title>swift</title>
-      <link>https://blog.v5u.win/categories/swift/</link>
-      <pubDate>Fri, 16 Apr 2021 15:39:12 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/categories/swift/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>设计</title>
       <link>https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Fri, 16 Apr 2021 15:34:54 +0800</pubDate>
@@ -86,15 +95,6 @@
       <pubDate>Tue, 21 Apr 2020 20:08:52 +0800</pubDate>
       
       <guid>https://blog.v5u.win/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>其他技术</title>
-      <link>https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/</link>
-      <pubDate>Tue, 21 Apr 2020 13:11:53 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/categories/%E5%85%B6%E4%BB%96%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
     </item>
     

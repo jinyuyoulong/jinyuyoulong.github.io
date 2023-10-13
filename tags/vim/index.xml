@@ -7,14 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 18 Apr 2016 17:26:21 +0000</lastBuildDate><atom:link href="https://blog.v5u.win/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Oct 2023 10:32:29 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>System Vim Nvim</title>
+      <link>https://blog.v5u.win/posts/system/system-vim-nvim/</link>
+      <pubDate>Thu, 12 Oct 2023 10:32:29 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/system/system-vim-nvim/</guid>
+      <description>nvim 的使用探索 介绍 nvim 是 vim 的现代改进版，目的是成为一个键盘友好的编辑器 我的插件管理器 vim-plug 我安装的插件: .vimrc call plug#begin(&amp;#39;~/.vim/plugged&amp;#39;) Plug &amp;#39;mhinz/vim-startify&amp;#39; Plug &amp;#39;lfv89/vim-interestingwords&amp;#39; Plug &amp;#39;tpope/vim-fugitive&amp;#39; Plug &amp;#39;godlygeek/tabular&amp;#39; Plug &amp;#39;SirVer/ultisnips&amp;#39;,{&amp;#39;for&amp;#39;:&amp;#39;markdown&amp;#39;} Plug &amp;#39;mzlogin/vim-markdown-toc&amp;#39; Plug &amp;#39;plasticboy/vim-markdown&amp;#39; Plug &amp;#39;iamcco/markdown-preview.nvim&amp;#39; call plug#end() `</description>
+    </item>
+    
     <item>
       <title>vim</title>
       <link>https://blog.v5u.win/posts/system/system-vim/</link>
       <pubDate>Mon, 18 Apr 2016 17:26:21 +0000</pubDate>
       
       <guid>https://blog.v5u.win/posts/system/system-vim/</guid>
-      <description>Vim 自带教程 终端输入 vimtutor 两种模式状态 命令模式 编辑模式 命令模式下的操作 dd 删除一行;三行：3dd y复制 d()剪切 p(paste)粘贴 :wq 或 ZZ 或 保存退出</description>
+      <description>Vim 自带教程 终端输入 vimtutor 两种模式状态 命令模式 编辑模式 命令模式下的操作 命令 :vsplit 垂直分割窗口 :e file 打开文件 :quite 关闭最后一个窗口 :close 也是关闭窗口 ctl+w 切换窗口 ctl+w+v 垂</description>
     </item>
     
   </channel>

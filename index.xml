@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 05 Sep 2023 16:29:54 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Oct 2023 11:25:21 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swift FFI 互操作</title>
+      <link>https://blog.v5u.win/posts/swift/swift-ffi/</link>
+      <pubDate>Fri, 13 Oct 2023 11:25:21 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/swift/swift-ffi/</guid>
+      <description>问题一：Swift 可以与那些语言直接互操作？ 答：Objective-C，C， C++(注: Swift 5.9 之后支持) 问题：Swift 如何与 Objective-C 互操作? 答：S</description>
+    </item>
+    
+    <item>
+      <title>System Vim Nvim</title>
+      <link>https://blog.v5u.win/posts/system/system-vim-nvim/</link>
+      <pubDate>Thu, 12 Oct 2023 10:32:29 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/system/system-vim-nvim/</guid>
+      <description>nvim 的使用探索 介绍 nvim 是 vim 的现代改进版，目的是成为一个键盘友好的编辑器 我的插件管理器 vim-plug 我安装的插件: .vimrc call plug#begin(&amp;#39;~/.vim/plugged&amp;#39;) Plug &amp;#39;mhinz/vim-startify&amp;#39; Plug &amp;#39;lfv89/vim-interestingwords&amp;#39; Plug &amp;#39;tpope/vim-fugitive&amp;#39; Plug &amp;#39;godlygeek/tabular&amp;#39; Plug &amp;#39;SirVer/ultisnips&amp;#39;,{&amp;#39;for&amp;#39;:&amp;#39;markdown&amp;#39;} Plug &amp;#39;mzlogin/vim-markdown-toc&amp;#39; Plug &amp;#39;plasticboy/vim-markdown&amp;#39; Plug &amp;#39;iamcco/markdown-preview.nvim&amp;#39; call plug#end() `</description>
+    </item>
+    
     <item>
       <title>安卓手机使用 SD 卡扩展存储空间</title>
       <link>https://blog.v5u.win/posts/android/tf%E5%8D%A1/</link>
@@ -78,24 +96,6 @@
       
       <guid>https://blog.v5u.win/posts/reactnative/redux%E5%AD%A6%E4%B9%A0/</guid>
       <description>yarn global add create-react-app create-react-app demo0 yarn add antd yarn add redux mkdir src/store redux dev chrome插件 开发用，在GitHub上redux项目看开发环境配置方式 const store = createStore(reducer, // window.__REDUX_DEVTOOLS_EXTENSION__ &amp;amp;&amp;amp; window.__REDUX_DEVTOOLS_EXTENSION__() //如果浏览器有这个</description>
-    </item>
-    
-    <item>
-      <title>React学习</title>
-      <link>https://blog.v5u.win/posts/reactnative/react%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Mon, 24 May 2021 20:37:25 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/reactnative/react%E5%AD%A6%E4%B9%A0/</guid>
-      <description>React学习 两个重要的概念：虚拟DOM，diff算法 虚拟DOM：用js对象模拟HTML的DOM树，为了方便比较，减少渲染 diff算法由3种</description>
-    </item>
-    
-    <item>
-      <title>Xcode项目文件格式</title>
-      <link>https://blog.v5u.win/posts/xcode/xcode%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/</link>
-      <pubDate>Mon, 24 May 2021 20:19:16 +0800</pubDate>
-      
-      <guid>https://blog.v5u.win/posts/xcode/xcode%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/</guid>
-      <description>原文：http://www.monobjc.net/xcode-project-file-format.html 译者：chai2010 译文：</description>
     </item>
     
   </channel>
