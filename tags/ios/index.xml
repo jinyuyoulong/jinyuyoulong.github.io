@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 24 May 2021 19:15:35 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 May 2022 10:05:24 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity iOS 混合开发模式调研</title>
+      <link>https://blog.v5u.win/posts/ios/unity%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Fri, 06 May 2022 10:05:24 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/ios/unity%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E6%96%B9%E6%A1%88/</guid>
+      <description>Unity iOS 混合开发 unity+原生开发 有四种开发模式： 以unity c#工程为主，由unity封装原生端的库为c# 第三方库，直接提供给unity工程</description>
+    </item>
+    
     <item>
       <title>制作framework总结</title>
       <link>https://blog.v5u.win/posts/ios/%E5%88%B6%E4%BD%9Cframework%E6%80%BB%E7%BB%93/</link>

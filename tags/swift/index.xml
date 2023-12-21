@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 13 Oct 2023 11:25:21 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Oct 2023 10:18:28 +0800</lastBuildDate><atom:link href="https://blog.v5u.win/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Swift SwiftUI Study</title>
+      <link>https://blog.v5u.win/posts/swift/swift-swiftui-study/</link>
+      <pubDate>Mon, 23 Oct 2023 10:18:28 +0800</pubDate>
+      
+      <guid>https://blog.v5u.win/posts/swift/swift-swiftui-study/</guid>
+      <description>SwiftUI原则： SwiftUI 以 subview 显示为第一优先。反推superview的bound去显示 如果是动态宽高，需要让制定subview的 布局方式 Z 轴 ZStack X</description>
+    </item>
+    
     <item>
       <title>Swift FFI 互操作</title>
       <link>https://blog.v5u.win/posts/swift/swift-ffi/</link>
