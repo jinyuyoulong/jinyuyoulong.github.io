@@ -6,8 +6,10 @@
         <li class="posts-list-item">
           <a class="posts-list-item-title" href="{{ .Permalink }}">{{ .Title }}</a>
           <span class="posts-list-item-description">
+            {{ $customDateFormat := "January 2, 2006" }}
+            {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
             {{ partial "icon.html" (dict "ctx" $ "name" "clock") }} {{ .ReadingTime }} min read -
-            {{ .PublishDate.Format "Jan 2, 2006" }}
+            {{ .PublishDate.Format $customDateFormat }}
           </span>
         </li>
       {{ end }}
